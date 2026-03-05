@@ -3,88 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micro Créatif | Innovation depuis 1981</title>
+    <title>Micro Créatif | Accueil</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        header {
-            padding: 50px 0;
-            border-bottom: 2px solid #eee;
-        }
-        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
-        .tagline { font-style: italic; color: #7f8c8d; margin-bottom: 30px; }
-        
-        .btn-souvenir {
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+        header { padding: 60px 0; }
+        h1 { color: #2c3e50; font-size: 2.5em; }
+        .tagline { font-style: italic; color: #7f8c8d; }
+        .btn-history {
             display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 12px 25px;
+            margin-top: 30px;
+            padding: 10px 20px;
+            border: 1px solid #3498db;
+            color: #3498db;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s;
-            margin: 20px 0;
+            transition: all 0.3s;
         }
-        .btn-souvenir:hover { background-color: #2980b9; }
-
-        section { padding: 40px 0; }
-        
-        #souvenirs {
-            background-color: #fdfdfd;
-            border: 1px dashed #ccc;
-            margin-top: 50px;
-            padding: 40px;
-        }
-        .facture-img {
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            margin-top: 20px;
-            border: 1px solid #ddd;
-        }
-        
-        footer {
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #95a5a6;
-        }
+        .btn-history:hover { background: #3498db; color: white; }
+        footer { margin-top: 100px; font-size: 0.8em; color: #95a5a6; }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Micro Créatif</h1>
         <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
-        
-        <a href="#souvenirs" class="btn-souvenir">Voir nos souvenirs de 1981</a>
     </header>
 
-    <section id="intro">
+    <main>
         <p>Studio de développement logiciel et de design 3D.</p>
         <p><em>Software development and 3D design studio.</em></p>
-    </section>
-
-    <section id="souvenirs">
-        <h2>Un peu d'histoire</h2>
-        <p>C'est ici que tout a commencé. Le 11 juin 1981, l'aventure Micro Créatif prenait racine avec l'achat de cet Apple II Plus 48K chez Allmand and Associates Inc. à Montréal.</p>
         
-        <img src="image.png" alt="Facture originale Apple II Plus - 11 juin 1981" class="facture-img">
-        
-        <p style="margin-top: 15px; font-size: 0.85em; color: #666;">
-            Montant total : 2 100,00 $ | Un investissement dans le futur.
-        </p>
-    </section>
+        <a href="souvenirs.html" class="btn-history">Découvrir notre histoire (1981)</a>
+    </main>
 
     <footer>
         <p>&copy; 2026 Micro Créatif. Tous droits réservés.</p>
         <p>2322 Avenue d'Orléans, Montréal, QC</p>
-    </section>
-
+    </footer>
 </body>
 </html>
