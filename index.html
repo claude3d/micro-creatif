@@ -3,81 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micro Créatif | Coming Soon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Micro Créatif | Innovation depuis 1981</title>
     <style>
         body {
-            background: radial-gradient(circle at top left, #1e293b, #0f172a);
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
         }
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        header {
+            padding: 50px 0;
+            border-bottom: 2px solid #eee;
         }
-        [lang="en"] { display: none; } /* Par défaut, on cache l'anglais */
+        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
+        .tagline { font-style: italic; color: #7f8c8d; margin-bottom: 30px; }
+        
+        .btn-souvenir {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin: 20px 0;
+        }
+        .btn-souvenir:hover { background-color: #2980b9; }
+
+        section { padding: 40px 0; }
+        
+        #souvenirs {
+            background-color: #fdfdfd;
+            border: 1px dashed #ccc;
+            margin-top: 50px;
+            padding: 40px;
+        }
+        .facture-img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #95a5a6;
+        }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen text-slate-200 font-sans antialiased">
+<body>
 
-    <div class="fixed top-8 right-8 z-50">
-        <button onclick="toggleLang()" class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-white/10 transition-all border border-white/20">
-            <span class="lang-label">EN</span>
-        </button>
-    </div>
+    <header>
+        <h1>Micro Créatif</h1>
+        <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
+        
+        <a href="#souvenirs" class="btn-souvenir">Voir nos souvenirs de 1981</a>
+    </header>
 
-    <main class="glass p-10 md:p-16 rounded-[2.5rem] shadow-2xl max-w-xl w-full mx-4 text-center">
-        <div class="mb-10">
-            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-emerald-400 rounded-2xl mx-auto flex items-center justify-center shadow-lg rotate-3">
-                <span class="text-3xl font-black text-slate-900 -rotate-3">μC</span>
-            </div>
-        </div>
+    <section id="intro">
+        <p>Studio de développement logiciel et de design 3D.</p>
+        <p><em>Software development and 3D design studio.</em></p>
+    </section>
 
-        <div lang="fr" class="content-fr">
-            <h1 class="text-4xl font-bold mb-4 tracking-tight">Micro Créatif</h1>
-            <div class="h-1 w-12 bg-blue-500 mx-auto mb-8 rounded-full"></div>
-            <p class="text-slate-400 text-lg leading-relaxed mb-10">
-                La fusion de la <span class="text-blue-300">rigueur analytique</span> et de l'imagination pédagogique.
-            </p>
-            <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-8">
-                <span class="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
-                DÉVELOPPEMENT EN COURS
-            </div>
-        </div>
+    <section id="souvenirs">
+        <h2>Un peu d'histoire</h2>
+        <p>C'est ici que tout a commencé. Le 11 juin 1981, l'aventure Micro Créatif prenait racine avec l'achat de cet Apple II Plus 48K chez Allmand and Associates Inc. à Montréal.</p>
+        
+        <img src="image.png" alt="Facture originale Apple II Plus - 11 juin 1981" class="facture-img">
+        
+        <p style="margin-top: 15px; font-size: 0.85em; color: #666;">
+            Montant total : 2 100,00 $ | Un investissement dans le futur.
+        </p>
+    </section>
 
-        <div lang="en" class="content-en">
-            <h1 class="text-4xl font-bold mb-4 tracking-tight">Micro Creative</h1>
-            <div class="h-1 w-12 bg-emerald-500 mx-auto mb-8 rounded-full"></div>
-            <p class="text-slate-400 text-lg leading-relaxed mb-10">
-                Fusing <span class="text-emerald-300">analytical rigor</span> with pedagogical imagination.
-            </p>
-            <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-8">
-                <span class="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
-                UNDER DEVELOPMENT
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 Micro Créatif. Tous droits réservés.</p>
+        <p>2322 Avenue d'Orléans, Montréal, QC</p>
+    </section>
 
-        <div class="pt-8 border-t border-white/5 text-xs text-slate-500 font-mono tracking-widest uppercase">
-            Montréal &bull; Ho Chi Minh Ville
-        </div>
-    </main>
-
-    <script>
-        function toggleLang() {
-            const frElements = document.querySelectorAll('[lang="fr"]');
-            const enElements = document.querySelectorAll('[lang="en"]');
-            const label = document.querySelector('.lang-label');
-
-            if (label.innerText === 'EN') {
-                frElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-                label.innerText = 'FR';
-            } else {
-                frElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-                label.innerText = 'EN';
-            }
-        }
-    </script>
 </body>
 </html>
