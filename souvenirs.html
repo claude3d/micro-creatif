@@ -14,7 +14,7 @@
             overflow-x: hidden;
         }
 
-        /* Même fond animé que l'index */
+        /* Fond animé identique à l'index */
         body::before {
             content: "";
             position: fixed;
@@ -37,7 +37,18 @@
 
         canvas { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; }
 
-        /* Navigation haut */
+        /* Easter Egg Zone (100x100px) */
+        #easter-egg {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* Navigation */
         .nav-container {
             position: relative;
             z-index: 10;
@@ -61,7 +72,7 @@
 
         .btn-ui:hover { background: white; color: #1a3a4a; }
 
-        /* Contenu Souvenirs */
+        /* Contenu */
         .main-content {
             position: relative;
             z-index: 5;
@@ -74,7 +85,7 @@
 
         h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,.5); }
 
-        .caption { font-size: 1.4rem; max-width: 800px; margin-bottom: 20px; font-weight: 300; }
+        .caption { font-size: 1.4rem; max-width: 800px; margin-bottom: 20px; font-weight: 300; line-height: 1.4; }
 
         .inflation-box {
             background: rgba(255, 255, 255, 0.05);
@@ -99,13 +110,15 @@
             text-align: center;
             opacity: 0.8;
             font-size: 1rem;
+            position: relative;
+            z-index: 5;
         }
-
     </style>
 </head>
 <body>
 
     <canvas id="particles"></canvas>
+    <div id="easter-egg" onclick="nextSeason()"></div>
 
     <div class="nav-container">
         <a href="index.html" class="btn-ui" id="back-btn">← Accueil</a>
@@ -132,7 +145,8 @@
     </footer>
 
     <script>
-        function toggleLang() {
+        /* GESTION DE LA LANGUE (BIT D'INFO) */
+        function updateUI(lang) {
             const btn = document.getElementById('lang-btn');
             const backBtn = document.getElementById('back-btn');
             const title = document.getElementById('title');
@@ -140,7 +154,7 @@
             const inflation = document.getElementById('inflation-text');
             const copy = document.getElementById('copyright');
 
-            if (btn.innerText === 'English') {
+            if (lang === 'en') {
                 btn.innerText = 'Français';
                 backBtn.innerText = '← Home';
                 title.innerText = 'Our Origins';
@@ -157,32 +171,110 @@
             }
         }
 
-        /* Animation Particules (Identique à l'index) */
+        function toggleLang() {
+            const currentLang = localStorage.getItem('selectedLang') === 'en' ? 'fr' : 'en';
+            localStorage.setItem('selectedLang', currentLang);
+            updateUI(currentLang);
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('selectedLang') || 'fr';
+            updateUI(savedLang);
+        };
+
+        /* MOTEUR DE PARTICULES SAISONNIÈRES */
         const canvas = document.getElementById("particles");
         const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        let particles = [];
-        for(let i=0; i<80; i++){
-            particles.push({
-                x: Math.random()*canvas.width,
-                y: Math.random()*canvas.height,
-                vx: (Math.random()-0.5)*0.5,
-                vy: (Math.random()-0.5)*0.5,
-                size: Math.random()*2+1
-            });
+
+        const seasons = ["hiver", "printemps", "été", "automne"];
+        let currentSeasonIndex = 0;
+
+        function getInitialSeason() {
+            const now = new Date();
+            const m = now.getMonth() + 1;
+            const d = now.getDate();
+            if (m === 12 || m === 1 || m === 2 || (m === 3 && d <= 20)) return 0;
+            if (m === 3 || m === 4 || m === 5) return 1;
+            if (m === 6 || m === 7 || m === 8) return 2;
+            return 3;
         }
-        function animate(){
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            ctx.fillStyle = "rgba(255,255,255,0.6)";
+
+        currentSeasonIndex = getInitialSeason();
+        let particles = [];
+
+        function createParticle() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 1,
+                vy: Math.random() * 1.2 + 0.5,
+                size: Math.random() * 4 + 3,
+                rotation: Math.random() * Math.PI * 2,
+                vRot: (Math.random() - 0.5) * 0.04,
+                opacity: Math.random() * 0.4 + 0.4,
+                colorVar: Math.random()
+            };
+        }
+
+        for(let i=0; i<75; i++) particles.push(createParticle());
+
+        function nextSeason() { currentSeasonIndex = (currentSeasonIndex + 1) % seasons.length; }
+
+        function drawSnowflake(p) {
+            ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${p.opacity})`;
+            ctx.lineWidth = 1.2; ctx.beginPath();
+            for(let i=0; i<6; i++){
+                ctx.moveTo(0,0); ctx.lineTo(0, p.size*2);
+                ctx.moveTo(0, p.size); ctx.lineTo(p.size*0.5, p.size*1.3);
+                ctx.moveTo(0, p.size); ctx.lineTo(-p.size*0.5, p.size*1.3);
+                ctx.rotate(Math.PI/3);
+            }
+            ctx.stroke(); ctx.restore();
+        }
+
+        function drawMapleLeaf(p, color) {
+            ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
+            ctx.fillStyle = `rgba(${color}, ${p.opacity})`;
+            ctx.beginPath(); ctx.moveTo(0, p.size*2); ctx.lineTo(0, 0);
+            const pts = [[-0.3,0.4],[-0.8,0.2],[-0.6,0.9],[-1.2,1.2],[-0.5,1.6],[-0.2,2.2],[0,2.5],[0.2,2.2],[0.5,1.6],[1.2,1.2],[0.6,0.9],[0.8,0.2],[0.3,0.4]];
+            pts.forEach(pt => ctx.lineTo(pt[0]*p.size, pt[1]*-p.size));
+            ctx.fill(); ctx.restore();
+        }
+
+        function drawSakura(p) {
+            ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
+            ctx.fillStyle = `rgba(255, 183, 197, ${p.opacity})`;
+            for(let i=0; i<5; i++){
+                ctx.beginPath();
+                ctx.bezierCurveTo(p.size*0.5, p.size, p.size*1.5, p.size*0.5, 0, 0);
+                ctx.bezierCurveTo(-p.size*1.5, p.size*0.5, -p.size*0.5, p.size, 0, 0);
+                ctx.fill(); ctx.rotate(Math.PI*2/5);
+            }
+            ctx.restore();
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const s = seasons[currentSeasonIndex];
             particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
-                if(p.x<0 || p.x>canvas.width) p.vx*=-1;
-                if(p.y<0 || p.y>canvas.height) p.vy*=-1;
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+                p.x += p.vx; p.y += p.vy; p.rotation += p.vRot;
+                if(p.y > canvas.height) p.y = -20;
+                if(p.x > canvas.width) p.x = 0; if(p.x < 0) p.x = canvas.width;
+                if(s === "hiver") drawSnowflake(p);
+                else if(s === "printemps") drawSakura(p);
+                else if(s === "été") drawMapleLeaf(p, "34, 139, 34");
+                else {
+                    let c = p.colorVar < 0.33 ? "200,30,30" : (p.colorVar < 0.66 ? "241,196,15" : "100,160,60");
+                    drawMapleLeaf(p, c);
+                }
             });
             requestAnimationFrame(animate);
         }
+
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
         animate();
     </script>
 </body>
