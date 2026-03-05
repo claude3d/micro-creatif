@@ -16,29 +16,42 @@
         .hero-header {
             background-color: #0056b3;
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             position: relative;
         }
+        /* Navigation retour à gauche */
         .back-nav {
             position: absolute;
             top: 25px;
             left: 25px;
         }
-        .back-btn {
+        /* Bouton de langue à droite */
+        .lang-nav {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+        .btn-ui {
+            background-color: rgba(255, 255, 255, 0.2);
             color: white;
-            text-decoration: none;
-            font-weight: bold;
             border: 1px solid white;
             padding: 8px 16px;
+            cursor: pointer;
             border-radius: 4px;
-            background: rgba(255,255,255,0.1);
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-ui:hover {
+            background-color: white;
+            color: #0056b3;
         }
         .container {
             max-width: 900px;
             margin: 50px auto;
             padding: 0 20px;
         }
-        h1 { font-size: 3em; margin: 0; }
+        h1 { font-size: 3.5em; margin: 0; }
         .facture-img {
             max-width: 100%;
             height: auto;
@@ -47,20 +60,22 @@
             margin: 30px 0;
         }
         .caption {
-            font-size: 1.2em;
+            font-size: 1.3em;
             line-height: 1.6;
             color: #444;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         .value-comparison {
             background-color: #e9ecef;
-            padding: 15px;
+            padding: 15px 25px;
             border-radius: 8px;
             display: inline-block;
             margin-top: 10px;
             font-weight: bold;
+            color: #0056b3;
         }
         footer {
+            margin-top: 60px;
             padding: 40px;
             border-top: 1px solid #eee;
             color: #666;
@@ -73,27 +88,57 @@
 
     <header class="hero-header">
         <div class="back-nav">
-            <a href="index.html" class="back-btn">← Accueil</a>
+            <a href="index.html" class="btn-ui" id="back-btn">← Accueil</a>
         </div>
-        <h1>Nos Origines</h1>
+        <div class="lang-nav">
+            <button class="btn-ui" onclick="toggleLanguage()" id="lang-btn">English</button>
+        </div>
+        <h1 id="page-title">Nos Origines</h1>
     </header>
 
     <div class="container">
-        <div class="caption">
+        <p class="caption" id="history-text">
             L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.
-            <br>
-            <div class="value-comparison">
-                Valeur comparative en 2026 : environ 7 350 $ CAD
-            </div>
+        </p>
+        
+        <div class="value-comparison" id="inflation-text">
+            Valeur comparative en 2026 : environ 7 350 $ CAD
         </div>
 
         <img src="facture.jpg" alt="Facture originale Apple II Plus de 1981" class="facture-img">
     </div>
 
     <footer>
-        <p>&copy; 2026 Micro Créatif. Tous droits réservés.</p>
+        <p id="copyright">&copy; 2026 Micro Créatif. Tous droits réservés.</p>
         <p><strong>Montréal</strong> <span class="city-divider">|</span> <strong>Ho Chi Minh</strong></p>
     </footer>
+
+    <script>
+        function toggleLanguage() {
+            const btn = document.getElementById('lang-btn');
+            const backBtn = document.getElementById('back-btn');
+            const title = document.getElementById('page-title');
+            const history = document.getElementById('history-text');
+            const inflation = document.getElementById('inflation-text');
+            const copy = document.getElementById('copyright');
+
+            if (btn.innerText === 'English') {
+                btn.innerText = 'Français';
+                backBtn.innerText = '← Home';
+                title.innerText = 'Our Origins';
+                history.innerHTML = 'The purchase of this <strong>Apple II Plus 48K</strong> on June 11, 1981, for <strong>$2,100.00</strong> marks the beginning of the Micro Créatif adventure.';
+                inflation.innerText = 'Comparative value in 2026: approx. $7,350 CAD';
+                copy.innerText = '© 2026 Micro Créatif. All rights reserved.';
+            } else {
+                btn.innerText = 'English';
+                backBtn.innerText = '← Accueil';
+                title.innerText = 'Nos Origines';
+                history.innerHTML = "L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.";
+                inflation.innerText = 'Valeur comparative en 2026 : environ 7 350 $ CAD';
+                copy.innerText = '© 2026 Micro Créatif. Tous droits réservés.';
+            }
+        }
+    </script>
 
 </body>
 </html>
