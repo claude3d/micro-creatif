@@ -6,102 +6,116 @@
     <title>Micro Créatif | Accueil</title>
     <style>
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
+            background-color: #f8f9fa;
         }
-        /* Grand bandeau bleu d'hier */
-        .hero-blue {
+        /* Le grand bandeau bleu d'hier */
+        .hero-header {
             background-color: #0056b3;
             color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
-            position: relative; /* Pour positionner le bouton par rapport à ce bloc */
+            position: relative;
         }
-        /* Le bouton English en haut à droite */
-        .lang-container {
+        /* Bouton de langue dans le coin supérieur droit */
+        .lang-nav {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
         }
         .lang-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .lang-btn:hover {
             background-color: white;
             color: #0056b3;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
         }
-        h1 { margin: 0; font-size: 3.5em; }
-        .tagline { font-style: italic; font-size: 1.2em; margin-top: 15px; opacity: 0.9; }
+        h1 { margin: 0; font-size: 4em; letter-spacing: -1px; }
+        .tagline { font-style: italic; font-size: 1.3em; margin-top: 10px; opacity: 0.8; }
         
-        /* Section principale */
-        .main-content {
-            padding: 60px 20px;
+        .container {
+            padding: 80px 20px;
             text-align: center;
         }
-        .description { font-size: 1.3em; margin-bottom: 40px; }
+        .main-text { font-size: 1.5em; margin-bottom: 50px; font-weight: 300; }
 
-        /* Bouton vers la page historique */
-        .btn-history {
+        /* Bouton élégant pour la page souvenirs */
+        .btn-souvenir {
             display: inline-block;
             background-color: #0056b3;
             color: white;
-            padding: 15px 30px;
+            padding: 18px 35px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            font-size: 1.1em;
-            transition: background 0.3s;
+            font-size: 1.2em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, background 0.3s;
         }
-        .btn-history:hover { background-color: #004494; }
+        .btn-souvenir:hover {
+            background-color: #004494;
+            transform: translateY(-2px);
+        }
 
         footer {
-            text-align: center;
+            margin-top: 60px;
             padding: 40px;
-            color: #777;
+            text-align: center;
             border-top: 1px solid #eee;
+            color: #666;
+            font-size: 1.1em;
         }
+        .city-divider { margin: 0 15px; color: #ccc; }
     </style>
 </head>
 <body>
 
-    <header class="hero-blue">
-        <div class="lang-container">
-            <button class="lang-btn" onclick="translatePage()" id="lang-btn">English</button>
+    <header class="hero-header">
+        <div class="lang-nav">
+            <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
         </div>
         <h1 id="main-title">Micro Créatif</h1>
-        <p class="tagline" id="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
+        <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
     </header>
 
-    <main class="main-content">
-        <p class="description" id="desc">Studio de développement logiciel et de design 3D.</p>
+    <div class="container">
+        <p class="main-text" id="description">Studio de développement logiciel et de design 3D.</p>
         
-        <a href="souvenirs.html" class="btn-history" id="btn-hist">Voir nos souvenirs de 1981</a>
-    </main>
+        <a href="souvenirs.html" class="btn-souvenir" id="btn-text">Voir nos souvenirs de 1981</a>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Micro Créatif. Tous droits réservés.</p>
-        <p>2322 Avenue d'Orléans, Montréal, QC</p>
+        <p id="copyright">&copy; 2026 Micro Créatif. Tous droits réservés.</p>
+        <p><strong>Montréal</strong> <span class="city-divider">|</span> <strong>Ho Chi Minh</strong></p>
     </footer>
 
     <script>
-        function translatePage() {
+        function toggleLanguage() {
             const btn = document.getElementById('lang-btn');
-            const desc = document.getElementById('desc');
-            const btnHist = document.getElementById('btn-hist');
+            const desc = document.getElementById('description');
+            const btnText = document.getElementById('btn-text');
+            const copy = document.getElementById('copyright');
 
             if (btn.innerText === 'English') {
                 btn.innerText = 'Français';
                 desc.innerText = 'Software development and 3D design studio.';
-                btnHist.innerText = 'View our 1981 memories';
+                btnText.innerText = 'View our 1981 memories';
+                copy.innerText = '© 2026 Micro Créatif. All rights reserved.';
             } else {
                 btn.innerText = 'English';
                 desc.innerText = 'Studio de développement logiciel et de design 3D.';
-                btnHist.innerText = 'Voir nos souvenirs de 1981';
+                btnText.innerText = 'Voir nos souvenirs de 1981';
+                copy.innerText = '© 2026 Micro Créatif. Tous droits réservés.';
             }
         }
     </script>
