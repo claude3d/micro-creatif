@@ -35,6 +35,18 @@
 
         canvas { position:absolute; top:0; left:0; pointer-events: none; }
 
+        /* Zone Easter Egg de 100x100 pixels */
+        #easter-egg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0); /* Invisible mais cliquable */
+        }
+
         .lang-nav { position:absolute; top:30px; right:30px; z-index:10; }
         .lang-btn {
             background:rgba(255,255,255,0.1);
@@ -84,6 +96,7 @@
 <body>
 
 <canvas id="particles"></canvas>
+<div id="easter-egg" onclick="nextSeason()"></div>
 
 <div class="lang-nav">
     <button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
@@ -120,41 +133,49 @@ function toggleLang() {
     }
 }
 
-/* LOGIQUE SAISONNIÈRE CORRIGÉE */
+/* LOGIQUE DES PARTICULES SAISONNIÈRES */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-function getSeason() {
+const seasons = ["hiver", "printemps", "été", "automne"];
+let currentSeasonIndex = 0;
+
+// Déterminer la saison réelle au chargement (Hiver au 5 mars)
+function getInitialSeason() {
     const now = new Date();
     const month = now.getMonth() + 1;
     const day = now.getDate();
-
-    // Hiver : de Décembre à fin Mars pour le Québec
-    if (month === 12 || month === 1 || month === 2 || (month === 3 && day <= 20)) return "hiver";
-    if (month === 3 || month === 4 || month === 5) return "printemps";
-    if (month === 6 || month === 7 || month === 8) return "été";
-    return "automne";
+    if (month === 12 || month === 1 || month === 2 || (month === 3 && day <= 20)) return 0;
+    if (month === 3 || month === 4 || month === 5) return 1;
+    if (month === 6 || month === 7 || month === 8) return 2;
+    return 3;
 }
 
-const season = getSeason();
+currentSeasonIndex = getInitialSeason();
 let particles = [];
 
 function createParticle() {
     return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: Math.random() * 1 + 0.5,
-        size: Math.random() * 3 + 2,
+        vx: (Math.random() - 0.5) * 1,
+        vy: Math.random() * 1.5 + 0.5,
+        size: Math.random() * 4 + 2,
         rotation: Math.random() * Math.PI * 2,
-        vRot: (Math.random() - 0.5) * 0.02,
-        opacity: Math.random() * 0.5 + 0.3
+        vRot: (Math.random() - 0.5) * 0.05,
+        opacity: Math.random() * 0.5 + 0.4,
+        colorType: Math.random() > 0.5 ? 1 : 2
     };
 }
 
-for(let i=0; i<70; i++) particles.push(createParticle());
+for(let i=0; i<80; i++) particles.push(createParticle());
+
+// Fonction appelée par le clic dans le coin
+function nextSeason() {
+    currentSeasonIndex = (currentSeasonIndex + 1) % seasons.length;
+}
 
 function drawSnowflake(p) {
     ctx.save();
@@ -164,17 +185,12 @@ function drawSnowflake(p) {
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     for(let i=0; i<6; i++) {
-        ctx.moveTo(0,0);
-        ctx.lineTo(0, p.size * 2);
-        // Petites branches du flocon
-        ctx.moveTo(0, p.size);
-        ctx.lineTo(p.size * 0.5, p.size * 1.5);
-        ctx.moveTo(0, p.size);
-        ctx.lineTo(-p.size * 0.5, p.size * 1.5);
+        ctx.moveTo(0,0); ctx.lineTo(0, p.size * 2);
+        ctx.moveTo(0, p.size); ctx.lineTo(p.size*0.6, p.size*1.2);
+        ctx.moveTo(0, p.size); ctx.lineTo(-p.size*0.6, p.size*1.2);
         ctx.rotate(Math.PI/3);
     }
-    ctx.stroke();
-    ctx.restore();
+    ctx.stroke(); ctx.restore();
 }
 
 function drawLeaf(p, color) {
@@ -183,7 +199,7 @@ function drawLeaf(p, color) {
     ctx.rotate(p.rotation);
     ctx.fillStyle = color;
     ctx.beginPath();
-    ctx.ellipse(0, 0, p.size, p.size * 1.8, 0, 0, Math.PI * 2);
+    ctx.ellipse(0, 0, p.size, p.size * 1.6, 0.4, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
 }
@@ -191,17 +207,17 @@ function drawLeaf(p, color) {
 function drawSun(p) {
     ctx.save();
     ctx.translate(p.x, p.y);
-    ctx.fillStyle = "rgba(255, 204, 51, 0.4)";
+    ctx.fillStyle = "rgba(255, 225, 120, 0.3)";
     ctx.shadowBlur = 15;
     ctx.shadowColor = "#ffcc33";
-    ctx.beginPath();
-    ctx.arc(0, 0, p.size, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.beginPath(); ctx.arc(0, 0, p.size * 1.5, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
 }
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const season = seasons[currentSeasonIndex];
+    
     particles.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
@@ -212,9 +228,9 @@ function animate() {
         if (p.x < 0) p.x = canvas.width;
 
         if (season === "hiver") drawSnowflake(p);
-        else if (season === "printemps") drawLeaf(p, "#ffb7c5");
-        else if (season === "été") drawSun(p);
-        else drawLeaf(p, Math.random() > 0.5 ? "#e67e22" : "#f1c40f");
+        else if (season === "printemps") drawLeaf(p, "#ffb7c5"); // Pétales roses
+        else if (season === "été") drawSun(p); // Points solaires
+        else drawLeaf(p, p.colorType === 1 ? "#e67e22" : "#f39c12"); // Feuilles automne
     });
     requestAnimationFrame(animate);
 }
