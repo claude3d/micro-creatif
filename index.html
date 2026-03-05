@@ -5,40 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro Créatif | Accueil</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
-        header { padding: 60px 0; }
-        h1 { color: #2c3e50; font-size: 2.5em; }
-        .tagline { font-style: italic; color: #7f8c8d; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* Grand bandeau bleu d'hier */
+        .hero-blue {
+            background-color: #0056b3;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative; /* Pour positionner le bouton par rapport à ce bloc */
+        }
+        /* Le bouton English en haut à droite */
+        .lang-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-btn {
+            background-color: white;
+            color: #0056b3;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        h1 { margin: 0; font-size: 3.5em; }
+        .tagline { font-style: italic; font-size: 1.2em; margin-top: 15px; opacity: 0.9; }
+        
+        /* Section principale */
+        .main-content {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .description { font-size: 1.3em; margin-bottom: 40px; }
+
+        /* Bouton vers la page historique */
         .btn-history {
             display: inline-block;
-            margin-top: 30px;
-            padding: 10px 20px;
-            border: 1px solid #3498db;
-            color: #3498db;
+            background-color: #0056b3;
+            color: white;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
-            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s;
         }
-        .btn-history:hover { background: #3498db; color: white; }
-        footer { margin-top: 100px; font-size: 0.8em; color: #95a5a6; }
+        .btn-history:hover { background-color: #004494; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Micro Créatif</h1>
-        <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
+
+    <header class="hero-blue">
+        <div class="lang-container">
+            <button class="lang-btn" onclick="translatePage()" id="lang-btn">English</button>
+        </div>
+        <h1 id="main-title">Micro Créatif</h1>
+        <p class="tagline" id="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
     </header>
 
-    <main>
-        <p>Studio de développement logiciel et de design 3D.</p>
-        <p><em>Software development and 3D design studio.</em></p>
+    <main class="main-content">
+        <p class="description" id="desc">Studio de développement logiciel et de design 3D.</p>
         
-        <a href="souvenirs.html" class="btn-history">Découvrir notre histoire (1981)</a>
+        <a href="souvenirs.html" class="btn-history" id="btn-hist">Voir nos souvenirs de 1981</a>
     </main>
 
     <footer>
         <p>&copy; 2026 Micro Créatif. Tous droits réservés.</p>
         <p>2322 Avenue d'Orléans, Montréal, QC</p>
     </footer>
+
+    <script>
+        function translatePage() {
+            const btn = document.getElementById('lang-btn');
+            const desc = document.getElementById('desc');
+            const btnHist = document.getElementById('btn-hist');
+
+            if (btn.innerText === 'English') {
+                btn.innerText = 'Français';
+                desc.innerText = 'Software development and 3D design studio.';
+                btnHist.innerText = 'View our 1981 memories';
+            } else {
+                btn.innerText = 'English';
+                desc.innerText = 'Studio de développement logiciel et de design 3D.';
+                btnHist.innerText = 'Voir nos souvenirs de 1981';
+            }
+        }
+    </script>
+
 </body>
 </html>
