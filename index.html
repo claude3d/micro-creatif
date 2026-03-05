@@ -1,342 +1,213 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micro Créatif | Studio 3D</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-height:100vh;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-color:white;
-background:#0b0f19;
-overflow:hidden;
-}
-
-/* Animated gradient background */
-
-body::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:
-radial-gradient(circle at 30% 30%,#3a7bd5,transparent 40%),
-radial-gradient(circle at 70% 70%,#00c6ff,transparent 40%),
-radial-gradient(circle at 50% 80%,#1e90ff,transparent 40%);
-animation:moveLights 18s infinite alternate ease-in-out;
-filter:blur(120px);
-opacity:.5;
-}
-
-@keyframes moveLights{
-
-0%{
-transform:translate(-10%,-10%);
-}
-
-100%{
-transform:translate(10%,10%);
-}
-
-}
-
-/* particles */
-
-canvas{
-position:absolute;
-top:0;
-left:0;
-}
-
-/* language button */
-
-.lang-nav{
-position:absolute;
-top:30px;
-right:30px;
-z-index:10;
-}
-
-.lang-btn{
-background:rgba(255,255,255,0.1);
-color:white;
-border:1px solid rgba(255,255,255,0.3);
-padding:10px 22px;
-border-radius:25px;
-cursor:pointer;
-backdrop-filter:blur(10px);
-transition:all .3s;
-}
-
-.lang-btn:hover{
-background:white;
-color:#1a3a4a;
-}
-
-/* main content */
-
-.main-content{
-
-position:relative;
-z-index:5;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-height:100vh;
-
-text-align:center;
-
-padding:40px;
-
-}
-
-/* title */
-
-h1{
-
-font-size:5rem;
-
-font-weight:700;
-
-letter-spacing:-2px;
-
-margin-bottom:10px;
-
-text-shadow:0 15px 40px rgba(0,0,0,.6);
-
-}
-
-/* tagline */
-
-.tagline{
-
-opacity:.75;
-
-font-size:1.2rem;
-
-margin-bottom:40px;
-
-}
-
-/* description */
-
-.description{
-
-font-size:1.9rem;
-
-font-weight:300;
-
-line-height:1.3;
-
-max-width:800px;
-
-margin-bottom:60px;
-
-}
-
-/* button */
-
-.btn-history{
-
-display:inline-block;
-
-background:linear-gradient(135deg,#4facfe,#00f2fe);
-
-color:white;
-
-padding:18px 45px;
-
-border-radius:40px;
-
-text-decoration:none;
-
-font-weight:600;
-
-letter-spacing:.5px;
-
-transition:all .3s;
-
-box-shadow:0 10px 30px rgba(0,0,0,.4);
-
-}
-
-.btn-history:hover{
-
-transform:translateY(-4px) scale(1.03);
-
-box-shadow:0 20px 45px rgba(0,0,0,.5);
-
-}
-
-/* footer */
-
-footer{
-
-position:absolute;
-
-bottom:35px;
-
-width:100%;
-
-text-align:center;
-
-font-size:1rem;
-
-opacity:.8;
-
-z-index:5;
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Créatif | Studio 3D</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            height:100vh;
+            font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            color:white;
+            background:#0b0f19;
+            overflow:hidden;
+        }
+
+        /* Animated gradient background */
+        body::before {
+            content:"";
+            position:absolute;
+            width:200%;
+            height:200%;
+            background:
+                radial-gradient(circle at 30% 30%,#3a7bd5,transparent 40%),
+                radial-gradient(circle at 70% 70%,#00c6ff,transparent 40%),
+                radial-gradient(circle at 50% 80%,#1e90ff,transparent 40%);
+            animation:moveLights 18s infinite alternate ease-in-out;
+            filter:blur(120px);
+            opacity:.5;
+        }
+
+        @keyframes moveLights {
+            0% { transform:translate(-10%,-10%); }
+            100% { transform:translate(10%,10%); }
+        }
+
+        canvas { position:absolute; top:0; left:0; }
+
+        .lang-nav { position:absolute; top:30px; right:30px; z-index:10; }
+        .lang-btn {
+            background:rgba(255,255,255,0.1);
+            color:white;
+            border:1px solid rgba(255,255,255,0.3);
+            padding:10px 22px;
+            border-radius:25px;
+            cursor:pointer;
+            backdrop-filter:blur(10px);
+            transition:all .3s;
+        }
+        .lang-btn:hover { background:white; color:#1a3a4a; }
+
+        .main-content {
+            position:relative;
+            z-index:5;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            text-align:center;
+            padding:40px;
+        }
+
+        h1 { font-size:5rem; font-weight:700; letter-spacing:-2px; margin-bottom:10px; text-shadow:0 15px 40px rgba(0,0,0,.6); }
+        .tagline { opacity:.75; font-size:1.2rem; margin-bottom:40px; }
+        .description { font-size:1.9rem; font-weight:300; line-height:1.3; max-width:800px; margin-bottom:60px; }
+
+        .btn-history {
+            display:inline-block;
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+            color:white;
+            padding:18px 45px;
+            border-radius:40px;
+            text-decoration:none;
+            font-weight:600;
+            letter-spacing:.5px;
+            transition:all .3s;
+            box-shadow:0 10px 30px rgba(0,0,0,.4);
+        }
+        .btn-history:hover { transform:translateY(-4px) scale(1.03); box-shadow:0 20px 45px rgba(0,0,0,.5); }
+
+        footer { position:absolute; bottom:35px; width:100%; text-align:center; font-size:1rem; opacity:.8; z-index:5; }
+    </style>
 </head>
-
 <body>
 
 <canvas id="particles"></canvas>
 
 <div class="lang-nav">
-<button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
+    <button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
 </div>
 
 <div class="main-content">
-
-<h1 id="title">Micro Créatif</h1>
-
-<p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
-
-<p class="description" id="desc">
-Studio de développement logiciel et de design 3D.
-</p>
-
-<a href="souvenirs.html" class="btn-history" id="btn-text">
-Découvrir notre histoire
-</a>
-
+    <h1 id="title">Micro Créatif</h1>
+    <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
+    <p class="description" id="desc">Studio de développement logiciel et de design 3D.</p>
+    <a href="souvenirs.html" class="btn-history" id="btn-text">Découvrir notre histoire</a>
 </div>
 
 <footer>
-
-<p id="copyright">
-© 2026 Micro Créatif. Tous droits réservés.
-</p>
-
-<p>
-<strong>Montréal</strong> | <strong>Ho Chi Minh</strong>
-</p>
-
+    <p id="copyright">© 2026 Micro Créatif. Tous droits réservés.</p>
+    <p><strong>Montréal</strong> | <strong>Ho Chi Minh</strong></p>
 </footer>
 
 <script>
-
-/* language toggle */
-
-function toggleLang(){
-
-const btn=document.getElementById('lang-btn');
-
-const desc=document.getElementById('desc');
-
-const btnText=document.getElementById('btn-text');
-
-const copy=document.getElementById('copyright');
-
-if(btn.innerText==='English'){
-
-btn.innerText='Français';
-
-desc.innerText='Software development and 3D design studio.';
-
-btnText.innerText='Discover our history';
-
-copy.innerText='© 2026 Micro Créatif. All rights reserved.';
-
-}else{
-
-btn.innerText='English';
-
-desc.innerText='Studio de développement logiciel et de design 3D.';
-
-btnText.innerText='Découvrir notre histoire';
-
-copy.innerText='© 2026 Micro Créatif. Tous droits réservés.';
-
+function toggleLang() {
+    const btn=document.getElementById('lang-btn');
+    const desc=document.getElementById('desc');
+    const btnText=document.getElementById('btn-text');
+    const copy=document.getElementById('copyright');
+    if(btn.innerText==='English') {
+        btn.innerText='Français';
+        desc.innerText='Software development and 3D design studio.';
+        btnText.innerText='Discover our history';
+        copy.innerText='© 2026 Micro Créatif. All rights reserved.';
+    } else {
+        btn.innerText='English';
+        desc.innerText='Studio de développement logiciel et de design 3D.';
+        btnText.innerText='Découvrir notre histoire';
+        copy.innerText='© 2026 Micro Créatif. Tous droits réservés.';
+    }
 }
 
+/* SEASONAL PARTICLES LOGIC */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function getSeason() {
+    const month = new Date().getMonth() + 1; // 1-12
+    if (month >= 3 && month <= 5) return "printemps";
+    if (month >= 6 && month <= 8) return "été";
+    if (month >= 9 && month <= 11) return "automne";
+    return "hiver";
 }
 
-/* particles animation */
+const season = getSeason();
+let particles = [];
 
-const canvas=document.getElementById("particles");
+function createParticle() {
+    const p = {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1,
+        vy: Math.random() * 1 + 0.5,
+        size: Math.random() * 5 + 2,
+        rotation: Math.random() * Math.PI * 2,
+        vRot: (Math.random() - 0.5) * 0.05
+    };
 
-const ctx=canvas.getContext("2d");
+    if (season === "printemps") { p.color = "#ffb7c5"; p.type = "pétale"; }
+    else if (season === "été") { p.color = "#ffcc33"; p.type = "rayon"; p.vy *= 0.2; }
+    else if (season === "automne") { p.color = Math.random() > 0.5 ? "#e67e22" : "#f1c40f"; p.type = "feuille"; }
+    else { p.color = "#ffffff"; p.type = "flocon"; }
+    
+    return p;
+}
 
-canvas.width=window.innerWidth;
+for(let i=0; i<60; i++) particles.push(createParticle());
 
-canvas.height=window.innerHeight;
+function drawElement(p) {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation);
+    ctx.fillStyle = p.color;
 
-let particles=[];
+    if (p.type === "pétale" || p.type === "feuille") {
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.size, p.size * 1.5, 0, 0, Math.PI * 2);
+        ctx.fill();
+    } else if (p.type === "rayon") {
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = p.color;
+        ctx.beginPath();
+        ctx.arc(0, 0, p.size, 0, Math.PI * 2);
+        ctx.fill();
+    } else { // flocon
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 1;
+        for(let i=0; i<6; i++) {
+            ctx.rotate(Math.PI/3);
+            ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0, p.size); ctx.stroke();
+        }
+    }
+    ctx.restore();
+}
 
-for(let i=0;i<80;i++){
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.vRot;
 
-particles.push({
+        if (p.y > canvas.height) p.y = -20;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.x < 0) p.x = canvas.width;
 
-x:Math.random()*canvas.width,
+        drawElement(p);
+    });
+    requestAnimationFrame(animate);
+}
 
-y:Math.random()*canvas.height,
-
-vx:(Math.random()-0.5)*0.5,
-
-vy:(Math.random()-0.5)*0.5,
-
-size:Math.random()*2+1
-
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
-
-}
-
-function animate(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-ctx.fillStyle="rgba(255,255,255,0.6)";
-
-particles.forEach(p=>{
-
-p.x+=p.vx;
-
-p.y+=p.vy;
-
-if(p.x<0||p.x>canvas.width)p.vx*=-1;
-
-if(p.y<0||p.y>canvas.height)p.vy*=-1;
-
-ctx.beginPath();
-
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-
-ctx.fill();
-
-});
-
-requestAnimationFrame(animate);
-
-}
 
 animate();
-
 </script>
 
 </body>
