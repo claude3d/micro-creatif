@@ -133,7 +133,7 @@ function toggleLang() {
     }
 }
 
-/* LOGIQUE DES PARTICULES SAISONNIÈRES */
+/* LOGIQUE DES PARTICULES SAISONNIÈRES RÉACTUALISÉE */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -147,10 +147,11 @@ function getInitialSeason() {
     const now = new Date();
     const month = now.getMonth() + 1;
     const day = now.getDate();
+    // Hiver jusqu'au 20 mars au Québec
     if (month === 12 || month === 1 || month === 2 || (month === 3 && day <= 20)) return 0;
     if (month === 3 || month === 4 || month === 5) return 1;
     if (month === 6 || month === 7 || month === 8) return 2;
-    return 3;
+    return 3; // Automne
 }
 
 currentSeasonIndex = getInitialSeason();
@@ -162,20 +163,22 @@ function createParticle() {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 1,
         vy: Math.random() * 1.5 + 0.5,
-        size: Math.random() * 4 + 2,
+        size: Math.random() * 5 + 3, // Légèrement plus grand pour les formes
         rotation: Math.random() * Math.PI * 2,
         vRot: (Math.random() - 0.5) * 0.05,
         opacity: Math.random() * 0.5 + 0.4,
-        colorType: Math.random() > 0.5 ? 1 : 2
+        colorType: Math.random() // Pour varier les couleurs en automne
     };
 }
 
 for(let i=0; i<80; i++) particles.push(createParticle());
 
-// Fonction appelée par le clic dans le coin
+// Fonction appelée par le clic dans le coin (Easter Egg)
 function nextSeason() {
     currentSeasonIndex = (currentSeasonIndex + 1) % seasons.length;
 }
+
+// DESSIN DES FORMES SPÉCIFIQUES
 
 function drawSnowflake(p) {
     ctx.save();
@@ -193,24 +196,39 @@ function drawSnowflake(p) {
     ctx.stroke(); ctx.restore();
 }
 
-function drawLeaf(p, color) {
+// Dessiner une feuille d'érable mathématiquement (style minimaliste)
+function drawMapleLeaf(p, color) {
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.rotate(p.rotation);
-    ctx.fillStyle = color;
+    ctx.fillStyle = `rgba(${color}, ${p.opacity})`;
     ctx.beginPath();
-    ctx.ellipse(0, 0, p.size, p.size * 1.6, 0.4, 0, Math.PI * 2);
+    // Point de départ (base de la tige)
+    ctx.moveTo(0, p.size * 2);
+    // Tige
+    ctx.lineTo(0, 0);
+    // Dessin simplifié des lobes (7 pointes)
+    const points = [[-0.3, 0.4], [-0.8, 0.2], [-0.6, 0.9], [-1.2, 1.2], [-0.5, 1.6], [-0.2, 2.2], [0, 2.5], [0.2, 2.2], [0.5, 1.6], [1.2, 1.2], [0.6, 0.9], [0.8, 0.2], [0.3, 0.4]];
+    points.forEach(pt => ctx.lineTo(pt[0] * p.size, pt[1] * -p.size));
+    ctx.closePath();
     ctx.fill();
     ctx.restore();
 }
 
-function drawSun(p) {
+// Dessiner une fleur de cerisier (sakura) à 5 pétales pour le printemps
+function drawCherryBlossom(p) {
     ctx.save();
     ctx.translate(p.x, p.y);
-    ctx.fillStyle = "rgba(255, 225, 120, 0.3)";
-    ctx.shadowBlur = 15;
-    ctx.shadowColor = "#ffcc33";
-    ctx.beginPath(); ctx.arc(0, 0, p.size * 1.5, 0, Math.PI * 2); ctx.fill();
+    ctx.rotate(p.rotation);
+    ctx.fillStyle = `rgba(255, 183, 197, ${p.opacity})`; // Rose sakura
+    ctx.beginPath();
+    for (let i = 0; i < 5; i++) {
+        // Dessiner un pétale en forme de cœur
+        ctx.bezierCurveTo(p.size * 0.5, p.size, p.size * 1.5, p.size * 0.5, 0, 0);
+        ctx.bezierCurveTo(-p.size * 1.5, p.size * 0.5, -p.size * 0.5, p.size, 0, 0);
+        ctx.rotate(Math.PI * 2 / 5); // Tourner de 72 degrés pour le pétale suivant
+    }
+    ctx.fill();
     ctx.restore();
 }
 
@@ -228,9 +246,15 @@ function animate() {
         if (p.x < 0) p.x = canvas.width;
 
         if (season === "hiver") drawSnowflake(p);
-        else if (season === "printemps") drawLeaf(p, "#ffb7c5"); // Pétales roses
-        else if (season === "été") drawSun(p); // Points solaires
-        else drawLeaf(p, p.colorType === 1 ? "#e67e22" : "#f39c12"); // Feuilles automne
+        else if (season === "printemps") drawCherryBlossom(p); // Fleurs de cerisier roses
+        else if (season === "été") drawMapleLeaf(p, "34, 139, 34"); // Feuilles d'érable Vert Forêt
+        else { // Automne
+            let color;
+            if (p.colorType < 0.33) color = "200, 30, 30"; // Rouge
+            else if (p.colorType < 0.66) color = "241, 196, 15"; // Jaune
+            else color = "100, 160, 60"; // Vert automnal
+            drawMapleLeaf(p, color);
+        }
     });
     requestAnimationFrame(animate);
 }
