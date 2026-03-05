@@ -5,30 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Souvenirs | Micro Créatif</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; text-align: center; background-color: #f4f7f6; }
-        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        .facture-img { max-width: 100%; height: auto; border: 1px solid #ddd; margin: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
-        .details { font-style: italic; color: #555; max-width: 600px; margin: 0 auto; }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .hero-header {
+            background-color: #0056b3;
+            color: white;
+            padding: 60px 20px;
+            position: relative;
+        }
+        .back-nav {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        h1 { font-size: 3em; margin: 0; }
+        .facture-img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+            margin: 30px 0;
+        }
+        .caption {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 40px;
+        }
+        .value-comparison {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        footer {
+            padding: 40px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 1.1em;
+        }
+        .city-divider { margin: 0 15px; color: #ccc; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">&larr; Retour à l'accueil</a>
-        
+
+    <header class="hero-header">
+        <div class="back-nav">
+            <a href="index.html" class="back-btn">← Accueil</a>
+        </div>
         <h1>Nos Origines</h1>
-        <p class="details">
-            Le 11 juin 1981, l'aventure Micro Créatif a officiellement débuté avec l'achat de cet <strong>Apple II Plus 48K</strong> pour la somme de <strong>2 100,00 $</strong>.
-        </p>
+    </header>
+
+    <div class="container">
+        <div class="caption">
+            L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.
+            <br>
+            <div class="value-comparison">
+                Valeur comparative en 2026 : environ 7 350 $ CAD
+            </div>
+        </div>
 
         <img src="facture.jpg" alt="Facture originale Apple II Plus de 1981" class="facture-img">
-
-        <p><em>Un morceau d'histoire de l'informatique personnelle au Québec.</em></p>
     </div>
 
-    <footer style="margin-top: 30px; font-size: 0.8em; color: #7f8c8d;">
-        &copy; 2026 Micro Créatif
+    <footer>
+        <p>&copy; 2026 Micro Créatif. Tous droits réservés.</p>
+        <p><strong>Montréal</strong> <span class="city-divider">|</span> <strong>Ho Chi Minh</strong></p>
     </footer>
+
 </body>
 </html>
