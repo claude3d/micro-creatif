@@ -3,144 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micro Créatif | Innovation depuis 1981</title>
+    <title>Micro Créatif | Studio 3D & Logiciel</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body, html {
-            height: 100%;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: white;
-            background-color: #0056b3;
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fond blanc pur pour l'aspect studio */
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Arrière-plan artistique avec un léger dégradé pour éviter l'effet "bloc" */
-        .hero-section {
-            height: 100vh;
+        /* Navigation discrète */
+        nav {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #0056b3;
+            color: #0056b3;
+            padding: 8px 20px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: #0056b3;
+            color: white;
+        }
+
+        /* Contenu principal centré et aéré */
+        main {
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
-            padding: 20px;
-            position: relative;
-        }
-
-        /* Bouton English en haut à droite */
-        .lang-nav {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-        }
-        .lang-btn {
-            background: transparent;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.5);
-            padding: 8px 20px;
-            cursor: pointer;
-            border-radius: 20px;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-        }
-        .lang-btn:hover {
-            background: white;
-            color: #0056b3;
+            padding: 0 20px;
+            text-align: center;
         }
 
         h1 {
-            font-size: clamp(3rem, 10vw, 5rem);
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 10px;
+            font-size: 5rem;
+            font-weight: 800;
+            margin: 0;
+            color: #0056b3; /* Le bleu est ici, sur le nom */
+            letter-spacing: -3px;
         }
 
         .tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            opacity: 0.8;
+            font-size: 1.1rem;
+            color: #888;
             margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .main-content {
-            text-align: center;
-            max-width: 600px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
         }
 
         .description {
-            font-size: 1.5rem;
-            margin-bottom: 50px;
-            font-weight: 300;
-            line-height: 1.4;
+            font-size: 1.8rem;
+            font-weight: 200;
+            max-width: 700px;
+            line-height: 1.5;
+            margin-bottom: 60px;
         }
 
-        /* Bouton Souvenirs stylisé */
-        .btn-souvenir {
-            display: inline-block;
-            background-color: white;
+        /* Bouton d'action minimaliste */
+        .btn-history {
             color: #0056b3;
-            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .btn-souvenir:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            font-weight: 600;
+            font-size: 1rem;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+            transition: opacity 0.3s;
         }
 
-        footer {
-            position: absolute;
-            bottom: 30px;
-            width: 100%;
-            text-align: center;
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .btn-history:hover {
+            opacity: 0.6;
         }
-        .divider { margin: 0 10px; opacity: 0.5; }
+
+        /* Pied de page élégant */
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #aaa;
+        }
+
+        .cities {
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <div class="lang-nav">
-            <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
-        </div>
+    <nav>
+        <button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
+    </nav>
 
-        <div class="main-content">
-            <h1 id="title">Micro Créatif</h1>
-            <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
-            
-            <p class="description" id="desc">Studio de développement logiciel et de design 3D.</p>
-            
-            <a href="souvenirs.html" class="btn-souvenir" id="btn-text">Découvrir notre histoire</a>
-        </div>
+    <main>
+        <h1 id="title">Micro Créatif</h1>
+        <p class="tagline">Innovation depuis 1981</p>
+        
+        <p class="description" id="desc">
+            Studio de développement logiciel et de design 3D.
+        </p>
+        
+        <a href="souvenirs.html" class="btn-history" id="btn-text">DÉCOUVRIR NOS SOUVENIRS DE 1981</a>
+    </main>
 
-        <footer>
-            <p id="copyright">&copy; 2026 Micro Créatif. Tous droits réservés.</p>
-            <p><strong>Montréal</strong> <span class="divider">|</span> <strong>Ho Chi Minh</strong></p>
-        </footer>
-    </div>
+    <footer>
+        <p id="copyright">&copy; 2026 MICRO CRÉATIF. TOUS DROITS RÉSERVÉS.</p>
+        <div class="cities">MONTRÉAL &nbsp;|&nbsp; HO CHI MINH</div>
+    </footer>
 
     <script>
-        function toggleLanguage() {
+        function toggleLang() {
             const btn = document.getElementById('lang-btn');
             const desc = document.getElementById('desc');
             const btnText = document.getElementById('btn-text');
             const copy = document.getElementById('copyright');
 
-            if (btn.innerText === 'English') {
-                btn.innerText = 'Français';
+            if (btn.innerText === 'ENGLISH') {
+                btn.innerText = 'FRANÇAIS';
                 desc.innerText = 'Software development and 3D design studio.';
-                btnText.innerText = 'Discover our history';
-                copy.innerText = '© 2026 Micro Créatif. All rights reserved.';
+                btnText.innerText = 'DISCOVER OUR 1981 MEMORIES';
+                copy.innerText = '© 2026 MICRO CRÉATIF. ALL RIGHTS RESERVED.';
             } else {
-                btn.innerText = 'English';
+                btn.innerText = 'ENGLISH';
                 desc.innerText = 'Studio de développement logiciel et de design 3D.';
-                btnText.innerText = 'Découvrir notre histoire';
-                copy.innerText = '© 2026 Micro Créatif. Tous droits réservés.';
+                btnText.innerText = 'DÉCOUVRIR NOS SOUVENIRS DE 1981';
+                copy.innerText = '© 2026 MICRO CRÉATIF. TOUS DROITS RÉSERVÉS.';
             }
         }
     </script>
