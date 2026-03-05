@@ -3,118 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micro Créatif | Accueil</title>
+    <title>Micro Créatif | Innovation depuis 1981</title>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        /* Le grand bandeau bleu d'hier */
-        .hero-header {
-            background-color: #0056b3;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body, html {
+            height: 100%;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: white;
-            padding: 100px 20px;
-            text-align: center;
+            background-color: #0056b3;
+        }
+
+        /* Arrière-plan artistique avec un léger dégradé pour éviter l'effet "bloc" */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+            padding: 20px;
             position: relative;
         }
-        /* Bouton de langue dans le coin supérieur droit */
+
+        /* Bouton English en haut à droite */
         .lang-nav {
             position: absolute;
-            top: 25px;
-            right: 25px;
+            top: 30px;
+            right: 30px;
         }
         .lang-btn {
-            background-color: rgba(255, 255, 255, 0.2);
+            background: transparent;
             color: white;
-            border: 1px solid white;
-            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 8px 20px;
             cursor: pointer;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: all 0.3s;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
         }
         .lang-btn:hover {
-            background-color: white;
+            background: white;
             color: #0056b3;
         }
-        h1 { margin: 0; font-size: 4em; letter-spacing: -1px; }
-        .tagline { font-style: italic; font-size: 1.3em; margin-top: 10px; opacity: 0.8; }
-        
-        .container {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .main-text { font-size: 1.5em; margin-bottom: 50px; font-weight: 300; }
 
-        /* Bouton élégant pour la page souvenirs */
+        h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .main-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* Bouton Souvenirs stylisé */
         .btn-souvenir {
             display: inline-block;
-            background-color: #0056b3;
-            color: white;
-            padding: 18px 35px;
+            background-color: white;
+            color: #0056b3;
+            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 1.2em;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s, background 0.3s;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .btn-souvenir:hover {
-            background-color: #004494;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         footer {
-            margin-top: 60px;
-            padding: 40px;
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
             text-align: center;
-            border-top: 1px solid #eee;
-            color: #666;
-            font-size: 1.1em;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
-        .city-divider { margin: 0 15px; color: #ccc; }
+        .divider { margin: 0 10px; opacity: 0.5; }
     </style>
 </head>
 <body>
 
-    <header class="hero-header">
+    <div class="hero-section">
         <div class="lang-nav">
             <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
         </div>
-        <h1 id="main-title">Micro Créatif</h1>
-        <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
-    </header>
 
-    <div class="container">
-        <p class="main-text" id="description">Studio de développement logiciel et de design 3D.</p>
-        
-        <a href="souvenirs.html" class="btn-souvenir" id="btn-text">Voir nos souvenirs de 1981</a>
+        <div class="main-content">
+            <h1 id="title">Micro Créatif</h1>
+            <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
+            
+            <p class="description" id="desc">Studio de développement logiciel et de design 3D.</p>
+            
+            <a href="souvenirs.html" class="btn-souvenir" id="btn-text">Découvrir notre histoire</a>
+        </div>
+
+        <footer>
+            <p id="copyright">&copy; 2026 Micro Créatif. Tous droits réservés.</p>
+            <p><strong>Montréal</strong> <span class="divider">|</span> <strong>Ho Chi Minh</strong></p>
+        </footer>
     </div>
-
-    <footer>
-        <p id="copyright">&copy; 2026 Micro Créatif. Tous droits réservés.</p>
-        <p><strong>Montréal</strong> <span class="city-divider">|</span> <strong>Ho Chi Minh</strong></p>
-    </footer>
 
     <script>
         function toggleLanguage() {
             const btn = document.getElementById('lang-btn');
-            const desc = document.getElementById('description');
+            const desc = document.getElementById('desc');
             const btnText = document.getElementById('btn-text');
             const copy = document.getElementById('copyright');
 
             if (btn.innerText === 'English') {
                 btn.innerText = 'Français';
                 desc.innerText = 'Software development and 3D design studio.';
-                btnText.innerText = 'View our 1981 memories';
+                btnText.innerText = 'Discover our history';
                 copy.innerText = '© 2026 Micro Créatif. All rights reserved.';
             } else {
                 btn.innerText = 'English';
                 desc.innerText = 'Studio de développement logiciel et de design 3D.';
-                btnText.innerText = 'Voir nos souvenirs de 1981';
+                btnText.innerText = 'Découvrir notre histoire';
                 copy.innerText = '© 2026 Micro Créatif. Tous droits réservés.';
             }
         }
