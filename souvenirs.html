@@ -5,120 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Souvenirs | Micro Créatif</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f8f9fa;
+            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            background: #0b0f19;
+            overflow-x: hidden;
+        }
+
+        /* Même fond animé que l'index */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 200%; height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, #3a7bd5, transparent 40%),
+                radial-gradient(circle at 70% 70%, #00c6ff, transparent 40%),
+                radial-gradient(circle at 50% 80%, #1e90ff, transparent 40%);
+            animation: moveLights 18s infinite alternate ease-in-out;
+            filter: blur(120px);
+            opacity: .5;
+            z-index: -1;
+        }
+
+        @keyframes moveLights {
+            0% { transform: translate(-10%, -10%); }
+            100% { transform: translate(10%, 10%); }
+        }
+
+        canvas { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; }
+
+        /* Navigation haut */
+        .nav-container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        .btn-ui {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all .3s;
+        }
+
+        .btn-ui:hover { background: white; color: #1a3a4a; }
+
+        /* Contenu Souvenirs */
+        .main-content {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 40px 100px;
             text-align: center;
         }
-        .hero-header {
-            background-color: #0056b3;
-            color: white;
-            padding: 80px 20px;
-            position: relative;
+
+        h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,.5); }
+
+        .caption { font-size: 1.4rem; max-width: 800px; margin-bottom: 20px; font-weight: 300; }
+
+        .inflation-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 40px;
+            font-weight: 600;
+            color: #4facfe;
         }
-        /* Navigation retour à gauche */
-        .back-nav {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-        }
-        /* Bouton de langue à droite */
-        .lang-nav {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-        }
-        .btn-ui {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid white;
-            padding: 8px 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .btn-ui:hover {
-            background-color: white;
-            color: #0056b3;
-        }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        h1 { font-size: 3.5em; margin: 0; }
+
         .facture-img {
             max-width: 100%;
             height: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: 1px solid #ddd;
-            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.2);
         }
-        .caption {
-            font-size: 1.3em;
-            line-height: 1.6;
-            color: #444;
-            margin-bottom: 20px;
-        }
-        .value-comparison {
-            background-color: #e9ecef;
-            padding: 15px 25px;
-            border-radius: 8px;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #0056b3;
-        }
+
         footer {
-            margin-top: 60px;
             padding: 40px;
-            border-top: 1px solid #eee;
-            color: #666;
-            font-size: 1.1em;
+            text-align: center;
+            opacity: 0.8;
+            font-size: 1rem;
         }
-        .city-divider { margin: 0 15px; color: #ccc; }
+
     </style>
 </head>
 <body>
 
-    <header class="hero-header">
-        <div class="back-nav">
-            <a href="index.html" class="btn-ui" id="back-btn">← Accueil</a>
-        </div>
-        <div class="lang-nav">
-            <button class="btn-ui" onclick="toggleLanguage()" id="lang-btn">English</button>
-        </div>
-        <h1 id="page-title">Nos Origines</h1>
-    </header>
+    <canvas id="particles"></canvas>
 
-    <div class="container">
-        <p class="caption" id="history-text">
+    <div class="nav-container">
+        <a href="index.html" class="btn-ui" id="back-btn">← Accueil</a>
+        <button class="btn-ui" onclick="toggleLang()" id="lang-btn">English</button>
+    </div>
+
+    <div class="main-content">
+        <h1 id="title">Nos Origines</h1>
+        
+        <p class="caption" id="hist-text">
             L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.
         </p>
-        
-        <div class="value-comparison" id="inflation-text">
+
+        <div class="inflation-box" id="inflation-text">
             Valeur comparative en 2026 : environ 7 350 $ CAD
         </div>
 
-        <img src="facture.jpg" alt="Facture originale Apple II Plus de 1981" class="facture-img">
+        <img src="facture.jpg" alt="Facture Apple II 1981" class="facture-img">
     </div>
 
     <footer>
-        <p id="copyright">&copy; 2026 Micro Créatif. Tous droits réservés.</p>
-        <p><strong>Montréal</strong> <span class="city-divider">|</span> <strong>Ho Chi Minh</strong></p>
+        <p id="copyright">© 2026 Micro Créatif. Tous droits réservés.</p>
+        <p><strong>Montréal</strong> | <strong>Ho Chi Minh</strong></p>
     </footer>
 
     <script>
-        function toggleLanguage() {
+        function toggleLang() {
             const btn = document.getElementById('lang-btn');
             const backBtn = document.getElementById('back-btn');
-            const title = document.getElementById('page-title');
-            const history = document.getElementById('history-text');
+            const title = document.getElementById('title');
+            const hist = document.getElementById('hist-text');
             const inflation = document.getElementById('inflation-text');
             const copy = document.getElementById('copyright');
 
@@ -126,19 +144,46 @@
                 btn.innerText = 'Français';
                 backBtn.innerText = '← Home';
                 title.innerText = 'Our Origins';
-                history.innerHTML = 'The purchase of this <strong>Apple II Plus 48K</strong> on June 11, 1981, for <strong>$2,100.00</strong> marks the beginning of the Micro Créatif adventure.';
+                hist.innerHTML = 'The purchase of this <strong>Apple II Plus 48K</strong> on June 11, 1981, for <strong>$2,100.00</strong> marks the beginning of the Micro Créatif adventure.';
                 inflation.innerText = 'Comparative value in 2026: approx. $7,350 CAD';
                 copy.innerText = '© 2026 Micro Créatif. All rights reserved.';
             } else {
                 btn.innerText = 'English';
                 backBtn.innerText = '← Accueil';
                 title.innerText = 'Nos Origines';
-                history.innerHTML = "L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.";
+                hist.innerHTML = "L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.";
                 inflation.innerText = 'Valeur comparative en 2026 : environ 7 350 $ CAD';
                 copy.innerText = '© 2026 Micro Créatif. Tous droits réservés.';
             }
         }
-    </script>
 
+        /* Animation Particules (Identique à l'index) */
+        const canvas = document.getElementById("particles");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+        for(let i=0; i<80; i++){
+            particles.push({
+                x: Math.random()*canvas.width,
+                y: Math.random()*canvas.height,
+                vx: (Math.random()-0.5)*0.5,
+                vy: (Math.random()-0.5)*0.5,
+                size: Math.random()*2+1
+            });
+        }
+        function animate(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle = "rgba(255,255,255,0.6)";
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                if(p.x<0 || p.x>canvas.width) p.vx*=-1;
+                if(p.y<0 || p.y>canvas.height) p.vy*=-1;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>
