@@ -3,117 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Micro Créatif</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-    background:url("galaxy.jpg") no-repeat center center/cover;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+overflow-x:hidden;
+background:#020617;
 }
+
+/* STARFIELD */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(2px 2px at 20px 30px, white, transparent),
+radial-gradient(2px 2px at 200px 150px, white, transparent),
+radial-gradient(1px 1px at 400px 80px, white, transparent),
+radial-gradient(2px 2px at 600px 200px, white, transparent),
+radial-gradient(1px 1px at 800px 120px, white, transparent),
+radial-gradient(2px 2px at 1000px 300px, white, transparent);
+background-repeat:repeat;
+background-size:1200px 600px;
+animation:starsMove 120s linear infinite;
+z-index:-2;
+}
+
+@keyframes starsMove{
+from{transform:translateY(0);}
+to{transform:translateY(-600px);}
+}
+
+/* GALAXY CORE */
+
+.galaxy{
+position:absolute;
+top:120px;
+left:50%;
+width:600px;
+height:600px;
+transform:translateX(-50%);
+background:
+radial-gradient(circle,#ffd27a 0%,#ff8c42 30%,transparent 60%);
+border-radius:50%;
+filter:blur(60px);
+animation:rotateGalaxy 120s linear infinite;
+z-index:-1;
+}
+
+@keyframes rotateGalaxy{
+from{transform:translateX(-50%) rotate(0deg);}
+to{transform:translateX(-50%) rotate(360deg);}
+}
+
+/* GLASS NAVBAR */
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 60px;
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+
+background:rgba(20,25,50,0.35);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.15);
 }
+
+/* NAV LINKS */
 
 nav a{
-    margin:0 15px;
-    color:white;
-    text-decoration:none;
-    font-size:18px;
+margin:0 15px;
+color:white;
+text-decoration:none;
+font-size:18px;
+opacity:0.9;
 }
+
+nav a:hover{
+color:#7ec8ff;
+}
+
+/* LANGUAGE BUTTON */
 
 .lang-btn{
-    border:1px solid white;
-    padding:8px 16px;
-    border-radius:20px;
-    cursor:pointer;
+border:1px solid rgba(255,255,255,0.4);
+padding:8px 18px;
+border-radius:25px;
 }
 
+/* HERO */
+
 .hero{
-    text-align:center;
-    margin-top:120px;
+margin-top:120px;
 }
 
 .hero h1{
-    font-size:60px;
-    margin-bottom:10px;
-}
-
-.hero h2{
-    font-weight:normal;
+font-size:64px;
+margin-bottom:10px;
 }
 
 .hero p{
-    font-size:22px;
+font-size:20px;
+opacity:0.9;
 }
 
 .buttons{
-    margin-top:30px;
+margin-top:40px;
 }
 
 .buttons a{
-    padding:12px 28px;
-    margin:10px;
-    border-radius:30px;
-    background:linear-gradient(45deg,#4ea1ff,#4ecbff);
-    color:white;
-    text-decoration:none;
+display:inline-block;
+margin:10px;
+padding:16px 30px;
+border-radius:30px;
+background:linear-gradient(45deg,#4ea1ff,#4ecbff);
+color:white;
+text-decoration:none;
+font-size:18px;
+box-shadow:0 0 20px rgba(78,170,255,0.6);
 }
 
+/* APPS */
+
 .apps{
-    margin-top:150px;
-    text-align:center;
+margin-top:140px;
 }
 
 .apps h2{
-    font-size:36px;
+font-size:36px;
 }
 
 .app-grid{
-    display:flex;
-    justify-content:center;
-    gap:120px;
-    margin-top:50px;
+display:flex;
+justify-content:center;
+gap:60px;
+margin-top:40px;
 }
 
 .app{
-    text-align:center;
+width:220px;
 }
 
-.app img{
-    width:120px;
+.icon{
+width:120px;
+height:120px;
+margin:auto;
+border-radius:30px;
+background:linear-gradient(45deg,#4ea1ff,#4ecbff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:50px;
 }
+
+.store{
+margin-top:12px;
+display:inline-block;
+background:black;
+padding:10px 18px;
+border-radius:10px;
+font-size:14px;
+}
+
+/* FOOTER */
 
 footer{
-    text-align:center;
-    margin-top:120px;
-    padding-bottom:40px;
-    font-size:14px;
+margin-top:120px;
+padding-bottom:40px;
+font-size:14px;
+opacity:0.8;
 }
 
 </style>
 </head>
 
-
 <body>
+
+<div class="stars"></div>
+<div class="galaxy"></div>
 
 <header>
 
 <nav>
-<a href="index.html" id="navHome">Home</a>
-<a href="apps.html" id="navApps">Apps</a>
-<a href="about.html" id="navAbout">About</a>
-<a href="contact.html" id="navContact">Contact</a>
+<a href="index.html">Home</a>
+<a href="apps.html">Apps</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 </nav>
 
-<div class="lang-btn" onclick="toggleLang()">Français</div>
+<div class="lang-btn">Français</div>
 
 </header>
 
@@ -122,13 +210,13 @@ footer{
 
 <h1>Micro Créatif</h1>
 
-<h2 id="innovation">Innovation since 1981</h2>
+<p>L'innovation depuis 1981 | Innovation since 1981</p>
 
-<p id="studio">Software development and 3D design studio.</p>
+<p>Software development and 3D design studio</p>
 
 <div class="buttons">
-<a href="about.html" id="historyBtn">Discover our history</a>
-<a href="apps.html" id="appsBtn">View our apps</a>
+<a href="about.html">Discover our history</a>
+<a href="apps.html">View our apps</a>
 </div>
 
 </section>
@@ -136,23 +224,23 @@ footer{
 
 <section class="apps">
 
-<h2 id="ourApps">Our Apps</h2>
-<p id="explore">Explore our innovative applications.</p>
+<h2>Our Apps</h2>
+<p>Explore our innovative applications</p>
 
 <div class="app-grid">
 
 <div class="app">
-<img src="cube.png">
+<div class="icon">⬛</div>
 <h3>3D Cube</h3>
-<p id="cubeText">Create and customize magical.</p>
-<img src="appstore.png" width="150">
+<p>Create and customize magical cubes</p>
+<div class="store">Download on App Store</div>
 </div>
 
 <div class="app">
-<img src="rocket.png">
+<div class="icon">🚀</div>
 <h3>Rocket Quest</h3>
-<p id="rocketText">Embark on an epic space adventure.</p>
-<img src="appstore.png" width="150">
+<p>Embark on an epic space adventure</p>
+<div class="store">Download on App Store</div>
 </div>
 
 </div>
@@ -166,48 +254,6 @@ footer{
 <p>Montréal | Ho Chi Minh</p>
 
 </footer>
-
-
-<script>
-
-let french=false;
-
-function toggleLang(){
-
-french=!french;
-
-if(french){
-
-document.documentElement.lang="fr"
-
-document.getElementById("navHome").innerText="Accueil"
-document.getElementById("navApps").innerText="Apps"
-document.getElementById("navAbout").innerText="À propos"
-document.getElementById("navContact").innerText="Contact"
-
-document.getElementById("innovation").innerText="L’innovation depuis 1981"
-document.getElementById("studio").innerText="Studio de développement logiciel et de design 3D."
-
-document.getElementById("historyBtn").innerText="Découvrir notre histoire"
-document.getElementById("appsBtn").innerText="Voir nos apps"
-
-document.getElementById("ourApps").innerText="Nos Apps"
-document.getElementById("explore").innerText="Découvrez nos applications innovantes."
-
-document.getElementById("cubeText").innerText="Créez et personnalisez la magie."
-document.getElementById("rocketText").innerText="Partez pour une aventure spatiale épique."
-
-}
-
-else{
-
-location.reload()
-
-}
-
-}
-
-</script>
 
 </body>
 </html>
