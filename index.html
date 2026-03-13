@@ -1,3 +1,8 @@
+<!-- Micro Créatif Website -->
+<!-- Page: index.html -->
+<!-- Version: 1.2 -->
+<!-- Date: 2026-03-13 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +19,13 @@ color:white;
 text-align:center;
 }
 
-/* HERO WITH GALAXY IMAGE */
+/* HERO SECTION */
 
 .hero{
 height:100vh;
-background-image:url("images/galaxy-background.png");
+background:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("images/galaxy-background.png");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -34,8 +41,8 @@ position:absolute;
 top:0;
 width:100%;
 display:flex;
-justify-content:space-between;
-padding:20px 60px;
+justify-content:center;
+padding:20px;
 box-sizing:border-box;
 }
 
@@ -50,12 +57,6 @@ nav a:hover{
 opacity:0.7;
 }
 
-.lang{
-border:1px solid white;
-padding:6px 14px;
-border-radius:20px;
-}
-
 /* TITLE */
 
 .hero h1{
@@ -64,7 +65,8 @@ margin-bottom:10px;
 }
 
 .hero p{
-font-size:20px;
+font-size:22px;
+margin-top:0;
 }
 
 /* BUTTONS */
@@ -81,6 +83,11 @@ background:#2a7fff;
 border-radius:25px;
 text-decoration:none;
 color:white;
+font-size:16px;
+}
+
+.buttons a:hover{
+background:#1b5fcc;
 }
 
 /* APPS SECTION */
@@ -106,12 +113,9 @@ width:120px;
 border-radius:25px;
 }
 
-.store{
-margin-top:10px;
-}
-
 .store img{
 width:150px;
+margin-top:10px;
 }
 
 /* FOOTER */
@@ -128,24 +132,18 @@ font-size:14px;
 <body>
 
 <header>
-
 <nav>
 <a href="index.html">Home</a>
 <a href="apps.html">Apps</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 </nav>
-
-<div class="lang">FR</div>
-
 </header>
-
 
 <section class="hero">
 
 <h1>Micro Créatif</h1>
-
-<p>Innovation since 1981</p>
+<p>Since 1981</p>
 
 <div class="buttons">
 <a href="about.html">Discover our history</a>
@@ -153,7 +151,6 @@ font-size:14px;
 </div>
 
 </section>
-
 
 <section class="apps">
 
@@ -169,7 +166,7 @@ font-size:14px;
 </div>
 
 <div class="app">
-<img src="images/app2.png">
+<img src="images/app1.png">
 <div class="store">
 <img src="images/appstore-badge.png">
 </div>
@@ -179,12 +176,9 @@ font-size:14px;
 
 </section>
 
-
 <footer>
-
 <p>© Micro Créatif</p>
 <p>Montréal | Ho Chi Minh</p>
-
 </footer>
 
 </body>
