@@ -1,248 +1,213 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micro Créatif | Studio 3D</title>
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            height:100vh;
-            font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-            color:white;
-            background:#0b0f19;
-            overflow:hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Fond animé dégradé */
-        body::before {
-            content:"";
-            position:absolute;
-            width:200%;
-            height:200%;
-            background:
-                radial-gradient(circle at 30% 30%,#3a7bd5,transparent 40%),
-                radial-gradient(circle at 70% 70%,#00c6ff,transparent 40%),
-                radial-gradient(circle at 50% 80%,#1e90ff,transparent 40%);
-            animation:moveLights 18s infinite alternate ease-in-out;
-            filter:blur(120px);
-            opacity:.5;
-        }
+<title>Micro Créatif</title>
 
-        @keyframes moveLights {
-            0% { transform:translate(-10%,-10%); }
-            100% { transform:translate(10%,10%); }
-        }
+<style>
 
-        canvas { position:absolute; top:0; left:0; pointer-events: none; }
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    background:url("galaxy.jpg") no-repeat center center/cover;
+}
 
-        /* Zone Easter Egg Invisible (100x100px) */
-        #easter-egg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100px;
-            height: 100px;
-            cursor: pointer;
-            z-index: 100;
-        }
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+}
 
-        .lang-nav { position:absolute; top:30px; right:30px; z-index:10; }
-        .lang-btn {
-            background:rgba(255,255,255,0.1);
-            color:white;
-            border:1px solid rgba(255,255,255,0.3);
-            padding:10px 22px;
-            border-radius:25px;
-            cursor:pointer;
-            backdrop-filter:blur(10px);
-            transition:all .3s;
-        }
-        .lang-btn:hover { background:white; color:#1a3a4a; }
+nav a{
+    margin:0 15px;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
 
-        .main-content {
-            position:relative;
-            z-index:5;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            text-align:center;
-            padding:40px;
-        }
+.lang-btn{
+    border:1px solid white;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+}
 
-        h1 { font-size:5rem; font-weight:700; letter-spacing:-2px; margin-bottom:10px; text-shadow:0 15px 40px rgba(0,0,0,.6); }
-        .tagline { opacity:.75; font-size:1.2rem; margin-bottom:40px; }
-        .description { font-size:1.9rem; font-weight:300; line-height:1.3; max-width:800px; margin-bottom:60px; }
+.hero{
+    text-align:center;
+    margin-top:120px;
+}
 
-        .btn-history {
-            display:inline-block;
-            background:linear-gradient(135deg,#4facfe,#00f2fe);
-            color:white;
-            padding:18px 45px;
-            border-radius:40px;
-            text-decoration:none;
-            font-weight:600;
-            letter-spacing:.5px;
-            transition:all .3s;
-            box-shadow:0 10px 30px rgba(0,0,0,.4);
-        }
-        .btn-history:hover { transform:translateY(-4px) scale(1.03); box-shadow:0 20px 45px rgba(0,0,0,.5); }
+.hero h1{
+    font-size:60px;
+    margin-bottom:10px;
+}
 
-        footer { position:absolute; bottom:35px; width:100%; text-align:center; font-size:1rem; opacity:.8; z-index:5; }
-    </style>
+.hero h2{
+    font-weight:normal;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.buttons a{
+    padding:12px 28px;
+    margin:10px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#4ea1ff,#4ecbff);
+    color:white;
+    text-decoration:none;
+}
+
+.apps{
+    margin-top:150px;
+    text-align:center;
+}
+
+.apps h2{
+    font-size:36px;
+}
+
+.app-grid{
+    display:flex;
+    justify-content:center;
+    gap:120px;
+    margin-top:50px;
+}
+
+.app{
+    text-align:center;
+}
+
+.app img{
+    width:120px;
+}
+
+footer{
+    text-align:center;
+    margin-top:120px;
+    padding-bottom:40px;
+    font-size:14px;
+}
+
+</style>
 </head>
+
+
 <body>
 
-<canvas id="particles"></canvas>
-<div id="easter-egg" onclick="nextSeason()"></div>
+<header>
 
-<div class="lang-nav">
-    <button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
+<nav>
+<a href="index.html" id="navHome">Home</a>
+<a href="apps.html" id="navApps">Apps</a>
+<a href="about.html" id="navAbout">About</a>
+<a href="contact.html" id="navContact">Contact</a>
+</nav>
+
+<div class="lang-btn" onclick="toggleLang()">Français</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>Micro Créatif</h1>
+
+<h2 id="innovation">Innovation since 1981</h2>
+
+<p id="studio">Software development and 3D design studio.</p>
+
+<div class="buttons">
+<a href="about.html" id="historyBtn">Discover our history</a>
+<a href="apps.html" id="appsBtn">View our apps</a>
 </div>
 
-<div class="main-content">
-    <h1 id="title">Micro Créatif</h1>
-    <p class="tagline">L'innovation depuis 1981 | Innovation since 1981</p>
-    <p class="description" id="desc">Studio de développement logiciel et de design 3D.</p>
-    <a href="souvenirs.html" class="btn-history" id="btn-text">Découvrir notre histoire</a>
+</section>
+
+
+<section class="apps">
+
+<h2 id="ourApps">Our Apps</h2>
+<p id="explore">Explore our innovative applications.</p>
+
+<div class="app-grid">
+
+<div class="app">
+<img src="cube.png">
+<h3>3D Cube</h3>
+<p id="cubeText">Create and customize magical.</p>
+<img src="appstore.png" width="150">
 </div>
+
+<div class="app">
+<img src="rocket.png">
+<h3>Rocket Quest</h3>
+<p id="rocketText">Embark on an epic space adventure.</p>
+<img src="appstore.png" width="150">
+</div>
+
+</div>
+
+</section>
+
 
 <footer>
-    <p id="copyright">© 2026 Micro Créatif. Tous droits réservés.</p>
-    <p><strong>Montréal</strong> | <strong>Ho Chi Minh</strong></p>
+
+<p>© 2026 Micro Créatif. All rights reserved.</p>
+<p>Montréal | Ho Chi Minh</p>
+
 </footer>
 
+
 <script>
-/* GESTION DE LA LANGUE ET MÉMOIRE */
-function updateUI(lang) {
-    const btn = document.getElementById('lang-btn');
-    const desc = document.getElementById('desc');
-    const btnText = document.getElementById('btn-text');
-    const copy = document.getElementById('copyright');
 
-    if (lang === 'en') {
-        btn.innerText = 'Français';
-        desc.innerText = 'Software development and 3D design studio.';
-        btnText.innerText = 'Discover our history';
-        copy.innerText = '© 2026 Micro Créatif. All rights reserved.';
-    } else {
-        btn.innerText = 'English';
-        desc.innerText = 'Studio de développement logiciel et de design 3D.';
-        btnText.innerText = 'Découvrir notre histoire';
-        copy.innerText = '© 2026 Micro Créatif. Tous droits réservés.';
-    }
+let french=false;
+
+function toggleLang(){
+
+french=!french;
+
+if(french){
+
+document.documentElement.lang="fr"
+
+document.getElementById("navHome").innerText="Accueil"
+document.getElementById("navApps").innerText="Apps"
+document.getElementById("navAbout").innerText="À propos"
+document.getElementById("navContact").innerText="Contact"
+
+document.getElementById("innovation").innerText="L’innovation depuis 1981"
+document.getElementById("studio").innerText="Studio de développement logiciel et de design 3D."
+
+document.getElementById("historyBtn").innerText="Découvrir notre histoire"
+document.getElementById("appsBtn").innerText="Voir nos apps"
+
+document.getElementById("ourApps").innerText="Nos Apps"
+document.getElementById("explore").innerText="Découvrez nos applications innovantes."
+
+document.getElementById("cubeText").innerText="Créez et personnalisez la magie."
+document.getElementById("rocketText").innerText="Partez pour une aventure spatiale épique."
+
 }
 
-function toggleLang() {
-    const currentLang = localStorage.getItem('selectedLang') === 'en' ? 'fr' : 'en';
-    localStorage.setItem('selectedLang', currentLang);
-    updateUI(currentLang);
+else{
+
+location.reload()
+
 }
 
-// Au chargement, vérifier la mémoire
-window.onload = () => {
-    const savedLang = localStorage.getItem('selectedLang') || 'fr';
-    updateUI(savedLang);
-};
-
-/* SYSTÈME DE PARTICULES SAISONNIÈRES */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const seasons = ["hiver", "printemps", "été", "automne"];
-let currentSeasonIndex = 0;
-
-function getInitialSeason() {
-    const now = new Date();
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
-    if (month === 12 || month === 1 || month === 2 || (month === 3 && day <= 20)) return 0; // Hiver
-    if (month === 3 || month === 4 || month === 5) return 1; // Printemps
-    if (month === 6 || month === 7 || month === 8) return 2; // Été
-    return 3; // Automne
 }
 
-currentSeasonIndex = getInitialSeason();
-let particles = [];
-
-function createParticle() {
-    return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 1,
-        vy: Math.random() * 1.2 + 0.5,
-        size: Math.random() * 4 + 3,
-        rotation: Math.random() * Math.PI * 2,
-        vRot: (Math.random() - 0.5) * 0.04,
-        opacity: Math.random() * 0.4 + 0.4,
-        colorVar: Math.random()
-    };
-}
-
-for(let i=0; i<75; i++) particles.push(createParticle());
-
-function nextSeason() { currentSeasonIndex = (currentSeasonIndex + 1) % seasons.length; }
-
-function drawSnowflake(p) {
-    ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
-    ctx.strokeStyle = `rgba(255, 255, 255, ${p.opacity})`;
-    ctx.lineWidth = 1.2; ctx.beginPath();
-    for(let i=0; i<6; i++){
-        ctx.moveTo(0,0); ctx.lineTo(0, p.size*2);
-        ctx.moveTo(0, p.size); ctx.lineTo(p.size*0.5, p.size*1.3);
-        ctx.moveTo(0, p.size); ctx.lineTo(-p.size*0.5, p.size*1.3);
-        ctx.rotate(Math.PI/3);
-    }
-    ctx.stroke(); ctx.restore();
-}
-
-function drawMapleLeaf(p, color) {
-    ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
-    ctx.fillStyle = `rgba(${color}, ${p.opacity})`;
-    ctx.beginPath();
-    ctx.moveTo(0, p.size*2); ctx.lineTo(0, 0);
-    const pts = [[-0.3,0.4],[-0.8,0.2],[-0.6,0.9],[-1.2,1.2],[-0.5,1.6],[-0.2,2.2],[0,2.5],[0.2,2.2],[0.5,1.6],[1.2,1.2],[0.6,0.9],[0.8,0.2],[0.3,0.4]];
-    pts.forEach(pt => ctx.lineTo(pt[0]*p.size, pt[1]*-p.size));
-    ctx.fill(); ctx.restore();
-}
-
-function drawSakura(p) {
-    ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
-    ctx.fillStyle = `rgba(255, 183, 197, ${p.opacity})`;
-    for(let i=0; i<5; i++){
-        ctx.beginPath();
-        ctx.bezierCurveTo(p.size*0.5, p.size, p.size*1.5, p.size*0.5, 0, 0);
-        ctx.bezierCurveTo(-p.size*1.5, p.size*0.5, -p.size*0.5, p.size, 0, 0);
-        ctx.fill(); ctx.rotate(Math.PI*2/5);
-    }
-    ctx.restore();
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const s = seasons[currentSeasonIndex];
-    particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy; p.rotation += p.vRot;
-        if(p.y > canvas.height) p.y = -20;
-        if(p.x > canvas.width) p.x = 0; if(p.x < 0) p.x = canvas.width;
-
-        if(s === "hiver") drawSnowflake(p);
-        else if(s === "printemps") drawSakura(p);
-        else if(s === "été") drawMapleLeaf(p, "34, 139, 34");
-        else {
-            let c = p.colorVar < 0.33 ? "200,30,30" : (p.colorVar < 0.66 ? "241,196,15" : "100,160,60");
-            drawMapleLeaf(p, c);
-        }
-    });
-    requestAnimationFrame(animate);
-}
-
-window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-animate();
 </script>
+
 </body>
 </html>
