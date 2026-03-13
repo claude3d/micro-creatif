@@ -12,100 +12,51 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
 text-align:center;
-overflow-x:hidden;
-background:#020617;
 }
 
-/* STARFIELD */
+/* REAL BACKGROUND IMAGE */
 
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(2px 2px at 20px 30px, white, transparent),
-radial-gradient(2px 2px at 200px 150px, white, transparent),
-radial-gradient(1px 1px at 400px 80px, white, transparent),
-radial-gradient(2px 2px at 600px 200px, white, transparent),
-radial-gradient(1px 1px at 800px 120px, white, transparent),
-radial-gradient(2px 2px at 1000px 300px, white, transparent);
-background-repeat:repeat;
-background-size:1200px 600px;
-animation:starsMove 120s linear infinite;
-z-index:-2;
+.hero{
+height:100vh;
+background-image:url("images/galaxy-background.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
-@keyframes starsMove{
-from{transform:translateY(0);}
-to{transform:translateY(-600px);}
-}
-
-/* GALAXY CORE */
-
-.galaxy{
-position:absolute;
-top:120px;
-left:50%;
-width:600px;
-height:600px;
-transform:translateX(-50%);
-background:
-radial-gradient(circle,#ffd27a 0%,#ff8c42 30%,transparent 60%);
-border-radius:50%;
-filter:blur(60px);
-animation:rotateGalaxy 120s linear infinite;
-z-index:-1;
-}
-
-@keyframes rotateGalaxy{
-from{transform:translateX(-50%) rotate(0deg);}
-to{transform:translateX(-50%) rotate(360deg);}
-}
-
-/* GLASS NAVBAR */
+/* NAVBAR */
 
 header{
-position:sticky;
+position:absolute;
 top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:18px 60px;
-
-background:rgba(20,25,50,0.35);
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-
-border-bottom:1px solid rgba(255,255,255,0.15);
+padding:20px 60px;
+box-sizing:border-box;
 }
 
-/* NAV LINKS */
-
 nav a{
-margin:0 15px;
 color:white;
+margin:0 15px;
 text-decoration:none;
 font-size:18px;
-opacity:0.9;
 }
 
 nav a:hover{
-color:#7ec8ff;
+opacity:0.7;
 }
 
-/* LANGUAGE BUTTON */
-
-.lang-btn{
-border:1px solid rgba(255,255,255,0.4);
-padding:8px 18px;
-border-radius:25px;
+.lang{
+border:1px solid white;
+padding:6px 14px;
+border-radius:20px;
 }
 
-/* HERO */
-
-.hero{
-margin-top:120px;
-}
+/* TITLE */
 
 .hero h1{
 font-size:64px;
@@ -114,29 +65,29 @@ margin-bottom:10px;
 
 .hero p{
 font-size:20px;
-opacity:0.9;
 }
 
+/* BUTTONS */
+
 .buttons{
-margin-top:40px;
+margin-top:30px;
 }
 
 .buttons a{
 display:inline-block;
 margin:10px;
-padding:16px 30px;
-border-radius:30px;
-background:linear-gradient(45deg,#4ea1ff,#4ecbff);
-color:white;
+padding:14px 28px;
+background:#2a7fff;
+border-radius:25px;
 text-decoration:none;
-font-size:18px;
-box-shadow:0 0 20px rgba(78,170,255,0.6);
+color:white;
 }
 
-/* APPS */
+/* APPS SECTION */
 
 .apps{
-margin-top:140px;
+background:black;
+padding:80px 20px;
 }
 
 .apps h2{
@@ -146,51 +97,35 @@ font-size:36px;
 .app-grid{
 display:flex;
 justify-content:center;
-gap:60px;
+gap:80px;
 margin-top:40px;
 }
 
-.app{
-width:220px;
-}
-
-.icon{
+.app img{
 width:120px;
-height:120px;
-margin:auto;
-border-radius:30px;
-background:linear-gradient(45deg,#4ea1ff,#4ecbff);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:50px;
+border-radius:25px;
 }
 
 .store{
-margin-top:12px;
-display:inline-block;
-background:black;
-padding:10px 18px;
-border-radius:10px;
-font-size:14px;
+margin-top:10px;
+}
+
+.store img{
+width:150px;
 }
 
 /* FOOTER */
 
 footer{
-margin-top:120px;
-padding-bottom:40px;
+background:black;
+padding:40px;
 font-size:14px;
-opacity:0.8;
 }
 
 </style>
 </head>
 
 <body>
-
-<div class="stars"></div>
-<div class="galaxy"></div>
 
 <header>
 
@@ -201,7 +136,7 @@ opacity:0.8;
 <a href="contact.html">Contact</a>
 </nav>
 
-<div class="lang-btn">Français</div>
+<div class="lang">FR</div>
 
 </header>
 
@@ -210,9 +145,7 @@ opacity:0.8;
 
 <h1>Micro Créatif</h1>
 
-<p>L'innovation depuis 1981 | Innovation since 1981</p>
-
-<p>Software development and 3D design studio</p>
+<p>Innovation since 1981</p>
 
 <div class="buttons">
 <a href="about.html">Discover our history</a>
@@ -225,22 +158,21 @@ opacity:0.8;
 <section class="apps">
 
 <h2>Our Apps</h2>
-<p>Explore our innovative applications</p>
 
 <div class="app-grid">
 
 <div class="app">
-<div class="icon">⬛</div>
-<h3>3D Cube</h3>
-<p>Create and customize magical cubes</p>
-<div class="store">Download on App Store</div>
+<img src="images/app1.png">
+<div class="store">
+<img src="images/appstore-badge.png">
+</div>
 </div>
 
 <div class="app">
-<div class="icon">🚀</div>
-<h3>Rocket Quest</h3>
-<p>Embark on an epic space adventure</p>
-<div class="store">Download on App Store</div>
+<img src="images/app2.png">
+<div class="store">
+<img src="images/appstore-badge.png">
+</div>
 </div>
 
 </div>
@@ -250,7 +182,7 @@ opacity:0.8;
 
 <footer>
 
-<p>© 2026 Micro Créatif. All rights reserved.</p>
+<p>© Micro Créatif</p>
 <p>Montréal | Ho Chi Minh</p>
 
 </footer>
