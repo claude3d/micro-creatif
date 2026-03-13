@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Micro Créatif</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+min-height:100vh;
+background:
+radial-gradient(circle at 30% 40%, rgba(120,160,255,0.4), transparent 40%),
+radial-gradient(circle at 70% 60%, rgba(255,140,220,0.3), transparent 40%),
+radial-gradient(circle at 50% 50%, #0a0f2c 0%, #020617 80%);
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+}
+
+nav a{
+margin:0 15px;
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+nav a:hover{
+color:#7ec8ff;
+}
+
+.lang-btn{
+border:1px solid white;
+padding:8px 18px;
+border-radius:25px;
+}
+
+.container{
+text-align:center;
+margin-top:80px;
+}
+
+h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+h2{
+font-weight:normal;
+}
+
+.locations{
+margin-top:20px;
+font-size:20px;
+}
+
+.form{
+width:500px;
+margin:60px auto;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+input, textarea{
+width:100%;
+padding:15px;
+margin:12px 0;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.3);
+background:rgba(0,0,0,0.35);
+color:white;
+font-size:16px;
+}
+
+textarea{
+height:120px;
+}
+
+button{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#4ea1ff,#4ecbff);
+color:white;
+font-size:18px;
+cursor:pointer;
+box-shadow:0 0 15px rgba(78,170,255,0.7);
+}
+
+button:hover{
+box-shadow:0 0 25px rgba(78,170,255,1);
+}
+
+footer{
+text-align:center;
+margin-top:80px;
+padding-bottom:30px;
+font-size:14px;
+opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="index.html">Home</a>
+<a href="apps.html">Apps</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="lang-btn">Français</div>
+</header>
+
+<div class="container">
+
+<h1>Contact Micro Créatif</h1>
+<h2>Let's get in touch</h2>
+
+<div class="locations">
+📍 Montréal &nbsp;&nbsp;&nbsp; 📍 Ho Chi Minh
+</div>
+
+<div class="form">
+
+<input type="text" placeholder="Your name">
+<input type="email" placeholder="Your email">
+<textarea placeholder="Your message"></textarea>
+
+<button>Send Message</button>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Micro Créatif. All rights reserved.</p>
+<p>Montréal | Ho Chi Minh</p>
+</footer>
+
+</body>
+</html>
