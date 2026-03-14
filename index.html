@@ -1,6 +1,6 @@
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 2.4 -->
+<!-- Version 2.5 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,18 +38,14 @@ header{
 position:absolute;
 top:10px;
 width:100%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 30px;
-box-sizing:border-box;
+text-align:center;
 }
 
-/* navigation */
+/* centered navigation */
 
 nav{
-display:flex;
-gap:20px;
+display:inline-flex;
+gap:30px;
 }
 
 nav a{
@@ -58,7 +54,13 @@ text-decoration:none;
 font-size:18px;
 }
 
-/* language button */
+/* language toggle far right */
+
+.lang{
+position:absolute;
+right:30px;
+top:0;
+}
 
 .lang button{
 background:#2a7fff;
@@ -195,7 +197,7 @@ font-size:14px;
 
 <script>
 
-const text = {
+const text={
 
 en:{
 navHome:"Home",
@@ -250,7 +252,7 @@ document.getElementById("langButton").textContent=(lang==="en")?"FR":"EN";
 
 function toggleLanguage(){
 
-let lang=localStorage.getItem("lang") || "en";
+let lang=localStorage.getItem("lang")||"en";
 lang=(lang==="en")?"fr":"en";
 
 localStorage.setItem("lang",lang);
@@ -261,8 +263,7 @@ applyLanguage(lang);
 
 document.addEventListener("DOMContentLoaded",function(){
 
-let lang=localStorage.getItem("lang") || "en";
-
+let lang=localStorage.getItem("lang")||"en";
 applyLanguage(lang);
 
 });
