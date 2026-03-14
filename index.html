@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 3.2 -->
+<!-- Version 3.3 -->
 
 <head>
 <meta charset="UTF-8">
@@ -33,23 +33,23 @@ object-fit:cover;
 z-index:-3;
 }
 
-/* individual twinkling stars */
+/* twinkling stars */
 
 .star{
 position:fixed;
-width:3px;
-height:3px;
+width:4px;
+height:4px;
 background:white;
 border-radius:50%;
 opacity:0.2;
-animation:twinkle 6s infinite;
+animation:twinkle 3s infinite;
 z-index:-2;
 }
 
 @keyframes twinkle{
-0%{opacity:0.1; transform:scale(1);}
-50%{opacity:1; transform:scale(1.4);}
-100%{opacity:0.1; transform:scale(1);}
+0%{opacity:0.15; transform:scale(1);}
+50%{opacity:1; transform:scale(1.6);}
+100%{opacity:0.15; transform:scale(1);}
 }
 
 /* header */
@@ -73,11 +73,7 @@ font-size:18px;
 opacity:0.9;
 }
 
-nav a:hover{
-opacity:1;
-}
-
-/* language toggle */
+/* language button */
 
 .lang{
 position:absolute;
@@ -87,7 +83,7 @@ top:0;
 
 .lang button{
 background:rgba(255,255,255,0.1);
-border:1px solid rgba(255,255,255,0.4);
+border:1px solid rgba(255,255,255,0.3);
 color:white;
 padding:6px 14px;
 border-radius:16px;
@@ -112,10 +108,9 @@ margin-bottom:8px;
 .hero p{
 font-size:22px;
 margin-top:0;
-opacity:0.9;
 }
 
-/* glass buttons */
+/* buttons */
 
 .buttons{
 display:flex;
@@ -124,27 +119,17 @@ margin-top:28px;
 }
 
 .buttons a{
-
 padding:14px 30px;
 border-radius:28px;
-
 color:white;
 text-decoration:none;
 font-size:17px;
-
 background:linear-gradient(
 rgba(255,255,255,0.25),
 rgba(255,255,255,0.05)
 );
-
 border:1px solid rgba(255,255,255,0.35);
-
 backdrop-filter:blur(16px);
-
-box-shadow:
-0 8px 30px rgba(0,0,0,0.35),
-inset 0 1px 1px rgba(255,255,255,0.5);
-
 }
 
 /* apps */
@@ -154,10 +139,6 @@ padding:10px 20px;
 margin-top:10px;
 }
 
-.apps h2{
-margin-bottom:30px;
-}
-
 .app-grid{
 display:flex;
 justify-content:center;
@@ -165,18 +146,20 @@ gap:60px;
 flex-wrap:wrap;
 }
 
-/* icons */
-
 .app{
 text-align:center;
 }
+
+/* ICONS */
 
 .app img{
 
 width:100px;
 border-radius:18px;
 
-box-shadow:0 3px 10px rgba(0,0,0,0.6);
+/* border glow reduced */
+
+box-shadow:0 2px 6px rgba(0,0,0,0.6);
 
 transition:transform 0.25s, box-shadow 0.25s;
 
@@ -186,8 +169,9 @@ transition:transform 0.25s, box-shadow 0.25s;
 
 transform:scale(1.05);
 
-box-shadow:
-0 0 14px rgba(255,255,255,0.5);
+/* hover glow reduced */
+
+box-shadow:0 0 8px rgba(255,255,255,0.5);
 
 }
 
@@ -216,22 +200,23 @@ opacity:0.85;
 
 <img class="bg" src="images/galaxy-background.png">
 
-<!-- random stars -->
-<div class="star" style="top:12%; left:18%; animation-delay:1s;"></div>
-<div class="star" style="top:22%; left:72%; animation-delay:3s;"></div>
-<div class="star" style="top:35%; left:40%; animation-delay:5s;"></div>
-<div class="star" style="top:48%; left:80%; animation-delay:2s;"></div>
-<div class="star" style="top:60%; left:15%; animation-delay:6s;"></div>
-<div class="star" style="top:75%; left:50%; animation-delay:4s;"></div>
-<div class="star" style="top:18%; left:55%; animation-delay:7s;"></div>
-<div class="star" style="top:30%; left:85%; animation-delay:2.5s;"></div>
-<div class="star" style="top:52%; left:33%; animation-delay:1.5s;"></div>
-<div class="star" style="top:66%; left:70%; animation-delay:5.5s;"></div>
-<div class="star" style="top:82%; left:25%; animation-delay:3.5s;"></div>
-<div class="star" style="top:40%; left:60%; animation-delay:4.5s;"></div>
-<div class="star" style="top:55%; left:90%; animation-delay:2.2s;"></div>
-<div class="star" style="top:70%; left:8%; animation-delay:6.5s;"></div>
-<div class="star" style="top:10%; left:45%; animation-delay:1.8s;"></div>
+<!-- stars -->
+
+<div class="star" style="top:12%; left:18%; animation-delay:0s;"></div>
+<div class="star" style="top:22%; left:72%; animation-delay:1s;"></div>
+<div class="star" style="top:35%; left:40%; animation-delay:2s;"></div>
+<div class="star" style="top:48%; left:80%; animation-delay:0.5s;"></div>
+<div class="star" style="top:60%; left:15%; animation-delay:1.5s;"></div>
+<div class="star" style="top:75%; left:50%; animation-delay:2.5s;"></div>
+<div class="star" style="top:18%; left:55%; animation-delay:0.8s;"></div>
+<div class="star" style="top:30%; left:85%; animation-delay:1.8s;"></div>
+<div class="star" style="top:52%; left:33%; animation-delay:2.2s;"></div>
+<div class="star" style="top:66%; left:70%; animation-delay:0.3s;"></div>
+<div class="star" style="top:82%; left:25%; animation-delay:1.3s;"></div>
+<div class="star" style="top:40%; left:60%; animation-delay:2.7s;"></div>
+<div class="star" style="top:55%; left:90%; animation-delay:0.6s;"></div>
+<div class="star" style="top:70%; left:8%; animation-delay:1.6s;"></div>
+<div class="star" style="top:10%; left:45%; animation-delay:2.3s;"></div>
 
 <header>
 
@@ -292,7 +277,7 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v3.2</p>
+<p>© Micro Créatif – v3.3</p>
 <p id="cities"></p>
 </footer>
 
