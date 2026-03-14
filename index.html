@@ -1,9 +1,10 @@
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 2.1 -->
+<!-- Version 2.2 -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@ text-align:center;
 background:black;
 }
 
-/* BACKGROUND */
+/* background galaxy */
 
 .bg{
 position:fixed;
@@ -31,7 +32,7 @@ object-fit:cover;
 z-index:-1;
 }
 
-/* NAVIGATION */
+/* navigation */
 
 header{
 position:absolute;
@@ -39,16 +40,31 @@ top:10px;
 width:100%;
 display:flex;
 justify-content:center;
+align-items:center;
+gap:20px;
 }
 
 nav a{
 color:white;
-margin:0 18px;
 text-decoration:none;
 font-size:18px;
+margin:0 10px;
 }
 
-/* HERO */
+.lang{
+margin-left:30px;
+}
+
+.lang button{
+background:#2a7fff;
+border:none;
+color:white;
+padding:6px 12px;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* hero */
 
 .hero{
 height:55vh;
@@ -68,7 +84,7 @@ font-size:22px;
 margin-top:0;
 }
 
-/* BUTTONS */
+/* buttons */
 
 .buttons{
 margin-top:20px;
@@ -85,7 +101,7 @@ color:white;
 font-size:16px;
 }
 
-/* APPS */
+/* apps */
 
 .apps{
 padding:10px 20px;
@@ -107,7 +123,7 @@ width:120px;
 border-radius:25px;
 }
 
-/* FOOTER */
+/* footer */
 
 footer{
 padding:20px;
@@ -122,29 +138,36 @@ font-size:14px;
 <img class="bg" src="images/galaxy-background.png">
 
 <header>
+
 <nav>
-<a href="index.html">Home</a>
-<a href="apps.html">Apps</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+<a id="navHome" href="index.html"></a>
+<a id="navApps" href="apps.html"></a>
+<a id="navAbout" href="about.html"></a>
+<a id="navContact" href="contact.html"></a>
 </nav>
+
+<div class="lang">
+<button onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('fr')">FR</button>
+</div>
+
 </header>
 
 <section class="hero">
 
-<h1>Micro Créatif</h1>
-<p>Since 1981</p>
+<h1 id="title"></h1>
+<p id="since"></p>
 
 <div class="buttons">
-<a href="about.html">Discover our history</a>
-<a href="apps.html">View our apps</a>
+<a id="btnHistory" href="about.html"></a>
+<a id="btnApps" href="apps.html"></a>
 </div>
 
 </section>
 
 <section class="apps">
 
-<h2>Our Apps</h2>
+<h2 id="appsTitle"></h2>
 
 <div class="app-grid">
 
@@ -162,8 +185,78 @@ font-size:14px;
 
 <footer>
 <p>© Micro Créatif</p>
-<p>Montréal | Ho Chi Minh City</p>
+<p id="cities"></p>
 </footer>
+
+<script>
+
+/* translations */
+
+const text = {
+
+en:{
+navHome:"Home",
+navApps:"Apps",
+navAbout:"About",
+navContact:"Contact",
+title:"Micro Creatif",
+since:"Since 1981",
+history:"Discover our history",
+viewApps:"View our apps",
+appsTitle:"Our Apps",
+cities:"Montreal | Ho Chi Minh City"
+},
+
+fr:{
+navHome:"Accueil",
+navApps:"Applications",
+navAbout:"À propos",
+navContact:"Contact",
+title:"Micro Créatif",
+since:"Depuis 1981",
+history:"Découvrez notre histoire",
+viewApps:"Voir nos applications",
+appsTitle:"Nos applications",
+cities:"Montréal | Hô Chi Minh Ville"
+}
+
+};
+
+/* language switch */
+
+function setLanguage(lang){
+
+localStorage.setItem("lang",lang);
+
+const t=text[lang];
+
+document.getElementById("navHome").textContent=t.navHome;
+document.getElementById("navApps").textContent=t.navApps;
+document.getElementById("navAbout").textContent=t.navAbout;
+document.getElementById("navContact").textContent=t.navContact;
+
+document.getElementById("title").textContent=t.title;
+document.getElementById("since").textContent=t.since;
+
+document.getElementById("btnHistory").textContent=t.history;
+document.getElementById("btnApps").textContent=t.viewApps;
+
+document.getElementById("appsTitle").textContent=t.appsTitle;
+
+document.getElementById("cities").textContent=t.cities;
+
+}
+
+/* load saved language */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+let lang=localStorage.getItem("lang") || "en";
+setLanguage(lang);
+
+});
+
+</script>
 
 </body>
 </html>
