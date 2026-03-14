@@ -1,6 +1,6 @@
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 2.2 -->
+<!-- Version 2.4 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ text-align:center;
 background:black;
 }
 
-/* background galaxy */
+/* galaxy background */
 
 .bg{
 position:fixed;
@@ -32,15 +32,23 @@ object-fit:cover;
 z-index:-1;
 }
 
-/* navigation */
+/* header */
 
 header{
 position:absolute;
 top:10px;
 width:100%;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:space-between;
+padding:0 30px;
+box-sizing:border-box;
+}
+
+/* navigation */
+
+nav{
+display:flex;
 gap:20px;
 }
 
@@ -48,20 +56,18 @@ nav a{
 color:white;
 text-decoration:none;
 font-size:18px;
-margin:0 10px;
 }
 
-.lang{
-margin-left:30px;
-}
+/* language button */
 
 .lang button{
 background:#2a7fff;
 border:none;
 color:white;
-padding:6px 12px;
+padding:6px 14px;
 border-radius:12px;
 cursor:pointer;
+font-size:14px;
 }
 
 /* hero */
@@ -147,8 +153,7 @@ font-size:14px;
 </nav>
 
 <div class="lang">
-<button onclick="setLanguage('en')">EN</button>
-<button onclick="setLanguage('fr')">FR</button>
+<button onclick="toggleLanguage()" id="langButton">FR</button>
 </div>
 
 </header>
@@ -190,8 +195,6 @@ font-size:14px;
 
 <script>
 
-/* translations */
-
 const text = {
 
 en:{
@@ -222,11 +225,7 @@ cities:"Montréal | Hô Chi Minh Ville"
 
 };
 
-/* language switch */
-
-function setLanguage(lang){
-
-localStorage.setItem("lang",lang);
+function applyLanguage(lang){
 
 const t=text[lang];
 
@@ -245,14 +244,26 @@ document.getElementById("appsTitle").textContent=t.appsTitle;
 
 document.getElementById("cities").textContent=t.cities;
 
+document.getElementById("langButton").textContent=(lang==="en")?"FR":"EN";
+
 }
 
-/* load saved language */
+function toggleLanguage(){
+
+let lang=localStorage.getItem("lang") || "en";
+lang=(lang==="en")?"fr":"en";
+
+localStorage.setItem("lang",lang);
+
+applyLanguage(lang);
+
+}
 
 document.addEventListener("DOMContentLoaded",function(){
 
 let lang=localStorage.getItem("lang") || "en";
-setLanguage(lang);
+
+applyLanguage(lang);
 
 });
 
