@@ -1,6 +1,6 @@
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 2.5 -->
+<!-- Version 2.6 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +41,6 @@ width:100%;
 text-align:center;
 }
 
-/* centered navigation */
-
 nav{
 display:inline-flex;
 gap:30px;
@@ -52,9 +50,15 @@ nav a{
 color:white;
 text-decoration:none;
 font-size:18px;
+opacity:0.9;
+transition:opacity 0.2s;
 }
 
-/* language toggle far right */
+nav a:hover{
+opacity:1;
+}
+
+/* language toggle right */
 
 .lang{
 position:absolute;
@@ -63,13 +67,14 @@ top:0;
 }
 
 .lang button{
-background:#2a7fff;
+background:rgba(255,255,255,0.15);
 border:none;
 color:white;
 padding:6px 14px;
 border-radius:12px;
 cursor:pointer;
 font-size:14px;
+backdrop-filter:blur(6px);
 }
 
 /* hero */
@@ -90,23 +95,29 @@ margin-bottom:5px;
 .hero p{
 font-size:22px;
 margin-top:0;
+opacity:0.85;
 }
 
-/* buttons */
+/* clean text buttons */
 
 .buttons{
 margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
 .buttons a{
-display:inline-block;
-margin:8px;
-padding:14px 28px;
-background:#2a7fff;
-border-radius:25px;
-text-decoration:none;
 color:white;
-font-size:16px;
+text-decoration:none;
+font-size:20px;
+opacity:0.9;
+transition:opacity 0.2s, transform 0.2s;
+}
+
+.buttons a:hover{
+opacity:1;
+transform:translateX(5px);
 }
 
 /* apps */
@@ -136,6 +147,7 @@ border-radius:25px;
 footer{
 padding:20px;
 font-size:14px;
+opacity:0.8;
 }
 
 </style>
@@ -206,8 +218,8 @@ navAbout:"About",
 navContact:"Contact",
 title:"Micro Creatif",
 since:"Since 1981",
-history:"Discover our history",
-viewApps:"View our apps",
+history:"Discover our history →",
+viewApps:"View our apps →",
 appsTitle:"Our Apps",
 cities:"Montreal | Ho Chi Minh City"
 },
@@ -219,8 +231,8 @@ navAbout:"À propos",
 navContact:"Contact",
 title:"Micro Créatif",
 since:"Depuis 1981",
-history:"Découvrez notre histoire",
-viewApps:"Voir nos applications",
+history:"Découvrez notre histoire →",
+viewApps:"Voir nos applications →",
 appsTitle:"Nos applications",
 cities:"Montréal | Hô Chi Minh Ville"
 }
