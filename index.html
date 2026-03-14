@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 3.5 -->
+<!-- Version 3.6 -->
 
 <head>
 <meta charset="UTF-8">
@@ -33,16 +33,16 @@ object-fit:cover;
 z-index:-3;
 }
 
-/* twinkling stars */
+/* twinkling stars (size reduced by half) */
 
 .star{
 position:fixed;
-width:4px;
-height:4px;
+width:2px;
+height:2px;
 background:white;
 border-radius:50%;
 opacity:0.2;
-animation:twinkle 1.5s infinite;   /* twice as fast */
+animation:twinkle 1.5s infinite;
 z-index:-2;
 }
 
@@ -150,26 +150,33 @@ flex-wrap:wrap;
 text-align:center;
 }
 
-/* ICONS – reduced size to thin border */
+/* ICON container keeps size */
 
-.app img{
+.icon-frame{
+width:100px;
+height:100px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
 
-width:72px;
+/* ICON image slightly enlarged inside frame
+   which visually trims the white border */
 
-border-radius:14px;
+.icon-frame img{
 
-box-shadow:0 2px 6px rgba(0,0,0,0.6);
+width:120%;
+height:auto;
 
-transition:transform 0.25s, box-shadow 0.25s;
+border-radius:18px;
+
+transition:transform 0.25s;
 
 }
 
-.app img:hover{
-
+.icon-frame img:hover{
 transform:scale(1.05);
-
-box-shadow:0 0 8px rgba(255,255,255,0.5);
-
 }
 
 .app a{
@@ -197,7 +204,7 @@ opacity:0.85;
 
 <img class="bg" src="images/galaxy-background.png">
 
-<!-- stars -->
+<!-- twinkling stars -->
 
 <div class="star" style="top:12%; left:18%; animation-delay:0s;"></div>
 <div class="star" style="top:22%; left:72%; animation-delay:1s;"></div>
@@ -250,21 +257,27 @@ opacity:0.85;
 
 <div class="app">
 <a href="app1.html">
+<div class="icon-frame">
 <img src="images/app1.png">
+</div>
 <p id="app1"></p>
 </a>
 </div>
 
 <div class="app">
 <a href="app2.html">
+<div class="icon-frame">
 <img src="images/app2.png">
+</div>
 <p id="app2"></p>
 </a>
 </div>
 
 <div class="app">
 <a href="app3.html">
+<div class="icon-frame">
 <img src="images/app3.png">
+</div>
 <p id="app3"></p>
 </a>
 </div>
@@ -274,7 +287,7 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v3.5</p>
+<p>© Micro Créatif – v3.6</p>
 <p id="cities"></p>
 </footer>
 
