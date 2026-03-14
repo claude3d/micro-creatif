@@ -1,6 +1,6 @@
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 2.6 -->
+<!-- Version 2.7 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,7 @@ nav a:hover{
 opacity:1;
 }
 
-/* language toggle right */
+/* language toggle */
 
 .lang{
 position:absolute;
@@ -67,20 +67,19 @@ top:0;
 }
 
 .lang button{
-background:rgba(255,255,255,0.15);
-border:none;
+background:rgba(0,0,0,0.4);
+border:1px solid rgba(255,255,255,0.5);
 color:white;
 padding:6px 14px;
-border-radius:12px;
+border-radius:14px;
 cursor:pointer;
-font-size:14px;
 backdrop-filter:blur(6px);
 }
 
 /* hero */
 
 .hero{
-height:55vh;
+height:52vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -89,42 +88,45 @@ align-items:center;
 
 .hero h1{
 font-size:64px;
-margin-bottom:5px;
+margin-bottom:8px;
 }
 
 .hero p{
 font-size:22px;
 margin-top:0;
-opacity:0.85;
+opacity:0.9;
 }
 
-/* clean text buttons */
+/* glass buttons */
 
 .buttons{
-margin-top:20px;
 display:flex;
-flex-direction:column;
-gap:12px;
+gap:22px;
+margin-top:25px;
 }
 
 .buttons a{
+padding:12px 26px;
+border-radius:26px;
+border:1px solid rgba(255,255,255,0.6);
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(6px);
 color:white;
 text-decoration:none;
-font-size:20px;
-opacity:0.9;
-transition:opacity 0.2s, transform 0.2s;
+font-size:17px;
+transition:all 0.25s;
 }
 
 .buttons a:hover{
-opacity:1;
-transform:translateX(5px);
+background:rgba(255,255,255,0.15);
+transform:translateY(-2px);
 }
 
 /* apps */
 
 .apps{
 padding:10px 20px;
-margin-top:-40px;
+margin-top:-10px;
 }
 
 .apps h2{
@@ -134,12 +136,17 @@ margin-bottom:20px;
 .app-grid{
 display:flex;
 justify-content:center;
-gap:70px;
+gap:60px;
 }
 
 .app img{
-width:120px;
+width:110px;
 border-radius:25px;
+transition:transform 0.2s;
+}
+
+.app img:hover{
+transform:scale(1.08);
 }
 
 /* footer */
@@ -218,8 +225,8 @@ navAbout:"About",
 navContact:"Contact",
 title:"Micro Creatif",
 since:"Since 1981",
-history:"Discover our history →",
-viewApps:"View our apps →",
+history:"Discover our history",
+viewApps:"View our apps",
 appsTitle:"Our Apps",
 cities:"Montreal | Ho Chi Minh City"
 },
@@ -231,8 +238,8 @@ navAbout:"À propos",
 navContact:"Contact",
 title:"Micro Créatif",
 since:"Depuis 1981",
-history:"Découvrez notre histoire →",
-viewApps:"Voir nos applications →",
+history:"Découvrez notre histoire",
+viewApps:"Voir nos applications",
 appsTitle:"Nos applications",
 cities:"Montréal | Hô Chi Minh Ville"
 }
