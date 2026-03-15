@@ -1,196 +1,180 @@
-<!DOCTYPE html>
-<html lang="fr">
-
+<!-- Micro Créatif -->
 <!-- about.html -->
-<!-- Version 2.1 -->
+<!-- Version 1.2 -->
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Souvenirs | Micro Créatif</title>
+<title>Micro Créatif</title>
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-height:100vh;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
 color:white;
-background:#05070f;
+text-align:center;
+background:#0a0f1c;
 overflow-x:hidden;
 }
 
-/* Animated light clouds */
+/* soft background similar spirit to index but no galaxy */
 
-body::before{
-content:"";
+.bg{
 position:fixed;
 top:0;
 left:0;
-width:200%;
-height:200%;
+width:100%;
+height:100%;
 background:
-radial-gradient(circle at 20% 25%, rgba(70,120,255,0.35), transparent 45%),
-radial-gradient(circle at 75% 70%, rgba(0,200,255,0.30), transparent 45%),
-radial-gradient(circle at 40% 85%, rgba(0,120,255,0.25), transparent 45%),
-radial-gradient(circle at 80% 20%, rgba(100,80,255,0.25), transparent 40%);
-animation:moveLights 25s infinite alternate ease-in-out;
-filter:blur(120px);
-z-index:-2;
+radial-gradient(circle at 25% 30%, rgba(0,140,255,0.35), transparent 50%),
+radial-gradient(circle at 70% 60%, rgba(0,200,255,0.25), transparent 55%),
+radial-gradient(circle at 50% 80%, rgba(0,90,200,0.25), transparent 60%);
+z-index:-5;
 }
 
-@keyframes moveLights{
-0%{transform:translate(-10%,-10%);}
-100%{transform:translate(10%,10%);}
-}
+/* header */
 
-/* subtle stars */
-
-.star{
-position:fixed;
-background:white;
-border-radius:50%;
-opacity:.2;
-animation:twinkle 2s infinite;
-z-index:-1;
-}
-
-.star.big{
-width:2px;
-height:2px;
-}
-
-.star.small{
-width:1px;
-height:1px;
-opacity:.15;
-}
-
-@keyframes twinkle{
-0%{opacity:.15;transform:scale(1);}
-50%{opacity:.9;transform:scale(1.4);}
-100%{opacity:.15;transform:scale(1);}
-}
-
-/* Navigation */
-
-.nav-container{
-position:relative;
-z-index:10;
+header{
+position:absolute;
+top:10px;
+width:100%;
 display:flex;
-justify-content:space-between;
-padding:30px;
+justify-content:center;
 }
 
-.btn-ui{
-background:rgba(255,255,255,0.1);
-color:white;
-border:1px solid rgba(255,255,255,0.35);
-padding:10px 22px;
-border-radius:25px;
-cursor:pointer;
-backdrop-filter:blur(14px);
-text-decoration:none;
-font-weight:600;
-transition:all .3s;
-}
-
-.btn-ui:hover{
-background:white;
-color:#1a3a4a;
-}
-
-/* Main content */
-
-.main-content{
-position:relative;
-z-index:5;
-display:flex;
-flex-direction:column;
+nav{
+display:inline-flex;
+gap:30px;
 align-items:center;
-padding:40px 40px 100px;
-text-align:center;
 }
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+opacity:0.9;
+}
+
+/* language */
+
+.lang{
+position:absolute;
+right:30px;
+top:0;
+}
+
+.lang button{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 14px;
+border-radius:16px;
+cursor:pointer;
+}
+
+/* page container */
+
+.container{
+max-width:900px;
+margin:auto;
+padding-top:120px;
+padding-left:20px;
+padding-right:20px;
+}
+
+/* title */
 
 h1{
-font-size:3.5rem;
-margin-bottom:20px;
-text-shadow:0 10px 30px rgba(0,0,0,.7);
+font-size:56px;
+margin-bottom:10px;
 }
 
-.caption{
-font-size:1.4rem;
-max-width:800px;
-margin-bottom:20px;
-font-weight:300;
-line-height:1.4;
+.subtitle{
+font-size:20px;
+opacity:0.9;
+margin-bottom:30px;
 }
 
-.inflation-box{
-background:rgba(255,255,255,0.05);
-padding:15px 30px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.1);
-margin-bottom:40px;
-font-weight:600;
-color:#6fb5ff;
+/* facture image */
+
+.facture{
+margin-top:30px;
 }
 
-.facture-img{
+.facture img{
 max-width:100%;
-height:auto;
 border-radius:10px;
-box-shadow:0 20px 50px rgba(0,0,0,0.7);
-border:1px solid rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.35);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
+
+/* info box */
+
+.info{
+margin-top:25px;
+padding:14px 20px;
+border-radius:20px;
+display:inline-block;
+background:linear-gradient(
+rgba(255,255,255,0.25),
+rgba(255,255,255,0.05)
+);
+border:1px solid rgba(255,255,255,0.35);
+backdrop-filter:blur(16px);
+font-size:17px;
+}
+
+/* footer */
 
 footer{
-padding:40px;
-text-align:center;
+margin-top:80px;
+padding:20px;
+font-size:14px;
 opacity:0.85;
-font-size:1rem;
-position:relative;
-z-index:5;
 }
-
-/* star positions */
 
 </style>
 </head>
 
 <body>
 
-<div class="star big" style="top:12%;left:18%;animation-delay:0s;"></div>
-<div class="star big" style="top:30%;left:70%;animation-delay:1s;"></div>
-<div class="star big" style="top:55%;left:82%;animation-delay:1.5s;"></div>
-<div class="star big" style="top:75%;left:40%;animation-delay:2s;"></div>
+<div class="bg"></div>
 
-<div class="star small" style="top:20%;left:40%;"></div>
-<div class="star small" style="top:45%;left:15%;"></div>
-<div class="star small" style="top:60%;left:65%;"></div>
-<div class="star small" style="top:82%;left:55%;"></div>
-<div class="star small" style="top:35%;left:90%;"></div>
+<header>
 
-<div class="nav-container">
-<a href="index.html" class="btn-ui" id="back-btn"></a>
-<button class="btn-ui" onclick="toggleLanguage()" id="langButton"></button>
+<nav>
+<a id="navHome" href="index.html"></a>
+<a id="navApps" href="apps.html"></a>
+<a id="navAbout" href="about.html"></a>
+<a id="navContact" href="contact.html"></a>
+</nav>
+
+<div class="lang">
+<button onclick="toggleLanguage()" id="langButton">FR</button>
 </div>
 
-<div class="main-content">
+</header>
+
+<div class="container">
 
 <h1 id="title"></h1>
 
-<p class="caption" id="hist-text"></p>
+<p class="subtitle" id="subtitle"></p>
 
-<div class="inflation-box" id="inflation-text"></div>
+<div class="facture">
+<img src="images/facture.jpg" alt="Apple II facture">
+</div>
 
-<img src="images/facture.jpg" alt="Facture Apple II 1981" class="facture-img">
+<div class="info" id="inflation"></div>
 
 </div>
 
 <footer>
-<p id="copyright"></p>
+<p>© Micro Créatif</p>
 <p id="cities"></p>
 </footer>
 
@@ -199,22 +183,30 @@ z-index:5;
 const text={
 
 en:{
-back:"← Home",
-langButton:"FR",
+navHome:"Home",
+navApps:"Apps",
+navAbout:"About",
+navContact:"Contact",
+
 title:"Our Origins",
-history:"The purchase of this <strong>Apple II Plus 48K</strong> on June 11, 1981, for <strong>$2,100.00</strong> marks the beginning of the Micro Créatif adventure.",
-inflation:"Comparative value in 2026: approx. $7,350 CAD",
-copyright:"© 2026 Micro Créatif. All rights reserved.",
+subtitle:"The purchase of an Apple II Plus computer in June 1981 started the Micro Créatif adventure.",
+
+inflation:"$2,100 in 1981 ≈ about $7,350 CAD in 2026",
+
 cities:"Montreal | Ho Chi Minh City"
 },
 
 fr:{
-back:"← Accueil",
-langButton:"EN",
+navHome:"Accueil",
+navApps:"Applications",
+navAbout:"À propos",
+navContact:"Contact",
+
 title:"Nos Origines",
-history:"L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.",
-inflation:"Valeur comparative en 2026 : environ 7 350 $ CAD",
-copyright:"© 2026 Micro Créatif. Tous droits réservés.",
+subtitle:"L'achat d'un ordinateur Apple II Plus en juin 1981 marque le début de l'aventure Micro Créatif.",
+
+inflation:"2 100 $ en 1981 ≈ environ 7 350 $ CAD en 2026",
+
 cities:"Montréal | Hô Chi Minh Ville"
 }
 
@@ -224,29 +216,35 @@ function applyLanguage(lang){
 
 const t=text[lang];
 
-document.getElementById("back-btn").textContent=t.back;
-document.getElementById("langButton").textContent=t.langButton;
+document.getElementById("navHome").textContent=t.navHome;
+document.getElementById("navApps").textContent=t.navApps;
+document.getElementById("navAbout").textContent=t.navAbout;
+document.getElementById("navContact").textContent=t.navContact;
+
 document.getElementById("title").textContent=t.title;
-document.getElementById("hist-text").innerHTML=t.history;
-document.getElementById("inflation-text").textContent=t.inflation;
-document.getElementById("copyright").textContent=t.copyright;
+document.getElementById("subtitle").textContent=t.subtitle;
+document.getElementById("inflation").textContent=t.inflation;
+
 document.getElementById("cities").textContent=t.cities;
+
+document.getElementById("langButton").textContent=(lang==="en")?"FR":"EN";
 
 }
 
 function toggleLanguage(){
 
-let lang=localStorage.getItem("lang")||"fr";
-lang=(lang==="fr")?"en":"fr";
+let lang=localStorage.getItem("lang")||"en";
+lang=(lang==="en")?"fr":"en";
 
 localStorage.setItem("lang",lang);
+
 applyLanguage(lang);
 
 }
 
 document.addEventListener("DOMContentLoaded",function(){
 
-let lang=localStorage.getItem("lang")||"fr";
+let lang=localStorage.getItem("lang")||"en";
 applyLanguage(lang);
 
 });
