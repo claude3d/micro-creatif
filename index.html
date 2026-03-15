@@ -1,6 +1,6 @@
 <!-- Micro Creatif Website -->
 <!-- index.html -->
-<!-- Version: v4.10 -->
+<!-- Version: v4.13 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,15 +13,18 @@
 
 <style>
 
+/* ---------- BODY ---------- */
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
 text-align:center;
 background:url("images/galaxy-background.png") center/cover no-repeat fixed;
+overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* ---------- NAVBAR ---------- */
 
 .navbar{
 position:absolute;
@@ -29,7 +32,7 @@ top:30px;
 width:100%;
 display:flex;
 justify-content:center;
-gap:60px;
+gap:50px;
 font-size:18px;
 }
 
@@ -43,7 +46,21 @@ opacity:0.9;
 opacity:1;
 }
 
-/* DROPDOWN */
+/* ---------- LANGUAGE BUTTON ---------- */
+
+.lang-btn{
+position:absolute;
+top:25px;
+right:40px;
+border:1px solid white;
+padding:6px 12px;
+border-radius:20px;
+cursor:pointer;
+font-size:14px;
+background:rgba(0,0,0,0.3);
+}
+
+/* ---------- DROPDOWN ---------- */
 
 .dropdown{
 position:relative;
@@ -65,21 +82,21 @@ display:block;
 padding:10px 20px;
 }
 
-.dropdown:hover .dropdown-content{
+.dropdown.open .dropdown-content{
 display:block;
 }
 
-/* HERO */
+/* ---------- HERO ---------- */
 
 .hero{
-height:85vh;
+height:65vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 }
 
-h1{
+.hero h1{
 font-size:72px;
 margin:0;
 }
@@ -90,10 +107,10 @@ font-size:22px;
 opacity:0.9;
 }
 
-/* APPS */
+/* ---------- APPS ---------- */
 
 .apps{
-padding-bottom:80px;
+margin-top:-60px;
 }
 
 .apps h2{
@@ -103,7 +120,7 @@ margin-bottom:30px;
 .app-icons{
 display:flex;
 justify-content:center;
-gap:70px;
+gap:80px;
 flex-wrap:wrap;
 }
 
@@ -125,12 +142,43 @@ transform:scale(1.1);
 margin-top:10px;
 }
 
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 
 footer{
 margin-top:40px;
-opacity:0.6;
+opacity:0.7;
 font-size:14px;
+padding-bottom:40px;
+}
+
+/* ---------- BLINKING STARS ---------- */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:blink 3s infinite ease-in-out;
+}
+
+@keyframes blink{
+0%,100%{opacity:0.2}
+50%{opacity:1}
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:600px){
+
+.navbar{
+gap:25px;
+font-size:16px;
+}
+
+.hero h1{
+font-size:48px;
+}
+
 }
 
 </style>
@@ -139,13 +187,44 @@ font-size:14px;
 
 <body>
 
+<!-- BLINKING STARS -->
+
+<script>
+
+for(let i=0;i<80;i++){
+
+let star=document.createElement("div");
+star.className="star";
+
+let size=Math.random()*3;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+
+star.style.animationDuration=(2+Math.random()*4)+"s";
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+<!-- LANGUAGE BUTTON -->
+
+<div class="lang-btn" onclick="toggleLang()" id="langBtn">FR</div>
+
+<!-- NAVBAR -->
+
 <nav class="navbar">
 
 <a href="index.html" id="navHome"></a>
 
-<div class="dropdown">
+<div class="dropdown" id="appsMenu">
 
-<a href="#" id="navApps"></a>
+<a href="#" onclick="toggleApps(event)" id="navApps"></a>
 
 <div class="dropdown-content">
 
@@ -162,6 +241,7 @@ font-size:14px;
 
 </nav>
 
+<!-- HERO -->
 
 <section class="hero">
 
@@ -170,6 +250,7 @@ font-size:14px;
 
 </section>
 
+<!-- APPS -->
 
 <section class="apps">
 
@@ -202,6 +283,7 @@ font-size:14px;
 
 </section>
 
+<!-- FOOTER -->
 
 <footer>
 
@@ -209,12 +291,13 @@ font-size:14px;
 
 </footer>
 
-
 <script>
 
-/* LANGUAGE SYSTEM */
+/* ---------- LANGUAGE SYSTEM ---------- */
 
-const text = {
+let lang="EN";
+
+const text={
 
 EN:{
 navHome:"Home",
@@ -222,7 +305,7 @@ navApps:"Apps",
 navAbout:"About",
 navContact:"Contact",
 appsTitle:"Our Apps",
-footer:"© Micro Créatif – v4.10<br>Montreal | Ho Chi Minh City"
+footer:"© Micro Créatif – v4.13<br>Montreal | Ho Chi Minh City"
 },
 
 FR:{
@@ -231,12 +314,12 @@ navApps:"Apps",
 navAbout:"À propos",
 navContact:"Contact",
 appsTitle:"Nos Apps",
-footer:"© Micro Créatif – v4.10<br>Montréal | Hô Chi Minh Ville"
+footer:"© Micro Créatif – v4.13<br>Montréal | Hô Chi Minh Ville"
 }
 
 };
 
-let lang="EN";
+function applyLang(){
 
 document.getElementById("navHome").innerHTML=text[lang].navHome;
 document.getElementById("navApps").innerHTML=text[lang].navApps;
@@ -245,8 +328,30 @@ document.getElementById("navContact").innerHTML=text[lang].navContact;
 document.getElementById("appsTitle").innerHTML=text[lang].appsTitle;
 document.getElementById("footerText").innerHTML=text[lang].footer;
 
-</script>
+document.getElementById("langBtn").innerHTML = lang==="EN" ? "FR" : "EN";
 
+}
+
+function toggleLang(){
+
+lang = lang==="EN" ? "FR" : "EN";
+applyLang();
+
+}
+
+/* ---------- APPS MENU (TAP SUPPORT) ---------- */
+
+function toggleApps(e){
+
+e.preventDefault();
+
+document.getElementById("appsMenu").classList.toggle("open");
+
+}
+
+applyLang();
+
+</script>
 
 </body>
 </html>
