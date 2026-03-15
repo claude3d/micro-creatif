@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 4.7 -->
+<!-- Version 4.9 -->
 
 <head>
 <meta charset="UTF-8">
@@ -43,7 +43,6 @@ opacity:0.9;
 animation:twinkle 2.4s infinite;
 z-index:-4;
 
-/* halo glow */
 box-shadow:
 0 0 4px rgba(255,255,255,0.9),
 0 0 8px rgba(255,255,255,0.7),
@@ -78,6 +77,7 @@ width:100%;
 nav{
 display:inline-flex;
 gap:30px;
+position:relative;
 }
 
 nav a{
@@ -85,6 +85,37 @@ color:white;
 text-decoration:none;
 font-size:18px;
 opacity:0.9;
+cursor:pointer;
+}
+
+/* dropdown */
+
+.dropdown{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:28px;
+left:0;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.3);
+border-radius:10px;
+padding:8px 0;
+min-width:200px;
+text-align:left;
+}
+
+.submenu a{
+display:block;
+padding:8px 14px;
+font-size:16px;
+}
+
+.submenu a:hover{
+background:rgba(255,255,255,0.1);
 }
 
 /* language */
@@ -186,16 +217,27 @@ opacity:0.85;
 
 <img class="bg" src="images/galaxy-background.png">
 
-<!-- stars -->
 <div id="stars"></div>
 
 <header>
 
 <nav>
+
 <a id="navHome" href="index.html"></a>
-<a id="navApps" href="apps.html"></a>
+
+<div class="dropdown">
+<a id="navApps"></a>
+
+<div class="submenu" id="appsMenu">
+<a href="app1.html" id="menuApp1"></a>
+<a href="app2.html" id="menuApp2"></a>
+<a href="app3.html" id="menuApp3"></a>
+</div>
+</div>
+
 <a id="navAbout" href="about.html"></a>
 <a id="navContact" href="contact.html"></a>
+
 </nav>
 
 <div class="lang">
@@ -247,7 +289,7 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v4.7</p>
+<p>© Micro Créatif – v4.9</p>
 <p id="cities"></p>
 </footer>
 
@@ -280,79 +322,26 @@ container.appendChild(star);
 
 createStars();
 
-/* language system */
+/* apps dropdown */
 
-const text={
+const appsButton=document.getElementById("navApps");
+const menu=document.getElementById("appsMenu");
 
-en:{
-navHome:"Home",
-navApps:"Apps",
-navAbout:"About",
-navContact:"Contact",
-title:"Micro Creatif",
-since:"Since 1981",
-app1:"RA / Dec – AZ / Alt",
-app2:"Virtual Telescope",
-app3:"Solar System",
-cities:"Montreal | Ho Chi Minh City"
-},
+appsButton.addEventListener("click",function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
+});
 
-fr:{
-navHome:"Accueil",
-navApps:"Applications",
-navAbout:"À propos",
-navContact:"Contact",
-title:"Micro Créatif",
-since:"Depuis 1981",
-app1:"RA / Dec – AZ / Alt",
-app2:"Télescope virtuel",
-app3:"Système solaire",
-cities:"Montréal | Hô Chi Minh Ville"
+document.addEventListener("click",function(e){
+if(!menu.contains(e.target) && e.target!==appsButton){
+menu.style.display="none";
 }
-
-};
-
-function applyLanguage(lang){
-
-const t=text[lang];
-
-document.getElementById("navHome").textContent=t.navHome;
-document.getElementById("navApps").textContent=t.navApps;
-document.getElementById("navAbout").textContent=t.navAbout;
-document.getElementById("navContact").textContent=t.navContact;
-
-document.getElementById("title").textContent=t.title;
-document.getElementById("since").textContent=t.since;
-
-document.getElementById("app1").textContent=t.app1;
-document.getElementById("app2").textContent=t.app2;
-document.getElementById("app3").textContent=t.app3;
-
-document.getElementById("cities").textContent=t.cities;
-
-document.getElementById("langButton").textContent=(lang==="en")?"FR":"EN";
-
-}
-
-function toggleLanguage(){
-
-let lang=localStorage.getItem("lang")||"en";
-lang=(lang==="en")?"fr":"en";
-
-localStorage.setItem("lang",lang);
-
-applyLanguage(lang);
-
-}
-
-document.addEventListener("DOMContentLoaded",function(){
-
-let lang=localStorage.getItem("lang")||"en";
-applyLanguage(lang);
-
 });
 
 </script>
+
+<!-- shared language system -->
+<script src="js/language.js"></script>
 
 </body>
 </html>
