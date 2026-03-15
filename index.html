@@ -1,6 +1,6 @@
 <!-- Micro Creatif Website -->
 <!-- index.html -->
-<!-- Version: v4.8 -->
+<!-- Version: v4.9 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,32 +16,21 @@ body{
 margin:0;
 font-family: Arial, Helvetica, sans-serif;
 color:white;
-background:black;
 overflow-x:hidden;
+background:url("images/galaxy.jpg") center/cover no-repeat fixed;
 }
 
-/* Background */
-
-.hero{
-height:100vh;
-background:url("galaxy.jpg") center/cover no-repeat;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-}
-
-/* Navigation */
+/* NAVBAR */
 
 .navbar{
 position:absolute;
-top:20px;
+top:25px;
 width:100%;
 display:flex;
 justify-content:center;
-gap:40px;
+gap:50px;
 font-size:18px;
+z-index:10;
 }
 
 .navbar a{
@@ -54,7 +43,7 @@ opacity:0.9;
 opacity:1;
 }
 
-/* Dropdown */
+/* DROPDOWN */
 
 .dropdown{
 position:relative;
@@ -64,11 +53,11 @@ position:relative;
 display:none;
 position:absolute;
 top:30px;
-left:-40px;
+left:-30px;
 background:rgba(0,0,0,0.85);
 border-radius:10px;
 padding:10px 0;
-min-width:200px;
+min-width:220px;
 backdrop-filter:blur(6px);
 }
 
@@ -82,7 +71,16 @@ white-space:nowrap;
 display:block;
 }
 
-/* Title */
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 
 h1{
 font-size:72px;
@@ -90,41 +88,26 @@ margin:0;
 }
 
 .subtitle{
-margin-top:10px;
+margin-top:12px;
 font-size:20px;
 opacity:0.9;
 }
 
-/* Button */
-
-.button{
-margin-top:40px;
-padding:14px 30px;
-border-radius:30px;
-border:1px solid rgba(255,255,255,0.5);
-background:rgba(255,255,255,0.15);
-color:white;
-font-size:16px;
-text-decoration:none;
-backdrop-filter:blur(4px);
-}
-
-.button:hover{
-background:rgba(255,255,255,0.25);
-}
-
-/* Apps section */
+/* APPS */
 
 .apps{
 text-align:center;
-padding:80px 20px;
+padding:60px 20px 80px;
+}
+
+.apps h2{
+margin-bottom:30px;
 }
 
 .app-icons{
 display:flex;
 justify-content:center;
-gap:60px;
-margin-top:30px;
+gap:70px;
 flex-wrap:wrap;
 }
 
@@ -134,8 +117,19 @@ text-align:center;
 
 .app img{
 width:120px;
-border-radius:24px;
+border-radius:22px;
+transition:transform 0.25s;
 }
+
+.app img:hover{
+transform:scale(1.1);
+}
+
+.app-title{
+margin-top:10px;
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -149,8 +143,6 @@ font-size:14px;
 
 <body>
 
-<div class="hero">
-
 <nav class="navbar">
 
 <a href="index.html">Home</a>
@@ -163,20 +155,22 @@ font-size:14px;
 <a href="virtual-telescope.html">Virtual Telescope</a>
 <a href="solar-system.html">Solar System</a>
 </div>
+
 </div>
 
 <a href="about.html">About</a>
-
 <a href="contact.html">Contact</a>
 
 </nav>
 
+
+<section class="hero">
+
 <h1>Micro Creatif</h1>
 <div class="subtitle">Since 1981</div>
 
-<a class="button" href="about.html">Discover our history</a>
+</section>
 
-</div>
 
 <section class="apps">
 
@@ -186,33 +180,33 @@ font-size:14px;
 
 <div class="app">
 <a href="ra-dec.html">
-<img src="icons/radec.png">
+<img src="images/app1.png">
 </a>
-<div>RA / Dec – AZ / Alt</div>
+<div class="app-title">RA / Dec – AZ / Alt</div>
 </div>
 
 <div class="app">
 <a href="virtual-telescope.html">
-<img src="icons/telescope.png">
+<img src="images/app2.png">
 </a>
-<div>Virtual Telescope</div>
+<div class="app-title">Virtual Telescope</div>
 </div>
 
 <div class="app">
 <a href="solar-system.html">
-<img src="icons/solarsystem.png">
+<img src="images/app3.png">
 </a>
-<div>Solar System</div>
+<div class="app-title">Solar System</div>
 </div>
 
 </div>
 
 </section>
 
+
 <footer>
 
-© Micro Créatif – v4.8  
-<br>
+© Micro Créatif – v4.9<br>
 Montreal | Ho Chi Minh City
 
 </footer>
