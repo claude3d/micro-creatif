@@ -1,6 +1,6 @@
 <!-- Micro Creatif Website -->
 <!-- index.html -->
-<!-- Version: v4.13 -->
+<!-- Version: v4.14 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,28 +89,29 @@ display:block;
 /* ---------- HERO ---------- */
 
 .hero{
-height:65vh;
+height:75vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+padding-top:80px;
 }
 
 .hero h1{
-font-size:72px;
+font-size:90px;
 margin:0;
 }
 
 .subtitle{
-margin-top:10px;
-font-size:22px;
+margin-top:15px;
+font-size:24px;
 opacity:0.9;
 }
 
 /* ---------- APPS ---------- */
 
 .apps{
-margin-top:-60px;
+margin-top:-40px;
 }
 
 .apps h2{
@@ -176,7 +177,7 @@ font-size:16px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:52px;
 }
 
 }
@@ -187,7 +188,7 @@ font-size:48px;
 
 <body>
 
-<!-- BLINKING STARS -->
+<!-- STARS -->
 
 <script>
 
@@ -246,7 +247,7 @@ document.body.appendChild(star);
 <section class="hero">
 
 <h1>Micro Creatif</h1>
-<div class="subtitle">Since 1981</div>
+<div class="subtitle" id="sinceText"></div>
 
 </section>
 
@@ -305,7 +306,8 @@ navApps:"Apps",
 navAbout:"About",
 navContact:"Contact",
 appsTitle:"Our Apps",
-footer:"© Micro Créatif – v4.13<br>Montreal | Ho Chi Minh City"
+since:"Since 1981",
+footer:"© Micro Créatif – v4.14<br>Montreal | Ho Chi Minh City"
 },
 
 FR:{
@@ -314,7 +316,8 @@ navApps:"Apps",
 navAbout:"À propos",
 navContact:"Contact",
 appsTitle:"Nos Apps",
-footer:"© Micro Créatif – v4.13<br>Montréal | Hô Chi Minh Ville"
+since:"Depuis 1981",
+footer:"© Micro Créatif – v4.14<br>Montréal | Hô Chi Minh Ville"
 }
 
 };
@@ -326,6 +329,7 @@ document.getElementById("navApps").innerHTML=text[lang].navApps;
 document.getElementById("navAbout").innerHTML=text[lang].navAbout;
 document.getElementById("navContact").innerHTML=text[lang].navContact;
 document.getElementById("appsTitle").innerHTML=text[lang].appsTitle;
+document.getElementById("sinceText").innerHTML=text[lang].since;
 document.getElementById("footerText").innerHTML=text[lang].footer;
 
 document.getElementById("langBtn").innerHTML = lang==="EN" ? "FR" : "EN";
@@ -339,7 +343,7 @@ applyLang();
 
 }
 
-/* ---------- APPS MENU (TAP SUPPORT) ---------- */
+/* ---------- APPS MENU ---------- */
 
 function toggleApps(e){
 
@@ -348,6 +352,18 @@ e.preventDefault();
 document.getElementById("appsMenu").classList.toggle("open");
 
 }
+
+/* close menu when tapping outside */
+
+document.addEventListener("click", function(event){
+
+const menu=document.getElementById("appsMenu");
+
+if(!menu.contains(event.target)){
+menu.classList.remove("open");
+}
+
+});
 
 applyLang();
 
