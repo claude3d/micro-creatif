@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 5.6 -->
+<!-- Version 5.8 -->
 
 <head>
 <meta charset="UTF-8">
@@ -40,18 +40,21 @@ position:fixed;
 width:3px;
 height:3px;
 border-radius:50%;
-background:transparent;
+background:white;
 z-index:-4;
 
-/* permanent halo */
+/* strong halo */
 
 box-shadow:
 0 0 8px rgba(255,255,255,1),
-0 0 18px rgba(255,255,255,0.95),
-0 0 35px rgba(255,255,255,0.85),
-0 0 60px rgba(255,255,255,0.7),
-0 0 100px rgba(255,255,255,0.45);
+0 0 20px rgba(255,255,255,0.9),
+0 0 40px rgba(255,255,255,0.8),
+0 0 80px rgba(255,255,255,0.6);
+
+animation:twinkle 2s infinite ease-in-out;
 }
+
+/* star sizes */
 
 .star.small{
 width:2px;
@@ -59,44 +62,22 @@ height:2px;
 }
 
 .star.big{
-width:3px;
-height:3px;
+width:4px;
+height:4px;
 }
 
-/* blinking core */
+/* twinkle speeds */
 
-.star::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-border-radius:50%;
-background:white;
-animation:twinkle 2s infinite;
-}
+.star.fast{ animation-duration:1.4s; }
+.star.medium{ animation-duration:2.2s; }
+.star.slow{ animation-duration:3.2s; }
 
-/* blinking types */
-
-.star.strong::after{
-animation-duration:1.5s;
-}
-
-.star.medium::after{
-animation-duration:2.5s;
-}
-
-.star.faint::after{
-animation-duration:3.5s;
-}
-
-/* twinkle animation */
+/* blinking */
 
 @keyframes twinkle{
-0%{opacity:0.2; transform:scale(0.6);}
-50%{opacity:1; transform:scale(1.8);}
-100%{opacity:0.2; transform:scale(0.6);}
+0%   {opacity:0.35;}
+50%  {opacity:1;}
+100% {opacity:0.35;}
 }
 
 /* header */
@@ -151,7 +132,7 @@ font-size:16px;
 background:rgba(255,255,255,0.1);
 }
 
-/* language button */
+/* language */
 
 .lang{
 position:absolute;
@@ -320,57 +301,36 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v5.6</p>
+<p>© Micro Créatif – v5.8</p>
 <p id="cities"></p>
 </footer>
 
 <script>
 
-/* create stars */
+/* create blinking stars */
 
 function createStars(){
 
 const container=document.getElementById("stars");
 
-/* strong stars */
+for(let i=0;i<18;i++){
 
-for(let i=0;i<5;i++){
+let s=document.createElement("div");
 
-let star=document.createElement("div");
-star.className="star big strong";
+let size=Math.random()>0.5?"big":"small";
 
-star.style.top=Math.random()*100+"%";
-star.style.left=Math.random()*100+"%";
+let speed;
+let r=Math.random();
+if(r<0.33) speed="fast";
+else if(r<0.66) speed="medium";
+else speed="slow";
 
-container.appendChild(star);
+s.className="star "+size+" "+speed;
 
-}
+s.style.top=Math.random()*100+"%";
+s.style.left=Math.random()*100+"%";
 
-/* medium stars */
-
-for(let i=0;i<7;i++){
-
-let star=document.createElement("div");
-star.className="star small medium";
-
-star.style.top=Math.random()*100+"%";
-star.style.left=Math.random()*100+"%";
-
-container.appendChild(star);
-
-}
-
-/* faint stars */
-
-for(let i=0;i<6;i++){
-
-let star=document.createElement("div");
-star.className="star small faint";
-
-star.style.top=Math.random()*100+"%";
-star.style.left=Math.random()*100+"%";
-
-container.appendChild(star);
+container.appendChild(s);
 
 }
 
@@ -378,7 +338,7 @@ container.appendChild(star);
 
 createStars();
 
-/* dropdown */
+/* dropdown menu */
 
 const dropdown=document.getElementById("appsDropdown");
 const menu=document.getElementById("appsMenu");
