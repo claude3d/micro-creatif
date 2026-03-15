@@ -1,287 +1,391 @@
-<!-- Micro Creatif -->
-<!-- index.html -->
-<!-- Version 5.3 -->
-
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Micro Créatif -->
+<!-- index.html -->
+<!-- Version 4.5 -->
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Micro Creatif</title>
+<title>Micro Créatif</title>
 
 <style>
 
-html,body{
+body{
 margin:0;
-padding:0;
-height:100%;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 color:white;
 text-align:center;
+background:black;
 overflow-x:hidden;
 }
 
-body{
-background-image:url("images/galaxy-background.png");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+/* background */
+
+.bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-5;
 }
 
-/* NAVBAR */
+/* stars */
+
+.star{
+position:fixed;
+background:white;
+border-radius:50%;
+opacity:0.25;
+animation:twinkle 1.2s infinite;
+z-index:-4;
+}
+
+.star.big{
+width:2px;
+height:2px;
+}
+
+.star.small{
+width:1px;
+height:1px;
+opacity:0.15;
+}
+
+@keyframes twinkle{
+0%{opacity:0.15; transform:scale(1);}
+50%{opacity:1; transform:scale(1.4);}
+100%{opacity:0.15; transform:scale(1);}
+}
+
+/* header */
+
+header{
+position:absolute;
+top:10px;
+width:100%;
+}
 
 nav{
-position:fixed;
-top:25px;
-width:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:20px;
-z-index:10;
-}
-
-.navLinks{
-display:flex;
-gap:40px;
+display:inline-flex;
+gap:30px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
+font-size:18px;
+opacity:0.9;
 }
 
-.langButton{
+/* language */
+
+.lang{
 position:absolute;
-right:40px;
-border:2px solid white;
+right:30px;
+top:0;
+}
+
+.lang button{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
 padding:6px 14px;
-border-radius:20px;
+border-radius:16px;
 cursor:pointer;
 }
 
-/* MAIN */
+/* hero */
 
-.main{
-min-height:100vh;
+.hero{
+height:50vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 }
 
-/* TITLES */
-
-h1{
+.hero h1{
 font-size:64px;
-margin-top:-80px;
-margin-bottom:10px;
-text-shadow:0 0 12px rgba(255,255,255,0.6);
+margin-bottom:8px;
 }
 
-.subtitle{
-font-size:28px;
-opacity:0.9;
-margin-bottom:30px;
-text-shadow:0 0 10px rgba(0,0,0,0.6);
+.hero p{
+font-size:22px;
+margin-top:0;
 }
 
-.appsTitle{
-font-size:30px;
-margin-top:10px;
-margin-bottom:30px;
-text-shadow:0 0 14px rgba(0,0,0,0.9);
+/* buttons */
+
+.buttons{
+display:flex;
+gap:24px;
+margin-top:28px;
 }
 
-/* APPS */
+.buttons a{
+padding:14px 30px;
+border-radius:28px;
+color:white;
+text-decoration:none;
+font-size:17px;
+background:linear-gradient(
+rgba(255,255,255,0.25),
+rgba(255,255,255,0.05)
+);
+border:1px solid rgba(255,255,255,0.35);
+backdrop-filter:blur(16px);
+}
+
+/* apps */
 
 .apps{
+padding:20px;
+}
+
+.app-grid{
 display:flex;
-gap:70px;
 justify-content:center;
+gap:60px;
 flex-wrap:wrap;
 }
 
 .app{
-width:180px;
+width:120px;
 }
 
-.app img{
-width:140px;
-border-radius:26px;
+.app a{
+text-decoration:none;
+color:white;
 }
 
-.appTitle{
-margin-top:12px;
-font-size:20px;
-text-shadow:0 0 10px rgba(0,0,0,0.7);
+/* ICON */
+
+.icon{
+width:100px;
+height:100px;
+margin:auto;
+border-radius:22px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,0.35);
+box-shadow:
+0 0 0 1px white inset,
+0 0 10px rgba(255,255,255,0.2);
 }
 
-/* FOOTER */
+.icon img{
+width:100%;
+display:block;
+border-radius:22px;
+}
+
+.app p{
+margin-top:10px;
+font-size:16px;
+}
+
+/* footer */
 
 footer{
-position:absolute;
-bottom:20px;
-width:100%;
+padding:20px;
 font-size:14px;
-opacity:0.9;
-text-shadow:0 0 10px rgba(0,0,0,0.8);
-}
-
-/* STARS */
-
-.star{
-position:fixed;
-background:white;
-border-radius:50%;
-box-shadow:0 0 6px 2px rgba(255,255,255,0.6);
-animation:blink infinite;
-}
-
-@keyframes blink{
-0%{opacity:1}
-50%{opacity:0.2}
-100%{opacity:1}
+opacity:0.85;
 }
 
 </style>
-
 </head>
 
 <body>
 
+<img class="bg" src="images/galaxy-background.png">
+
+<!-- stars container -->
+
+<div id="stars"></div>
+
+<header>
+
 <nav>
-
-<div class="navLinks">
-<a href="#">Home</a>
-<a href="#">Apps</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</div>
-
-<a class="langButton" id="langBtn">FR</a>
-
+<a id="navHome" href="index.html"></a>
+<a id="navApps" href="apps.html"></a>
+<a id="navAbout" href="about.html"></a>
+<a id="navContact" href="contact.html"></a>
 </nav>
 
-<div class="main">
+<div class="lang">
+<button onclick="toggleLanguage()" id="langButton">FR</button>
+</div>
+
+</header>
+
+<section class="hero">
 
 <h1 id="title"></h1>
-<div class="subtitle" id="since"></div>
+<p id="since"></p>
 
-<div class="appsTitle" id="appsTitle"></div>
+<div class="buttons">
+<a id="btnHistory" href="about.html"></a>
+<a id="btnApps" href="apps.html"></a>
+</div>
 
-<div class="apps">
+</section>
+
+<section class="apps">
+
+<h2 id="appsTitle"></h2>
+
+<div class="app-grid">
 
 <div class="app">
+<a href="app1.html">
+<div class="icon">
 <img src="images/app1.png">
-<div class="appTitle" id="app1"></div>
+</div>
+<p id="app1"></p>
+</a>
 </div>
 
 <div class="app">
+<a href="app2.html">
+<div class="icon">
 <img src="images/app2.png">
-<div class="appTitle" id="app2"></div>
+</div>
+<p id="app2"></p>
+</a>
 </div>
 
 <div class="app">
+<a href="app3.html">
+<div class="icon">
 <img src="images/app3.png">
-<div class="appTitle" id="app3"></div>
+</div>
+<p id="app3"></p>
+</a>
 </div>
 
 </div>
 
-</div>
+</section>
 
 <footer>
-© Micro Créatif – v5.3<br>
-Montreal | Ho Chi Minh City
+<p>© Micro Créatif – v4.5</p>
+<p id="cities"></p>
 </footer>
 
 <script>
 
-/* LANGUAGE */
+/* create random stars */
 
-const text = {
+function createStars(){
+
+const container=document.getElementById("stars");
+
+for(let i=0;i<30;i++){
+
+let star=document.createElement("div");
+
+let type=(Math.random()>0.5)?"big":"small";
+
+star.className="star "+type;
+
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+
+star.style.animationDelay=(Math.random()*3)+"s";
+
+container.appendChild(star);
+
+}
+
+}
+
+createStars();
+
+/* language system */
+
+const text={
 
 en:{
+navHome:"Home",
+navApps:"Apps",
+navAbout:"About",
+navContact:"Contact",
 title:"Micro Creatif",
 since:"Since 1981",
-apps:"Our Apps",
+history:"Discover our history",
+viewApps:"View our apps",
+appsTitle:"Our Apps",
 app1:"RA / Dec – AZ / Alt",
 app2:"Virtual Telescope",
-app3:"Solar System"
+app3:"Solar System",
+cities:"Montreal | Ho Chi Minh City"
 },
 
 fr:{
+navHome:"Accueil",
+navApps:"Applications",
+navAbout:"À propos",
+navContact:"Contact",
 title:"Micro Créatif",
 since:"Depuis 1981",
-apps:"Nos Applications",
+history:"Découvrez notre histoire",
+viewApps:"Voir nos applications",
+appsTitle:"Nos applications",
 app1:"RA / Dec – AZ / Alt",
-app2:"Télescope Virtuel",
-app3:"Système Solaire"
+app2:"Télescope virtuel",
+app3:"Système solaire",
+cities:"Montréal | Hô Chi Minh Ville"
 }
 
 };
 
-let lang="en";
+function applyLanguage(lang){
 
-function updateLanguage(){
+const t=text[lang];
 
-document.getElementById("title").innerText=text[lang].title;
-document.getElementById("since").innerText=text[lang].since;
-document.getElementById("appsTitle").innerText=text[lang].apps;
+document.getElementById("navHome").textContent=t.navHome;
+document.getElementById("navApps").textContent=t.navApps;
+document.getElementById("navAbout").textContent=t.navAbout;
+document.getElementById("navContact").textContent=t.navContact;
 
-document.getElementById("app1").innerText=text[lang].app1;
-document.getElementById("app2").innerText=text[lang].app2;
-document.getElementById("app3").innerText=text[lang].app3;
+document.getElementById("title").textContent=t.title;
+document.getElementById("since").textContent=t.since;
 
-}
+document.getElementById("btnHistory").textContent=t.history;
+document.getElementById("btnApps").textContent=t.viewApps;
 
-updateLanguage();
+document.getElementById("appsTitle").textContent=t.appsTitle;
 
-document.getElementById("langBtn").onclick=function(){
+document.getElementById("app1").textContent=t.app1;
+document.getElementById("app2").textContent=t.app2;
+document.getElementById("app3").textContent=t.app3;
 
-if(lang==="en"){
-lang="fr";
-this.innerText="EN";
-}else{
-lang="en";
-this.innerText="FR";
-}
+document.getElementById("cities").textContent=t.cities;
 
-updateLanguage();
+document.getElementById("langButton").textContent=(lang==="en")?"FR":"EN";
 
 }
 
-/* STARS */
+function toggleLanguage(){
 
-function createStar(x,y,d,size){
+let lang=localStorage.getItem("lang")||"en";
+lang=(lang==="en")?"fr":"en";
 
-let s=document.createElement("div");
+localStorage.setItem("lang",lang);
 
-s.className="star";
-s.style.left=x+"%";
-s.style.top=y+"%";
-s.style.animationDuration=d+"s";
-s.style.width=size+"px";
-s.style.height=size+"px";
-
-document.body.appendChild(s);
+applyLanguage(lang);
 
 }
 
-/* balanced stars */
+document.addEventListener("DOMContentLoaded",function(){
 
-createStar(10,8,2,3);
-createStar(22,12,3,3);
-createStar(35,10,4,2);
-createStar(60,8,3,3);
-createStar(80,14,2,3);
+let lang=localStorage.getItem("lang")||"en";
+applyLanguage(lang);
 
-createStar(15,70,3,3);
-createStar(40,85,4,2);
-createStar(70,80,3,3);
+});
 
 </script>
 
