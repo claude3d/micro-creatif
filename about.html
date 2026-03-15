@@ -1,281 +1,225 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<!-- about.html -->
+<!-- Version 2.0 -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Souvenirs | Micro Créatif</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: white;
-            background: #0b0f19;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Souvenirs | Micro Créatif</title>
 
-        /* Fond animé identique à l'index */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 200%; height: 200%;
-            background: 
-                radial-gradient(circle at 30% 30%, #3a7bd5, transparent 40%),
-                radial-gradient(circle at 70% 70%, #00c6ff, transparent 40%),
-                radial-gradient(circle at 50% 80%, #1e90ff, transparent 40%);
-            animation: moveLights 18s infinite alternate ease-in-out;
-            filter: blur(120px);
-            opacity: .5;
-            z-index: -1;
-        }
+<style>
 
-        @keyframes moveLights {
-            0% { transform: translate(-10%, -10%); }
-            100% { transform: translate(10%, 10%); }
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        canvas { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; }
+body{
+height:100vh;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color:white;
+background:#0b0f19;
+overflow-x:hidden;
+}
 
-        /* Easter Egg Zone (100x100px) */
-        #easter-egg {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100px;
-            height: 100px;
-            cursor: pointer;
-            z-index: 100;
-        }
+/* Background lights */
 
-        /* Navigation */
-        .nav-container {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            padding: 30px;
-        }
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle at 25% 30%, rgba(60,120,255,0.35), transparent 45%),
+radial-gradient(circle at 70% 70%, rgba(0,200,255,0.35), transparent 45%),
+radial-gradient(circle at 40% 85%, rgba(0,120,255,0.25), transparent 45%);
+animation:moveLights 20s infinite alternate ease-in-out;
+filter:blur(120px);
+z-index:-1;
+}
 
-        .btn-ui {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 22px;
-            border-radius: 25px;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all .3s;
-        }
+@keyframes moveLights{
+0%{transform:translate(-8%,-8%);}
+100%{transform:translate(8%,8%);}
+}
 
-        .btn-ui:hover { background: white; color: #1a3a4a; }
+/* Navigation */
 
-        /* Contenu */
-        .main-content {
-            position: relative;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 40px 100px;
-            text-align: center;
-        }
+.nav-container{
+position:relative;
+z-index:10;
+display:flex;
+justify-content:space-between;
+padding:30px;
+}
 
-        h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,.5); }
+.btn-ui{
+background:rgba(255,255,255,0.1);
+color:white;
+border:1px solid rgba(255,255,255,0.3);
+padding:10px 22px;
+border-radius:25px;
+cursor:pointer;
+backdrop-filter:blur(10px);
+text-decoration:none;
+font-weight:600;
+transition:all .3s;
+}
 
-        .caption { font-size: 1.4rem; max-width: 800px; margin-bottom: 20px; font-weight: 300; line-height: 1.4; }
+.btn-ui:hover{
+background:white;
+color:#1a3a4a;
+}
 
-        .inflation-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 40px;
-            font-weight: 600;
-            color: #4facfe;
-        }
+/* Main content */
 
-        .facture-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
+.main-content{
+position:relative;
+z-index:5;
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:40px 40px 100px;
+text-align:center;
+}
 
-        footer {
-            padding: 40px;
-            text-align: center;
-            opacity: 0.8;
-            font-size: 1rem;
-            position: relative;
-            z-index: 5;
-        }
-    </style>
+h1{
+font-size:3.5rem;
+margin-bottom:20px;
+text-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+
+.caption{
+font-size:1.4rem;
+max-width:800px;
+margin-bottom:20px;
+font-weight:300;
+line-height:1.4;
+}
+
+.inflation-box{
+background:rgba(255,255,255,0.05);
+padding:15px 30px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+margin-bottom:40px;
+font-weight:600;
+color:#4facfe;
+}
+
+.facture-img{
+max-width:100%;
+height:auto;
+border-radius:10px;
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+border:1px solid rgba(255,255,255,0.2);
+}
+
+footer{
+padding:40px;
+text-align:center;
+opacity:0.8;
+font-size:1rem;
+position:relative;
+z-index:5;
+}
+
+</style>
 </head>
+
 <body>
 
-    <canvas id="particles"></canvas>
-    <div id="easter-egg" onclick="nextSeason()"></div>
+<div class="nav-container">
+<a href="index.html" class="btn-ui" id="back-btn"></a>
+<button class="btn-ui" onclick="toggleLanguage()" id="langButton"></button>
+</div>
 
-    <div class="nav-container">
-        <a href="index.html" class="btn-ui" id="back-btn">← Accueil</a>
-        <button class="btn-ui" onclick="toggleLang()" id="lang-btn">English</button>
-    </div>
+<div class="main-content">
 
-    <div class="main-content">
-        <h1 id="title">Nos Origines</h1>
-        
-        <p class="caption" id="hist-text">
-            L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.
-        </p>
+<h1 id="title"></h1>
 
-        <div class="inflation-box" id="inflation-text">
-            Valeur comparative en 2026 : environ 7 350 $ CAD
-        </div>
+<p class="caption" id="hist-text"></p>
 
-        <img src="facture.jpg" alt="Facture Apple II 1981" class="facture-img">
-    </div>
+<div class="inflation-box" id="inflation-text"></div>
 
-    <footer>
-        <p id="copyright">© 2026 Micro Créatif. Tous droits réservés.</p>
-        <p><strong>Montréal</strong> | <strong>Ho Chi Minh</strong></p>
-    </footer>
+<img src="images/facture.jpg" alt="Facture Apple II 1981" class="facture-img">
 
-    <script>
-        /* GESTION DE LA LANGUE (BIT D'INFO) */
-        function updateUI(lang) {
-            const btn = document.getElementById('lang-btn');
-            const backBtn = document.getElementById('back-btn');
-            const title = document.getElementById('title');
-            const hist = document.getElementById('hist-text');
-            const inflation = document.getElementById('inflation-text');
-            const copy = document.getElementById('copyright');
+</div>
 
-            if (lang === 'en') {
-                btn.innerText = 'Français';
-                backBtn.innerText = '← Home';
-                title.innerText = 'Our Origins';
-                hist.innerHTML = 'The purchase of this <strong>Apple II Plus 48K</strong> on June 11, 1981, for <strong>$2,100.00</strong> marks the beginning of the Micro Créatif adventure.';
-                inflation.innerText = 'Comparative value in 2026: approx. $7,350 CAD';
-                copy.innerText = '© 2026 Micro Créatif. All rights reserved.';
-            } else {
-                btn.innerText = 'English';
-                backBtn.innerText = '← Accueil';
-                title.innerText = 'Nos Origines';
-                hist.innerHTML = "L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.";
-                inflation.innerText = 'Valeur comparative en 2026 : environ 7 350 $ CAD';
-                copy.innerText = '© 2026 Micro Créatif. Tous droits réservés.';
-            }
-        }
+<footer>
+<p id="copyright"></p>
+<p id="cities"></p>
+</footer>
 
-        function toggleLang() {
-            const currentLang = localStorage.getItem('selectedLang') === 'en' ? 'fr' : 'en';
-            localStorage.setItem('selectedLang', currentLang);
-            updateUI(currentLang);
-        }
+<script>
 
-        window.onload = () => {
-            const savedLang = localStorage.getItem('selectedLang') || 'fr';
-            updateUI(savedLang);
-        };
+/* TEXT ARRAY (same structure as index.html) */
 
-        /* MOTEUR DE PARTICULES SAISONNIÈRES */
-        const canvas = document.getElementById("particles");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+const text = {
 
-        const seasons = ["hiver", "printemps", "été", "automne"];
-        let currentSeasonIndex = 0;
+en:{
+back:"← Home",
+langButton:"FR",
+title:"Our Origins",
+history:"The purchase of this <strong>Apple II Plus 48K</strong> on June 11, 1981, for <strong>$2,100.00</strong> marks the beginning of the Micro Créatif adventure.",
+inflation:"Comparative value in 2026: approx. $7,350 CAD",
+copyright:"© 2026 Micro Créatif. All rights reserved.",
+cities:"Montreal | Ho Chi Minh City"
+},
 
-        function getInitialSeason() {
-            const now = new Date();
-            const m = now.getMonth() + 1;
-            const d = now.getDate();
-            if (m === 12 || m === 1 || m === 2 || (m === 3 && d <= 20)) return 0;
-            if (m === 3 || m === 4 || m === 5) return 1;
-            if (m === 6 || m === 7 || m === 8) return 2;
-            return 3;
-        }
+fr:{
+back:"← Accueil",
+langButton:"EN",
+title:"Nos Origines",
+history:"L'achat de cet <strong>Apple II Plus 48K</strong> le 11 juin 1981 pour <strong>2 100,00 $</strong> marque le début de l'aventure Micro Créatif.",
+inflation:"Valeur comparative en 2026 : environ 7 350 $ CAD",
+copyright:"© 2026 Micro Créatif. Tous droits réservés.",
+cities:"Montréal | Hô Chi Minh Ville"
+}
 
-        currentSeasonIndex = getInitialSeason();
-        let particles = [];
+};
 
-        function createParticle() {
-            return {
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 1,
-                vy: Math.random() * 1.2 + 0.5,
-                size: Math.random() * 4 + 3,
-                rotation: Math.random() * Math.PI * 2,
-                vRot: (Math.random() - 0.5) * 0.04,
-                opacity: Math.random() * 0.4 + 0.4,
-                colorVar: Math.random()
-            };
-        }
+/* Apply language */
 
-        for(let i=0; i<75; i++) particles.push(createParticle());
+function applyLanguage(lang){
 
-        function nextSeason() { currentSeasonIndex = (currentSeasonIndex + 1) % seasons.length; }
+const t = text[lang];
 
-        function drawSnowflake(p) {
-            ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${p.opacity})`;
-            ctx.lineWidth = 1.2; ctx.beginPath();
-            for(let i=0; i<6; i++){
-                ctx.moveTo(0,0); ctx.lineTo(0, p.size*2);
-                ctx.moveTo(0, p.size); ctx.lineTo(p.size*0.5, p.size*1.3);
-                ctx.moveTo(0, p.size); ctx.lineTo(-p.size*0.5, p.size*1.3);
-                ctx.rotate(Math.PI/3);
-            }
-            ctx.stroke(); ctx.restore();
-        }
+document.getElementById("back-btn").textContent = t.back;
+document.getElementById("langButton").textContent = t.langButton;
+document.getElementById("title").textContent = t.title;
+document.getElementById("hist-text").innerHTML = t.history;
+document.getElementById("inflation-text").textContent = t.inflation;
+document.getElementById("copyright").textContent = t.copyright;
+document.getElementById("cities").textContent = t.cities;
 
-        function drawMapleLeaf(p, color) {
-            ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
-            ctx.fillStyle = `rgba(${color}, ${p.opacity})`;
-            ctx.beginPath(); ctx.moveTo(0, p.size*2); ctx.lineTo(0, 0);
-            const pts = [[-0.3,0.4],[-0.8,0.2],[-0.6,0.9],[-1.2,1.2],[-0.5,1.6],[-0.2,2.2],[0,2.5],[0.2,2.2],[0.5,1.6],[1.2,1.2],[0.6,0.9],[0.8,0.2],[0.3,0.4]];
-            pts.forEach(pt => ctx.lineTo(pt[0]*p.size, pt[1]*-p.size));
-            ctx.fill(); ctx.restore();
-        }
+}
 
-        function drawSakura(p) {
-            ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation);
-            ctx.fillStyle = `rgba(255, 183, 197, ${p.opacity})`;
-            for(let i=0; i<5; i++){
-                ctx.beginPath();
-                ctx.bezierCurveTo(p.size*0.5, p.size, p.size*1.5, p.size*0.5, 0, 0);
-                ctx.bezierCurveTo(-p.size*1.5, p.size*0.5, -p.size*0.5, p.size, 0, 0);
-                ctx.fill(); ctx.rotate(Math.PI*2/5);
-            }
-            ctx.restore();
-        }
+/* Toggle language */
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const s = seasons[currentSeasonIndex];
-            particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy; p.rotation += p.vRot;
-                if(p.y > canvas.height) p.y = -20;
-                if(p.x > canvas.width) p.x = 0; if(p.x < 0) p.x = canvas.width;
-                if(s === "hiver") drawSnowflake(p);
-                else if(s === "printemps") drawSakura(p);
-                else if(s === "été") drawMapleLeaf(p, "34, 139, 34");
-                else {
-                    let c = p.colorVar < 0.33 ? "200,30,30" : (p.colorVar < 0.66 ? "241,196,15" : "100,160,60");
-                    drawMapleLeaf(p, c);
-                }
-            });
-            requestAnimationFrame(animate);
-        }
+function toggleLanguage(){
 
-        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-        animate();
-    </script>
+let lang = localStorage.getItem("lang") || "fr";
+lang = (lang === "fr") ? "en" : "fr";
+
+localStorage.setItem("lang", lang);
+
+applyLanguage(lang);
+
+}
+
+/* Init */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+let lang = localStorage.getItem("lang") || "fr";
+
+applyLanguage(lang);
+
+});
+
+</script>
+
 </body>
 </html>
