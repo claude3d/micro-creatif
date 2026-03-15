@@ -1,6 +1,6 @@
 <!-- Micro Creatif -->
 <!-- index.html -->
-<!-- Version 5.2 -->
+<!-- Version 5.3 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +76,7 @@ align-items:center;
 
 h1{
 font-size:64px;
-margin-top:-120px;
+margin-top:-80px;
 margin-bottom:10px;
 text-shadow:0 0 12px rgba(255,255,255,0.6);
 }
@@ -84,13 +84,13 @@ text-shadow:0 0 12px rgba(255,255,255,0.6);
 .subtitle{
 font-size:28px;
 opacity:0.9;
-margin-bottom:40px;
+margin-bottom:30px;
 text-shadow:0 0 10px rgba(0,0,0,0.6);
 }
 
 .appsTitle{
 font-size:30px;
-margin-top:40px;
+margin-top:10px;
 margin-bottom:30px;
 text-shadow:0 0 14px rgba(0,0,0,0.9);
 }
@@ -136,14 +136,14 @@ text-shadow:0 0 10px rgba(0,0,0,0.8);
 position:fixed;
 background:white;
 border-radius:50%;
-box-shadow:0 0 16px 8px rgba(255,255,255,0.9);
+box-shadow:0 0 6px 2px rgba(255,255,255,0.6);
 animation:blink infinite;
 }
 
 @keyframes blink{
-0%{opacity:1;transform:scale(1);}
-50%{opacity:0.1;transform:scale(0.35);}
-100%{opacity:1;transform:scale(1);}
+0%{opacity:1}
+50%{opacity:0.2}
+100%{opacity:1}
 }
 
 </style>
@@ -194,7 +194,7 @@ animation:blink infinite;
 </div>
 
 <footer>
-© Micro Créatif – v5.2<br>
+© Micro Créatif – v5.3<br>
 Montreal | Ho Chi Minh City
 </footer>
 
@@ -254,7 +254,7 @@ updateLanguage();
 
 }
 
-/* STAR SYSTEM */
+/* STARS */
 
 function createStar(x,y,d,size){
 
@@ -271,32 +271,17 @@ document.body.appendChild(s);
 
 }
 
-/* UPPER SKY */
+/* balanced stars */
 
-createStar(10,6,1.8,4);
-createStar(20,10,2.1,6);
-createStar(35,8,2.3,3);
-createStar(50,12,1.7,5);
-createStar(70,6,2.2,4);
-createStar(85,10,1.9,6);
+createStar(10,8,2,3);
+createStar(22,12,3,3);
+createStar(35,10,4,2);
+createStar(60,8,3,3);
+createStar(80,14,2,3);
 
-/* MIDDLE SKY */
-
-createStar(8,28,1.6,3);
-createStar(22,35,2.2,6);
-createStar(40,30,2.4,7);
-createStar(55,45,1.8,3);
-createStar(65,25,2.6,5);
-createStar(85,30,1.7,4);
-
-/* LOWER SKY (new stars added) */
-
-createStar(15,82,2.0,5);
-createStar(30,88,1.7,4);
-createStar(45,90,2.2,6);
-createStar(60,85,1.8,3);
-createStar(75,92,2.4,5);
-createStar(90,80,1.9,4);
+createStar(15,70,3,3);
+createStar(40,85,4,2);
+createStar(70,80,3,3);
 
 </script>
 
