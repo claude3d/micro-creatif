@@ -1,6 +1,6 @@
 <!-- Micro Creatif -->
 <!-- index.html -->
-<!-- Version 3.3 -->
+<!-- Version 4.8 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,8 +25,6 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* ---------- BACKGROUND ---------- */
-
 body{
 background-image:url("images/galaxy-background.png");
 background-size:cover;
@@ -42,9 +40,14 @@ top:25px;
 width:100%;
 display:flex;
 justify-content:center;
-gap:40px;
+align-items:center;
 font-size:20px;
 z-index:10;
+}
+
+.navLinks{
+display:flex;
+gap:40px;
 }
 
 nav a{
@@ -53,40 +56,43 @@ text-decoration:none;
 }
 
 .langButton{
+position:absolute;
+right:40px;
 border:2px solid white;
 padding:6px 14px;
 border-radius:20px;
 cursor:pointer;
 }
 
-/* ---------- MAIN LAYOUT ---------- */
+/* ---------- MAIN ---------- */
 
 .main{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 }
 
-/* ---------- TITLE ---------- */
-
 h1{
 font-size:64px;
 margin:10px 0;
+text-shadow:0 0 12px rgba(255,255,255,0.6);
 }
 
 .subtitle{
 font-size:28px;
 opacity:0.9;
 margin-bottom:60px;
+text-shadow:0 0 10px rgba(0,0,0,0.6);
 }
 
 /* ---------- APPS ---------- */
 
 .appsTitle{
-font-size:32px;
+font-size:30px;
 margin-bottom:30px;
+text-shadow:0 0 14px rgba(0,0,0,0.9);
 }
 
 .apps{
@@ -108,19 +114,18 @@ border-radius:26px;
 .appTitle{
 margin-top:12px;
 font-size:20px;
+text-shadow:0 0 10px rgba(0,0,0,0.7);
 }
 
-/* ---------- BUTTON ---------- */
+/* ---------- FOOTER ---------- */
 
-.mainButton{
-margin-top:50px;
-padding:16px 44px;
-font-size:22px;
-border-radius:30px;
-border:none;
-background:rgba(120,140,255,0.7);
-color:white;
-backdrop-filter:blur(6px);
+footer{
+position:absolute;
+bottom:20px;
+width:100%;
+font-size:14px;
+opacity:0.9;
+text-shadow:0 0 10px rgba(0,0,0,0.8);
 }
 
 /* ---------- STARS ---------- */
@@ -129,27 +134,44 @@ backdrop-filter:blur(6px);
 position:fixed;
 background:white;
 border-radius:50%;
-box-shadow:0 0 10px 3px rgba(255,255,255,0.9);
+box-shadow:0 0 14px 6px rgba(255,255,255,0.9);
 animation:blink infinite;
 }
 
 @keyframes blink{
-0%{opacity:1; transform:scale(1);}
-50%{opacity:0.15; transform:scale(0.5);}
-100%{opacity:1; transform:scale(1);}
+0%{
+opacity:1;
+transform:scale(1);
+box-shadow:0 0 14px 6px rgba(255,255,255,0.9);
+}
+
+50%{
+opacity:0.15;
+transform:scale(0.4);
+box-shadow:0 0 4px 2px rgba(255,255,255,0.4);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+box-shadow:0 0 14px 6px rgba(255,255,255,0.9);
+}
 }
 
 </style>
+
 </head>
 
 <body>
 
 <nav>
 
+<div class="navLinks">
 <a href="#">Home</a>
 <a href="#">Apps</a>
 <a href="#">About</a>
 <a href="#">Contact</a>
+</div>
 
 <a class="langButton" id="langBtn">FR</a>
 
@@ -181,9 +203,12 @@ animation:blink infinite;
 
 </div>
 
-<button class="mainButton">microcreatif.ca</button>
-
 </div>
+
+<footer>
+© Micro Créatif – v4.8<br>
+Montreal | Ho Chi Minh City
+</footer>
 
 <script>
 
