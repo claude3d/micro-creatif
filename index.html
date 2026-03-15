@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 5.0 -->
+<!-- Version 5.1 -->
 
 <head>
 <meta charset="UTF-8">
@@ -43,26 +43,50 @@ z-index:-4;
 
 box-shadow:
 0 0 6px rgba(255,255,255,1),
-0 0 12px rgba(255,255,255,0.9),
-0 0 20px rgba(255,255,255,0.6);
-
-animation:twinkle infinite;
+0 0 12px rgba(255,255,255,0.8),
+0 0 18px rgba(255,255,255,0.5);
 }
 
-.star.big{
-width:3px;
-height:3px;
+/* far stars */
+
+.star.far{
+width:1px;
+height:1px;
+animation:twinkleFar infinite;
 }
 
-.star.small{
+/* mid stars */
+
+.star.mid{
 width:2px;
 height:2px;
+animation:twinkleMid infinite;
 }
 
-@keyframes twinkle{
+/* near stars */
+
+.star.near{
+width:3px;
+height:3px;
+animation:twinkleNear infinite;
+}
+
+@keyframes twinkleFar{
 0%{opacity:0.2; transform:scale(0.8);}
-50%{opacity:1; transform:scale(1.8);}
+50%{opacity:0.6; transform:scale(1.2);}
 100%{opacity:0.2; transform:scale(0.8);}
+}
+
+@keyframes twinkleMid{
+0%{opacity:0.2; transform:scale(0.8);}
+50%{opacity:1; transform:scale(1.6);}
+100%{opacity:0.2; transform:scale(0.8);}
+}
+
+@keyframes twinkleNear{
+0%{opacity:0.2; transform:scale(0.7);}
+50%{opacity:1; transform:scale(2);}
+100%{opacity:0.2; transform:scale(0.7);}
 }
 
 /* header */
@@ -288,31 +312,64 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v5.0</p>
+<p>© Micro Créatif – v5.1</p>
 <p id="cities"></p>
 </footer>
 
 <script>
 
-/* random blinking stars */
+/* layered starfield */
 
 function createStars(){
 
 const container=document.getElementById("stars");
 
-for(let i=0;i<60;i++){
+/* far stars */
+
+for(let i=0;i<40;i++){
 
 let star=document.createElement("div");
-
-let type=(Math.random()>0.5)?"big":"small";
-
-star.className="star "+type;
+star.className="star far";
 
 star.style.top=Math.random()*100+"%";
 star.style.left=Math.random()*100+"%";
 
+star.style.animationDuration=(4+Math.random()*4)+"s";
+star.style.animationDelay=(Math.random()*4)+"s";
+
+container.appendChild(star);
+
+}
+
+/* mid stars */
+
+for(let i=0;i<30;i++){
+
+let star=document.createElement("div");
+star.className="star mid";
+
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+
+star.style.animationDuration=(2+Math.random()*3)+"s";
 star.style.animationDelay=(Math.random()*3)+"s";
+
+container.appendChild(star);
+
+}
+
+/* near stars */
+
+for(let i=0;i<20;i++){
+
+let star=document.createElement("div");
+star.className="star near";
+
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+
 star.style.animationDuration=(1+Math.random()*2)+"s";
+star.style.animationDelay=(Math.random()*2)+"s";
 
 container.appendChild(star);
 
