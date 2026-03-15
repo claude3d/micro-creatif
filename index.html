@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 4.6 -->
+<!-- Version 4.7 -->
 
 <head>
 <meta charset="UTF-8">
@@ -39,9 +39,15 @@ z-index:-5;
 position:fixed;
 background:white;
 border-radius:50%;
-opacity:0.6;
-animation:twinkle 2.2s infinite;
+opacity:0.9;
+animation:twinkle 2.4s infinite;
 z-index:-4;
+
+/* halo glow */
+box-shadow:
+0 0 4px rgba(255,255,255,0.9),
+0 0 8px rgba(255,255,255,0.7),
+0 0 12px rgba(255,255,255,0.4);
 }
 
 .star.big{
@@ -52,13 +58,13 @@ height:3px;
 .star.small{
 width:2px;
 height:2px;
-opacity:0.4;
+opacity:0.7;
 }
 
 @keyframes twinkle{
-0%{opacity:0.2; transform:scale(1);}
+0%{opacity:0.3; transform:scale(1);}
 50%{opacity:1; transform:scale(1.6);}
-100%{opacity:0.2; transform:scale(1);}
+100%{opacity:0.3; transform:scale(1);}
 }
 
 /* header */
@@ -180,7 +186,7 @@ opacity:0.85;
 
 <img class="bg" src="images/galaxy-background.png">
 
-<!-- stars container -->
+<!-- stars -->
 <div id="stars"></div>
 
 <header>
@@ -241,13 +247,13 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v4.6</p>
+<p>© Micro Créatif – v4.7</p>
 <p id="cities"></p>
 </footer>
 
 <script>
 
-/* create random stars */
+/* random stars */
 
 function createStars(){
 
