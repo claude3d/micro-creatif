@@ -1,8 +1,10 @@
-<!-- Micro Creatif - index.html -->
-<!-- Version 1.4 -->
+<!-- Micro Creatif -->
+<!-- index.html -->
+<!-- Version 2.3 -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -12,56 +14,36 @@
 
 <style>
 
-body{
+html,body{
 margin:0;
+padding:0;
+height:100%;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 color:white;
-background:black;
-overflow-x:hidden;
+text-align:center;
+overflow:hidden;
 }
 
-.background{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:url("galaxy.jpg");
+/* BACKGROUND */
+
+body{
+background-image:url("galaxy.png");
 background-size:cover;
 background-position:center;
-z-index:-2;
+background-attachment:fixed;
 }
 
-/* stars */
-
-.star{
-position:fixed;
-border-radius:50%;
-background:white;
-opacity:0;
-animation:twinkle 3s infinite;
-z-index:-1;
-}
-
-@keyframes twinkle{
-0%{opacity:0;}
-50%{opacity:1;}
-100%{opacity:0;}
-}
-
-/* navigation */
+/* NAVBAR */
 
 nav{
 position:fixed;
-top:0;
+top:20px;
 width:100%;
 display:flex;
 justify-content:center;
 gap:40px;
-padding:20px;
 font-size:20px;
-background:rgba(0,0,0,0.3);
-backdrop-filter:blur(6px);
+z-index:10;
 }
 
 nav a{
@@ -69,66 +51,67 @@ color:white;
 text-decoration:none;
 }
 
-.langButton{
+.lang{
 border:2px solid white;
 padding:6px 14px;
 border-radius:20px;
 }
 
-/* header */
+/* MAIN LAYOUT */
 
-header{
-text-align:center;
-padding-top:160px;
+.main{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
+
+/* TITLE */
 
 h1{
 font-size:60px;
-margin-bottom:10px;
+margin:10px 0;
 }
 
 .subtitle{
-font-size:28px;
-opacity:0.8;
+font-size:26px;
+opacity:0.85;
+margin-bottom:40px;
 }
 
-/* apps */
+/* APPS */
 
 .appsTitle{
-margin-top:140px;
-text-align:center;
-font-size:32px;
+font-size:28px;
+margin-bottom:25px;
 }
 
 .apps{
 display:flex;
-flex-wrap:wrap;
+gap:50px;
 justify-content:center;
-gap:60px;
-max-width:900px;
-margin:60px auto;
+flex-wrap:wrap;
 }
 
 .app{
-text-align:center;
-width:180px;
+width:170px;
 }
 
 .app img{
-width:140px;
-border-radius:26px;
+width:130px;
+border-radius:24px;
 }
 
 .appTitle{
-margin-top:12px;
+margin-top:10px;
 font-size:20px;
 }
 
-/* button */
+/* BUTTON */
 
 .mainButton{
-display:block;
-margin:60px auto 120px auto;
+margin-top:35px;
 padding:14px 40px;
 font-size:22px;
 border-radius:30px;
@@ -138,24 +121,22 @@ color:white;
 backdrop-filter:blur(6px);
 }
 
-/* responsive */
+/* STARS */
 
-@media (max-width:700px){
-
-h1{
-font-size:40px;
+.star{
+position:fixed;
+width:5px;
+height:5px;
+background:white;
+border-radius:50%;
+box-shadow:0 0 8px 2px rgba(255,255,255,0.9);
+animation:blink infinite;
 }
 
-.subtitle{
-font-size:22px;
-}
-
-.apps{
-flex-direction:column;
-align-items:center;
-gap:40px;
-}
-
+@keyframes blink{
+0%{opacity:1; transform:scale(1);}
+50%{opacity:0.2; transform:scale(0.6);}
+100%{opacity:1; transform:scale(1);}
 }
 
 </style>
@@ -164,106 +145,108 @@ gap:40px;
 
 <body>
 
-<div class="background"></div>
-
 <nav>
+
 <a href="#">Home</a>
 <a href="#">Apps</a>
 <a href="#">About</a>
 <a href="#">Contact</a>
-<a class="langButton" href="#">FR</a>
+
+<a href="#" class="lang" id="langBtn">FR</a>
+
 </nav>
 
-<header>
-<h1 id="title"></h1>
-<div class="subtitle" id="since"></div>
-</header>
+<div class="main">
 
-<div class="appsTitle" id="appsTitle"></div>
+<h1 id="title">Micro Creatif</h1>
+<div class="subtitle" id="since">Since 1981</div>
+
+<div class="appsTitle" id="appsTitle">Our Apps</div>
 
 <div class="apps">
 
 <div class="app">
 <img src="radec.png">
-<div class="appTitle" id="app1"></div>
+<div class="appTitle">RA / Dec – AZ / Alt</div>
 </div>
 
 <div class="app">
 <img src="telescope.png">
-<div class="appTitle" id="app2"></div>
+<div class="appTitle">Virtual Telescope</div>
 </div>
 
 <div class="app">
 <img src="solarsystem.png">
-<div class="appTitle" id="app3"></div>
+<div class="appTitle">Solar System</div>
 </div>
 
 </div>
 
 <button class="mainButton">microcreatif.ca</button>
 
+</div>
+
 <script>
 
-/* language */
+/* LANGUAGE SYSTEM */
 
-const text = {
+let lang="en"
+
+const text={
 
 en:{
 title:"Micro Creatif",
 since:"Since 1981",
-apps:"Our Apps",
-app1:"RA / Dec – AZ / Alt",
-app2:"Virtual Telescope",
-app3:"Solar System"
+apps:"Our Apps"
 },
 
 fr:{
 title:"Micro Créatif",
 since:"Depuis 1981",
-apps:"Nos Applications",
-app1:"RA / Dec – AZ / Alt",
-app2:"Télescope Virtuel",
-app3:"Système Solaire"
+apps:"Nos Applications"
 }
-
-};
-
-let lang="en";
-
-function updateLanguage(){
-
-document.getElementById("title").innerText=text[lang].title;
-document.getElementById("since").innerText=text[lang].since;
-document.getElementById("appsTitle").innerText=text[lang].apps;
-
-document.getElementById("app1").innerText=text[lang].app1;
-document.getElementById("app2").innerText=text[lang].app2;
-document.getElementById("app3").innerText=text[lang].app3;
 
 }
 
-updateLanguage();
+document.getElementById("langBtn").onclick=function(){
 
-/* stars */
+if(lang==="en"){
+lang="fr"
+this.innerText="EN"
+}
+else{
+lang="en"
+this.innerText="FR"
+}
 
-for(let i=0;i<40;i++){
-
-let s=document.createElement("div");
-s.className="star";
-
-let size=Math.random()*4+2;
-
-s.style.width=size+"px";
-s.style.height=size+"px";
-
-s.style.left=Math.random()*100+"%";
-s.style.top=Math.random()*100+"%";
-
-s.style.animationDuration=(Math.random()*3+2)+"s";
-
-document.body.appendChild(s);
+document.getElementById("title").innerText=text[lang].title
+document.getElementById("since").innerText=text[lang].since
+document.getElementById("appsTitle").innerText=text[lang].apps
 
 }
+
+/* STARS (different twinkle speeds for realism) */
+
+function star(x,y,d){
+
+let s=document.createElement("div")
+s.className="star"
+s.style.left=x+"%"
+s.style.top=y+"%"
+s.style.animationDuration=d+"s"
+
+document.body.appendChild(s)
+
+}
+
+star(12,18,1.4)
+star(28,42,2.3)
+star(48,26,1.8)
+star(65,32,2.6)
+star(80,55,1.5)
+star(22,70,2.1)
+star(60,82,1.9)
+star(40,60,2.4)
 
 </script>
 
