@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 6.3 -->
+<!-- Version 6.4 -->
 
 <head>
 <meta charset="UTF-8">
@@ -29,41 +29,36 @@ left:0;
 width:100%;
 height:100%;
 object-fit:cover;
-z-index:-5;
+z-index:-10;
 }
 
-/* star layer */
-
-#stars{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:-4;
-}
-
-/* stars */
+/* blinking stars */
 
 .star{
-position:absolute;
-width:4px;
-height:4px;
+position:fixed;
+width:3px;
+height:3px;
 background:white;
 border-radius:50%;
+
 box-shadow:
 0 0 6px white,
 0 0 12px white,
-0 0 25px rgba(255,255,255,0.9);
-opacity:0.2;
+0 0 20px rgba(255,255,255,0.9);
+
+animation:blink 3s infinite alternate ease-in-out;
+}
+
+@keyframes blink{
+0%{opacity:0.2;}
+100%{opacity:1;}
 }
 
 /* navigation */
 
 header{
 position:absolute;
-top:14px;
+top:18px;
 width:100%;
 }
 
@@ -71,7 +66,7 @@ nav{
 display:flex;
 justify-content:center;
 gap:40px;
-font-size:18px;
+font-size:16px; /* restored smaller menu */
 }
 
 nav a{
@@ -90,10 +85,11 @@ position:relative;
 display:none;
 position:absolute;
 top:26px;
-left:-25px;
-background:rgba(0,0,0,0.8);
-padding:10px 0;
+left:-20px;
+background:rgba(0,0,0,0.75);
+padding:8px 0;
 border-radius:10px;
+font-size:16px;
 }
 
 .submenu a{
@@ -190,7 +186,21 @@ font-size:14px;
 <body>
 
 <img class="bg" src="images/galaxy-background.png">
-<div id="stars"></div>
+
+<!-- blinking stars (few, slow) -->
+
+<div class="star" style="top:12%;left:20%;animation-delay:0s;"></div>
+<div class="star" style="top:18%;left:75%;animation-delay:1s;"></div>
+<div class="star" style="top:30%;left:40%;animation-delay:2s;"></div>
+<div class="star" style="top:42%;left:65%;animation-delay:0.5s;"></div>
+<div class="star" style="top:55%;left:15%;animation-delay:1.5s;"></div>
+<div class="star" style="top:62%;left:85%;animation-delay:2.5s;"></div>
+<div class="star" style="top:70%;left:45%;animation-delay:1.2s;"></div>
+<div class="star" style="top:78%;left:30%;animation-delay:0.8s;"></div>
+<div class="star" style="top:85%;left:60%;animation-delay:2.2s;"></div>
+<div class="star" style="top:35%;left:10%;animation-delay:1.7s;"></div>
+<div class="star" style="top:50%;left:50%;animation-delay:0.6s;"></div>
+<div class="star" style="top:65%;left:90%;animation-delay:1.9s;"></div>
 
 <header>
 
@@ -206,6 +216,7 @@ font-size:14px;
 <a href="app2.html" id="menuApp2"></a>
 <a href="app3.html" id="menuApp3"></a>
 </div>
+
 </div>
 
 <a id="navAbout" href="about.html"></a>
@@ -220,8 +231,10 @@ font-size:14px;
 </header>
 
 <section class="hero">
+
 <h1 id="title"></h1>
 <p id="since"></p>
+
 </section>
 
 <section class="apps">
@@ -254,8 +267,10 @@ font-size:14px;
 </section>
 
 <footer>
+
 <p>© Micro Créatif</p>
 <p id="cities"></p>
+
 </footer>
 
 <script>
@@ -275,39 +290,6 @@ if(!dropdown.contains(e.target)){
 menu.style.display="none";
 }
 });
-
-/* star generator */
-
-const container=document.getElementById("stars");
-const stars=[];
-
-for(let i=0;i<120;i++){
-
-let s=document.createElement("div");
-s.className="star";
-
-s.style.top=Math.random()*100+"%";
-s.style.left=Math.random()*100+"%";
-
-container.appendChild(s);
-stars.push(s);
-}
-
-/* blinking controller */
-
-setInterval(function(){
-
-stars.forEach(star=>{
-
-if(Math.random()<0.25){
-
-star.style.opacity=Math.random();
-
-}
-
-});
-
-},300);
 
 </script>
 
