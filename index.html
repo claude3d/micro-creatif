@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 4.6 -->
+<!-- Version 5.0 -->
 
 <head>
 <meta charset="UTF-8">
@@ -21,7 +21,7 @@ background:black;
 overflow-x:hidden;
 }
 
-/* background */
+/* galaxy background */
 
 .bg{
 position:fixed;
@@ -33,19 +33,19 @@ object-fit:cover;
 z-index:-5;
 }
 
-/* stars */
+/* blinking stars */
 
 .star{
 position:fixed;
 background:white;
 border-radius:50%;
-z-index:-4;
+z-index:2;
 
 box-shadow:
-0 0 6px white,
-0 0 12px white,
-0 0 24px rgba(255,255,255,0.9),
-0 0 50px rgba(255,255,255,0.7);
+0 0 8px white,
+0 0 18px white,
+0 0 35px rgba(255,255,255,0.9),
+0 0 70px rgba(255,255,255,0.6);
 
 animation:twinkle 1.6s infinite ease-in-out;
 }
@@ -61,29 +61,54 @@ height:2px;
 }
 
 @keyframes twinkle{
-0%{opacity:0.35; transform:scale(1);}
-50%{opacity:1; transform:scale(1.5);}
-100%{opacity:0.35; transform:scale(1);}
+0%{opacity:0.35;transform:scale(1);}
+50%{opacity:1;transform:scale(1.6);}
+100%{opacity:0.35;transform:scale(1);}
 }
 
-/* header */
+/* navigation */
 
 header{
 position:absolute;
-top:10px;
+top:14px;
 width:100%;
 }
 
 nav{
-display:inline-flex;
-gap:30px;
+display:flex;
+justify-content:center;
+gap:40px;
+font-size:18px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-size:18px;
 opacity:0.9;
+cursor:pointer;
+}
+
+/* dropdown */
+
+.dropdown{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:26px;
+left:-25px;
+background:rgba(0,0,0,0.75);
+padding:10px 0;
+border-radius:10px;
+backdrop-filter:blur(6px);
+}
+
+.submenu a{
+display:block;
+padding:6px 18px;
+white-space:nowrap;
 }
 
 /* language */
@@ -95,11 +120,11 @@ top:0;
 }
 
 .lang button{
-background:rgba(255,255,255,0.1);
-border:1px solid rgba(255,255,255,0.3);
+background:rgba(255,255,255,0.15);
+border:1px solid rgba(255,255,255,0.4);
 color:white;
 padding:6px 14px;
-border-radius:16px;
+border-radius:18px;
 cursor:pointer;
 }
 
@@ -155,7 +180,7 @@ border:2px solid rgba(255,255,255,0.35);
 
 box-shadow:
 0 0 0 1px white inset,
-0 0 10px rgba(255,255,255,0.2);
+0 0 10px rgba(255,255,255,0.25);
 }
 
 .icon img{
@@ -174,7 +199,7 @@ font-size:16px;
 footer{
 padding:20px;
 font-size:14px;
-opacity:0.85;
+opacity:0.9;
 }
 
 </style>
@@ -186,7 +211,7 @@ opacity:0.85;
 
 <!-- blinking stars -->
 
-<div class="star big" style="top:10%;left:20%;animation-delay:0s;"></div>
+<div class="star big" style="top:12%;left:22%;animation-delay:0s;"></div>
 <div class="star big" style="top:18%;left:70%;animation-delay:0.8s;"></div>
 <div class="star big" style="top:30%;left:40%;animation-delay:1.6s;"></div>
 <div class="star big" style="top:50%;left:80%;animation-delay:0.4s;"></div>
@@ -194,8 +219,6 @@ opacity:0.85;
 <div class="star big" style="top:75%;left:55%;animation-delay:2s;"></div>
 <div class="star big" style="top:85%;left:30%;animation-delay:1.4s;"></div>
 <div class="star big" style="top:42%;left:60%;animation-delay:2.3s;"></div>
-<div class="star big" style="top:66%;left:72%;animation-delay:0.9s;"></div>
-<div class="star big" style="top:28%;left:85%;animation-delay:1.8s;"></div>
 
 <div class="star small" style="top:14%;left:10%;animation-delay:0.5s;"></div>
 <div class="star small" style="top:22%;left:45%;animation-delay:1.1s;"></div>
@@ -203,17 +226,27 @@ opacity:0.85;
 <div class="star small" style="top:46%;left:25%;animation-delay:0.7s;"></div>
 <div class="star small" style="top:58%;left:40%;animation-delay:1.5s;"></div>
 <div class="star small" style="top:64%;left:90%;animation-delay:2.4s;"></div>
-<div class="star small" style="top:72%;left:10%;animation-delay:1.3s;"></div>
-<div class="star small" style="top:82%;left:65%;animation-delay:0.6s;"></div>
-<div class="star small" style="top:90%;left:50%;animation-delay:2.1s;"></div>
 
 <header>
 
 <nav>
+
 <a id="navHome" href="index.html"></a>
-<a id="navApps" href="apps.html"></a>
+
+<div class="dropdown" id="appsDropdown">
+<a id="navApps"></a>
+
+<div class="submenu" id="appsMenu">
+<a href="app1.html" id="menuApp1"></a>
+<a href="app2.html" id="menuApp2"></a>
+<a href="app3.html" id="menuApp3"></a>
+</div>
+
+</div>
+
 <a id="navAbout" href="about.html"></a>
 <a id="navContact" href="contact.html"></a>
+
 </nav>
 
 <div class="lang">
@@ -265,9 +298,32 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v4.6</p>
+
+<p>© Micro Créatif – v5.0</p>
+
 <p id="cities"></p>
+
 </footer>
+
+<script>
+
+/* dropdown menu */
+
+const dropdown=document.getElementById("appsDropdown");
+const menu=document.getElementById("appsMenu");
+
+dropdown.addEventListener("click",function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
+});
+
+document.addEventListener("click",function(e){
+if(!dropdown.contains(e.target)){
+menu.style.display="none";
+}
+});
+
+</script>
 
 <script src="js/language.js"></script>
 
