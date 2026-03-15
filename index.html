@@ -1,6 +1,6 @@
 <!-- Micro Creatif -->
 <!-- index.html -->
-<!-- Version 4.8 -->
+<!-- Version 5.2 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +12,6 @@
 <title>Micro Creatif</title>
 
 <style>
-
-/* ---------- GLOBAL ---------- */
 
 html,body{
 margin:0;
@@ -32,7 +30,7 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* ---------- NAVBAR ---------- */
+/* NAVBAR */
 
 nav{
 position:fixed;
@@ -64,7 +62,7 @@ border-radius:20px;
 cursor:pointer;
 }
 
-/* ---------- MAIN ---------- */
+/* MAIN */
 
 .main{
 min-height:100vh;
@@ -74,26 +72,30 @@ justify-content:center;
 align-items:center;
 }
 
+/* TITLES */
+
 h1{
 font-size:64px;
-margin:10px 0;
+margin-top:-120px;
+margin-bottom:10px;
 text-shadow:0 0 12px rgba(255,255,255,0.6);
 }
 
 .subtitle{
 font-size:28px;
 opacity:0.9;
-margin-bottom:60px;
+margin-bottom:40px;
 text-shadow:0 0 10px rgba(0,0,0,0.6);
 }
 
-/* ---------- APPS ---------- */
-
 .appsTitle{
 font-size:30px;
+margin-top:40px;
 margin-bottom:30px;
 text-shadow:0 0 14px rgba(0,0,0,0.9);
 }
+
+/* APPS */
 
 .apps{
 display:flex;
@@ -117,7 +119,7 @@ font-size:20px;
 text-shadow:0 0 10px rgba(0,0,0,0.7);
 }
 
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 
 footer{
 position:absolute;
@@ -128,34 +130,20 @@ opacity:0.9;
 text-shadow:0 0 10px rgba(0,0,0,0.8);
 }
 
-/* ---------- STARS ---------- */
+/* STARS */
 
 .star{
 position:fixed;
 background:white;
 border-radius:50%;
-box-shadow:0 0 14px 6px rgba(255,255,255,0.9);
+box-shadow:0 0 16px 8px rgba(255,255,255,0.9);
 animation:blink infinite;
 }
 
 @keyframes blink{
-0%{
-opacity:1;
-transform:scale(1);
-box-shadow:0 0 14px 6px rgba(255,255,255,0.9);
-}
-
-50%{
-opacity:0.15;
-transform:scale(0.4);
-box-shadow:0 0 4px 2px rgba(255,255,255,0.4);
-}
-
-100%{
-opacity:1;
-transform:scale(1);
-box-shadow:0 0 14px 6px rgba(255,255,255,0.9);
-}
+0%{opacity:1;transform:scale(1);}
+50%{opacity:0.1;transform:scale(0.35);}
+100%{opacity:1;transform:scale(1);}
 }
 
 </style>
@@ -206,13 +194,13 @@ box-shadow:0 0 14px 6px rgba(255,255,255,0.9);
 </div>
 
 <footer>
-© Micro Créatif – v4.8<br>
+© Micro Créatif – v5.2<br>
 Montreal | Ho Chi Minh City
 </footer>
 
 <script>
 
-/* ---------- LANGUAGE ARRAY ---------- */
+/* LANGUAGE */
 
 const text = {
 
@@ -238,8 +226,6 @@ app3:"Système Solaire"
 
 let lang="en";
 
-/* ---------- APPLY LANGUAGE ---------- */
-
 function updateLanguage(){
 
 document.getElementById("title").innerText=text[lang].title;
@@ -254,15 +240,12 @@ document.getElementById("app3").innerText=text[lang].app3;
 
 updateLanguage();
 
-/* ---------- LANGUAGE BUTTON ---------- */
-
 document.getElementById("langBtn").onclick=function(){
 
 if(lang==="en"){
 lang="fr";
 this.innerText="EN";
-}
-else{
+}else{
 lang="en";
 this.innerText="FR";
 }
@@ -271,7 +254,7 @@ updateLanguage();
 
 }
 
-/* ---------- STAR SYSTEM ---------- */
+/* STAR SYSTEM */
 
 function createStar(x,y,d,size){
 
@@ -288,18 +271,32 @@ document.body.appendChild(s);
 
 }
 
-/* star positions */
+/* UPPER SKY */
 
-createStar(8,18,1.6,3);
+createStar(10,6,1.8,4);
+createStar(20,10,2.1,6);
+createStar(35,8,2.3,3);
+createStar(50,12,1.7,5);
+createStar(70,6,2.2,4);
+createStar(85,10,1.9,6);
+
+/* MIDDLE SKY */
+
+createStar(8,28,1.6,3);
 createStar(22,35,2.2,6);
-createStar(30,70,1.9,4);
-createStar(40,25,2.4,7);
+createStar(40,30,2.4,7);
 createStar(55,45,1.8,3);
-createStar(65,20,2.6,5);
-createStar(72,65,2.1,6);
+createStar(65,25,2.6,5);
 createStar(85,30,1.7,4);
-createStar(92,55,2.3,7);
-createStar(50,80,1.9,3);
+
+/* LOWER SKY (new stars added) */
+
+createStar(15,82,2.0,5);
+createStar(30,88,1.7,4);
+createStar(45,90,2.2,6);
+createStar(60,85,1.8,3);
+createStar(75,92,2.4,5);
+createStar(90,80,1.9,4);
 
 </script>
 
