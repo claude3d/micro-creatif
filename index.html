@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 4.5 -->
+<!-- Version 4.6 -->
 
 <head>
 <meta charset="UTF-8">
@@ -165,26 +165,15 @@ color:white;
 /* ICON */
 
 .icon{
-
 width:100px;
 height:100px;
-
 margin:auto;
-
 border-radius:22px;
-
 overflow:hidden;
-
-/* semi transparent border */
-
 border:2px solid rgba(255,255,255,0.35);
-
-/* thinner white border */
-
 box-shadow:
 0 0 0 0.5px white inset,
 0 0 10px rgba(255,255,255,0.2);
-
 }
 
 .icon img{
@@ -198,6 +187,18 @@ object-fit:cover;
 .app p{
 margin-top:10px;
 font-size:16px;
+}
+
+/* facture image */
+
+.facture{
+margin-top:40px;
+}
+
+.facture img{
+max-width:90%;
+border-radius:12px;
+box-shadow:0 0 20px rgba(255,255,255,0.25);
 }
 
 /* footer */
@@ -302,10 +303,14 @@ opacity:0.85;
 
 </div>
 
+<div class="facture">
+<img src="images/facture.jpg" alt="Original facture 1981">
+</div>
+
 </section>
 
 <footer>
-<p>© Micro Créatif – v4.5</p>
+<p>© Micro Créatif – v4.6</p>
 <p id="cities"></p>
 </footer>
 
