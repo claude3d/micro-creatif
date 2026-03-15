@@ -1,15 +1,13 @@
 <!-- Micro Creatif -->
 <!-- index.html -->
-<!-- Version 2.3 -->
+<!-- Version 2.5 -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Micro Creatif</title>
 
 <style>
@@ -21,13 +19,13 @@ height:100%;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 color:white;
 text-align:center;
-overflow:hidden;
+overflow-x:hidden;
 }
 
 /* BACKGROUND */
 
 body{
-background-image:url("galaxy.png");
+background-image:url("images/galaxy.png");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
@@ -55,12 +53,13 @@ text-decoration:none;
 border:2px solid white;
 padding:6px 14px;
 border-radius:20px;
+cursor:pointer;
 }
 
-/* MAIN LAYOUT */
+/* MAIN */
 
 .main{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -89,7 +88,7 @@ margin-bottom:25px;
 
 .apps{
 display:flex;
-gap:50px;
+gap:60px;
 justify-content:center;
 flex-wrap:wrap;
 }
@@ -111,7 +110,7 @@ font-size:20px;
 /* BUTTON */
 
 .mainButton{
-margin-top:35px;
+margin-top:40px;
 padding:14px 40px;
 font-size:22px;
 border-radius:30px;
@@ -140,43 +139,39 @@ animation:blink infinite;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <nav>
-
 <a href="#">Home</a>
 <a href="#">Apps</a>
 <a href="#">About</a>
 <a href="#">Contact</a>
-
-<a href="#" class="lang" id="langBtn">FR</a>
-
+<a class="lang" id="langBtn">FR</a>
 </nav>
 
 <div class="main">
 
-<h1 id="title">Micro Creatif</h1>
-<div class="subtitle" id="since">Since 1981</div>
+<h1 id="title"></h1>
+<div class="subtitle" id="since"></div>
 
-<div class="appsTitle" id="appsTitle">Our Apps</div>
+<div class="appsTitle" id="appsTitle"></div>
 
 <div class="apps">
 
 <div class="app">
-<img src="radec.png">
+<img src="images/radec.png" alt="RA Dec">
 <div class="appTitle">RA / Dec – AZ / Alt</div>
 </div>
 
 <div class="app">
-<img src="telescope.png">
+<img src="images/telescope.png" alt="Virtual Telescope">
 <div class="appTitle">Virtual Telescope</div>
 </div>
 
 <div class="app">
-<img src="solarsystem.png">
+<img src="images/solarsystem.png" alt="Solar System">
 <div class="appTitle">Solar System</div>
 </div>
 
@@ -188,11 +183,9 @@ animation:blink infinite;
 
 <script>
 
-/* LANGUAGE SYSTEM */
+/* LANGUAGE ARRAY */
 
-let lang="en"
-
-const text={
+const text = {
 
 en:{
 title:"Micro Creatif",
@@ -206,47 +199,62 @@ since:"Depuis 1981",
 apps:"Nos Applications"
 }
 
+};
+
+let lang="en";
+
+/* APPLY TEXT */
+
+function updateLanguage(){
+
+document.getElementById("title").innerText=text[lang].title;
+document.getElementById("since").innerText=text[lang].since;
+document.getElementById("appsTitle").innerText=text[lang].apps;
+
 }
+
+updateLanguage();
+
+/* LANGUAGE BUTTON */
 
 document.getElementById("langBtn").onclick=function(){
 
 if(lang==="en"){
-lang="fr"
-this.innerText="EN"
-}
-else{
-lang="en"
-this.innerText="FR"
+lang="fr";
+this.innerText="EN";
+}else{
+lang="en";
+this.innerText="FR";
 }
 
-document.getElementById("title").innerText=text[lang].title
-document.getElementById("since").innerText=text[lang].since
-document.getElementById("appsTitle").innerText=text[lang].apps
+updateLanguage();
 
 }
 
-/* STARS (different twinkle speeds for realism) */
+/* STARS */
 
 function star(x,y,d){
 
-let s=document.createElement("div")
-s.className="star"
-s.style.left=x+"%"
-s.style.top=y+"%"
-s.style.animationDuration=d+"s"
+let s=document.createElement("div");
+s.className="star";
+s.style.left=x+"%";
+s.style.top=y+"%";
+s.style.animationDuration=d+"s";
 
-document.body.appendChild(s)
+document.body.appendChild(s);
 
 }
 
-star(12,18,1.4)
-star(28,42,2.3)
-star(48,26,1.8)
-star(65,32,2.6)
-star(80,55,1.5)
-star(22,70,2.1)
-star(60,82,1.9)
-star(40,60,2.4)
+/* STAR POSITIONS */
+
+star(10,18,1.4);
+star(28,42,2.3);
+star(48,26,1.8);
+star(65,32,2.6);
+star(80,55,1.5);
+star(22,70,2.1);
+star(60,82,1.9);
+star(40,60,2.4);
 
 </script>
 
