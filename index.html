@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 4.9 -->
+<!-- Version 5.0 -->
 
 <head>
 <meta charset="UTF-8">
@@ -39,14 +39,14 @@ z-index:-5;
 position:fixed;
 background:white;
 border-radius:50%;
-opacity:0.9;
-animation:twinkle 2.4s infinite;
 z-index:-4;
 
 box-shadow:
-0 0 4px rgba(255,255,255,0.9),
-0 0 8px rgba(255,255,255,0.7),
-0 0 12px rgba(255,255,255,0.4);
+0 0 6px rgba(255,255,255,1),
+0 0 12px rgba(255,255,255,0.9),
+0 0 20px rgba(255,255,255,0.6);
+
+animation:twinkle infinite;
 }
 
 .star.big{
@@ -57,13 +57,12 @@ height:3px;
 .star.small{
 width:2px;
 height:2px;
-opacity:0.7;
 }
 
 @keyframes twinkle{
-0%{opacity:0.3; transform:scale(1);}
-50%{opacity:1; transform:scale(1.6);}
-100%{opacity:0.3; transform:scale(1);}
+0%{opacity:0.2; transform:scale(0.8);}
+50%{opacity:1; transform:scale(1.8);}
+100%{opacity:0.2; transform:scale(0.8);}
 }
 
 /* header */
@@ -289,19 +288,19 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v4.9</p>
+<p>© Micro Créatif – v5.0</p>
 <p id="cities"></p>
 </footer>
 
 <script>
 
-/* random stars */
+/* random blinking stars */
 
 function createStars(){
 
 const container=document.getElementById("stars");
 
-for(let i=0;i<35;i++){
+for(let i=0;i<60;i++){
 
 let star=document.createElement("div");
 
@@ -313,6 +312,7 @@ star.style.top=Math.random()*100+"%";
 star.style.left=Math.random()*100+"%";
 
 star.style.animationDelay=(Math.random()*3)+"s";
+star.style.animationDuration=(1+Math.random()*2)+"s";
 
 container.appendChild(star);
 
@@ -340,7 +340,6 @@ menu.style.display="none";
 
 </script>
 
-<!-- shared language system -->
 <script src="js/language.js"></script>
 
 </body>
