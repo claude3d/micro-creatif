@@ -1,6 +1,6 @@
 <!-- Micro Creatif -->
 <!-- index.html -->
-<!-- Version 2.5 -->
+<!-- Version 3.3 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,9 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Micro Creatif</title>
 
 <style>
+
+/* ---------- GLOBAL ---------- */
 
 html,body{
 margin:0;
@@ -22,20 +25,20 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* ---------- BACKGROUND ---------- */
 
 body{
-background-image:url("images/galaxy.png");
+background-image:url("images/galaxy-background.png");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
 }
 
-/* NAVBAR */
+/* ---------- NAVBAR ---------- */
 
 nav{
 position:fixed;
-top:20px;
+top:25px;
 width:100%;
 display:flex;
 justify-content:center;
@@ -49,92 +52,90 @@ color:white;
 text-decoration:none;
 }
 
-.lang{
+.langButton{
 border:2px solid white;
 padding:6px 14px;
 border-radius:20px;
 cursor:pointer;
 }
 
-/* MAIN */
+/* ---------- MAIN LAYOUT ---------- */
 
 .main{
-min-height:100vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 }
 
-/* TITLE */
+/* ---------- TITLE ---------- */
 
 h1{
-font-size:60px;
+font-size:64px;
 margin:10px 0;
 }
 
 .subtitle{
-font-size:26px;
-opacity:0.85;
-margin-bottom:40px;
+font-size:28px;
+opacity:0.9;
+margin-bottom:60px;
 }
 
-/* APPS */
+/* ---------- APPS ---------- */
 
 .appsTitle{
-font-size:28px;
-margin-bottom:25px;
+font-size:32px;
+margin-bottom:30px;
 }
 
 .apps{
 display:flex;
-gap:60px;
+gap:70px;
 justify-content:center;
 flex-wrap:wrap;
 }
 
 .app{
-width:170px;
+width:180px;
 }
 
 .app img{
-width:130px;
-border-radius:24px;
+width:140px;
+border-radius:26px;
 }
 
 .appTitle{
-margin-top:10px;
+margin-top:12px;
 font-size:20px;
 }
 
-/* BUTTON */
+/* ---------- BUTTON ---------- */
 
 .mainButton{
-margin-top:40px;
-padding:14px 40px;
+margin-top:50px;
+padding:16px 44px;
 font-size:22px;
 border-radius:30px;
 border:none;
-background:rgba(100,120,255,0.6);
+background:rgba(120,140,255,0.7);
 color:white;
 backdrop-filter:blur(6px);
 }
 
-/* STARS */
+/* ---------- STARS ---------- */
 
 .star{
 position:fixed;
-width:5px;
-height:5px;
 background:white;
 border-radius:50%;
-box-shadow:0 0 8px 2px rgba(255,255,255,0.9);
+box-shadow:0 0 10px 3px rgba(255,255,255,0.9);
 animation:blink infinite;
 }
 
 @keyframes blink{
 0%{opacity:1; transform:scale(1);}
-50%{opacity:0.2; transform:scale(0.6);}
+50%{opacity:0.15; transform:scale(0.5);}
 100%{opacity:1; transform:scale(1);}
 }
 
@@ -144,11 +145,14 @@ animation:blink infinite;
 <body>
 
 <nav>
+
 <a href="#">Home</a>
 <a href="#">Apps</a>
 <a href="#">About</a>
 <a href="#">Contact</a>
-<a class="lang" id="langBtn">FR</a>
+
+<a class="langButton" id="langBtn">FR</a>
+
 </nav>
 
 <div class="main">
@@ -161,18 +165,18 @@ animation:blink infinite;
 <div class="apps">
 
 <div class="app">
-<img src="images/radec.png" alt="RA Dec">
-<div class="appTitle">RA / Dec – AZ / Alt</div>
+<img src="images/app1.png">
+<div class="appTitle" id="app1"></div>
 </div>
 
 <div class="app">
-<img src="images/telescope.png" alt="Virtual Telescope">
-<div class="appTitle">Virtual Telescope</div>
+<img src="images/app2.png">
+<div class="appTitle" id="app2"></div>
 </div>
 
 <div class="app">
-<img src="images/solarsystem.png" alt="Solar System">
-<div class="appTitle">Solar System</div>
+<img src="images/app3.png">
+<div class="appTitle" id="app3"></div>
 </div>
 
 </div>
@@ -183,27 +187,33 @@ animation:blink infinite;
 
 <script>
 
-/* LANGUAGE ARRAY */
+/* ---------- LANGUAGE ARRAY ---------- */
 
 const text = {
 
 en:{
 title:"Micro Creatif",
 since:"Since 1981",
-apps:"Our Apps"
+apps:"Our Apps",
+app1:"RA / Dec – AZ / Alt",
+app2:"Virtual Telescope",
+app3:"Solar System"
 },
 
 fr:{
 title:"Micro Créatif",
 since:"Depuis 1981",
-apps:"Nos Applications"
+apps:"Nos Applications",
+app1:"RA / Dec – AZ / Alt",
+app2:"Télescope Virtuel",
+app3:"Système Solaire"
 }
 
 };
 
 let lang="en";
 
-/* APPLY TEXT */
+/* ---------- APPLY LANGUAGE ---------- */
 
 function updateLanguage(){
 
@@ -211,18 +221,23 @@ document.getElementById("title").innerText=text[lang].title;
 document.getElementById("since").innerText=text[lang].since;
 document.getElementById("appsTitle").innerText=text[lang].apps;
 
+document.getElementById("app1").innerText=text[lang].app1;
+document.getElementById("app2").innerText=text[lang].app2;
+document.getElementById("app3").innerText=text[lang].app3;
+
 }
 
 updateLanguage();
 
-/* LANGUAGE BUTTON */
+/* ---------- LANGUAGE BUTTON ---------- */
 
 document.getElementById("langBtn").onclick=function(){
 
 if(lang==="en"){
 lang="fr";
 this.innerText="EN";
-}else{
+}
+else{
 lang="en";
 this.innerText="FR";
 }
@@ -231,30 +246,35 @@ updateLanguage();
 
 }
 
-/* STARS */
+/* ---------- STAR SYSTEM ---------- */
 
-function star(x,y,d){
+function createStar(x,y,d,size){
 
 let s=document.createElement("div");
+
 s.className="star";
 s.style.left=x+"%";
 s.style.top=y+"%";
 s.style.animationDuration=d+"s";
+s.style.width=size+"px";
+s.style.height=size+"px";
 
 document.body.appendChild(s);
 
 }
 
-/* STAR POSITIONS */
+/* star positions */
 
-star(10,18,1.4);
-star(28,42,2.3);
-star(48,26,1.8);
-star(65,32,2.6);
-star(80,55,1.5);
-star(22,70,2.1);
-star(60,82,1.9);
-star(40,60,2.4);
+createStar(8,18,1.6,3);
+createStar(22,35,2.2,6);
+createStar(30,70,1.9,4);
+createStar(40,25,2.4,7);
+createStar(55,45,1.8,3);
+createStar(65,20,2.6,5);
+createStar(72,65,2.1,6);
+createStar(85,30,1.7,4);
+createStar(92,55,2.3,7);
+createStar(50,80,1.9,3);
 
 </script>
 
