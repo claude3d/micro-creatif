@@ -1,200 +1,147 @@
+<!-- Micro Creatif Website -->
+<!-- index.html -->
+<!-- Version: v4.8 -->
+
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Micro Créatif -->
-<!-- index.html -->
-<!-- Version 4.7 -->
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micro Créatif</title>
+
+<title>Micro Creatif</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 color:white;
-text-align:center;
 background:black;
 overflow-x:hidden;
 }
 
-/* background */
+/* Background */
 
-.bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-5;
+.hero{
+height:100vh;
+background:url("galaxy.jpg") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
-/* stars */
+/* Navigation */
 
-.star{
-position:fixed;
-background:white;
-border-radius:50%;
-opacity:0.25;
-animation:twinkle 1.2s infinite;
-z-index:-4;
-}
-
-.star.big{
-width:2px;
-height:2px;
-}
-
-.star.small{
-width:1px;
-height:1px;
-opacity:0.15;
-}
-
-@keyframes twinkle{
-0%{opacity:0.15; transform:scale(1);}
-50%{opacity:1; transform:scale(1.4);}
-100%{opacity:0.15; transform:scale(1);}
-}
-
-/* header */
-
-header{
+.navbar{
 position:absolute;
-top:10px;
+top:20px;
 width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+font-size:18px;
 }
 
-nav{
-display:inline-flex;
-gap:30px;
-}
-
-nav a{
+.navbar a{
 color:white;
 text-decoration:none;
-font-size:18px;
 opacity:0.9;
 }
 
-/* language */
+.navbar a:hover{
+opacity:1;
+}
 
-.lang{
+/* Dropdown */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-content{
+display:none;
 position:absolute;
-right:30px;
-top:0;
+top:30px;
+left:-40px;
+background:rgba(0,0,0,0.85);
+border-radius:10px;
+padding:10px 0;
+min-width:200px;
+backdrop-filter:blur(6px);
 }
 
-.lang button{
-background:rgba(255,255,255,0.1);
-border:1px solid rgba(255,255,255,0.3);
-color:white;
-padding:6px 14px;
-border-radius:16px;
-cursor:pointer;
+.dropdown-content a{
+display:block;
+padding:10px 20px;
+white-space:nowrap;
 }
 
-/* hero */
-
-.hero{
-height:50vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.dropdown:hover .dropdown-content{
+display:block;
 }
 
-.hero h1{
-font-size:64px;
-margin-bottom:8px;
+/* Title */
+
+h1{
+font-size:72px;
+margin:0;
 }
 
-.hero p{
-font-size:22px;
-margin-top:0;
+.subtitle{
+margin-top:10px;
+font-size:20px;
+opacity:0.9;
 }
 
-/* buttons */
+/* Button */
 
-.buttons{
-display:flex;
-gap:24px;
-margin-top:28px;
-}
-
-.buttons a{
+.button{
+margin-top:40px;
 padding:14px 30px;
-border-radius:28px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.5);
+background:rgba(255,255,255,0.15);
 color:white;
+font-size:16px;
 text-decoration:none;
-font-size:17px;
-background:linear-gradient(
-rgba(255,255,255,0.25),
-rgba(255,255,255,0.05)
-);
-border:1px solid rgba(255,255,255,0.35);
-backdrop-filter:blur(16px);
+backdrop-filter:blur(4px);
 }
 
-/* apps */
+.button:hover{
+background:rgba(255,255,255,0.25);
+}
+
+/* Apps section */
 
 .apps{
-padding:20px;
+text-align:center;
+padding:80px 20px;
 }
 
-.app-grid{
+.app-icons{
 display:flex;
 justify-content:center;
 gap:60px;
+margin-top:30px;
 flex-wrap:wrap;
 }
 
 .app{
+text-align:center;
+}
+
+.app img{
 width:120px;
+border-radius:24px;
 }
-
-.app a{
-text-decoration:none;
-color:white;
-}
-
-/* ICON */
-
-.icon{
-width:100px;
-height:100px;
-margin:auto;
-border-radius:22px;
-overflow:hidden;
-border:2px solid rgba(255,255,255,0.35);
-box-shadow:
-0 0 0 0.5px white inset,
-0 0 10px rgba(255,255,255,0.2);
-}
-
-.icon img{
-width:100%;
-height:100%;
-display:block;
-border-radius:22px;
-object-fit:cover;
-}
-
-.app p{
-margin-top:10px;
-font-size:16px;
-}
-
-/* footer */
 
 footer{
-padding:20px;
+text-align:center;
+opacity:0.6;
+padding:40px 0;
 font-size:14px;
-opacity:0.85;
 }
 
 </style>
@@ -202,91 +149,60 @@ opacity:0.85;
 
 <body>
 
-<img class="bg" src="images/galaxy-background.png">
+<div class="hero">
 
-<!-- twinkling stars -->
+<nav class="navbar">
 
-<div class="star big" style="top:10%;left:20%;animation-delay:0s;"></div>
-<div class="star big" style="top:18%;left:70%;animation-delay:1s;"></div>
-<div class="star big" style="top:30%;left:40%;animation-delay:2s;"></div>
-<div class="star big" style="top:50%;left:80%;animation-delay:0.5s;"></div>
-<div class="star big" style="top:62%;left:15%;animation-delay:1.5s;"></div>
-<div class="star big" style="top:75%;left:55%;animation-delay:2.5s;"></div>
-<div class="star big" style="top:85%;left:30%;animation-delay:1.8s;"></div>
-<div class="star big" style="top:42%;left:60%;animation-delay:2.2s;"></div>
-<div class="star big" style="top:66%;left:72%;animation-delay:0.7s;"></div>
-<div class="star big" style="top:28%;left:85%;animation-delay:1.3s;"></div>
+<a href="index.html">Home</a>
 
-<!-- small stars -->
+<div class="dropdown">
+<a href="#">Apps</a>
 
-<div class="star small" style="top:14%;left:10%;"></div>
-<div class="star small" style="top:22%;left:45%;"></div>
-<div class="star small" style="top:34%;left:60%;"></div>
-<div class="star small" style="top:46%;left:25%;"></div>
-<div class="star small" style="top:58%;left:40%;"></div>
-<div class="star small" style="top:64%;left:90%;"></div>
-<div class="star small" style="top:72%;left:10%;"></div>
-<div class="star small" style="top:82%;left:65%;"></div>
-<div class="star small" style="top:90%;left:50%;"></div>
+<div class="dropdown-content">
+<a href="ra-dec.html">RA / Dec – AZ / Alt</a>
+<a href="virtual-telescope.html">Virtual Telescope</a>
+<a href="solar-system.html">Solar System</a>
+</div>
+</div>
 
-<header>
+<a href="about.html">About</a>
 
-<nav>
-<a id="navHome" href="index.html"></a>
-<a id="navApps" href="apps.html"></a>
-<a id="navAbout" href="about.html"></a>
-<a id="navContact" href="contact.html"></a>
+<a href="contact.html">Contact</a>
+
 </nav>
 
-<div class="lang">
-<button onclick="toggleLanguage()" id="langButton">FR</button>
+<h1>Micro Creatif</h1>
+<div class="subtitle">Since 1981</div>
+
+<a class="button" href="about.html">Discover our history</a>
+
 </div>
-
-</header>
-
-<section class="hero">
-
-<h1 id="title"></h1>
-<p id="since"></p>
-
-<div class="buttons">
-<a id="btnHistory" href="about.html"></a>
-<a id="btnApps" href="apps.html"></a>
-</div>
-
-</section>
 
 <section class="apps">
 
-<h2 id="appsTitle"></h2>
+<h2>Our Apps</h2>
 
-<div class="app-grid">
+<div class="app-icons">
 
 <div class="app">
-<a href="app1.html">
-<div class="icon">
-<img src="images/app1.png">
-</div>
-<p id="app1"></p>
+<a href="ra-dec.html">
+<img src="icons/radec.png">
 </a>
+<div>RA / Dec – AZ / Alt</div>
 </div>
 
 <div class="app">
-<a href="app2.html">
-<div class="icon">
-<img src="images/app2.png">
-</div>
-<p id="app2"></p>
+<a href="virtual-telescope.html">
+<img src="icons/telescope.png">
 </a>
+<div>Virtual Telescope</div>
 </div>
 
 <div class="app">
-<a href="app3.html">
-<div class="icon">
-<img src="images/app3.png">
-</div>
-<p id="app3"></p>
+<a href="solar-system.html">
+<img src="icons/solarsystem.png">
 </a>
+<div>Solar System</div>
 </div>
 
 </div>
@@ -294,94 +210,12 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v4.7</p>
-<p id="cities"></p>
+
+© Micro Créatif – v4.8  
+<br>
+Montreal | Ho Chi Minh City
+
 </footer>
-
-<script>
-
-const text={
-
-en:{
-navHome:"Home",
-navApps:"Apps",
-navAbout:"About",
-navContact:"Contact",
-title:"Micro Creatif",
-since:"Since 1981",
-history:"Discover our history",
-viewApps:"View our apps",
-appsTitle:"Our Apps",
-app1:"RA / Dec – AZ / Alt",
-app2:"Virtual Telescope",
-app3:"Solar System",
-cities:"Montreal | Ho Chi Minh City"
-},
-
-fr:{
-navHome:"Accueil",
-navApps:"Applications",
-navAbout:"À propos",
-navContact:"Contact",
-title:"Micro Créatif",
-since:"Depuis 1981",
-history:"Découvrez notre histoire",
-viewApps:"Voir nos applications",
-appsTitle:"Nos applications",
-app1:"RA / Dec – AZ / Alt",
-app2:"Télescope virtuel",
-app3:"Système solaire",
-cities:"Montréal | Hô Chi Minh Ville"
-}
-
-};
-
-function applyLanguage(lang){
-
-const t=text[lang];
-
-document.getElementById("navHome").textContent=t.navHome;
-document.getElementById("navApps").textContent=t.navApps;
-document.getElementById("navAbout").textContent=t.navAbout;
-document.getElementById("navContact").textContent=t.navContact;
-
-document.getElementById("title").textContent=t.title;
-document.getElementById("since").textContent=t.since;
-
-document.getElementById("btnHistory").textContent=t.history;
-document.getElementById("btnApps").textContent=t.viewApps;
-
-document.getElementById("appsTitle").textContent=t.appsTitle;
-
-document.getElementById("app1").textContent=t.app1;
-document.getElementById("app2").textContent=t.app2;
-document.getElementById("app3").textContent=t.app3;
-
-document.getElementById("cities").textContent=t.cities;
-
-document.getElementById("langButton").textContent=(lang==="en")?"FR":"EN";
-
-}
-
-function toggleLanguage(){
-
-let lang=localStorage.getItem("lang")||"en";
-lang=(lang==="en")?"fr":"en";
-
-localStorage.setItem("lang",lang);
-
-applyLanguage(lang);
-
-}
-
-document.addEventListener("DOMContentLoaded",function(){
-
-let lang=localStorage.getItem("lang")||"en";
-applyLanguage(lang);
-
-});
-
-</script>
 
 </body>
 </html>
