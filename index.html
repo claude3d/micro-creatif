@@ -1,6 +1,6 @@
 <!-- Micro Creatif Website -->
 <!-- index.html -->
-<!-- Version: v4.14 -->
+<!-- Version: v4.15 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -125,10 +125,6 @@ gap:80px;
 flex-wrap:wrap;
 }
 
-.app{
-text-align:center;
-}
-
 .app img{
 width:120px;
 border-radius:22px;
@@ -152,19 +148,19 @@ font-size:14px;
 padding-bottom:40px;
 }
 
-/* ---------- BLINKING STARS ---------- */
+/* ---------- FIXED BLINKING STARS ---------- */
 
 .star{
 position:absolute;
 background:white;
 border-radius:50%;
 opacity:0.8;
-animation:blink 3s infinite ease-in-out;
+animation:blink 4s infinite;
 }
 
 @keyframes blink{
-0%,100%{opacity:0.2}
-50%{opacity:1}
+0%,100%{opacity:0.3;}
+50%{opacity:1;}
 }
 
 /* ---------- MOBILE ---------- */
@@ -188,30 +184,20 @@ font-size:52px;
 
 <body>
 
-<!-- STARS -->
+<!-- STARS (FIXED POSITIONS) -->
 
-<script>
-
-for(let i=0;i<80;i++){
-
-let star=document.createElement("div");
-star.className="star";
-
-let size=Math.random()*3;
-
-star.style.width=size+"px";
-star.style.height=size+"px";
-
-star.style.top=Math.random()*100+"vh";
-star.style.left=Math.random()*100+"vw";
-
-star.style.animationDuration=(2+Math.random()*4)+"s";
-
-document.body.appendChild(star);
-
-}
-
-</script>
+<div class="star" style="top:6%; left:18%; width:2px; height:2px;"></div>
+<div class="star" style="top:12%; left:70%; width:3px; height:3px;"></div>
+<div class="star" style="top:20%; left:40%; width:2px; height:2px;"></div>
+<div class="star" style="top:28%; left:82%; width:3px; height:3px;"></div>
+<div class="star" style="top:34%; left:15%; width:2px; height:2px;"></div>
+<div class="star" style="top:40%; left:60%; width:3px; height:3px;"></div>
+<div class="star" style="top:48%; left:25%; width:2px; height:2px;"></div>
+<div class="star" style="top:55%; left:78%; width:3px; height:3px;"></div>
+<div class="star" style="top:62%; left:38%; width:2px; height:2px;"></div>
+<div class="star" style="top:70%; left:65%; width:3px; height:3px;"></div>
+<div class="star" style="top:78%; left:18%; width:2px; height:2px;"></div>
+<div class="star" style="top:85%; left:50%; width:3px; height:3px;"></div>
 
 <!-- LANGUAGE BUTTON -->
 
@@ -284,12 +270,8 @@ document.body.appendChild(star);
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-
 <div id="footerText"></div>
-
 </footer>
 
 <script>
@@ -307,7 +289,7 @@ navAbout:"About",
 navContact:"Contact",
 appsTitle:"Our Apps",
 since:"Since 1981",
-footer:"© Micro Créatif – v4.14<br>Montreal | Ho Chi Minh City"
+footer:"© Micro Créatif – v4.15<br>Montreal | Ho Chi Minh City"
 },
 
 FR:{
@@ -317,7 +299,7 @@ navAbout:"À propos",
 navContact:"Contact",
 appsTitle:"Nos Apps",
 since:"Depuis 1981",
-footer:"© Micro Créatif – v4.14<br>Montréal | Hô Chi Minh Ville"
+footer:"© Micro Créatif – v4.15<br>Montréal | Hô Chi Minh Ville"
 }
 
 };
@@ -352,8 +334,6 @@ e.preventDefault();
 document.getElementById("appsMenu").classList.toggle("open");
 
 }
-
-/* close menu when tapping outside */
 
 document.addEventListener("click", function(event){
 
