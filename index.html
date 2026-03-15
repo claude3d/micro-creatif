@@ -40,12 +40,10 @@ width:3px;
 height:3px;
 background:white;
 border-radius:50%;
-
 box-shadow:
 0 0 6px white,
 0 0 12px white,
 0 0 20px rgba(255,255,255,0.9);
-
 animation:blink 3s infinite alternate ease-in-out;
 }
 
@@ -66,7 +64,7 @@ nav{
 display:flex;
 justify-content:center;
 gap:40px;
-font-size:16px; /* restored smaller menu */
+font-size:16px;
 }
 
 nav a{
@@ -187,7 +185,7 @@ font-size:14px;
 
 <img class="bg" src="images/galaxy-background.png">
 
-<!-- blinking stars (few, slow) -->
+<!-- blinking stars -->
 
 <div class="star" style="top:12%;left:20%;animation-delay:0s;"></div>
 <div class="star" style="top:18%;left:75%;animation-delay:1s;"></div>
@@ -216,7 +214,6 @@ font-size:14px;
 <a href="app2.html" id="menuApp2"></a>
 <a href="app3.html" id="menuApp3"></a>
 </div>
-
 </div>
 
 <a id="navAbout" href="about.html"></a>
@@ -268,14 +265,12 @@ font-size:14px;
 
 <footer>
 
-<p>© Micro Créatif</p>
+<p>© Micro Créatif – v6.4</p>
 <p id="cities"></p>
 
 </footer>
 
 <script>
-
-/* dropdown */
 
 const dropdown=document.getElementById("appsDropdown");
 const menu=document.getElementById("appsMenu");
