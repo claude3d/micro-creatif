@@ -1,87 +1,64 @@
-const text={
+/* Micro Créatif Website
+   language.js
+   Version 1.1
+*/
 
-en:{
-navHome:"Home",
-navApps:"Apps",
-navAbout:"About",
-navContact:"Contact",
+let currentLanguage = localStorage.getItem("mc_language") || "en";
 
-title:"Micro Creatif",
-since:"Since 1981",
-
-menuApp1:"RA / Dec – AZ / Alt",
-menuApp2:"Virtual Telescope",
-menuApp3:"Solar System",
-
-app1:"RA / Dec – AZ / Alt",
-app2:"Virtual Telescope",
-app3:"Solar System",
-
-cities:"Montreal | Ho Chi Minh City"
-},
-
-fr:{
-navHome:"Accueil",
-navApps:"Applications",
-navAbout:"À propos",
-navContact:"Contact",
-
-title:"Micro Créatif",
-since:"Depuis 1981",
-
-menuApp1:"RA / Dec – AZ / Alt",
-menuApp2:"Télescope virtuel",
-menuApp3:"Système solaire",
-
-app1:"RA / Dec – AZ / Alt",
-app2:"Télescope virtuel",
-app3:"Système solaire",
-
-cities:"Montréal | Hô Chi Minh Ville"
-}
-
+const text = {
+    en: {
+        home: "Home",
+        apps: "Apps",
+        about: "About",
+        contact: "Contact"
+    },
+    fr: {
+        home: "Accueil",
+        apps: "Applications",
+        about: "À propos",
+        contact: "Contact"
+    }
 };
 
-function applyLanguage(lang){
+function applyLanguage() {
 
-const t=text[lang];
+    /* Navigation */
 
-document.getElementById("navHome").textContent=t.navHome;
-document.getElementById("navApps").textContent=t.navApps;
-document.getElementById("navAbout").textContent=t.navAbout;
-document.getElementById("navContact").textContent=t.navContact;
+    const navHome = document.getElementById("navHome");
+    if (navHome) navHome.textContent = text[currentLanguage].home;
 
-document.getElementById("title").textContent=t.title;
-document.getElementById("since").textContent=t.since;
+    const navApps = document.getElementById("navApps");
+    if (navApps) navApps.textContent = text[currentLanguage].apps;
 
-document.getElementById("menuApp1").textContent=t.menuApp1;
-document.getElementById("menuApp2").textContent=t.menuApp2;
-document.getElementById("menuApp3").textContent=t.menuApp3;
+    const navAbout = document.getElementById("navAbout");
+    if (navAbout) navAbout.textContent = text[currentLanguage].about;
 
-document.getElementById("app1").textContent=t.app1;
-document.getElementById("app2").textContent=t.app2;
-document.getElementById("app3").textContent=t.app3;
+    const navContact = document.getElementById("navContact");
+    if (navContact) navContact.textContent = text[currentLanguage].contact;
 
-document.getElementById("cities").textContent=t.cities;
+    /* Generic page text using data attributes */
 
-document.getElementById("langButton").textContent=(lang==="en")?"FR":"EN";
+    document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + currentLanguage);
+    });
 
-}
+    /* Language button */
 
-function toggleLanguage(){
-
-let lang=localStorage.getItem("lang")||"en";
-lang=(lang==="en")?"fr":"en";
-
-localStorage.setItem("lang",lang);
-
-applyLanguage(lang);
+    const langButton = document.getElementById("langButton");
+    if (langButton) {
+        langButton.textContent = currentLanguage === "en" ? "FR" : "EN";
+    }
 
 }
 
-document.addEventListener("DOMContentLoaded",function(){
+function toggleLanguage() {
 
-let lang=localStorage.getItem("lang")||"en";
-applyLanguage(lang);
+    currentLanguage = currentLanguage === "en" ? "fr" : "en";
 
-});
+    localStorage.setItem("mc_language", currentLanguage);
+
+    applyLanguage();
+
+}
+
+document.addEventListener("DOMContentLoaded", applyLanguage);
