@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 5.0 -->
+<!-- Version 5.3 -->
 
 <head>
 <meta charset="UTF-8">
@@ -222,20 +222,20 @@ opacity:0.85;
 
 <nav>
 
-<a id="navHome" href="index.html"></a>
+<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
 
 <div class="dropdown">
-<a id="navApps"></a>
+<a id="navApps" data-en="Apps" data-fr="Applications"></a>
 
 <div class="submenu" id="appsMenu">
-<a href="app1.html" id="menuApp1"></a>
-<a href="app2.html" id="menuApp2"></a>
-<a href="app3.html" id="menuApp3"></a>
+<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
+<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
+<a href="app3.html" data-en="Solar System" data-fr="Système solaire"></a>
 </div>
 </div>
 
-<a id="navAbout" href="about.html"></a>
-<a id="navContact" href="contact.html"></a>
+<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
+<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
 
 </nav>
 
@@ -247,8 +247,12 @@ opacity:0.85;
 
 <section class="hero">
 
-<h1 id="title"></h1>
-<p id="since"></p>
+<h1 data-en="Micro Créatif" data-fr="Micro Créatif"></h1>
+
+<p
+data-en="Apps for curious minds"
+data-fr="Applications pour esprits curieux">
+</p>
 
 </section>
 
@@ -261,7 +265,7 @@ opacity:0.85;
 <div class="icon">
 <img src="images/app1.png">
 </div>
-<p id="app1"></p>
+<p data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></p>
 </a>
 </div>
 
@@ -270,7 +274,7 @@ opacity:0.85;
 <div class="icon">
 <img src="images/app2.png">
 </div>
-<p id="app2"></p>
+<p data-en="Virtual Telescope" data-fr="Télescope virtuel"></p>
 </a>
 </div>
 
@@ -279,7 +283,7 @@ opacity:0.85;
 <div class="icon">
 <img src="images/app3.png">
 </div>
-<p id="app3"></p>
+<p data-en="Solar System" data-fr="Système solaire"></p>
 </a>
 </div>
 
@@ -288,13 +292,13 @@ opacity:0.85;
 </section>
 
 <footer>
-<p>© Micro Créatif – v5.0</p>
-<p id="cities"></p>
+<p>© Micro Créatif</p>
+<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
 </footer>
 
 <script>
 
-/* random blinking stars */
+/* stars */
 
 function createStars(){
 
@@ -338,9 +342,31 @@ menu.style.display="none";
 }
 });
 
-</script>
+/* language */
 
-<script src="js/language.js"></script>
+let currentLanguage="en";
+
+function applyLanguage(){
+
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent = el.getAttribute("data-"+currentLanguage);
+});
+
+document.getElementById("langButton").textContent =
+(currentLanguage==="en")?"FR":"EN";
+
+}
+
+function toggleLanguage(){
+
+currentLanguage = (currentLanguage==="en")?"fr":"en";
+applyLanguage();
+
+}
+
+document.addEventListener("DOMContentLoaded",applyLanguage);
+
+</script>
 
 </body>
 </html>
