@@ -1,13 +1,16 @@
+<!--
+Micro Créatif Website
+contact.html
+Version 1.2
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Micro Créatif -->
-<!-- contact.html -->
-<!-- Version 1.1 -->
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Micro Créatif – Contact</title>
 
 <style>
@@ -17,228 +20,182 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
 text-align:center;
-overflow-x:hidden;
 
-/* blue non-uniform background */
+/* Background image */
 
-background:
-radial-gradient(circle at 20% 30%, rgba(120,170,255,0.6), transparent 50%),
-radial-gradient(circle at 80% 70%, rgba(60,120,255,0.5), transparent 55%),
-radial-gradient(circle at 50% 50%, rgba(20,60,180,0.9), rgba(5,20,70,1));
+background-image:url("images/background.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 }
 
-/* header */
-
-header{
-position:absolute;
-top:10px;
-width:100%;
-}
+/* Navigation bar */
 
 nav{
-display:inline-flex;
-gap:30px;
-position:relative;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+font-size:18px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-size:18px;
 opacity:0.9;
-cursor:pointer;
 }
 
-/* dropdown */
-
-.dropdown{
-position:relative;
+nav a:hover{
+opacity:1;
 }
 
-.submenu{
-display:none;
-position:absolute;
-top:28px;
-left:0;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(8px);
-border:1px solid rgba(255,255,255,0.3);
-border-radius:10px;
-padding:8px 0;
-min-width:200px;
-text-align:left;
-}
+/* Language button */
 
-.submenu a{
-display:block;
-padding:8px 14px;
-font-size:16px;
-}
-
-.submenu a:hover{
-background:rgba(255,255,255,0.1);
-}
-
-/* language button */
-
-.lang{
+.langButton{
 position:absolute;
 right:30px;
-top:0;
-}
-
-.lang button{
-background:rgba(255,255,255,0.15);
-border:1px solid rgba(255,255,255,0.35);
-color:white;
+top:15px;
 padding:6px 14px;
-border-radius:16px;
+border:1px solid rgba(255,255,255,0.6);
+border-radius:20px;
 cursor:pointer;
+font-size:14px;
 }
 
-/* contact section */
+/* Content */
 
-.contact{
-height:60vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.container{
+margin-top:160px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
 padding:20px;
 }
 
-.contact h1{
+h1{
 font-size:48px;
-margin-bottom:20px;
+margin-bottom:40px;
 }
 
-.contact p{
+p{
 font-size:20px;
-max-width:600px;
 line-height:1.6;
 }
 
-/* email */
-
 .email{
-margin-top:25px;
-font-size:24px;
+margin-top:30px;
+font-size:22px;
 font-weight:bold;
 }
 
-/* footer */
+/* Footer */
 
 footer{
-position:absolute;
-bottom:0;
-width:100%;
-padding:20px;
+margin-top:200px;
+padding-bottom:40px;
 font-size:14px;
-opacity:0.85;
+opacity:0.9;
 }
 
 </style>
-</head>
-
-<body>
-
-<header>
-
-<nav>
-
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
-
-<div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Applications"></a>
-
-<div class="submenu" id="appsMenu">
-<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-<a href="app3.html" data-en="Solar System" data-fr="Système solaire"></a>
-</div>
-</div>
-
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
-
-</nav>
-
-<div class="lang">
-<button onclick="toggleLanguage()" id="langButton">FR</button>
-</div>
-
-</header>
-
-<section class="contact">
-
-<h1 data-en="Contact" data-fr="Contact"></h1>
-
-<p
-data-en="If you have questions, want to report a bug, or need information about an app, please send an email."
-data-fr="Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel.">
-</p>
-
-<p
-data-en="Please write using your own email application."
-data-fr="Veuillez écrire en utilisant votre propre application de courriel.">
-</p>
-
-<div class="email">contact@microcreatif.ca</div>
-
-</section>
-
-<footer>
-<p>© Micro Créatif</p>
-<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 1.1</p>
-</footer>
 
 <script>
-
-/* apps dropdown */
-
-const appsButton=document.getElementById("navApps");
-const menu=document.getElementById("appsMenu");
-
-appsButton.addEventListener("click",function(e){
-e.stopPropagation();
-menu.style.display=(menu.style.display==="block")?"none":"block";
-});
-
-document.addEventListener("click",function(e){
-if(!menu.contains(e.target) && e.target!==appsButton){
-menu.style.display="none";
-}
-});
-
-/* language memory */
 
 let currentLanguage = localStorage.getItem("mc_language") || "en";
 
 function applyLanguage(){
 
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.textContent = el.getAttribute("data-"+currentLanguage);
-});
+if(currentLanguage==="fr"){
 
-document.getElementById("langButton").textContent =
-(currentLanguage==="en")?"FR":"EN";
+document.getElementById("navHome").textContent="Accueil";
+document.getElementById("navApps").textContent="Applications";
+document.getElementById("navAbout").textContent="À propos";
+document.getElementById("navContact").textContent="Contact";
+
+document.getElementById("title").textContent="Contact";
+
+document.getElementById("text1").textContent="Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel.";
+
+document.getElementById("text2").textContent="Veuillez écrire en utilisant votre propre application de courriel.";
+
+document.getElementById("langButton").textContent="EN";
+
+}else{
+
+document.getElementById("navHome").textContent="Home";
+document.getElementById("navApps").textContent="Apps";
+document.getElementById("navAbout").textContent="About";
+document.getElementById("navContact").textContent="Contact";
+
+document.getElementById("title").textContent="Contact";
+
+document.getElementById("text1").textContent="If you have questions, want to report a bug, or need information about an application, please send an email.";
+
+document.getElementById("text2").textContent="Please write using your own email application.";
+
+document.getElementById("langButton").textContent="FR";
+
+}
 
 }
 
 function toggleLanguage(){
 
-currentLanguage = (currentLanguage==="en")?"fr":"en";
+currentLanguage = currentLanguage==="en" ? "fr" : "en";
 
-localStorage.setItem("mc_language", currentLanguage);
+localStorage.setItem("mc_language",currentLanguage);
 
 applyLanguage();
 
 }
 
-document.addEventListener("DOMContentLoaded",applyLanguage);
+window.onload=applyLanguage;
 
 </script>
+
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html" id="navHome">Home</a>
+<a href="apps.html" id="navApps">Apps</a>
+<a href="about.html" id="navAbout">About</a>
+<a href="contact.html" id="navContact">Contact</a>
+
+<div class="langButton" id="langButton" onclick="toggleLanguage()">FR</div>
+
+</nav>
+
+<div class="container">
+
+<h1 id="title">Contact</h1>
+
+<p id="text1">
+If you have questions, want to report a bug, or need information about an application, please send an email.
+</p>
+
+<p id="text2">
+Please write using your own email application.
+</p>
+
+<div class="email">
+contact@microcreatif.ca
+</div>
+
+</div>
+
+<footer>
+
+<p>© Micro Créatif</p>
+<p>Montréal | Hồ Chí Minh-Ville</p>
+<p>Version 1.2</p>
+
+</footer>
 
 </body>
 </html>
