@@ -1,11 +1,11 @@
-<!--
-Micro Créatif Website
+<!-- Micro Créatif Website
 contact.html
-Version 1.2
+Version 1.3
 -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -20,16 +20,13 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
 text-align:center;
-
-/* Background image */
-
 background-image:url("images/background.png");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 }
 
-/* Navigation bar */
+/* NAVIGATION */
 
 nav{
 position:fixed;
@@ -45,27 +42,47 @@ font-size:18px;
 nav a{
 color:white;
 text-decoration:none;
-opacity:0.9;
+cursor:pointer;
 }
 
-nav a:hover{
-opacity:1;
+/* DROPDOWN */
+
+.dropdown{
+position:relative;
 }
 
-/* Language button */
+.submenu{
+display:none;
+position:absolute;
+top:28px;
+left:0;
+background:rgba(0,0,0,0.6);
+padding:10px;
+border-radius:10px;
+}
 
-.langButton{
+.submenu a{
+display:block;
+padding:6px 12px;
+white-space:nowrap;
+}
+
+.lang{
 position:absolute;
 right:30px;
 top:15px;
-padding:6px 14px;
-border:1px solid rgba(255,255,255,0.6);
-border-radius:20px;
-cursor:pointer;
-font-size:14px;
 }
 
-/* Content */
+.lang button{
+padding:6px 14px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.6);
+background:transparent;
+color:white;
+cursor:pointer;
+}
+
+/* CONTENT */
 
 .container{
 margin-top:160px;
@@ -87,11 +104,11 @@ line-height:1.6;
 
 .email{
 margin-top:30px;
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer{
 margin-top:200px;
@@ -102,85 +119,63 @@ opacity:0.9;
 
 </style>
 
-<script>
-
-let currentLanguage = localStorage.getItem("mc_language") || "en";
-
-function applyLanguage(){
-
-if(currentLanguage==="fr"){
-
-document.getElementById("navHome").textContent="Accueil";
-document.getElementById("navApps").textContent="Applications";
-document.getElementById("navAbout").textContent="À propos";
-document.getElementById("navContact").textContent="Contact";
-
-document.getElementById("title").textContent="Contact";
-
-document.getElementById("text1").textContent="Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel.";
-
-document.getElementById("text2").textContent="Veuillez écrire en utilisant votre propre application de courriel.";
-
-document.getElementById("langButton").textContent="EN";
-
-}else{
-
-document.getElementById("navHome").textContent="Home";
-document.getElementById("navApps").textContent="Apps";
-document.getElementById("navAbout").textContent="About";
-document.getElementById("navContact").textContent="Contact";
-
-document.getElementById("title").textContent="Contact";
-
-document.getElementById("text1").textContent="If you have questions, want to report a bug, or need information about an application, please send an email.";
-
-document.getElementById("text2").textContent="Please write using your own email application.";
-
-document.getElementById("langButton").textContent="FR";
-
-}
-
-}
-
-function toggleLanguage(){
-
-currentLanguage = currentLanguage==="en" ? "fr" : "en";
-
-localStorage.setItem("mc_language",currentLanguage);
-
-applyLanguage();
-
-}
-
-window.onload=applyLanguage;
-
-</script>
-
 </head>
 
 <body>
 
 <nav>
 
-<a href="index.html" id="navHome">Home</a>
-<a href="apps.html" id="navApps">Apps</a>
-<a href="about.html" id="navAbout">About</a>
-<a href="contact.html" id="navContact">Contact</a>
+<a href="index.html" id="navHome" data-en="Home" data-fr="Accueil"></a>
 
-<div class="langButton" id="langButton" onclick="toggleLanguage()">FR</div>
+<div class="dropdown">
+
+<a id="navApps" data-en="Applications" data-fr="Applications"></a>
+
+<div class="submenu" id="appsMenu">
+
+<a href="app1.html"
+data-en="RA / Dec / AZ / Alt"
+data-fr="AD / Déc / AZ / Alt"></a>
+
+<a href="app2.html"
+data-en="Virtual Telescope"
+data-fr="Télescope virtuel"></a>
+
+<a href="app3.html"
+data-en="Solar System"
+data-fr="Système solaire"></a>
+
+</div>
+
+</div>
+
+<a href="about.html" id="navAbout"
+data-en="About"
+data-fr="À propos"></a>
+
+<a href="contact.html" id="navContact"
+data-en="Contact"
+data-fr="Contact"></a>
+
+<div class="lang">
+<button onclick="toggleLanguage()" id="langButton">FR</button>
+</div>
 
 </nav>
 
+
 <div class="container">
 
-<h1 id="title">Contact</h1>
+<h1 data-en="Contact" data-fr="Contact"></h1>
 
-<p id="text1">
-If you have questions, want to report a bug, or need information about an application, please send an email.
+<p
+data-en="If you have questions, want to report a bug, or need information about an application, please send an email."
+data-fr="Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel.">
 </p>
 
-<p id="text2">
-Please write using your own email application.
+<p
+data-en="Please write using your own email application."
+data-fr="Veuillez écrire en utilisant votre propre application de courriel.">
 </p>
 
 <div class="email">
@@ -189,13 +184,67 @@ contact@microcreatif.ca
 
 </div>
 
+
 <footer>
 
 <p>© Micro Créatif</p>
-<p>Montréal | Hồ Chí Minh-Ville</p>
-<p>Version 1.2</p>
+<p data-en="Montreal | Ho Chi Minh City"
+data-fr="Montréal | Hô Chi Minh-Ville"></p>
+
+<p>Version 1.3</p>
 
 </footer>
+
+
+<script>
+
+/* LANGUAGE SYSTEM */
+
+let currentLanguage = localStorage.getItem("mc_language") || "en";
+
+function applyLanguage(){
+
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent = el.getAttribute("data-"+currentLanguage);
+});
+
+let langButton=document.getElementById("langButton");
+if(langButton){
+langButton.textContent=currentLanguage==="en"?"FR":"EN";
+}
+
+}
+
+function toggleLanguage(){
+
+currentLanguage=currentLanguage==="en"?"fr":"en";
+
+localStorage.setItem("mc_language",currentLanguage);
+
+applyLanguage();
+
+}
+
+document.addEventListener("DOMContentLoaded",applyLanguage);
+
+
+/* APPLICATIONS DROPDOWN */
+
+const navApps=document.getElementById("navApps");
+const menu=document.getElementById("appsMenu");
+
+navApps.onclick=function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
+};
+
+document.addEventListener("click",function(e){
+if(!menu.contains(e.target) && e.target!==navApps){
+menu.style.display="none";
+}
+});
+
+</script>
 
 </body>
 </html>
