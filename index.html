@@ -3,7 +3,7 @@
 
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 5.5 -->
+<!-- Version 5.7 -->
 
 <head>
 <meta charset="UTF-8">
@@ -249,10 +249,7 @@ opacity:0.85;
 
 <h1 data-en="Micro Créatif" data-fr="Micro Créatif"></h1>
 
-<p
-data-en="Apps for curious minds"
-data-fr="Applications pour esprits curieux">
-</p>
+<p data-en="" data-fr=""></p>
 
 </section>
 
@@ -294,7 +291,7 @@ data-fr="Applications pour esprits curieux">
 <footer>
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 5.5</p>
+<p>Version 5.7</p>
 </footer>
 
 <script>
@@ -343,9 +340,9 @@ menu.style.display="none";
 }
 });
 
-/* language */
+/* language with site-wide memory */
 
-let currentLanguage="en";
+let currentLanguage = localStorage.getItem("mc_language") || "en";
 
 function applyLanguage(){
 
@@ -361,6 +358,9 @@ document.getElementById("langButton").textContent =
 function toggleLanguage(){
 
 currentLanguage = (currentLanguage==="en")?"fr":"en";
+
+localStorage.setItem("mc_language", currentLanguage);
+
 applyLanguage();
 
 }
