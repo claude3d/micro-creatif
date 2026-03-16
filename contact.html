@@ -1,12 +1,13 @@
 <!--
 Micro Créatif Website
 Page: contact.html
-Version: 1.0
+Version: 1.1
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,16 +19,15 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
-background:black;
 text-align:center;
 overflow-x:hidden;
-}
 
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
+/* blue space gradient */
+background:
+radial-gradient(circle at 30% 30%, rgba(70,120,255,0.35), transparent 60%),
+radial-gradient(circle at 70% 60%, rgba(120,60,255,0.25), transparent 60%),
+linear-gradient(160deg,#020617,#0b1b3a,#030712);
+height:100vh;
 }
 
 nav{
@@ -60,7 +60,7 @@ cursor:pointer;
 }
 
 .container{
-margin-top:200px;
+margin-top:220px;
 max-width:700px;
 margin-left:auto;
 margin-right:auto;
@@ -105,16 +105,17 @@ opacity:0.7;
 
 <body>
 
-<canvas id="stars"></canvas>
-
 <nav>
+
 <a id="navHome" href="index.html"></a>
 <a id="navApps" href="index.html#apps"></a>
 <a id="navAbout" href="about.html"></a>
 <a id="navContact" href="contact.html"></a>
 
 <span id="langButton" onclick="toggleLanguage()">EN</span>
+
 </nav>
+
 
 <div class="container">
 
@@ -128,16 +129,18 @@ opacity:0.7;
 
 </div>
 
+
 <footer>
-<div>© Micro Créatif – v1.0</div>
+<div>© Micro Créatif – v1.1</div>
 <div id="cities"></div>
 </footer>
+
 
 <script src="js/language.js"></script>
 
 <script>
 
-const textContact = {
+const textContact={
 
 en:{
 title:"Contact",
@@ -151,6 +154,7 @@ message:"Si vous avez des questions, souhaitez signaler un bogue ou obtenir des 
 
 };
 
+
 function applyContactLanguage(lang){
 
 const t=textContact[lang];
@@ -160,19 +164,21 @@ document.getElementById("message").textContent=t.message;
 
 }
 
+
 document.addEventListener("DOMContentLoaded",function(){
 
-let lang=localStorage.getItem("lang") || "en";
+let lang=localStorage.getItem("lang")||"en";
 
 applyLanguage(lang);
 applyContactLanguage(lang);
 
 });
 
+
 function toggleLanguage(){
 
-let lang=localStorage.getItem("lang") || "en";
-lang = (lang==="en") ? "fr" : "en";
+let lang=localStorage.getItem("lang")||"en";
+lang=(lang==="en")?"fr":"en";
 
 localStorage.setItem("lang",lang);
 
@@ -180,44 +186,6 @@ applyLanguage(lang);
 applyContactLanguage(lang);
 
 }
-
-</script>
-
-<script>
-
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let stars=[];
-
-for(let i=0;i<200;i++){
-stars.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-size:Math.random()*2
-});
-}
-
-function drawStars(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-ctx.fillStyle="white";
-
-stars.forEach(star=>{
-ctx.beginPath();
-ctx.arc(star.x,star.y,star.size,0,Math.PI*2);
-ctx.fill();
-});
-
-requestAnimationFrame(drawStars);
-
-}
-
-drawStars();
 
 </script>
 
