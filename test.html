@@ -23,7 +23,7 @@ display:flex;
 flex-direction:column;
 }
 
-/* Background similar spirit to index but without galaxy */
+/* Background gradient */
 
 body::before{
 content:"";
@@ -56,11 +56,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 padding:30px 40px;
-}
-
-.nav-left{
-display:flex;
-gap:28px;
+min-height: 100px;
 }
 
 /* Shared button style */
@@ -85,7 +81,12 @@ background:white;
 color:#1a3a4a;
 }
 
-/* Language button positioned right */
+/* Positioned Buttons */
+
+#backBtn{
+position:absolute;
+left:40px;
+}
 
 #langBtn{
 position:absolute;
@@ -100,7 +101,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 text-align:center;
-padding:60px 20px 80px;
+padding:20px 20px 80px;
 max-width:900px;
 margin:auto;
 }
@@ -167,16 +168,8 @@ opacity:0.7;
 <body>
 
 <div class="nav-container">
-
-<div class="nav-left">
-<a href="index.html" class="btn-ui" id="navHome"></a>
-<a href="apps.html" class="btn-ui" id="navApps"></a>
-<a href="about.html" class="btn-ui" id="navAbout"></a>
-<a href="contact.html" class="btn-ui" id="navContact"></a>
-</div>
-
-<button class="btn-ui" onclick="toggleLang()" id="langBtn"></button>
-
+    <a href="index.html" class="btn-ui" id="backBtn"></a>
+    <button class="btn-ui" onclick="toggleLang()" id="langBtn"></button>
 </div>
 
 <div class="main-content">
@@ -201,7 +194,7 @@ opacity:0.7;
 
 <p id="copyright"></p>
 <p id="cities"></p>
-<p class="version">v1.9</p>
+<p class="version">v1.10</p>
 
 </footer>
 
@@ -212,10 +205,7 @@ opacity:0.7;
 const text={
 
 en:{
-navHome:"Home",
-navApps:"Apps",
-navAbout:"About",
-navContact:"Contact",
+backBtn:"Back",
 langButton:"Français",
 
 title:"Our Origins",
@@ -232,10 +222,7 @@ cities:"Montréal | Ho Chi Minh City"
 },
 
 fr:{
-navHome:"Accueil",
-navApps:"Applications",
-navAbout:"À propos",
-navContact:"Contact",
+backBtn:"Retour",
 langButton:"English",
 
 title:"Nos Origines",
@@ -259,11 +246,7 @@ function applyLang(lang){
 
 const t=text[lang];
 
-document.getElementById("navHome").innerText=t.navHome;
-document.getElementById("navApps").innerText=t.navApps;
-document.getElementById("navAbout").innerText=t.navAbout;
-document.getElementById("navContact").innerText=t.navContact;
-
+document.getElementById("backBtn").innerText=t.backBtn;
 document.getElementById("langBtn").innerText=t.langButton;
 
 document.getElementById("title").innerText=t.title;
@@ -273,7 +256,7 @@ document.getElementById("inflation").innerText=t.inflation;
 document.getElementById("articleTitle").innerText=t.articleTitle;
 document.getElementById("articleSource").innerHTML=t.articleSource;
 
-/* Update button text and file link */
+/* Update button text and file link based on language */
 document.getElementById("pdfBtn").innerText=t.pdfBtn;
 document.getElementById("pdfBtn").href=t.pdfLink;
 
