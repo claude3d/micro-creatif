@@ -91,7 +91,7 @@ body::before{
     align-items:center;
     text-align:center;
     padding:60px 20px 80px;
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
 }
 
@@ -101,8 +101,8 @@ h1{
     text-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
-h2 {
-    font-size: 2rem;
+#articleTitle {
+    font-size: 1.8rem;
     margin: 60px 0 20px;
     color: #4facfe;
 }
@@ -113,14 +113,6 @@ h2 {
     margin-bottom:40px;
     font-weight:300;
     line-height:1.5;
-}
-
-.media-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
 }
 
 .doc-img{
@@ -142,6 +134,7 @@ h2 {
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 40px;
+    width: 100%;
 }
 
 .info-box{
@@ -210,7 +203,7 @@ footer{
 <footer>
     <p id="copyright"></p>
     <p id="cities"></p>
-    <p class="version">v1.5</p>
+    <p class="version">v1.6</p>
 </footer>
 
 <script>
@@ -224,8 +217,8 @@ const text={
         title:"Our Origins",
         subtitle:"The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.",
         inflation:"Comparative value in 2026: approximately $7,350 CAD",
-        articleTitle:"From Dreams to Reality",
-        articleDesc:"Reflections on the microcomputing revolution by Claude Johnson, then President of the Club Apple de Montréal.",
+        articleTitle:"From Dreams to Reality&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir 1983)",
+        [span_0](start_span)articleDesc:"Reflections on the microcomputing revolution by Claude Johnson, then President of the Club Apple de Montréal[span_0](end_span).",
         downloadBtn:"Read Full Article (PDF)",
         copyright:"© 2026 Micro Créatif. All rights reserved.",
         cities:"Montréal | Ho Chi Minh City"
@@ -239,8 +232,8 @@ const text={
         title:"Nos Origines",
         subtitle:"L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.",
         inflation:"Valeur comparative en 2026 : environ 7 350 $ CAD",
-        articleTitle:"Du grand rêve à la réalité",
-        articleDesc:"Réflexions sur la révolution informatique par Claude Johnson, alors président du Club Apple de Montréal.",
+        articleTitle:"Du grand rêve à la réalité&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir 1983)",
+        [span_1](start_span)articleDesc:"Réflexions sur la révolution informatique par Claude Johnson, alors président du Club Apple de Montréal[span_1](end_span).",
         downloadBtn:"Lire l'article complet (PDF)",
         copyright:"© 2026 Micro Créatif. Tous droits réservés.",
         cities:"Montréal | Ho Chi Minh Ville"
@@ -257,7 +250,10 @@ function applyLang(lang){
     document.getElementById("title").innerText=t.title;
     document.getElementById("subtitle").innerText=t.subtitle;
     document.getElementById("inflation").innerText=t.inflation;
-    document.getElementById("articleTitle").innerText=t.articleTitle;
+    
+    // Using innerHTML to preserve the 10 non-breaking spaces
+    document.getElementById("articleTitle").innerHTML=t.articleTitle;
+    
     document.getElementById("articleDesc").innerText=t.articleDesc;
     document.getElementById("downloadBtn").innerText=t.downloadBtn;
     document.getElementById("copyright").innerText=t.copyright;
