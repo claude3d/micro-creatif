@@ -138,6 +138,14 @@ color:#4facfe;
 margin-bottom: 60px;
 }
 
+#articleSource {
+font-size: 0.9rem;
+opacity: 0.7;
+margin-top: -25px;
+margin-bottom: 30px;
+font-style: italic;
+}
+
 /* Footer */
 
 footer{
@@ -181,6 +189,7 @@ opacity:0.7;
 
 <h2 id="articleTitle" style="font-size:2rem; margin-bottom:25px; color:#4facfe;"></h2>
 <img src="images/article-scan.jpg" class="facture-img" alt="Le Devoir Article">
+<p id="articleSource"></p>
 
 <div style="margin-top:10px;">
     <a href="article.pdf" class="btn-ui" id="pdfBtn" target="_blank"></a>
@@ -192,7 +201,7 @@ opacity:0.7;
 
 <p id="copyright"></p>
 <p id="cities"></p>
-<p class="version">v1.7</p>
+<p class="version">v1.8</p>
 
 </footer>
 
@@ -213,8 +222,8 @@ title:"Our Origins",
 subtitle:"The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.",
 inflation:"Comparative value in 2026: approximately $7,350 CAD",
 
-/* Article Title with 10 spaces and specific citation spacing */
-articleTitle:"Du grand rêve à la réalité&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
+articleTitle:"Du grand rêve à la réalité",
+articleSource:"(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
 pdfBtn:"Read the full article (PDF)",
 
 copyright:"© 2026 Micro Créatif. All rights reserved.",
@@ -232,7 +241,8 @@ title:"Nos Origines",
 subtitle:"L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.",
 inflation:"Valeur comparative en 2026 : environ 7 350 $ CAD",
 
-articleTitle:"Du grand rêve à la réalité&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
+articleTitle:"Du grand rêve à la réalité",
+articleSource:"(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
 pdfBtn:"Lire l'article complet (PDF)",
 
 copyright:"© 2026 Micro Créatif. Tous droits réservés.",
@@ -258,8 +268,8 @@ document.getElementById("title").innerText=t.title;
 document.getElementById("subtitle").innerText=t.subtitle;
 document.getElementById("inflation").innerText=t.inflation;
 
-/* Using innerHTML to ensure non-breaking spaces render */
-document.getElementById("articleTitle").innerHTML=t.articleTitle;
+document.getElementById("articleTitle").innerText=t.articleTitle;
+document.getElementById("articleSource").innerHTML=t.articleSource;
 document.getElementById("pdfBtn").innerText=t.pdfBtn;
 
 document.getElementById("copyright").innerText=t.copyright;
