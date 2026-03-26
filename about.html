@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html mc_lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -286,8 +286,8 @@ document.getElementById("cities").innerText=t.cities;
 
 function toggleLang(){
 
-const current=localStorage.getItem("lang")==="en"?"fr":"en";
-localStorage.setItem("lang",current);
+const current=localStorage.getItem("mc_lang")==="en"?"fr":"en";
+localStorage.setItem("mc_lang",current);
 applyLang(current);
 
 }
