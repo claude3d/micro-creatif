@@ -3,273 +3,289 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micro Créatif - About</title>
+<title>Micro Créatif</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:white;
-    background:#0b0f19;
-    overflow-x:hidden;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color:white;
+background:#0b0f19;
+overflow-x:hidden;
+min-height:100vh;
+display:flex;
+flex-direction:column;
 }
 
+/* Background similar spirit to index but without galaxy */
+
 body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:200%;
-    height:200%;
-    background:
-        radial-gradient(circle at 25% 30%, #3a7bd5, transparent 40%),
-        radial-gradient(circle at 70% 70%, #00c6ff, transparent 40%),
-        radial-gradient(circle at 50% 80%, #1e90ff, transparent 40%);
-    animation:moveLights 18s infinite alternate ease-in-out;
-    filter:blur(120px);
-    opacity:.55;
-    z-index:-1;
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle at 25% 30%, #3a7bd5, transparent 40%),
+radial-gradient(circle at 70% 70%, #00c6ff, transparent 40%),
+radial-gradient(circle at 50% 80%, #1e90ff, transparent 40%);
+animation:moveLights 18s infinite alternate ease-in-out;
+filter:blur(120px);
+opacity:.55;
+z-index:-1;
 }
 
 @keyframes moveLights{
-    0%{transform:translate(-10%,-10%);}
-    100%{transform:translate(10%,10%);}
+0%{transform:translate(-10%,-10%);}
+100%{transform:translate(10%,10%);}
 }
 
 /* Navigation */
+
 .nav-container{
-    position:relative;
-    z-index:10;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px 40px;
+position:relative;
+z-index:10;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px 40px;
 }
 
 .nav-left{
-    display:flex;
-    gap:28px;
+display:flex;
+gap:28px;
 }
 
+/* Shared button style */
+
 .btn-ui{
-    background:rgba(255,255,255,0.1);
-    color:white;
-    border:1px solid rgba(255,255,255,0.3);
-    padding:10px 22px;
-    border-radius:25px;
-    cursor:pointer;
-    backdrop-filter:blur(10px);
-    text-decoration:none;
-    font-weight:600;
-    transition:all .3s;
-    font-size:15px;
+background:rgba(255,255,255,0.1);
+color:white;
+border:1px solid rgba(255,255,255,0.3);
+padding:10px 22px;
+border-radius:25px;
+cursor:pointer;
+backdrop-filter:blur(10px);
+text-decoration:none;
+font-weight:600;
+transition:all .3s;
+font-size:15px;
+display: inline-block;
 }
 
 .btn-ui:hover{
-    background:white;
-    color:#1a3a4a;
+background:white;
+color:#1a3a4a;
 }
 
+/* Language button positioned right */
+
 #langBtn{
-    position:absolute;
-    right:40px;
+position:absolute;
+right:40px;
 }
 
 /* Main content */
+
 .main-content{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:60px 20px 80px;
-    max-width:1100px;
-    margin:auto;
+flex:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:60px 20px 80px;
+max-width:900px;
+margin:auto;
 }
 
 h1{
-    font-size:3.4rem;
-    margin-bottom:15px;
-    text-shadow:0 10px 30px rgba(0,0,0,.6);
-}
-
-#articleTitle {
-    font-size: 1.8rem;
-    margin: 60px 0 20px;
-    color: #4facfe;
+font-size:3.4rem;
+margin-bottom:15px;
+text-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
 .subtitle{
-    font-size:1.35rem;
-    max-width:750px;
-    margin-bottom:40px;
-    font-weight:300;
-    line-height:1.5;
+font-size:1.35rem;
+max-width:750px;
+margin-bottom:40px;
+font-weight:300;
+line-height:1.5;
 }
 
-.doc-img{
-    max-width:100%;
-    height:auto;
-    border-radius:8px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.7);
-    border:1px solid rgba(255,255,255,0.2);
-    transition: transform 0.4s ease;
-}
-
-.doc-img:hover {
-    transform: scale(1.02);
-}
-
-.article-box {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 40px;
-    width: 100%;
+.facture-img{
+max-width:100%;
+height:auto;
+border-radius:12px;
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
+border:1px solid rgba(255,255,255,0.25);
+margin-bottom:35px;
 }
 
 .info-box{
-    background:rgba(255,255,255,0.07);
-    border:1px solid rgba(255,255,255,0.15);
-    padding:16px 28px;
-    border-radius:16px;
-    font-weight:600;
-    color:#4facfe;
-    margin-top: 20px;
-}
-
-.download-area {
-    margin-top: 30px;
+background:rgba(255,255,255,0.07);
+border:1px solid rgba(255,255,255,0.15);
+padding:16px 28px;
+border-radius:16px;
+font-weight:600;
+color:#4facfe;
+margin-bottom: 60px;
 }
 
 /* Footer */
+
 footer{
-    text-align:center;
-    padding:40px 20px;
-    opacity:0.85;
-    font-size:0.95rem;
+text-align:center;
+padding:40px 20px;
+opacity:0.85;
+font-size:0.95rem;
 }
 
 .version{
-    margin-top:8px;
-    font-size:0.85rem;
-    opacity:0.7;
+margin-top:8px;
+font-size:0.85rem;
+opacity:0.7;
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="nav-container">
-    <div class="nav-left">
-        <a href="index.html" class="btn-ui" id="navHome"></a>
-        <a href="apps.html" class="btn-ui" id="navApps"></a>
-        <a href="about.html" class="btn-ui" id="navAbout"></a>
-        <a href="contact.html" class="btn-ui" id="navContact"></a>
-    </div>
-    <button class="btn-ui" onclick="toggleLang()" id="langBtn"></button>
+
+<div class="nav-left">
+<a href="index.html" class="btn-ui" id="navHome"></a>
+<a href="apps.html" class="btn-ui" id="navApps"></a>
+<a href="about.html" class="btn-ui" id="navAbout"></a>
+<a href="contact.html" class="btn-ui" id="navContact"></a>
+</div>
+
+<button class="btn-ui" onclick="toggleLang()" id="langBtn"></button>
+
 </div>
 
 <div class="main-content">
-    
-    <h1 id="title"></h1>
-    <p class="subtitle" id="subtitle"></p>
-    <img src="images/facture.jpg" class="doc-img" alt="Apple II facture">
-    <div class="info-box" id="inflation"></div>
 
-    <hr style="width: 100px; border: 1px solid rgba(255,255,255,0.1); margin: 60px 0;">
+<h1 id="title"></h1>
+<p class="subtitle" id="subtitle"></p>
 
-    <div class="article-box">
-        <h2 id="articleTitle"></h2>
-        <p class="subtitle" id="articleDesc"></p>
-        <img src="images/article-scan.jpg" class="doc-img" alt="Press Article Scan">
-        
-        <div class="download-area">
-            <a href="article.pdf" class="btn-ui" target="_blank" id="downloadBtn"></a>
-        </div>
-    </div>
+<img src="images/facture.jpg" class="facture-img" alt="Apple II facture">
+<div class="info-box" id="inflation"></div>
+
+<h2 id="articleTitle" style="font-size:2rem; margin-bottom:25px; color:#4facfe;"></h2>
+<img src="images/article-scan.jpg" class="facture-img" alt="Le Devoir Article">
+
+<div style="margin-top:10px;">
+    <a href="article.pdf" class="btn-ui" id="pdfBtn" target="_blank"></a>
+</div>
 
 </div>
 
 <footer>
-    <p id="copyright"></p>
-    <p id="cities"></p>
-    <p class="version">v1.6</p>
+
+<p id="copyright"></p>
+<p id="cities"></p>
+<p class="version">v1.7</p>
+
 </footer>
 
 <script>
+
+/* Language array */
+
 const text={
-    en:{
-        navHome:"Home",
-        navApps:"Apps",
-        navAbout:"About",
-        navContact:"Contact",
-        langButton:"Français",
-        title:"Our Origins",
-        subtitle:"The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.",
-        inflation:"Comparative value in 2026: approximately $7,350 CAD",
-        articleTitle:"From Dreams to Reality&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir 1983)",
-        [span_0](start_span)articleDesc:"Reflections on the microcomputing revolution by Claude Johnson, then President of the Club Apple de Montréal[span_0](end_span).",
-        downloadBtn:"Read Full Article (PDF)",
-        copyright:"© 2026 Micro Créatif. All rights reserved.",
-        cities:"Montréal | Ho Chi Minh City"
-    },
-    fr:{
-        navHome:"Accueil",
-        navApps:"Applications",
-        navAbout:"À propos",
-        navContact:"Contact",
-        langButton:"English",
-        title:"Nos Origines",
-        subtitle:"L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.",
-        inflation:"Valeur comparative en 2026 : environ 7 350 $ CAD",
-        articleTitle:"Du grand rêve à la réalité&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir 1983)",
-        [span_1](start_span)articleDesc:"Réflexions sur la révolution informatique par Claude Johnson, alors président du Club Apple de Montréal[span_1](end_span).",
-        downloadBtn:"Lire l'article complet (PDF)",
-        copyright:"© 2026 Micro Créatif. Tous droits réservés.",
-        cities:"Montréal | Ho Chi Minh Ville"
-    }
+
+en:{
+navHome:"Home",
+navApps:"Apps",
+navAbout:"About",
+navContact:"Contact",
+langButton:"Français",
+
+title:"Our Origins",
+subtitle:"The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.",
+inflation:"Comparative value in 2026: approximately $7,350 CAD",
+
+/* Article Title with 10 spaces and specific citation spacing */
+articleTitle:"Du grand rêve à la réalité&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
+pdfBtn:"Read the full article (PDF)",
+
+copyright:"© 2026 Micro Créatif. All rights reserved.",
+cities:"Montréal | Ho Chi Minh City"
+},
+
+fr:{
+navHome:"Accueil",
+navApps:"Applications",
+navAbout:"À propos",
+navContact:"Contact",
+langButton:"English",
+
+title:"Nos Origines",
+subtitle:"L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.",
+inflation:"Valeur comparative en 2026 : environ 7 350 $ CAD",
+
+articleTitle:"Du grand rêve à la réalité&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
+pdfBtn:"Lire l'article complet (PDF)",
+
+copyright:"© 2026 Micro Créatif. Tous droits réservés.",
+cities:"Montréal | Ho Chi Minh Ville"
+}
+
 };
 
+/* Apply language */
+
 function applyLang(lang){
-    const t=text[lang];
-    document.getElementById("navHome").innerText=t.navHome;
-    document.getElementById("navApps").innerText=t.navApps;
-    document.getElementById("navAbout").innerText=t.navAbout;
-    document.getElementById("navContact").innerText=t.navContact;
-    document.getElementById("langBtn").innerText=t.langButton;
-    document.getElementById("title").innerText=t.title;
-    document.getElementById("subtitle").innerText=t.subtitle;
-    document.getElementById("inflation").innerText=t.inflation;
-    
-    // Using innerHTML to preserve the 10 non-breaking spaces
-    document.getElementById("articleTitle").innerHTML=t.articleTitle;
-    
-    document.getElementById("articleDesc").innerText=t.articleDesc;
-    document.getElementById("downloadBtn").innerText=t.downloadBtn;
-    document.getElementById("copyright").innerText=t.copyright;
-    document.getElementById("cities").innerText=t.cities;
+
+const t=text[lang];
+
+document.getElementById("navHome").innerText=t.navHome;
+document.getElementById("navApps").innerText=t.navApps;
+document.getElementById("navAbout").innerText=t.navAbout;
+document.getElementById("navContact").innerText=t.navContact;
+
+document.getElementById("langBtn").innerText=t.langButton;
+
+document.getElementById("title").innerText=t.title;
+document.getElementById("subtitle").innerText=t.subtitle;
+document.getElementById("inflation").innerText=t.inflation;
+
+/* Using innerHTML to ensure non-breaking spaces render */
+document.getElementById("articleTitle").innerHTML=t.articleTitle;
+document.getElementById("pdfBtn").innerText=t.pdfBtn;
+
+document.getElementById("copyright").innerText=t.copyright;
+document.getElementById("cities").innerText=t.cities;
+
 }
+
+/* Toggle language */
 
 function toggleLang(){
-    const current=localStorage.getItem("lang")==="en"?"fr":"en";
-    localStorage.setItem("lang",current);
-    applyLang(current);
+
+const current=localStorage.getItem("lang")==="en"?"fr":"en";
+localStorage.setItem("lang",current);
+applyLang(current);
+
 }
 
+/* Init */
+
 window.onload=function(){
-    const saved=localStorage.getItem("lang")||"en";
-    applyLang(saved);
+
+const saved=localStorage.getItem("lang")||"en";
+applyLang(saved);
+
 }
+
 </script>
 
 </body>
