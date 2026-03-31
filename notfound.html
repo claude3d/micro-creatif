@@ -6,35 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>En Construction / Under Construction</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       background: #000;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     img {
       display: block;
       width: 100%;
+      max-width: 1280px;
       height: auto;
     }
     .btn {
-      display: inline-block;
-      margin: 20px auto;
-      padding: 12px 30px;
-      font-size: 18px;
-      background: #222;
+      display: block;
+      width: 100%;
+      max-width: 1280px;
+      padding: 16px;
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      background: #333;
       color: #fff;
+      text-align: center;
       text-decoration: none;
-      border-radius: 6px;
+      border: none;
       cursor: pointer;
     }
     .btn:hover {
-      background: #444;
+      background: #555;
     }
   </style>
 </head>
 <body>
-  <img src="images/InDev.jpg" alt="Under Construction / En Construction">
-  <br>
+  <img src="InDev.jpg" alt="Under Construction / En Construction">
   <a class="btn" href="#" onclick="history.back(); return false;">&#8592; Back / Retour</a>
 </body>
 </html>
