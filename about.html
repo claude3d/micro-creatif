@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 2.1 -->
+<!-- Version 2.2 -->
 
 <head>
 <meta charset="UTF-8">
@@ -98,6 +98,8 @@ right:40px;
 /* Apps dropdown */
 .dropdown{
 position:relative;
+display:inline-flex;
+align-items:center;
 }
 
 .submenu{
@@ -200,22 +202,22 @@ opacity:0.7;
 
 <div class="nav-container">
     <div class="nav-left">
-        <a href="index.html" class="btn-ui" id="navHome"></a>
+        <a href="index.html" class="btn-ui" id="navHome">Home</a>
 
 ```
     <div class="dropdown">
-        <span class="btn-ui" id="navApps"></span>
+        <span class="btn-ui" id="navApps">Apps</span>
         <div class="submenu" id="appsMenu" style="display:none;">
-            <a href="app1.html" id="subApp1"></a>
-            <a href="app2.html" id="subApp2"></a>
-            <a href="app3.html" id="subApp3"></a>
+            <a href="app1.html" id="subApp1">RA / Dec / AZ / Alt</a>
+            <a href="app2.html" id="subApp2">Virtual Telescope</a>
+            <a href="app3.html" id="subApp3">Solar System</a>
         </div>
     </div>
 
-    <a href="about.html" class="btn-ui" id="navAbout"></a>
-    <a href="contact.html" class="btn-ui" id="navContact"></a>
+    <a href="about.html" class="btn-ui" id="navAbout">About</a>
+    <a href="contact.html" class="btn-ui" id="navContact">Contact</a>
 </div>
-<button class="btn-ui" onclick="toggleLanguage()" id="langBtn"></button>
+<button class="btn-ui" onclick="toggleLanguage()" id="langBtn">FR</button>
 ```
 
 </div>
@@ -242,7 +244,7 @@ opacity:0.7;
 <footer>
     <p id="copyright"></p>
     <p id="cities"></p>
-    <p class="version-display">Version 2.1</p>
+    <p class="version-display">Version 2.2</p>
 </footer>
 
 <script>
