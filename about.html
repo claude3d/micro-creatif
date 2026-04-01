@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 2.5 -->
+<!-- Version 2.7 -->
 
 <head>
 <meta charset="UTF-8">
@@ -57,11 +57,9 @@ z-index:-1;
 /* header */
 
 header{
-position:relative;
+position:absolute;
 top:10px;
 width:100%;
-text-align:center;
-padding:20px 0;
 }
 
 nav{
@@ -82,7 +80,6 @@ cursor:pointer;
 
 .dropdown{
 position:relative;
-display:inline;
 }
 
 .submenu{
@@ -114,7 +111,7 @@ background:rgba(255,255,255,0.1);
 .lang{
 position:absolute;
 right:30px;
-top:20px;
+top:0;
 }
 
 .lang button{
@@ -202,19 +199,20 @@ opacity:0.7;
 
 <nav>
 
-<a id="navHome" href="index.html">Home</a>
+<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html">Home</a>
 
 <div class="dropdown">
-<a id="navApps">Apps</a>
-<div class="submenu" id="appsMenu" style="display:none;">
-<a href="app1.html" id="subApp1">RA / Dec / AZ / Alt</a>
-<a href="app2.html" id="subApp2">Virtual Telescope</a>
-<a href="app3.html" id="subApp3">Solar System</a>
+<a id="navApps" data-en="Apps" data-fr="Applications">Apps</a>
+
+<div class="submenu" id="appsMenu">
+<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt">RA / Dec / AZ / Alt</a>
+<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel">Virtual Telescope</a>
+<a href="app3.html" data-en="Solar System" data-fr="Système solaire">Solar System</a>
 </div>
 </div>
 
-<a id="navAbout" href="about.html">About</a>
-<a id="navContact" href="contact.html">Contact</a>
+<a id="navAbout" data-en="About" data-fr="À propos" href="about.html">About</a>
+<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html">Contact</a>
 
 </nav>
 
@@ -225,124 +223,89 @@ opacity:0.7;
 </header>
 
 <div class="main-content">
-    <h1 id="title"></h1>
-    <p class="subtitle" id="subtitle"></p>
+    <h1 id="title" data-en="Our Origins" data-fr="Nos Origines">Our Origins</h1>
+    <p class="subtitle" id="subtitle"
+        data-en="The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure."
+        data-fr="L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.">The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.</p>
 
 ```
 <img src="images/facture.jpg" class="facture-img" alt="Apple II facture">
-<div class="info-box" id="inflation"></div>
+<div class="info-box" id="inflation"
+    data-en="Comparative value in 2026: approximately $7,350 CAD"
+    data-fr="Valeur comparative en 2026 : environ 7 350 $ CAD">Comparative value in 2026: approximately $7,350 CAD</div>
 
-<h2 id="articleTitle" style="font-size:2rem; margin-bottom:25px; color:#4facfe;"></h2>
+<h2 id="articleTitle" style="font-size:2rem; margin-bottom:25px; color:#4facfe;"
+    data-en="Du grand rêve à la réalité"
+    data-fr="Du grand rêve à la réalité">Du grand rêve à la réalité</h2>
 <img src="images/article-scan.jpg" class="facture-img" alt="Le Devoir Article">
-<p id="articleSource"></p>
+<p id="articleSource" data-en="(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)" data-fr="(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)">(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)</p>
 
 <div style="margin-top:10px;">
-    <a href="" class="btn-ui" id="pdfBtn" target="_blank">Read the article</a>
+    <a class="btn-ui" id="pdfBtn" target="_blank"
+        href="articleE.html"
+        data-en="Read the article"
+        data-fr="Lire l'article"
+        data-href-en="articleE.html"
+        data-href-fr="article.html">Read the article</a>
 </div>
 ```
 
 </div>
 
 <footer>
-    <p id="copyright"></p>
-    <p id="cities"></p>
-    <p class="version-display">Version 2.5</p>
+    <p data-en="© 2026 Micro Créatif. All rights reserved." data-fr="© 2026 Micro Créatif. Tous droits réservés.">© 2026 Micro Créatif. All rights reserved.</p>
+    <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh Ville">Montreal | Ho Chi Minh City</p>
+    <p class="version-display">Version 2.7</p>
 </footer>
 
 <script>
 
-/* Language Object */
-const text = {
-    en: {
-        navHome: "Home",
-        navApps: "Apps",
-        navAbout: "About",
-        navContact: "Contact",
-        langButton: "FR",
-        subApp1: "RA / Dec / AZ / Alt",
-        subApp2: "Virtual Telescope",
-        subApp3: "Solar System",
-        title: "Our Origins",
-        subtitle: "The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.",
-        inflation: "Comparative value in 2026: approximately $7,350 CAD",
-        articleTitle: "Du grand rêve à la réalité",
-        articleSource: "(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
-        pdfBtn: "Read the article",
-        pdfLink: "articleE.html",
-        copyright: "© 2026 Micro Créatif. All rights reserved.",
-        cities: "Montreal | Ho Chi Minh City"
-    },
-    fr: {
-        navHome: "Accueil",
-        navApps: "Applications",
-        navAbout: "À propos",
-        navContact: "Contact",
-        langButton: "EN",
-        subApp1: "AD / Déc / AZ / Alt",
-        subApp2: "Télescope virtuel",
-        subApp3: "Système solaire",
-        title: "Nos Origines",
-        subtitle: "L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.",
-        inflation: "Valeur comparative en 2026 : environ 7 350 $ CAD",
-        articleTitle: "Du grand rêve à la réalité",
-        articleSource: "(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)",
-        pdfBtn: "Lire l'article",
-        pdfLink: "article.html",
-        copyright: "© 2026 Micro Créatif. Tous droits réservés.",
-        cities: "Montréal | Hô Chi Minh Ville"
-    }
-};
+/* apps dropdown */
 
-/* Language Sync Logic */
-function applyLanguage(lang) {
-    const t = text[lang];
+const appsButton=document.getElementById("navApps");
+const menu=document.getElementById("appsMenu");
 
-    document.getElementById("navHome").innerText = t.navHome;
-    document.getElementById("navApps").innerText = t.navApps;
-    document.getElementById("navAbout").innerText = t.navAbout;
-    document.getElementById("navContact").innerText = t.navContact;
-    document.getElementById("langBtn").innerText = t.langButton;
-    document.getElementById("subApp1").innerText = t.subApp1;
-    document.getElementById("subApp2").innerText = t.subApp2;
-    document.getElementById("subApp3").innerText = t.subApp3;
-    document.getElementById("title").innerText = t.title;
-    document.getElementById("subtitle").innerText = t.subtitle;
-    document.getElementById("inflation").innerText = t.inflation;
-    document.getElementById("articleTitle").innerText = t.articleTitle;
-    document.getElementById("articleSource").innerHTML = t.articleSource;
-    document.getElementById("pdfBtn").innerText = t.pdfBtn;
-    document.getElementById("pdfBtn").href = t.pdfLink;
-    document.getElementById("copyright").innerText = t.copyright;
-    document.getElementById("cities").innerText = t.cities;
-}
-
-function toggleLanguage() {
-    const current = localStorage.getItem("mc_language") === "en" ? "fr" : "en";
-    localStorage.setItem("mc_language", current);
-    applyLanguage(current);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    const saved = localStorage.getItem("mc_language") || "en";
-    applyLanguage(saved);
-
-    /* Apps dropdown */
-    const appsButton = document.getElementById("navApps");
-    const menu = document.getElementById("appsMenu");
-
-    appsButton.addEventListener("click", function(e) {
-        e.stopPropagation();
-        menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    });
-
-    document.addEventListener("click", function(e) {
-        if (!menu.contains(e.target) && e.target !== appsButton) {
-            menu.style.display = "none";
-        }
-    });
-
+appsButton.addEventListener("click",function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
 });
+
+document.addEventListener("click",function(e){
+if(!menu.contains(e.target) && e.target!==appsButton){
+menu.style.display="none";
+}
+});
+
+/* language with site-wide memory */
+
+let currentLanguage = localStorage.getItem("mc_language") || "en";
+
+function applyLanguage(){
+
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent = el.getAttribute("data-"+currentLanguage);
+});
+
+/* pdfBtn href */
+const pdfBtn=document.getElementById("pdfBtn");
+if(pdfBtn) pdfBtn.href=pdfBtn.getAttribute("data-href-"+currentLanguage);
+
+document.getElementById("langBtn").textContent =
+(currentLanguage==="en")?"FR":"EN";
+
+}
+
+function toggleLanguage(){
+
+currentLanguage = (currentLanguage==="en")?"fr":"en";
+
+localStorage.setItem("mc_language", currentLanguage);
+
+applyLanguage();
+
+}
+
+document.addEventListener("DOMContentLoaded",applyLanguage);
 
 </script>
 
