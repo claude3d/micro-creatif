@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -59,6 +60,7 @@ padding:30px 40px;
 .nav-left{
 display:flex;
 gap:28px;
+align-items:center;
 }
 
 .btn-ui{
@@ -73,7 +75,7 @@ text-decoration:none;
 font-weight:600;
 transition:all .3s;
 font-size:15px;
-display: inline-block;
+display:inline-block;
 }
 
 .btn-ui:hover{
@@ -84,6 +86,37 @@ color:#1a3a4a;
 #langBtn{
 position:absolute;
 right:40px;
+}
+
+/* Apps dropdown */
+.dropdown{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:calc(100% + 8px);
+left:0;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.3);
+border-radius:10px;
+padding:8px 0;
+min-width:200px;
+text-align:left;
+}
+
+.submenu a{
+display:block;
+padding:8px 14px;
+font-size:15px;
+color:white;
+text-decoration:none;
+}
+
+.submenu a:hover{
+background:rgba(255,255,255,0.1);
 }
 
 /* Main content */
@@ -128,15 +161,15 @@ padding:16px 28px;
 border-radius:16px;
 font-weight:600;
 color:#4facfe;
-margin-bottom: 60px;
+margin-bottom:60px;
 }
 
-#articleSource {
-font-size: 0.9rem;
-opacity: 0.7;
-margin-top: -25px;
-margin-bottom: 30px;
-font-style: italic;
+#articleSource{
+font-size:0.9rem;
+opacity:0.7;
+margin-top:-25px;
+margin-bottom:30px;
+font-style:italic;
 }
 
 footer{
@@ -153,6 +186,7 @@ opacity:0.7;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -160,27 +194,42 @@ opacity:0.7;
 <div class="nav-container">
     <div class="nav-left">
         <a href="index.html" class="btn-ui" id="navHome"></a>
-        <a href="app1.html" class="btn-ui" id="navApps"></a>
-        <a href="about.html" class="btn-ui" id="navAbout"></a>
-        <a href="contact.html" class="btn-ui" id="navContact"></a>
+
+```
+    <div class="dropdown">
+        <span class="btn-ui" id="navApps"></span>
+        <div class="submenu" id="appsMenu">
+            <a href="app1.html" id="subApp1"></a>
+            <a href="app2.html" id="subApp2"></a>
+            <a href="app3.html" id="subApp3"></a>
+        </div>
     </div>
-    <button class="btn-ui" onclick="toggleLanguage()" id="langBtn"></button>
+
+    <a href="about.html" class="btn-ui" id="navAbout"></a>
+    <a href="contact.html" class="btn-ui" id="navContact"></a>
+</div>
+<button class="btn-ui" onclick="toggleLanguage()" id="langBtn"></button>
+```
+
 </div>
 
 <div class="main-content">
     <h1 id="title"></h1>
     <p class="subtitle" id="subtitle"></p>
 
-    <img src="images/facture.jpg" class="facture-img" alt="Apple II facture">
-    <div class="info-box" id="inflation"></div>
+```
+<img src="images/facture.jpg" class="facture-img" alt="Apple II facture">
+<div class="info-box" id="inflation"></div>
 
-    <h2 id="articleTitle" style="font-size:2rem; margin-bottom:25px; color:#4facfe;"></h2>
-    <img src="images/article-scan.jpg" class="facture-img" alt="Le Devoir Article">
-    <p id="articleSource"></p>
+<h2 id="articleTitle" style="font-size:2rem; margin-bottom:25px; color:#4facfe;"></h2>
+<img src="images/article-scan.jpg" class="facture-img" alt="Le Devoir Article">
+<p id="articleSource"></p>
 
-    <div style="margin-top:10px;">
-        <a href="" class="btn-ui" id="pdfBtn" target="_blank"></a>
-    </div>
+<div style="margin-top:10px;">
+    <a href="" class="btn-ui" id="pdfBtn" target="_blank"></a>
+</div>
+```
+
 </div>
 
 <footer>
@@ -199,6 +248,9 @@ const text = {
         navAbout: "About",
         navContact: "Contact",
         langButton: "FR",
+        subApp1: "RA / Dec / AZ / Alt",
+        subApp2: "Virtual Telescope",
+        subApp3: "Solar System",
         title: "Our Origins",
         subtitle: "The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.",
         inflation: "Comparative value in 2026: approximately $7,350 CAD",
@@ -215,6 +267,9 @@ const text = {
         navAbout: "À propos",
         navContact: "Contact",
         langButton: "EN",
+        subApp1: "AD / Déc / AZ / Alt",
+        subApp2: "Télescope virtuel",
+        subApp3: "Système solaire",
         title: "Nos Origines",
         subtitle: "L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.",
         inflation: "Valeur comparative en 2026 : environ 7 350 $ CAD",
@@ -236,6 +291,9 @@ function applyLanguage(lang) {
     document.getElementById("navAbout").innerText = t.navAbout;
     document.getElementById("navContact").innerText = t.navContact;
     document.getElementById("langBtn").innerText = t.langButton;
+    document.getElementById("subApp1").innerText = t.subApp1;
+    document.getElementById("subApp2").innerText = t.subApp2;
+    document.getElementById("subApp3").innerText = t.subApp3;
     document.getElementById("title").innerText = t.title;
     document.getElementById("subtitle").innerText = t.subtitle;
     document.getElementById("inflation").innerText = t.inflation;
@@ -252,6 +310,21 @@ function toggleLanguage() {
     localStorage.setItem("mc_language", current);
     applyLanguage(current);
 }
+
+/* Apps dropdown */
+const appsButton = document.getElementById("navApps");
+const menu = document.getElementById("appsMenu");
+
+appsButton.addEventListener("click", function(e) {
+    e.stopPropagation();
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+});
+
+document.addEventListener("click", function(e) {
+    if (!menu.contains(e.target) && e.target !== appsButton) {
+        menu.style.display = "none";
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     const saved = localStorage.getItem("mc_language") || "en";
