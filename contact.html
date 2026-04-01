@@ -1,9 +1,10 @@
 <!-- Micro Créatif Website
 contact.html
-Version 1.5
+Version 1.6
 -->
 
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -166,7 +167,6 @@ data-fr="Contact"></a>
 
 </nav>
 
-
 <div class="container">
 
 <h1 data-en="Contact" data-fr="Contact"></h1>
@@ -182,17 +182,15 @@ contact@microcreatif.ca
 
 </div>
 
-
 <footer>
 
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City"
 data-fr="Montréal | Hô Chi Minh-Ville"></p>
 
-<p>Version 1.5</p>
+<p>Version 1.6</p>
 
 </footer>
-
 
 <script>
 
@@ -240,6 +238,14 @@ document.addEventListener("click",function(e){
 if(!menu.contains(e.target) && e.target!==navApps){
 menu.style.display="none";
 }
+});
+
+/* close menu before navigating */
+
+document.querySelectorAll(".submenu a").forEach(function(link){
+link.addEventListener("click",function(){
+menu.style.display="none";
+});
 });
 
 </script>
