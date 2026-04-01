@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <!-- Micro Créatif -->
+
 <!-- index.html -->
-<!-- Version 5.7 -->
+
+<!-- Version 5.8 -->
 
 <head>
 <meta charset="UTF-8">
@@ -210,6 +213,7 @@ opacity:0.85;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -291,7 +295,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 5.7</p>
+<p>Version 5.8</p>
 </footer>
 
 <script>
@@ -338,6 +342,14 @@ document.addEventListener("click",function(e){
 if(!menu.contains(e.target) && e.target!==appsButton){
 menu.style.display="none";
 }
+});
+
+/* close menu before navigating */
+
+document.querySelectorAll(".submenu a").forEach(function(link){
+link.addEventListener("click",function(){
+menu.style.display="none";
+});
 });
 
 /* language with site-wide memory */
