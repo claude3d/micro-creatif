@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 2.3 -->
+<!-- Version 2.4 -->
 
 <head>
 <meta charset="UTF-8">
@@ -54,58 +54,40 @@ z-index:-1;
 100%{transform:translate(10%,10%);}
 }
 
-/* Navigation */
-.nav-container{
+/* header */
+
+header{
 position:relative;
-z-index:10;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:30px 40px;
+top:10px;
+width:100%;
+text-align:center;
+padding:20px 0;
 }
 
-.nav-left{
-display:flex;
-gap:28px;
-align-items:center;
+nav{
+display:inline-flex;
+gap:30px;
+position:relative;
 }
 
-.btn-ui{
-background:rgba(255,255,255,0.1);
+nav a{
 color:white;
-border:1px solid rgba(255,255,255,0.3);
-padding:10px 22px;
-border-radius:25px;
-cursor:pointer;
-backdrop-filter:blur(10px);
 text-decoration:none;
-font-weight:600;
-transition:all .3s;
-font-size:15px;
-display:inline-block;
+font-size:18px;
+opacity:0.9;
+cursor:pointer;
 }
 
-.btn-ui:hover{
-background:white;
-color:#1a3a4a;
-}
+/* dropdown */
 
-#langBtn{
-position:absolute;
-right:40px;
-}
-
-/* Apps dropdown */
 .dropdown{
 position:relative;
-display:inline-flex;
-align-items:center;
 }
 
 .submenu{
 display:none;
 position:absolute;
-top:calc(100% + 8px);
+top:28px;
 left:0;
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(8px);
@@ -119,13 +101,28 @@ text-align:left;
 .submenu a{
 display:block;
 padding:8px 14px;
-font-size:15px;
-color:white;
-text-decoration:none;
+font-size:16px;
 }
 
 .submenu a:hover{
 background:rgba(255,255,255,0.1);
+}
+
+/* language */
+
+.lang{
+position:absolute;
+right:30px;
+top:20px;
+}
+
+.lang button{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 14px;
+border-radius:16px;
+cursor:pointer;
 }
 
 /* Main content */
@@ -200,27 +197,31 @@ opacity:0.7;
 
 <body>
 
-<div class="nav-container">
-    <div class="nav-left">
-        <a href="index.html" class="btn-ui" id="navHome">Home</a>
+<header>
 
-```
-    <span class="dropdown">
-        <span class="btn-ui" id="navApps">Apps</span>
-        <div class="submenu" id="appsMenu" style="display:none;">
-            <a href="app1.html" id="subApp1">RA / Dec / AZ / Alt</a>
-            <a href="app2.html" id="subApp2">Virtual Telescope</a>
-            <a href="app3.html" id="subApp3">Solar System</a>
-        </div>
-    </span>
+<nav>
 
-    <a href="about.html" class="btn-ui" id="navAbout">About</a>
-    <a href="contact.html" class="btn-ui" id="navContact">Contact</a>
+<a id="navHome" href="index.html">Home</a>
+
+<div class="dropdown">
+<a id="navApps">Apps</a>
+<div class="submenu" id="appsMenu" style="display:none;">
+<a href="app1.html" id="subApp1">RA / Dec / AZ / Alt</a>
+<a href="app2.html" id="subApp2">Virtual Telescope</a>
+<a href="app3.html" id="subApp3">Solar System</a>
 </div>
-<button class="btn-ui" onclick="toggleLanguage()" id="langBtn">FR</button>
-```
-
 </div>
+
+<a id="navAbout" href="about.html">About</a>
+<a id="navContact" href="contact.html">Contact</a>
+
+</nav>
+
+<div class="lang">
+<button onclick="toggleLanguage()" id="langBtn">FR</button>
+</div>
+
+</header>
 
 <div class="main-content">
     <h1 id="title"></h1>
@@ -244,7 +245,7 @@ opacity:0.7;
 <footer>
     <p id="copyright"></p>
     <p id="cities"></p>
-    <p class="version-display">Version 2.3</p>
+    <p class="version-display">Version 2.4</p>
 </footer>
 
 <script>
@@ -345,4 +346,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 </body>
-</html>7
+</html>
