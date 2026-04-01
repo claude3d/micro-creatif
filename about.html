@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 3.0 -->
+<!-- Version 3.1 -->
 
 <head>
 <meta charset="UTF-8">
@@ -263,7 +263,7 @@ opacity:0.7;
 <footer>
 <p id="copyright">© 2026 Micro Créatif. All rights reserved.</p>
 <p id="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 3.0</p>
+<p class="version-display">Version 3.1</p>
 </footer>
 
 <script>
@@ -327,7 +327,10 @@ localStorage.setItem("mc_language", currentLanguage);
 applyLanguage();
 }
 
-document.addEventListener("DOMContentLoaded", applyLanguage);
+document.addEventListener("DOMContentLoaded", function(){
+menu.style.display = "none";
+applyLanguage();
+});
 
 </script>
 
