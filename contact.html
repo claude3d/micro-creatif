@@ -84,6 +84,7 @@ border:1px solid rgba(255,255,255,0.6);
 background:transparent;
 color:white;
 cursor:pointer;
+font-size:18px;
 }
 
 /* CONTENT */
@@ -137,29 +138,19 @@ opacity:0.9;
 
 <div class="submenu" id="appsMenu">
 
-<a href="app1.html"
-data-en="RA / Dec / AZ / Alt"
-data-fr="AD / Déc / AZ / Alt"></a>
+<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
 
-<a href="app2.html"
-data-en="Virtual Telescope"
-data-fr="Télescope virtuel"></a>
+<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
 
-<a href="app3.html"
-data-en="Solar System"
-data-fr="Système solaire"></a>
+<a href="app3.html" data-en="Solar System" data-fr="Système solaire"></a>
 
 </div>
 
 </div>
 
-<a href="about.html" id="navAbout"
-data-en="About"
-data-fr="À propos"></a>
+<a href="about.html" id="navAbout" data-en="About" data-fr="À propos"></a>
 
-<a href="contact.html" id="navContact"
-data-en="Contact"
-data-fr="Contact"></a>
+<a href="contact.html" id="navContact" data-en="Contact" data-fr="Contact"></a>
 
 <div class="lang">
 <button onclick="toggleLanguage()" id="langButton">🌐</button>
@@ -171,13 +162,11 @@ data-fr="Contact"></a>
 
 <h1 data-en="Contact" data-fr="Contact"></h1>
 
-<p
-data-en="If you have questions, want to report a bug, or need information about an application, please send an email."
-data-fr="Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel.">
-</p>
+<p data-en="If you have questions, want to report a bug, or need information about an application, please send an email."
+data-fr="Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel."></p>
 
 <div class="email">
-<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b3834352f3a382f1b363238293438293e3a2f323d75383a">[email&#160;protected]</a>
+contact@microcreatif.ca
 </div>
 
 </div>
@@ -185,54 +174,58 @@ data-fr="Si vous avez des questions, souhaitez signaler un bug ou obtenir des in
 <footer>
 
 <p>© Micro Créatif</p>
-<p data-en="Montreal | Ho Chi Minh City"
-data-fr="Montréal | Hô Chi Minh-Ville"></p>
-
+<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
 <p>Version 1.7</p>
 
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 
 /* LANGUAGE SYSTEM */
 
-let currentLanguage = localStorage.getItem(“mc_language”) || “en”;
+let currentLanguage = localStorage.getItem("mc_language") || "en";
 
 function applyLanguage(){
 
-document.querySelectorAll(”[data-en]”).forEach(el=>{
-el.textContent = el.getAttribute(“data-”+currentLanguage);
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent = el.getAttribute("data-"+currentLanguage);
 });
-
-let langButton=document.getElementById(“langButton”);
-if(langButton){
-langButton.textContent=“🌐”;
-}
 
 }
 
 function toggleLanguage(){
-
-currentLanguage=currentLanguage===“en”?“fr”:“en”;
-
-localStorage.setItem(“mc_language”,currentLanguage);
-
+currentLanguage = currentLanguage === "en" ? "fr" : "en";
+localStorage.setItem("mc_language", currentLanguage);
 applyLanguage();
-
 }
 
-document.addEventListener(“DOMContentLoaded”,applyLanguage);
+document.addEventListener("DOMContentLoaded", applyLanguage);
 
 /* APPLICATIONS DROPDOWN */
 
-const navApps=document.getElementById(“navApps”);
-const menu=document.getElementById(“appsMenu”);
+const navApps = document.getElementById("navApps");
+const menu = document.getElementById("appsMenu");
 
-navApps.onclick=function(e){
+navApps.onclick = function(e){
 e.stopPropagation();
-menu.style.display=(menu.style.display===“block”)?“none”:“block”;
+menu.style.display = (menu.style.display === "block") ? "none" : "block";
 };
 
-document.addEventListener(“click”,function(e){
-if(!menu.contains(e.target) && e.target!==navApps){
-menu.
+document.addEventListener("click", function(e){
+if(!menu.contains(e.target) && e.target !== navApps){
+menu.style.display = "none";
+}
+});
+
+/* close menu before navigating */
+
+document.querySelectorAll(".submenu a").forEach(function(link){
+link.addEventListener("click", function(){
+menu.style.display = "none";
+});
+});
+
+</script>
+
+</body>
+</html>
