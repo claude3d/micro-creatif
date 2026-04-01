@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 2.9 -->
+<!-- Version 3.0 -->
 
 <head>
 <meta charset="UTF-8">
@@ -67,6 +67,7 @@ nav{
 display:inline-flex;
 gap:30px;
 position:relative;
+align-items:center;
 }
 
 nav a{
@@ -81,6 +82,8 @@ cursor:pointer;
 
 .dropdown{
 position:relative;
+display:inline-flex;
+align-items:center;
 }
 
 .submenu{
@@ -131,7 +134,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 text-align:center;
-padding:60px 20px 80px;
+padding:100px 20px 80px;
 max-width:900px;
 margin:auto;
 }
@@ -177,6 +180,23 @@ margin-bottom:30px;
 font-style:italic;
 }
 
+.pdf-link{
+color:white;
+text-decoration:none;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+padding:10px 22px;
+border-radius:25px;
+font-weight:600;
+font-size:15px;
+display:inline-block;
+}
+
+.pdf-link:hover{
+background:white;
+color:#1a3a4a;
+}
+
 footer{
 text-align:center;
 padding:40px 20px;
@@ -200,20 +220,19 @@ opacity:0.7;
 
 <nav>
 
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html">Home</a>
+<a id="navHome" href="index.html">Home</a>
 
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Applications">Apps</a>
-
+<a id="navApps">Apps</a>
 <div class="submenu" id="appsMenu">
-<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt">RA / Dec / AZ / Alt</a>
-<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel">Virtual Telescope</a>
-<a href="app3.html" data-en="Solar System" data-fr="Système solaire">Solar System</a>
+<a id="subApp1" href="app1.html">RA / Dec / AZ / Alt</a>
+<a id="subApp2" href="app2.html">Virtual Telescope</a>
+<a id="subApp3" href="app3.html">Solar System</a>
 </div>
 </div>
 
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html">About</a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html">Contact</a>
+<a id="navAbout" href="about.html">About</a>
+<a id="navContact" href="contact.html">Contact</a>
 
 </nav>
 
@@ -224,102 +243,91 @@ opacity:0.7;
 </header>
 
 <div class="main-content">
-    <h1 id="title">Our Origins</h1>
-    <p class="subtitle" id="subtitle">The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.</p>
 
-```
+<h1 id="title">Our Origins</h1>
+<p class="subtitle" id="subtitle">The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.</p>
+
 <img src="images/facture.jpg" class="facture-img" alt="Apple II facture">
 <div class="info-box" id="inflation">Comparative value in 2026: approximately $7,350 CAD</div>
 
-<h2 id="articleTitle" style="font-size:2rem; margin-bottom:25px; color:#4facfe;">Du grand rêve à la réalité</h2>
+<h2 id="articleTitle" style="font-size:2rem;margin-bottom:25px;color:#4facfe;">Du grand rêve à la réalité</h2>
 <img src="images/article-scan.jpg" class="facture-img" alt="Le Devoir Article">
 <p id="articleSource">(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)</p>
 
 <div style="margin-top:10px;">
-    <a id="pdfBtn" target="_blank"
-        href="articleE.html"
-        style="color:white;text-decoration:none;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);padding:10px 22px;border-radius:25px;font-weight:600;font-size:15px;">Read the article</a>
+<a id="pdfBtn" class="pdf-link" href="articleE.html" target="_blank">Read the article</a>
 </div>
-```
 
 </div>
 
 <footer>
-    <p id="copyright">© 2026 Micro Créatif. All rights reserved.</p>
-    <p id="cities">Montreal | Ho Chi Minh City</p>
-    <p class="version-display">Version 2.9</p>
+<p id="copyright">© 2026 Micro Créatif. All rights reserved.</p>
+<p id="cities">Montreal | Ho Chi Minh City</p>
+<p class="version-display">Version 3.0</p>
 </footer>
 
 <script>
 
 /* apps dropdown */
 
-const appsButton=document.getElementById("navApps");
-const menu=document.getElementById("appsMenu");
+const appsButton = document.getElementById("navApps");
+const menu = document.getElementById("appsMenu");
 
-appsButton.addEventListener("click",function(e){
+appsButton.addEventListener("click", function(e){
 e.stopPropagation();
-menu.style.display=(menu.style.display==="block")?"none":"block";
+menu.style.display = (menu.style.display === "block") ? "none" : "block";
 });
 
-document.addEventListener("click",function(e){
-if(!menu.contains(e.target) && e.target!==appsButton){
-menu.style.display="none";
+document.addEventListener("click", function(e){
+if(!menu.contains(e.target) && e.target !== appsButton){
+menu.style.display = "none";
 }
 });
 
-/* language with site-wide memory */
+/* language */
 
 let currentLanguage = localStorage.getItem("mc_language") || "en";
 
 function applyLanguage(){
-
 const en = currentLanguage === "en";
 
-document.getElementById("navHome").textContent       = en ? "Home"      : "Accueil";
-document.getElementById("navApps").textContent       = en ? "Apps"      : "Applications";
-document.getElementById("navAbout").textContent      = en ? "About"     : "À propos";
-document.getElementById("navContact").textContent    = en ? "Contact"   : "Contact";
-document.getElementById("langBtn").textContent       = en ? "FR"        : "EN";
+document.getElementById("navHome").textContent    = en ? "Home"    : "Accueil";
+document.getElementById("navApps").textContent    = en ? "Apps"    : "Applications";
+document.getElementById("navAbout").textContent   = en ? "About"   : "À propos";
+document.getElementById("navContact").textContent = en ? "Contact" : "Contact";
+document.getElementById("langBtn").textContent    = en ? "FR"      : "EN";
 
-document.querySelector("#appsMenu a:nth-child(1)").textContent = en ? "RA / Dec / AZ / Alt"  : "AD / Déc / AZ / Alt";
-document.querySelector("#appsMenu a:nth-child(2)").textContent = en ? "Virtual Telescope"     : "Télescope virtuel";
-document.querySelector("#appsMenu a:nth-child(3)").textContent = en ? "Solar System"          : "Système solaire";
+document.getElementById("subApp1").textContent = en ? "RA / Dec / AZ / Alt" : "AD / Déc / AZ / Alt";
+document.getElementById("subApp2").textContent = en ? "Virtual Telescope"   : "Télescope virtuel";
+document.getElementById("subApp3").textContent = en ? "Solar System"        : "Système solaire";
 
-document.getElementById("title").textContent         = en ? "Our Origins"    : "Nos Origines";
-document.getElementById("subtitle").textContent      = en
+document.getElementById("title").textContent    = en ? "Our Origins" : "Nos Origines";
+document.getElementById("subtitle").textContent = en
     ? "The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure."
     : "L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.";
-document.getElementById("inflation").textContent     = en
+document.getElementById("inflation").textContent = en
     ? "Comparative value in 2026: approximately $7,350 CAD"
     : "Valeur comparative en 2026 : environ 7 350 $ CAD";
-document.getElementById("articleTitle").textContent  = "Du grand rêve à la réalité";
-document.getElementById("articleSource").innerHTML   = "(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)";
 
 const pdfBtn = document.getElementById("pdfBtn");
 pdfBtn.textContent = en ? "Read the article" : "Lire l'article";
 pdfBtn.href        = en ? "articleE.html"    : "article.html";
 
-document.getElementById("copyright").textContent    = en
+document.getElementById("copyright").textContent = en
     ? "© 2026 Micro Créatif. All rights reserved."
     : "© 2026 Micro Créatif. Tous droits réservés.";
-document.getElementById("cities").textContent       = en
+document.getElementById("cities").textContent = en
     ? "Montreal | Ho Chi Minh City"
     : "Montréal | Hô Chi Minh Ville";
-
 }
 
 function toggleLanguage(){
-
-currentLanguage = (currentLanguage==="en")?"fr":"en";
-
+currentLanguage = (currentLanguage === "en") ? "fr" : "en";
 localStorage.setItem("mc_language", currentLanguage);
-
 applyLanguage();
-
 }
 
-document.addEventListener("DOMContentLoaded",applyLanguage);
+document.addEventListener("DOMContentLoaded", applyLanguage);
 
 </script>
 
