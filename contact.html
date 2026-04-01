@@ -1,6 +1,6 @@
 <!-- Micro Créatif Website
 contact.html
-Version 1.6
+Version 1.7
 -->
 
 <!DOCTYPE html>
@@ -133,7 +133,7 @@ opacity:0.9;
 
 <div class="dropdown">
 
-<a id="navApps" data-en="Applications" data-fr="Applications"></a>
+<a id="navApps" data-en="Apps" data-fr="Apps"></a>
 
 <div class="submenu" id="appsMenu">
 
@@ -162,7 +162,7 @@ data-en="Contact"
 data-fr="Contact"></a>
 
 <div class="lang">
-<button onclick="toggleLanguage()" id="langButton">FR</button>
+<button onclick="toggleLanguage()" id="langButton">🌐</button>
 </div>
 
 </nav>
@@ -177,7 +177,7 @@ data-fr="Si vous avez des questions, souhaitez signaler un bug ou obtenir des in
 </p>
 
 <div class="email">
-contact@microcreatif.ca
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b3834352f3a382f1b363238293438293e3a2f323d75383a">[email&#160;protected]</a>
 </div>
 
 </div>
@@ -188,67 +188,51 @@ contact@microcreatif.ca
 <p data-en="Montreal | Ho Chi Minh City"
 data-fr="Montréal | Hô Chi Minh-Ville"></p>
 
-<p>Version 1.6</p>
+<p>Version 1.7</p>
 
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 /* LANGUAGE SYSTEM */
 
-let currentLanguage = localStorage.getItem("mc_language") || "en";
+let currentLanguage = localStorage.getItem(“mc_language”) || “en”;
 
 function applyLanguage(){
 
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.textContent = el.getAttribute("data-"+currentLanguage);
+document.querySelectorAll(”[data-en]”).forEach(el=>{
+el.textContent = el.getAttribute(“data-”+currentLanguage);
 });
 
-let langButton=document.getElementById("langButton");
+let langButton=document.getElementById(“langButton”);
 if(langButton){
-langButton.textContent=currentLanguage==="en"?"FR":"EN";
+langButton.textContent=“🌐”;
 }
 
 }
 
 function toggleLanguage(){
 
-currentLanguage=currentLanguage==="en"?"fr":"en";
+currentLanguage=currentLanguage===“en”?“fr”:“en”;
 
-localStorage.setItem("mc_language",currentLanguage);
+localStorage.setItem(“mc_language”,currentLanguage);
 
 applyLanguage();
 
 }
 
-document.addEventListener("DOMContentLoaded",applyLanguage);
-
+document.addEventListener(“DOMContentLoaded”,applyLanguage);
 
 /* APPLICATIONS DROPDOWN */
 
-const navApps=document.getElementById("navApps");
-const menu=document.getElementById("appsMenu");
+const navApps=document.getElementById(“navApps”);
+const menu=document.getElementById(“appsMenu”);
 
 navApps.onclick=function(e){
 e.stopPropagation();
-menu.style.display=(menu.style.display==="block")?"none":"block";
+menu.style.display=(menu.style.display===“block”)?“none”:“block”;
 };
 
-document.addEventListener("click",function(e){
+document.addEventListener(“click”,function(e){
 if(!menu.contains(e.target) && e.target!==navApps){
-menu.style.display="none";
-}
-});
-
-/* close menu before navigating */
-
-document.querySelectorAll(".submenu a").forEach(function(link){
-link.addEventListener("click",function(){
-menu.style.display="none";
-});
-});
-
-</script>
-
-</body>
-</html>
+menu.
