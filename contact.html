@@ -1,6 +1,6 @@
 <!-- Micro Créatif Website
 contact.html
-Version 1.8
+Version 1.9
 -->
 
 <!DOCTYPE html>
@@ -35,18 +35,18 @@ top:0;
 width:100%;
 display:flex;
 justify-content:center;
+align-items:center;
 gap:40px;
 padding:20px;
 font-size:18px;
 box-sizing:border-box;
-flex-wrap:wrap;
-align-items:center;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 cursor:pointer;
+white-space:nowrap;
 }
 
 /* DROPDOWN */
@@ -81,6 +81,22 @@ padding:6px 14px;
 border-radius:16px;
 cursor:pointer;
 font-size:18px;
+white-space:nowrap;
+flex-shrink:0;
+}
+
+/* MOBILE */
+
+@media (max-width:430px){
+nav{
+gap:18px;
+font-size:15px;
+padding:14px 10px;
+}
+.lang-btn{
+font-size:15px;
+padding:4px 10px;
+}
 }
 
 /* CONTENT */
@@ -169,7 +185,7 @@ contact@microcreatif.ca
 
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 1.8</p>
+<p>Version 1.9</p>
 
 </footer>
 
