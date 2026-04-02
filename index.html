@@ -6,7 +6,7 @@
 
 <!-- index.html -->
 
-<!-- Version 6.0 -->
+<!-- Version 6.1 -->
 
 <head>
 <meta charset="UTF-8">
@@ -162,16 +162,34 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+position:relative;
 }
 
 .hero h1{
 font-size:64px;
 margin-bottom:8px;
+position:relative;
+z-index:2;
 }
 
 .hero p{
 font-size:22px;
 margin-top:0;
+position:relative;
+z-index:2;
+}
+
+/* unicorn */
+
+.uni{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:420px;
+max-width:80vw;
+z-index:1;
+pointer-events:none;
 }
 
 /* apps */
@@ -266,6 +284,8 @@ opacity:0.85;
 
 <section class="hero">
 
+<img class="uni" src="images/uni.png" alt="Unicorn">
+
 <h1 data-en="Micro Créatif" data-fr="Micro Créatif"></h1>
 
 <p data-en="" data-fr=""></p>
@@ -310,7 +330,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 6.0</p>
+<p>Version 6.1</p>
 </footer>
 
 <script>
