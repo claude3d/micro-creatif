@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 3.5 -->
+<!-- Version 3.6 -->
 
 <head>
 <meta charset="UTF-8">
@@ -61,6 +61,7 @@ position:absolute;
 top:10px;
 width:100%;
 text-align:center;
+z-index:100;
 }
 
 nav{
@@ -193,6 +194,14 @@ margin-bottom:30px;
 font-style:italic;
 }
 
+#superSource{
+font-size:0.9rem;
+opacity:0.7;
+margin-top:-25px;
+margin-bottom:30px;
+font-style:italic;
+}
+
 .pdf-link{
 color:white;
 text-decoration:none;
@@ -208,6 +217,13 @@ display:inline-block;
 .pdf-link:hover{
 background:white;
 color:#1a3a4a;
+}
+
+.section-divider{
+width:100%;
+border:none;
+border-top:1px solid rgba(255,255,255,0.15);
+margin:50px 0;
 }
 
 footer{
@@ -269,12 +285,22 @@ opacity:0.7;
 <a id="pdfBtn" class="pdf-link" href="articleE.html" target="_blank">Read the article</a>
 </div>
 
+<hr class="section-divider">
+
+<h2 id="superTitle" style="font-size:2rem;margin-bottom:25px;color:#4facfe;">Métier: super-programmeur!</h2>
+<img src="images/super.jpg" class="facture-img" alt="Super Programmeur Article">
+<p id="superSource">(L'Actualité Informatique&nbsp;&nbsp;&nbsp;1984)</p>
+
+<div style="margin-top:10px;">
+<a id="superBtn" class="pdf-link" href="super.html" target="_blank">Read the article</a>
+</div>
+
 </div>
 
 <footer>
 <p id="copyright">© 2026 Micro Créatif. All rights reserved.</p>
 <p id="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 3.5</p>
+<p class="version-display">Version 3.6</p>
 </footer>
 
 <script>
@@ -322,6 +348,22 @@ document.getElementById("inflation").textContent = en
 const pdfBtn = document.getElementById("pdfBtn");
 pdfBtn.textContent = en ? "Read the article" : "Lire l'article";
 pdfBtn.href        = en ? "articleE.html"    : "article.html";
+
+document.getElementById("articleSource").textContent = en
+    ? "(Le Devoir newspaper   1983)"
+    : "(journal Le Devoir   1983)";
+
+document.getElementById("superTitle").textContent = en
+    ? "Métier: super-programmeur!"
+    : "Métier: super-programmeur!";
+
+document.getElementById("superSource").textContent = en
+    ? "(L'Actualité Informatique   1984)"
+    : "(L'Actualité Informatique   1984)";
+
+const superBtn = document.getElementById("superBtn");
+superBtn.textContent = en ? "Read the article" : "Lire l'article";
+superBtn.href        = en ? "super.html"       : "super.html";
 
 document.getElementById("copyright").textContent = en
     ? "© 2026 Micro Créatif. All rights reserved."
