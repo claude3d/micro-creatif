@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 3.3 -->
+<!-- Version 3.4 -->
 
 <head>
 <meta charset="UTF-8">
@@ -125,6 +125,7 @@ color:white;
 padding:6px 14px;
 border-radius:16px;
 cursor:pointer;
+font-size:18px;
 }
 
 /* Main content */
@@ -237,7 +238,7 @@ opacity:0.7;
 </nav>
 
 <div class="lang">
-<button onclick="toggleLanguage()" id="langBtn">FR</button>
+<button onclick="toggleLanguage()" id="langBtn">🌐</button>
 </div>
 
 </header>
@@ -263,7 +264,7 @@ opacity:0.7;
 <footer>
 <p id="copyright">© 2026 Micro Créatif. All rights reserved.</p>
 <p id="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 3.3</p>
+<p class="version-display">Version 3.4</p>
 </footer>
 
 <script>
@@ -292,10 +293,9 @@ function applyLanguage(){
 const en = currentLanguage === "en";
 
 document.getElementById("navHome").textContent    = en ? "Home"    : "Accueil";
-document.getElementById("navApps").textContent    = en ? "Apps"    : "Applications";
+document.getElementById("navApps").textContent    = en ? "Apps"    : "Apps";
 document.getElementById("navAbout").textContent   = en ? "About"   : "À propos";
 document.getElementById("navContact").textContent = en ? "Contact" : "Contact";
-document.getElementById("langBtn").textContent    = en ? "FR"      : "EN";
 
 document.getElementById("subApp1").textContent = en ? "RA / Dec / AZ / Alt" : "AD / Déc / AZ / Alt";
 document.getElementById("subApp2").textContent = en ? "Virtual Telescope"   : "Télescope virtuel";
