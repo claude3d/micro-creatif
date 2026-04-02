@@ -6,7 +6,7 @@
 
 <!-- about.html -->
 
-<!-- Version 3.4 -->
+<!-- Version 3.5 -->
 
 <head>
 <meta charset="UTF-8">
@@ -76,6 +76,7 @@ text-decoration:none;
 font-size:18px;
 opacity:0.9;
 cursor:pointer;
+white-space:nowrap;
 }
 
 /* dropdown */
@@ -110,15 +111,9 @@ font-size:16px;
 background:rgba(255,255,255,0.1);
 }
 
-/* language */
+/* language button */
 
-.lang{
-position:absolute;
-right:30px;
-top:0;
-}
-
-.lang button{
+.lang-btn{
 background:rgba(255,255,255,0.1);
 border:1px solid rgba(255,255,255,0.3);
 color:white;
@@ -126,6 +121,23 @@ padding:6px 14px;
 border-radius:16px;
 cursor:pointer;
 font-size:18px;
+white-space:nowrap;
+flex-shrink:0;
+}
+
+/* MOBILE */
+
+@media (max-width:430px){
+nav{
+gap:18px;
+}
+nav a{
+font-size:15px;
+}
+.lang-btn{
+font-size:15px;
+padding:4px 10px;
+}
 }
 
 /* Main content */
@@ -235,11 +247,9 @@ opacity:0.7;
 <a id="navAbout" href="about.html">About</a>
 <a id="navContact" href="contact.html">Contact</a>
 
-</nav>
+<button onclick="toggleLanguage()" id="langBtn" class="lang-btn">🌐</button>
 
-<div class="lang">
-<button onclick="toggleLanguage()" id="langBtn">🌐</button>
-</div>
+</nav>
 
 </header>
 
@@ -264,7 +274,7 @@ opacity:0.7;
 <footer>
 <p id="copyright">© 2026 Micro Créatif. All rights reserved.</p>
 <p id="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 3.4</p>
+<p class="version-display">Version 3.5</p>
 </footer>
 
 <script>
