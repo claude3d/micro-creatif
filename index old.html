@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- Micro Créatif -->
+
+<!-- index.html -->
+
+<!-- Version 6.3 -->
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro Créatif</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+background:black;
+overflow-x:hidden;
+}
+
+/* background */
+
+.bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-5;
+}
+
+/* stars */
+
+.star{
+position:fixed;
+background:white;
+border-radius:50%;
+z-index:-4;
+
+box-shadow:
+0 0 6px rgba(255,255,255,1),
+0 0 12px rgba(255,255,255,0.9),
+0 0 20px rgba(255,255,255,0.6);
+
+animation:twinkle infinite;
+}
+
+.star.big{
+width:3px;
+height:3px;
+}
+
+.star.small{
+width:2px;
+height:2px;
+}
+
+@keyframes twinkle{
+0%{opacity:0.2; transform:scale(0.8);}
+50%{opacity:1; transform:scale(1.8);}
+100%{opacity:0.2; transform:scale(0.8);}
+}
+
+/* header */
+
+header{
+position:absolute;
+top:10px;
+width:100%;
+text-align:center;
+}
+
+nav{
+display:inline-flex;
+gap:30px;
+position:relative;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+opacity:0.9;
+cursor:pointer;
+white-space:nowrap;
+}
+
+/* dropdown */
+
+.dropdown{
+position:relative;
+display:inline-flex;
+align-items:center;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:28px;
+left:0;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.3);
+border-radius:10px;
+padding:8px 0;
+min-width:200px;
+text-align:left;
+}
+
+.submenu a{
+display:block;
+padding:8px 14px;
+font-size:16px;
+}
+
+.submenu a:hover{
+background:rgba(255,255,255,0.1);
+}
+
+/* language button */
+
+.lang-btn{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 14px;
+border-radius:16px;
+cursor:pointer;
+font-size:18px;
+white-space:nowrap;
+flex-shrink:0;
+}
+
+/* MOBILE */
+
+@media (max-width:430px){
+nav{
+gap:18px;
+}
+nav a{
+font-size:15px;
+}
+.lang-btn{
+font-size:15px;
+padding:4px 10px;
+}
+}
+
+/* hero */
+
+.hero{
+height:50vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.hero h1{
+font-size:64px;
+margin-bottom:8px;
+position:relative;
+z-index:2;
+}
+
+.hero p{
+font-size:22px;
+margin-top:0;
+position:relative;
+z-index:2;
+}
+
+/* unicorn */
+
+.uni{
+position:absolute;
+bottom:13px;
+left:50%;
+transform:translateX(-50%);
+width:100px;
+z-index:1;
+pointer-events:none;
+}
+
+/* apps */
+
+.apps{
+padding:60px 20px 20px;
+}
+
+.app-grid{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.app{
+width:120px;
+}
+
+.app a{
+text-decoration:none;
+color:white;
+}
+
+/* ICON */
+
+.icon{
+width:100px;
+height:100px;
+margin:auto;
+border-radius:22px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,0.35);
+box-shadow:
+0 0 0 1px white inset,
+0 0 10px rgba(255,255,255,0.2);
+}
+
+.icon img{
+width:100%;
+display:block;
+border-radius:22px;
+}
+
+.app p{
+margin-top:10px;
+font-size:16px;
+}
+
+/* footer */
+
+footer{
+padding:20px;
+font-size:14px;
+opacity:0.85;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="bg" src="images/galaxy-background.jpg">
+
+<div id="stars"></div>
+
+<header>
+
+<nav>
+
+<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+
+<div class="dropdown">
+<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+
+<div class="submenu" id="appsMenu">
+<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
+<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
+<a href="app3.html" data-en="Solar System" data-fr="Système solaire"></a>
+</div>
+</div>
+
+<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
+<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
+
+<button onclick="toggleLanguage()" id="langButton" class="lang-btn">🌐</button>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1 data-en="Micro Créatif" data-fr="Micro Créatif"></h1>
+
+<p data-en="" data-fr=""></p>
+
+<img class="uni" src="images/uni.png" alt="Unicorn">
+
+</section>
+
+<section class="apps">
+
+<div class="app-grid">
+
+<div class="app">
+<a href="app1.html">
+<div class="icon">
+<img src="images/app1.png">
+</div>
+<p data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></p>
+</a>
+</div>
+
+<div class="app">
+<a href="app2.html">
+<div class="icon">
+<img src="images/app2.png">
+</div>
+<p data-en="Virtual Telescope" data-fr="Télescope virtuel"></p>
+</a>
+</div>
+
+<div class="app">
+<a href="app3.html">
+<div class="icon">
+<img src="images/app3.png">
+</div>
+<p data-en="Solar System" data-fr="Système solaire"></p>
+</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© Micro Créatif</p>
+<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
+<p>Version 6.3</p>
+</footer>
+
+<script>
+
+/* stars */
+
+function createStars(){
+
+const container=document.getElementById("stars");
+
+for(let i=0;i<40;i++){
+
+let star=document.createElement("div");
+
+let type=(Math.random()>0.5)?"big":"small";
+
+star.className="star "+type;
+
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+
+star.style.animationDelay=(Math.random()*3)+"s";
+star.style.animationDuration=(1+Math.random()*2)+"s";
+
+container.appendChild(star);
+
+}
+
+}
+
+createStars();
+
+/* apps dropdown */
+
+const appsButton=document.getElementById("navApps");
+const menu=document.getElementById("appsMenu");
+
+appsButton.addEventListener("click",function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
+});
+
+document.addEventListener("click",function(e){
+if(!menu.contains(e.target) && e.target!==appsButton){
+menu.style.display="none";
+}
+});
+
+/* close menu before navigating */
+
+document.querySelectorAll(".submenu a").forEach(function(link){
+link.addEventListener("click",function(){
+menu.style.display="none";
+});
+});
+
+/* language */
+
+let currentLanguage = localStorage.getItem("mc_language") || "en";
+
+function applyLanguage(){
+
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent = el.getAttribute("data-"+currentLanguage);
+});
+
+}
+
+function toggleLanguage(){
+
+currentLanguage = (currentLanguage==="en")?"fr":"en";
+
+localStorage.setItem("mc_language", currentLanguage);
+
+applyLanguage();
+
+}
+
+document.addEventListener("DOMContentLoaded",applyLanguage);
+
+</script>
+
+</body>
+</html>
