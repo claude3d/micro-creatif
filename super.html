@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -68,71 +69,111 @@
             margin-top: 25px;
             margin-bottom: 10px;
         }
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: center;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #34495e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Helvetica', sans-serif;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        @media (max-width: 600px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Portrait d'informaticien</h1>
+```
+<div class="header">
+    <h1>Portrait d'informaticien</h1>
+</div>
+
+<h2 class="title">Claude Johnson entre le vidéotex et le micro-ordinateur :</h2>
+<h2 class="subtitle">Métier: super-programmeur !</h2>
+
+<p class="byline">par Marc Sévigny</p>
+
+<img src="images/super.jpg" alt="Claude Johnson" class="main-photo">
+<p class="caption">Claude Johnson: une ex-marin - emporté par la vague du micro-ordinateur et du vidéotex.</p>
+
+<div class="columns">
+
+    <!-- Left Column -->
+    <div class="article-text">
+        <p>La physique, la météorologie, la biologie, l'archéologie, Claude Johnson a touché à tous ces domaines. Il a même été marin ! Et l'informatique dans tout ça ? D'abord un élément de sa formation scientifique, c'est devenu ensuite un hobby, puis enfin un métier. Il a réalisé plusieurs croyant ce que plusieurs croyaient impossible, comme adapter la technologie Télidon sur micro-ordinateur.</p>
+
+        <p>Ses produits se sont avérés tellement intéressants qu'ils ont donné naissance à une compagnie: ForMic, Inc., qui compte actuellement huit employés et dont le chiffre d'affaire atteindra cette année le million.</p>
+
+        <p class="section-title">Une rage d'apprendre</p>
+        <p>L'idéal de Claude Johnson aurait été de pouvoir aborder un champ d'étude par année. Après avoir complété un bac en physique, il entreprend successivement deux projets de maîtrise: un en biophysique, qu'il abandonne bientôt pour l'archéologie. Mais comme son éclectisme lui cause certains problèmes sur le plan de la gestion de ses études, il décide de s'orienter autrement en participant à des cours en météorologie. Les cours l'emballent, mais le travail qu'on lui offre ensuite beaucoup moins.</p>
+
+        <p>Passionné des voyages, Claude Johnson parvient à se faire embaucher sur les navires de la marine marchande. «Ça payait bien, dit-il, et ça m'a permis de prendre de longues vacances pour voyager à mon aise». Il a été en Europe, en Asie et au Pérou, où il a rencontré sa future femme.</p>
+
+        <p>Entre tous ses déplacements, Claude Johnson ne se chôme pas. Il va enseigner la biologie à Sept-Îles durant un an et revient ensuite à Montréal où, après avoir obtenu un certificat en enseignement, il donne des cours du soir en informatique.</p>
+
+        <p>Le club Apple et Vidéotron c'est avec l'arrivée des micro-ordinateurs qu'il développe vraiment son goût pour l'informatique et qu'il en fait sa principale activité. La fondation, il y a cinq ans, d'un club d'amateurs de micros Apple y est pour quelque chose. Ce club réunissait quelques personnes, dont plusieurs professionnels de l'informatique, qui voyaient le micro-ordinateur comme un hobby et qui souhaitaient mettre en commun leurs expériences et leurs découvertes. C'est l'occasion pour Claude Johnson d'approfondir ses connaissances par rapport au nouvel outil, ce qui lui mène bientôt à explorer le domaine de l'électronique et des circuits logiques. Il fait si bien que l'Université du Québec n'hésite pas à l'engager pour qu'il poursuive ses recherches au département de l'informatique.</p>
+
+        <p>À ce moment là, rappelle-t-il, les bons programmeurs sur micro étaient rares et lorsque je me suis retrouvé chez Vidéotron pour mettre sur pied le département d'informatique, j'étais mon seul patron. Chez Vidéotron, il invente des jeux et traduit des logiciels américains dans le cadre d'une expérience de diffusion à des abonnés via une ligne téléphonique.</p>
+
+        <p>Par ailleurs, on y expérimentait la transmission de vidéotex par câble, selon le protocole graphique de création de pages Télidon, alors en plein développement. Chargé d'utiliser le micro-ordinateur et de reproduire un semblant de Télidon sur le câble en attendant la mise en place d'une technologie plus coûteuse, Claude Johnson a de nouveau trouvé le moyen d'expatier tout le monde. Lorsqu'on s'est rendu compte de la qualité du «semblant Télidon» qu'il avait créé sur micro, on lui a confié la tâche de pousser plus loin ses recherches dans le sens d'une adaptation pure et simple de Télidon sur micro-ordinateur Apple. Cela impliquait la création de logiciels particuliers remplaçant ce qui pouvait se faire sur de plus gros systèmes, tel Norpak, et de les rendre compatibles avec les standards.</p>
     </div>
 
-    <h2 class="title">Claude Johnson entre le vidéotex et le micro-ordinateur :</h2>
-    <h2 class="subtitle">Métier: super-programmeur !</h2>
+    <!-- Right Column -->
+    <div class="article-text">
+        <p class="section-title">Microcréatif et Formic</p>
+        <p>C'est suite à cette expérience de plus de trois ans chez Vidéotron que Claude Johnson a décidé de fonder une compagnie à son compte, Microcréatif, pour la réalisation de divers contrats, comme programmeur, traducteur de logiciel et expert en Télidon. Il a ainsi travaillé pour le Ministère de l'Éducation du Québec et pour le Ministère fédéral des communications. «Je recevais plus de contrats que je pouvais en faire, raconte-t-il, donc, je pouvais choisir ce qui m'intéressait le plus». C'est-à-dire le travail qui demandait une certaine créativité ou qui recoupait ses propres intérêts comme programmeur.</p>
 
-    <p class="byline">par Marc Sévigny</p>
+        <p>Parallèlement aux activités de Microcréatif, Claude Johnson a repris certains programmes qu'il avait développés en Basic chez Vidéotron en utilisant cette fois le langage «assembleur», avec lequel il était plus familier. Il a ainsi créé un certain nombre de produits originaux qu'il a pu commercialiser par l'entremise de Formic, une compagnie à laquelle il s'est joint à part entière un peu plus tard.</p>
 
-    <img src="images/super.jpg" alt="Claude Johnson" class="main-photo">
-    <p class="caption">Claude Johnson: une ex-marin - emporté par la vague du micro-ordinateur et du vidéotex.</p>
+        <p class="section-title">Micro-vidéotex</p>
+        <p>Parmi les principales réalisations de Claude Johnson, il faut mentionner un programme de création de pages, intégrant un jeu de 220,000 couleurs, destiné à un micro-ordinateur couplé à un décodeur Télidon. Il a développé aussi un Basic Télidon (Basitel) pour le Ministère de l'Éducation, à fonction interactive. Aussi, des logiciels permettant la constitution de banques de données autonomes, constituées de pages enregistrées sur disques. C'est, en fait, une intégration globale du vidéotex pour le micro-ordinateur. Un autre aspect de la recherche entreprise par Claude Johnson chez Formic, c'est l'option multi-usagers, ou réseau, par lequel plusieurs utilisateurs peuvent avoir accès à un réservoir commun de pages.</p>
 
-    <div class="columns">
+        <p>C'est Formic qui est responsable de la diffusion de toute la gamme de logiciels développés principalement par Claude Johnson. On y crée également des composantes et de nouveaux outils, qu'il s'agisse d'adaptations techniques ou fonction d'un plus grand nombre d'usagers ou de supports destinés essentiellement à la diffusion de pages.</p>
 
-        <!-- Left Column -->
-        <div class="article-text">
-            <p>La physique, la météorologie, la biologie, l'archéologie, Claude Johnson a touché à tous ces domaines. Il a même été marin ! Et l'informatique dans tout ça ? D'abord un élément de sa formation scientifique, c'est devenu ensuite un hobby, puis enfin un métier. Il a réalisé plusieurs croyant ce que plusieurs croyaient impossible, comme adapter la technologie Télidon sur micro-ordinateur.</p>
+        <p class="section-title">À l'avant-garde</p>
+        <p>Dans le logiciel de micro-ordinateur, explique Claude Johnson, Formic est à l'avant-garde, avec un ou deux ans d'avance sur ses compétiteurs. Ce succès est dû, bien sûr, à la formule souple et économique du micro-vidéotex, mais aussi à un souci constant d'innover. Sur le plan des innovations techniques par exemple, Formic a conçu une carte ROM 220K qui constitue un réservoir logique nécessaire à un coût approximatif de 150$, pour l'équivalent de 10,000$ de logiciel stocké.</p>
 
-            <p>Ses produits se sont avérés tellement intéressants qu'ils ont donné naissance à une compagnie: ForMic, Inc., qui compte actuellement huit employés et dont le chiffre d'affaire atteindra cette année le million.</p>
+        <p>Tout ça sur micro? Les gens n'y croyaient pas. C'est Claude Johnson qui s'est fait une spécialité de réaliser l'impossible. Après cinq ans dans le domaine, il ne cesse de chercher de nouveaux défis. Chez lui notamment, il prépare pour ses besoins personnels des logiciels d'application très technique, tels des programmes de simulation de vol. Pour l'instant, il attend avec impatience l'arrivée sur le marché de micros plus puissants pour mener à bien certains de ses projets.</p>
 
-            <p class="section-title">Une rage d'apprendre</p>
-            <p>L'idéal de Claude Johnson aurait été de pouvoir aborder un champ d'étude par année. Après avoir complété un bac en physique, il entreprend successivement deux projets de maîtrise: un en biophysique, qu'il abandonne bientôt pour l'archéologie. Mais comme son éclectisme lui cause certains problèmes sur le plan de la gestion de ses études, il décide de s'orienter autrement en participant à des cours en météorologie. Les cours l'emballent, mais le travail qu'on lui offre ensuite beaucoup moins.</p>
+        <p>Il est quand même curieux que Claude Johnson se soit limité à un champ d'intérêt particulier, lui qui souhaitait autrefois en changer à tous les ans. Mais il ne faut pas parler trop vite: je l'ai entendu dire que l'engineering génétique commençait à l'intéresser...</p>
 
-            <p>Passionné des voyages, Claude Johnson parvient à se faire embaucher sur les navires de la marine marchande. «Ça payait bien, dit-il, et ça m'a permis de prendre de longues vacances pour voyager à mon aise». Il a été en Europe, en Asie et au Pérou, où il a rencontré sa future femme.</p>
-
-            <p>Entre tous ses déplacements, Claude Johnson ne se chôme pas. Il va enseigner la biologie à Sept-Îles durant un an et revient ensuite à Montréal où, après avoir obtenu un certificat en enseignement, il donne des cours du soir en informatique.</p>
-
-            <p>Le club Apple et Vidéotron c'est avec l'arrivée des micro-ordinateurs qu'il développe vraiment son goût pour l'informatique et qu'il en fait sa principale activité. La fondation, il y a cinq ans, d'un club d'amateurs de micros Apple y est pour quelque chose. Ce club réunissait quelques personnes, dont plusieurs professionnels de l'informatique, qui voyaient le micro-ordinateur comme un hobby et qui souhaitaient mettre en commun leurs expériences et leurs découvertes. C'est l'occasion pour Claude Johnson d'approfondir ses connaissances par rapport au nouvel outil, ce qui lui mène bientôt à explorer le domaine de l'électronique et des circuits logiques. Il fait si bien que l'Université du Québec n'hésite pas à l'engager pour qu'il poursuive ses recherches au département de l'informatique.</p>
-
-            <p>À ce moment là, rappelle-t-il, les bons programmeurs sur micro étaient rares et lorsque je me suis retrouvé chez Vidéotron pour mettre sur pied le département d'informatique, j'étais mon seul patron. Chez Vidéotron, il invente des jeux et traduit des logiciels américains dans le cadre d'une expérience de diffusion à des abonnés via une ligne téléphonique.</p>
-
-            <p>Par ailleurs, on y expérimentait la transmission de vidéotex par câble, selon le protocole graphique de création de pages Télidon, alors en plein développement. Chargé d'utiliser le micro-ordinateur et de reproduire un semblant de Télidon sur le câble en attendant la mise en place d'une technologie plus coûteuse, Claude Johnson a de nouveau trouvé le moyen d'expatier tout le monde. Lorsqu'on s'est rendu compte de la qualité du «semblant Télidon» qu'il avait créé sur micro, on lui a confié la tâche de pousser plus loin ses recherches dans le sens d'une adaptation pure et simple de Télidon sur micro-ordinateur Apple. Cela impliquait la création de logiciels particuliers remplaçant ce qui pouvait se faire sur de plus gros systèmes, tel Norpak, et de les rendre compatibles avec les standards.</p>
-        </div>
-
-        <!-- Right Column -->
-        <div class="article-text">
-            <p class="section-title">Microcréatif et Formic</p>
-            <p>C'est suite à cette expérience de plus de trois ans chez Vidéotron que Claude Johnson a décidé de fonder une compagnie à son compte, Microcréatif, pour la réalisation de divers contrats, comme programmeur, traducteur de logiciel et expert en Télidon. Il a ainsi travaillé pour le Ministère de l'Éducation du Québec et pour le Ministère fédéral des communications. «Je recevais plus de contrats que je pouvais en faire, raconte-t-il, donc, je pouvais choisir ce qui m'intéressait le plus». C'est-à-dire le travail qui demandait une certaine créativité ou qui recoupait ses propres intérêts comme programmeur.</p>
-
-            <p>Parallèlement aux activités de Microcréatif, Claude Johnson a repris certains programmes qu'il avait développés en Basic chez Vidéotron en utilisant cette fois le langage «assembleur», avec lequel il était plus familier. Il a ainsi créé un certain nombre de produits originaux qu'il a pu commercialiser par l'entremise de Formic, une compagnie à laquelle il s'est joint à part entière un peu plus tard.</p>
-
-            <p class="section-title">Micro-vidéotex</p>
-            <p>Parmi les principales réalisations de Claude Johnson, il faut mentionner un programme de création de pages, intégrant un jeu de 220,000 couleurs, destiné à un micro-ordinateur couplé à un décodeur Télidon. Il a développé aussi un Basic Télidon (Basitel) pour le Ministère de l'Éducation, à fonction interactive. Aussi, des logiciels permettant la constitution de banques de données autonomes, constituées de pages enregistrées sur disques. C'est, en fait, une intégration globale du vidéotex pour le micro-ordinateur. Un autre aspect de la recherche entreprise par Claude Johnson chez Formic, c'est l'option multi-usagers, ou réseau, par lequel plusieurs utilisateurs peuvent avoir accès à un réservoir commun de pages.</p>
-
-            <p>C'est Formic qui est responsable de la diffusion de toute la gamme de logiciels développés principalement par Claude Johnson. On y crée également des composantes et de nouveaux outils, qu'il s'agisse d'adaptations techniques ou fonction d'un plus grand nombre d'usagers ou de supports destinés essentiellement à la diffusion de pages.</p>
-
-            <p class="section-title">À l'avant-garde</p>
-            <p>Dans le logiciel de micro-ordinateur, explique Claude Johnson, Formic est à l'avant-garde, avec un ou deux ans d'avance sur ses compétiteurs. Ce succès est dû, bien sûr, à la formule souple et économique du micro-vidéotex, mais aussi à un souci constant d'innover. Sur le plan des innovations techniques par exemple, Formic a conçu une carte ROM 220K qui constitue un réservoir logique nécessaire à un coût approximatif de 150$, pour l'équivalent de 10,000$ de logiciel stocké.</p>
-
-            <p>Tout ça sur micro? Les gens n'y croyaient pas. C'est Claude Johnson qui s'est fait une spécialité de réaliser l'impossible. Après cinq ans dans le domaine, il ne cesse de chercher de nouveaux défis. Chez lui notamment, il prépare pour ses besoins personnels des logiciels d'application très technique, tels des programmes de simulation de vol. Pour l'instant, il attend avec impatience l'arrivée sur le marché de micros plus puissants pour mener à bien certains de ses projets.</p>
-
-            <p>Il est quand même curieux que Claude Johnson se soit limité à un champ d'intérêt particulier, lui qui souhaitait autrefois en changer à tous les ans. Mais il ne faut pas parler trop vite: je l'ai entendu dire que l'engineering génétique commençait à l'intéresser...</p>
-
-            <p style="text-align: right; margin-top: 40px;">☐</p>
-        </div>
-
+        <p style="text-align: right; margin-top: 40px;">☐</p>
     </div>
 
-    <footer style="text-align: center; margin-top: 50px; font-size: 0.9em; border-top: 1px solid #ccc; padding-top: 20px;">
-        Article original paru dans un journal québécois • Reproduction HTML pour archivage
-    </footer>
+</div>
+
+<div class="nav-buttons">
+    <a href="about.html" class="btn">Retour</a>
+    <a href="superE.html" class="btn">EN English version</a>
+</div>
+
+<footer style="text-align: center; margin-top: 30px; font-size: 0.8em; color: #888; border-top: 1px solid #eee; padding-top: 20px;">
+    &copy; Micro Créatif - Montréal | Hô Chi Minh-Ville
+</footer>
+```
 
 </body>
 </html>
