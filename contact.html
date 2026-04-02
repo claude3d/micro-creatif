@@ -1,6 +1,6 @@
 <!-- Micro Créatif Website
 contact.html
-Version 1.7
+Version 1.8
 -->
 
 <!DOCTYPE html>
@@ -39,6 +39,8 @@ gap:40px;
 padding:20px;
 font-size:18px;
 box-sizing:border-box;
+flex-wrap:wrap;
+align-items:center;
 }
 
 nav a{
@@ -71,18 +73,12 @@ white-space:nowrap;
 
 /* LANGUAGE BUTTON */
 
-.lang{
-position:absolute;
-right:15px;
-top:20px;
-}
-
-.lang button{
-padding:6px 14px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.6);
-background:transparent;
+.lang-btn{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
 color:white;
+padding:6px 14px;
+border-radius:16px;
 cursor:pointer;
 font-size:18px;
 }
@@ -152,9 +148,7 @@ opacity:0.9;
 
 <a href="contact.html" id="navContact" data-en="Contact" data-fr="Contact"></a>
 
-<div class="lang">
-<button onclick="toggleLanguage()" id="langButton">🌐</button>
-</div>
+<button onclick="toggleLanguage()" id="langButton" class="lang-btn">🌐</button>
 
 </nav>
 
@@ -175,7 +169,7 @@ contact@microcreatif.ca
 
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 1.7</p>
+<p>Version 1.8</p>
 
 </footer>
 
