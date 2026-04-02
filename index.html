@@ -6,7 +6,7 @@
 
 <!-- index.html -->
 
-<!-- Version 5.8 -->
+<!-- Version 5.9 -->
 
 <head>
 <meta charset="UTF-8">
@@ -135,6 +135,7 @@ color:white;
 padding:6px 14px;
 border-radius:16px;
 cursor:pointer;
+font-size:18px;
 }
 
 /* hero */
@@ -229,7 +230,7 @@ opacity:0.85;
 <a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
 
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Applications"></a>
+<a id="navApps" data-en="Apps" data-fr="Apps"></a>
 
 <div class="submenu" id="appsMenu">
 <a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
@@ -244,7 +245,7 @@ opacity:0.85;
 </nav>
 
 <div class="lang">
-<button onclick="toggleLanguage()" id="langButton">FR</button>
+<button onclick="toggleLanguage()" id="langButton">🌐</button>
 </div>
 
 </header>
@@ -295,7 +296,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 5.8</p>
+<p>Version 5.9</p>
 </footer>
 
 <script>
@@ -361,9 +362,6 @@ function applyLanguage(){
 document.querySelectorAll("[data-en]").forEach(el=>{
 el.textContent = el.getAttribute("data-"+currentLanguage);
 });
-
-document.getElementById("langButton").textContent =
-(currentLanguage==="en")?"FR":"EN";
 
 }
 
