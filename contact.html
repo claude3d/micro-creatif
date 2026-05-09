@@ -1,21 +1,23 @@
 <!-- Micro Créatif Website
 contact.html
-Version 1.9
+Version 2.0
 -->
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Micro Créatif – Contact</title>
-
+<meta name="description" content="Contact Micro Créatif for questions, bug reports, or information about our astronomy apps for serious and semi-professional telescope observers.">
+<meta name="keywords" content="Micro Créatif contact, astronomy app support, telescope app, RA Dec AZ Alt, virtual telescope, solar system app">
+<meta name="author" content="Micro Créatif">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Micro Créatif – Contact">
+<meta property="og:description" content="Contact Micro Créatif for questions, bug reports, or information about our astronomy apps.">
+<meta property="og:url" content="https://microcreatif.ca/contact.html">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://microcreatif.ca/contact.html">
 <style>
-
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -26,9 +28,7 @@ background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 }
-
 /* NAVIGATION */
-
 nav{
 position:fixed;
 top:0;
@@ -41,20 +41,16 @@ padding:20px;
 font-size:18px;
 box-sizing:border-box;
 }
-
 nav a{
 color:white;
 text-decoration:none;
 cursor:pointer;
 white-space:nowrap;
 }
-
 /* DROPDOWN */
-
 .dropdown{
 position:relative;
 }
-
 .submenu{
 display:none;
 position:absolute;
@@ -64,15 +60,12 @@ background:rgba(0,0,0,0.6);
 padding:10px;
 border-radius:10px;
 }
-
 .submenu a{
 display:block;
 padding:6px 12px;
 white-space:nowrap;
 }
-
 /* LANGUAGE BUTTON */
-
 .lang-btn{
 background:rgba(255,255,255,0.1);
 border:1px solid rgba(255,255,255,0.3);
@@ -84,9 +77,7 @@ font-size:18px;
 white-space:nowrap;
 flex-shrink:0;
 }
-
 /* MOBILE */
-
 @media (max-width:430px){
 nav{
 gap:18px;
@@ -98,9 +89,7 @@ font-size:15px;
 padding:4px 10px;
 }
 }
-
 /* CONTENT */
-
 .container{
 margin-top:160px;
 max-width:800px;
@@ -108,134 +97,88 @@ margin-left:auto;
 margin-right:auto;
 padding:20px;
 }
-
 h1{
 font-size:48px;
 margin-bottom:40px;
 }
-
 p{
 font-size:20px;
 line-height:1.6;
 }
-
 .email{
 margin-top:30px;
 font-size:24px;
 font-weight:bold;
 }
-
 /* FOOTER */
-
 footer{
 margin-top:200px;
 padding-bottom:40px;
 font-size:14px;
 opacity:0.9;
 }
-
 </style>
-
 </head>
-
 <body>
-
-<nav>
-
+<nav aria-label="Main navigation">
 <a href="index.html" id="navHome" data-en="Home" data-fr="Accueil"></a>
-
 <div class="dropdown">
-
 <a id="navApps" data-en="Apps" data-fr="Apps"></a>
-
 <div class="submenu" id="appsMenu">
-
 <a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-
 <a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-
 <a href="app3.html" data-en="Solar System" data-fr="Système solaire"></a>
-
 </div>
-
 </div>
-
 <a href="about.html" id="navAbout" data-en="About" data-fr="À propos"></a>
-
 <a href="contact.html" id="navContact" data-en="Contact" data-fr="Contact"></a>
-
-<button onclick="toggleLanguage()" id="langButton" class="lang-btn">🌐</button>
-
+<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
 </nav>
-
 <div class="container">
-
 <h1 data-en="Contact" data-fr="Contact"></h1>
-
 <p data-en="If you have questions, want to report a bug, or need information about an application, please send an email."
 data-fr="Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel."></p>
-
 <div class="email">
 contact@microcreatif.ca
 </div>
-
 </div>
-
 <footer>
-
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 1.9</p>
-
+<p>Version 2.0</p>
 </footer>
-
 <script>
-
 /* LANGUAGE SYSTEM */
-
 let currentLanguage = localStorage.getItem("mc_language") || "en";
-
 function applyLanguage(){
-
 document.querySelectorAll("[data-en]").forEach(el=>{
 el.textContent = el.getAttribute("data-"+currentLanguage);
 });
-
 }
-
 function toggleLanguage(){
 currentLanguage = currentLanguage === "en" ? "fr" : "en";
 localStorage.setItem("mc_language", currentLanguage);
 applyLanguage();
 }
-
 document.addEventListener("DOMContentLoaded", applyLanguage);
-
 /* APPLICATIONS DROPDOWN */
-
 const navApps = document.getElementById("navApps");
 const menu = document.getElementById("appsMenu");
-
 navApps.onclick = function(e){
 e.stopPropagation();
 menu.style.display = (menu.style.display === "block") ? "none" : "block";
 };
-
 document.addEventListener("click", function(e){
 if(!menu.contains(e.target) && e.target !== navApps){
 menu.style.display = "none";
 }
 });
-
 /* close menu before navigating */
-
 document.querySelectorAll(".submenu a").forEach(function(link){
 link.addEventListener("click", function(){
 menu.style.display = "none";
 });
 });
-
 </script>
-
 </body>
 </html>
