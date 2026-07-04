@@ -2,17 +2,17 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 6.6 -->
+<!-- Version 6.7 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Micro Créatif – Astronomy Apps for Serious Telescope Observers</title>
-<meta name="description" content="Micro Créatif offers astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt coordinates, Virtual Telescope, and Solar System explorer. Designed for observers with telescopes from 6 to 20 inches, including private observatories.">
-<meta name="keywords" content="astronomy app, telescope app, RA Dec AZ Alt, virtual telescope, solar system, amateur astronomy, semi-professional telescope, private observatory, iOS astronomy">
+<meta name="description" content="Micro Créatif offers astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt coordinates, Virtual Telescope, Solar System explorer, and Sky from Another Star. Designed for observers with telescopes from 6 to 20 inches, including private observatories.">
+<meta name="keywords" content="astronomy app, telescope app, RA Dec AZ Alt, virtual telescope, solar system, alien sky, sky from another star, amateur astronomy, semi-professional telescope, private observatory, iOS astronomy">
 <meta name="author" content="Micro Créatif">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Micro Créatif – Astronomy Apps for Serious Telescope Observers">
-<meta property="og:description" content="Astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt, Virtual Telescope, and Solar System explorer.">
+<meta property="og:description" content="Astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt, Virtual Telescope, Solar System, and Sky from Another Star.">
 <meta property="og:url" content="https://microcreatif.ca/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_CA">
@@ -96,7 +96,7 @@ backdrop-filter:blur(8px);
 border:1px solid rgba(255,255,255,0.3);
 border-radius:10px;
 padding:8px 0;
-min-width:200px;
+min-width:240px;
 text-align:left;
 }
 .submenu a{
@@ -205,29 +205,36 @@ opacity:0.85;
 <body>
 <img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
 <div id="stars"></div>
+
 <header>
 <nav aria-label="Main navigation">
 <a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+
 <div class="dropdown">
 <a id="navApps" data-en="Apps" data-fr="Apps"></a>
 <div class="submenu" id="appsMenu">
 <a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
 <a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
 <a href="app3.html" data-en="Solar System" data-fr="Système solaire"></a>
+<a href="app4.html" data-en="Sky from Another Star" data-fr="Le ciel depuis une autre étoile"></a>
 </div>
 </div>
+
 <a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
 <a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
 <button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
 </nav>
 </header>
+
 <section class="hero" aria-label="Welcome">
 <h1 data-en="Micro Créatif" data-fr="Micro Créatif"></h1>
 <p data-en="" data-fr=""></p>
 <img class="uni" src="images/uni.png" alt="Micro Créatif mascot">
 </section>
+
 <section class="apps" aria-label="Our apps">
 <div class="app-grid">
+
 <div class="app">
 <a href="app1.html">
 <div class="icon">
@@ -236,6 +243,7 @@ opacity:0.85;
 <p data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></p>
 </a>
 </div>
+
 <div class="app">
 <a href="app2.html">
 <div class="icon">
@@ -244,6 +252,7 @@ opacity:0.85;
 <p data-en="Virtual Telescope" data-fr="Télescope virtuel"></p>
 </a>
 </div>
+
 <div class="app">
 <a href="app3.html">
 <div class="icon">
@@ -252,13 +261,25 @@ opacity:0.85;
 <p data-en="Solar System" data-fr="Système solaire"></p>
 </a>
 </div>
+
+<div class="app">
+<a href="app4.html">
+<div class="icon">
+<img src="images/app4.png" alt="Sky from Another Star – see the sky from another stellar system">
+</div>
+<p data-en="Sky from Another Star" data-fr="Le ciel depuis une autre étoile"></p>
+</a>
+</div>
+
 </div>
 </section>
+
 <footer>
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 6.6</p>
+<p>Version 6.7</p>
 </footer>
+
 <script>
 function createStars(){
 const container=document.getElementById("stars");
@@ -274,33 +295,41 @@ container.appendChild(star);
 }
 }
 createStars();
+
 const appsButton=document.getElementById("navApps");
 const menu=document.getElementById("appsMenu");
+
 appsButton.addEventListener("click",function(e){
 e.stopPropagation();
 menu.style.display=(menu.style.display==="block")?"none":"block";
 });
+
 document.addEventListener("click",function(e){
 if(!menu.contains(e.target) && e.target!==appsButton){
 menu.style.display="none";
 }
 });
+
 document.querySelectorAll(".submenu a").forEach(function(link){
 link.addEventListener("click",function(){
 menu.style.display="none";
 });
 });
+
 let currentLanguage = localStorage.getItem("mc_language") || "en";
+
 function applyLanguage(){
 document.querySelectorAll("[data-en]").forEach(el=>{
 el.textContent = el.getAttribute("data-"+currentLanguage);
 });
 }
+
 function toggleLanguage(){
 currentLanguage = (currentLanguage==="en")?"fr":"en";
 localStorage.setItem("mc_language", currentLanguage);
 applyLanguage();
 }
+
 document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
 </body>
