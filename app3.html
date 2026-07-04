@@ -1,65 +1,359 @@
 <!DOCTYPE html>
-
-<html lang="fr">
+<html lang="en">
+<!-- Micro Créatif -->
+<!-- app3.html -->
+<!-- Version 1.0 -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>En Construction / Under Construction</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      width: 100%;
-      height: 100%;
-      background: #000;
-      overflow: hidden;
-    }
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center center;
-    }
-    .btn {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 14px 40px;
-      font-size: 20px;
-      font-family: 'Georgia', serif;
-      font-weight: bold;
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
-      border: 2px solid rgba(180, 120, 255, 0.8);
-      border-radius: 30px;
-      cursor: pointer;
-      white-space: nowrap;
-      background:
-        radial-gradient(ellipse at 20% 50%, rgba(120, 40, 200, 0.85) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 30%, rgba(255, 140, 30, 0.5) 0%, transparent 50%),
-        radial-gradient(ellipse at 60% 80%, rgba(60, 0, 120, 0.9) 0%, transparent 60%),
-        linear-gradient(135deg, #1a0040 0%, #3a006e 40%, #1a0050 100%);
-      box-shadow: 0 0 18px rgba(160, 80, 255, 0.7), inset 0 0 12px rgba(255, 180, 80, 0.15);
-      text-shadow: 0 0 8px rgba(200, 150, 255, 0.9);
-      transition: box-shadow 0.3s, transform 0.2s;
-    }
-    .btn:hover {
-      box-shadow: 0 0 30px rgba(180, 100, 255, 1), inset 0 0 20px rgba(255, 180, 80, 0.25);
-      transform: translateX(-50%) scale(1.05);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sol and its System / Sol et son système – Micro Créatif</title>
+<meta name="description" content="Sol and its System is a Micro Créatif astronomy app concept combining planet information, present planetary positions, and a Gaia-based catalogue of about 3 million neighboring stars sortable by name, position, distance, or magnitude.">
+<meta name="keywords" content="Sol, solar system, Gaia catalogue, star catalogue, astronomy app, planets, present position, stars, light-years, parsecs, Micro Créatif">
+<meta name="author" content="Micro Créatif">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Sol and its System – Micro Créatif">
+<meta property="og:description" content="Explore planets and millions of neighboring stars from a Gaia-based catalogue, with sortable data and current positions.">
+<meta property="og:url" content="https://microcreatif.ca/app3.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_CA">
+<meta property="og:locale:alternate" content="fr_CA">
+<link rel="canonical" href="https://microcreatif.ca/app3.html">
+<style>
+*{box-sizing:border-box;}
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+background:black;
+min-height:100vh;
+overflow-x:hidden;
+}
+.bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-5;
+filter:brightness(0.72) saturate(1.1);
+}
+.overlay{
+position:fixed;
+inset:0;
+background:radial-gradient(circle at center, rgba(0,120,40,0.18), rgba(0,0,0,0.75));
+z-index:-4;
+}
+header{
+position:relative;
+padding:16px 12px;
+z-index:20;
+}
+nav{
+display:inline-flex;
+gap:30px;
+position:relative;
+align-items:center;
+}
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+opacity:0.92;
+cursor:pointer;
+white-space:nowrap;
+}
+.dropdown{
+position:relative;
+display:inline-flex;
+align-items:center;
+}
+.submenu{
+display:none;
+position:absolute;
+top:28px;
+left:0;
+background:rgba(0,0,0,0.78);
+border:1px solid rgba(255,255,255,0.3);
+border-radius:10px;
+padding:8px 0;
+min-width:240px;
+text-align:left;
+z-index:50;
+}
+.submenu a{
+display:block;
+padding:8px 14px;
+font-size:16px;
+}
+.submenu a:hover{background:rgba(255,255,255,0.1);}
+.lang-btn{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 14px;
+border-radius:16px;
+cursor:pointer;
+font-size:18px;
+white-space:nowrap;
+}
+.hero{
+padding:42px 20px 22px;
+max-width:1100px;
+margin:0 auto;
+}
+.app-icon{
+width:112px;
+height:112px;
+border-radius:25px;
+margin:0 auto 18px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,0.45);
+box-shadow:0 0 18px rgba(0,255,60,0.45), 0 0 0 1px white inset;
+}
+.app-icon img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+h1{
+font-size:56px;
+margin:0 0 10px;
+color:#00ff28;
+text-shadow:0 0 18px rgba(0,255,60,0.65);
+}
+.subtitle{
+font-size:22px;
+line-height:1.45;
+max-width:900px;
+margin:0 auto;
+opacity:0.95;
+}
+.screenshots{
+max-width:1180px;
+margin:18px auto 28px;
+padding:0 20px;
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:22px;
+}
+.shot{
+background:rgba(0,0,0,0.46);
+border:1px solid rgba(255,255,255,0.22);
+border-radius:18px;
+box-shadow:0 0 18px rgba(0,255,60,0.18);
+overflow:hidden;
+}
+.shot img{
+width:100%;
+display:block;
+}
+.caption{
+font-size:15px;
+line-height:1.35;
+margin:10px 12px 14px;
+opacity:0.86;
+}
+.content{
+max-width:1120px;
+margin:0 auto;
+padding:0 20px 40px;
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:18px;
+margin:24px 0;
+}
+.card{
+background:rgba(0,0,0,0.48);
+border:1px solid rgba(255,255,255,0.24);
+border-radius:18px;
+padding:22px 24px;
+box-shadow:0 0 18px rgba(0,255,60,0.14);
+}
+.card h2{
+font-size:25px;
+margin:0 0 12px;
+color:#dfffe2;
+}
+.card p,.card li{
+font-size:17px;
+line-height:1.45;
+}
+.card ul{
+text-align:left;
+margin:0 auto;
+max-width:760px;
+}
+.wide{
+grid-column:span 2;
+}
+.status{
+max-width:760px;
+margin:28px auto;
+background:rgba(0,0,0,0.52);
+border:1px solid rgba(255,255,255,0.24);
+border-radius:18px;
+padding:24px;
+}
+.status h2{
+font-size:30px;
+margin:0 0 12px;
+color:#dfffe2;
+}
+.back{
+display:inline-block;
+margin-top:10px;
+padding:13px 34px;
+border-radius:28px;
+border:1px solid rgba(255,255,255,0.45);
+color:white;
+text-decoration:none;
+font-size:20px;
+background:rgba(255,255,255,0.12);
+}
+footer{
+padding:26px 20px 34px;
+font-size:16px;
+opacity:0.88;
+}
+@media (max-width:900px){
+.screenshots{grid-template-columns:1fr;}
+.cards{grid-template-columns:1fr;}
+.wide{grid-column:span 1;}
+}
+@media (max-width:760px){
+nav{gap:18px;}
+nav a{font-size:15px;}
+.lang-btn{font-size:15px;padding:4px 10px;}
+h1{font-size:38px;}
+.subtitle{font-size:18px;}
+.app-icon{width:96px;height:96px;}
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <img src="images/InDev.jpg" alt="Under Construction / En Construction">
-    <a class="btn" href="#" onclick="history.back(); return false;">&#8592; Back / Retour</a>
-  </div>
+<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<div class="overlay"></div>
+
+<header>
+<nav aria-label="Main navigation">
+<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<div class="dropdown">
+<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<div class="submenu" id="appsMenu">
+<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
+<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
+<a href="app3.html" data-en="Sol and its System" data-fr="Sol et son système"></a>
+<a href="app4.html" data-en="Alien Skies" data-fr="Ciels inconnus"></a>
+</div>
+</div>
+<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
+<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
+<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+</nav>
+</header>
+
+<section class="hero">
+<div class="app-icon"><img src="images/app3.png" alt="Sol and its System app icon"></div>
+<h1 data-en="Sol and its System" data-fr="Sol et son système"></h1>
+<p class="subtitle" data-en="Explore Sol’s planets and a Gaia-based catalogue of about 3 million neighboring stars. The app calculates current right ascension and declination, and lets you sort the catalogue by name, position, distance, or magnitude." data-fr="Explorez les planètes de Sol et un catalogue d’environ 3 millions d’étoiles voisines basé sur Gaia. L’application calcule l’ascension droite et la déclinaison actuelles, et permet de trier le catalogue par nom, position, distance ou magnitude."></p>
+</section>
+
+<section class="screenshots" aria-label="Sol and its System screenshots">
+<div class="shot"><img src="images/SS-2.png" alt="Choose a planet or the Gaia catalogue screen"><p class="caption" data-en="Choose a planet, or open the Gaia catalogue of neighboring stars." data-fr="Choisissez une planète, ou ouvrez le catalogue Gaia des étoiles voisines."></p></div>
+<div class="shot"><img src="images/SS-3.png" alt="Planet information and present position screen"><p class="caption" data-en="Information and current right ascension and declination for a selected planet." data-fr="Informations, ascension droite et déclinaison actuelles pour une planète sélectionnée."></p></div>
+<div class="shot"><img src="images/SS-1.png" alt="Gaia catalogue screen"><p class="caption" data-en="Gaia catalogue: about 3 million stars, sortable by name, position, distance, or magnitude." data-fr="Catalogue Gaia : environ 3 millions d’étoiles, triables par nom, position, distance ou magnitude."></p></div>
+</section>
+
+<main class="content">
+<div class="cards">
+
+<div class="card">
+<h2 data-en="Planets of Sol" data-fr="Planètes de Sol"></h2>
+<p data-en="For each planet, the app presents useful information, a link to Wikipedia, and its current right ascension and declination." data-fr="Pour chaque planète, l’application présente des informations utiles, un lien vers Wikipédia, ainsi que son ascension droite et sa déclinaison actuelles."></p>
+</div>
+
+<div class="card">
+<h2 data-en="Gaia star catalogue" data-fr="Catalogue stellaire Gaia"></h2>
+<p data-en="The Neighbors section uses a Gaia-based subset of about 3 million stars." data-fr="La section Voisins utilise un sous-ensemble basé sur Gaia d’environ 3 millions d’étoiles."></p>
+</div>
+
+<div class="card">
+<h2 data-en="Current coordinates" data-fr="Coordonnées actuelles"></h2>
+<p data-en="For planets and stars, the app calculates the current right ascension and declination for the selected date." data-fr="Pour les planètes et les étoiles, l’application calcule l’ascension droite et la déclinaison actuelles pour la date choisie."></p>
+</div>
+
+<div class="card">
+<h2 data-en="Sortable data" data-fr="Données triables"></h2>
+<p data-en="The catalogue can be sorted by name, sky position, distance, or magnitude." data-fr="Le catalogue peut être trié par nom, position dans le ciel, distance ou magnitude."></p>
+</div>
+
+<div class="card">
+<h2 data-en="Distance units" data-fr="Unités de distance"></h2>
+<p data-en="Distances can be displayed in light-years or parsecs." data-fr="Les distances peuvent être affichées en années-lumière ou en parsecs."></p>
+</div>
+
+<div class="card">
+<h2 data-en="For observers" data-fr="Pour les observateurs"></h2>
+<p data-en="Useful for exploring nearby stars, comparing brightness and distance, and checking current coordinates before an observing session." data-fr="Utile pour explorer les étoiles voisines, comparer la luminosité et la distance, et vérifier les coordonnées actuelles avant une séance d’observation."></p>
+</div>
+
+<div class="card wide">
+<h2 data-en="Main idea" data-fr="Idée principale"></h2>
+<p data-en="The strength of the app is the catalogue: millions of stars that can be explored, sorted, and compared, together with practical information for the planets of Sol." data-fr="La force de l’application est le catalogue : des millions d’étoiles qu’on peut explorer, trier et comparer, avec des informations pratiques pour les planètes de Sol."></p>
+</div>
+
+</div>
+
+<section class="status">
+<h2 data-en="Status" data-fr="Statut"></h2>
+<p data-en="Sol and its System is part of the Micro Créatif astronomy app collection. A modern version is being prepared for iPhone and iPad." data-fr="Sol et son système fait partie de la collection d’applications d’astronomie de Micro Créatif. Une version moderne est en préparation pour iPhone et iPad."></p>
+<a class="back" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
+</section>
+</main>
+
+<footer>
+<p>© Micro Créatif</p>
+<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
+<p>Version 1.0</p>
+</footer>
+
+<script>
+const appsButton=document.getElementById("navApps");
+const menu=document.getElementById("appsMenu");
+
+appsButton.addEventListener("click",function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
+});
+
+document.addEventListener("click",function(e){
+if(!menu.contains(e.target) && e.target!==appsButton){menu.style.display="none";}
+});
+
+document.querySelectorAll(".submenu a").forEach(function(link){
+link.addEventListener("click",function(){menu.style.display="none";});
+});
+
+let currentLanguage=localStorage.getItem("mc_language")||"en";
+
+function applyLanguage(){
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent=el.getAttribute("data-"+currentLanguage);
+});
+}
+
+function toggleLanguage(){
+currentLanguage=(currentLanguage==="en")?"fr":"en";
+localStorage.setItem("mc_language",currentLanguage);
+applyLanguage();
+}
+
+document.addEventListener("DOMContentLoaded",applyLanguage);
+</script>
 </body>
 </html>
