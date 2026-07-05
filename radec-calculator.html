@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Micro Créatif -->
+<!-- app1.html -->
+<!-- Version 1.1 -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RA / Dec / AZ / Alt – Micro Créatif</title>
+<meta name="description" content="RA / Dec / AZ / Alt is an astronomy app for serious telescope observers. Convert right ascension and declination to hour angle, azimuth, and altitude using your observing location.">
+<meta name="keywords" content="RA Dec AZ Alt, astronomy app, telescope coordinates, right ascension, declination, azimuth, altitude, hour angle, sidereal time, iOS astronomy">
+<meta name="author" content="Micro Créatif">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://microcreatif.ca/app1.html">
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+background:black;
+overflow-x:hidden;
+}
+.bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-5;
+}
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:-4;
+}
+header{
+position:absolute;
+top:10px;
+width:100%;
+text-align:center;
+z-index:100;
+}
+nav{
+display:inline-flex;
+gap:30px;
+position:relative;
+align-items:center;
+}
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+opacity:0.9;
+cursor:pointer;
+white-space:nowrap;
+}
+.dropdown{
+position:relative;
+display:inline-flex;
+align-items:center;
+}
+.submenu{
+display:none;
+position:absolute;
+top:28px;
+left:0;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.3);
+border-radius:10px;
+padding:8px 0;
+min-width:240px;
+text-align:left;
+}
+.submenu a{
+display:block;
+padding:8px 14px;
+font-size:16px;
+}
+.submenu a:hover{
+background:rgba(255,255,255,0.1);
+}
+.lang-btn{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 14px;
+border-radius:16px;
+cursor:pointer;
+font-size:18px;
+white-space:nowrap;
+flex-shrink:0;
+}
+.hero{
+min-height:42vh;
+padding:90px 20px 35px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+.app-icon{
+width:110px;
+height:110px;
+border-radius:24px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,0.45);
+box-shadow:0 0 0 1px white inset, 0 0 22px rgba(255,255,255,0.25);
+margin-bottom:18px;
+}
+.app-icon img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+}
+h1{
+font-size:54px;
+margin:0 0 12px;
+}
+.tagline{
+font-size:22px;
+max-width:760px;
+line-height:1.4;
+margin:0 auto;
+opacity:0.95;
+}
+main{
+max-width:1040px;
+margin:0 auto;
+padding:10px 22px 50px;
+}
+.card{
+background:rgba(0,0,0,0.55);
+border:1px solid rgba(255,255,255,0.22);
+border-radius:18px;
+padding:26px;
+margin:22px 0;
+box-shadow:0 0 25px rgba(0,0,0,0.35);
+}
+h2{
+font-size:30px;
+margin:0 0 18px;
+}
+p{
+font-size:18px;
+line-height:1.55;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:18px;
+text-align:left;
+}
+.feature{
+background:rgba(255,255,255,0.07);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:14px;
+padding:18px;
+}
+.feature h3{
+margin:0 0 8px;
+font-size:20px;
+}
+.feature p{
+margin:0;
+font-size:16px;
+opacity:0.92;
+}
+.screenshot-placeholder{
+min-height:260px;
+border:2px dashed rgba(255,255,255,0.35);
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+opacity:0.85;
+padding:20px;
+}
+.note{
+font-size:16px;
+opacity:0.75;
+}
+.back-btn{
+display:inline-block;
+margin-top:12px;
+padding:12px 28px;
+color:white;
+text-decoration:none;
+border:1px solid rgba(255,255,255,0.35);
+border-radius:25px;
+background:rgba(255,255,255,0.10);
+}
+footer{
+padding:24px;
+font-size:14px;
+opacity:0.85;
+}
+@media (max-width:700px){
+nav{gap:18px;}
+nav a{font-size:15px;}
+.lang-btn{font-size:15px;padding:4px 10px;}
+h1{font-size:38px;}
+.tagline{font-size:19px;}
+.grid{grid-template-columns:1fr;}
+.card{padding:20px;}
+}
+@media (orientation:landscape) and (max-height:500px){
+.hero{min-height:auto;padding-top:70px;}
+h1{font-size:38px;}
+.app-icon{width:82px;height:82px;}
+}
+</style>
+</head>
+<body>
+<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<div class="overlay"></div>
+<header>
+<nav aria-label="Main navigation">
+<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<div class="dropdown">
+<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<div class="submenu" id="appsMenu">
+<a href="app1.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
+<a href="app2.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
+<a href="app3.html" data-en="Solar System" data-fr="Système solaire"></a>
+<a href="app4.html" data-en="Alien Skies" data-fr="Ciels inconnus"></a>
+</div>
+</div>
+<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
+<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
+<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+</nav>
+</header>
+<section class="hero">
+<div class="app-icon">
+<img src="images/app1.png" alt="RA Dec AZ Alt app icon">
+</div>
+<h1 data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></h1>
+<p class="tagline" data-en="A fast coordinate calculator for serious telescope observers." data-fr="Un calculateur rapide de coordonnées pour les observateurs sérieux au télescope."></p>
+</section>
+<main>
+<section class="card">
+<h2 data-en="What it does" data-fr="Ce que fait l’app"></h2>
+<p data-en="Enter right ascension and declination, and the app continuously computes hour angle, azimuth, altitude, local time, and local sidereal time for your observing location." data-fr="Entrez l’ascension droite et la déclinaison; l’app calcule en continu l’angle horaire, l’azimut, l’altitude, l’heure locale et l’heure sidérale locale pour votre lieu d’observation."></p>
+</section>
+<section class="card">
+<h2 data-en="Features" data-fr="Fonctions"></h2>
+<div class="grid">
+<div class="feature"><h3 data-en="Live updates" data-fr="Mise à jour en direct"></h3><p data-en="Coordinates update continuously as the Earth rotates." data-fr="Les coordonnées se mettent à jour continuellement pendant la rotation de la Terre."></p></div>
+<div class="feature"><h3 data-en="J2000 or Current" data-fr="J2000 ou Actuel"></h3><p data-en="Use catalog coordinates or current apparent coordinates." data-fr="Utilisez les coordonnées de catalogue ou les coordonnées apparentes actuelles."></p></div>
+<div class="feature"><h3 data-en="Refraction option" data-fr="Réfraction optionnelle"></h3><p data-en="Atmospheric refraction can be enabled or disabled, with temperature adjustment." data-fr="La réfraction atmosphérique peut être activée ou désactivée, avec ajustement de la température."></p></div>
+<div class="feature"><h3 data-en="Observer location" data-fr="Position de l’observateur"></h3><p data-en="Uses the device location to compute local astronomical coordinates." data-fr="Utilise la position de l’appareil pour calculer les coordonnées astronomiques locales."></p></div>
+<div class="feature"><h3 data-en="Freeze mode" data-fr="Mode gel"></h3><p data-en="Freeze the display to keep a coordinate result on screen." data-fr="Gelez l’affichage pour garder un résultat de coordonnées à l’écran."></p></div>
+<div class="feature"><h3 data-en="Last values remembered" data-fr="Dernières valeurs mémorisées"></h3><p data-en="The last entered RA and Dec values are restored when the app opens again." data-fr="Les dernières valeurs AD et Déc sont restaurées à la réouverture de l’app."></p></div>
+</div>
+</section>
+<section class="card">
+<h2 data-en="Screenshots" data-fr="Captures d’écran"></h2>
+<div class="screenshot-placeholder" data-en="Screenshots will be added here before App Store submission." data-fr="Les captures d’écran seront ajoutées ici avant la soumission à l’App Store."></div>
+</section>
+<section class="card">
+<h2 data-en="Accuracy" data-fr="Précision"></h2>
+<p data-en="The app is designed for practical telescope use and includes astronomical corrections such as precession, nutation, annual aberration, and optional atmospheric refraction." data-fr="L’app est conçue pour l’usage pratique au télescope et inclut des corrections astronomiques comme la précession, la nutation, l’aberration annuelle et la réfraction atmosphérique optionnelle."></p>
+<p class="note" data-en="Results have been checked against reference astronomy software during development." data-fr="Les résultats ont été vérifiés avec des logiciels astronomiques de référence pendant le développement."></p>
+</section>
+<section class="card">
+<h2 data-en="Privacy" data-fr="Confidentialité"></h2>
+<p data-en="The app uses location only to compute astronomical coordinates. Location data is not sent to Micro Créatif servers, and no account is required." data-fr="L’app utilise la position uniquement pour calculer les coordonnées astronomiques. Les données de localisation ne sont pas envoyées aux serveurs de Micro Créatif, et aucun compte n’est requis."></p>
+</section>
+<section class="card">
+<h2 data-en="Status" data-fr="État"></h2>
+<p data-en="Version 2.0 is being prepared for iPhone and iPad." data-fr="La version 2.0 est en préparation pour iPhone et iPad."></p>
+<a class="back-btn" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
+</section>
+</main>
+<footer>
+<p>© Micro Créatif</p>
+<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
+<p>Version 1.1</p>
+</footer>
+<script>
+const appsButton=document.getElementById("navApps");
+const menu=document.getElementById("appsMenu");
+appsButton.addEventListener("click",function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
+});
+document.addEventListener("click",function(e){
+if(!menu.contains(e.target) && e.target!==appsButton){
+menu.style.display="none";
+}
+});
+document.querySelectorAll(".submenu a").forEach(function(link){
+link.addEventListener("click",function(){
+menu.style.display="none";
+});
+});
+let currentLanguage = localStorage.getItem("mc_language") || "en";
+function applyLanguage(){
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.textContent = el.getAttribute("data-"+currentLanguage);
+});
+}
+function toggleLanguage(){
+currentLanguage = (currentLanguage==="en")?"fr":"en";
+localStorage.setItem("mc_language", currentLanguage);
+applyLanguage();
+}
+document.addEventListener("DOMContentLoaded",applyLanguage);
+</script>
+</body>
+</html>
