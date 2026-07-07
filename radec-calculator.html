@@ -269,7 +269,9 @@ h1{font-size:38px;}
 <section class="card">
 <h2 data-en="Accuracy" data-fr="Précision"></h2>
 <p data-en="The app is designed for practical telescope use and includes astronomical corrections such as precession, nutation, annual aberration, and optional atmospheric refraction." data-fr="L’app est conçue pour l’usage pratique au télescope et inclut des corrections astronomiques comme la précession, la nutation, l’aberration annuelle et la réfraction atmosphérique optionnelle."></p>
-<p class="note" data-en="Results have been checked against reference astronomy software during development." data-fr="Les résultats ont été vérifiés avec des logiciels astronomiques de référence pendant le développement."></p>
+<p data-en="During development, results were compared with Stellarium using known stars and matching observer coordinates. In typical tests, the calculated altitude and azimuth were usually within a few arcseconds to a few tens of arcseconds, depending on the object position, refraction settings, coordinate epoch, and the exact reference values used." data-fr="Pendant le développement, les résultats ont été comparés avec Stellarium à l’aide d’étoiles connues et de coordonnées d’observation correspondantes. Dans les tests typiques, l’altitude et l’azimut calculés étaient généralement à quelques secondes d’arc ou à quelques dizaines de secondes d’arc, selon la position de l’objet, les réglages de réfraction, l’époque des coordonnées et les valeurs de référence utilisées."></p>
+<p class="note" data-en="For best accuracy, use J2000 coordinates when available and enable the J2000 correction option. Atmospheric refraction can be enabled or disabled depending on whether you want apparent or unrefracted altitude." data-fr="Pour une meilleure précision, utilisez les coordonnées J2000 lorsqu’elles sont disponibles et activez l’option de correction J2000. La réfraction atmosphérique peut être activée ou désactivée selon que vous voulez l’altitude apparente ou l’altitude sans réfraction."></p>
+<p class="note" data-en="Proper motion is not applied automatically, so for nearby or high proper-motion stars, use coordinates that are already updated for the observing date when high precision is needed." data-fr="Le mouvement propre n’est pas appliqué automatiquement; pour les étoiles proches ou à fort mouvement propre, utilisez des coordonnées déjà mises à jour pour la date d’observation lorsqu’une grande précision est nécessaire."></p>
 </section>
 <section class="card">
 <h2 data-en="Privacy" data-fr="Confidentialité"></h2>
@@ -318,3 +320,4 @@ document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
 </body>
 </html>
+
