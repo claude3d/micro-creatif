@@ -2,13 +2,13 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- app1.html -->
-<!-- Version 1.1 -->
+<!-- Version 1.8 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RA / Dec / AZ / Alt – Micro Créatif</title>
-<meta name="description" content="RA / Dec / AZ / Alt is an astronomy app for serious telescope observers. Convert right ascension and declination to hour angle, azimuth, and altitude using your observing location.">
-<meta name="keywords" content="RA Dec AZ Alt, astronomy app, telescope coordinates, right ascension, declination, azimuth, altitude, hour angle, sidereal time, iOS astronomy">
+<meta name="description" content="RA / Dec / AZ / Alt is an astronomy app for serious telescope observers. Enter current right ascension and declination to compute hour angle, azimuth, and altitude for your observing location.">
+<meta name="keywords" content="RA Dec AZ Alt, astronomy app, telescope coordinates, right ascension, declination, azimuth, altitude, hour angle, sidereal time, current RA Dec, JNow, iOS astronomy">
 <meta name="author" content="Micro Créatif">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://microcreatif.ca/app1.html">
@@ -239,6 +239,7 @@ h1{font-size:38px;}
 <button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
 </nav>
 </header>
+
 <section class="hero">
 <div class="app-icon">
 <img src="images/app1.png" alt="RA Dec AZ Alt app icon">
@@ -246,48 +247,62 @@ h1{font-size:38px;}
 <h1 data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></h1>
 <p class="tagline" data-en="A fast coordinate calculator for serious telescope observers." data-fr="Un calculateur rapide de coordonnées pour les observateurs sérieux au télescope."></p>
 </section>
+
 <main>
 <section class="card">
 <h2 data-en="What it does" data-fr="Ce que fait l’app"></h2>
-<p data-en="Enter right ascension and declination, and the app continuously computes hour angle, azimuth, altitude, local time, and local sidereal time for your observing location." data-fr="Entrez l’ascension droite et la déclinaison; l’app calcule en continu l’angle horaire, l’azimut, l’altitude, l’heure locale et l’heure sidérale locale pour votre lieu d’observation."></p>
+<p data-en="Enter current right ascension and declination, and the app continuously computes hour angle, azimuth, altitude, local time, and local sidereal time for your observing location." data-fr="Entrez l’ascension droite et la déclinaison actuelles; l’app calcule en continu l’angle horaire, l’azimut, l’altitude, l’heure locale et l’heure sidérale locale pour votre lieu d’observation."></p>
+<p class="note" data-en="Current coordinates are also called JNow, of-date coordinates, or RA/Dec on date." data-fr="Les coordonnées actuelles sont aussi appelées JNow, coordonnées de la date, ou AD/Déc à la date."></p>
 </section>
+
 <section class="card">
 <h2 data-en="Features" data-fr="Fonctions"></h2>
 <div class="grid">
 <div class="feature"><h3 data-en="Live updates" data-fr="Mise à jour en direct"></h3><p data-en="Coordinates update continuously as the Earth rotates." data-fr="Les coordonnées se mettent à jour continuellement pendant la rotation de la Terre."></p></div>
-<div class="feature"><h3 data-en="J2000 or Current" data-fr="J2000 ou Actuel"></h3><p data-en="Use catalog coordinates or current apparent coordinates." data-fr="Utilisez les coordonnées de catalogue ou les coordonnées apparentes actuelles."></p></div>
+<div class="feature"><h3 data-en="Current RA/Dec" data-fr="AD/Déc actuelles"></h3><p data-en="Designed for current RA and Dec coordinates for the observing date." data-fr="Conçue pour les coordonnées AD et Déc actuelles à la date d’observation."></p></div>
 <div class="feature"><h3 data-en="Refraction option" data-fr="Réfraction optionnelle"></h3><p data-en="Atmospheric refraction can be enabled or disabled, with temperature adjustment." data-fr="La réfraction atmosphérique peut être activée ou désactivée, avec ajustement de la température."></p></div>
 <div class="feature"><h3 data-en="Observer location" data-fr="Position de l’observateur"></h3><p data-en="Uses the device location to compute local astronomical coordinates." data-fr="Utilise la position de l’appareil pour calculer les coordonnées astronomiques locales."></p></div>
 <div class="feature"><h3 data-en="Freeze mode" data-fr="Mode gel"></h3><p data-en="Freeze the display to keep a coordinate result on screen." data-fr="Gelez l’affichage pour garder un résultat de coordonnées à l’écran."></p></div>
 <div class="feature"><h3 data-en="Last values remembered" data-fr="Dernières valeurs mémorisées"></h3><p data-en="The last entered RA and Dec values are restored when the app opens again." data-fr="Les dernières valeurs AD et Déc sont restaurées à la réouverture de l’app."></p></div>
 </div>
 </section>
+
 <section class="card">
 <h2 data-en="Screenshots" data-fr="Captures d’écran"></h2>
 <div class="screenshot-placeholder" data-en="Screenshots will be added here before App Store submission." data-fr="Les captures d’écran seront ajoutées ici avant la soumission à l’App Store."></div>
 </section>
+
 <section class="card">
 <h2 data-en="Accuracy" data-fr="Précision"></h2>
-<p data-en="The app is designed for practical telescope use and includes astronomical corrections such as precession, nutation, annual aberration, and optional atmospheric refraction." data-fr="L’app est conçue pour l’usage pratique au télescope et inclut des corrections astronomiques comme la précession, la nutation, l’aberration annuelle et la réfraction atmosphérique optionnelle."></p>
-<p data-en="During development, results were compared with Stellarium using known stars and matching observer coordinates. In typical tests, the calculated altitude and azimuth were usually within a few arcseconds to a few tens of arcseconds, depending on the object position, refraction settings, coordinate epoch, and the exact reference values used." data-fr="Pendant le développement, les résultats ont été comparés avec Stellarium à l’aide d’étoiles connues et de coordonnées d’observation correspondantes. Dans les tests typiques, l’altitude et l’azimut calculés étaient généralement à quelques secondes d’arc ou à quelques dizaines de secondes d’arc, selon la position de l’objet, les réglages de réfraction, l’époque des coordonnées et les valeurs de référence utilisées."></p>
-<p class="note" data-en="For best accuracy, use J2000 coordinates when available and enable the J2000 correction option. Atmospheric refraction can be enabled or disabled depending on whether you want apparent or unrefracted altitude." data-fr="Pour une meilleure précision, utilisez les coordonnées J2000 lorsqu’elles sont disponibles et activez l’option de correction J2000. La réfraction atmosphérique peut être activée ou désactivée selon que vous voulez l’altitude apparente ou l’altitude sans réfraction."></p>
-<p class="note" data-en="Proper motion is not applied automatically, so for nearby or high proper-motion stars, use coordinates that are already updated for the observing date when high precision is needed." data-fr="Le mouvement propre n’est pas appliqué automatiquement; pour les étoiles proches ou à fort mouvement propre, utilisez des coordonnées déjà mises à jour pour la date d’observation lorsqu’une grande précision est nécessaire."></p>
+<p data-en="The app is designed for practical telescope use with current RA/Dec coordinates for the observing date, time, and location, with optional atmospheric refraction." data-fr="L’app est conçue pour l’usage pratique au télescope avec les coordonnées AD/Déc actuelles pour la date, l’heure et le lieu d’observation, avec réfraction atmosphérique optionnelle."></p>
+
+<p data-en="For best accuracy, enter current RA/Dec values for the object you want to observe. Current RA/Dec values can be obtained from astronomy software or from upcoming Micro Créatif astronomy apps that display coordinates for the observing date." data-fr="Pour une meilleure précision, entrez les valeurs AD/Déc actuelles de l’objet que vous voulez observer. Les valeurs AD/Déc actuelles peuvent être obtenues avec des logiciels d’astronomie ou avec de futures apps d’astronomie de Micro Créatif qui affichent les coordonnées pour la date d’observation."></p>
+
+<p data-en="During development, tests with known stars and matching observer coordinates showed agreement of about one arcsecond or better in the tested cases." data-fr="Pendant le développement, des tests avec des étoiles connues et des coordonnées d’observation correspondantes ont montré un accord d’environ une seconde d’arc ou mieux dans les cas testés."></p>
+
+<p class="note" data-en="Older catalog coordinates, such as J2000, can still be entered, but the calculated position may differ from the current sky position by several arcminutes." data-fr="Des coordonnées de catalogue plus anciennes, comme J2000, peuvent quand même être entrées, mais la position calculée peut différer de la position actuelle dans le ciel de plusieurs minutes d’arc."></p>
+
+<p class="note" data-en="Atmospheric refraction depends on real observing conditions. Near the horizon, local temperature, pressure, humidity, and terrain can affect the apparent altitude." data-fr="La réfraction atmosphérique dépend des conditions réelles d’observation. Près de l’horizon, la température locale, la pression, l’humidité et le terrain peuvent influencer l’altitude apparente."></p>
 </section>
+
 <section class="card">
 <h2 data-en="Privacy" data-fr="Confidentialité"></h2>
 <p data-en="The app uses location only to compute astronomical coordinates. Location data is not sent to Micro Créatif servers, and no account is required." data-fr="L’app utilise la position uniquement pour calculer les coordonnées astronomiques. Les données de localisation ne sont pas envoyées aux serveurs de Micro Créatif, et aucun compte n’est requis."></p>
 </section>
+
 <section class="card">
 <h2 data-en="Status" data-fr="État"></h2>
 <p data-en="Version 2.0 is being prepared for iPhone and iPad." data-fr="La version 2.0 est en préparation pour iPhone et iPad."></p>
 <a class="back-btn" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
 </section>
 </main>
+
 <footer>
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 1.1</p>
+<p>Version 1.8</p>
 </footer>
+
 <script>
 const appsButton=document.getElementById("navApps");
 const menu=document.getElementById("appsMenu");
@@ -320,4 +335,3 @@ document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
 </body>
 </html>
-
