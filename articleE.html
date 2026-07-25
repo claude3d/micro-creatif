@@ -117,11 +117,121 @@
                 text-align: center;
             }
         }
+    
+        /* Micro Créatif site navigation */
+        .site-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1000;
+            margin-bottom: 24px;
+            padding: 0 0 18px;
+            border-bottom: 1px solid #ddd;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .site-nav a,
+        .site-nav button {
+            color: #2c3e50;
+            background: transparent;
+            border: 0;
+            padding: 6px 0;
+            text-decoration: none;
+            font: inherit;
+            font-size: 16px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .site-nav a:hover,
+        .site-nav button:hover {
+            color: #2980b9;
+        }
+
+        .site-dropdown {
+            position: relative;
+        }
+
+        .site-submenu {
+            display: none;
+            position: absolute;
+            top: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 240px;
+            padding: 8px 0;
+            background: #fff;
+            border: 1px solid #d4d8dc;
+            border-radius: 10px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.16);
+            text-align: left;
+            z-index: 1100;
+        }
+
+        .site-submenu.open {
+            display: block;
+        }
+
+        .site-submenu a {
+            display: block;
+            padding: 9px 15px;
+            font-size: 15px;
+        }
+
+        .site-submenu a:hover {
+            background: #f1f4f7;
+        }
+
+        .site-lang {
+            border: 1px solid #b8c0c8 !important;
+            border-radius: 16px !important;
+            padding: 4px 11px !important;
+        }
+
+        @media (max-width: 600px) {
+            .site-nav {
+                gap: 15px;
+            }
+
+            .site-nav a,
+            .site-nav button {
+                font-size: 14px;
+            }
+
+            .site-submenu {
+                position: fixed;
+                top: 70px;
+                left: 50%;
+                width: min(280px, calc(100vw - 32px));
+            }
+        }
+
     </style>
 </head>
 <body>
 
 <div class="container">
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="site-dropdown">
+            <button type="button" class="site-apps-button" aria-expanded="false">Apps</button>
+            <div class="site-submenu">
+                <a href="radec-calculator.html">RA / Dec / AZ / Alt</a>
+                <a href="virtual-telescope.html">Virtual Telescope</a>
+                <a href="sol-and-stars.html">Sol and Stars</a>
+                <a href="alien-sky.html">Alien Sky</a>
+                <a href="time-travel.html">Time Travel</a>
+            </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="article.html" class="site-lang" aria-label="Version française">🌐</a>
+    </nav>
+
     <header>
         <h1>From the Great Dream... to Reality!</h1>
         <div class="author-box">
@@ -264,6 +374,32 @@
         &copy; 2026 Micro Créatif - Montreal | Ho Chi Minh City
     </footer>
 </div>
+
+
+<script>
+document.querySelectorAll(".site-dropdown").forEach(function(dropdown) {
+    const button = dropdown.querySelector(".site-apps-button");
+    const submenu = dropdown.querySelector(".site-submenu");
+
+    button.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const isOpen = submenu.classList.toggle("open");
+        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    submenu.addEventListener("click", function(event) {
+        event.stopPropagation();
+    });
+});
+
+document.addEventListener("click", function() {
+    document.querySelectorAll(".site-submenu.open").forEach(function(submenu) {
+        submenu.classList.remove("open");
+        const button = submenu.parentElement.querySelector(".site-apps-button");
+        if (button) button.setAttribute("aria-expanded", "false");
+    });
+});
+</script>
 
 </body>
 </html>
