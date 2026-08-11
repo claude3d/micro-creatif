@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 1.8 -->
+<!-- Version 2.3 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -235,10 +235,18 @@ padding:20px 22px;
 .advanced-block.wide{
 grid-column:1 / -1;
 }
+.advanced-block.centered-half{
+grid-column:1 / -1;
+width:calc((100% - 18px) / 2);
+justify-self:center;
+}
 .advanced-block h3{
 font-size:23px;
 margin:0 0 12px;
 color:#dbe8ff;
+}
+.advanced-block h3.centered-title{
+text-align:center;
 }
 .advanced-block p{
 font-size:17px;
@@ -278,6 +286,86 @@ border-radius:8px;
 padding:6px 8px;
 white-space:nowrap;
 }
+
+.keyboard-panel{
+margin-top:4px;
+}
+.keyboard-intro{
+text-align:center;
+max-width:820px;
+margin:0 auto 18px !important;
+}
+.keyboard-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+.keyboard-card{
+background:rgba(0,0,0,0.28);
+border:1px solid rgba(190,215,255,0.23);
+border-radius:15px;
+padding:18px;
+}
+.keyboard-card h4{
+font-size:20px;
+margin:0 0 14px;
+color:#e6efff;
+text-align:center;
+}
+.shortcut-row{
+display:grid;
+grid-template-columns:minmax(145px, 0.9fr) 1.35fr;
+gap:13px;
+align-items:center;
+padding:8px 0;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.shortcut-row:last-child{border-bottom:0;}
+.keycaps{
+display:flex;
+flex-wrap:wrap;
+gap:5px;
+align-items:center;
+justify-content:flex-start;
+}
+.keycap{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-width:34px;
+min-height:31px;
+padding:4px 9px;
+font-family:Menlo, Monaco, Consolas, monospace;
+font-size:14px;
+font-weight:700;
+line-height:1;
+color:#fff;
+background:linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+border:1px solid rgba(255,255,255,0.34);
+border-bottom-width:3px;
+border-radius:7px;
+box-shadow:0 2px 6px rgba(0,0,0,0.25), inset 0 1px rgba(255,255,255,0.15);
+white-space:nowrap;
+}
+.keycap.wide{min-width:62px;}
+.keycap.command{min-width:72px;}
+.key-separator{
+font-size:13px;
+opacity:0.58;
+padding:0 1px;
+}
+.shortcut-action{
+font-size:15.5px;
+line-height:1.35;
+opacity:0.94;
+}
+.keyboard-note{
+margin:16px 0 0 !important;
+font-size:15px !important;
+text-align:center;
+opacity:0.78 !important;
+}
+
 .status{
 margin:30px auto 0;
 max-width:800px;
@@ -319,6 +407,9 @@ h1{font-size:42px;}
 .lower-row{grid-template-columns:1fr;}
 .advanced-grid{grid-template-columns:1fr;}
 .advanced-block.wide{grid-column:auto;}
+.advanced-block.centered-half{grid-column:auto;width:100%;}
+.keyboard-grid{grid-template-columns:1fr;}
+.shortcut-row{grid-template-columns:138px 1fr;}
 .key-row{grid-template-columns:92px 1fr;}
 .app-icon{width:116px;height:116px;border-radius:25px;}
 .content{padding-left:16px;padding-right:16px;}
@@ -367,8 +458,8 @@ data-fr="Restez sur Terre, voyagez dans le temps et observez le vrai ciel se tra
 <div class="mode-card">
 <h2 data-en="Choose a place and time" data-fr="Choisissez un lieu et une époque"></h2>
 <p
-data-en="Use your current position, enter latitude, longitude, and altitude manually, or choose from 19 historically important preset locations grouped into Africa, the Americas, Asia, and the Mediterranean & Near East. Then choose an exact local date and time anywhere from the distant past to the far future."
-data-fr="Utilisez votre position actuelle, entrez manuellement la latitude, la longitude et l’altitude, ou choisissez parmi 19 lieux historiques prédéfinis regroupés en Afrique, dans les Amériques, en Asie, ainsi qu’en Méditerranée et au Proche-Orient. Choisissez ensuite une date et une heure locales précises, dans un passé lointain ou un futur éloigné."></p>
+data-en="Use your current position, enter latitude and longitude manually, or choose from 19 historically important preset locations grouped into Africa, the Americas, Asia, and the Mediterranean & Near East. Then choose an exact local date and time from 9999 BCE through 9999 CE."
+data-fr="Utilisez votre position actuelle, entrez manuellement la latitude et la longitude, ou choisissez parmi 19 lieux historiques prédéfinis regroupés en Afrique, dans les Amériques, en Asie, ainsi qu’en Méditerranée et au Proche-Orient. Choisissez ensuite une date et une heure locales précises, de 9999 av. J.-C. à 9999 apr. J.-C."></p>
 </div>
 
 <div class="mode-card">
@@ -417,8 +508,8 @@ data-fr="La même date produit un horizon et un ciel visible différents selon l
 data-en="Use the current device location, enter coordinates manually, or select one of 19 historically important preset locations grouped by region."
 data-fr="Utiliser la position actuelle de l’appareil, entrer les coordonnées manuellement ou choisir l’un des 19 lieux historiques prédéfinis regroupés par région."></li>
 <li
-data-en="Edit the exact local year, month, day, hour, minute, and second."
-data-fr="Modifier précisément l’année, le mois, le jour, l’heure, la minute et la seconde locales."></li>
+data-en="Edit the exact local year, month, day, hour, minute, and second, from 9999 BCE through 9999 CE."
+data-fr="Modifier précisément l’année, le mois, le jour, l’heure, la minute et la seconde locales, de 9999 av. J.-C. à 9999 apr. J.-C."></li>
 <li
 data-en="Travel with Hours, Day, Month, Year, Century, or Millennium, and return with Now."
 data-fr="Voyager avec Heures, Jour, Mois, Année, Siècle ou Millénaire, puis revenir avec Maintenant."></li>
@@ -431,6 +522,9 @@ data-fr="Régler la magnitude limite des étoiles et des planètes, puis déplac
 <li
 data-en="Select any of seven programmed events: six comet apparitions and the May 5, 2000 planetary alignment."
 data-fr="Choisir l’un des sept événements programmés : six apparitions de comètes et l’alignement planétaire du 5 mai 2000."></li>
+<li
+data-en="Use a hardware keyboard on iPad or Mac for fast numeric entry, field navigation, Apply, Cancel, BCE/CE selection, and N/S/E/W direction selection in the manual editors."
+data-fr="Utiliser un clavier physique sur iPad ou Mac pour la saisie numérique rapide, le déplacement entre les champs, Appliquer, Annuler, la sélection av. J.-C./apr. J.-C. et les directions N/S/E/O dans les éditeurs manuels."></li>
 </ul>
 </section>
 </div>
@@ -453,8 +547,8 @@ data-en="The stellar catalogue starts at epoch J2000.0. For the selected date, s
 data-fr="Le catalogue stellaire part de l’époque J2000.0. Pour la date choisie, les étoiles possédant des données de mouvement sont avancées à l’aide de leurs vitesses spatiales cartésiennes X, Y et Z. La position, la distance, l’ascension droite, la déclinaison et la luminosité apparente sont recalculées pour la nouvelle époque."></li>
 
 <li
-data-en="The Earth-sky engine applies precession, nutation, and annual aberration. It then uses apparent sidereal time and the observer’s latitude, longitude, and altitude to place the sky correctly above the local horizon."
-data-fr="Le moteur du ciel terrestre applique la précession, la nutation et l’aberration annuelle. Il utilise ensuite le temps sidéral apparent ainsi que la latitude, la longitude et l’altitude de l’observateur pour placer correctement le ciel au-dessus de l’horizon local."></li>
+data-en="The Earth-sky engine applies precession, nutation, and annual aberration. It then uses apparent sidereal time and the observer’s latitude and longitude to place the sky correctly above the local horizon."
+data-fr="Le moteur du ciel terrestre applique la précession, la nutation et l’aberration annuelle. Il utilise ensuite le temps sidéral apparent ainsi que la latitude et la longitude de l’observateur pour placer correctement le ciel au-dessus de l’horizon local."></li>
 
 <li
 data-en="The Sun, Moon, and planets are calculated for the selected date and location. The Moon uses a topocentric position and its visible phase. Supported historical comets are calculated from their orbital elements."
@@ -466,8 +560,8 @@ data-fr="Les calculs des planètes et de la Lune sont prévus pour environ 3000 
 </ul>
 </div>
 
-<div class="advanced-block">
-<h3 data-en="Sky controls" data-fr="Commandes de la vue du ciel"></h3>
+<div class="advanced-block centered-half">
+<h3 class="centered-title" data-en="Sky controls" data-fr="Commandes de la vue du ciel"></h3>
 
 <div class="key-row">
 <code>← → ↑ ↓</code>
@@ -489,8 +583,100 @@ data-en="Dragging and pinch-to-zoom are also available on touch devices."
 data-fr="Le déplacement au doigt et le zoom par pincement sont également disponibles sur les appareils tactiles."></p>
 </div>
 
-<div class="advanced-block">
-<h3 data-en="The Easter egg" data-fr="L’œuf de Pâques"></h3>
+
+<div class="advanced-block wide keyboard-panel">
+<h3 class="centered-title" data-en="Hardware keyboard shortcuts" data-fr="Raccourcis du clavier physique"></h3>
+<p class="keyboard-intro"
+data-en="Manual Date & Time and Earth Location entry can be controlled directly from a hardware keyboard on iPad or Mac. The on-screen keypad remains available at the same time."
+data-fr="La saisie manuelle de la date et de l’heure ainsi que de la position terrestre peut être contrôlée directement avec un clavier physique sur iPad ou Mac. Le pavé numérique à l’écran reste disponible en même temps."></p>
+
+<div class="keyboard-grid">
+<div class="keyboard-card">
+<h4 data-en="Date & Time" data-fr="Date et heure"></h4>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">0–9</span></div>
+<span class="shortcut-action" data-en="Enter numbers" data-fr="Saisir les chiffres"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">Tab</span><span class="key-separator">/</span><span class="keycap wide">Return</span><span class="key-separator">/</span><span class="keycap">→</span></div>
+<span class="shortcut-action" data-en="Next field" data-fr="Champ suivant"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">⇧ Tab</span><span class="key-separator">/</span><span class="keycap">←</span></div>
+<span class="shortcut-action" data-en="Previous field" data-fr="Champ précédent"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap">⌫</span><span class="key-separator">/</span><span class="keycap">⌦</span></div>
+<span class="shortcut-action" data-en="Erase" data-fr="Effacer"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap">B</span><span class="key-separator">/</span><span class="keycap">C</span></div>
+<span class="shortcut-action" data-en="BCE / CE" data-fr="av. J.-C. / apr. J.-C."></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap command">⌘ Return</span></div>
+<span class="shortcut-action" data-en="Apply" data-fr="Appliquer"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">Esc</span><span class="key-separator">/</span><span class="keycap command">⌘ .</span><span class="key-separator">/</span><span class="keycap command">⌘ [</span></div>
+<span class="shortcut-action" data-en="Cancel" data-fr="Annuler"></span>
+</div>
+</div>
+
+<div class="keyboard-card">
+<h4 data-en="Earth Location" data-fr="Position terrestre"></h4>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">0–9</span></div>
+<span class="shortcut-action" data-en="Enter numbers" data-fr="Saisir les chiffres"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">Tab</span><span class="key-separator">/</span><span class="keycap wide">Return</span><span class="key-separator">/</span><span class="keycap">→</span></div>
+<span class="shortcut-action" data-en="Next field" data-fr="Champ suivant"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">⇧ Tab</span><span class="key-separator">/</span><span class="keycap">←</span></div>
+<span class="shortcut-action" data-en="Previous field" data-fr="Champ précédent"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap">⌫</span><span class="key-separator">/</span><span class="keycap">⌦</span></div>
+<span class="shortcut-action" data-en="Erase" data-fr="Effacer"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap">N</span><span class="keycap">S</span><span class="keycap">E</span><span class="keycap">W</span></div>
+<span class="shortcut-action" data-en="Set North, South, East, or West" data-fr="Choisir Nord, Sud, Est ou Ouest"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap command">⌘ Return</span></div>
+<span class="shortcut-action" data-en="Apply" data-fr="Appliquer"></span>
+</div>
+
+<div class="shortcut-row">
+<div class="keycaps"><span class="keycap wide">Esc</span><span class="key-separator">/</span><span class="keycap command">⌘ .</span><span class="key-separator">/</span><span class="keycap command">⌘ [</span></div>
+<span class="shortcut-action" data-en="Cancel" data-fr="Annuler"></span>
+</div>
+</div>
+</div>
+
+<p class="keyboard-note"
+data-en="Cancel shortcuts vary slightly by platform. On iPad, ⌘. is convenient when the keyboard has no dedicated Escape key. On Mac Catalyst, ⌘[ is the reliable keyboard Cancel shortcut. Esc is also available where the keyboard and system deliver it."
+data-fr="Les raccourcis Annuler varient légèrement selon la plateforme. Sur iPad, ⌘. est pratique lorsque le clavier n’a pas de touche Échap dédiée. Sur Mac Catalyst, ⌘[ est le raccourci clavier fiable pour Annuler. Échap reste aussi disponible lorsque le clavier et le système la transmettent."></p>
+</div>
+
+<div class="advanced-block centered-half">
+<h3 class="centered-title" data-en="The Easter egg" data-fr="L’œuf de Pâques"></h3>
 
 <p
 data-en="Tap the Time Travel title to switch between the normal North-up sky and the hidden Stellarium-comparison orientation. The N, E, S, and W markers follow the active camera. Tap the title again to return to the normal view."
@@ -513,8 +699,8 @@ data-fr="Time Travel est en développement actif pour iPhone, iPad et Mac. Son s
 <footer>
 <p>© Micro Créatif</p>
 <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 1.8</p>
-<p data-en="Privacy: Time Travel does not collect or transmit personal information. Current-location coordinates are stored locally inside Time Travel on this device so they can be restored on a later launch. They are not shared with Alien Sky or sent to any server. Historical and manually selected locations are used only for the current session unless selected again." data-fr="Confidentialité : Time Travel ne collecte ni ne transmet de renseignements personnels. Les coordonnées de la position actuelle sont enregistrées localement dans Time Travel sur cet appareil afin de pouvoir être restaurées lors d’un lancement ultérieur. Elles ne sont ni partagées avec Alien Sky ni envoyées à un serveur. Les lieux historiques et les positions saisies manuellement ne sont utilisés que pendant la session en cours, à moins d’être sélectionnés de nouveau."></p>
+<p>Version 2.3</p>
+<p data-en="Privacy: Time Travel does not collect or transmit personal information. Current-location coordinates are stored locally inside Time Travel on this device so they can be restored on a later launch. They are not sent to any server. Historical and manually selected locations are used only for the current session and are not saved for future launches." data-fr="Confidentialité : Time Travel ne collecte ni ne transmet de renseignements personnels. Les coordonnées de la position actuelle sont enregistrées localement dans Time Travel sur cet appareil afin de pouvoir être restaurées lors d’un lancement ultérieur. Elles ne sont envoyées à aucun serveur. Les lieux historiques et les positions saisies manuellement sont utilisés uniquement pendant la session en cours et ne sont pas enregistrés pour les prochains lancements."></p>
 </footer>
 
 <script>
