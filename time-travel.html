@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 2.8 -->
+<!-- Version 3.3 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -366,6 +366,88 @@ text-align:center;
 opacity:0.78 !important;
 }
 
+
+.demo-video-section{
+margin:6px auto 28px;
+}
+.demo-video-frame{
+position:relative;
+margin:0;
+background:rgba(5,8,24,0.70);
+border:1px solid rgba(190,215,255,0.28);
+border-radius:18px;
+padding:8px;
+box-shadow:0 0 22px rgba(40,80,160,0.20);
+overflow:hidden;
+}
+.demo-video-frame video{
+display:block;
+width:100%;
+height:auto;
+border-radius:12px;
+background:black;
+cursor:pointer;
+}
+.video-play-button{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+width:82px;
+height:82px;
+border-radius:50%;
+border:2px solid rgba(255,255,255,0.92);
+background:rgba(0,0,0,0.58);
+box-shadow:0 0 24px rgba(0,0,0,0.55), 0 0 18px rgba(130,180,255,0.28);
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:0;
+z-index:3;
+}
+.video-play-button::before{
+content:"";
+display:block;
+margin-left:7px;
+width:0;
+height:0;
+border-top:17px solid transparent;
+border-bottom:17px solid transparent;
+border-left:27px solid white;
+}
+.video-play-button:hover{
+background:rgba(0,0,0,0.72);
+transform:translate(-50%,-50%) scale(1.06);
+}
+.video-play-button.hidden{
+display:none;
+}
+
+.screenshot-gallery{
+margin:6px auto 30px;
+}
+.screenshot-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:18px;
+}
+.screenshot-frame{
+margin:0;
+background:rgba(5,8,24,0.70);
+border:1px solid rgba(190,215,255,0.28);
+border-radius:18px;
+padding:8px;
+box-shadow:0 0 22px rgba(40,80,160,0.20);
+overflow:hidden;
+}
+.screenshot-frame img{
+display:block;
+width:100%;
+height:auto;
+border-radius:12px;
+}
+
 .status{
 margin:30px auto 0;
 max-width:800px;
@@ -403,6 +485,7 @@ nav a{font-size:15px;}
 h1{font-size:42px;}
 .subtitle{font-size:19px;}
 .mode-grid{grid-template-columns:1fr;}
+.screenshot-grid{grid-template-columns:1fr;}
 .card-grid{grid-template-columns:1fr;}
 .lower-row{grid-template-columns:1fr;}
 .advanced-grid{grid-template-columns:1fr;}
@@ -482,6 +565,22 @@ direction:ltr;
 <p class="subtitle" data-i18n="hero.subtitle"></p>
 </section>
 <main class="content">
+<section class="screenshot-gallery">
+<div class="screenshot-grid">
+<figure class="screenshot-frame">
+<img alt="" aria-hidden="true" loading="lazy" src="images/TheSky.png"/>
+</figure>
+<figure class="screenshot-frame">
+<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocation.png"/>
+</figure>
+<figure class="screenshot-frame">
+<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseTime.png"/>
+</figure>
+<figure class="screenshot-frame">
+<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocationMnually.png"/>
+</figure>
+</div>
+</section>
 <div class="mode-grid">
 <div class="mode-card">
 <h2 data-i18n="mode.placeTime.title"></h2>
@@ -492,6 +591,14 @@ direction:ltr;
 <p data-i18n="mode.history.body"></p>
 </div>
 </div>
+<section class="demo-video-section">
+<div class="demo-video-frame">
+<video id="beijingAlignmentVideo" playsinline preload="metadata" poster="images/beijing-alignment-poster.jpg">
+<source src="videos/beijing-alignment.mp4" type="video/mp4"/>
+</video>
+<button class="video-play-button" id="beijingAlignmentPlay" type="button" aria-label="▶"></button>
+</div>
+</section>
 <div class="card-grid">
 <div class="card">
 <h2 data-i18n="cards.realSky.title"></h2>
@@ -652,9 +759,40 @@ direction:ltr;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 2.8</p>
+<p>Version 3.3</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const video = document.getElementById("beijingAlignmentVideo");
+  const playButton = document.getElementById("beijingAlignmentPlay");
+  if (!video || !playButton) return;
+
+  function updatePlayButton(){
+    playButton.classList.toggle("hidden", !video.paused && !video.ended);
+  }
+
+  function toggleVideo(){
+    if (video.paused || video.ended) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  video.addEventListener("click", toggleVideo);
+  playButton.addEventListener("click", function(event){
+    event.stopPropagation();
+    toggleVideo();
+  });
+
+  video.addEventListener("play", updatePlayButton);
+  video.addEventListener("pause", updatePlayButton);
+  video.addEventListener("ended", updatePlayButton);
+  updatePlayButton();
+});
+</script>
 
 <script src="time-travel-languages.js" defer></script>
 </body>
