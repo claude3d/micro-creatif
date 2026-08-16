@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.3 -->
+<!-- Version 3.2 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -371,7 +371,6 @@ opacity:0.78 !important;
 margin:6px auto 28px;
 }
 .demo-video-frame{
-position:relative;
 margin:0;
 background:rgba(5,8,24,0.70);
 border:1px solid rgba(190,215,255,0.28);
@@ -387,41 +386,6 @@ height:auto;
 border-radius:12px;
 background:black;
 cursor:pointer;
-}
-.video-play-button{
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-width:82px;
-height:82px;
-border-radius:50%;
-border:2px solid rgba(255,255,255,0.92);
-background:rgba(0,0,0,0.58);
-box-shadow:0 0 24px rgba(0,0,0,0.55), 0 0 18px rgba(130,180,255,0.28);
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:0;
-z-index:3;
-}
-.video-play-button::before{
-content:"";
-display:block;
-margin-left:7px;
-width:0;
-height:0;
-border-top:17px solid transparent;
-border-bottom:17px solid transparent;
-border-left:27px solid white;
-}
-.video-play-button:hover{
-background:rgba(0,0,0,0.72);
-transform:translate(-50%,-50%) scale(1.06);
-}
-.video-play-button.hidden{
-display:none;
 }
 
 .screenshot-gallery{
@@ -577,7 +541,7 @@ direction:ltr;
 <img alt="" aria-hidden="true" loading="lazy" src="images/ChooseTime.png"/>
 </figure>
 <figure class="screenshot-frame">
-<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocationMnually.png"/>
+<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocationManually.png"/>
 </figure>
 </div>
 </section>
@@ -596,7 +560,6 @@ direction:ltr;
 <video id="beijingAlignmentVideo" playsinline preload="metadata" poster="images/beijing-alignment-poster.jpg">
 <source src="videos/beijing-alignment.mp4" type="video/mp4"/>
 </video>
-<button class="video-play-button" id="beijingAlignmentPlay" type="button" aria-label="▶"></button>
 </div>
 </section>
 <div class="card-grid">
@@ -759,38 +722,21 @@ direction:ltr;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.3</p>
+<p>Version 3.2</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   const video = document.getElementById("beijingAlignmentVideo");
-  const playButton = document.getElementById("beijingAlignmentPlay");
-  if (!video || !playButton) return;
-
-  function updatePlayButton(){
-    playButton.classList.toggle("hidden", !video.paused && !video.ended);
-  }
-
-  function toggleVideo(){
-    if (video.paused || video.ended) {
+  if (!video) return;
+  video.addEventListener("click", function(){
+    if (video.paused) {
       video.play();
     } else {
       video.pause();
     }
-  }
-
-  video.addEventListener("click", toggleVideo);
-  playButton.addEventListener("click", function(event){
-    event.stopPropagation();
-    toggleVideo();
   });
-
-  video.addEventListener("play", updatePlayButton);
-  video.addEventListener("pause", updatePlayButton);
-  video.addEventListener("ended", updatePlayButton);
-  updatePlayButton();
 });
 </script>
 
