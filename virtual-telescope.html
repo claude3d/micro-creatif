@@ -1,23 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- app2.html -->
 <!-- Version 1.4 -->
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 10-language selector and page translations: 2026-08-16 -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Virtual Telescope / Télescope virtuel – Micro Créatif</title>
-<meta name="description" content="Virtual Telescope is a Micro Créatif astronomy app concept for telescope observers. Enter telescope and eyepiece parameters, choose a target position, and visualize the true field of view with stars down to a selected magnitude. Star positions are based on catalogue data and corrected for the selected observation date.">
-<meta name="keywords" content="virtual telescope, telescope field of view, eyepiece calculator, TFOV, astronomy app, telescope app, star field, amateur astronomy, Micro Créatif">
-<meta name="author" content="Micro Créatif">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Virtual Telescope – Micro Créatif">
-<meta property="og:description" content="Visualize a telescope field of view from telescope, eyepiece, RA/Dec, and magnitude settings, with catalogue star positions corrected for the selected date.">
-<meta property="og:url" content="https://microcreatif.ca/app2.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_CA">
-<meta property="og:locale:alternate" content="fr_CA">
-<link rel="canonical" href="https://microcreatif.ca/app2.html">
+<meta content="Virtual Telescope is a Micro Créatif astronomy app concept for telescope observers. Enter telescope and eyepiece parameters, choose a target position, and visualize the true field of view with stars down to a selected magnitude. Star positions are based on catalogue data and corrected for the selected observation date." name="description"/>
+<meta content="virtual telescope, telescope field of view, eyepiece calculator, TFOV, astronomy app, telescope app, star field, amateur astronomy, Micro Créatif" name="keywords"/>
+<meta content="Micro Créatif" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Virtual Telescope – Micro Créatif" property="og:title"/>
+<meta content="Visualize a telescope field of view from telescope, eyepiece, RA/Dec, and magnitude settings, with catalogue star positions corrected for the selected date." property="og:description"/>
+<meta content="https://microcreatif.ca/app2.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="en_CA" property="og:locale"/>
+<meta content="fr_CA" property="og:locale:alternate"/>
+<link href="https://microcreatif.ca/app2.html" rel="canonical"/>
 <style>
 *{box-sizing:border-box;}
 body{
@@ -231,83 +233,94 @@ h1{font-size:38px;}
 .wide{grid-column:span 1;}
 .app-icon{width:96px;height:96px;}
 }
+
+/* Multilingual layout */
+.lang-btn option{color:#111;background:#fff;}
+html[dir="rtl"] .submenu{left:auto;right:0;text-align:right;}
+html[dir="rtl"] .grid,
+html[dir="rtl"] .feature-list,
+html[dir="rtl"] .advanced,
+html[dir="rtl"] .advanced-block,
+html[dir="rtl"] .card ul{text-align:right;}
+html[dir="rtl"] ul{padding-left:0;padding-right:24px;}
+html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
+html[dir="rtl"] .key-row{direction:ltr;}
+html[dir="rtl"] .key-row > span{direction:rtl;text-align:right;}
+html[dir="rtl"] .key-row code{direction:ltr;}
+@media (max-width:760px){nav{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
 <body>
-<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<img alt="Galaxy background – Micro Créatif astronomy apps" class="bg" src="images/galaxy-background.jpg"/>
 <div class="overlay"></div>
 <header>
-<nav aria-label="Main navigation">
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<nav aria-label="Main navigation" data-i18n-aria="mainNavigation">
+<a data-i18n="k01" href="index.html" id="navHome"></a>
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<a data-i18n="k02" id="navApps"></a>
 <div class="submenu" id="appsMenu">
-<a href="radec-calculator.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-<a href="virtual-telescope.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-<a href="sol-and-stars.html" data-en="Sol and Stars" data-fr="Sol et les étoiles"></a>
-<a href="alien-sky.html" data-en="Alien Sky" data-fr="Alien Sky"></a>
-<a href="time-travel.html" data-en="Time Travel" data-fr="Voyage dans le temps"></a>
+<a data-i18n="k03" href="radec-calculator.html"></a>
+<a data-i18n="k04" href="virtual-telescope.html"></a>
+<a data-i18n="k05" href="sol-and-stars.html"></a>
+<a data-i18n="k06" href="alien-sky.html"></a>
+<a data-i18n="k07" href="time-travel.html"></a>
 </div>
 </div>
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
-<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+<a data-i18n="k08" href="about.html" id="navAbout"></a>
+<a data-i18n="k09" href="contact.html" id="navContact"></a>
+<select class="lang-btn" id="languageSelect"></select>
 </nav>
 </header>
 <section class="hero">
-<div class="app-icon"><img src="images/VirtualTelescope.png" alt="Virtual Telescope app icon"></div>
-<h1 data-en="Virtual Telescope" data-fr="Télescope virtuel"></h1>
-<p class="subtitle" data-en="Simulate the actual field of view of a telescope and eyepiece. Enter the focal length, eyepiece, apparent field of view, target coordinates, and limiting magnitude, then compare the simulated star field with what you should see at the eyepiece." data-fr="Simulez le champ réel d’un télescope et d’un oculaire. Entrez la longueur focale, l’oculaire, le champ apparent, les coordonnées de la cible et la magnitude limite, puis comparez le champ simulé avec ce que vous devriez voir à l’oculaire."></p>
+<div class="app-icon"><img alt="Virtual Telescope app icon" src="images/VirtualTelescope.png"/></div>
+<h1 data-i18n="k10"></h1>
+<p class="subtitle" data-i18n="k11"></p>
 </section>
-<section class="screenshots" aria-label="Virtual Telescope screenshots">
-<div class="shot"><img src="images/VT-1.png" alt="Virtual Telescope star field view centered on Deneb"><p class="caption" data-en="Example: field centered on Deneb." data-fr="Exemple : champ centré sur Deneb."></p></div>
-
-
-<div class="shot"><img src="images/VT-2.png" alt="Virtual Telescope input screen"><p class="caption" data-en="What you should see in the telescope eyepiece." data-fr="Ce que vous devriez voir dans l’oculaire du télescope."></p></div>
-
-
+<section aria-label="Virtual Telescope screenshots" class="screenshots">
+<div class="shot"><img alt="Virtual Telescope star field view centered on Deneb" src="images/VT-1.png"/><p class="caption" data-i18n="k12"></p></div>
+<div class="shot"><img alt="Virtual Telescope input screen" src="images/VT-2.png"/><p class="caption" data-i18n="k13"></p></div>
 </section>
 <main class="content">
 <div class="cards">
 <div class="card">
-<h2 data-en="True field of view" data-fr="Champ réel"></h2>
-<p data-en="The app computes the true field of view from telescope and eyepiece parameters. If your telescope and eyepiece match the example, the stars visible through the eyepiece should closely match the simulation." data-fr="L’application calcule le champ réel à partir du télescope et de l’oculaire. Si votre télescope et votre oculaire correspondent à l’exemple, les étoiles visibles à l’oculaire devraient correspondre de près à la simulation."></p>
+<h2 data-i18n="k14"></h2>
+<p data-i18n="k15"></p>
 </div>
 <div class="card">
-<h2 data-en="Catalogue positions" data-fr="Positions du catalogue"></h2>
-<p data-en="Star positions are based on the Gaia catalogue and corrected for the selected observation date. Atmospheric refraction is not simulated." data-fr="Les positions stellaires sont basées sur le catalogue Gaia et corrigées pour la date d’observation choisie. La réfraction atmosphérique n’est pas simulée."></p>
+<h2 data-i18n="k16"></h2>
+<p data-i18n="k17"></p>
 </div>
 <div class="card">
-<h2 data-en="Magnitude limit" data-fr="Magnitude limite"></h2>
-<p data-en="Choose how faint the displayed stars should be. This makes it possible to simulate different instruments and observing conditions." data-fr="Choisissez jusqu’à quelle magnitude les étoiles doivent être affichées. Cela permet de simuler différents instruments et différentes conditions d’observation."></p>
+<h2 data-i18n="k18"></h2>
+<p data-i18n="k19"></p>
 </div>
 <div class="card">
-<h2 data-en="For observers" data-fr="Pour les observateurs"></h2>
-<p data-en="Useful for preparing a session, checking whether an object fits in the eyepiece, and understanding how a change of eyepiece changes the view." data-fr="Utile pour préparer une séance, vérifier si un objet entre dans l’oculaire et comprendre comment un changement d’oculaire modifie la vue."></p>
+<h2 data-i18n="k20"></h2>
+<p data-i18n="k21"></p>
 </div>
 <div class="card wide">
-<h2 data-en="Planned features" data-fr="Fonctions prévues"></h2>
+<h2 data-i18n="k22"></h2>
 <ul>
-<li data-en="Calculate true field of view from telescope and eyepiece data." data-fr="Calculer le champ réel à partir des données du télescope et de l’oculaire."></li>
-<li data-en="Display a circular star field centered on RA/Dec coordinates." data-fr="Afficher un champ stellaire circulaire centré sur des coordonnées AD/Déc."></li>
-<li data-en="Use Gaia-based stellar positions corrected for the selected date." data-fr="Utiliser des positions stellaires basées sur Gaia et corrigées pour la date choisie."></li>
-<li data-en="Do not apply atmospheric refraction to the simulated eyepiece field." data-fr="Ne pas appliquer la réfraction atmosphérique au champ simulé de l’oculaire."></li>
-<li data-en="Let the observer choose the limiting magnitude." data-fr="Permettre à l’observateur de choisir la magnitude limite."></li>
-<li data-en="Keep the interface simple and useful at the telescope." data-fr="Garder une interface simple et utile au télescope."></li>
+<li data-i18n="k23"></li>
+<li data-i18n="k24"></li>
+<li data-i18n="k25"></li>
+<li data-i18n="k26"></li>
+<li data-i18n="k27"></li>
+<li data-i18n="k28"></li>
 </ul>
 </div>
 </div>
 <section class="status">
-<h2 data-en="Status" data-fr="Statut"></h2>
-<p data-en="Virtual Telescope is part of the Micro Créatif astronomy app collection. A modern version is being prepared for iPhone and iPad." data-fr="Télescope virtuel fait partie de la collection d’applications d’astronomie de Micro Créatif. Une version moderne est en préparation pour iPhone et iPad."></p>
-<a class="back" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
+<h2 data-i18n="k29"></h2>
+<p data-i18n="k30"></p>
+<a class="back" data-i18n="k31" href="index.html"></a>
 </section>
 </main>
 <footer>
 <p>© Micro Créatif</p>
-<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
+<p data-i18n="k32"></p>
 <p>Version 1.4</p>
-<p data-en="Privacy: This application does not collect, store, transmit, or share any personal information." data-fr="Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."></p>
+<p data-i18n="k33"></p>
 </footer>
 <script>
 const appsButton=document.getElementById("navApps");
@@ -322,16 +335,7 @@ if(!menu.contains(e.target) && e.target!==appsButton){menu.style.display="none";
 document.querySelectorAll(".submenu a").forEach(function(link){
 link.addEventListener("click",function(){menu.style.display="none";});
 });
-let currentLanguage=localStorage.getItem("mc_language")||"en";
-function applyLanguage(){
-document.querySelectorAll("[data-en]").forEach(el=>{el.textContent=el.getAttribute("data-"+currentLanguage);});
-}
-function toggleLanguage(){
-currentLanguage=(currentLanguage==="en")?"fr":"en";
-localStorage.setItem("mc_language",currentLanguage);
-applyLanguage();
-}
-document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
+<script defer="" src="virtual-telescope-languages.js"></script>
 </body>
 </html>

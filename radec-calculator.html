@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- app1.html -->
 <!-- Version 2.0 -->
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 10-language selector and page translations: 2026-08-16 -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>RA / Dec / AZ / Alt – Micro Créatif</title>
-<meta name="description" content="RA / Dec / AZ / Alt is an astronomy app for serious telescope observers. Enter current right ascension and declination to compute hour angle, azimuth, and altitude for your observing location.">
-<meta name="keywords" content="RA Dec AZ Alt, astronomy app, telescope coordinates, right ascension, declination, azimuth, altitude, hour angle, sidereal time, current RA Dec, JNow, iOS astronomy">
-<meta name="author" content="Micro Créatif">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://microcreatif.ca/app1.html">
+<meta content="RA / Dec / AZ / Alt is an astronomy app for serious telescope observers. Enter current right ascension and declination to compute hour angle, azimuth, and altitude for your observing location." name="description"/>
+<meta content="RA Dec AZ Alt, astronomy app, telescope coordinates, right ascension, declination, azimuth, altitude, hour angle, sidereal time, current RA Dec, JNow, iOS astronomy" name="keywords"/>
+<meta content="Micro Créatif" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://microcreatif.ca/app1.html" rel="canonical"/>
 <style>
 body{
 margin:0;
@@ -217,89 +219,92 @@ h1{font-size:38px;}
 h1{font-size:38px;}
 .app-icon{width:82px;height:82px;}
 }
+
+/* Multilingual layout */
+.lang-btn option{color:#111;background:#fff;}
+html[dir="rtl"] .submenu{left:auto;right:0;text-align:right;}
+html[dir="rtl"] .grid,
+html[dir="rtl"] .feature-list,
+html[dir="rtl"] .advanced,
+html[dir="rtl"] .advanced-block,
+html[dir="rtl"] .card ul{text-align:right;}
+html[dir="rtl"] ul{padding-left:0;padding-right:24px;}
+html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
+html[dir="rtl"] .key-row{direction:ltr;}
+html[dir="rtl"] .key-row > span{direction:rtl;text-align:right;}
+html[dir="rtl"] .key-row code{direction:ltr;}
+@media (max-width:760px){nav{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
 <body>
-<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<img alt="Galaxy background – Micro Créatif astronomy apps" class="bg" src="images/galaxy-background.jpg"/>
 <div class="overlay"></div>
 <header>
-<nav aria-label="Main navigation">
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<nav aria-label="Main navigation" data-i18n-aria="mainNavigation">
+<a data-i18n="k01" href="index.html" id="navHome"></a>
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<a data-i18n="k02" id="navApps"></a>
 <div class="submenu" id="appsMenu">
-<a href="radec-calculator.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-<a href="virtual-telescope.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-<a href="sol-and-stars.html" data-en="Sol and Stars" data-fr="Sol et les étoiles"></a>
-<a href="alien-sky.html" data-en="Alien Sky" data-fr="Alien Sky"></a>
-<a href="time-travel.html" data-en="Time Travel" data-fr="Voyage dans le temps"></a>
+<a data-i18n="k03" href="radec-calculator.html"></a>
+<a data-i18n="k04" href="virtual-telescope.html"></a>
+<a data-i18n="k05" href="sol-and-stars.html"></a>
+<a data-i18n="k06" href="alien-sky.html"></a>
+<a data-i18n="k07" href="time-travel.html"></a>
 </div>
 </div>
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
-<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+<a data-i18n="k08" href="about.html" id="navAbout"></a>
+<a data-i18n="k09" href="contact.html" id="navContact"></a>
+<select class="lang-btn" id="languageSelect"></select>
 </nav>
 </header>
-
 <section class="hero">
 <div class="app-icon">
-<img src="images/RADEC.png" alt="RA Dec AZ Alt app icon">
+<img alt="RA Dec AZ Alt app icon" src="images/RADEC.png"/>
 </div>
-<h1 data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></h1>
-<p class="tagline" data-en="A fast coordinate calculator for serious telescope observers." data-fr="Un calculateur rapide de coordonnées pour les observateurs sérieux au télescope."></p>
+<h1 data-i18n="k10"></h1>
+<p class="tagline" data-i18n="k11"></p>
 </section>
-
 <main>
 <section class="card">
-<h2 data-en="What it does" data-fr="Ce que fait l’app"></h2>
-<p data-en="Enter current right ascension and declination, and the app continuously computes hour angle, azimuth, altitude, local time, and local sidereal time for your observing location." data-fr="Entrez l’ascension droite et la déclinaison actuelles; l’app calcule en continu l’angle horaire, l’azimut, l’altitude, l’heure locale et l’heure sidérale locale pour votre lieu d’observation."></p>
-<p class="note" data-en="Current coordinates are also called JNow, of-date coordinates, or RA/Dec on date." data-fr="Les coordonnées actuelles sont aussi appelées JNow, coordonnées de la date, ou AD/Déc à la date."></p>
+<h2 data-i18n="k12"></h2>
+<p data-i18n="k13"></p>
+<p class="note" data-i18n="k14"></p>
 </section>
-
 <section class="card">
-<h2 data-en="Features" data-fr="Fonctions"></h2>
+<h2 data-i18n="k15"></h2>
 <div class="grid">
-<div class="feature"><h3 data-en="Live updates" data-fr="Mise à jour en direct"></h3><p data-en="Coordinates update continuously as the Earth rotates." data-fr="Les coordonnées se mettent à jour continuellement pendant la rotation de la Terre."></p></div>
-<div class="feature"><h3 data-en="Current RA/Dec" data-fr="AD/Déc actuelles"></h3><p data-en="Designed for current RA and Dec coordinates for the observing date." data-fr="Conçue pour les coordonnées AD et Déc actuelles à la date d’observation."></p></div>
-<div class="feature"><h3 data-en="Refraction option" data-fr="Réfraction optionnelle"></h3><p data-en="Atmospheric refraction can be enabled or disabled, with temperature adjustment." data-fr="La réfraction atmosphérique peut être activée ou désactivée, avec ajustement de la température."></p></div>
-<div class="feature"><h3 data-en="Observer location" data-fr="Position de l’observateur"></h3><p data-en="Uses the device location to compute local astronomical coordinates." data-fr="Utilise la position de l’appareil pour calculer les coordonnées astronomiques locales."></p></div>
-<div class="feature"><h3 data-en="Freeze mode" data-fr="Mode gel"></h3><p data-en="Freeze the display to keep a coordinate result on screen." data-fr="Gelez l’affichage pour garder un résultat de coordonnées à l’écran."></p></div>
-<div class="feature"><h3 data-en="Last values remembered" data-fr="Dernières valeurs mémorisées"></h3><p data-en="The last entered RA and Dec values are restored when the app opens again." data-fr="Les dernières valeurs AD et Déc sont restaurées à la réouverture de l’app."></p></div>
+<div class="feature"><h3 data-i18n="k16"></h3><p data-i18n="k17"></p></div>
+<div class="feature"><h3 data-i18n="k18"></h3><p data-i18n="k19"></p></div>
+<div class="feature"><h3 data-i18n="k20"></h3><p data-i18n="k21"></p></div>
+<div class="feature"><h3 data-i18n="k22"></h3><p data-i18n="k23"></p></div>
+<div class="feature"><h3 data-i18n="k24"></h3><p data-i18n="k25"></p></div>
+<div class="feature"><h3 data-i18n="k26"></h3><p data-i18n="k27"></p></div>
 </div>
 </section>
-
 <section class="card">
-<h2 data-en="Screenshots" data-fr="Captures d’écran"></h2>
-<div class="screenshot-placeholder" data-en="Screenshots will be added here before App Store submission." data-fr="Les captures d’écran seront ajoutées ici avant la soumission à l’App Store."></div>
+<h2 data-i18n="k28"></h2>
+<div class="screenshot-placeholder" data-i18n="k29"></div>
 </section>
-
 <section class="card">
-<h2 data-en="Accuracy" data-fr="Précision"></h2>
-<p data-en="The app is designed for practical telescope use with current RA/Dec coordinates for the observing date, time, and location, with optional atmospheric refraction." data-fr="L’app est conçue pour l’usage pratique au télescope avec les coordonnées AD/Déc actuelles pour la date, l’heure et le lieu d’observation, avec réfraction atmosphérique optionnelle."></p>
-
-<p data-en="For best accuracy, enter current RA/Dec values for the object you want to observe. Current RA/Dec values can be obtained from astronomy software or from upcoming Micro Créatif astronomy apps that display coordinates for the observing date." data-fr="Pour une meilleure précision, entrez les valeurs AD/Déc actuelles de l’objet que vous voulez observer. Les valeurs AD/Déc actuelles peuvent être obtenues avec des logiciels d’astronomie ou avec de futures apps d’astronomie de Micro Créatif qui affichent les coordonnées pour la date d’observation."></p>
-
-<p data-en="During development, tests with known stars and matching observer coordinates showed agreement of about one arcsecond or better in the tested cases." data-fr="Pendant le développement, des tests avec des étoiles connues et des coordonnées d’observation correspondantes ont montré un accord d’environ une seconde d’arc ou mieux dans les cas testés."></p>
-
-<p class="note" data-en="Older catalog coordinates, such as J2000, can still be entered, but the calculated position may differ from the current sky position by several arcminutes." data-fr="Des coordonnées de catalogue plus anciennes, comme J2000, peuvent quand même être entrées, mais la position calculée peut différer de la position actuelle dans le ciel de plusieurs minutes d’arc."></p>
-
-<p class="note" data-en="Atmospheric refraction depends on real observing conditions. Near the horizon, local temperature, pressure, humidity, and terrain can affect the apparent altitude." data-fr="La réfraction atmosphérique dépend des conditions réelles d’observation. Près de l’horizon, la température locale, la pression, l’humidité et le terrain peuvent influencer l’altitude apparente."></p>
+<h2 data-i18n="k30"></h2>
+<p data-i18n="k31"></p>
+<p data-i18n="k32"></p>
+<p data-i18n="k33"></p>
+<p class="note" data-i18n="k34"></p>
+<p class="note" data-i18n="k35"></p>
 </section>
-
 <section class="card">
-<h2 data-en="Status" data-fr="État"></h2>
-<p data-en="Version 2.0 is being prepared for iPhone and iPad." data-fr="La version 2.0 est en préparation pour iPhone et iPad."></p>
-<a class="back-btn" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
+<h2 data-i18n="k36"></h2>
+<p data-i18n="k37"></p>
+<a class="back-btn" data-i18n="k38" href="index.html"></a>
 </section>
 </main>
-
 <footer>
 <p>© Micro Créatif</p>
-<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
+<p data-i18n="k39"></p>
 <p>Version 2.0</p>
-<p data-en="Privacy: This application does not collect, store, transmit, or share any personal information." data-fr="Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."></p>
+<p data-i18n="k40"></p>
 </footer>
-
 <script>
 const appsButton=document.getElementById("navApps");
 const menu=document.getElementById("appsMenu");
@@ -317,18 +322,7 @@ link.addEventListener("click",function(){
 menu.style.display="none";
 });
 });
-let currentLanguage = localStorage.getItem("mc_language") || "en";
-function applyLanguage(){
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.textContent = el.getAttribute("data-"+currentLanguage);
-});
-}
-function toggleLanguage(){
-currentLanguage = (currentLanguage==="en")?"fr":"en";
-localStorage.setItem("mc_language", currentLanguage);
-applyLanguage();
-}
-document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
+<script defer="" src="radec-calculator-languages.js"></script>
 </body>
 </html>

@@ -1,23 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- sol-and-stars.html -->
 <!-- Version 1.2 -->
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 10-language selector and page translations: 2026-08-16 -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sol and Stars / Sol et les étoiles – Micro Créatif</title>
-<meta name="description" content="Sol and Stars combines a detailed Solar System reference with a large Milky Way star catalogue. Explore physical information and real-time positions for the Sun and planets, then search and sort stars by name, position, distance, colour, motion, magnitude, and exoplanet status.">
-<meta name="keywords" content="Sol and Stars, solar system, Sun, planets, real-time planetary positions, Milky Way, Gaia catalogue, star catalogue, proper motion, star colour, exoplanets, light-years, parsecs, astronomy app, Micro Créatif">
-<meta name="author" content="Micro Créatif">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Sol and Stars – Micro Créatif">
-<meta property="og:description" content="Explore detailed Solar System information and a large sortable catalogue of Milky Way stars, including motion, colour, distance, and exoplanet data.">
-<meta property="og:url" content="https://microcreatif.ca/sol-and-stars.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_CA">
-<meta property="og:locale:alternate" content="fr_CA">
-<link rel="canonical" href="https://microcreatif.ca/sol-and-stars.html">
+<meta content="Sol and Stars combines a detailed Solar System reference with a large Milky Way star catalogue. Explore physical information and real-time positions for the Sun and planets, then search and sort stars by name, position, distance, colour, motion, magnitude, and exoplanet status." name="description"/>
+<meta content="Sol and Stars, solar system, Sun, planets, real-time planetary positions, Milky Way, Gaia catalogue, star catalogue, proper motion, star colour, exoplanets, light-years, parsecs, astronomy app, Micro Créatif" name="keywords"/>
+<meta content="Micro Créatif" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Sol and Stars – Micro Créatif" property="og:title"/>
+<meta content="Explore detailed Solar System information and a large sortable catalogue of Milky Way stars, including motion, colour, distance, and exoplanet data." property="og:description"/>
+<meta content="https://microcreatif.ca/sol-and-stars.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="en_CA" property="og:locale"/>
+<meta content="fr_CA" property="og:locale:alternate"/>
+<link href="https://microcreatif.ca/sol-and-stars.html" rel="canonical"/>
 <style>
 *{box-sizing:border-box;}
 body{
@@ -233,97 +235,97 @@ h1{font-size:38px;}
 .subtitle{font-size:18px;}
 .app-icon{width:96px;height:96px;}
 }
+
+/* Multilingual layout */
+.lang-btn option{color:#111;background:#fff;}
+html[dir="rtl"] .submenu{left:auto;right:0;text-align:right;}
+html[dir="rtl"] .grid,
+html[dir="rtl"] .feature-list,
+html[dir="rtl"] .advanced,
+html[dir="rtl"] .advanced-block,
+html[dir="rtl"] .card ul{text-align:right;}
+html[dir="rtl"] ul{padding-left:0;padding-right:24px;}
+html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
+html[dir="rtl"] .key-row{direction:ltr;}
+html[dir="rtl"] .key-row > span{direction:rtl;text-align:right;}
+html[dir="rtl"] .key-row code{direction:ltr;}
+@media (max-width:760px){nav{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
 <body>
-<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<img alt="Galaxy background – Micro Créatif astronomy apps" class="bg" src="images/galaxy-background.jpg"/>
 <div class="overlay"></div>
-
 <header>
-<nav aria-label="Main navigation">
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<nav aria-label="Main navigation" data-i18n-aria="mainNavigation">
+<a data-i18n="k01" href="index.html" id="navHome"></a>
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<a data-i18n="k02" id="navApps"></a>
 <div class="submenu" id="appsMenu">
-<a href="radec-calculator.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-<a href="virtual-telescope.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-<a href="sol-and-stars.html" data-en="Sol and Stars" data-fr="Sol et les étoiles"></a>
-<a href="alien-sky.html" data-en="Alien Sky" data-fr="Alien Sky"></a>
-<a href="time-travel.html" data-en="Time Travel" data-fr="Voyage dans le temps"></a>
+<a data-i18n="k03" href="radec-calculator.html"></a>
+<a data-i18n="k04" href="virtual-telescope.html"></a>
+<a data-i18n="k05" href="sol-and-stars.html"></a>
+<a data-i18n="k06" href="alien-sky.html"></a>
+<a data-i18n="k07" href="time-travel.html"></a>
 </div>
 </div>
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
-<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+<a data-i18n="k08" href="about.html" id="navAbout"></a>
+<a data-i18n="k09" href="contact.html" id="navContact"></a>
+<select class="lang-btn" id="languageSelect"></select>
 </nav>
 </header>
-
 <section class="hero">
-<div class="app-icon"><img src="images/Sol&Stars.png" alt="Sol and Stars app icon"></div>
-<h1 data-en="Sol and Stars" data-fr="Sol et les étoiles"></h1>
-<p class="subtitle" data-en="Two complete sections in one astronomy app: detailed information and real-time positions for the Sun and planets, plus a large Milky Way catalogue that can be searched, sorted, and compared in many ways." data-fr="Deux sections complètes dans une seule application d’astronomie : des informations détaillées et les positions en temps réel du Soleil et des planètes, ainsi qu’un vaste catalogue de la Voie lactée qu’on peut rechercher, trier et comparer de nombreuses façons."></p>
+<div class="app-icon"><img alt="Sol and Stars app icon" src="images/Sol&amp;Stars.png"/></div>
+<h1 data-i18n="k10"></h1>
+<p class="subtitle" data-i18n="k11"></p>
 </section>
-
-<section class="screenshots" aria-label="Sol and Stars screenshots">
-<div class="shot"><img src="images/SS-2.png" alt="Choose a planet or the Gaia catalogue screen"><p class="caption" data-en="Choose the Solar System section or open the Milky Way star catalogue." data-fr="Choisissez la section Système solaire ou ouvrez le catalogue d’étoiles de la Voie lactée."></p></div>
-<div class="shot"><img src="images/SS-3.png" alt="Planet information and present position screen"><p class="caption" data-en="Detailed physical information and current calculated coordinates for the Sun or a selected planet." data-fr="Informations physiques détaillées et coordonnées actuelles calculées pour le Soleil ou une planète sélectionnée."></p></div>
-<div class="shot"><img src="images/SS-1.png" alt="Gaia catalogue screen"><p class="caption" data-en="Large Milky Way catalogue, sortable by name, position, distance, colour, motion, magnitude, exoplanet status, and other available data." data-fr="Vaste catalogue de la Voie lactée, triable par nom, position, distance, couleur, mouvement, magnitude, présence d’exoplanètes et autres données disponibles."></p></div>
+<section aria-label="Sol and Stars screenshots" class="screenshots">
+<div class="shot"><img alt="Choose a planet or the Gaia catalogue screen" src="images/SS-2.png"/><p class="caption" data-i18n="k12"></p></div>
+<div class="shot"><img alt="Planet information and present position screen" src="images/SS-3.png"/><p class="caption" data-i18n="k13"></p></div>
+<div class="shot"><img alt="Gaia catalogue screen" src="images/SS-1.png"/><p class="caption" data-i18n="k14"></p></div>
 </section>
-
 <main class="content">
 <div class="cards">
-
 <div class="card">
-<h2 data-en="The Solar System" data-fr="Le Système solaire"></h2>
-<p data-en="Explore the Sun and every planet through detailed reference information, including mass, size, atmosphere, orbital characteristics, and other physical data. The app also calculates each object’s current position and coordinates in real time." data-fr="Explorez le Soleil et chaque planète grâce à des informations de référence détaillées, notamment la masse, les dimensions, l’atmosphère, les caractéristiques orbitales et d’autres données physiques. L’application calcule aussi en temps réel la position et les coordonnées actuelles de chaque objet."></p>
+<h2 data-i18n="k15"></h2>
+<p data-i18n="k16"></p>
 </div>
-
 <div class="card">
-<h2 data-en="The Milky Way catalogue" data-fr="Le catalogue de la Voie lactée"></h2>
-<p data-en="The second section opens a large catalogue of stars in the Milky Way, with available data such as position, distance, brightness, colour, motion, spectral information, and known exoplanets." data-fr="La seconde section ouvre un vaste catalogue d’étoiles de la Voie lactée, avec les données disponibles telles que la position, la distance, la luminosité, la couleur, le mouvement, les informations spectrales et les exoplanètes connues."></p>
+<h2 data-i18n="k17"></h2>
+<p data-i18n="k18"></p>
 </div>
-
 <div class="card">
-<h2 data-en="Current coordinates" data-fr="Coordonnées actuelles"></h2>
-<p data-en="For the Sun, planets, and catalogue stars, the app calculates current right ascension and declination for the selected date, using the available motion and astronomical data." data-fr="Pour le Soleil, les planètes et les étoiles du catalogue, l’application calcule l’ascension droite et la déclinaison actuelles pour la date choisie, à partir des données astronomiques et de mouvement disponibles."></p>
+<h2 data-i18n="k19"></h2>
+<p data-i18n="k20"></p>
 </div>
-
 <div class="card">
-<h2 data-en="Sortable data" data-fr="Données triables"></h2>
-<p data-en="Sort and compare the catalogue by name, sky position, distance, magnitude, colour, motion, exoplanet status, and other available fields." data-fr="Triez et comparez le catalogue par nom, position dans le ciel, distance, magnitude, couleur, mouvement, présence d’exoplanètes et autres champs disponibles."></p>
+<h2 data-i18n="k21"></h2>
+<p data-i18n="k22"></p>
 </div>
-
 <div class="card">
-<h2 data-en="Distance units" data-fr="Unités de distance"></h2>
-<p data-en="Distances can be displayed in light-years or parsecs." data-fr="Les distances peuvent être affichées en années-lumière ou en parsecs."></p>
+<h2 data-i18n="k23"></h2>
+<p data-i18n="k24"></p>
 </div>
-
 <div class="card">
-<h2 data-en="For observers" data-fr="Pour les observateurs"></h2>
-<p data-en="Useful as both a Solar System reference and a professional-style stellar database for observation planning, comparison, research, and exploration." data-fr="Utile à la fois comme référence sur le Système solaire et comme base de données stellaire de type professionnel pour préparer des observations, comparer, rechercher et explorer."></p>
+<h2 data-i18n="k25"></h2>
+<p data-i18n="k26"></p>
 </div>
-
 <div class="card wide">
-<h2 data-en="Main idea" data-fr="Idée principale"></h2>
-<p data-en="Sol and Stars gives equal importance to its two main sections: a detailed, continuously calculated view of our Solar System and a powerful Milky Way catalogue for exploring and comparing stars." data-fr="Sol et les étoiles accorde une importance égale à ses deux sections principales : une présentation détaillée et calculée en continu de notre Système solaire, et un puissant catalogue de la Voie lactée pour explorer et comparer les étoiles."></p>
+<h2 data-i18n="k27"></h2>
+<p data-i18n="k28"></p>
 </div>
-
 </div>
-
 <section class="status">
-<h2 data-en="Status" data-fr="Statut"></h2>
-<p data-en="Sol and Stars is being redesigned around two main choices on its opening screen: the Solar System and the Milky Way star catalogue. The modern version is being prepared for iPhone and iPad." data-fr="Sol et les étoiles est en cours de refonte autour de deux choix principaux sur son écran d’accueil : le Système solaire et le catalogue d’étoiles de la Voie lactée. La version moderne est en préparation pour iPhone et iPad."></p>
-<a class="back" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
+<h2 data-i18n="k29"></h2>
+<p data-i18n="k30"></p>
+<a class="back" data-i18n="k31" href="index.html"></a>
 </section>
 </main>
-
 <footer>
 <p>© Micro Créatif</p>
-<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
+<p data-i18n="k32"></p>
 <p>Version 1.2</p>
-<p data-en="Privacy: This application does not collect, store, transmit, or share any personal information." data-fr="Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."></p>
+<p data-i18n="k33"></p>
 </footer>
-
 <script>
 const appsButton=document.getElementById("navApps");
 const menu=document.getElementById("appsMenu");
@@ -340,22 +342,7 @@ if(!menu.contains(e.target) && e.target!==appsButton){menu.style.display="none";
 document.querySelectorAll(".submenu a").forEach(function(link){
 link.addEventListener("click",function(){menu.style.display="none";});
 });
-
-let currentLanguage=localStorage.getItem("mc_language")||"en";
-
-function applyLanguage(){
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.textContent=el.getAttribute("data-"+currentLanguage);
-});
-}
-
-function toggleLanguage(){
-currentLanguage=(currentLanguage==="en")?"fr":"en";
-localStorage.setItem("mc_language",currentLanguage);
-applyLanguage();
-}
-
-document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
+<script defer="" src="sol-and-stars-languages.js"></script>
 </body>
 </html>

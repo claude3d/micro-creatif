@@ -1,23 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- alien-sky.html -->
 <!-- Version 2.5 -->
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 10-language selector and page translations: 2026-08-16 -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alien Sky – See the Sky from Another Star | Micro Créatif</title>
-<meta name="description" content="Alien Sky by Micro Créatif lets you leave Earth, travel to another star, and see how the real sky changes from a different place in the galaxy. Compare Earth Sky, look forward or back during the journey, and explore a science-based stellar view.">
-<meta name="keywords" content="Alien Sky, astronomy app, HYG 4.2 catalogue, Hipparcos, sky from another star, interstellar travel simulation, stellar parallax, proper motion, precession, nutation, annual aberration, Milky Way, planetarium, Micro Créatif">
-<meta name="author" content="Micro Créatif">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Alien Sky – See the Sky from Another Star | Micro Créatif">
-<meta property="og:description" content="Travel from Earth to another star and watch the real sky change around you.">
-<meta property="og:url" content="https://microcreatif.ca/alien-sky.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_CA">
-<meta property="og:locale:alternate" content="fr_CA">
-<link rel="canonical" href="https://microcreatif.ca/alien-sky.html">
+<meta content="Alien Sky by Micro Créatif lets you leave Earth, travel to another star, and see how the real sky changes from a different place in the galaxy. Compare Earth Sky, look forward or back during the journey, and explore a science-based stellar view." name="description"/>
+<meta content="Alien Sky, astronomy app, HYG 4.2 catalogue, Hipparcos, sky from another star, interstellar travel simulation, stellar parallax, proper motion, precession, nutation, annual aberration, Milky Way, planetarium, Micro Créatif" name="keywords"/>
+<meta content="Micro Créatif" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Alien Sky – See the Sky from Another Star | Micro Créatif" property="og:title"/>
+<meta content="Travel from Earth to another star and watch the real sky change around you." property="og:description"/>
+<meta content="https://microcreatif.ca/alien-sky.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="en_CA" property="og:locale"/>
+<meta content="fr_CA" property="og:locale:alternate"/>
+<link href="https://microcreatif.ca/alien-sky.html" rel="canonical"/>
 <style>
 *{box-sizing:border-box;}
 body{
@@ -325,199 +327,140 @@ h1{font-size:42px;}
 .feature-list{padding:20px;}
 li{font-size:17px;}
 }
+
+/* Multilingual layout */
+.lang-btn option{color:#111;background:#fff;}
+html[dir="rtl"] .submenu{left:auto;right:0;text-align:right;}
+html[dir="rtl"] .grid,
+html[dir="rtl"] .feature-list,
+html[dir="rtl"] .advanced,
+html[dir="rtl"] .advanced-block,
+html[dir="rtl"] .card ul{text-align:right;}
+html[dir="rtl"] ul{padding-left:0;padding-right:24px;}
+html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
+html[dir="rtl"] .key-row{direction:ltr;}
+html[dir="rtl"] .key-row > span{direction:rtl;text-align:right;}
+html[dir="rtl"] .key-row code{direction:ltr;}
+@media (max-width:760px){nav{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
-
 <body>
-<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<img alt="Galaxy background – Micro Créatif astronomy apps" class="bg" src="images/galaxy-background.jpg"/>
 <div id="stars"></div>
-
 <header>
-<nav aria-label="Main navigation">
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<nav aria-label="Main navigation" data-i18n-aria="mainNavigation">
+<a data-i18n="k01" href="index.html" id="navHome"></a>
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<a data-i18n="k02" id="navApps"></a>
 <div class="submenu" id="appsMenu">
-<a href="radec-calculator.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-<a href="virtual-telescope.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-<a href="sol-and-stars.html" data-en="Sol and Stars" data-fr="Sol et les étoiles"></a>
-<a href="alien-sky.html" data-en="Alien Sky" data-fr="Alien Sky"></a>
-<a href="time-travel.html" data-en="Time Travel" data-fr="Voyage dans le temps"></a>
+<a data-i18n="k03" href="radec-calculator.html"></a>
+<a data-i18n="k04" href="virtual-telescope.html"></a>
+<a data-i18n="k05" href="sol-and-stars.html"></a>
+<a data-i18n="k06" href="alien-sky.html"></a>
+<a data-i18n="k07" href="time-travel.html"></a>
 </div>
 </div>
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
-<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+<a data-i18n="k08" href="about.html" id="navAbout"></a>
+<a data-i18n="k09" href="contact.html" id="navContact"></a>
+<select class="lang-btn" id="languageSelect"></select>
 </nav>
 </header>
-
-<section class="hero" aria-label="Alien Sky introduction">
+<section aria-label="Alien Sky introduction" class="hero">
 <div class="app-icon">
-<img src="images/AlienSky.png" alt="Alien Sky app icon">
+<img alt="Alien Sky app icon" src="images/AlienSky.png"/>
 </div>
-<h1 data-en="Alien Sky" data-fr="Alien Sky"></h1>
-<p class="subtitle"
-data-en="Leave Earth, travel to another star, and watch the real sky change around you."
-data-fr="Quittez la Terre, voyagez vers une autre étoile et observez le vrai ciel se transformer autour de vous."></p>
+<h1 data-i18n="k10"></h1>
+<p class="subtitle" data-i18n="k11"></p>
 </section>
-
 <main class="content">
-
 <div class="mode-grid">
 <div class="mode-card">
-<h2 data-en="Choose a destination" data-fr="Choisissez une destination"></h2>
-<p
-data-en="Select a nearby star or search the stellar catalogue. Alien Sky begins with the sky from your location on Earth, then points the journey toward the star you selected."
-data-fr="Choisissez une étoile proche ou recherchez-la dans le catalogue stellaire. Alien Sky commence par le ciel depuis votre position sur Terre, puis oriente le voyage vers l’étoile choisie."></p>
+<h2 data-i18n="k12"></h2>
+<p data-i18n="k13"></p>
 </div>
-
 <div class="mode-card">
-<h2 data-en="Travel through space" data-fr="Voyagez dans l’espace"></h2>
-<p
-data-en="Move from Earth to the destination and return again. Look forward along the route or turn around to see how the Sun and the familiar constellations change behind you."
-data-fr="Voyagez de la Terre jusqu’à votre destination, puis revenez. Regardez vers l’avant ou retournez-vous pour voir comment le Soleil et les constellations familières se transforment derrière vous."></p>
+<h2 data-i18n="k14"></h2>
+<p data-i18n="k15"></p>
 </div>
 </div>
-
 <div class="card-grid">
 <div class="card">
-<h2 data-en="A real changing sky" data-fr="Un vrai ciel en transformation"></h2>
-<p
-data-en="Stars are placed using real positions, distances, brightnesses, colours, and motions. Nearby stars shift the most, while distant constellations change more subtly."
-data-fr="Les étoiles sont placées selon leurs vraies positions, distances, luminosités, couleurs et mouvements. Les étoiles proches se déplacent davantage, tandis que les constellations lointaines changent plus subtilement."></p>
+<h2 data-i18n="k16"></h2>
+<p data-i18n="k17"></p>
 </div>
-
 <div class="card">
-<h2 data-en="Earth Sky comparison" data-fr="Comparaison avec le ciel terrestre"></h2>
-<p
-data-en="Return instantly to Earth Sky to compare the familiar view with the sky seen during the journey or from the destination star."
-data-fr="Revenez instantanément au ciel terrestre pour comparer la vue familière avec celle du voyage ou celle observée depuis l’étoile de destination."></p>
+<h2 data-i18n="k18"></h2>
+<p data-i18n="k19"></p>
 </div>
-
 <div class="card">
-<h2 data-en="The Solar System fades away" data-fr="Le Système solaire s’éloigne"></h2>
-<p
-data-en="The Sun, Moon, and planets begin in their correct Earth-sky positions. As you leave the Solar System, the Moon and planets disappear and the Sun becomes a distant point called Sol."
-data-fr="Le Soleil, la Lune et les planètes commencent à leur position correcte dans le ciel terrestre. En quittant le Système solaire, la Lune et les planètes disparaissent et le Soleil devient un point lointain nommé Sol."></p>
+<h2 data-i18n="k20"></h2>
+<p data-i18n="k21"></p>
 </div>
 </div>
-
 <div class="lower-row">
 <div class="card">
-<h2 data-en="The whole sky" data-fr="Le ciel entier"></h2>
-<p
-data-en="A wide planetarium-style view shows the Milky Way, constellation lines, star names, directions, the Sun, Moon, and visible planets. The view can be panned and zoomed on iPhone, iPad, and Mac."
-data-fr="Une large vue de style planétarium montre la Voie lactée, les lignes des constellations, les noms des étoiles, les directions, le Soleil, la Lune et les planètes visibles. La vue peut être déplacée et agrandie sur iPhone, iPad et Mac."></p>
+<h2 data-i18n="k22"></h2>
+<p data-i18n="k23"></p>
 </div>
-
 <section class="feature-list">
-<h2 data-en="Current features" data-fr="Fonctions actuelles"></h2>
+<h2 data-i18n="k24"></h2>
 <ul>
-<li
-data-en="Begin with the real sky from the observer’s location."
-data-fr="Commencer avec le vrai ciel depuis la position de l’observateur."></li>
-<li
-data-en="Choose a destination star from a list or search the catalogue."
-data-fr="Choisir une étoile de destination dans une liste ou rechercher dans le catalogue."></li>
-<li
-data-en="Travel outward or return to Earth while watching the sky change."
-data-fr="Voyager vers l’extérieur ou revenir vers la Terre en observant le ciel se transformer."></li>
-<li
-data-en="Look forward toward the destination or backward toward the Sun."
-data-fr="Regarder vers l’étoile de destination ou vers l’arrière en direction du Soleil."></li>
-<li
-data-en="Show the Milky Way, constellation lines, labels, directions, Sun, Moon, and planets."
-data-fr="Afficher la Voie lactée, les constellations, les noms, les directions, le Soleil, la Lune et les planètes."></li>
-<li
-data-en="Display stellar-system information and confirmed exoplanets when available."
-data-fr="Afficher les renseignements sur le système stellaire et les exoplanètes confirmées lorsqu’ils sont disponibles."></li>
+<li data-i18n="k25"></li>
+<li data-i18n="k26"></li>
+<li data-i18n="k27"></li>
+<li data-i18n="k28"></li>
+<li data-i18n="k29"></li>
+<li data-i18n="k30"></li>
 </ul>
 </section>
 </div>
-
-
 <section class="advanced">
-<h2 data-en="For hardcore users" data-fr="Pour les utilisateurs chevronnés"></h2>
-
+<h2 data-i18n="k31"></h2>
 <div class="advanced-grid">
-
 <div class="advanced-block wide">
-<h3 data-en="Catalogues and astronomical corrections" data-fr="Catalogues et corrections astronomiques"></h3>
-
-<p
-data-en="Alien Sky uses the complete HYG 4.2 master catalogue: 119,625 stars, including Hipparcos identifiers and astrometric data where available. Of these, 109,393 stars contain space-motion information. The app also includes constellation-line data and a catalogue of confirmed exoplanet-host systems."
-data-fr="Alien Sky utilise le catalogue maître HYG 4.2 complet : 119 625 étoiles, avec les identifiants Hipparcos et les données astrométriques lorsqu’ils sont disponibles. Parmi elles, 109 393 étoiles possèdent des données de mouvement dans l’espace. L’app comprend également les tracés des constellations et un catalogue de systèmes possédant des exoplanètes confirmées."></p>
-
+<h3 data-i18n="k32"></h3>
+<p data-i18n="k33"></p>
 <ul>
-<li
-data-en="The catalogue starts at epoch J2000.0. At launch, each star with motion data is advanced to the current date using its three-dimensional Cartesian space velocity. Its X, Y and Z position, distance, right ascension, declination and apparent brightness are then recalculated."
-data-fr="Le catalogue part de l’époque J2000.0. Au lancement, chaque étoile possédant des données de mouvement est avancée jusqu’à la date actuelle à l’aide de sa vitesse spatiale cartésienne en trois dimensions. Sa position X, Y et Z, sa distance, son ascension droite, sa déclinaison et sa luminosité apparente sont ensuite recalculées."></li>
-
-<li
-data-en="For Earth Sky, the engine applies precession, nutation and annual aberration, then uses apparent sidereal time and the observer’s latitude, longitude and altitude to place the sky correctly above the local horizon."
-data-fr="Pour le ciel terrestre, le moteur applique la précession, la nutation et l’aberration annuelle, puis utilise le temps sidéral apparent ainsi que la latitude, la longitude et l’altitude de l’observateur pour placer correctement le ciel au-dessus de l’horizon local."></li>
-
-<li
-data-en="The Sun, Moon and planets are calculated for the observer’s date and location. The Moon uses a topocentric position and its visible phase."
-data-fr="Le Soleil, la Lune et les planètes sont calculés pour la date et la position de l’observateur. La Lune utilise une position topocentrique et sa phase visible."></li>
-
-<li
-data-en="During interstellar travel, Earth-only apparent corrections are deliberately removed. The app works in a physical fixed-J2000 three-dimensional frame, so parallax and the changing shapes of constellations arise naturally from the observer’s new position in space."
-data-fr="Pendant le voyage interstellaire, les corrections apparentes propres à l’observation depuis la Terre sont volontairement retirées. L’app travaille dans un repère physique tridimensionnel fixe J2000, de sorte que la parallaxe et la transformation des constellations résultent naturellement de la nouvelle position de l’observateur dans l’espace."></li>
+<li data-i18n="k34"></li>
+<li data-i18n="k35"></li>
+<li data-i18n="k36"></li>
+<li data-i18n="k37"></li>
 </ul>
 </div>
-
 <div class="advanced-block">
-<h3 data-en="Keyboard controls" data-fr="Commandes au clavier"></h3>
-
+<h3 data-i18n="k38"></h3>
 <div class="key-row">
 <code>← → ↑ ↓</code>
-<span data-en="Move the sky left, right, up or down." data-fr="Déplacer le ciel vers la gauche, la droite, le haut ou le bas."></span>
+<span data-i18n="k39"></span>
 </div>
-
 <div class="key-row">
 <code>+ / −</code>
-<span data-en="Zoom in or zoom out." data-fr="Effectuer un zoom avant ou arrière."></span>
+<span data-i18n="k40"></span>
 </div>
-
 <div class="key-row">
 <code>0</code>
-<span data-en="Reset the sky view." data-fr="Réinitialiser la vue du ciel."></span>
+<span data-i18n="k41"></span>
 </div>
-
-<p
-data-en="Dragging and pinch-to-zoom remain available on touch devices."
-data-fr="Le déplacement au doigt et le zoom par pincement restent disponibles sur les appareils tactiles."></p>
+<p data-i18n="k42"></p>
 </div>
-
 <div class="advanced-block">
-<h3 data-en="The Easter egg" data-fr="L’œuf de Pâques"></h3>
-
-<p
-data-en="Tap the Alien Sky title to switch to a Stellarium-comparison camera. In Earth Sky, the selected destination is centred while the local zenith remains toward the top. During Travel, the destination stays centred with a Stellarium-style camera roll. The N, E, S and W markers follow the active camera. Tap the title again to return to the normal North-up view."
-data-fr="Touchez le titre Alien Sky pour passer à une caméra de comparaison avec Stellarium. Dans le ciel terrestre, la destination choisie est centrée tandis que le zénith local demeure orienté vers le haut. Pendant le voyage, la destination reste centrée avec une orientation de caméra de style Stellarium. Les repères N, E, S et O suivent la caméra active. Touchez de nouveau le titre pour revenir à la vue normale avec le nord en haut."></p>
+<h3 data-i18n="k43"></h3>
+<p data-i18n="k44"></p>
 </div>
-
 </div>
 </section>
-
 <section class="status">
-<h2 data-en="Status" data-fr="Statut"></h2>
-<p
-data-en="Alien Sky is under active development for iPhone, iPad, and Mac. Its astronomy engine, interstellar travel view, Earth Sky comparison, and principal controls are now working."
-data-fr="Alien Sky est en développement actif pour iPhone, iPad et Mac. Son moteur astronomique, sa vue de voyage interstellaire, la comparaison avec le ciel terrestre et ses commandes principales fonctionnent maintenant."></p>
-<a class="btn" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
+<h2 data-i18n="k45"></h2>
+<p data-i18n="k46"></p>
+<a class="btn" data-i18n="k47" href="index.html"></a>
 </section>
-
 </main>
-
 <footer>
 <p>© Micro Créatif</p>
-<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
+<p data-i18n="k48"></p>
 <p>Version 2.5</p>
-<p data-en="Privacy: Alien Sky does not collect or transmit personal information. The app uses your location only to calculate the sky. Your location is stored locally in the app on this device and is not transmitted or shared." data-fr="Confidentialité : Alien Sky ne collecte ni ne transmet de renseignements personnels. L’application utilise votre position uniquement pour calculer le ciel. Votre position est enregistrée localement dans l’application sur cet appareil; elle n’est ni transmise ni partagée."></p>
+<p data-i18n="k49"></p>
 </footer>
-
 <script>
 function createStars(){
 const container=document.getElementById("stars");
@@ -553,22 +496,7 @@ link.addEventListener("click",function(){
 menu.style.display="none";
 });
 });
-
-let currentLanguage = localStorage.getItem("mc_language") || "en";
-
-function applyLanguage(){
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.textContent = el.getAttribute("data-"+currentLanguage);
-});
-}
-
-function toggleLanguage(){
-currentLanguage = (currentLanguage==="en")?"fr":"en";
-localStorage.setItem("mc_language", currentLanguage);
-applyLanguage();
-}
-
-document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
+<script defer="" src="alien-sky-languages.js"></script>
 </body>
 </html>
