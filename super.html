@@ -1,314 +1,78 @@
 <!DOCTYPE html>
-
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portrait d'informaticien - Claude Johnson : super-programmeur !</title>
-    <style>
-        body {
-            font-family: Georgia, 'Times New Roman', serif;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            line-height: 1.6;
-            background: #f9f6f0;
-            color: #333;
-        }
-        h1, h2 {
-            font-family: 'Arial Black', sans-serif;
-            text-align: center;
-        }
-        .header {
-            text-align: center;
-            border-bottom: 3px solid #000;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        .title {
-            font-size: 2.2em;
-            margin: 15px 0;
-        }
-        .subtitle {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin: 10px 0 20px 0;
-        }
-        img.main-photo {
-            width: 280px;
-            float: right;
-            margin: 10px 0 20px 30px;
-            border: 2px solid #000;
-        }
-        .byline {
-            font-style: italic;
-            text-align: left;
-            margin-bottom: 30px;
-        }
-        .columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        @media (max-width: 768px) {
-            .columns {
-                grid-template-columns: 1fr;
-            }
-        }
-        .caption {
-            font-size: 0.9em;
-            text-align: center;
-            margin-top: 5px;
-            font-style: italic;
-        }
-        .article-text {
-            text-align: justify;
-        }
-        .section-title {
-            font-weight: bold;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 40px;
-            justify-content: center;
-            border-top: 1px solid #eee;
-            padding-top: 30px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #34495e;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Helvetica', sans-serif;
-            font-size: 0.9em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #2980b9;
-        }
-        @media (max-width: 600px) {
-            .nav-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    
-        /* Micro Créatif site navigation */
-        .site-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1000;
-            margin-bottom: 24px;
-            padding: 0 0 18px;
-            border-bottom: 1px solid #ddd;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .site-nav a,
-        .site-nav button {
-            color: #2c3e50;
-            background: transparent;
-            border: 0;
-            padding: 6px 0;
-            text-decoration: none;
-            font: inherit;
-            font-size: 16px;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .site-nav a:hover,
-        .site-nav button:hover {
-            color: #2980b9;
-        }
-
-        .site-dropdown {
-            position: relative;
-        }
-
-        .site-submenu {
-            display: none;
-            position: absolute;
-            top: 34px;
-            left: 50%;
-            transform: translateX(-50%);
-            min-width: 240px;
-            padding: 8px 0;
-            background: #fff;
-            border: 1px solid #d4d8dc;
-            border-radius: 10px;
-            box-shadow: 0 8px 22px rgba(0,0,0,0.16);
-            text-align: left;
-            z-index: 1100;
-        }
-
-        .site-submenu.open {
-            display: block;
-        }
-
-        .site-submenu a {
-            display: block;
-            padding: 9px 15px;
-            font-size: 15px;
-        }
-
-        .site-submenu a:hover {
-            background: #f1f4f7;
-        }
-
-        .site-lang {
-            border: 1px solid #b8c0c8 !important;
-            border-radius: 16px !important;
-            padding: 4px 11px !important;
-        }
-
-        @media (max-width: 600px) {
-            .site-nav {
-                gap: 15px;
-            }
-
-            .site-nav a,
-            .site-nav button {
-                font-size: 14px;
-            }
-
-            .site-submenu {
-                position: fixed;
-                top: 70px;
-                left: 50%;
-                width: min(280px, calc(100vw - 32px));
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portrait of a Computer Scientist - Claude Johnson: super-programmer!</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:900px;margin:20px auto;padding:20px;line-height:1.6;background:#f9f6f0;color:#333;}
+h1,h2{font-family:'Arial Black',sans-serif;text-align:center;}
+.header{text-align:center;border-bottom:3px solid #000;padding-bottom:10px;margin-bottom:30px;}
+.title{font-size:2.2em;margin:15px 0;}
+.subtitle{font-size:1.8em;font-weight:bold;margin:10px 0 20px;}
+img.main-photo{width:280px;float:right;margin:10px 0 20px 30px;border:2px solid #000;}
+.byline{font-style:italic;text-align:left;margin-bottom:30px;}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.caption{font-size:.9em;text-align:center;margin-top:5px;font-style:italic;}
+.article-text{text-align:justify;}
+.section-title{font-weight:bold;margin-top:25px;margin-bottom:10px;}
+.nav-buttons{display:flex;gap:15px;margin-top:40px;justify-content:center;border-top:1px solid #eee;padding-top:30px;}
+.btn{display:inline-block;padding:10px 20px;background:#34495e;color:white;text-decoration:none;border-radius:5px;font-family:Helvetica,sans-serif;font-size:.9em;font-weight:bold;}
+.btn:hover{background:#2980b9;}
+.site-nav{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;position:relative;z-index:1000;margin-bottom:24px;padding:0 0 18px;border-bottom:1px solid #ddd;font-family:Arial,Helvetica,sans-serif;}
+.site-nav a,.site-nav button,.site-nav select{color:#2c3e50;background:transparent;font:inherit;font-size:16px;white-space:nowrap;}
+.site-nav a,.site-nav button{border:0;padding:6px 0;text-decoration:none;cursor:pointer;}
+.site-nav a:hover,.site-nav button:hover{color:#2980b9;}
+.site-dropdown{position:relative;}
+.site-submenu{display:none;position:absolute;top:34px;left:50%;transform:translateX(-50%);min-width:240px;padding:8px 0;background:#fff;border:1px solid #d4d8dc;border-radius:10px;box-shadow:0 8px 22px rgba(0,0,0,.16);text-align:left;z-index:1100;}
+.site-submenu.open{display:block;}
+.site-submenu a{display:block;padding:9px 15px;font-size:15px;}
+.site-submenu a:hover{background:#f1f4f7;}
+.site-lang{border:1px solid #b8c0c8 !important;border-radius:16px !important;padding:4px 11px !important;}
+html[dir="rtl"] .site-submenu{text-align:right;}
+html[dir="rtl"] .byline{text-align:right;}
+html[dir="rtl"] img.main-photo{float:left;margin:10px 30px 20px 0;}
+@media(max-width:768px){.columns{grid-template-columns:1fr;}}
+@media(max-width:600px){
+.nav-buttons{flex-direction:column;align-items:center;}
+.btn{width:100%;text-align:center;box-sizing:border-box;}
+.site-nav{gap:15px;}
+.site-nav a,.site-nav button,.site-nav select{font-size:14px;}
+.site-submenu{position:fixed;top:70px;left:50%;width:min(280px,calc(100vw - 32px));}
+}
+</style>
 </head>
 <body>
-
-
-<nav class="site-nav" aria-label="Navigation principale">
-    <a href="index.html">Accueil</a>
-    <div class="site-dropdown">
-        <button type="button" class="site-apps-button" aria-expanded="false">Apps</button>
-        <div class="site-submenu">
-            <a href="radec-calculator.html">AD / Déc / AZ / Alt</a>
-            <a href="virtual-telescope.html">Télescope virtuel</a>
-            <a href="sol-and-stars.html">Sol et les étoiles</a>
-            <a href="alien-sky.html">Alien Sky</a>
-            <a href="time-travel.html">Voyage dans le temps</a>
-        </div>
-    </div>
-    <a href="about.html">À propos</a>
-    <a href="contact.html">Contact</a>
-    <a href="superE.html" class="site-lang" aria-label="English version">🌐</a>
+<nav class="site-nav" id="siteNav">
+<a id="navHome" href="index.html"></a>
+<div class="site-dropdown">
+<button type="button" id="navApps" class="site-apps-button" aria-expanded="false"></button>
+<div class="site-submenu">
+<a id="appRadec" href="radec-calculator.html"></a>
+<a id="appVirtualTelescope" href="virtual-telescope.html"></a>
+<a id="appSolAndStars" href="sol-and-stars.html"></a>
+<a id="appAlienSky" href="alien-sky.html"></a>
+<a id="appTimeTravelSky" href="time-travel.html"></a>
+</div>
+</div>
+<a id="navAbout" href="about.html"></a>
+<a id="navContact" href="contact.html"></a>
+<select id="languageSelect" class="site-lang"></select>
 </nav>
-
-
-<div class="header">
-    <h1>Portrait d'informaticien</h1>
-</div>
-
-<h2 class="title">Claude Johnson entre le vidéotex et le micro-ordinateur :</h2>
-<h2 class="subtitle">Métier: super-programmeur !</h2>
-
-<p class="byline">par Marc Sévigny</p>
-
-<img src="images/super.jpg" alt="Claude Johnson" class="main-photo">
-<p class="caption">Claude Johnson: une ex-marin - emporté par la vague du micro-ordinateur et du vidéotex.</p>
-
+<div class="header"><h1 id="portraitHeader"></h1></div>
+<h2 class="title" id="articleTitle"></h2>
+<h2 class="subtitle" id="articleSubtitle"></h2>
+<p class="byline" id="byline"></p>
+<img src="images/super.jpg" alt="Claude Johnson" class="main-photo" id="photo">
+<p class="caption" id="caption"></p>
 <div class="columns">
-
-    <!-- Left Column -->
-    <div class="article-text">
-        <p>La physique, la météorologie, la biologie, l'archéologie, Claude Johnson a touché à tous ces domaines. Il a même été marin ! Et l'informatique dans tout ça ? D'abord un élément de sa formation scientifique, c'est devenu ensuite un hobby, puis enfin un métier. Il a réalisé plusieurs croyant ce que plusieurs croyaient impossible, comme adapter la technologie Télidon sur micro-ordinateur.</p>
-
-        <p>Ses produits se sont avérés tellement intéressants qu'ils ont donné naissance à une compagnie: Formic, Inc., qui compte actuellement huit employés et dont le chiffre d'affaire atteindra cette année le million.</p>
-
-        <p class="section-title">Une rage d'apprendre</p>
-        <p>L'idéal de Claude Johnson aurait été de pouvoir aborder un champ d'étude par année. Après avoir complété un bac en physique, il entreprend successivement deux projets de maîtrise: un en biophysique, qu'il abandonne bientôt pour l'archéologie. Mais comme son éclectisme lui cause certains problèmes sur le plan de la gestion de ses études, il décide de s'orienter autrement en participant à des cours en météorologie. Les cours l'emballent, mais le travail qu'on lui offre ensuite beaucoup moins.</p>
-
-        <p>Passionné des voyages, Claude Johnson parvient à se faire embaucher sur les navires de la marine marchande. «Ça payait bien, dit-il, et ça m'a permis de prendre de longues vacances pour voyager à mon aise». Il a été en Europe, en Asie et au Pérou, où il a rencontré sa future femme.</p>
-
-        <p>Entre tous ses déplacements, Claude Johnson ne se chôme pas. Il va enseigner la biologie à Sept-Îles durant un an et revient ensuite à Montréal où, après avoir obtenu un certificat en enseignement, il donne des cours du soir en informatique.</p>
-
-        <p>Le club Apple et Vidéotron c'est avec l'arrivée des micro-ordinateurs qu'il développe vraiment son goût pour l'informatique et qu'il en fait sa principale activité. La fondation, il y a cinq ans, d'un club d'amateurs de micros Apple y est pour quelque chose. Ce club réunissait quelques personnes, dont plusieurs professionnels de l'informatique, qui voyaient le micro-ordinateur comme un hobby et qui souhaitaient mettre en commun leurs expériences et leurs découvertes. C'est l'occasion pour Claude Johnson d'approfondir ses connaissances par rapport au nouvel outil, ce qui lui mène bientôt à explorer le domaine de l'électronique et des circuits logiques. Il fait si bien que l'Université du Québec n'hésite pas à l'engager pour qu'il poursuive ses recherches au département de l'informatique.</p>
-
-        <p>À ce moment là, rappelle-t-il, les bons programmeurs sur micro étaient rares et lorsque je me suis retrouvé chez Vidéotron pour mettre sur pied le département d'informatique, j'étais mon seul patron. Chez Vidéotron, il invente des jeux et traduit des logiciels américains dans le cadre d'une expérience de diffusion à des abonnés via une ligne téléphonique.</p>
-
-        <p>Par ailleurs, on y expérimentait la transmission de vidéotex par câble, selon le protocole graphique de création de pages Télidon, alors en plein développement. Chargé d'utiliser le micro-ordinateur et de reproduire un semblant de Télidon sur le câble en attendant la mise en place d'une technologie plus coûteuse, Claude Johnson a de nouveau trouvé le moyen d'expatier tout le monde. Lorsqu'on s'est rendu compte de la qualité du «semblant Télidon» qu'il avait créé sur micro, on lui a confié la tâche de pousser plus loin ses recherches dans le sens d'une adaptation pure et simple de Télidon sur micro-ordinateur Apple. Cela impliquait la création de logiciels particuliers remplaçant ce qui pouvait se faire sur de plus gros systèmes, tel Norpak, et de les rendre compatibles avec les standards.</p>
-    </div>
-
-    <!-- Right Column -->
-    <div class="article-text">
-        <p class="section-title">Microcréatif et Formic</p>
-        <p>C'est suite à cette expérience de plus de trois ans chez Vidéotron que Claude Johnson a décidé de fonder une compagnie à son compte, Microcréatif, pour la réalisation de divers contrats, comme programmeur, traducteur de logiciel et expert en Télidon. Il a ainsi travaillé pour le Ministère de l'Éducation du Québec et pour le Ministère fédéral des communications. «Je recevais plus de contrats que je pouvais en faire, raconte-t-il, donc, je pouvais choisir ce qui m'intéressait le plus». C'est-à-dire le travail qui demandait une certaine créativité ou qui recoupait ses propres intérêts comme programmeur.</p>
-
-        <p>Parallèlement aux activités de Microcréatif, Claude Johnson a repris certains programmes qu'il avait développés en Basic chez Vidéotron en utilisant cette fois le langage «assembleur», avec lequel il était plus familier. Il a ainsi créé un certain nombre de produits originaux qu'il a pu commercialiser par l'entremise de Formic, une compagnie à laquelle il s'est joint à part entière un peu plus tard.</p>
-
-        <p class="section-title">Micro-vidéotex</p>
-        <p>Parmi les principales réalisations de Claude Johnson, il faut mentionner un programme de création de pages, intégrant un jeu de 220,000 couleurs, destiné à un micro-ordinateur couplé à un décodeur Télidon. Il a développé aussi un Basic Télidon (Basitel) pour le Ministère de l'Éducation, à fonction interactive. Aussi, des logiciels permettant la constitution de banques de données autonomes, constituées de pages enregistrées sur disques. C'est, en fait, une intégration globale du vidéotex pour le micro-ordinateur. Un autre aspect de la recherche entreprise par Claude Johnson chez Formic, c'est l'option multi-usagers, ou réseau, par lequel plusieurs utilisateurs peuvent avoir accès à un réservoir commun de pages.</p>
-
-        <p>C'est Formic qui est responsable de la diffusion de toute la gamme de logiciels développés principalement par Claude Johnson. On y crée également des composantes et de nouveaux outils, qu'il s'agisse d'adaptations techniques ou fonction d'un plus grand nombre d'usagers ou de supports destinés essentiellement à la diffusion de pages.</p>
-
-        <p class="section-title">À l'avant-garde</p>
-        <p>Dans le logiciel de micro-ordinateur, explique Claude Johnson, Formic est à l'avant-garde, avec un ou deux ans d'avance sur ses compétiteurs. Ce succès est dû, bien sûr, à la formule souple et économique du micro-vidéotex, mais aussi à un souci constant d'innover. Sur le plan des innovations techniques par exemple, Formic a conçu une carte ROM 220K qui constitue un réservoir logique nécessaire à un coût approximatif de 150$, pour l'équivalent de 10,000$ de logiciel stocké.</p>
-
-        <p>Tout ça sur micro? Les gens n'y croyaient pas. C'est Claude Johnson qui s'est fait une spécialité de réaliser l'impossible. Après cinq ans dans le domaine, il ne cesse de chercher de nouveaux défis. Chez lui notamment, il prépare pour ses besoins personnels des logiciels d'application très technique, tels des programmes de simulation de vol. Pour l'instant, il attend avec impatience l'arrivée sur le marché de micros plus puissants pour mener à bien certains de ses projets.</p>
-
-        <p>Il est quand même curieux que Claude Johnson se soit limité à un champ d'intérêt particulier, lui qui souhaitait autrefois en changer à tous les ans. Mais il ne faut pas parler trop vite: je l'ai entendu dire que l'engineering génétique commençait à l'intéresser...</p>
-
-        <p style="text-align: right; margin-top: 40px;">☐</p>
-    </div>
-
+<div class="article-text" id="leftColumn"></div>
+<div class="article-text" id="rightColumn"></div>
 </div>
-
-<div class="nav-buttons">
-    <a href="about.html" class="btn">Retour</a>
-    <a href="superE.html" class="btn">EN English version</a>
-</div>
-
-<footer style="text-align: center; margin-top: 30px; font-size: 0.8em; color: #888; border-top: 1px solid #eee; padding-top: 20px;">
-    &copy; Micro Créatif - Montréal | Hô Chi Minh-Ville
+<div class="nav-buttons"><a href="about.html" class="btn" id="backButton"></a></div>
+<footer style="text-align:center;margin-top:30px;font-size:.8em;color:#888;border-top:1px solid #eee;padding-top:20px;">
+&copy; Micro Créatif - <span id="locations"></span>
 </footer>
-
-
-<script>
-document.querySelectorAll(".site-dropdown").forEach(function(dropdown) {
-    const button = dropdown.querySelector(".site-apps-button");
-    const submenu = dropdown.querySelector(".site-submenu");
-
-    button.addEventListener("click", function(event) {
-        event.stopPropagation();
-        const isOpen = submenu.classList.toggle("open");
-        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    submenu.addEventListener("click", function(event) {
-        event.stopPropagation();
-    });
-});
-
-document.addEventListener("click", function() {
-    document.querySelectorAll(".site-submenu.open").forEach(function(submenu) {
-        submenu.classList.remove("open");
-        const button = submenu.parentElement.querySelector(".site-apps-button");
-        if (button) button.setAttribute("aria-expanded", "false");
-    });
-});
-</script>
-
+<script src="super-languages.js" defer></script>
 </body>
 </html>

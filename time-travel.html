@@ -2,22 +2,22 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 2.6 -->
+<!-- Version 2.8 -->
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Time Travel – Explore Earth’s Sky Across Time | Micro Créatif</title>
-<meta name="description" content="Time Travel by Micro Créatif lets you explore Earth’s real sky across hours, days, months, years, centuries, and millennia. Revisit solar eclipses, explore historical events, and follow stars, the Milky Way, Sun, Moon, planets, comets, and a famous planetary alignment from any observing location.">
-<meta name="keywords" content="Time Travel astronomy app, historical sky, future sky, ancient sky, solar eclipse, lunar eclipse, Battle of the Eclipse, Thales eclipse, HYG 4.2 catalogue, Hipparcos, stellar proper motion, precession, nutation, annual aberration, historical comets, planetary alignment, Milky Way, planetarium, Micro Créatif">
-<meta name="author" content="Micro Créatif">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Time Travel – Explore Earth’s Sky Across Time | Micro Créatif">
-<meta property="og:description" content="Move through hours, days, months, years, centuries, and millennia while the real sky changes above your observing location.">
-<meta property="og:url" content="https://microcreatif.ca/time-travel.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_CA">
-<meta property="og:locale:alternate" content="fr_CA">
-<link rel="canonical" href="https://microcreatif.ca/time-travel.html">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title></title>
+<meta content="" name="description"/>
+<meta content="" name="keywords"/>
+<meta content="Micro Créatif" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="" property="og:title"/>
+<meta content="" property="og:description"/>
+<meta content="https://microcreatif.ca/time-travel.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="en_CA" property="og:locale"/>
+
+<link href="https://microcreatif.ca/time-travel.html" rel="canonical"/>
 <style>
 *{box-sizing:border-box;}
 body{
@@ -416,378 +416,246 @@ h1{font-size:42px;}
 .feature-list{padding:20px;}
 li{font-size:17px;}
 }
+
+
+/* Arabic / right-to-left layout */
+html[dir="rtl"] .submenu{
+left:auto;
+right:0;
+text-align:right;
+}
+html[dir="rtl"] .feature-list,
+html[dir="rtl"] .advanced,
+html[dir="rtl"] .advanced-block{
+text-align:right;
+}
+html[dir="rtl"] ul{
+padding-left:0;
+padding-right:24px;
+}
+html[dir="rtl"] .advanced-block ul{
+padding-left:0;
+padding-right:23px;
+}
+html[dir="rtl"] .key-row,
+html[dir="rtl"] .shortcut-row{
+direction:ltr;
+}
+html[dir="rtl"] .key-row > span,
+html[dir="rtl"] .shortcut-action{
+direction:rtl;
+text-align:right;
+}
+html[dir="rtl"] .keycaps,
+html[dir="rtl"] .key-row code{
+direction:ltr;
+}
+
 </style>
 </head>
-
 <body>
-<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<img class="bg" data-i18n-alt="alt.background" src="images/galaxy-background.jpg"/>
 <div id="stars"></div>
-
 <header>
-<nav aria-label="Main navigation">
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<nav data-i18n-aria-label="aria.mainNavigation">
+<a data-i18n="nav.home" href="index.html" id="navHome"></a>
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<a data-i18n="nav.apps" id="navApps"></a>
 <div class="submenu" id="appsMenu">
-<a href="radec-calculator.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-<a href="virtual-telescope.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-<a href="sol-and-stars.html" data-en="Sol and Stars" data-fr="Sol et les étoiles"></a>
-<a href="alien-sky.html" data-en="Alien Sky" data-fr="Alien Sky"></a>
-<a href="time-travel.html" data-en="Time Travel" data-fr="Voyage dans le temps"></a>
+<a data-i18n="nav.radec" href="radec-calculator.html"></a>
+<a data-i18n="nav.virtualTelescope" href="virtual-telescope.html"></a>
+<a data-i18n="nav.solAndStars" href="sol-and-stars.html"></a>
+<a data-i18n="nav.alienSky" href="alien-sky.html"></a>
+<a data-i18n="nav.timeTravel" href="time-travel.html"></a>
 </div>
 </div>
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
-<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+<a data-i18n="nav.about" href="about.html" id="navAbout"></a>
+<a data-i18n="nav.contact" href="contact.html" id="navContact"></a>
+<select class="lang-btn" data-i18n-aria-label="aria.languageSelector" id="languageSelect"></select>
 </nav>
 </header>
-
-<section class="hero" aria-label="Time Travel introduction">
+<section class="hero" data-i18n-aria-label="aria.hero">
 <div class="app-icon">
-<img src="images/app5.png" alt="Time Travel app icon">
+<img data-i18n-alt="alt.appIcon" src="images/TimeTravel.png"/>
 </div>
-<h1 data-en="Time Travel" data-fr="Voyage dans le temps"></h1>
-<p class="subtitle"
-data-en="Stay on Earth, move through time, and watch the real sky transform above you."
-data-fr="Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au-dessus de vous."></p>
+<h1 data-i18n="hero.title"></h1>
+<p class="subtitle" data-i18n="hero.subtitle"></p>
 </section>
-
 <main class="content">
-
 <div class="mode-grid">
 <div class="mode-card">
-<h2 data-en="Choose a place and time" data-fr="Choisissez un lieu et une époque"></h2>
-<p
-data-en="Use your current position, enter latitude and longitude manually, or choose from 19 historically important preset locations grouped into Africa, the Americas, Asia, and the Mediterranean & Near East. Then choose an exact local date and time from 9999 BCE through 9999 CE."
-data-fr="Utilisez votre position actuelle, entrez manuellement la latitude et la longitude, ou choisissez parmi 19 lieux historiques prédéfinis regroupés en Afrique, dans les Amériques, en Asie, ainsi qu’en Méditerranée et au Proche-Orient. Choisissez ensuite une date et une heure locales précises, de 9999 av. J.-C. à 9999 apr. J.-C."></p>
+<h2 data-i18n="mode.placeTime.title"></h2>
+<p data-i18n="mode.placeTime.body"></p>
 </div>
-
 <div class="mode-card">
-<h2 data-en="Move through history" data-fr="Parcourez l’histoire"></h2>
-<p
-data-en="Slide smoothly through hours, or travel by whole days, months, years, centuries, and millennia. The sky redraws while you move, and the Now button returns instantly to the present."
-data-fr="Glissez continuellement d’une heure à l’autre, ou voyagez par jours, mois, années, siècles et millénaires entiers. Le ciel se redessine pendant le déplacement, et le bouton Maintenant vous ramène immédiatement au présent."></p>
+<h2 data-i18n="mode.history.title"></h2>
+<p data-i18n="mode.history.body"></p>
 </div>
 </div>
-
 <div class="card-grid">
 <div class="card">
-<h2 data-en="The real sky for the date" data-fr="Le vrai ciel à la date choisie"></h2>
-<p
-data-en="Stars, constellation lines, the Milky Way, the Sun, Moon, and visible planets follow the selected date, local time, and observing location."
-data-fr="Les étoiles, les lignes des constellations, la Voie lactée, le Soleil, la Lune et les planètes visibles suivent la date, l’heure locale et la position d’observation choisies."></p>
+<h2 data-i18n="cards.realSky.title"></h2>
+<p data-i18n="cards.realSky.body"></p>
 </div>
-
 <div class="card">
-<h2 data-en="Six time scales" data-fr="Six échelles de temps"></h2>
-<p
-data-en="The Hours control moves continuously through a full day, while Day, Month, Year, Century, and Millennium move in whole calendar steps and preserve all lower-order date and time values."
-data-fr="Le réglage Heures se déplace continuellement sur une journée complète, tandis que Jour, Mois, Année, Siècle et Millénaire avancent par étapes calendaires entières en conservant les unités plus petites de la date et de l’heure."></p>
+<h2 data-i18n="cards.timeScales.title"></h2>
+<p data-i18n="cards.timeScales.body"></p>
 </div>
-
 <div class="card">
-<h2 data-en="Ten astronomical events" data-fr="Dix événements astronomiques"></h2>
-<p
-data-en="Jump directly to ten programmed astronomical events: the Battle of the Eclipse in 585 BCE; Halley’s Comet in 837, 1066, 1301, and 1986; the Great Comets of 1577 and 1680; the planetary alignment of May 5, 2000; the total lunar eclipse of March 3, 2026; and the total solar eclipse of August 2, 2027."
-data-fr="Accédez directement à dix événements astronomiques programmés : la bataille de l’éclipse de 585 av. J.-C.; la comète de Halley en 837, 1066, 1301 et 1986; les grandes comètes de 1577 et 1680; l’alignement planétaire du 5 mai 2000; l’éclipse totale de Lune du 3 mars 2026; et l’éclipse totale de Soleil du 2 août 2027."></p>
+<h2 data-i18n="cards.events.title"></h2>
+<p data-i18n="cards.events.body"></p>
 </div>
 </div>
-
 <div class="lower-row">
 <div class="card">
-<h2 data-en="Your observing location matters" data-fr="Votre lieu d’observation compte"></h2>
-<p
-data-en="The same date produces a different horizon and visible sky from each place on Earth. The 19 presets include locations such as Machu Picchu, Angkor, Alexandria, Luxor / Ancient Thebes, Jerusalem, Beijing, and Great Zimbabwe. Comet events automatically choose the time when the comet reaches its greatest visible altitude for the selected location."
-data-fr="La même date produit un horizon et un ciel visible différents selon le lieu choisi sur Terre. Les 19 lieux prédéfinis comprennent notamment Machu Picchu, Angkor, Alexandrie, Louxor / Thèbes antique, Jérusalem, Pékin et Grand Zimbabwe. Pour les comètes, l’app choisit automatiquement l’heure où elles atteignent leur plus grande altitude visible depuis la position sélectionnée."></p>
+<h2 data-i18n="cards.location.title"></h2>
+<p data-i18n="cards.location.body"></p>
 </div>
-
 <section class="feature-list">
-<h2 data-en="Current features" data-fr="Fonctions actuelles"></h2>
+<h2 data-i18n="features.title"></h2>
 <ul>
-<li
-data-en="Use the current device location, enter coordinates manually, or select one of 19 historically important preset locations grouped by region."
-data-fr="Utiliser la position actuelle de l’appareil, entrer les coordonnées manuellement ou choisir l’un des 19 lieux historiques prédéfinis regroupés par région."></li>
-<li
-data-en="Edit the exact local year, month, day, hour, minute, and second, from 9999 BCE through 9999 CE."
-data-fr="Modifier précisément l’année, le mois, le jour, l’heure, la minute et la seconde locales, de 9999 av. J.-C. à 9999 apr. J.-C."></li>
-<li
-data-en="Travel with Hours, Day, Month, Year, Century, or Millennium, and return with Now."
-data-fr="Voyager avec Heures, Jour, Mois, Année, Siècle ou Millénaire, puis revenir avec Maintenant."></li>
-<li
-data-en="Show major or all constellation lines, constellation shapes, star names, the Milky Way, atmosphere, Sun, Moon, and planets."
-data-fr="Afficher les lignes des constellations principales ou de toutes les constellations, les formes des constellations, les noms d’étoiles, la Voie lactée, l’atmosphère, le Soleil, la Lune et les planètes."></li>
-<li
-data-en="Adjust the limiting magnitude for stars and planets, and pan or zoom the whole-sky view."
-data-fr="Régler la magnitude limite des étoiles et des planètes, puis déplacer ou agrandir la vue du ciel entier."></li>
-<li
-data-en="Select any of ten programmed astronomical events: six comet apparitions, the May 5, 2000 planetary alignment, the 585 BCE Battle of the Eclipse, the March 3, 2026 total lunar eclipse, and the August 2, 2027 total solar eclipse."
-data-fr="Choisir l’un des dix événements astronomiques programmés : six apparitions de comètes, l’alignement planétaire du 5 mai 2000, la bataille de l’éclipse de 585 av. J.-C., l’éclipse totale de Lune du 3 mars 2026 et l’éclipse totale de Soleil du 2 août 2027."></li>
-<li
-data-en="Use a hardware keyboard on iPad or Mac for fast numeric entry, field navigation, Apply, Cancel, BCE/CE selection, and N/S/E/W direction selection in the manual editors."
-data-fr="Utiliser un clavier physique sur iPad ou Mac pour la saisie numérique rapide, le déplacement entre les champs, Appliquer, Annuler, la sélection av. J.-C./apr. J.-C. et les directions N/S/E/O dans les éditeurs manuels."></li>
+<li data-i18n="features.location"></li>
+<li data-i18n="features.exactDate"></li>
+<li data-i18n="features.travelScales"></li>
+<li data-i18n="features.skyLayers"></li>
+<li data-i18n="features.magnitude"></li>
+<li data-i18n="features.events"></li>
+<li data-i18n="features.keyboard"></li>
 </ul>
 </section>
 </div>
-
 <section class="advanced">
-<h2 data-en="Eclipses: watch history happen again" data-fr="Éclipses : revivez l’histoire"></h2>
-
+<h2 data-i18n="eclipses.title"></h2>
 <div class="advanced-grid">
 <div class="advanced-block wide">
-<h3 class="centered-title"
-data-en="Missed the eclipse? Go back and watch it."
-data-fr="Vous avez manqué l’éclipse? Revenez en arrière et regardez-la."></h3>
-
-<p
-data-en="Time Travel’s continuous Hours control makes a solar eclipse unfold naturally as the Moon moves across the Sun. The eclipse is calculated from the selected date, time, and observing location and rendered live by the astronomy engine — it is not a prerecorded animation. The same method can be extended to lunar eclipses, with Earth’s shadow moving across the Moon. Revisit a past eclipse under perfectly clear virtual skies, or preview a future eclipse before it happens."
-data-fr="Le réglage continu Heures de Time Travel permet de voir une éclipse solaire se dérouler naturellement tandis que la Lune passe devant le Soleil. L’éclipse est calculée à partir de la date, de l’heure et du lieu d’observation choisis, puis rendue en direct par le moteur astronomique — il ne s’agit pas d’une animation préenregistrée. La même méthode peut être étendue aux éclipses lunaires, avec l’ombre de la Terre qui traverse la Lune. Revivez une éclipse passée sous un ciel virtuel parfaitement dégagé, ou prévisualisez une éclipse future avant qu’elle ne se produise."></p>
+<h3 class="centered-title" data-i18n="eclipses.missed.title"></h3>
+<p data-i18n="eclipses.missed.body"></p>
 </div>
-
 <div class="advanced-block wide">
-<h3 class="centered-title"
-data-en="The Battle of the Eclipse — 585 BCE"
-data-fr="La bataille de l’éclipse — 585 av. J.-C."></h3>
-
-<p
-data-en="One of history’s most remarkable eclipse stories comes from a war between the Lydians and the Medes. According to the ancient historian Herodotus, the two armies were fighting in the sixth year of their war when day suddenly turned to night. The soldiers stopped fighting, and both sides became more eager to make peace. The settlement was reinforced by a dynastic marriage."
-data-fr="L’un des récits d’éclipse les plus remarquables de l’histoire vient d’une guerre entre les Lydiens et les Mèdes. Selon l’historien antique Hérodote, les deux armées combattaient pendant la sixième année de leur guerre lorsque le jour se transforma soudainement en nuit. Les soldats cessèrent le combat et les deux camps devinrent plus désireux de conclure la paix. L’accord fut renforcé par un mariage dynastique."></p>
-
-<p
-data-en="Modern eclipse catalogues identify this famous account with the total solar eclipse of May 28, 585 BCE, whose maximum totality lasted about six minutes. Herodotus also wrote that Thales of Miletus had foretold the loss of daylight within that year. The exact nature of Thales’ prediction is still debated, so Time Travel can present the event as the traditional historical identification rather than as a certainty about every detail of the ancient story."
-data-fr="Les catalogues modernes d’éclipses associent ce célèbre récit à l’éclipse solaire totale du 28 mai 585 av. J.-C., dont la totalité maximale dura environ six minutes. Hérodote écrivit aussi que Thalès de Milet avait annoncé la disparition de la lumière du jour au cours de cette année. La nature exacte de la prédiction de Thalès reste débattue; Time Travel peut donc présenter cet événement comme l’identification historique traditionnelle, sans affirmer que chaque détail du récit antique est certain."></p>
-
-<p
-data-en="It is an ideal Time Travel event: choose the ancient location and date, then move the Hours control slowly and watch the sky darken over a battle remembered for more than 2,600 years."
-data-fr="C’est un événement idéal pour Time Travel : choisissez le lieu antique et la date, puis déplacez lentement le réglage Heures et regardez le ciel s’assombrir au-dessus d’une bataille dont on se souvient depuis plus de 2 600 ans."></p>
+<h3 class="centered-title" data-i18n="eclipses.battle.title"></h3>
+<p data-i18n="eclipses.battle.body1"></p>
+<p data-i18n="eclipses.battle.body2"></p>
+<p data-i18n="eclipses.battle.body3"></p>
 </div>
 </div>
 </section>
-
 <section class="advanced">
-<h2 data-en="For hardcore users" data-fr="Pour les utilisateurs chevronnés"></h2>
-
+<h2 data-i18n="hardcore.title"></h2>
 <div class="advanced-grid">
-
 <div class="advanced-block wide">
-<h3 data-en="Catalogues and astronomical corrections" data-fr="Catalogues et corrections astronomiques"></h3>
-
-<p
-data-en="Time Travel uses the complete HYG 4.2 master catalogue: 119,625 stars, including Hipparcos identifiers and astrometric data where available. Of these, 109,393 stars contain three-dimensional space-motion information. The app also includes constellation-line data and orbital data for its programmed historical comets."
-data-fr="Time Travel utilise le catalogue maître HYG 4.2 complet : 119 625 étoiles, avec les identifiants Hipparcos et les données astrométriques lorsqu’ils sont disponibles. Parmi elles, 109 393 étoiles possèdent des données de mouvement spatial en trois dimensions. L’app comprend également les tracés des constellations et les données orbitales de ses comètes historiques programmées."></p>
-
+<h3 data-i18n="hardcore.catalogue.title"></h3>
+<p data-i18n="hardcore.catalogue.intro"></p>
 <ul>
-<li
-data-en="The stellar catalogue starts at epoch J2000.0. For the selected date, stars with motion data are advanced using their Cartesian X, Y, and Z space velocities. Position, distance, right ascension, declination, and apparent brightness are recalculated for the new epoch."
-data-fr="Le catalogue stellaire part de l’époque J2000.0. Pour la date choisie, les étoiles possédant des données de mouvement sont avancées à l’aide de leurs vitesses spatiales cartésiennes X, Y et Z. La position, la distance, l’ascension droite, la déclinaison et la luminosité apparente sont recalculées pour la nouvelle époque."></li>
-
-<li
-data-en="The Earth-sky engine applies precession, nutation, and annual aberration. It then uses apparent sidereal time and the observer’s latitude and longitude to place the sky correctly above the local horizon."
-data-fr="Le moteur du ciel terrestre applique la précession, la nutation et l’aberration annuelle. Il utilise ensuite le temps sidéral apparent ainsi que la latitude et la longitude de l’observateur pour placer correctement le ciel au-dessus de l’horizon local."></li>
-
-<li
-data-en="The Sun, Moon, and planets are calculated for the selected date and location. The Moon uses a topocentric position and its visible phase. Supported historical comets are calculated from their orbital elements."
-data-fr="Le Soleil, la Lune et les planètes sont calculés pour la date et la position choisies. La Lune utilise une position topocentrique et sa phase visible. Les comètes historiques prises en charge sont calculées à partir de leurs éléments orbitaux."></li>
-
-<li
-data-en="Planet and Moon calculations are intended for approximately 3000 BCE to 3000 CE. Outside that interval, planet positions are extrapolated and may be unsuitable for precise work; the Moon is not shown. A yellow warning triangle explains the limitation when it applies."
-data-fr="Les calculs des planètes et de la Lune sont prévus pour environ 3000 av. J.-C. à 3000 apr. J.-C. À l’extérieur de cet intervalle, les positions planétaires sont extrapolées et peuvent ne pas convenir à un travail précis; la Lune n’est pas affichée. Un triangle d’avertissement jaune explique cette limite lorsqu’elle s’applique."></li>
+<li data-i18n="hardcore.catalogue.stars"></li>
+<li data-i18n="hardcore.catalogue.earth"></li>
+<li data-i18n="hardcore.catalogue.solarSystem"></li>
+<li data-i18n="hardcore.catalogue.limitations"></li>
 </ul>
 </div>
-
 <div class="advanced-block centered-half">
-<h3 class="centered-title" data-en="Sky controls" data-fr="Commandes de la vue du ciel"></h3>
-
+<h3 class="centered-title" data-i18n="skyControls.title"></h3>
 <div class="key-row">
 <code>← → ↑ ↓</code>
-<span data-en="Move the sky left, right, up, or down." data-fr="Déplacer le ciel vers la gauche, la droite, le haut ou le bas."></span>
+<span data-i18n="skyControls.move"></span>
 </div>
-
 <div class="key-row">
 <code>+ / −</code>
-<span data-en="Zoom in or zoom out." data-fr="Effectuer un zoom avant ou arrière."></span>
+<span data-i18n="skyControls.zoom"></span>
 </div>
-
 <div class="key-row">
 <code>0</code>
-<span data-en="Reset the complete 180-degree sky view with the 0 button or by double-tapping the sky." data-fr="Rétablissez la vue complète du ciel à 180 degrés avec le bouton 0 ou en touchant deux fois le ciel."></span>
+<span data-i18n="skyControls.reset"></span>
 </div>
-
-<p
-data-en="Dragging and pinch-to-zoom are also available on touch devices."
-data-fr="Le déplacement au doigt et le zoom par pincement sont également disponibles sur les appareils tactiles."></p>
+<p data-i18n="skyControls.touch"></p>
 </div>
-
-
 <div class="advanced-block wide keyboard-panel">
-<h3 class="centered-title" data-en="Hardware keyboard shortcuts" data-fr="Raccourcis du clavier physique"></h3>
-<p class="keyboard-intro"
-data-en="Manual Date & Time and Earth Location entry can be controlled directly from a hardware keyboard on iPad or Mac. The on-screen keypad remains available at the same time."
-data-fr="La saisie manuelle de la date et de l’heure ainsi que de la position terrestre peut être contrôlée directement avec un clavier physique sur iPad ou Mac. Le pavé numérique à l’écran reste disponible en même temps."></p>
-
+<h3 class="centered-title" data-i18n="keyboard.title"></h3>
+<p class="keyboard-intro" data-i18n="keyboard.intro"></p>
 <div class="keyboard-grid">
 <div class="keyboard-card">
-<h4 data-en="Date & Time" data-fr="Date et heure"></h4>
-
+<h4 data-i18n="keyboard.dateTime.title"></h4>
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">0–9</span></div>
-<span class="shortcut-action" data-en="Enter numbers" data-fr="Saisir les chiffres"></span>
+<span class="shortcut-action" data-i18n="keyboard.enterNumbers"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">Tab</span><span class="key-separator">/</span><span class="keycap wide">Return</span><span class="key-separator">/</span><span class="keycap">→</span></div>
-<span class="shortcut-action" data-en="Next field" data-fr="Champ suivant"></span>
+<span class="shortcut-action" data-i18n="keyboard.nextField"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">⇧ Tab</span><span class="key-separator">/</span><span class="keycap">←</span></div>
-<span class="shortcut-action" data-en="Previous field" data-fr="Champ précédent"></span>
+<span class="shortcut-action" data-i18n="keyboard.previousField"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap">⌫</span><span class="key-separator">/</span><span class="keycap">⌦</span></div>
-<span class="shortcut-action" data-en="Erase" data-fr="Effacer"></span>
+<span class="shortcut-action" data-i18n="keyboard.erase"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap">B</span><span class="key-separator">/</span><span class="keycap">C</span></div>
-<span class="shortcut-action" data-en="BCE / CE" data-fr="av. J.-C. / apr. J.-C."></span>
+<span class="shortcut-action" data-i18n="keyboard.era"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap command">⌘ Return</span></div>
-<span class="shortcut-action" data-en="Apply" data-fr="Appliquer"></span>
+<span class="shortcut-action" data-i18n="keyboard.apply"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">Esc</span><span class="key-separator">/</span><span class="keycap command">⌘ .</span><span class="key-separator">/</span><span class="keycap command">⌘ [</span></div>
-<span class="shortcut-action" data-en="Cancel" data-fr="Annuler"></span>
+<span class="shortcut-action" data-i18n="keyboard.cancel"></span>
 </div>
 </div>
-
 <div class="keyboard-card">
-<h4 data-en="Earth Location" data-fr="Position terrestre"></h4>
-
+<h4 data-i18n="keyboard.location.title"></h4>
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">0–9</span></div>
-<span class="shortcut-action" data-en="Enter numbers" data-fr="Saisir les chiffres"></span>
+<span class="shortcut-action" data-i18n="keyboard.enterNumbers"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">Tab</span><span class="key-separator">/</span><span class="keycap wide">Return</span><span class="key-separator">/</span><span class="keycap">→</span></div>
-<span class="shortcut-action" data-en="Next field" data-fr="Champ suivant"></span>
+<span class="shortcut-action" data-i18n="keyboard.nextField"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">⇧ Tab</span><span class="key-separator">/</span><span class="keycap">←</span></div>
-<span class="shortcut-action" data-en="Previous field" data-fr="Champ précédent"></span>
+<span class="shortcut-action" data-i18n="keyboard.previousField"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap">⌫</span><span class="key-separator">/</span><span class="keycap">⌦</span></div>
-<span class="shortcut-action" data-en="Erase" data-fr="Effacer"></span>
+<span class="shortcut-action" data-i18n="keyboard.erase"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap">N</span><span class="keycap">S</span><span class="keycap">E</span><span class="keycap">W</span></div>
-<span class="shortcut-action" data-en="Set North, South, East, or West" data-fr="Choisir Nord, Sud, Est ou Ouest"></span>
+<span class="shortcut-action" data-i18n="keyboard.directions"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap command">⌘ Return</span></div>
-<span class="shortcut-action" data-en="Apply" data-fr="Appliquer"></span>
+<span class="shortcut-action" data-i18n="keyboard.apply"></span>
 </div>
-
 <div class="shortcut-row">
 <div class="keycaps"><span class="keycap wide">Esc</span><span class="key-separator">/</span><span class="keycap command">⌘ .</span><span class="key-separator">/</span><span class="keycap command">⌘ [</span></div>
-<span class="shortcut-action" data-en="Cancel" data-fr="Annuler"></span>
+<span class="shortcut-action" data-i18n="keyboard.cancel"></span>
 </div>
 </div>
 </div>
-
-<p class="keyboard-note"
-data-en="Cancel shortcuts vary slightly by platform. On iPad, ⌘. is convenient when the keyboard has no dedicated Escape key. On Mac Catalyst, ⌘[ is the reliable keyboard Cancel shortcut. Esc is also available where the keyboard and system deliver it."
-data-fr="Les raccourcis Annuler varient légèrement selon la plateforme. Sur iPad, ⌘. est pratique lorsque le clavier n’a pas de touche Échap dédiée. Sur Mac Catalyst, ⌘[ est le raccourci clavier fiable pour Annuler. Échap reste aussi disponible lorsque le clavier et le système la transmettent."></p>
+<p class="keyboard-note" data-i18n="keyboard.note"></p>
 </div>
-
 <div class="advanced-block centered-half">
-<h3 class="centered-title" data-en="The Easter egg" data-fr="L’œuf de Pâques"></h3>
-
-<p
-data-en="Tap the Time Travel title to switch between the normal North-up sky and the hidden Stellarium-comparison orientation. The N, E, S, and W markers follow the active camera. Tap the title again to return to the normal view."
-data-fr="Touchez le titre Voyage dans le temps pour passer de la vue normale avec le nord en haut à l’orientation cachée de comparaison avec Stellarium. Les repères N, E, S et O suivent la caméra active. Touchez de nouveau le titre pour revenir à la vue normale."></p>
+<h3 class="centered-title" data-i18n="easterEgg.title"></h3>
+<p data-i18n="easterEgg.body"></p>
 </div>
-
 </div>
 </section>
-
 <section class="status">
-<h2 data-en="Status" data-fr="Statut"></h2>
-<p
-data-en="Time Travel is under active development for iPhone, iPad, and Mac. Its location system, editable date and time, six travel scales, historical events, astronomy engine, and principal controls are now working."
-data-fr="Time Travel est en développement actif pour iPhone, iPad et Mac. Son système de localisation, la date et l’heure modifiables, ses six échelles de voyage, ses événements historiques, son moteur astronomique et ses commandes principales fonctionnent maintenant."></p>
-<a class="btn" href="index.html" data-en="← Back to apps" data-fr="← Retour aux apps"></a>
+<h2 data-i18n="status.title"></h2>
+<p data-i18n="status.body"></p>
+<a class="btn" data-i18n="status.back" href="index.html"></a>
 </section>
-
 </main>
-
 <footer>
 <p>© Micro Créatif</p>
-<p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-<p>Version 2.6</p>
-<p data-en="Privacy: Time Travel does not collect or transmit personal information. Current-location coordinates are stored locally inside Time Travel on this device so they can be restored on a later launch. They are not sent to any server. Historical and manually selected locations are used only for the current session and are not saved for future launches." data-fr="Confidentialité : Time Travel ne collecte ni ne transmet de renseignements personnels. Les coordonnées de la position actuelle sont enregistrées localement dans Time Travel sur cet appareil afin de pouvoir être restaurées lors d’un lancement ultérieur. Elles ne sont envoyées à aucun serveur. Les lieux historiques et les positions saisies manuellement sont utilisés uniquement pendant la session en cours et ne sont pas enregistrés pour les prochains lancements."></p>
+<p data-i18n="footer.locations"></p>
+<p>Version 2.8</p>
+<p data-i18n="footer.privacy"></p>
 </footer>
 
-<script>
-function createStars(){
-const container=document.getElementById("stars");
-for(let i=0;i<40;i++){
-let star=document.createElement("div");
-let type=(Math.random()>0.5)?"big":"small";
-star.className="star "+type;
-star.style.top=Math.random()*100+"%";
-star.style.left=Math.random()*100+"%";
-star.style.animationDelay=(Math.random()*3)+"s";
-star.style.animationDuration=(1+Math.random()*2)+"s";
-container.appendChild(star);
-}
-}
-createStars();
-
-const appsButton=document.getElementById("navApps");
-const menu=document.getElementById("appsMenu");
-
-appsButton.addEventListener("click",function(e){
-e.stopPropagation();
-menu.style.display=(menu.style.display==="block")?"none":"block";
-});
-
-document.addEventListener("click",function(e){
-if(!menu.contains(e.target) && e.target!==appsButton){
-menu.style.display="none";
-}
-});
-
-document.querySelectorAll(".submenu a").forEach(function(link){
-link.addEventListener("click",function(){
-menu.style.display="none";
-});
-});
-
-let currentLanguage = localStorage.getItem("mc_language") || "en";
-
-function applyLanguage(){
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.textContent = el.getAttribute("data-"+currentLanguage);
-});
-}
-
-function toggleLanguage(){
-currentLanguage = (currentLanguage==="en")?"fr":"en";
-localStorage.setItem("mc_language", currentLanguage);
-applyLanguage();
-}
-
-document.addEventListener("DOMContentLoaded",applyLanguage);
-</script>
+<script src="time-travel-languages.js" defer></script>
 </body>
 </html>

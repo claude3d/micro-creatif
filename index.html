@@ -2,22 +2,23 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 7.6 -->
+<!-- Version 7.8 -->
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Micro Créatif – Astronomy Apps for Serious Telescope Observers</title>
-<meta name="description" content="Micro Créatif offers astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt coordinates, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel. Designed for observers with telescopes from 6 to 20 inches, including private observatories.">
-<meta name="keywords" content="astronomy app, telescope app, RA Dec AZ Alt, virtual telescope, Sol and Stars, solar system, star catalogue, Milky Way, alien sky, time travel, voyage dans le temps, amateur astronomy, semi-professional telescope, private observatory, iOS astronomy">
+<meta name="description" content="Micro Créatif offers astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt coordinates, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel Sky. Designed for observers with telescopes from 6 to 20 inches, including private observatories.">
+<meta name="keywords" content="astronomy app, telescope app, RA Dec AZ Alt, virtual telescope, Sol and Stars, solar system, star catalogue, Milky Way, alien sky, Time Travel Sky, time travel sky, time travel, amateur astronomy, semi-professional telescope, private observatory, iOS astronomy">
 <meta name="author" content="Micro Créatif">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Micro Créatif – Astronomy Apps for Serious Telescope Observers">
-<meta property="og:description" content="Astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel.">
+<meta property="og:description" content="Astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel Sky.">
 <meta property="og:url" content="https://microcreatif.ca/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_CA">
 <meta property="og:locale:alternate" content="fr_CA">
+<meta property="og:locale:alternate" content="vi_VN">
 <link rel="canonical" href="https://microcreatif.ca/">
 <style>
 body{
@@ -108,16 +109,20 @@ font-size:16px;
 .submenu a:hover{
 background:rgba(255,255,255,0.1);
 }
-.lang-btn{
+.lang-select{
 background:rgba(255,255,255,0.1);
 border:1px solid rgba(255,255,255,0.3);
 color:white;
-padding:6px 14px;
+padding:6px 12px;
 border-radius:16px;
 cursor:pointer;
-font-size:18px;
+font-size:16px;
 white-space:nowrap;
 flex-shrink:0;
+}
+.lang-select option{
+color:black;
+background:white;
 }
 @media (max-width:430px){
 nav{
@@ -126,9 +131,20 @@ gap:18px;
 nav a{
 font-size:15px;
 }
-.lang-btn{
-font-size:15px;
-padding:4px 10px;
+.lang-select{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 12px;
+border-radius:16px;
+cursor:pointer;
+font-size:16px;
+white-space:nowrap;
+flex-shrink:0;
+}
+.lang-select option{
+color:black;
+background:white;
 }
 }
 .hero{
@@ -201,82 +217,89 @@ padding:20px;
 font-size:14px;
 opacity:0.85;
 }
+
+/* Arabic / right-to-left layout */
+html[dir="rtl"] .submenu{
+    left:auto;
+    right:0;
+    text-align:right;
+}
 </style>
 </head>
 <body>
-<img class="bg" src="images/galaxy-background.jpg" alt="Galaxy background – Micro Créatif astronomy apps">
+<img class="bg" src="images/galaxy-background.jpg" data-i18n-alt="backgroundAlt" alt="">
 <div id="stars"></div>
 
 <header>
-<nav aria-label="Main navigation">
-<a id="navHome" data-en="Home" data-fr="Accueil" href="index.html"></a>
+<nav data-i18n-aria="mainNavigation">
+<a id="navHome" data-i18n="navHome" href="index.html"></a>
 <div class="dropdown">
-<a id="navApps" data-en="Apps" data-fr="Apps"></a>
+<a id="navApps" data-i18n="navApps"></a>
 <div class="submenu" id="appsMenu">
-<a href="radec-calculator.html" data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></a>
-<a href="virtual-telescope.html" data-en="Virtual Telescope" data-fr="Télescope virtuel"></a>
-<a href="sol-and-stars.html" data-en="Sol and Stars" data-fr="Sol et les étoiles"></a>
-<a href="alien-sky.html" data-en="Alien Sky" data-fr="Alien Sky"></a>
-<a href="time-travel.html" data-en="Time Travel" data-fr="Voyage dans le temps"></a>
+<a href="radec-calculator.html" data-i18n="appRadec"></a>
+<a href="virtual-telescope.html" data-i18n="appVirtualTelescope"></a>
+<a href="sol-and-stars.html" data-i18n="appSolAndStars"></a>
+<a href="alien-sky.html" data-i18n="appAlienSky"></a>
+<a href="time-travel.html" data-i18n="appTimeTravelSky"></a>
 </div>
 </div>
-<a id="navAbout" data-en="About" data-fr="À propos" href="about.html"></a>
-<a id="navContact" data-en="Contact" data-fr="Contact" href="contact.html"></a>
-<button onclick="toggleLanguage()" id="langButton" class="lang-btn" aria-label="Toggle language">🌐</button>
+<a id="navAbout" data-i18n="navAbout" href="about.html"></a>
+<a id="navContact" data-i18n="navContact" href="contact.html"></a>
+<select id="languageSelect" class="lang-select" data-i18n-aria="languageSelector"></select>
 </nav>
 </header>
 
-<section class="hero" aria-label="Welcome">
-<h1 data-en="Micro Créatif" data-fr="Micro Créatif"></h1>
-<p data-en="" data-fr=""></p>
-<img class="uni" src="images/uni.png" alt="Micro Créatif mascot">
+<section class="hero" data-i18n-aria="welcome">
+<h1 data-i18n="brandName"></h1>
+<p data-i18n="heroSubtitle"></p>
+<img class="uni" src="images/uni.png" data-i18n-alt="mascotAlt" alt="">
 </section>
 
-<section class="apps" aria-label="Our apps">
+<section class="apps" data-i18n-aria="ourApps">
 <div class="app-grid">
 
 <div class="app">
 <a href="radec-calculator.html">
 <div class="icon">
-<img src="images/app1.png" alt="RA Dec AZ Alt – telescope coordinate converter app">
+<img src="images/RADEC.png" data-i18n-alt="radecAlt" alt="">
 </div>
-<p data-en="RA / Dec / AZ / Alt" data-fr="AD / Déc / AZ / Alt"></p>
+<p data-i18n="appRadec"></p>
 </a>
 </div>
 
 <div class="app">
 <a href="virtual-telescope.html">
 <div class="icon">
-<img src="images/app2.png" alt="Virtual Telescope – astronomy simulation app">
+<img src="images/VirtualTelescope.png" data-i18n-alt="virtualTelescopeAlt" alt="">
 </div>
-<p data-en="Virtual Telescope" data-fr="Télescope virtuel"></p>
+<p data-i18n="appVirtualTelescope"></p>
 </a>
 </div>
 
 <div class="app">
 <a href="sol-and-stars.html">
 <div class="icon">
-<img src="images/sol-and-stars.png" alt="Sol and Stars – Solar System information and Milky Way star catalogue app">
+<img src="images/Sol&Stars.png" data-i18n-alt="solAndStarsAlt" alt="">
 </div>
-<p data-en="Sol and Stars" data-fr="Sol et les étoiles"></p>
+<p data-i18n="appSolAndStars"></p>
 </a>
 </div>
 
 <div class="app">
 <a href="alien-sky.html">
 <div class="icon">
-<img src="images/app4.png" alt="Alien Sky – see the night sky from other stars">
+<img src="images/AlienSky.png" data-i18n-alt="alienSkyAlt" alt="">
 </div>
-<p data-en="Alien Sky" data-fr="Alien Sky"></p>
+<p data-i18n="appAlienSky"></p>
 </a>
 </div>
 
 <div class="app">
 <a href="time-travel.html">
 <div class="icon">
-<img src="images/app5.png" alt="Time Travel – explore the sky across past and future dates">
+<img src="images/TimeTravel.png" data-i18n-alt="timeTravelSkyAlt" alt="">
 </div>
-<p data-en="Time Travel" data-fr="Voyage dans le temps"></p>
+<p data-i18n="appTimeTravelSky"></p>
 </a>
 </div>
 
@@ -285,8 +308,8 @@ opacity:0.85;
 
 <footer>
     <p>© Micro Créatif</p>
-    <p data-en="Montreal | Ho Chi Minh City" data-fr="Montréal | Hô Chi Minh-Ville"></p>
-    <p>Version 7.6</p>
+    <p data-i18n="locations"></p>
+    <p>Version 7.8</p>
     
 </footer>
 
@@ -326,21 +349,8 @@ menu.style.display="none";
 });
 });
 
-let currentLanguage = localStorage.getItem("mc_language") || "en";
 
-function applyLanguage(){
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.textContent = el.getAttribute("data-"+currentLanguage);
-});
-}
-
-function toggleLanguage(){
-currentLanguage = (currentLanguage==="en")?"fr":"en";
-localStorage.setItem("mc_language", currentLanguage);
-applyLanguage();
-}
-
-document.addEventListener("DOMContentLoaded",applyLanguage);
 </script>
+<script src="index-languages.js" defer></script>
 </body>
 </html>

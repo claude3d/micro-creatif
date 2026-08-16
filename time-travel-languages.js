@@ -1,0 +1,1057 @@
+/* Micro Créatif
+   Time Travel Sky website languages
+   Version 1.4
+
+   To add a language:
+   1. Copy one language block inside TIME_TRAVEL_LANGUAGES.
+   2. Change its language code, label, htmlLang and ogLocale.
+   3. Translate its meta and strings values.
+   The HTML page and language menu do not need to be changed.
+*/
+
+const TIME_TRAVEL_LANGUAGES = {
+  "en": {
+    "label": "English",
+    "htmlLang": "en-CA",
+    "ogLocale": "en_CA",
+    "strings": {
+      "nav.home": "Home",
+      "nav.apps": "Apps",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.about": "About",
+      "nav.contact": "Contact",
+      "hero.title": "Time Travel Sky",
+      "hero.subtitle": "Stay on Earth, move through time, and watch the real sky transform above you.",
+      "mode.placeTime.title": "Choose a place and time",
+      "mode.placeTime.body": "Use your current position, enter latitude and longitude manually, or choose from 19 historically important preset locations grouped into Africa, the Americas, Asia, and the Mediterranean & Near East. Then choose an exact local date and time from 9999 BCE through 9999 CE.",
+      "mode.history.title": "Move through history",
+      "mode.history.body": "Slide smoothly through hours, or travel by whole days, months, years, centuries, and millennia. The sky redraws while you move, and the Now button returns instantly to the present.",
+      "cards.realSky.title": "The real sky for the date",
+      "cards.realSky.body": "Stars, constellation lines, the Milky Way, the Sun, Moon, and visible planets follow the selected date, local time, and observing location.",
+      "cards.timeScales.title": "Six time scales",
+      "cards.timeScales.body": "The Hours control moves continuously through a full day, while Day, Month, Year, Century, and Millennium move in whole calendar steps and preserve all lower-order date and time values.",
+      "cards.events.title": "Ten astronomical events",
+      "cards.events.body": "Jump directly to ten programmed astronomical events: the Battle of the Eclipse in 585 BCE; Halley’s Comet in 837, 1066, 1301, and 1986; the Great Comets of 1577 and 1680; the planetary alignment of May 5, 2000; the total lunar eclipse of March 3, 2026; and the total solar eclipse of August 2, 2027.",
+      "cards.location.title": "Your observing location matters",
+      "cards.location.body": "The same date produces a different horizon and visible sky from each place on Earth. The 19 presets include locations such as Machu Picchu, Angkor, Alexandria, Luxor / Ancient Thebes, Jerusalem, Beijing, and Great Zimbabwe. Comet events automatically choose the time when the comet reaches its greatest visible altitude for the selected location.",
+      "features.title": "Current features",
+      "features.location": "Use the current device location, enter coordinates manually, or select one of 19 historically important preset locations grouped by region.",
+      "features.exactDate": "Edit the exact local year, month, day, hour, minute, and second, from 9999 BCE through 9999 CE.",
+      "features.travelScales": "Travel with Hours, Day, Month, Year, Century, or Millennium, and return with Now.",
+      "features.skyLayers": "Show major or all constellation lines, constellation shapes, star names, the Milky Way, atmosphere, Sun, Moon, and planets.",
+      "features.magnitude": "Adjust the limiting magnitude for stars and planets, and pan or zoom the whole-sky view.",
+      "features.events": "Select any of ten programmed astronomical events: six comet apparitions, the May 5, 2000 planetary alignment, the 585 BCE Battle of the Eclipse, the March 3, 2026 total lunar eclipse, and the August 2, 2027 total solar eclipse.",
+      "features.keyboard": "Use a hardware keyboard on iPad or Mac for fast numeric entry, field navigation, Apply, Cancel, BCE/CE selection, and N/S/E/W direction selection in the manual editors.",
+      "eclipses.title": "Eclipses: watch history happen again",
+      "eclipses.missed.title": "Missed the eclipse? Go back and watch it.",
+      "eclipses.missed.body": "Time Travel Sky’s continuous Hours control makes a solar eclipse unfold naturally as the Moon moves across the Sun. The eclipse is calculated from the selected date, time, and observing location and rendered live by the astronomy engine — it is not a prerecorded animation. The same method can be extended to lunar eclipses, with Earth’s shadow moving across the Moon. Revisit a past eclipse under perfectly clear virtual skies, or preview a future eclipse before it happens.",
+      "eclipses.battle.title": "The Battle of the Eclipse — 585 BCE",
+      "eclipses.battle.body1": "One of history’s most remarkable eclipse stories comes from a war between the Lydians and the Medes. According to the ancient historian Herodotus, the two armies were fighting in the sixth year of their war when day suddenly turned to night. The soldiers stopped fighting, and both sides became more eager to make peace. The settlement was reinforced by a dynastic marriage.",
+      "eclipses.battle.body2": "Modern eclipse catalogues identify this famous account with the total solar eclipse of May 28, 585 BCE, whose maximum totality lasted about six minutes. Herodotus also wrote that Thales of Miletus had foretold the loss of daylight within that year. The exact nature of Thales’ prediction is still debated, so Time Travel Sky can present the event as the traditional historical identification rather than as a certainty about every detail of the ancient story.",
+      "eclipses.battle.body3": "It is an ideal Time Travel Sky event: choose the ancient location and date, then move the Hours control slowly and watch the sky darken over a battle remembered for more than 2,600 years.",
+      "hardcore.title": "For hardcore users",
+      "hardcore.catalogue.title": "Catalogues and astronomical corrections",
+      "hardcore.catalogue.intro": "Time Travel Sky uses the complete HYG 4.2 master catalogue: 119,625 stars, including Hipparcos identifiers and astrometric data where available. Of these, 109,393 stars contain three-dimensional space-motion information. The app also includes constellation-line data and orbital data for its programmed historical comets.",
+      "hardcore.catalogue.stars": "The stellar catalogue starts at epoch J2000.0. For the selected date, stars with motion data are advanced using their Cartesian X, Y, and Z space velocities. Position, distance, right ascension, declination, and apparent brightness are recalculated for the new epoch.",
+      "hardcore.catalogue.earth": "The Earth-sky engine applies precession, nutation, and annual aberration. It then uses apparent sidereal time and the observer’s latitude and longitude to place the sky correctly above the local horizon.",
+      "hardcore.catalogue.solarSystem": "The Sun, Moon, and planets are calculated for the selected date and location. The Moon uses a topocentric position and its visible phase. Supported historical comets are calculated from their orbital elements.",
+      "hardcore.catalogue.limitations": "Planet and Moon calculations are intended for approximately 3000 BCE to 3000 CE. Outside that interval, planet positions are extrapolated and may be unsuitable for precise work; the Moon is not shown. A yellow warning triangle explains the limitation when it applies.",
+      "skyControls.title": "Sky controls",
+      "skyControls.move": "Move the sky left, right, up, or down.",
+      "skyControls.zoom": "Zoom in or zoom out.",
+      "skyControls.reset": "Reset the complete 180-degree sky view with the 0 button or by double-tapping the sky.",
+      "skyControls.touch": "Dragging and pinch-to-zoom are also available on touch devices.",
+      "keyboard.title": "Hardware keyboard shortcuts",
+      "keyboard.intro": "Manual Date & Time and Earth Location entry can be controlled directly from a hardware keyboard on iPad or Mac. The on-screen keypad remains available at the same time.",
+      "keyboard.dateTime.title": "Date & Time",
+      "keyboard.enterNumbers": "Enter numbers",
+      "keyboard.nextField": "Next field",
+      "keyboard.previousField": "Previous field",
+      "keyboard.erase": "Erase",
+      "keyboard.era": "BCE / CE",
+      "keyboard.apply": "Apply",
+      "keyboard.cancel": "Cancel",
+      "keyboard.location.title": "Earth Location",
+      "keyboard.directions": "Set North, South, East, or West",
+      "keyboard.note": "Cancel shortcuts vary slightly by platform. On iPad, ⌘. is convenient when the keyboard has no dedicated Escape key. On Mac Catalyst, ⌘[ is the reliable keyboard Cancel shortcut. Esc is also available where the keyboard and system deliver it.",
+      "easterEgg.title": "The Easter egg",
+      "easterEgg.body": "Tap the Time Travel Sky title to switch between the normal North-up sky and the hidden Stellarium-comparison orientation. The N, E, S, and W markers follow the active camera. Tap the title again to return to the normal view.",
+      "status.title": "Status",
+      "status.body": "Time Travel Sky is under active development for iPhone, iPad, and Mac. Its location system, editable date and time, six travel scales, historical events, astronomy engine, and principal controls are now working.",
+      "status.back": "← Back to apps",
+      "footer.locations": "Montreal | Ho Chi Minh City",
+      "footer.privacy": "Privacy: Time Travel Sky does not collect or transmit personal information. Current-location coordinates are stored locally inside Time Travel Sky on this device so they can be restored on a later launch. They are not sent to any server. Historical and manually selected locations are used only for the current session and are not saved for future launches.",
+      "aria.mainNavigation": "Main navigation",
+      "aria.languageSelector": "Choose language",
+      "aria.hero": "Time Travel Sky introduction",
+      "alt.background": "Galaxy background – Micro Créatif astronomy apps",
+      "alt.appIcon": "Time Travel Sky app icon"
+    },
+    "meta": {
+      "title": "Time Travel Sky – Explore Earth’s Sky Across Time | Micro Créatif",
+      "description": "Time Travel Sky by Micro Créatif lets you explore Earth’s real sky across hours, days, months, years, centuries, and millennia. Revisit solar eclipses, explore historical events, and follow stars, the Milky Way, Sun, Moon, planets, comets, and a famous planetary alignment from any observing location.",
+      "keywords": "Time Travel Sky astronomy app, historical sky, future sky, ancient sky, solar eclipse, lunar eclipse, Battle of the Eclipse, Thales eclipse, HYG 4.2 catalogue, Hipparcos, stellar proper motion, precession, nutation, annual aberration, historical comets, planetary alignment, Milky Way, planetarium, Micro Créatif",
+      "ogDescription": "Move through hours, days, months, years, centuries, and millennia while the real sky changes above your observing location."
+    }
+  },
+  "fr": {
+    "label": "Français",
+    "htmlLang": "fr-CA",
+    "ogLocale": "fr_CA",
+    "strings": {
+      "nav.home": "Accueil",
+      "nav.apps": "Apps",
+      "nav.radec": "AD / Déc / AZ / Alt",
+      "nav.virtualTelescope": "Télescope virtuel",
+      "nav.solAndStars": "Sol et les étoiles",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.about": "À propos",
+      "nav.contact": "Contact",
+      "hero.title": "Time Travel Sky",
+      "hero.subtitle": "Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au-dessus de vous.",
+      "mode.placeTime.title": "Choisissez un lieu et une époque",
+      "mode.placeTime.body": "Utilisez votre position actuelle, entrez manuellement la latitude et la longitude, ou choisissez parmi 19 lieux historiques prédéfinis regroupés en Afrique, dans les Amériques, en Asie, ainsi qu’en Méditerranée et au Proche-Orient. Choisissez ensuite une date et une heure locales précises, de 9999 av. J.-C. à 9999 apr. J.-C.",
+      "mode.history.title": "Parcourez l’histoire",
+      "mode.history.body": "Glissez continuellement d’une heure à l’autre, ou voyagez par jours, mois, années, siècles et millénaires entiers. Le ciel se redessine pendant le déplacement, et le bouton Maintenant vous ramène immédiatement au présent.",
+      "cards.realSky.title": "Le vrai ciel à la date choisie",
+      "cards.realSky.body": "Les étoiles, les lignes des constellations, la Voie lactée, le Soleil, la Lune et les planètes visibles suivent la date, l’heure locale et la position d’observation choisies.",
+      "cards.timeScales.title": "Six échelles de temps",
+      "cards.timeScales.body": "Le réglage Heures se déplace continuellement sur une journée complète, tandis que Jour, Mois, Année, Siècle et Millénaire avancent par étapes calendaires entières en conservant les unités plus petites de la date et de l’heure.",
+      "cards.events.title": "Dix événements astronomiques",
+      "cards.events.body": "Accédez directement à dix événements astronomiques programmés : la bataille de l’éclipse de 585 av. J.-C.; la comète de Halley en 837, 1066, 1301 et 1986; les grandes comètes de 1577 et 1680; l’alignement planétaire du 5 mai 2000; l’éclipse totale de Lune du 3 mars 2026; et l’éclipse totale de Soleil du 2 août 2027.",
+      "cards.location.title": "Votre lieu d’observation compte",
+      "cards.location.body": "La même date produit un horizon et un ciel visible différents selon le lieu choisi sur Terre. Les 19 lieux prédéfinis comprennent notamment Machu Picchu, Angkor, Alexandrie, Louxor / Thèbes antique, Jérusalem, Pékin et Grand Zimbabwe. Pour les comètes, l’app choisit automatiquement l’heure où elles atteignent leur plus grande altitude visible depuis la position sélectionnée.",
+      "features.title": "Fonctions actuelles",
+      "features.location": "Utiliser la position actuelle de l’appareil, entrer les coordonnées manuellement ou choisir l’un des 19 lieux historiques prédéfinis regroupés par région.",
+      "features.exactDate": "Modifier précisément l’année, le mois, le jour, l’heure, la minute et la seconde locales, de 9999 av. J.-C. à 9999 apr. J.-C.",
+      "features.travelScales": "Voyager avec Heures, Jour, Mois, Année, Siècle ou Millénaire, puis revenir avec Maintenant.",
+      "features.skyLayers": "Afficher les lignes des constellations principales ou de toutes les constellations, les formes des constellations, les noms d’étoiles, la Voie lactée, l’atmosphère, le Soleil, la Lune et les planètes.",
+      "features.magnitude": "Régler la magnitude limite des étoiles et des planètes, puis déplacer ou agrandir la vue du ciel entier.",
+      "features.events": "Choisir l’un des dix événements astronomiques programmés : six apparitions de comètes, l’alignement planétaire du 5 mai 2000, la bataille de l’éclipse de 585 av. J.-C., l’éclipse totale de Lune du 3 mars 2026 et l’éclipse totale de Soleil du 2 août 2027.",
+      "features.keyboard": "Utiliser un clavier physique sur iPad ou Mac pour la saisie numérique rapide, le déplacement entre les champs, Appliquer, Annuler, la sélection av. J.-C./apr. J.-C. et les directions N/S/E/O dans les éditeurs manuels.",
+      "eclipses.title": "Éclipses : revivez l’histoire",
+      "eclipses.missed.title": "Vous avez manqué l’éclipse? Revenez en arrière et regardez-la.",
+      "eclipses.missed.body": "Le réglage continu Heures de Time Travel Sky permet de voir une éclipse solaire se dérouler naturellement tandis que la Lune passe devant le Soleil. L’éclipse est calculée à partir de la date, de l’heure et du lieu d’observation choisis, puis rendue en direct par le moteur astronomique — il ne s’agit pas d’une animation préenregistrée. La même méthode peut être étendue aux éclipses lunaires, avec l’ombre de la Terre qui traverse la Lune. Revivez une éclipse passée sous un ciel virtuel parfaitement dégagé, ou prévisualisez une éclipse future avant qu’elle ne se produise.",
+      "eclipses.battle.title": "La bataille de l’éclipse — 585 av. J.-C.",
+      "eclipses.battle.body1": "L’un des récits d’éclipse les plus remarquables de l’histoire vient d’une guerre entre les Lydiens et les Mèdes. Selon l’historien antique Hérodote, les deux armées combattaient pendant la sixième année de leur guerre lorsque le jour se transforma soudainement en nuit. Les soldats cessèrent le combat et les deux camps devinrent plus désireux de conclure la paix. L’accord fut renforcé par un mariage dynastique.",
+      "eclipses.battle.body2": "Les catalogues modernes d’éclipses associent ce célèbre récit à l’éclipse solaire totale du 28 mai 585 av. J.-C., dont la totalité maximale dura environ six minutes. Hérodote écrivit aussi que Thalès de Milet avait annoncé la disparition de la lumière du jour au cours de cette année. La nature exacte de la prédiction de Thalès reste débattue; Time Travel Sky peut donc présenter cet événement comme l’identification historique traditionnelle, sans affirmer que chaque détail du récit antique est certain.",
+      "eclipses.battle.body3": "C’est un événement idéal pour Time Travel Sky : choisissez le lieu antique et la date, puis déplacez lentement le réglage Heures et regardez le ciel s’assombrir au-dessus d’une bataille dont on se souvient depuis plus de 2 600 ans.",
+      "hardcore.title": "Pour les utilisateurs chevronnés",
+      "hardcore.catalogue.title": "Catalogues et corrections astronomiques",
+      "hardcore.catalogue.intro": "Time Travel Sky utilise le catalogue maître HYG 4.2 complet : 119 625 étoiles, avec les identifiants Hipparcos et les données astrométriques lorsqu’ils sont disponibles. Parmi elles, 109 393 étoiles possèdent des données de mouvement spatial en trois dimensions. L’app comprend également les tracés des constellations et les données orbitales de ses comètes historiques programmées.",
+      "hardcore.catalogue.stars": "Le catalogue stellaire part de l’époque J2000.0. Pour la date choisie, les étoiles possédant des données de mouvement sont avancées à l’aide de leurs vitesses spatiales cartésiennes X, Y et Z. La position, la distance, l’ascension droite, la déclinaison et la luminosité apparente sont recalculées pour la nouvelle époque.",
+      "hardcore.catalogue.earth": "Le moteur du ciel terrestre applique la précession, la nutation et l’aberration annuelle. Il utilise ensuite le temps sidéral apparent ainsi que la latitude et la longitude de l’observateur pour placer correctement le ciel au-dessus de l’horizon local.",
+      "hardcore.catalogue.solarSystem": "Le Soleil, la Lune et les planètes sont calculés pour la date et la position choisies. La Lune utilise une position topocentrique et sa phase visible. Les comètes historiques prises en charge sont calculées à partir de leurs éléments orbitaux.",
+      "hardcore.catalogue.limitations": "Les calculs des planètes et de la Lune sont prévus pour environ 3000 av. J.-C. à 3000 apr. J.-C. À l’extérieur de cet intervalle, les positions planétaires sont extrapolées et peuvent ne pas convenir à un travail précis; la Lune n’est pas affichée. Un triangle d’avertissement jaune explique cette limite lorsqu’elle s’applique.",
+      "skyControls.title": "Commandes de la vue du ciel",
+      "skyControls.move": "Déplacer le ciel vers la gauche, la droite, le haut ou le bas.",
+      "skyControls.zoom": "Effectuer un zoom avant ou arrière.",
+      "skyControls.reset": "Rétablissez la vue complète du ciel à 180 degrés avec le bouton 0 ou en touchant deux fois le ciel.",
+      "skyControls.touch": "Le déplacement au doigt et le zoom par pincement sont également disponibles sur les appareils tactiles.",
+      "keyboard.title": "Raccourcis du clavier physique",
+      "keyboard.intro": "La saisie manuelle de la date et de l’heure ainsi que de la position terrestre peut être contrôlée directement avec un clavier physique sur iPad ou Mac. Le pavé numérique à l’écran reste disponible en même temps.",
+      "keyboard.dateTime.title": "Date et heure",
+      "keyboard.enterNumbers": "Saisir les chiffres",
+      "keyboard.nextField": "Champ suivant",
+      "keyboard.previousField": "Champ précédent",
+      "keyboard.erase": "Effacer",
+      "keyboard.era": "av. J.-C. / apr. J.-C.",
+      "keyboard.apply": "Appliquer",
+      "keyboard.cancel": "Annuler",
+      "keyboard.location.title": "Position terrestre",
+      "keyboard.directions": "Choisir Nord, Sud, Est ou Ouest",
+      "keyboard.note": "Les raccourcis Annuler varient légèrement selon la plateforme. Sur iPad, ⌘. est pratique lorsque le clavier n’a pas de touche Échap dédiée. Sur Mac Catalyst, ⌘[ est le raccourci clavier fiable pour Annuler. Échap reste aussi disponible lorsque le clavier et le système la transmettent.",
+      "easterEgg.title": "L’œuf de Pâques",
+      "easterEgg.body": "Touchez le titre Time Travel Sky pour passer de la vue normale avec le nord en haut à l’orientation cachée de comparaison avec Stellarium. Les repères N, E, S et O suivent la caméra active. Touchez de nouveau le titre pour revenir à la vue normale.",
+      "status.title": "Statut",
+      "status.body": "Time Travel Sky est en développement actif pour iPhone, iPad et Mac. Son système de localisation, la date et l’heure modifiables, ses six échelles de voyage, ses événements historiques, son moteur astronomique et ses commandes principales fonctionnent maintenant.",
+      "status.back": "← Retour aux apps",
+      "footer.locations": "Montréal | Hô Chi Minh-Ville",
+      "footer.privacy": "Confidentialité : Time Travel Sky ne collecte ni ne transmet de renseignements personnels. Les coordonnées de la position actuelle sont enregistrées localement dans Time Travel Sky sur cet appareil afin de pouvoir être restaurées lors d’un lancement ultérieur. Elles ne sont envoyées à aucun serveur. Les lieux historiques et les positions saisies manuellement sont utilisés uniquement pendant la session en cours et ne sont pas enregistrés pour les prochains lancements.",
+      "aria.mainNavigation": "Navigation principale",
+      "aria.languageSelector": "Choisir la langue",
+      "aria.hero": "Présentation de Time Travel Sky",
+      "alt.background": "Arrière-plan de galaxie – apps d’astronomie Micro Créatif",
+      "alt.appIcon": "Icône de l’app Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – Explorez le ciel terrestre à travers le temps | Micro Créatif",
+      "description": "Time Travel Sky de Micro Créatif permet d’explorer le vrai ciel terrestre à travers les heures, les jours, les mois, les années, les siècles et les millénaires. Revivez des éclipses, explorez des événements historiques et suivez les étoiles, la Voie lactée, le Soleil, la Lune, les planètes, les comètes et un célèbre alignement planétaire depuis n’importe quel lieu d’observation.",
+      "keywords": "app astronomie Time Travel Sky, ciel historique, ciel futur, ciel antique, éclipse solaire, éclipse lunaire, bataille de l’éclipse, éclipse de Thalès, catalogue HYG 4.2, Hipparcos, mouvement propre des étoiles, précession, nutation, aberration annuelle, comètes historiques, alignement planétaire, Voie lactée, planétarium, Micro Créatif",
+      "ogDescription": "Parcourez les heures, les jours, les mois, les années, les siècles et les millénaires pendant que le vrai ciel change au-dessus de votre lieu d’observation."
+    }
+  },
+  "vi": {
+    "label": "Tiếng Việt",
+    "htmlLang": "vi-VN",
+    "ogLocale": "vi_VN",
+    "strings": {
+      "nav.home": "Trang chủ",
+      "nav.apps": "Ứng dụng",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.about": "Giới thiệu",
+      "nav.contact": "Liên hệ",
+      "hero.title": "Time Travel Sky",
+      "hero.subtitle": "Ở lại trên Trái Đất, du hành xuyên thời gian và quan sát bầu trời thực sự biến đổi phía trên bạn.",
+      "mode.placeTime.title": "Chọn địa điểm và thời gian",
+      "mode.placeTime.body": "Sử dụng vị trí hiện tại của bạn, nhập vĩ độ và kinh độ thủ công, hoặc chọn một trong 19 địa điểm định sẵn có ý nghĩa lịch sử, được nhóm theo Châu Phi, Châu Mỹ, Châu Á, Địa Trung Hải và Cận Đông. Sau đó chọn chính xác ngày và giờ địa phương từ năm 9999 TCN đến năm 9999 SCN.",
+      "mode.history.title": "Du hành qua lịch sử",
+      "mode.history.body": "Trượt liên tục qua từng giờ, hoặc di chuyển theo trọn ngày, tháng, năm, thế kỷ và thiên niên kỷ. Bầu trời được vẽ lại trong khi bạn di chuyển, và nút Hiện tại đưa bạn trở về hiện tại ngay lập tức.",
+      "cards.realSky.title": "Bầu trời thực của ngày đã chọn",
+      "cards.realSky.body": "Các ngôi sao, đường chòm sao, Dải Ngân Hà, Mặt Trời, Mặt Trăng và các hành tinh nhìn thấy được thay đổi theo ngày, giờ địa phương và vị trí quan sát đã chọn.",
+      "cards.timeScales.title": "Sáu thang thời gian",
+      "cards.timeScales.body": "Điều khiển Giờ di chuyển liên tục qua trọn một ngày, trong khi Ngày, Tháng, Năm, Thế kỷ và Thiên niên kỷ di chuyển theo từng bước lịch nguyên vẹn và giữ nguyên mọi giá trị ngày giờ ở cấp thấp hơn.",
+      "cards.events.title": "Mười sự kiện thiên văn",
+      "cards.events.body": "Đi thẳng đến mười sự kiện thiên văn đã được lập trình: Trận chiến Nhật thực năm 585 TCN; sao chổi Halley vào các năm 837, 1066, 1301 và 1986; các Đại sao chổi năm 1577 và 1680; sự thẳng hàng hành tinh ngày 5 tháng 5 năm 2000; nguyệt thực toàn phần ngày 3 tháng 3 năm 2026; và nhật thực toàn phần ngày 2 tháng 8 năm 2027.",
+      "cards.location.title": "Vị trí quan sát của bạn rất quan trọng",
+      "cards.location.body": "Cùng một ngày sẽ tạo ra đường chân trời và bầu trời nhìn thấy khác nhau tại mỗi nơi trên Trái Đất. 19 địa điểm định sẵn gồm những nơi như Machu Picchu, Angkor, Alexandria, Luxor / Thebes cổ đại, Jerusalem, Bắc Kinh và Great Zimbabwe. Với các sự kiện sao chổi, ứng dụng tự động chọn thời điểm sao chổi đạt độ cao quan sát lớn nhất tại vị trí đã chọn.",
+      "features.title": "Các tính năng hiện tại",
+      "features.location": "Sử dụng vị trí hiện tại của thiết bị, nhập tọa độ thủ công, hoặc chọn một trong 19 địa điểm định sẵn có ý nghĩa lịch sử được nhóm theo khu vực.",
+      "features.exactDate": "Chỉnh chính xác năm, tháng, ngày, giờ, phút và giây theo giờ địa phương, từ năm 9999 TCN đến năm 9999 SCN.",
+      "features.travelScales": "Du hành bằng Giờ, Ngày, Tháng, Năm, Thế kỷ hoặc Thiên niên kỷ, rồi trở về bằng nút Hiện tại.",
+      "features.skyLayers": "Hiển thị các đường của những chòm sao chính hoặc tất cả chòm sao, hình dạng chòm sao, tên sao, Dải Ngân Hà, khí quyển, Mặt Trời, Mặt Trăng và các hành tinh.",
+      "features.magnitude": "Điều chỉnh cấp sao giới hạn cho các ngôi sao và hành tinh, đồng thời kéo hoặc phóng to/thu nhỏ toàn cảnh bầu trời.",
+      "features.events": "Chọn một trong mười sự kiện thiên văn đã được lập trình: sáu lần xuất hiện của sao chổi, sự thẳng hàng hành tinh ngày 5 tháng 5 năm 2000, Trận chiến Nhật thực năm 585 TCN, nguyệt thực toàn phần ngày 3 tháng 3 năm 2026 và nhật thực toàn phần ngày 2 tháng 8 năm 2027.",
+      "features.keyboard": "Sử dụng bàn phím vật lý trên iPad hoặc Mac để nhập số nhanh, chuyển giữa các trường, Áp dụng, Hủy, chọn TCN/SCN và chọn hướng B/N/Đ/T trong các trình chỉnh sửa thủ công.",
+      "eclipses.title": "Nhật thực và nguyệt thực: chứng kiến lịch sử diễn ra lần nữa",
+      "eclipses.missed.title": "Bỏ lỡ nhật thực? Hãy quay lại và xem nó.",
+      "eclipses.missed.body": "Điều khiển Giờ liên tục của Time Travel Sky cho phép một lần nhật thực diễn ra tự nhiên khi Mặt Trăng di chuyển ngang qua Mặt Trời. Nhật thực được tính từ ngày, giờ và vị trí quan sát đã chọn rồi được công cụ thiên văn hiển thị trực tiếp — đây không phải là hoạt ảnh ghi sẵn. Phương pháp tương tự có thể được mở rộng cho nguyệt thực, với bóng của Trái Đất di chuyển trên Mặt Trăng. Hãy xem lại một lần nhật thực trong quá khứ dưới bầu trời ảo hoàn toàn quang đãng, hoặc xem trước một lần nhật thực trong tương lai trước khi nó xảy ra.",
+      "eclipses.battle.title": "Trận chiến Nhật thực — 585 TCN",
+      "eclipses.battle.body1": "Một trong những câu chuyện về nhật thực đáng chú ý nhất trong lịch sử bắt nguồn từ cuộc chiến giữa người Lydia và người Media. Theo sử gia cổ đại Herodotus, hai đạo quân đang giao chiến vào năm thứ sáu của cuộc chiến thì ban ngày đột ngột biến thành ban đêm. Binh lính ngừng chiến đấu và cả hai bên đều mong muốn hòa bình hơn. Thỏa thuận sau đó được củng cố bằng một cuộc hôn nhân hoàng tộc.",
+      "eclipses.battle.body2": "Các danh mục nhật thực hiện đại gắn câu chuyện nổi tiếng này với nhật thực toàn phần ngày 28 tháng 5 năm 585 TCN, có thời gian toàn phần cực đại khoảng sáu phút. Herodotus cũng viết rằng Thales xứ Miletus đã dự báo sự mất ánh sáng ban ngày trong năm đó. Bản chất chính xác của dự báo của Thales vẫn còn được tranh luận, vì vậy Time Travel Sky trình bày sự kiện này theo cách nhận định lịch sử truyền thống chứ không khẳng định chắc chắn mọi chi tiết của câu chuyện cổ đại.",
+      "eclipses.battle.body3": "Đây là một sự kiện lý tưởng cho Time Travel Sky: chọn địa điểm cổ đại và ngày tương ứng, rồi di chuyển chậm điều khiển Giờ và quan sát bầu trời tối dần phía trên một trận chiến được ghi nhớ hơn 2.600 năm.",
+      "hardcore.title": "Dành cho người dùng chuyên sâu",
+      "hardcore.catalogue.title": "Danh mục và các hiệu chỉnh thiên văn",
+      "hardcore.catalogue.intro": "Time Travel Sky sử dụng toàn bộ danh mục chính HYG 4.2: 119.625 ngôi sao, bao gồm mã định danh Hipparcos và dữ liệu trắc lượng thiên văn khi có. Trong số đó, 109.393 ngôi sao có thông tin chuyển động không gian ba chiều. Ứng dụng cũng bao gồm dữ liệu đường chòm sao và dữ liệu quỹ đạo cho các sao chổi lịch sử đã được lập trình.",
+      "hardcore.catalogue.stars": "Danh mục sao bắt đầu tại kỷ nguyên J2000.0. Với ngày được chọn, các ngôi sao có dữ liệu chuyển động được tiến tới thời điểm mới bằng vận tốc không gian Descartes X, Y và Z. Vị trí, khoảng cách, xích kinh, xích vĩ và độ sáng biểu kiến được tính lại cho kỷ nguyên mới.",
+      "hardcore.catalogue.earth": "Công cụ bầu trời Trái Đất áp dụng tuế sai, chương động và quang sai hằng năm. Sau đó, nó sử dụng giờ sao biểu kiến cùng với vĩ độ và kinh độ của người quan sát để đặt bầu trời đúng vị trí phía trên đường chân trời địa phương.",
+      "hardcore.catalogue.solarSystem": "Mặt Trời, Mặt Trăng và các hành tinh được tính cho ngày và vị trí đã chọn. Mặt Trăng sử dụng vị trí topo-centric theo người quan sát và pha nhìn thấy của nó. Các sao chổi lịch sử được hỗ trợ được tính từ các phần tử quỹ đạo của chúng.",
+      "hardcore.catalogue.limitations": "Các phép tính hành tinh và Mặt Trăng được thiết kế cho khoảng từ năm 3000 TCN đến năm 3000 SCN. Ngoài khoảng này, vị trí các hành tinh được ngoại suy và có thể không phù hợp cho công việc đòi hỏi độ chính xác cao; Mặt Trăng sẽ không được hiển thị. Một tam giác cảnh báo màu vàng giải thích giới hạn này khi cần.",
+      "skyControls.title": "Điều khiển bầu trời",
+      "skyControls.move": "Di chuyển bầu trời sang trái, phải, lên hoặc xuống.",
+      "skyControls.zoom": "Phóng to hoặc thu nhỏ.",
+      "skyControls.reset": "Khôi phục toàn cảnh bầu trời 180 độ bằng nút 0 hoặc chạm hai lần vào bầu trời.",
+      "skyControls.touch": "Trên thiết bị cảm ứng, bạn cũng có thể kéo và chụm hai ngón tay để phóng to hoặc thu nhỏ.",
+      "keyboard.title": "Phím tắt bàn phím vật lý",
+      "keyboard.intro": "Việc nhập Ngày & Giờ và Vị trí trên Trái Đất thủ công có thể được điều khiển trực tiếp bằng bàn phím vật lý trên iPad hoặc Mac. Bàn phím số trên màn hình vẫn sử dụng được cùng lúc.",
+      "keyboard.dateTime.title": "Ngày & Giờ",
+      "keyboard.enterNumbers": "Nhập số",
+      "keyboard.nextField": "Trường tiếp theo",
+      "keyboard.previousField": "Trường trước",
+      "keyboard.erase": "Xóa",
+      "keyboard.era": "TCN / SCN",
+      "keyboard.apply": "Áp dụng",
+      "keyboard.cancel": "Hủy",
+      "keyboard.location.title": "Vị trí trên Trái Đất",
+      "keyboard.directions": "Chọn Bắc, Nam, Đông hoặc Tây",
+      "keyboard.note": "Các phím tắt Hủy hơi khác nhau tùy nền tảng. Trên iPad, ⌘. thuận tiện khi bàn phím không có phím Escape riêng. Trên Mac Catalyst, ⌘[ là phím tắt Hủy đáng tin cậy. Esc cũng dùng được khi bàn phím và hệ thống truyền phím này.",
+      "easterEgg.title": "Tính năng ẩn",
+      "easterEgg.body": "Chạm vào tiêu đề Time Travel Sky để chuyển giữa bầu trời bình thường với hướng Bắc ở phía trên và hướng ẩn dùng để so sánh với Stellarium. Các ký hiệu N, E, S và W đi theo camera đang hoạt động. Chạm lại vào tiêu đề để trở về chế độ xem bình thường.",
+      "status.title": "Trạng thái",
+      "status.body": "Time Travel Sky đang được phát triển tích cực cho iPhone, iPad và Mac. Hệ thống vị trí, ngày giờ có thể chỉnh sửa, sáu thang du hành thời gian, các sự kiện lịch sử, công cụ thiên văn và những điều khiển chính hiện đã hoạt động.",
+      "status.back": "← Quay lại ứng dụng",
+      "footer.locations": "Montréal | Thành phố Hồ Chí Minh",
+      "footer.privacy": "Quyền riêng tư: Time Travel Sky không thu thập hoặc truyền thông tin cá nhân. Tọa độ vị trí hiện tại được lưu cục bộ bên trong Time Travel Sky trên thiết bị này để có thể khôi phục trong lần mở ứng dụng sau. Chúng không được gửi đến bất kỳ máy chủ nào. Các địa điểm lịch sử và vị trí nhập thủ công chỉ được sử dụng trong phiên hiện tại và không được lưu cho những lần mở ứng dụng sau.",
+      "aria.mainNavigation": "Điều hướng chính",
+      "aria.languageSelector": "Chọn ngôn ngữ",
+      "aria.hero": "Giới thiệu Time Travel Sky",
+      "alt.background": "Nền thiên hà – các ứng dụng thiên văn Micro Créatif",
+      "alt.appIcon": "Biểu tượng ứng dụng Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – Khám phá bầu trời Trái Đất xuyên thời gian | Micro Créatif",
+      "description": "Time Travel Sky của Micro Créatif cho phép bạn khám phá bầu trời thực của Trái Đất qua từng giờ, ngày, tháng, năm, thế kỷ và thiên niên kỷ. Xem lại nhật thực, khám phá các sự kiện lịch sử và theo dõi các ngôi sao, Dải Ngân Hà, Mặt Trời, Mặt Trăng, các hành tinh, sao chổi và một sự thẳng hàng hành tinh nổi tiếng từ bất kỳ vị trí quan sát nào.",
+      "keywords": "ứng dụng thiên văn Time Travel Sky, bầu trời lịch sử, bầu trời tương lai, bầu trời cổ đại, nhật thực, nguyệt thực, Trận chiến Nhật thực, nhật thực Thales, danh mục HYG 4.2, Hipparcos, chuyển động riêng của sao, tuế sai, chương động, quang sai hằng năm, sao chổi lịch sử, thẳng hàng hành tinh, Dải Ngân Hà, cung thiên văn, Micro Créatif",
+      "ogDescription": "Di chuyển qua từng giờ, ngày, tháng, năm, thế kỷ và thiên niên kỷ trong khi bầu trời thực thay đổi phía trên vị trí quan sát của bạn."
+    }
+  },
+  "ja": {
+    "label": "日本語",
+    "htmlLang": "ja-JP",
+    "ogLocale": "ja_JP",
+    "strings": {
+      "nav.home": "ホーム",
+      "nav.apps": "アプリ",
+      "nav.about": "概要",
+      "nav.contact": "お問い合わせ",
+      "hero.subtitle": "地球にとどまったまま時を移動し、頭上の実際の空が変化していく様子を見てください。",
+      "mode.placeTime.title": "場所と時刻を選ぶ",
+      "mode.placeTime.body": "現在地を使うか、緯度・経度を手入力するか、アフリカ、アメリカ大陸、アジア、地中海・近東に分類された歴史的に重要な19か所のプリセットから選べます。その後、紀元前9999年から西暦9999年までの正確な現地日時を選びます。",
+      "mode.history.title": "歴史の中を移動する",
+      "mode.history.body": "時間単位では滑らかに移動し、日、月、年、世紀、千年紀単位では整数ステップで移動できます。移動中も空は描き直され、「Now」ボタンですぐ現在に戻れます。",
+      "cards.realSky.title": "選択した日時の実際の空",
+      "cards.realSky.body": "恒星、星座線、天の川、太陽、月、見える惑星は、選択した日付、現地時刻、観測地点に合わせて表示されます。",
+      "cards.timeScales.title": "6つの時間スケール",
+      "cards.timeScales.body": "Hours は1日を連続的に移動し、Day、Month、Year、Century、Millennium は暦の整数ステップで移動しながら、より小さい日時の値を保持します。",
+      "cards.events.title": "10の天文イベント",
+      "cards.events.body": "10のプログラム済み天文イベントへ直接移動できます：紀元前585年の日食の戦い、837年・1066年・1301年・1986年のハレー彗星、1577年と1680年の大彗星、2000年5月5日の惑星直列、2026年3月3日の皆既月食、2027年8月2日の皆既日食。",
+      "cards.location.title": "観測地点は重要です",
+      "cards.location.body": "同じ日付でも、地球上の場所によって地平線と見える空は異なります。19のプリセットには、マチュ・ピチュ、アンコール、アレクサンドリア、ルクソール／古代テーベ、エルサレム、北京、グレート・ジンバブエなどが含まれます。彗星イベントでは、選択地点から彗星が最も高く見える時刻が自動的に選ばれます。",
+      "features.title": "現在の機能",
+      "features.location": "端末の現在地を使う、座標を手入力する、または地域別に分類された歴史的に重要な19か所のプリセットから選択できます。",
+      "features.exactDate": "紀元前9999年から西暦9999年まで、現地の年、月、日、時、分、秒を正確に編集できます。",
+      "features.travelScales": "Hours、Day、Month、Year、Century、Millennium で時間移動し、Now で現在に戻れます。",
+      "features.skyLayers": "主要またはすべての星座線、星座の形、星名、天の川、大気、太陽、月、惑星を表示できます。",
+      "features.magnitude": "恒星と惑星の限界等級を調整し、全天表示を移動またはズームできます。",
+      "features.events": "プログラム済み10イベントから選択できます：6回の彗星出現、2000年5月5日の惑星直列、紀元前585年の日食の戦い、2026年3月3日の皆既月食、2027年8月2日の皆既日食。",
+      "features.keyboard": "iPad または Mac のハードウェアキーボードで、数値入力、フィールド移動、Apply、Cancel、紀元前／西暦の選択、手動編集画面での N/S/E/W 方向選択をすばやく行えます。",
+      "eclipses.title": "日食・月食：歴史をもう一度見る",
+      "eclipses.missed.title": "日食を見逃した？ 戻って見てみましょう。",
+      "eclipses.missed.body": "Time Travel Sky の連続的な Hours コントロールでは、月が太陽の前を横切るにつれて日食が自然に進行します。日食は選択した日付、時刻、観測地点から計算され、天文エンジンがリアルタイムに描画します。録画済みアニメーションではありません。同じ方法は月食にも拡張でき、地球の影が月面を移動します。過去の日食を完全に晴れた仮想の空で再訪したり、未来の日食を事前に確認したりできます。",
+      "eclipses.battle.title": "日食の戦い — 紀元前585年",
+      "eclipses.battle.body1": "歴史上もっとも印象的な日食の物語の一つは、リュディア人とメディア人の戦争に由来します。古代の歴史家ヘロドトスによると、戦争6年目に両軍が戦っている最中、突然昼が夜のように暗くなりました。兵士たちは戦いを止め、双方は和平を強く望むようになりました。和解は王家同士の結婚によってさらに固められました。",
+      "eclipses.battle.body2": "現代の日食カタログでは、この有名な記録は紀元前585年5月28日の皆既日食と結び付けられており、最大皆既時間は約6分でした。ヘロドトスはまた、ミレトスのタレスがその年のうちに昼の光が失われることを予言していたと記しています。タレスの予言が正確にどのようなものだったかは現在も議論があるため、Time Travel Sky では古代の物語の細部すべてを確実な事実とせず、伝統的な歴史上の同定として提示できます。",
+      "eclipses.battle.body3": "これは Time Travel Sky に理想的なイベントです。古代の場所と日付を選び、Hours をゆっくり動かして、2600年以上語り継がれてきた戦いの上で空が暗くなる様子を見てください。",
+      "hardcore.title": "上級ユーザー向け",
+      "hardcore.catalogue.title": "カタログと天文補正",
+      "hardcore.catalogue.intro": "Time Travel Sky は HYG 4.2 完全マスターカタログの119,625個の恒星を使用し、利用可能な場合は Hipparcos 識別子と位置天文データも含みます。そのうち109,393個には3次元の空間運動情報があります。さらに星座線データと、プログラム済み歴史彗星の軌道データも含まれます。",
+      "hardcore.catalogue.stars": "恒星カタログの基準元期は J2000.0 です。選択した日付に対し、運動データを持つ恒星はデカルト座標 X、Y、Z の空間速度を使って移動させます。位置、距離、赤経、赤緯、見かけの明るさを新しい元期について再計算します。",
+      "hardcore.catalogue.earth": "地球の空を計算するエンジンは歳差、章動、年周光行差を適用します。その後、見かけの恒星時と観測者の緯度・経度を使い、空を現地の地平線上の正しい位置に配置します。",
+      "hardcore.catalogue.solarSystem": "太陽、月、惑星は選択した日付と場所について計算されます。月には地心ではなく観測地点からの位置（地形視差を含む）と見える位相を使用します。対応する歴史彗星は軌道要素から計算されます。",
+      "hardcore.catalogue.limitations": "惑星と月の計算は、おおよそ紀元前3000年から西暦3000年を想定しています。その範囲外では惑星位置は外挿され、精密な用途には適さない場合があります。月は表示されません。該当するときは黄色い警告三角形が制限を説明します。",
+      "skyControls.title": "空の操作",
+      "skyControls.move": "空を左、右、上、下へ移動します。",
+      "skyControls.zoom": "ズームイン／ズームアウトします。",
+      "skyControls.reset": "0ボタンまたは空のダブルタップで、180度の全天表示に戻します。",
+      "skyControls.touch": "タッチ端末ではドラッグとピンチズームも使えます。",
+      "keyboard.title": "ハードウェアキーボードのショートカット",
+      "keyboard.intro": "日付と時刻、地球上の位置の手動入力は、iPad または Mac のハードウェアキーボードから直接操作できます。画面上のキーパッドも同時に使用できます。",
+      "keyboard.dateTime.title": "日付と時刻",
+      "keyboard.enterNumbers": "数字を入力",
+      "keyboard.nextField": "次のフィールド",
+      "keyboard.previousField": "前のフィールド",
+      "keyboard.erase": "消去",
+      "keyboard.era": "紀元前 / 西暦",
+      "keyboard.apply": "適用",
+      "keyboard.cancel": "キャンセル",
+      "keyboard.location.title": "地球上の位置",
+      "keyboard.directions": "北、南、東、西を設定",
+      "keyboard.note": "キャンセル用ショートカットはプラットフォームによって少し異なります。iPad では、専用の Escape キーがないキーボードの場合 ⌘. が便利です。Mac Catalyst では ⌘[ が確実なキャンセルショートカットです。キーボードとシステムが送信する場合は Esc も使用できます。",
+      "easterEgg.title": "イースターエッグ",
+      "easterEgg.body": "Time Travel Sky のタイトルをタップすると、通常の北が上の空と、隠された Stellarium 比較用の向きを切り替えられます。N、E、S、W のマーカーは現在のカメラに従います。もう一度タイトルをタップすると通常表示に戻ります。",
+      "status.title": "開発状況",
+      "status.body": "Time Travel Sky は iPhone、iPad、Mac 向けに開発中です。位置システム、編集可能な日時、6つの時間スケール、歴史イベント、天文エンジン、主要な操作機能は現在動作しています。",
+      "status.back": "← アプリ一覧へ戻る",
+      "footer.locations": "モントリオール | ホーチミン市",
+      "footer.privacy": "プライバシー：Time Travel Sky は個人情報を収集または送信しません。現在地の座標は後の起動時に復元できるよう、この端末上の Time Travel Sky 内にのみ保存されます。サーバーには送信されません。歴史的な場所と手動で選択した場所は現在のセッションでのみ使用され、次回の起動用には保存されません。",
+      "aria.mainNavigation": "メインナビゲーション",
+      "aria.languageSelector": "言語を選択",
+      "aria.hero": "Time Travel Sky の紹介",
+      "alt.background": "銀河の背景 – Micro Créatif の天文アプリ",
+      "alt.appIcon": "Time Travel Sky のアプリアイコン",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "hero.title": "Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – 時を越えて地球の空を探索 | Micro Créatif",
+      "description": "Micro Créatif の Time Travel Sky では、時間、日、月、年、世紀、千年紀を移動しながら地球の実際の空を探索できます。日食を再訪し、歴史的イベントを見て、恒星、天の川、太陽、月、惑星、彗星、惑星直列を任意の観測地点から追跡できます。",
+      "keywords": "Time Travel Sky 天文アプリ, 歴史的な空, 未来の空, 古代の空, 日食, 月食, 日食の戦い, タレスの日食, HYG 4.2 カタログ, Hipparcos, 恒星固有運動, 歳差, 章動, 年周光行差, 歴史彗星, 惑星直列, 天の川, プラネタリウム, Micro Créatif",
+      "ogDescription": "時間、日、月、年、世紀、千年紀を移動しながら、観測地点の上にある実際の空の変化を見られます。"
+    }
+  },
+  "zh-Hans": {
+    "label": "简体中文",
+    "htmlLang": "zh-Hans",
+    "ogLocale": "zh_CN",
+    "strings": {
+      "nav.home": "首页",
+      "nav.apps": "应用",
+      "nav.about": "关于",
+      "nav.contact": "联系",
+      "hero.subtitle": "留在地球上，穿越时间，观看头顶真实的天空不断变化。",
+      "mode.placeTime.title": "选择地点和时间",
+      "mode.placeTime.body": "使用当前位置、手动输入纬度和经度，或从19个具有历史意义的预设地点中选择。这些地点按非洲、美洲、亚洲以及地中海与近东分组。然后选择从公元前9999年到公元9999年的精确当地日期和时间。",
+      "mode.history.title": "穿越历史",
+      "mode.history.body": "可按小时平滑连续移动，也可按整天、整月、整年、世纪或千年移动。移动时天空会实时重绘，“Now”按钮可立即返回现在。",
+      "cards.realSky.title": "所选日期的真实天空",
+      "cards.realSky.body": "恒星、星座线、银河、太阳、月球和可见行星都会根据所选日期、当地时间和观测地点显示。",
+      "cards.timeScales.title": "六种时间尺度",
+      "cards.timeScales.body": "Hours 控件可连续移动完整一天；Day、Month、Year、Century 和 Millennium 则按完整日历步长移动，同时保留更低级别的日期和时间数值。",
+      "cards.events.title": "十个天文事件",
+      "cards.events.body": "可直接跳转到十个预设天文事件：公元前585年的“日食之战”；837、1066、1301和1986年的哈雷彗星；1577年和1680年的大彗星；2000年5月5日的行星排列；2026年3月3日的月全食；以及2027年8月2日的日全食。",
+      "cards.location.title": "观测地点很重要",
+      "cards.location.body": "同一个日期，在地球不同地点会有不同的地平线和可见天空。19个预设地点包括马丘比丘、吴哥、亚历山大港、卢克索／古底比斯、耶路撒冷、北京和大津巴布韦等。对于彗星事件，应用会自动选择彗星在所选地点达到最高可见高度的时间。",
+      "features.title": "当前功能",
+      "features.location": "使用设备当前位置、手动输入坐标，或选择按地区分组的19个具有历史意义的预设地点。",
+      "features.exactDate": "可精确编辑当地的年、月、日、时、分、秒，范围从公元前9999年到公元9999年。",
+      "features.travelScales": "使用 Hours、Day、Month、Year、Century 或 Millennium 穿越时间，并用 Now 返回现在。",
+      "features.skyLayers": "显示主要或全部星座线、星座形状、恒星名称、银河、大气、太阳、月球和行星。",
+      "features.magnitude": "调整恒星和行星的极限星等，并平移或缩放全天视图。",
+      "features.events": "从十个预设天文事件中选择：六次彗星出现、2000年5月5日的行星排列、公元前585年的“日食之战”、2026年3月3日的月全食，以及2027年8月2日的日全食。",
+      "features.keyboard": "在 iPad 或 Mac 上使用实体键盘，可快速输入数字、切换字段、执行 Apply 和 Cancel、选择 BCE/CE，并在手动编辑器中选择 N/S/E/W 方向。",
+      "eclipses.title": "日食与月食：让历史再次发生",
+      "eclipses.missed.title": "错过了日食？回去再看一次。",
+      "eclipses.missed.body": "Time Travel Sky 的连续 Hours 控件可让日食随着月球掠过太阳而自然展开。日食根据所选日期、时间和观测地点计算，并由天文引擎实时绘制——不是预录动画。同样的方法也可扩展到月食，让地球的影子越过月面。你可以在完全晴朗的虚拟天空下重看过去的日食，也可以在未来的日食发生前预览。",
+      "eclipses.battle.title": "日食之战 — 公元前585年",
+      "eclipses.battle.body1": "历史上最著名的日食故事之一发生在吕底亚人与米底人的战争中。根据古代历史学家希罗多德的记载，战争第六年，两军正在交战时，白昼突然变成黑夜。士兵停止战斗，双方都更愿意议和。最终的和解还通过王室联姻得到巩固。",
+      "eclipses.battle.body2": "现代日食目录通常把这段著名记载与公元前585年5月28日的日全食联系起来，当时最大食甚阶段约持续六分钟。希罗多德还写道，米利都的泰勒斯曾预言那一年会失去日光。泰勒斯的预言究竟是什么性质至今仍有争议，因此 Time Travel Sky 可以把这一事件作为传统的历史认定来呈现，而不是把古代故事的每个细节都当作确定事实。",
+      "eclipses.battle.body3": "这是非常适合 Time Travel Sky 的事件：选择古代地点和日期，然后缓慢移动 Hours 控件，观看天空在这场被人记忆了2600多年的战役上方逐渐变暗。",
+      "hardcore.title": "面向高级用户",
+      "hardcore.catalogue.title": "星表与天文修正",
+      "hardcore.catalogue.intro": "Time Travel Sky 使用完整的 HYG 4.2 主星表，共119,625颗恒星，并在可用时包含 Hipparcos 标识符和天体测量数据。其中109,393颗恒星具有三维空间运动信息。应用还包含星座连线数据以及预设历史彗星的轨道数据。",
+      "hardcore.catalogue.stars": "恒星目录以 J2000.0 历元为起点。对于所选日期，具有运动数据的恒星会根据其笛卡尔 X、Y、Z 空间速度推进。位置、距离、赤经、赤纬和视亮度都会针对新历元重新计算。",
+      "hardcore.catalogue.earth": "地球天空引擎会应用岁差、章动和周年光行差，然后利用视恒星时以及观测者的纬度和经度，把天空正确放置在当地地平线上方。",
+      "hardcore.catalogue.solarSystem": "太阳、月球和行星会根据所选日期和地点计算。月球使用站心位置和可见月相。支持的历史彗星则根据其轨道根数计算。",
+      "hardcore.catalogue.limitations": "行星和月球计算主要适用于约公元前3000年至公元3000年。超出该范围时，行星位置采用外推，可能不适合精密工作；月球不会显示。适用时，黄色警告三角形会说明这一限制。",
+      "skyControls.title": "天空控制",
+      "skyControls.move": "向左、右、上或下移动天空。",
+      "skyControls.zoom": "放大或缩小。",
+      "skyControls.reset": "按 0 键或双击天空，恢复完整的180度全天视图。",
+      "skyControls.touch": "触摸设备还支持拖动和双指缩放。",
+      "keyboard.title": "实体键盘快捷键",
+      "keyboard.intro": "在 iPad 或 Mac 上，可直接使用实体键盘控制日期与时间以及地球位置的手动输入。屏幕数字键盘仍可同时使用。",
+      "keyboard.dateTime.title": "日期与时间",
+      "keyboard.enterNumbers": "输入数字",
+      "keyboard.nextField": "下一个字段",
+      "keyboard.previousField": "上一个字段",
+      "keyboard.erase": "删除",
+      "keyboard.era": "公元前 / 公元",
+      "keyboard.apply": "应用",
+      "keyboard.cancel": "取消",
+      "keyboard.location.title": "地球位置",
+      "keyboard.directions": "设置北、南、东或西",
+      "keyboard.note": "取消快捷键会因平台略有不同。在 iPad 上，如果键盘没有独立 Escape 键，⌘. 很方便。在 Mac Catalyst 上，⌘[ 是可靠的键盘取消快捷键。如果键盘和系统能够传递 Esc，也可以使用 Esc。",
+      "easterEgg.title": "彩蛋",
+      "easterEgg.body": "轻点 Time Travel Sky 标题，可在正常的“北向上”天空与隐藏的 Stellarium 对比方向之间切换。N、E、S、W 标记会跟随当前相机方向。再次轻点标题即可返回正常视图。",
+      "status.title": "状态",
+      "status.body": "Time Travel Sky 正在积极开发 iPhone、iPad 和 Mac 版本。位置系统、可编辑日期与时间、六种时间尺度、历史事件、天文引擎和主要控制功能目前都已可用。",
+      "status.back": "← 返回应用列表",
+      "footer.locations": "蒙特利尔 | 胡志明市",
+      "footer.privacy": "隐私：Time Travel Sky 不收集或传输个人信息。当前位置坐标仅存储在本设备的 Time Travel Sky 中，以便以后启动时恢复，不会发送到任何服务器。历史地点和手动选择的地点仅用于当前会话，不会保存供以后启动使用。",
+      "aria.mainNavigation": "主导航",
+      "aria.languageSelector": "选择语言",
+      "aria.hero": "Time Travel Sky 介绍",
+      "alt.background": "银河背景 – Micro Créatif 天文应用",
+      "alt.appIcon": "Time Travel Sky 应用图标",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "hero.title": "Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – 穿越时间探索地球天空 | Micro Créatif",
+      "description": "Micro Créatif 的 Time Travel Sky 可让你按小时、天、月、年、世纪和千年探索地球的真实天空。重看日食、探索历史事件，并从任意观测地点追踪恒星、银河、太阳、月球、行星、彗星和著名的行星排列。",
+      "keywords": "Time Travel Sky 天文应用, 历史天空, 未来天空, 古代天空, 日食, 月食, 日食之战, 泰勒斯日食, HYG 4.2 星表, Hipparcos, 恒星自行, 岁差, 章动, 周年光行差, 历史彗星, 行星排列, 银河, 天象仪, Micro Créatif",
+      "ogDescription": "按小时、天、月、年、世纪和千年移动，同时观看观测地点上方的真实天空不断变化。"
+    }
+  },
+  "zh-Hant": {
+    "label": "繁體中文",
+    "htmlLang": "zh-Hant",
+    "ogLocale": "zh_TW",
+    "strings": {
+      "nav.home": "首頁",
+      "nav.apps": "應用程式",
+      "nav.about": "關於",
+      "nav.contact": "聯絡",
+      "hero.subtitle": "留在地球上，穿越時間，觀看頭頂真實的天空不斷變化。",
+      "mode.placeTime.title": "選擇地點和時間",
+      "mode.placeTime.body": "使用目前位置、手動輸入緯度與經度，或從19個具有歷史意義的預設地點中選擇。這些地點依非洲、美洲、亞洲以及地中海與近東分組。然後選擇從西元前9999年到西元9999年的精確當地日期與時間。",
+      "mode.history.title": "穿越歷史",
+      "mode.history.body": "可按小時平滑連續移動，也可按整天、整月、整年、世紀或千年移動。移動時天空會即時重繪，「Now」按鈕可立即返回現在。",
+      "cards.realSky.title": "所選日期的真實天空",
+      "cards.realSky.body": "恆星、星座線、銀河、太陽、月球和可見行星都會依所選日期、當地時間和觀測地點顯示。",
+      "cards.timeScales.title": "六種時間尺度",
+      "cards.timeScales.body": "Hours 控制可連續移動完整一天；Day、Month、Year、Century 和 Millennium 則按完整曆法步長移動，同時保留較低層級的日期與時間數值。",
+      "cards.events.title": "十個天文事件",
+      "cards.events.body": "可直接跳到十個預設天文事件：西元前585年的「日食之戰」；837、1066、1301和1986年的哈雷彗星；1577年和1680年的大彗星；2000年5月5日的行星排列；2026年3月3日的月全食；以及2027年8月2日的日全食。",
+      "cards.location.title": "觀測地點很重要",
+      "cards.location.body": "同一日期，在地球不同地點會有不同的地平線與可見天空。19個預設地點包括馬丘比丘、吳哥、亞歷山卓、路克索／古底比斯、耶路撒冷、北京和大辛巴威等。對彗星事件而言，應用程式會自動選擇彗星在所選地點達到最高可見高度的時間。",
+      "features.title": "目前功能",
+      "features.location": "使用裝置目前位置、手動輸入座標，或選擇依地區分組的19個具有歷史意義的預設地點。",
+      "features.exactDate": "可精確編輯當地的年、月、日、時、分、秒，範圍從西元前9999年到西元9999年。",
+      "features.travelScales": "使用 Hours、Day、Month、Year、Century 或 Millennium 穿越時間，並用 Now 返回現在。",
+      "features.skyLayers": "顯示主要或全部星座線、星座形狀、恆星名稱、銀河、大氣、太陽、月球和行星。",
+      "features.magnitude": "調整恆星與行星的極限星等，並平移或縮放全天視圖。",
+      "features.events": "從十個預設天文事件中選擇：六次彗星出現、2000年5月5日的行星排列、西元前585年的「日食之戰」、2026年3月3日的月全食，以及2027年8月2日的日全食。",
+      "features.keyboard": "在 iPad 或 Mac 上使用實體鍵盤，可快速輸入數字、切換欄位、執行 Apply 和 Cancel、選擇 BCE/CE，並在手動編輯器中選擇 N/S/E/W 方向。",
+      "eclipses.title": "日食與月食：讓歷史再次發生",
+      "eclipses.missed.title": "錯過了日食？回去再看一次。",
+      "eclipses.missed.body": "Time Travel Sky 的連續 Hours 控制可讓日食隨著月球掠過太陽而自然展開。日食依所選日期、時間和觀測地點計算，並由天文引擎即時繪製——不是預錄動畫。同樣的方法也可擴展到月食，讓地球的影子越過月面。你可以在完全晴朗的虛擬天空下重看過去的日食，也可以在未來的日食發生前預覽。",
+      "eclipses.battle.title": "日食之戰 — 西元前585年",
+      "eclipses.battle.body1": "歷史上最著名的日食故事之一發生在呂底亞人與米底人的戰爭中。根據古代歷史學家希羅多德的記載，戰爭第六年，兩軍正在交戰時，白晝突然變成黑夜。士兵停止戰鬥，雙方都更願意議和。最後的和解還透過王室聯姻得到鞏固。",
+      "eclipses.battle.body2": "現代日食目錄通常把這段著名記載與西元前585年5月28日的日全食聯繫起來，當時最大食甚階段約持續六分鐘。希羅多德還寫道，米利都的泰勒斯曾預言那一年會失去日光。泰勒斯的預言究竟是什麼性質至今仍有爭議，因此 Time Travel Sky 可以把這一事件作為傳統的歷史認定來呈現，而不是把古代故事的每個細節都當成確定事實。",
+      "eclipses.battle.body3": "這是非常適合 Time Travel Sky 的事件：選擇古代地點與日期，然後緩慢移動 Hours 控制，觀看天空在這場被人記憶了2600多年的戰役上方逐漸變暗。",
+      "hardcore.title": "進階使用者",
+      "hardcore.catalogue.title": "星表與天文修正",
+      "hardcore.catalogue.intro": "Time Travel Sky 使用完整的 HYG 4.2 主星表，共119,625顆恆星，並在可用時包含 Hipparcos 識別碼與天體測量資料。其中109,393顆恆星具有三維空間運動資訊。應用程式還包含星座連線資料以及預設歷史彗星的軌道資料。",
+      "hardcore.catalogue.stars": "恆星目錄以 J2000.0 曆元為起點。對所選日期，具有運動資料的恆星會依其笛卡兒 X、Y、Z 空間速度推進。位置、距離、赤經、赤緯和視亮度都會針對新曆元重新計算。",
+      "hardcore.catalogue.earth": "地球天空引擎會套用歲差、章動與周年光行差，然後利用視恆星時以及觀測者的緯度與經度，把天空正確放置在當地地平線上方。",
+      "hardcore.catalogue.solarSystem": "太陽、月球和行星會依所選日期與地點計算。月球使用站心位置與可見月相。支援的歷史彗星則依其軌道根數計算。",
+      "hardcore.catalogue.limitations": "行星與月球計算主要適用於約西元前3000年至西元3000年。超出此範圍時，行星位置採用外推，可能不適合精密工作；月球不會顯示。適用時，黃色警告三角形會說明此限制。",
+      "skyControls.title": "天空控制",
+      "skyControls.move": "向左、右、上或下移動天空。",
+      "skyControls.zoom": "放大或縮小。",
+      "skyControls.reset": "按 0 鍵或雙擊天空，恢復完整的180度全天視圖。",
+      "skyControls.touch": "觸控裝置也支援拖曳和雙指縮放。",
+      "keyboard.title": "實體鍵盤快速鍵",
+      "keyboard.intro": "在 iPad 或 Mac 上，可直接使用實體鍵盤控制日期與時間以及地球位置的手動輸入。螢幕數字鍵盤仍可同時使用。",
+      "keyboard.dateTime.title": "日期與時間",
+      "keyboard.enterNumbers": "輸入數字",
+      "keyboard.nextField": "下一個欄位",
+      "keyboard.previousField": "上一個欄位",
+      "keyboard.erase": "刪除",
+      "keyboard.era": "西元前 / 西元",
+      "keyboard.apply": "套用",
+      "keyboard.cancel": "取消",
+      "keyboard.location.title": "地球位置",
+      "keyboard.directions": "設定北、南、東或西",
+      "keyboard.note": "取消快速鍵會因平台略有不同。在 iPad 上，如果鍵盤沒有獨立 Escape 鍵，⌘. 很方便。在 Mac Catalyst 上，⌘[ 是可靠的鍵盤取消快速鍵。如果鍵盤和系統能傳遞 Esc，也可以使用 Esc。",
+      "easterEgg.title": "彩蛋",
+      "easterEgg.body": "輕點 Time Travel Sky 標題，可在正常的「北向上」天空與隱藏的 Stellarium 比較方向之間切換。N、E、S、W 標記會跟隨目前相機方向。再次輕點標題即可返回正常視圖。",
+      "status.title": "狀態",
+      "status.body": "Time Travel Sky 正在積極開發 iPhone、iPad 和 Mac 版本。位置系統、可編輯日期與時間、六種時間尺度、歷史事件、天文引擎和主要控制功能目前都已可用。",
+      "status.back": "← 返回應用程式列表",
+      "footer.locations": "蒙特婁 | 胡志明市",
+      "footer.privacy": "隱私：Time Travel Sky 不收集或傳輸個人資訊。目前位置座標只儲存在本裝置的 Time Travel Sky 中，以便之後啟動時恢復，不會傳送到任何伺服器。歷史地點與手動選擇的地點只用於目前工作階段，不會儲存供日後啟動使用。",
+      "aria.mainNavigation": "主導覽",
+      "aria.languageSelector": "選擇語言",
+      "aria.hero": "Time Travel Sky 介紹",
+      "alt.background": "銀河背景 – Micro Créatif 天文應用程式",
+      "alt.appIcon": "Time Travel Sky 應用程式圖示",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "hero.title": "Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – 穿越時間探索地球天空 | Micro Créatif",
+      "description": "Micro Créatif 的 Time Travel Sky 可讓你按小時、天、月、年、世紀和千年探索地球的真實天空。重看日食、探索歷史事件，並從任何觀測地點追蹤恆星、銀河、太陽、月球、行星、彗星和著名的行星排列。",
+      "keywords": "Time Travel Sky 天文應用程式, 歷史天空, 未來天空, 古代天空, 日食, 月食, 日食之戰, 泰勒斯日食, HYG 4.2 星表, Hipparcos, 恆星自行, 歲差, 章動, 周年光行差, 歷史彗星, 行星排列, 銀河, 天象儀, Micro Créatif",
+      "ogDescription": "按小時、天、月、年、世紀和千年移動，同時觀看觀測地點上方的真實天空不斷變化。"
+    }
+  },
+  "es": {
+    "label": "Español",
+    "htmlLang": "es",
+    "ogLocale": "es_ES",
+    "strings": {
+      "nav.home": "Inicio",
+      "nav.apps": "Apps",
+      "nav.about": "Acerca de",
+      "nav.contact": "Contacto",
+      "hero.subtitle": "Permanece en la Tierra, viaja por el tiempo y observa cómo se transforma el cielo real sobre ti.",
+      "mode.placeTime.title": "Elige un lugar y una fecha",
+      "mode.placeTime.body": "Usa tu ubicación actual, introduce manualmente la latitud y la longitud, o elige entre 19 ubicaciones predefinidas de importancia histórica, agrupadas en África, América, Asia y el Mediterráneo y Oriente Próximo. Después selecciona una fecha y hora locales exactas entre 9999 a. C. y 9999 d. C.",
+      "mode.history.title": "Viaja por la historia",
+      "mode.history.body": "Desplázate suavemente por las horas o viaja por días, meses, años, siglos y milenios completos. El cielo se redibuja mientras te mueves y el botón Now te devuelve inmediatamente al presente.",
+      "cards.realSky.title": "El cielo real para la fecha elegida",
+      "cards.realSky.body": "Las estrellas, las líneas de constelaciones, la Vía Láctea, el Sol, la Luna y los planetas visibles siguen la fecha seleccionada, la hora local y el lugar de observación.",
+      "cards.timeScales.title": "Seis escalas de tiempo",
+      "cards.timeScales.body": "El control Hours se desplaza de forma continua a lo largo de un día completo, mientras que Day, Month, Year, Century y Millennium avanzan en pasos completos de calendario y conservan los valores menores de fecha y hora.",
+      "cards.events.title": "Diez eventos astronómicos",
+      "cards.events.body": "Salta directamente a diez eventos astronómicos programados: la Batalla del Eclipse de 585 a. C.; el cometa Halley en 837, 1066, 1301 y 1986; los grandes cometas de 1577 y 1680; la alineación planetaria del 5 de mayo de 2000; el eclipse lunar total del 3 de marzo de 2026; y el eclipse solar total del 2 de agosto de 2027.",
+      "cards.location.title": "Tu lugar de observación importa",
+      "cards.location.body": "La misma fecha produce un horizonte y un cielo visible diferentes desde cada lugar de la Tierra. Las 19 ubicaciones predefinidas incluyen Machu Picchu, Angkor, Alejandría, Luxor / la antigua Tebas, Jerusalén, Pekín y Gran Zimbabue. Para los eventos de cometas, la app elige automáticamente la hora en que el cometa alcanza su mayor altura visible desde la ubicación seleccionada.",
+      "features.title": "Funciones actuales",
+      "features.location": "Usa la ubicación actual del dispositivo, introduce coordenadas manualmente o selecciona una de las 19 ubicaciones predefinidas de importancia histórica agrupadas por región.",
+      "features.exactDate": "Edita con precisión el año, mes, día, hora, minuto y segundo locales, desde 9999 a. C. hasta 9999 d. C.",
+      "features.travelScales": "Viaja con Hours, Day, Month, Year, Century o Millennium y vuelve con Now.",
+      "features.skyLayers": "Muestra las líneas principales o todas las líneas de constelaciones, las formas de las constelaciones, los nombres de estrellas, la Vía Láctea, la atmósfera, el Sol, la Luna y los planetas.",
+      "features.magnitude": "Ajusta la magnitud límite de estrellas y planetas y desplaza o amplía la vista de todo el cielo.",
+      "features.events": "Selecciona cualquiera de los diez eventos astronómicos programados: seis apariciones de cometas, la alineación planetaria del 5 de mayo de 2000, la Batalla del Eclipse de 585 a. C., el eclipse lunar total del 3 de marzo de 2026 y el eclipse solar total del 2 de agosto de 2027.",
+      "features.keyboard": "Usa un teclado físico en iPad o Mac para introducir números rápidamente, navegar entre campos, aplicar, cancelar, elegir a. C./d. C. y seleccionar las direcciones N/S/E/O en los editores manuales.",
+      "eclipses.title": "Eclipses: vuelve a ver cómo ocurre la historia",
+      "eclipses.missed.title": "¿Te perdiste el eclipse? Vuelve atrás y míralo.",
+      "eclipses.missed.body": "El control continuo Hours de Time Travel Sky hace que un eclipse solar se desarrolle de forma natural mientras la Luna cruza el Sol. El eclipse se calcula a partir de la fecha, la hora y el lugar de observación seleccionados y el motor astronómico lo representa en tiempo real: no es una animación pregrabada. El mismo método puede aplicarse a los eclipses lunares, con la sombra de la Tierra desplazándose sobre la Luna. Vuelve a visitar un eclipse pasado bajo un cielo virtual perfectamente despejado o previsualiza uno futuro antes de que ocurra.",
+      "eclipses.battle.title": "La Batalla del Eclipse — 585 a. C.",
+      "eclipses.battle.body1": "Una de las historias de eclipses más extraordinarias procede de una guerra entre los lidios y los medos. Según el historiador antiguo Heródoto, los dos ejércitos luchaban en el sexto año de la guerra cuando el día se convirtió de repente en noche. Los soldados dejaron de combatir y ambos bandos se mostraron más dispuestos a hacer la paz. El acuerdo se reforzó mediante un matrimonio dinástico.",
+      "eclipses.battle.body2": "Los catálogos modernos de eclipses identifican tradicionalmente este famoso relato con el eclipse solar total del 28 de mayo de 585 a. C., cuya fase máxima de totalidad duró unos seis minutos. Heródoto también escribió que Tales de Mileto había predicho la pérdida de luz diurna dentro de ese año. La naturaleza exacta de la predicción de Tales sigue siendo debatida, por lo que Time Travel Sky puede presentar el evento como la identificación histórica tradicional y no como una certeza sobre cada detalle del relato antiguo.",
+      "eclipses.battle.body3": "Es un evento ideal para Time Travel Sky: elige el lugar y la fecha antiguos, mueve lentamente el control Hours y observa cómo se oscurece el cielo sobre una batalla recordada desde hace más de 2600 años.",
+      "hardcore.title": "Para usuarios avanzados",
+      "hardcore.catalogue.title": "Catálogos y correcciones astronómicas",
+      "hardcore.catalogue.intro": "Time Travel Sky utiliza el catálogo maestro completo HYG 4.2: 119 625 estrellas, incluidos identificadores Hipparcos y datos astrométricos cuando están disponibles. De ellas, 109 393 contienen información tridimensional de movimiento espacial. La app también incluye datos de líneas de constelaciones y datos orbitales para sus cometas históricos programados.",
+      "hardcore.catalogue.stars": "El catálogo estelar parte de la época J2000.0. Para la fecha seleccionada, las estrellas con datos de movimiento se avanzan usando sus velocidades espaciales cartesianas X, Y y Z. La posición, la distancia, la ascensión recta, la declinación y el brillo aparente se recalculan para la nueva época.",
+      "hardcore.catalogue.earth": "El motor del cielo terrestre aplica precesión, nutación y aberración anual. Después usa el tiempo sidéreo aparente y la latitud y longitud del observador para colocar correctamente el cielo sobre el horizonte local.",
+      "hardcore.catalogue.solarSystem": "El Sol, la Luna y los planetas se calculan para la fecha y ubicación seleccionadas. La Luna utiliza una posición topocéntrica y su fase visible. Los cometas históricos compatibles se calculan a partir de sus elementos orbitales.",
+      "hardcore.catalogue.limitations": "Los cálculos de planetas y de la Luna están pensados aproximadamente para el intervalo entre 3000 a. C. y 3000 d. C. Fuera de ese intervalo, las posiciones planetarias se extrapolan y pueden no ser adecuadas para trabajos precisos; la Luna no se muestra. Un triángulo amarillo de advertencia explica la limitación cuando corresponde.",
+      "skyControls.title": "Controles del cielo",
+      "skyControls.move": "Mueve el cielo a la izquierda, derecha, arriba o abajo.",
+      "skyControls.zoom": "Acerca o aleja la vista.",
+      "skyControls.reset": "Restablece la vista completa del cielo de 180 grados con el botón 0 o tocando dos veces el cielo.",
+      "skyControls.touch": "En dispositivos táctiles también puedes arrastrar y hacer zoom con un gesto de pinza.",
+      "keyboard.title": "Atajos de teclado físico",
+      "keyboard.intro": "La entrada manual de Fecha y hora y de Ubicación en la Tierra puede controlarse directamente con un teclado físico en iPad o Mac. El teclado numérico en pantalla sigue disponible al mismo tiempo.",
+      "keyboard.dateTime.title": "Fecha y hora",
+      "keyboard.enterNumbers": "Introducir números",
+      "keyboard.nextField": "Campo siguiente",
+      "keyboard.previousField": "Campo anterior",
+      "keyboard.erase": "Borrar",
+      "keyboard.era": "a. C. / d. C.",
+      "keyboard.apply": "Aplicar",
+      "keyboard.cancel": "Cancelar",
+      "keyboard.location.title": "Ubicación en la Tierra",
+      "keyboard.directions": "Elegir norte, sur, este u oeste",
+      "keyboard.note": "Los atajos para Cancelar varían ligeramente según la plataforma. En iPad, ⌘. es práctico cuando el teclado no tiene una tecla Escape dedicada. En Mac Catalyst, ⌘[ es el atajo de teclado fiable para Cancelar. Esc también está disponible cuando el teclado y el sistema lo transmiten.",
+      "easterEgg.title": "El huevo de Pascua",
+      "easterEgg.body": "Toca el título Time Travel Sky para alternar entre el cielo normal con el norte arriba y la orientación oculta para comparar con Stellarium. Los marcadores N, E, S y O siguen la cámara activa. Toca de nuevo el título para volver a la vista normal.",
+      "status.title": "Estado",
+      "status.body": "Time Travel Sky está en desarrollo activo para iPhone, iPad y Mac. Su sistema de ubicación, la fecha y hora editables, las seis escalas de viaje, los eventos históricos, el motor astronómico y los controles principales ya funcionan.",
+      "status.back": "← Volver a las apps",
+      "footer.locations": "Montreal | Ciudad Ho Chi Minh",
+      "footer.privacy": "Privacidad: Time Travel Sky no recopila ni transmite información personal. Las coordenadas de la ubicación actual se guardan localmente dentro de Time Travel Sky en este dispositivo para poder restaurarlas en un lanzamiento posterior. No se envían a ningún servidor. Las ubicaciones históricas y las seleccionadas manualmente solo se usan durante la sesión actual y no se guardan para futuros lanzamientos.",
+      "aria.mainNavigation": "Navegación principal",
+      "aria.languageSelector": "Elegir idioma",
+      "aria.hero": "Introducción a Time Travel Sky",
+      "alt.background": "Fondo de galaxia – apps de astronomía de Micro Créatif",
+      "alt.appIcon": "Icono de la app Time Travel Sky",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "hero.title": "Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – Explora el cielo de la Tierra a través del tiempo | Micro Créatif",
+      "description": "Time Travel Sky de Micro Créatif te permite explorar el cielo real de la Tierra a través de horas, días, meses, años, siglos y milenios. Revive eclipses solares, explora eventos históricos y sigue estrellas, la Vía Láctea, el Sol, la Luna, planetas, cometas y una famosa alineación planetaria desde cualquier lugar de observación.",
+      "keywords": "Time Travel Sky app de astronomía, cielo histórico, cielo futuro, cielo antiguo, eclipse solar, eclipse lunar, Batalla del Eclipse, eclipse de Tales, catálogo HYG 4.2, Hipparcos, movimiento propio estelar, precesión, nutación, aberración anual, cometas históricos, alineación planetaria, Vía Láctea, planetario, Micro Créatif",
+      "ogDescription": "Muévete por horas, días, meses, años, siglos y milenios mientras cambia el cielo real sobre tu lugar de observación."
+    }
+  },
+  "de": {
+    "label": "Deutsch",
+    "htmlLang": "de",
+    "ogLocale": "de_DE",
+    "strings": {
+      "nav.home": "Startseite",
+      "nav.apps": "Apps",
+      "nav.about": "Über uns",
+      "nav.contact": "Kontakt",
+      "hero.subtitle": "Bleib auf der Erde, reise durch die Zeit und beobachte, wie sich der echte Himmel über dir verändert.",
+      "mode.placeTime.title": "Ort und Zeit wählen",
+      "mode.placeTime.body": "Verwende deinen aktuellen Standort, gib Breiten- und Längengrad manuell ein oder wähle einen von 19 historisch bedeutenden voreingestellten Orten in Afrika, Amerika, Asien sowie im Mittelmeerraum und Nahen Osten. Danach kannst du ein genaues lokales Datum und eine Uhrzeit von 9999 v. Chr. bis 9999 n. Chr. wählen.",
+      "mode.history.title": "Durch die Geschichte reisen",
+      "mode.history.body": "Bewege dich stufenlos durch die Stunden oder in ganzen Tagen, Monaten, Jahren, Jahrhunderten und Jahrtausenden. Der Himmel wird während der Bewegung neu gezeichnet, und mit der Taste Now kehrst du sofort zur Gegenwart zurück.",
+      "cards.realSky.title": "Der echte Himmel zum gewählten Datum",
+      "cards.realSky.body": "Sterne, Sternbildlinien, die Milchstraße, Sonne, Mond und sichtbare Planeten folgen dem gewählten Datum, der lokalen Uhrzeit und dem Beobachtungsort.",
+      "cards.timeScales.title": "Sechs Zeitskalen",
+      "cards.timeScales.body": "Die Steuerung Hours bewegt sich kontinuierlich durch einen ganzen Tag, während Day, Month, Year, Century und Millennium in ganzen Kalenderschritten weitergehen und alle kleineren Datums- und Zeitwerte beibehalten.",
+      "cards.events.title": "Zehn astronomische Ereignisse",
+      "cards.events.body": "Springe direkt zu zehn programmierten astronomischen Ereignissen: der Schlacht der Sonnenfinsternis von 585 v. Chr.; dem Halleyschen Kometen 837, 1066, 1301 und 1986; den Großen Kometen von 1577 und 1680; der Planetenkonstellation vom 5. Mai 2000; der totalen Mondfinsternis vom 3. März 2026 und der totalen Sonnenfinsternis vom 2. August 2027.",
+      "cards.location.title": "Der Beobachtungsort ist wichtig",
+      "cards.location.body": "Dasselbe Datum ergibt an jedem Ort der Erde einen anderen Horizont und einen anderen sichtbaren Himmel. Zu den 19 Voreinstellungen gehören Machu Picchu, Angkor, Alexandria, Luxor / das antike Theben, Jerusalem, Peking und Groß-Simbabwe. Bei Kometenereignissen wählt die App automatisch die Uhrzeit, zu der der Komet vom gewählten Standort aus seine größte sichtbare Höhe erreicht.",
+      "features.title": "Aktuelle Funktionen",
+      "features.location": "Verwende den aktuellen Gerätestandort, gib Koordinaten manuell ein oder wähle einen von 19 historisch bedeutenden, nach Regionen gruppierten voreingestellten Orten.",
+      "features.exactDate": "Bearbeite lokales Jahr, Monat, Tag, Stunde, Minute und Sekunde exakt von 9999 v. Chr. bis 9999 n. Chr.",
+      "features.travelScales": "Reise mit Hours, Day, Month, Year, Century oder Millennium und kehre mit Now zurück.",
+      "features.skyLayers": "Zeige die wichtigsten oder alle Sternbildlinien, Sternbildformen, Sternnamen, die Milchstraße, Atmosphäre, Sonne, Mond und Planeten.",
+      "features.magnitude": "Passe die Grenzhelligkeit für Sterne und Planeten an und verschiebe oder zoome die Ganzhimmelsansicht.",
+      "features.events": "Wähle eines von zehn programmierten astronomischen Ereignissen: sechs Kometenerscheinungen, die Planetenkonstellation vom 5. Mai 2000, die Schlacht der Sonnenfinsternis von 585 v. Chr., die totale Mondfinsternis vom 3. März 2026 und die totale Sonnenfinsternis vom 2. August 2027.",
+      "features.keyboard": "Verwende auf iPad oder Mac eine Hardwaretastatur für schnelle Zahleneingabe, Feldnavigation, Apply, Cancel, die Auswahl v. Chr./n. Chr. sowie N/S/E/W in den manuellen Editoren.",
+      "eclipses.title": "Finsternisse: Geschichte noch einmal erleben",
+      "eclipses.missed.title": "Die Finsternis verpasst? Geh zurück und sieh sie dir an.",
+      "eclipses.missed.body": "Mit der kontinuierlichen Hours-Steuerung von Time Travel Sky läuft eine Sonnenfinsternis natürlich ab, während sich der Mond vor die Sonne schiebt. Die Finsternis wird aus gewähltem Datum, Uhrzeit und Beobachtungsort berechnet und von der Astronomie-Engine live dargestellt – sie ist keine vorab aufgezeichnete Animation. Dasselbe Verfahren lässt sich auf Mondfinsternisse erweitern, bei denen der Erdschatten über den Mond wandert. Besuche eine vergangene Finsternis unter vollkommen klarem virtuellem Himmel erneut oder sieh dir eine zukünftige Finsternis an, bevor sie stattfindet.",
+      "eclipses.battle.title": "Die Schlacht der Sonnenfinsternis — 585 v. Chr.",
+      "eclipses.battle.body1": "Eine der bemerkenswertesten Finsternisgeschichten der Geschichte stammt aus einem Krieg zwischen den Lydern und den Medern. Laut dem antiken Historiker Herodot kämpften die beiden Heere im sechsten Kriegsjahr, als sich der Tag plötzlich in Nacht verwandelte. Die Soldaten stellten den Kampf ein, und beide Seiten waren eher bereit, Frieden zu schließen. Die Einigung wurde durch eine dynastische Heirat zusätzlich gefestigt.",
+      "eclipses.battle.body2": "Moderne Finsterniskataloge bringen diesen berühmten Bericht traditionell mit der totalen Sonnenfinsternis vom 28. Mai 585 v. Chr. in Verbindung, deren maximale Totalitätsphase etwa sechs Minuten dauerte. Herodot schrieb außerdem, Thales von Milet habe den Verlust des Tageslichts innerhalb dieses Jahres vorhergesagt. Die genaue Art von Thales’ Vorhersage ist bis heute umstritten. Deshalb kann Time Travel Sky das Ereignis als traditionelle historische Zuordnung darstellen, ohne jedes Detail der antiken Erzählung als sicher zu behandeln.",
+      "eclipses.battle.body3": "Es ist ein ideales Time Travel Sky-Ereignis: Wähle den antiken Ort und das Datum, bewege die Hours-Steuerung langsam und beobachte, wie sich der Himmel über einer Schlacht verdunkelt, an die man sich seit mehr als 2600 Jahren erinnert.",
+      "hardcore.title": "Für fortgeschrittene Nutzer",
+      "hardcore.catalogue.title": "Kataloge und astronomische Korrekturen",
+      "hardcore.catalogue.intro": "Time Travel Sky verwendet den vollständigen HYG-4.2-Hauptkatalog mit 119.625 Sternen, einschließlich Hipparcos-Kennungen und astrometrischer Daten, sofern verfügbar. Davon enthalten 109.393 Sterne dreidimensionale Informationen zur Raumbewegung. Die App enthält außerdem Daten für Sternbildlinien und Bahndaten ihrer programmierten historischen Kometen.",
+      "hardcore.catalogue.stars": "Der Sternkatalog beginnt bei der Epoche J2000.0. Für das gewählte Datum werden Sterne mit Bewegungsdaten anhand ihrer kartesischen X-, Y- und Z-Raumgeschwindigkeiten fortgeschrieben. Position, Entfernung, Rektaszension, Deklination und scheinbare Helligkeit werden für die neue Epoche neu berechnet.",
+      "hardcore.catalogue.earth": "Die Erd-Himmel-Engine berücksichtigt Präzession, Nutation und jährliche Aberration. Anschließend verwendet sie die scheinbare Sternzeit sowie Breiten- und Längengrad des Beobachters, um den Himmel korrekt über dem lokalen Horizont zu platzieren.",
+      "hardcore.catalogue.solarSystem": "Sonne, Mond und Planeten werden für das gewählte Datum und den Standort berechnet. Für den Mond werden eine topozentrische Position und die sichtbare Phase verwendet. Unterstützte historische Kometen werden aus ihren Bahnelementen berechnet.",
+      "hardcore.catalogue.limitations": "Die Berechnungen für Planeten und Mond sind ungefähr für den Zeitraum von 3000 v. Chr. bis 3000 n. Chr. vorgesehen. Außerhalb dieses Bereichs werden Planetenpositionen extrapoliert und können für präzise Arbeiten ungeeignet sein; der Mond wird nicht angezeigt. Ein gelbes Warndreieck erklärt die Einschränkung, wenn sie zutrifft.",
+      "skyControls.title": "Himmelssteuerung",
+      "skyControls.move": "Bewege den Himmel nach links, rechts, oben oder unten.",
+      "skyControls.zoom": "Vergrößern oder verkleinern.",
+      "skyControls.reset": "Setze die vollständige 180-Grad-Himmelsansicht mit der Taste 0 oder durch Doppeltippen auf den Himmel zurück.",
+      "skyControls.touch": "Auf Touch-Geräten sind auch Ziehen und Zwei-Finger-Zoom verfügbar.",
+      "keyboard.title": "Tastenkürzel der Hardwaretastatur",
+      "keyboard.intro": "Die manuelle Eingabe von Datum & Uhrzeit und Erdstandort kann auf iPad oder Mac direkt mit einer Hardwaretastatur gesteuert werden. Das Bildschirm-Zahlenfeld bleibt gleichzeitig verfügbar.",
+      "keyboard.dateTime.title": "Datum & Uhrzeit",
+      "keyboard.enterNumbers": "Zahlen eingeben",
+      "keyboard.nextField": "Nächstes Feld",
+      "keyboard.previousField": "Vorheriges Feld",
+      "keyboard.erase": "Löschen",
+      "keyboard.era": "v. Chr. / n. Chr.",
+      "keyboard.apply": "Anwenden",
+      "keyboard.cancel": "Abbrechen",
+      "keyboard.location.title": "Erdstandort",
+      "keyboard.directions": "Nord, Süd, Ost oder West festlegen",
+      "keyboard.note": "Die Tastenkürzel für Abbrechen unterscheiden sich je nach Plattform geringfügig. Auf dem iPad ist ⌘. praktisch, wenn die Tastatur keine eigene Escape-Taste besitzt. Unter Mac Catalyst ist ⌘[ das zuverlässige Tastenkürzel für Abbrechen. Esc steht ebenfalls zur Verfügung, wenn Tastatur und System die Taste weitergeben.",
+      "easterEgg.title": "Das Easter Egg",
+      "easterEgg.body": "Tippe auf den Titel Time Travel Sky, um zwischen der normalen Himmelsansicht mit Norden oben und der versteckten Stellarium-Vergleichsausrichtung umzuschalten. Die Markierungen N, E, S und W folgen der aktiven Kamera. Tippe erneut auf den Titel, um zur normalen Ansicht zurückzukehren.",
+      "status.title": "Status",
+      "status.body": "Time Travel Sky wird aktiv für iPhone, iPad und Mac entwickelt. Standortsystem, bearbeitbares Datum und Uhrzeit, sechs Zeitskalen, historische Ereignisse, Astronomie-Engine und die wichtigsten Steuerelemente funktionieren bereits.",
+      "status.back": "← Zurück zu den Apps",
+      "footer.locations": "Montreal | Ho-Chi-Minh-Stadt",
+      "footer.privacy": "Datenschutz: Time Travel Sky sammelt oder überträgt keine personenbezogenen Daten. Die Koordinaten des aktuellen Standorts werden lokal in Time Travel Sky auf diesem Gerät gespeichert, damit sie bei einem späteren Start wiederhergestellt werden können. Sie werden an keinen Server gesendet. Historische und manuell ausgewählte Orte werden nur für die aktuelle Sitzung verwendet und nicht für spätere Starts gespeichert.",
+      "aria.mainNavigation": "Hauptnavigation",
+      "aria.languageSelector": "Sprache auswählen",
+      "aria.hero": "Einführung in Time Travel Sky",
+      "alt.background": "Galaxienhintergrund – Astronomie-Apps von Micro Créatif",
+      "alt.appIcon": "App-Symbol von Time Travel Sky",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "hero.title": "Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – Den Himmel der Erde durch die Zeit erkunden | Micro Créatif",
+      "description": "Mit Time Travel Sky von Micro Créatif kannst du den echten Himmel der Erde über Stunden, Tage, Monate, Jahre, Jahrhunderte und Jahrtausende erkunden. Erlebe Sonnenfinsternisse erneut, entdecke historische Ereignisse und verfolge Sterne, Milchstraße, Sonne, Mond, Planeten, Kometen und eine berühmte Planetenkonstellation von jedem Beobachtungsort aus.",
+      "keywords": "Time Travel Sky Astronomie-App, historischer Himmel, zukünftiger Himmel, antiker Himmel, Sonnenfinsternis, Mondfinsternis, Schlacht der Sonnenfinsternis, Thales-Finsternis, HYG 4.2 Katalog, Hipparcos, stellare Eigenbewegung, Präzession, Nutation, jährliche Aberration, historische Kometen, Planetenkonstellation, Milchstraße, Planetarium, Micro Créatif",
+      "ogDescription": "Bewege dich durch Stunden, Tage, Monate, Jahre, Jahrhunderte und Jahrtausende, während sich der echte Himmel über deinem Beobachtungsort verändert."
+    }
+  },
+  "ar": {
+    "label": "العربية",
+    "htmlLang": "ar",
+    "ogLocale": "ar_SA",
+    "dir": "rtl",
+    "strings": {
+      "nav.home": "الصفحة الرئيسية",
+      "nav.apps": "التطبيقات",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.about": "حول",
+      "nav.contact": "اتصل بنا",
+      "hero.title": "Time Travel Sky",
+      "hero.subtitle": "ابقَ على الأرض، وانتقل عبر الزمن، وشاهد السماء الحقيقية تتغير فوقك.",
+      "mode.placeTime.title": "اختر مكانًا وزمنًا",
+      "mode.placeTime.body": "استخدم موقعك الحالي، أو أدخل خط العرض وخط الطول يدويًا، أو اختر واحدًا من 19 موقعًا تاريخيًا مهمًا مُعدًا مسبقًا ومصنفًا ضمن أفريقيا والأمريكيتين وآسيا ومنطقة البحر المتوسط والشرق الأدنى. ثم اختر تاريخًا ووقتًا محليين بدقة من سنة 9999 ق.م. حتى سنة 9999 م.",
+      "mode.history.title": "تنقّل عبر التاريخ",
+      "mode.history.body": "تحرّك بسلاسة عبر الساعات، أو سافر بخطوات كاملة من الأيام والأشهر والسنوات والقرون وآلاف السنين. تُعاد رسم السماء أثناء الحركة، ويعيدك زر «الآن» فورًا إلى الحاضر.",
+      "cards.realSky.title": "السماء الحقيقية في التاريخ المختار",
+      "cards.realSky.body": "تتبع النجوم وخطوط الكوكبات ودرب التبانة والشمس والقمر والكواكب المرئية التاريخ والوقت المحلي وموقع الرصد الذي اخترته.",
+      "cards.timeScales.title": "ستة مقاييس زمنية",
+      "cards.timeScales.body": "يتحرك عنصر التحكم «الساعات» بصورة مستمرة خلال يوم كامل، بينما تتحرك عناصر اليوم والشهر والسنة والقرن والألفية بخطوات تقويمية كاملة مع الحفاظ على قيم التاريخ والوقت الأصغر.",
+      "cards.events.title": "عشرة أحداث فلكية",
+      "cards.events.body": "انتقل مباشرة إلى عشرة أحداث فلكية مبرمجة: معركة الكسوف سنة 585 ق.م.؛ ومذنب هالي في أعوام 837 و1066 و1301 و1986؛ والمذنبان العظيمان لعامي 1577 و1680؛ واصطفاف الكواكب في 5 مايو 2000؛ والخسوف الكلي للقمر في 3 مارس 2026؛ والكسوف الكلي للشمس في 2 أغسطس 2027.",
+      "cards.location.title": "موقع الرصد مهم",
+      "cards.location.body": "ينتج عن التاريخ نفسه أفق وسماء مرئية مختلفان باختلاف المكان على الأرض. تشمل المواقع الـ19 المُعدة مسبقًا أماكن مثل ماتشو بيتشو وأنغكور والإسكندرية والأقصر / طيبة القديمة والقدس وبكين وزيمبابوي العظمى. وفي أحداث المذنبات يختار التطبيق تلقائيًا الوقت الذي يبلغ فيه المذنب أعلى ارتفاع مرئي من الموقع المختار.",
+      "features.title": "الميزات الحالية",
+      "features.location": "استخدم موقع الجهاز الحالي، أو أدخل الإحداثيات يدويًا، أو اختر واحدًا من 19 موقعًا تاريخيًا مهمًا مُعدًا مسبقًا ومصنفًا حسب المنطقة.",
+      "features.exactDate": "عدّل السنة والشهر واليوم والساعة والدقيقة والثانية المحلية بدقة، من سنة 9999 ق.م. حتى سنة 9999 م.",
+      "features.travelScales": "سافر باستخدام الساعات أو اليوم أو الشهر أو السنة أو القرن أو الألفية، ثم عُد باستخدام «الآن».",
+      "features.skyLayers": "اعرض خطوط الكوكبات الرئيسية أو جميعها، وأشكال الكوكبات، وأسماء النجوم، ودرب التبانة، والغلاف الجوي، والشمس، والقمر، والكواكب.",
+      "features.magnitude": "اضبط القدر الحدي للنجوم والكواكب، وحرّك عرض السماء الكاملة أو كبّره وصغّره.",
+      "features.events": "اختر أيًا من عشرة أحداث فلكية مبرمجة: ستة ظهورات لمذنبات، واصطفاف الكواكب في 5 مايو 2000، ومعركة الكسوف سنة 585 ق.م.، والخسوف الكلي للقمر في 3 مارس 2026، والكسوف الكلي للشمس في 2 أغسطس 2027.",
+      "features.keyboard": "استخدم لوحة مفاتيح مادية على iPad أو Mac للإدخال الرقمي السريع، والتنقل بين الحقول، والتطبيق، والإلغاء، واختيار ق.م./م، واختيار الاتجاهات N/S/E/W في أدوات التحرير اليدوي.",
+      "eclipses.title": "الكسوف والخسوف: شاهد التاريخ يحدث من جديد",
+      "eclipses.missed.title": "فاتك الكسوف؟ عُد بالزمن وشاهده.",
+      "eclipses.missed.body": "يتيح عنصر التحكم المستمر «الساعات» في Time Travel Sky مشاهدة الكسوف الشمسي وهو يتطور طبيعيًا بينما يتحرك القمر أمام الشمس. يُحسب الكسوف اعتمادًا على التاريخ والوقت وموقع الرصد المختار، ويعرضه المحرك الفلكي مباشرة؛ فهو ليس رسومًا متحركة مسجلة مسبقًا. ويمكن تطبيق الطريقة نفسها على خسوف القمر، مع عبور ظل الأرض فوق القمر. عُد إلى كسوف سابق تحت سماء افتراضية صافية تمامًا، أو شاهد معاينة لكسوف مستقبلي قبل حدوثه.",
+      "eclipses.battle.title": "معركة الكسوف — 585 ق.م.",
+      "eclipses.battle.body1": "ترتبط إحدى أشهر قصص الكسوف في التاريخ بحرب بين الليديين والميديين. ووفقًا للمؤرخ القديم هيرودوت، كان الجيشان يقاتلان في السنة السادسة من حربهما عندما تحول النهار فجأة إلى ليل. فتوقف الجنود عن القتال، وأصبح الطرفان أكثر رغبة في صنع السلام. وعُزز الاتفاق بزواج سلالي.",
+      "eclipses.battle.body2": "تربط فهارس الكسوف الحديثة هذا الوصف الشهير بالكسوف الكلي للشمس في 28 مايو 585 ق.م.، الذي بلغت مدة الكلية القصوى فيه نحو ست دقائق. وكتب هيرودوت أيضًا أن طاليس الملطي كان قد تنبأ بفقدان ضوء النهار خلال تلك السنة. وما زالت الطبيعة الدقيقة لتنبؤ طاليس موضع نقاش، لذلك يمكن لـ Time Travel Sky عرض الحدث باعتباره التعريف التاريخي التقليدي من دون اعتبار كل تفاصيل الرواية القديمة يقينًا.",
+      "eclipses.battle.body3": "إنه حدث مثالي لـ Time Travel Sky: اختر الموقع القديم والتاريخ، ثم حرّك عنصر «الساعات» ببطء وشاهد السماء تظلم فوق معركة بقيت في الذاكرة لأكثر من 2600 سنة.",
+      "hardcore.title": "للمستخدمين المتقدمين",
+      "hardcore.catalogue.title": "الفهارس والتصحيحات الفلكية",
+      "hardcore.catalogue.intro": "يستخدم Time Travel Sky الفهرس الرئيسي الكامل HYG 4.2 الذي يضم 119,625 نجمًا، بما في ذلك معرفات Hipparcos والبيانات الفلكية القياسية حيثما توفرت. ومن بينها 109,393 نجمًا تحتوي على معلومات عن الحركة الفضائية ثلاثية الأبعاد. ويتضمن التطبيق أيضًا بيانات خطوط الكوكبات والبيانات المدارية للمذنبات التاريخية المبرمجة.",
+      "hardcore.catalogue.stars": "يبدأ الفهرس النجمي عند الحقبة J2000.0. وللتاريخ المختار، تُحدَّث النجوم التي تتوفر لها بيانات حركة باستخدام سرعاتها الفضائية الديكارتية X وY وZ. ثم يُعاد حساب الموضع والمسافة والمطلع المستقيم والميل والسطوع الظاهري للحقبة الجديدة.",
+      "hardcore.catalogue.earth": "يطبق محرك سماء الأرض سبق الاعتدالين والترنح والزيغ السنوي. ثم يستخدم الزمن النجمي الظاهري وخط عرض الراصد وخط طوله لوضع السماء بصورة صحيحة فوق الأفق المحلي.",
+      "hardcore.catalogue.solarSystem": "تُحسب الشمس والقمر والكواكب للتاريخ والموقع المختارين. ويستخدم القمر موضعًا طوبوسنتريًا بالنسبة إلى موقع الراصد، إضافة إلى طوره المرئي. وتُحسب المذنبات التاريخية المدعومة من عناصرها المدارية.",
+      "hardcore.catalogue.limitations": "صُممت حسابات الكواكب والقمر لتكون مناسبة تقريبًا للفترة من 3000 ق.م. إلى 3000 م. خارج هذا النطاق تُستقرأ مواقع الكواكب وقد لا تكون مناسبة للأعمال الدقيقة، ولا يُعرض القمر. ويشرح مثلث تحذير أصفر هذا القيد عند انطباقه.",
+      "skyControls.title": "عناصر التحكم في السماء",
+      "skyControls.move": "حرّك السماء إلى اليسار أو اليمين أو الأعلى أو الأسفل.",
+      "skyControls.zoom": "كبّر العرض أو صغّره.",
+      "skyControls.reset": "أعد عرض السماء الكامل بزاوية 180 درجة باستخدام الزر 0 أو بالنقر المزدوج على السماء.",
+      "skyControls.touch": "يتوفر أيضًا السحب والتكبير أو التصغير بإصبعين على الأجهزة اللمسية.",
+      "keyboard.title": "اختصارات لوحة المفاتيح المادية",
+      "keyboard.intro": "يمكن التحكم مباشرة في الإدخال اليدوي للتاريخ والوقت وموقع الأرض باستخدام لوحة مفاتيح مادية على iPad أو Mac. وتظل لوحة الأرقام على الشاشة متاحة في الوقت نفسه.",
+      "keyboard.dateTime.title": "التاريخ والوقت",
+      "keyboard.enterNumbers": "إدخال الأرقام",
+      "keyboard.nextField": "الحقل التالي",
+      "keyboard.previousField": "الحقل السابق",
+      "keyboard.erase": "مسح",
+      "keyboard.era": "ق.م. / م",
+      "keyboard.apply": "تطبيق",
+      "keyboard.cancel": "إلغاء",
+      "keyboard.location.title": "موقع الأرض",
+      "keyboard.directions": "اختيار الشمال أو الجنوب أو الشرق أو الغرب",
+      "keyboard.note": "تختلف اختصارات الإلغاء قليلًا حسب المنصة. على iPad يكون ⌘. مناسبًا عندما لا تتوفر في لوحة المفاتيح مفتاح Escape مستقل. وعلى Mac Catalyst يُعد ⌘[ اختصار الإلغاء الموثوق. كما يتوفر Esc عندما ترسله لوحة المفاتيح والنظام.",
+      "easterEgg.title": "الميزة المخفية",
+      "easterEgg.body": "اضغط على عنوان Time Travel Sky للتبديل بين عرض السماء العادي مع الشمال في الأعلى واتجاه المقارنة المخفي مع Stellarium. تتبع علامات N وE وS وW الكاميرا النشطة. اضغط على العنوان مرة أخرى للعودة إلى العرض العادي.",
+      "status.title": "الحالة",
+      "status.body": "Time Travel Sky قيد التطوير النشط لأجهزة iPhone وiPad وMac. ويعمل الآن نظام الموقع والتاريخ والوقت القابلان للتحرير ومقاييس السفر الستة والأحداث التاريخية والمحرك الفلكي وعناصر التحكم الرئيسية.",
+      "status.back": "العودة إلى التطبيقات →",
+      "footer.locations": "مونتريال | مدينة هو تشي منه",
+      "footer.privacy": "الخصوصية: لا يجمع Time Travel Sky المعلومات الشخصية ولا يرسلها. تُخزن إحداثيات الموقع الحالي محليًا داخل Time Travel Sky على هذا الجهاز حتى يمكن استعادتها عند تشغيل التطبيق لاحقًا، ولا تُرسل إلى أي خادم. وتُستخدم المواقع التاريخية والمواقع المحددة يدويًا خلال الجلسة الحالية فقط ولا تُحفظ لعمليات التشغيل المستقبلية.",
+      "aria.mainNavigation": "التنقل الرئيسي",
+      "aria.languageSelector": "اختر اللغة",
+      "aria.hero": "مقدمة Time Travel Sky",
+      "alt.background": "خلفية مجرية — تطبيقات Micro Créatif الفلكية",
+      "alt.appIcon": "أيقونة تطبيق Time Travel Sky"
+    },
+    "meta": {
+      "title": "Time Travel Sky – استكشف سماء الأرض عبر العصور | Micro Créatif",
+      "description": "يتيح لك Time Travel Sky من Micro Créatif استكشاف السماء الحقيقية للأرض عبر الساعات والأيام والأشهر والسنوات والقرون وآلاف السنين. عُد إلى الكسوفات والخسوفات، واستكشف الأحداث التاريخية، وتابع النجوم ودرب التبانة والشمس والقمر والكواكب والمذنبات واصطفافًا كوكبيًا شهيرًا من أي موقع رصد.",
+      "keywords": "تطبيق Time Travel Sky الفلكي، السماء التاريخية، سماء المستقبل، السماء القديمة، كسوف الشمس، خسوف القمر، معركة الكسوف، كسوف طاليس، فهرس HYG 4.2، Hipparcos، الحركة الخاصة للنجوم، سبق الاعتدالين، الترنح، الزيغ السنوي، المذنبات التاريخية، اصطفاف الكواكب، درب التبانة، قبة سماوية، Micro Créatif",
+      "ogDescription": "تنقّل عبر الساعات والأيام والأشهر والسنوات والقرون وآلاف السنين بينما تتغير السماء الحقيقية فوق موقع الرصد الذي اخترته."
+    }
+  },
+  "ko": {
+    "label": "한국어",
+    "htmlLang": "ko-KR",
+    "ogLocale": "ko_KR",
+    "dir": "ltr",
+    "strings": {
+      "nav.home": "홈",
+      "nav.apps": "앱",
+      "nav.radec": "RA / Dec / AZ / Alt",
+      "nav.virtualTelescope": "Virtual Telescope",
+      "nav.solAndStars": "Sol and Stars",
+      "nav.alienSky": "Alien Sky",
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.about": "정보",
+      "nav.contact": "연락처",
+      "hero.title": "Time Travel Sky",
+      "hero.subtitle": "지구에 머문 채 시간을 이동하며 머리 위의 실제 하늘이 변하는 모습을 살펴보세요.",
+      "mode.placeTime.title": "장소와 시간 선택",
+      "mode.placeTime.body": "현재 위치를 사용하거나 위도와 경도를 직접 입력하거나, 아프리카·아메리카·아시아·지중해 및 근동으로 분류된 19개의 역사적으로 중요한 사전 설정 위치 중 하나를 선택하세요. 그런 다음 기원전 9999년부터 서기 9999년까지 정확한 현지 날짜와 시간을 선택할 수 있습니다.",
+      "mode.history.title": "역사 속으로 이동",
+      "mode.history.body": "시간 단위로 부드럽게 이동하거나 날짜, 월, 연도, 세기, 천년 단위로 정확히 이동하세요. 이동하는 동안 하늘이 계속 다시 그려지며, 지금 버튼을 누르면 즉시 현재로 돌아옵니다.",
+      "cards.realSky.title": "선택한 날짜의 실제 하늘",
+      "cards.realSky.body": "별, 별자리 선, 은하수, 태양, 달, 보이는 행성은 선택한 날짜, 현지 시간, 관측 위치에 맞춰 표시됩니다.",
+      "cards.timeScales.title": "여섯 가지 시간 단위",
+      "cards.timeScales.body": "시간 컨트롤은 하루 전체를 연속적으로 이동하며, 날짜, 월, 연도, 세기, 천년은 달력 단위로 정확히 이동하면서 더 작은 날짜와 시간 값은 그대로 유지합니다.",
+      "cards.events.title": "열 가지 천문 현상",
+      "cards.events.body": "미리 설정된 열 가지 천문 현상으로 바로 이동할 수 있습니다. 기원전 585년 ‘일식의 전투’, 837년·1066년·1301년·1986년의 핼리 혜성, 1577년과 1680년의 대혜성, 2000년 5월 5일 행성 정렬, 2026년 3월 3일 개기월식, 2027년 8월 2일 개기일식이 포함됩니다.",
+      "cards.location.title": "관측 위치가 중요합니다",
+      "cards.location.body": "같은 날짜라도 지구상의 장소에 따라 지평선과 보이는 하늘이 달라집니다. 19개의 사전 설정 위치에는 마추픽추, 앙코르, 알렉산드리아, 룩소르 / 고대 테베, 예루살렘, 베이징, 그레이트 짐바브웨 등이 포함됩니다. 혜성 현상에서는 선택한 위치에서 혜성이 가장 높은 고도에 보이는 시간을 자동으로 선택합니다.",
+      "features.title": "현재 기능",
+      "features.location": "기기의 현재 위치를 사용하거나 좌표를 직접 입력하거나, 지역별로 분류된 19개의 역사적으로 중요한 사전 설정 위치 중 하나를 선택할 수 있습니다.",
+      "features.exactDate": "기원전 9999년부터 서기 9999년까지 현지 연도, 월, 일, 시, 분, 초를 정확히 편집할 수 있습니다.",
+      "features.travelScales": "시간, 날짜, 월, 연도, 세기 또는 천년 단위로 이동하고 지금 버튼으로 현재로 돌아올 수 있습니다.",
+      "features.skyLayers": "주요 별자리 또는 모든 별자리 선, 별자리 형태, 별 이름, 은하수, 대기, 태양, 달, 행성을 표시할 수 있습니다.",
+      "features.magnitude": "별과 행성의 한계등급을 조절하고 전체 하늘 보기를 이동하거나 확대·축소할 수 있습니다.",
+      "features.events": "미리 설정된 열 가지 천문 현상 중 하나를 선택할 수 있습니다. 여섯 번의 혜성 출현, 2000년 5월 5일 행성 정렬, 기원전 585년 ‘일식의 전투’, 2026년 3월 3일 개기월식, 2027년 8월 2일 개기일식이 포함됩니다.",
+      "features.keyboard": "iPad 또는 Mac의 하드웨어 키보드를 사용해 숫자를 빠르게 입력하고, 필드 사이를 이동하고, 적용 및 취소하고, 기원전/서기를 선택하고, 수동 편집기에서 N/S/E/W 방향을 선택할 수 있습니다.",
+      "eclipses.title": "식 현상: 역사가 다시 일어나는 모습을 보세요",
+      "eclipses.missed.title": "일식을 놓쳤나요? 과거로 돌아가 다시 보세요.",
+      "eclipses.missed.body": "Time Travel Sky의 연속적인 시간 컨트롤을 사용하면 달이 태양 앞을 지나가면서 일식이 자연스럽게 진행되는 모습을 볼 수 있습니다. 일식은 선택한 날짜, 시간, 관측 위치를 바탕으로 계산되고 천문 엔진이 실시간으로 그립니다. 미리 녹화된 애니메이션이 아닙니다. 같은 방법을 월식에도 적용할 수 있으며, 이때는 지구의 그림자가 달 위를 지나갑니다. 완전히 맑은 가상 하늘에서 과거의 식을 다시 보거나, 미래의 식을 실제로 일어나기 전에 미리 볼 수 있습니다.",
+      "eclipses.battle.title": "일식의 전투 — 기원전 585년",
+      "eclipses.battle.body1": "역사상 가장 놀라운 일식 이야기 중 하나는 리디아인과 메디아인 사이의 전쟁에서 전해집니다. 고대 역사가 헤로도토스에 따르면 두 군대가 전쟁 6년째에 싸우던 중 갑자기 낮이 밤으로 바뀌었습니다. 병사들은 전투를 멈췄고 양측은 평화를 맺는 데 더욱 적극적이 되었습니다. 그 합의는 왕가의 혼인으로 더욱 굳어졌습니다.",
+      "eclipses.battle.body2": "현대의 일식 목록에서는 이 유명한 기록을 기원전 585년 5월 28일의 개기일식과 연결하며, 최대 개기 지속 시간은 약 6분이었습니다. 헤로도토스는 또한 밀레토스의 탈레스가 그해에 낮빛이 사라질 것을 예고했다고 기록했습니다. 탈레스의 예측이 정확히 어떤 성격이었는지는 여전히 논쟁 중이므로, Time Travel Sky는 고대 이야기의 모든 세부 사항을 확정된 사실로 제시하기보다 전통적인 역사적 해석으로 이 사건을 보여줄 수 있습니다.",
+      "eclipses.battle.body3": "Time Travel Sky에 이상적인 사건입니다. 고대의 위치와 날짜를 선택한 다음 시간 컨트롤을 천천히 움직여, 2,600년 넘게 기억되어 온 전투 위로 하늘이 어두워지는 모습을 보세요.",
+      "hardcore.title": "고급 사용자용",
+      "hardcore.catalogue.title": "별 목록과 천문 보정",
+      "hardcore.catalogue.intro": "Time Travel Sky는 완전한 HYG 4.2 마스터 목록을 사용합니다. 총 119,625개의 별이 포함되며, 가능한 경우 Hipparcos 식별자와 측성학 데이터도 포함됩니다. 이 가운데 109,393개의 별에는 3차원 공간 운동 정보가 있습니다. 또한 별자리 선 데이터와 미리 설정된 역사적 혜성의 궤도 데이터도 포함합니다.",
+      "hardcore.catalogue.stars": "별 목록은 J2000.0 기준시점에서 시작합니다. 선택한 날짜에 대해 운동 데이터가 있는 별은 직교좌표 X, Y, Z의 공간 속도를 사용해 해당 시점으로 이동시킵니다. 새 기준시점에 맞춰 위치, 거리, 적경, 적위, 겉보기 밝기를 다시 계산합니다.",
+      "hardcore.catalogue.earth": "지구 하늘 엔진은 세차, 장동, 연주 광행차를 적용합니다. 그런 다음 겉보기 항성시와 관측자의 위도·경도를 사용해 하늘을 현지 지평선 위의 올바른 위치에 배치합니다.",
+      "hardcore.catalogue.solarSystem": "태양, 달, 행성은 선택한 날짜와 위치에 맞춰 계산됩니다. 달은 관측지 중심 위치와 보이는 위상을 사용합니다. 지원되는 역사적 혜성은 각각의 궤도 요소로 계산됩니다.",
+      "hardcore.catalogue.limitations": "행성과 달 계산은 대략 기원전 3000년부터 서기 3000년까지를 대상으로 합니다. 이 범위를 벗어나면 행성 위치는 외삽되므로 정밀 작업에는 적합하지 않을 수 있으며, 달은 표시되지 않습니다. 해당되는 경우 노란색 경고 삼각형이 이 제한을 설명합니다.",
+      "skyControls.title": "하늘 조작",
+      "skyControls.move": "하늘을 왼쪽, 오른쪽, 위 또는 아래로 이동합니다.",
+      "skyControls.zoom": "확대하거나 축소합니다.",
+      "skyControls.reset": "0 버튼을 누르거나 하늘을 두 번 탭해 전체 180도 하늘 보기로 초기화합니다.",
+      "skyControls.touch": "터치 기기에서는 드래그와 두 손가락 확대·축소도 사용할 수 있습니다.",
+      "keyboard.title": "하드웨어 키보드 단축키",
+      "keyboard.intro": "iPad 또는 Mac의 하드웨어 키보드에서 날짜 및 시간과 지구 위치를 직접 입력하고 조작할 수 있습니다. 화면의 숫자 키패드도 동시에 사용할 수 있습니다.",
+      "keyboard.dateTime.title": "날짜 및 시간",
+      "keyboard.enterNumbers": "숫자 입력",
+      "keyboard.nextField": "다음 필드",
+      "keyboard.previousField": "이전 필드",
+      "keyboard.erase": "지우기",
+      "keyboard.era": "기원전 / 서기",
+      "keyboard.apply": "적용",
+      "keyboard.cancel": "취소",
+      "keyboard.location.title": "지구 위치",
+      "keyboard.directions": "북쪽, 남쪽, 동쪽 또는 서쪽 설정",
+      "keyboard.note": "취소 단축키는 플랫폼에 따라 약간 다릅니다. iPad에서는 키보드에 전용 Escape 키가 없을 때 ⌘.가 편리합니다. Mac Catalyst에서는 ⌘[가 안정적인 취소 단축키입니다. 키보드와 시스템에서 전달되는 경우 Esc도 사용할 수 있습니다.",
+      "easterEgg.title": "이스터 에그",
+      "easterEgg.body": "Time Travel Sky 제목을 탭하면 북쪽이 위를 향하는 일반 하늘 보기와 숨겨진 Stellarium 비교 방향 사이를 전환할 수 있습니다. N, E, S, W 표시는 활성 카메라 방향을 따릅니다. 제목을 다시 탭하면 일반 보기로 돌아갑니다.",
+      "status.title": "상태",
+      "status.body": "Time Travel Sky는 iPhone, iPad, Mac용으로 계속 개발 중입니다. 위치 시스템, 편집 가능한 날짜와 시간, 여섯 가지 시간 이동 단위, 역사적 사건, 천문 엔진, 주요 조작 기능이 현재 작동하고 있습니다.",
+      "status.back": "← 앱으로 돌아가기",
+      "footer.locations": "몬트리올 | 호찌민시",
+      "footer.privacy": "개인정보 보호: Time Travel Sky는 개인정보를 수집하거나 전송하지 않습니다. 현재 위치 좌표는 나중에 앱을 다시 실행할 때 복원할 수 있도록 이 기기의 Time Travel Sky 내부에 로컬로 저장됩니다. 어떤 서버에도 전송되지 않습니다. 역사적 위치와 수동으로 선택한 위치는 현재 세션에서만 사용되며 이후 실행을 위해 저장되지 않습니다.",
+      "aria.mainNavigation": "주요 탐색",
+      "aria.languageSelector": "언어 선택",
+      "aria.hero": "Time Travel Sky 소개",
+      "alt.background": "은하 배경 – Micro Créatif 천문학 앱",
+      "alt.appIcon": "Time Travel Sky 앱 아이콘"
+    },
+    "meta": {
+      "title": "Time Travel Sky – 시간 속 지구의 하늘 탐색 | Micro Créatif",
+      "description": "Micro Créatif의 Time Travel Sky를 사용하면 시간, 날짜, 월, 연도, 세기, 천년을 넘나들며 지구의 실제 하늘을 탐색할 수 있습니다. 과거의 일식과 월식을 다시 보고, 역사적 천문 현상을 탐색하며, 어느 관측 위치에서든 별, 은하수, 태양, 달, 행성, 혜성, 유명한 행성 정렬을 따라가 보세요.",
+      "keywords": "Time Travel Sky 천문학 앱, 역사적 하늘, 미래의 하늘, 고대의 하늘, 일식, 월식, 일식의 전투, 탈레스 일식, HYG 4.2 목록, Hipparcos, 별의 고유운동, 세차, 장동, 연주 광행차, 역사적 혜성, 행성 정렬, 은하수, 플라네타륨, Micro Créatif",
+      "ogDescription": "시간, 날짜, 월, 연도, 세기, 천년을 이동하며 관측 위치 위의 실제 하늘이 변하는 모습을 살펴보세요."
+    }
+  }
+};
+
+const DEFAULT_LANGUAGE = "en";
+const SITE_STORAGE_KEY = "mc_site_language";
+const PAGE_STORAGE_KEY = "mc_time_travel_language";
+const LEGACY_STORAGE_KEY = "mc_language";
+const LEGACY_LANGUAGES = new Set(["en", "fr"]);
+
+function availableLanguage(code) {
+  return Object.prototype.hasOwnProperty.call(TIME_TRAVEL_LANGUAGES, code);
+}
+
+function normalizeBrowserLanguage(value) {
+  const code = (value || "").toLowerCase();
+  if (code.startsWith("zh-tw") || code.startsWith("zh-hk") || code.startsWith("zh-mo") || code.includes("hant")) return "zh-Hant";
+  if (code.startsWith("zh") || code.includes("hans")) return "zh-Hans";
+  if (code.startsWith("ja")) return "ja";
+  if (code.startsWith("vi")) return "vi";
+  if (code.startsWith("es")) return "es";
+  if (code.startsWith("de")) return "de";
+  if (code.startsWith("ko")) return "ko";
+  if (code.startsWith("ar")) return "ar";
+  if (code.startsWith("fr")) return "fr";
+  return "en";
+}
+
+function readStoredLanguage(key) {
+  try { return localStorage.getItem(key); } catch { return null; }
+}
+
+function storeLanguage(key, code) {
+  try { localStorage.setItem(key, code); } catch {}
+}
+
+function preferredLanguage() {
+  const site = readStoredLanguage(SITE_STORAGE_KEY);
+  if (site && availableLanguage(site)) return site;
+
+  // During migration, the current index page may already have stored one of
+  // the new languages in mc_language. Honor that before the old page-specific
+  // Time Travel setting, so German on the index opens Time Travel in German.
+  const legacy = readStoredLanguage(LEGACY_STORAGE_KEY);
+  if (legacy && availableLanguage(legacy) && !LEGACY_LANGUAGES.has(legacy)) return legacy;
+
+  const oldPage = readStoredLanguage(PAGE_STORAGE_KEY);
+  if (oldPage && availableLanguage(oldPage)) return oldPage;
+
+  if (legacy && availableLanguage(legacy)) return legacy;
+
+  return normalizeBrowserLanguage(navigator.language);
+}
+
+function setMeta(selector, value) {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute("content", value);
+}
+
+function applyLanguage(languageCode) {
+  const code = availableLanguage(languageCode) ? languageCode : DEFAULT_LANGUAGE;
+  const pack = TIME_TRAVEL_LANGUAGES[code];
+  const strings = pack.strings;
+
+  document.documentElement.lang = pack.htmlLang;
+  document.documentElement.dir = pack.dir || "ltr";
+  document.title = pack.meta.title;
+  setMeta('meta[name="description"]', pack.meta.description);
+  setMeta('meta[name="keywords"]', pack.meta.keywords);
+  setMeta('meta[property="og:title"]', pack.meta.title);
+  setMeta('meta[property="og:description"]', pack.meta.ogDescription);
+  setMeta('meta[property="og:locale"]', pack.ogLocale);
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.dataset.i18n;
+    if (Object.prototype.hasOwnProperty.call(strings, key)) {
+      element.textContent = strings[key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    const key = element.dataset.i18nAlt;
+    if (Object.prototype.hasOwnProperty.call(strings, key)) {
+      element.setAttribute("alt", strings[key]);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const key = element.dataset.i18nAriaLabel;
+    if (Object.prototype.hasOwnProperty.call(strings, key)) {
+      element.setAttribute("aria-label", strings[key]);
+    }
+  });
+
+  const selector = document.getElementById("languageSelect");
+  if (selector) selector.value = code;
+
+  storeLanguage(SITE_STORAGE_KEY, code);
+  storeLanguage(PAGE_STORAGE_KEY, code);
+
+  // Older pages currently understand only English and French. Keep their
+  // legacy key valid until those pages are converted to the new system.
+  storeLanguage(LEGACY_STORAGE_KEY, LEGACY_LANGUAGES.has(code) ? code : "en");
+}
+
+function buildLanguageMenu() {
+  const selector = document.getElementById("languageSelect");
+  if (!selector) return;
+
+  selector.replaceChildren();
+  Object.entries(TIME_TRAVEL_LANGUAGES).forEach(([code, pack]) => {
+    const option = document.createElement("option");
+    option.value = code;
+    option.textContent = pack.label;
+    selector.appendChild(option);
+  });
+
+  selector.addEventListener("change", () => applyLanguage(selector.value));
+}
+
+function createStars() {
+  const container = document.getElementById("stars");
+  if (!container) return;
+
+  for (let i = 0; i < 40; i++) {
+    const star = document.createElement("div");
+    const type = Math.random() > 0.5 ? "big" : "small";
+    star.className = `star ${type}`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.animationDelay = `${Math.random() * 3}s`;
+    star.style.animationDuration = `${1 + Math.random() * 2}s`;
+    container.appendChild(star);
+  }
+}
+
+function configureAppsMenu() {
+  const appsButton = document.getElementById("navApps");
+  const menu = document.getElementById("appsMenu");
+  if (!appsButton || !menu) return;
+
+  appsButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target) && event.target !== appsButton) {
+      menu.style.display = "none";
+    }
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.style.display = "none";
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  createStars();
+  configureAppsMenu();
+  buildLanguageMenu();
+  applyLanguage(preferredLanguage());
+});
