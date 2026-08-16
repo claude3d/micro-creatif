@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <!-- Micro Créatif -->
-
 <!-- about.html -->
-
-<!-- Version 3.8 -->
-
+<!-- Version 4.0 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Micro Créatif – Origins – Since 1981</title>
-
-<meta name="description" content="Micro Créatif was born on June 11, 1981 with the purchase of an Apple II Plus. Discover the story of a software pioneer featured in Le Devoir and L'Actualité Informatique, now creating astronomy apps for serious telescope observers.">
+<meta name="description" content="Micro Créatif began on June 11, 1981 with the purchase of an Apple II Plus. Discover its early software history through original newspaper archives.">
 <meta name="keywords" content="Micro Créatif, origins, Apple II, 1981, astronomy apps, software history, Montreal, Ho Chi Minh City">
 <meta name="author" content="Micro Créatif">
 <meta name="robots" content="index, follow">
@@ -21,392 +15,142 @@
 <meta property="og:description" content="The story of Micro Créatif, born in 1981 with an Apple II Plus, featured in Le Devoir and L'Actualité Informatique.">
 <meta property="og:url" content="https://microcreatif.ca/about.html">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_CA">
 <link rel="canonical" href="https://microcreatif.ca/about.html">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-color:white;
-background:#0b0f19;
-overflow-x:hidden;
-min-height:100vh;
-display:flex;
-flex-direction:column;
+color:white;background:#0b0f19;overflow-x:hidden;min-height:100vh;
+display:flex;flex-direction:column;
 }
-
-/* Background gradient animation */
 body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:200%;
-height:200%;
+content:"";position:fixed;top:0;left:0;width:200%;height:200%;
 background:
 radial-gradient(circle at 25% 30%, #3a7bd5, transparent 40%),
 radial-gradient(circle at 70% 70%, #00c6ff, transparent 40%),
 radial-gradient(circle at 50% 80%, #1e90ff, transparent 40%);
 animation:moveLights 18s infinite alternate ease-in-out;
-filter:blur(120px);
-opacity:.55;
-z-index:-1;
+filter:blur(120px);opacity:.55;z-index:-1;
 }
-
-@keyframes moveLights{
-0%{transform:translate(-10%,-10%);}
-100%{transform:translate(10%,10%);}
-}
-
-/* header */
-
-header{
-position:absolute;
-top:10px;
-width:100%;
-text-align:center;
-z-index:100;
-}
-
-nav{
-display:inline-flex;
-gap:30px;
-position:relative;
-align-items:center;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:18px;
-opacity:0.9;
-cursor:pointer;
-white-space:nowrap;
-}
-
-/* dropdown */
-
-.dropdown{
-position:relative;
-display:inline-flex;
-align-items:center;
-}
-
+@keyframes moveLights{0%{transform:translate(-10%,-10%);}100%{transform:translate(10%,10%);}}
+header{position:absolute;top:10px;width:100%;text-align:center;z-index:100;}
+nav{display:inline-flex;gap:30px;position:relative;align-items:center;}
+nav a{color:white;text-decoration:none;font-size:18px;opacity:0.9;cursor:pointer;white-space:nowrap;}
+.dropdown{position:relative;display:inline-flex;align-items:center;}
 .submenu{
-display:none;
-position:absolute;
-top:28px;
-left:0;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(8px);
-border:1px solid rgba(255,255,255,0.3);
-border-radius:10px;
-padding:8px 0;
-min-width:200px;
-text-align:left;
+display:none;position:absolute;top:28px;left:0;background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);
+border-radius:10px;padding:8px 0;min-width:200px;text-align:left;
 }
-
-.submenu a{
-display:block;
-padding:8px 14px;
-font-size:16px;
-}
-
-.submenu a:hover{
-background:rgba(255,255,255,0.1);
-}
-
-/* language button */
-
+.submenu a{display:block;padding:8px 14px;font-size:16px;}
+.submenu a:hover{background:rgba(255,255,255,0.1);}
 .lang-btn{
-background:rgba(255,255,255,0.1);
-border:1px solid rgba(255,255,255,0.3);
-color:white;
-padding:6px 14px;
-border-radius:16px;
-cursor:pointer;
-font-size:18px;
-white-space:nowrap;
-flex-shrink:0;
+background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);
+color:white;padding:6px 14px;border-radius:16px;cursor:pointer;font-size:18px;
+white-space:nowrap;flex-shrink:0;
 }
-
-/* MOBILE */
-
+html[dir="rtl"] .submenu{left:auto;right:0;text-align:right;}
 @media (max-width:430px){
-nav{
-gap:18px;
+nav{gap:18px;}
+nav a{font-size:15px;}
+.lang-btn{font-size:15px;padding:4px 10px;}
 }
-nav a{
-font-size:15px;
-}
-.lang-btn{
-font-size:15px;
-padding:4px 10px;
-}
-}
-
-/* Main content */
 .main-content{
-flex:1;
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-padding:100px 20px 80px;
-max-width:900px;
-margin:auto;
+flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;
+padding:100px 20px 80px;max-width:900px;margin:auto;
 }
-
-h1{
-font-size:3.4rem;
-margin-bottom:15px;
-text-shadow:0 10px 30px rgba(0,0,0,.6);
-}
-
-.subtitle{
-font-size:1.35rem;
-max-width:750px;
-margin-bottom:40px;
-font-weight:300;
-line-height:1.5;
-}
-
+h1{font-size:3.4rem;margin-bottom:15px;text-shadow:0 10px 30px rgba(0,0,0,.6);}
+.subtitle{font-size:1.35rem;max-width:750px;margin-bottom:40px;font-weight:300;line-height:1.5;}
 .facture-img{
-max-width:100%;
-height:auto;
-border-radius:12px;
-box-shadow:0 20px 60px rgba(0,0,0,0.7);
-border:1px solid rgba(255,255,255,0.25);
-margin-bottom:35px;
+max-width:100%;height:auto;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.7);
+border:1px solid rgba(255,255,255,0.25);margin-bottom:35px;
 }
-
 .info-box{
-background:rgba(255,255,255,0.07);
-border:1px solid rgba(255,255,255,0.15);
-padding:16px 28px;
-border-radius:16px;
-font-weight:600;
-color:#4facfe;
-margin-bottom:60px;
+background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);
+padding:16px 28px;border-radius:16px;font-weight:600;color:#4facfe;margin-bottom:60px;
 }
-
-#articleSource{
-font-size:0.9rem;
-opacity:0.7;
-margin-top:-25px;
-margin-bottom:30px;
-font-style:italic;
+.source{
+font-size:0.9rem;opacity:0.7;margin-top:-25px;margin-bottom:30px;font-style:italic;
 }
-
-#superSource{
-font-size:0.9rem;
-opacity:0.7;
-margin-top:-25px;
-margin-bottom:30px;
-font-style:italic;
-}
-
 .pdf-link{
-color:white;
-text-decoration:none;
-background:rgba(255,255,255,0.1);
-border:1px solid rgba(255,255,255,0.3);
-padding:10px 22px;
-border-radius:25px;
-font-weight:600;
-font-size:15px;
-display:inline-block;
+color:white;text-decoration:none;background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);padding:10px 22px;border-radius:25px;
+font-weight:600;font-size:15px;display:inline-block;
 }
-
-.pdf-link:hover{
-background:white;
-color:#1a3a4a;
-}
-
-.section-divider{
-width:100%;
-border:none;
-border-top:1px solid rgba(255,255,255,0.15);
-margin:50px 0;
-}
-
-footer{
-text-align:center;
-padding:40px 20px;
-opacity:0.85;
-font-size:0.95rem;
-}
-
-.version-display{
-margin-top:8px;
-font-size:0.85rem;
-opacity:0.7;
-}
-
+.pdf-link:hover{background:white;color:#1a3a4a;}
+.section-divider{width:100%;border:none;border-top:1px solid rgba(255,255,255,0.15);margin:50px 0;}
+footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
+.version-display{margin-top:8px;font-size:0.85rem;opacity:0.7;}
 </style>
-
 </head>
-
 <body>
 
 <header>
-
-<nav aria-label="Main navigation">
-
-<a id="navHome" href="index.html">Home</a>
-
+<nav data-i18n-aria="mainNavigation">
+<a id="navHome" href="index.html" data-i18n="navHome">Home</a>
 <div class="dropdown">
-<a id="navApps">Apps</a>
+<a id="navApps" data-i18n="navApps">Apps</a>
 <div class="submenu" id="appsMenu">
-<a id="subApp1" href="radec-calculator.html">RA / Dec / AZ / Alt</a>
-<a id="subApp2" href="virtual-telescope.html">Virtual Telescope</a>
-<a id="subApp3" href="sol-and-stars.html">Sol and Stars</a>
-<a id="subApp4" href="alien-sky.html">Alien Sky</a>
-<a id="subApp5" href="time-travel.html">Time Travel</a>
+<a href="radec-calculator.html" data-i18n="appRadec">RA / Dec / AZ / Alt</a>
+<a href="virtual-telescope.html" data-i18n="appVirtualTelescope">Virtual Telescope</a>
+<a href="sol-and-stars.html" data-i18n="appSolAndStars">Sol and Stars</a>
+<a href="alien-sky.html" data-i18n="appAlienSky">Alien Sky</a>
+<a href="time-travel.html" data-i18n="appTimeTravelSky">Time Travel Sky</a>
 </div>
 </div>
-
-<a id="navAbout" href="about.html">About</a>
-<a id="navContact" href="contact.html">Contact</a>
-
-<button onclick="toggleLanguage()" id="langBtn" class="lang-btn" aria-label="Toggle language">🌐</button>
-
+<a id="navAbout" href="about.html" data-i18n="navAbout">About</a>
+<a id="navContact" href="contact.html" data-i18n="navContact">Contact</a>
+<select id="languageSelect" class="lang-btn" data-i18n-aria="languageSelector" aria-label="Choose language">
+<option value="en">English</option>
+<option value="fr">Français</option>
+<option value="vi">Tiếng Việt</option>
+<option value="ja">日本語</option>
+<option value="zh-Hans">简体中文</option>
+<option value="zh-Hant">繁體中文</option>
+<option value="es">Español</option>
+<option value="de">Deutsch</option>
+<option value="ar">العربية</option>
+<option value="ko">한국어</option>
+</select>
 </nav>
-
 </header>
 
 <div class="main-content">
+<h1 data-i18n="pageTitle">Our Origins</h1>
+<p class="subtitle" data-i18n="subtitle">The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.</p>
 
-<h1 id="title">Our Origins</h1>
-<p class="subtitle" id="subtitle">The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure.</p>
+<img src="images/facture.jpg" class="facture-img" data-i18n-alt="receiptAlt" alt="Apple II Plus purchase receipt – June 11, 1981 – Micro Créatif origins">
+<div class="info-box" data-i18n="inflation">Comparative value in 2026: approximately $7,350 CAD</div>
 
-<img src="images/facture.jpg" class="facture-img" alt="Apple II Plus purchase receipt – June 11, 1981 – Micro Créatif origins">
-<div class="info-box" id="inflation">Comparative value in 2026: approximately $7,350 CAD</div>
-
-<h2 id="articleTitle" style="font-size:2rem;margin-bottom:25px;color:#4facfe;">Du grand rêve à la réalité</h2>
-<img src="images/article-scan.jpg" class="facture-img" alt="Le Devoir newspaper article about Micro Créatif 1983">
-<p id="articleSource">(journal Le Devoir&nbsp;&nbsp;&nbsp;1983)</p>
-
+<h2 style="font-size:2rem;margin-bottom:25px;color:#4facfe;" data-i18n="articleTitle">Du grand rêve à la réalité</h2>
+<img src="images/article-scan.jpg" class="facture-img" data-i18n-alt="articleAlt" alt="Le Devoir newspaper article about Micro Créatif, 1983">
+<p class="source" data-i18n="articleSource">(Le Devoir newspaper   1983)</p>
 <div style="margin-top:10px;">
-<a id="pdfBtn" class="pdf-link" href="articleE.html" target="_blank">Read the article</a>
+<a id="articleBtn" class="pdf-link" href="article.html" target="_blank" data-i18n="articleButton">Read the article</a>
 </div>
 
 <hr class="section-divider">
 
-<h2 id="superTitle" style="font-size:2rem;margin-bottom:25px;color:#4facfe;">Métier: super-programmeur!</h2>
-<img src="images/Super_Programmeur.jpg" class="facture-img" alt="L'Actualité Informatique article about Micro Créatif 1984">
-<p id="superSource">(L'Actualité Informatique&nbsp;&nbsp;&nbsp;1984)</p>
-
+<h2 style="font-size:2rem;margin-bottom:25px;color:#4facfe;" data-i18n="superTitle">Métier: super-programmeur!</h2>
+<img src="images/Super_Programmeur.jpg" class="facture-img" data-i18n-alt="superAlt" alt="L&#39;Actualité Informatique article about Micro Créatif, 1984">
+<p class="source" data-i18n="superSource">(L&#39;Actualité Informatique   1984)</p>
 <div style="margin-top:10px;">
-<a id="superBtn" class="pdf-link" href="super.html" target="_blank">Read the article</a>
+<a id="superBtn" class="pdf-link" href="super.html" target="_blank" data-i18n="superButton">Read the article</a>
 </div>
 
 <hr class="section-divider">
 
-<img src="images/collage.png" class="facture-img" alt="Micro Créatif archive collage">
-
+<img src="images/collage.png" class="facture-img" data-i18n-alt="collageAlt" alt="Micro Créatif archive collage">
 </div>
 
 <footer>
-<p id="copyright">© 2026 Micro Créatif. All rights reserved.</p>
-<p id="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 3.8</p>
+<p data-i18n="copyright">© 2026 Micro Créatif. All rights reserved.</p>
+<p data-i18n="cities">Montreal | Ho Chi Minh City</p>
+<p class="version-display">Version 4.0</p>
 </footer>
 
-<script>
-
-/* apps dropdown */
-
-const appsButton = document.getElementById("navApps");
-const menu = document.getElementById("appsMenu");
-
-appsButton.addEventListener("click", function(e){
-e.stopPropagation();
-menu.style.display = (menu.style.display === "block") ? "none" : "block";
-});
-
-document.addEventListener("click", function(e){
-if(!menu.contains(e.target) && e.target !== appsButton){
-menu.style.display = "none";
-}
-});
-
-/* language */
-
-let currentLanguage = localStorage.getItem("mc_language") || "en";
-
-function applyLanguage(){
-const en = currentLanguage === "en";
-
-document.getElementById("navHome").textContent    = en ? "Home"    : "Accueil";
-document.getElementById("navApps").textContent    = en ? "Apps"    : "Apps";
-document.getElementById("navAbout").textContent   = en ? "About"   : "À propos";
-document.getElementById("navContact").textContent = en ? "Contact" : "Contact";
-
-document.getElementById("subApp1").textContent = en ? "RA / Dec / AZ / Alt" : "AD / Déc / AZ / Alt";
-document.getElementById("subApp2").textContent = en ? "Virtual Telescope"   : "Télescope virtuel";
-document.getElementById("subApp3").textContent = en ? "Sol and Stars"       : "Sol et les étoiles";
-document.getElementById("subApp4").textContent = en ? "Alien Sky"           : "Alien Sky";
-document.getElementById("subApp5").textContent = en ? "Time Travel"         : "Voyage dans le temps";
-
-document.getElementById("title").textContent    = en ? "Our Origins" : "Nos Origines";
-document.getElementById("subtitle").textContent = en
-    ? "The purchase of this Apple II Plus computer on June 11, 1981 for $2,100 marks the beginning of the Micro Créatif adventure."
-    : "L'achat de cet ordinateur Apple II Plus le 11 juin 1981 pour 2 100 $ marque le début de l'aventure Micro Créatif.";
-document.getElementById("inflation").textContent = en
-    ? "Comparative value in 2026: approximately $7,350 CAD"
-    : "Valeur comparative en 2026 : environ 7 350 $ CAD";
-
-const pdfBtn = document.getElementById("pdfBtn");
-pdfBtn.textContent = en ? "Read the article" : "Lire l'article";
-pdfBtn.href        = en ? "articleE.html"    : "article.html";
-
-document.getElementById("articleSource").textContent = en
-    ? "(Le Devoir newspaper   1983)"
-    : "(journal Le Devoir   1983)";
-
-document.getElementById("superTitle").textContent = en
-    ? "Métier: super-programmeur!"
-    : "Métier: super-programmeur!";
-
-document.getElementById("superSource").textContent = en
-    ? "(L'Actualité Informatique   1984)"
-    : "(L'Actualité Informatique   1984)";
-
-const superBtn = document.getElementById("superBtn");
-superBtn.textContent = en ? "Read the article" : "Lire l'article";
-superBtn.href        = en ? "superE.html"      : "super.html";
-
-document.getElementById("copyright").textContent = en
-    ? "© 2026 Micro Créatif. All rights reserved."
-    : "© 2026 Micro Créatif. Tous droits réservés.";
-document.getElementById("cities").textContent = en
-    ? "Montreal | Ho Chi Minh City"
-    : "Montréal | Hô Chi Minh Ville";
-}
-
-function toggleLanguage(){
-currentLanguage = (currentLanguage === "en") ? "fr" : "en";
-localStorage.setItem("mc_language", currentLanguage);
-applyLanguage();
-}
-
-document.addEventListener("DOMContentLoaded", applyLanguage);
-
-/* close menu before navigating */
-document.querySelectorAll(".submenu a").forEach(function(link){
-link.addEventListener("click", function(){
-menu.style.display = "none";
-});
-});
-
-</script>
-
+<script src="about-languages.js" defer></script>
 </body>
 </html>
