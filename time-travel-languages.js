@@ -1,6 +1,6 @@
 /* Micro Créatif
    Time Travel Sky website languages
-   Version 1.4
+   Version 1.5
 
    To add a language:
    1. Copy one language block inside TIME_TRAVEL_LANGUAGES.
@@ -26,6 +26,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.contact": "Contact",
       "hero.title": "Time Travel Sky",
       "hero.subtitle": "Stay on Earth, move through time, and watch the real sky transform above you.",
+      "video.alignmentCaption": "Planetary alignment seen from Beijing — May 5, 2000.",
       "mode.placeTime.title": "Choose a place and time",
       "mode.placeTime.body": "Use your current position, enter latitude and longitude manually, or choose from 19 historically important preset locations grouped into Africa, the Americas, Asia, and the Mediterranean & Near East. Then choose an exact local date and time from 9999 BCE through 9999 CE.",
       "mode.history.title": "Move through history",
@@ -114,6 +115,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.contact": "Contact",
       "hero.title": "Time Travel Sky",
       "hero.subtitle": "Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au-dessus de vous.",
+      "video.alignmentCaption": "Alignement planétaire vu de Pékin — 5 mai 2000.",
       "mode.placeTime.title": "Choisissez un lieu et une époque",
       "mode.placeTime.body": "Utilisez votre position actuelle, entrez manuellement la latitude et la longitude, ou choisissez parmi 19 lieux historiques prédéfinis regroupés en Afrique, dans les Amériques, en Asie, ainsi qu’en Méditerranée et au Proche-Orient. Choisissez ensuite une date et une heure locales précises, de 9999 av. J.-C. à 9999 apr. J.-C.",
       "mode.history.title": "Parcourez l’histoire",
@@ -202,6 +204,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.contact": "Liên hệ",
       "hero.title": "Time Travel Sky",
       "hero.subtitle": "Ở lại trên Trái Đất, du hành xuyên thời gian và quan sát bầu trời thực sự biến đổi phía trên bạn.",
+      "video.alignmentCaption": "Sự thẳng hàng của các hành tinh nhìn từ Bắc Kinh — ngày 5 tháng 5 năm 2000.",
       "mode.placeTime.title": "Chọn địa điểm và thời gian",
       "mode.placeTime.body": "Sử dụng vị trí hiện tại của bạn, nhập vĩ độ và kinh độ thủ công, hoặc chọn một trong 19 địa điểm định sẵn có ý nghĩa lịch sử, được nhóm theo Châu Phi, Châu Mỹ, Châu Á, Địa Trung Hải và Cận Đông. Sau đó chọn chính xác ngày và giờ địa phương từ năm 9999 TCN đến năm 9999 SCN.",
       "mode.history.title": "Du hành qua lịch sử",
@@ -284,6 +287,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "概要",
       "nav.contact": "お問い合わせ",
       "hero.subtitle": "地球にとどまったまま時を移動し、頭上の実際の空が変化していく様子を見てください。",
+      "video.alignmentCaption": "北京から見た惑星直列 — 2000年5月5日。",
       "mode.placeTime.title": "場所と時刻を選ぶ",
       "mode.placeTime.body": "現在地を使うか、緯度・経度を手入力するか、アフリカ、アメリカ大陸、アジア、地中海・近東に分類された歴史的に重要な19か所のプリセットから選べます。その後、紀元前9999年から西暦9999年までの正確な現地日時を選びます。",
       "mode.history.title": "歴史の中を移動する",
@@ -372,6 +376,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "关于",
       "nav.contact": "联系",
       "hero.subtitle": "留在地球上，穿越时间，观看头顶真实的天空不断变化。",
+      "video.alignmentCaption": "从北京看到的行星排列 — 2000年5月5日。",
       "mode.placeTime.title": "选择地点和时间",
       "mode.placeTime.body": "使用当前位置、手动输入纬度和经度，或从19个具有历史意义的预设地点中选择。这些地点按非洲、美洲、亚洲以及地中海与近东分组。然后选择从公元前9999年到公元9999年的精确当地日期和时间。",
       "mode.history.title": "穿越历史",
@@ -460,6 +465,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "關於",
       "nav.contact": "聯絡",
       "hero.subtitle": "留在地球上，穿越時間，觀看頭頂真實的天空不斷變化。",
+      "video.alignmentCaption": "從北京看到的行星排列 — 2000年5月5日。",
       "mode.placeTime.title": "選擇地點和時間",
       "mode.placeTime.body": "使用目前位置、手動輸入緯度與經度，或從19個具有歷史意義的預設地點中選擇。這些地點依非洲、美洲、亞洲以及地中海與近東分組。然後選擇從西元前9999年到西元9999年的精確當地日期與時間。",
       "mode.history.title": "穿越歷史",
@@ -548,6 +554,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "Acerca de",
       "nav.contact": "Contacto",
       "hero.subtitle": "Permanece en la Tierra, viaja por el tiempo y observa cómo se transforma el cielo real sobre ti.",
+      "video.alignmentCaption": "Alineación planetaria vista desde Pekín — 5 de mayo de 2000.",
       "mode.placeTime.title": "Elige un lugar y una fecha",
       "mode.placeTime.body": "Usa tu ubicación actual, introduce manualmente la latitud y la longitud, o elige entre 19 ubicaciones predefinidas de importancia histórica, agrupadas en África, América, Asia y el Mediterráneo y Oriente Próximo. Después selecciona una fecha y hora locales exactas entre 9999 a. C. y 9999 d. C.",
       "mode.history.title": "Viaja por la historia",
@@ -636,6 +643,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "Über uns",
       "nav.contact": "Kontakt",
       "hero.subtitle": "Bleib auf der Erde, reise durch die Zeit und beobachte, wie sich der echte Himmel über dir verändert.",
+      "video.alignmentCaption": "Planetenstellung von Peking aus gesehen — 5. Mai 2000.",
       "mode.placeTime.title": "Ort und Zeit wählen",
       "mode.placeTime.body": "Verwende deinen aktuellen Standort, gib Breiten- und Längengrad manuell ein oder wähle einen von 19 historisch bedeutenden voreingestellten Orten in Afrika, Amerika, Asien sowie im Mittelmeerraum und Nahen Osten. Danach kannst du ein genaues lokales Datum und eine Uhrzeit von 9999 v. Chr. bis 9999 n. Chr. wählen.",
       "mode.history.title": "Durch die Geschichte reisen",
@@ -731,6 +739,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.contact": "اتصل بنا",
       "hero.title": "Time Travel Sky",
       "hero.subtitle": "ابقَ على الأرض، وانتقل عبر الزمن، وشاهد السماء الحقيقية تتغير فوقك.",
+      "video.alignmentCaption": "اصطفاف الكواكب كما يُرى من بكين — 5 مايو 2000.",
       "mode.placeTime.title": "اختر مكانًا وزمنًا",
       "mode.placeTime.body": "استخدم موقعك الحالي، أو أدخل خط العرض وخط الطول يدويًا، أو اختر واحدًا من 19 موقعًا تاريخيًا مهمًا مُعدًا مسبقًا ومصنفًا ضمن أفريقيا والأمريكيتين وآسيا ومنطقة البحر المتوسط والشرق الأدنى. ثم اختر تاريخًا ووقتًا محليين بدقة من سنة 9999 ق.م. حتى سنة 9999 م.",
       "mode.history.title": "تنقّل عبر التاريخ",
@@ -820,6 +829,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.contact": "연락처",
       "hero.title": "Time Travel Sky",
       "hero.subtitle": "지구에 머문 채 시간을 이동하며 머리 위의 실제 하늘이 변하는 모습을 살펴보세요.",
+      "video.alignmentCaption": "베이징에서 본 행성 정렬 — 2000년 5월 5일.",
       "mode.placeTime.title": "장소와 시간 선택",
       "mode.placeTime.body": "현재 위치를 사용하거나 위도와 경도를 직접 입력하거나, 아프리카·아메리카·아시아·지중해 및 근동으로 분류된 19개의 역사적으로 중요한 사전 설정 위치 중 하나를 선택하세요. 그런 다음 기원전 9999년부터 서기 9999년까지 정확한 현지 날짜와 시간을 선택할 수 있습니다.",
       "mode.history.title": "역사 속으로 이동",
