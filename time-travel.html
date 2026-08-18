@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.4 -->
+<!-- Version 3.0 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -367,70 +367,6 @@ opacity:0.78 !important;
 }
 
 
-.demo-video-section{
-margin:6px auto 28px;
-}
-.demo-video-caption{
-margin:10px 0 0;
-font-size:17px;
-line-height:1.4;
-text-align:center;
-opacity:0.9;
-}
-.demo-video-frame{
-position:relative;
-margin:0;
-background:rgba(5,8,24,0.70);
-border:1px solid rgba(190,215,255,0.28);
-border-radius:18px;
-padding:8px;
-box-shadow:0 0 22px rgba(40,80,160,0.20);
-overflow:hidden;
-}
-.demo-video-frame video{
-display:block;
-width:100%;
-height:auto;
-border-radius:12px;
-background:black;
-cursor:pointer;
-}
-.video-play-button{
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-width:82px;
-height:82px;
-border-radius:50%;
-border:2px solid rgba(255,255,255,0.92);
-background:rgba(0,0,0,0.58);
-box-shadow:0 0 24px rgba(0,0,0,0.55), 0 0 18px rgba(130,180,255,0.28);
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:0;
-z-index:3;
-}
-.video-play-button::before{
-content:"";
-display:block;
-margin-left:7px;
-width:0;
-height:0;
-border-top:17px solid transparent;
-border-bottom:17px solid transparent;
-border-left:27px solid white;
-}
-.video-play-button:hover{
-background:rgba(0,0,0,0.72);
-transform:translate(-50%,-50%) scale(1.06);
-}
-.video-play-button.hidden{
-display:none;
-}
-
 .screenshot-gallery{
 margin:6px auto 30px;
 }
@@ -584,7 +520,7 @@ direction:ltr;
 <img alt="" aria-hidden="true" loading="lazy" src="images/ChooseTime.png"/>
 </figure>
 <figure class="screenshot-frame">
-<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocationManually.png"/>
+<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocationMnually.png"/>
 </figure>
 </div>
 </section>
@@ -598,15 +534,6 @@ direction:ltr;
 <p data-i18n="mode.history.body"></p>
 </div>
 </div>
-<section class="demo-video-section">
-<div class="demo-video-frame">
-<video id="beijingAlignmentVideo" playsinline preload="metadata" poster="images/beijing-alignment-poster.jpg">
-<source src="videos/beijing-alignment.mp4" type="video/mp4"/>
-</video>
-<button class="video-play-button" id="beijingAlignmentPlay" type="button" aria-label="▶"></button>
-</div>
-<p class="demo-video-caption" data-i18n="video.alignmentCaption"></p>
-</section>
 <div class="card-grid">
 <div class="card">
 <h2 data-i18n="cards.realSky.title"></h2>
@@ -681,7 +608,12 @@ direction:ltr;
 <code>0</code>
 <span data-i18n="skyControls.reset"></span>
 </div>
+<div class="key-row">
+<code>⌘ + Click</code>
+<span data-i18n="skyControls.catalogNames"></span>
+</div>
 <p data-i18n="skyControls.touch"></p>
+<p data-i18n="skyControls.catalogNamesNote"></p>
 </div>
 <div class="advanced-block wide keyboard-panel">
 <h3 class="centered-title" data-i18n="keyboard.title"></h3>
@@ -767,40 +699,9 @@ direction:ltr;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.4</p>
+<p>Version 3.0</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const video = document.getElementById("beijingAlignmentVideo");
-  const playButton = document.getElementById("beijingAlignmentPlay");
-  if (!video || !playButton) return;
-
-  function updatePlayButton(){
-    playButton.classList.toggle("hidden", !video.paused && !video.ended);
-  }
-
-  function toggleVideo(){
-    if (video.paused || video.ended) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  }
-
-  video.addEventListener("click", toggleVideo);
-  playButton.addEventListener("click", function(event){
-    event.stopPropagation();
-    toggleVideo();
-  });
-
-  video.addEventListener("play", updatePlayButton);
-  video.addEventListener("pause", updatePlayButton);
-  video.addEventListener("ended", updatePlayButton);
-  updatePlayButton();
-});
-</script>
 
 <script src="time-travel-languages.js" defer></script>
 </body>
