@@ -415,6 +415,11 @@ padding:8px;
 box-shadow:0 0 22px rgba(40,80,160,0.20);
 overflow:hidden;
 }
+.video-frame.centered-video{
+grid-column:1 / -1;
+width:calc((100% - 18px) / 2);
+justify-self:center;
+}
 .video-frame video{
 display:block;
 width:100%;
@@ -477,6 +482,7 @@ h1{font-size:42px;}
 .mode-grid{grid-template-columns:1fr;}
 .screenshot-grid{grid-template-columns:1fr;}
 .video-grid{grid-template-columns:1fr;}
+.video-frame.centered-video{grid-column:auto;width:100%;}
 .card-grid{grid-template-columns:1fr;}
 .lower-row{grid-template-columns:1fr;}
 .advanced-grid{grid-template-columns:1fr;}
@@ -588,7 +594,7 @@ direction:ltr;
 </video>
 <figcaption data-i18n="video.siderealCaption"></figcaption>
 </figure>
-<figure class="video-frame">
+<figure class="video-frame centered-video">
 <video controls playsinline preload="metadata" poster="images/Mars-Retrograde.png">
 <source src="videos/Mars-Retrograde.mp4" type="video/mp4"/>
 </video>
