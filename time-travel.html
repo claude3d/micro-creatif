@@ -391,6 +391,53 @@ height:auto;
 border-radius:12px;
 }
 
+
+.video-gallery{
+margin:8px auto 34px;
+}
+.video-gallery > h2{
+font-size:32px;
+margin:0 0 18px;
+color:#e2edff;
+text-shadow:0 0 14px rgba(140,190,255,0.30);
+}
+.video-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:18px;
+}
+.video-frame{
+margin:0;
+background:rgba(5,8,24,0.70);
+border:1px solid rgba(190,215,255,0.28);
+border-radius:18px;
+padding:8px;
+box-shadow:0 0 22px rgba(40,80,160,0.20);
+overflow:hidden;
+}
+.video-frame video{
+display:block;
+width:100%;
+height:auto;
+aspect-ratio:16 / 9;
+object-fit:contain;
+background:#000;
+border-radius:12px;
+}
+.video-frame figcaption{
+padding:12px 8px 5px;
+font-size:16px;
+line-height:1.4;
+opacity:0.92;
+}
+.video-note{
+max-width:860px;
+margin:18px auto 0;
+font-size:17px;
+line-height:1.5;
+opacity:0.92;
+}
+
 .status{
 margin:30px auto 0;
 max-width:800px;
@@ -429,6 +476,7 @@ h1{font-size:42px;}
 .subtitle{font-size:19px;}
 .mode-grid{grid-template-columns:1fr;}
 .screenshot-grid{grid-template-columns:1fr;}
+.video-grid{grid-template-columns:1fr;}
 .card-grid{grid-template-columns:1fr;}
 .lower-row{grid-template-columns:1fr;}
 .advanced-grid{grid-template-columns:1fr;}
@@ -520,10 +568,30 @@ direction:ltr;
 <img alt="" aria-hidden="true" loading="lazy" src="images/ChooseTime.png"/>
 </figure>
 <figure class="screenshot-frame">
-<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocationMnually.png"/>
+<img alt="" aria-hidden="true" loading="lazy" src="images/ChooseLocationManually.png"/>
 </figure>
 </div>
 </section>
+
+<section class="video-gallery">
+<h2 data-i18n="videos.title"></h2>
+<div class="video-grid">
+<figure class="video-frame">
+<video controls playsinline preload="metadata" poster="images/Eclipse.png">
+<source src="videos/Eclipse.mp4" type="video/mp4"/>
+</video>
+<figcaption data-i18n="video.eclipseCaption"></figcaption>
+</figure>
+<figure class="video-frame">
+<video controls playsinline preload="metadata" poster="images/time-travel-sidereal-poster.jpg">
+<source src="videos/time-travel-sidereal-animation.mp4" type="video/mp4"/>
+</video>
+<figcaption data-i18n="video.siderealCaption"></figcaption>
+</figure>
+</div>
+<p class="video-note" data-i18n="videos.note"></p>
+</section>
+
 <div class="mode-grid">
 <div class="mode-card">
 <h2 data-i18n="mode.placeTime.title"></h2>
