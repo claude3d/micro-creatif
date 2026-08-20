@@ -24,7 +24,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "About",
       "nav.contact": "Contact",
-      "hero.title": "Time Travel Sky",
       "hero.subtitle": "Stay on Earth, move through time, and watch the real sky transform above you.",
       "sidereal.title": "Fixed Sidereal Time and automatic animation",
       "sidereal.what.title": "What Fixed Sidereal Time does",
@@ -139,7 +138,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "À propos",
       "nav.contact": "Contact",
-      "hero.title": "Time Travel Sky",
       "hero.subtitle": "Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au-dessus de vous.",
       "sidereal.title": "Temps sidéral fixe et animation automatique",
       "sidereal.what.title": "À quoi sert le temps sidéral fixe",
@@ -254,7 +252,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "Giới thiệu",
       "nav.contact": "Liên hệ",
-      "hero.title": "Time Travel Sky",
       "hero.subtitle": "Ở lại trên Trái Đất, du hành xuyên thời gian và quan sát bầu trời thực sự biến đổi phía trên bạn.",
       "sidereal.title": "Thời gian thiên văn cố định và hoạt ảnh tự động",
       "sidereal.what.title": "Thời gian thiên văn cố định làm gì",
@@ -460,8 +457,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky",
-      "hero.title": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky"
     },
     "meta": {
       "title": "Time Travel Sky – 時を越えて地球の空を探索 | Micro Créatif",
@@ -575,8 +571,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky",
-      "hero.title": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky"
     },
     "meta": {
       "title": "Time Travel Sky – 穿越时间探索地球天空 | Micro Créatif",
@@ -690,8 +685,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky",
-      "hero.title": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky"
     },
     "meta": {
       "title": "Time Travel Sky – 穿越時間探索地球天空 | Micro Créatif",
@@ -805,8 +799,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky",
-      "hero.title": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky"
     },
     "meta": {
       "title": "Time Travel Sky – Explora el cielo de la Tierra a través del tiempo | Micro Créatif",
@@ -920,8 +913,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky",
-      "hero.title": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky"
     },
     "meta": {
       "title": "Time Travel Sky – Den Himmel der Erde durch die Zeit erkunden | Micro Créatif",
@@ -945,7 +937,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "حول",
       "nav.contact": "اتصل بنا",
-      "hero.title": "Time Travel Sky",
       "hero.subtitle": "ابقَ على الأرض، وانتقل عبر الزمن، وشاهد السماء الحقيقية تتغير فوقك.",
       "sidereal.title": "الزمن النجمي الثابت والحركة التلقائية",
       "sidereal.what.title": "ما الذي يفعله الزمن النجمي الثابت",
@@ -1061,7 +1052,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "정보",
       "nav.contact": "연락처",
-      "hero.title": "Time Travel Sky",
       "hero.subtitle": "지구에 머문 채 시간을 이동하며 머리 위의 실제 하늘이 변하는 모습을 살펴보세요.",
       "sidereal.title": "고정 항성시와 자동 애니메이션",
       "sidereal.what.title": "고정 항성시의 역할",
