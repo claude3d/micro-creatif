@@ -1440,7 +1440,7 @@ function downloadCurrentLanguageManual() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  const strings = TRANSLATIONS[code] || TRANSLATIONS[DEFAULT_LANGUAGE];
+  const strings = (TIME_TRAVEL_LANGUAGES[code] || TIME_TRAVEL_LANGUAGES[DEFAULT_LANGUAGE]).strings;
   link.download = strings["manual.fileName"] || "Time-Travel-Sky-Manual-1.1.pdf";
   document.body.appendChild(link);
   link.click();
