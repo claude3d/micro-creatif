@@ -148,7 +148,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "À propos",
       "nav.contact": "Contact",
-      "hero.subtitle": "Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au-dessus de vous.",
+      "hero.subtitle": "Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au‑dessus de vous.",
       "manual.download": "Télécharger le manuel",
       "manual.fileName": "Time-Travel-Sky-Manuel-1.1.pdf",
       "manual.title": "Manuel de l’utilisateur",
