@@ -1,6 +1,6 @@
 /* Micro Créatif
    Time Travel Sky website languages
-   Version 2.1
+   Version 2.2
 
    To add a language:
    1. Copy one language block inside TIME_TRAVEL_LANGUAGES.
@@ -25,6 +25,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "About",
       "nav.contact": "Contact",
       "hero.subtitle": "Stay on Earth, move through time, and watch the real sky transform above you.",
+      "manual.download": "Download Manual",
+      "manual.title": "User Manual",
+      "manual.videoAvailable": "This video is available on the Time Travel Sky website.",
+      "manual.videoQuestion": "Would you like to open the website to watch it?",
+      "manual.openWebsite": "Open Website",
+      "manual.cancel": "Cancel",
+      "manual.onlineNote": "Videos are available on the Time Travel Sky website. An Internet connection is required to watch them.",
+      "manual.downloadedNote": "Downloaded manual — Time Travel Sky Version 1.1",
       "sidereal.title": "Fixed Sidereal Time and automatic animation",
       "sidereal.what.title": "What Fixed Sidereal Time does",
       "sidereal.what.body1": "Turn on Fixed Sidereal Time in Local Date and Time when you want to compare the motion of the Sun, Moon, and planets against a stable stellar background.",
@@ -140,6 +148,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "À propos",
       "nav.contact": "Contact",
       "hero.subtitle": "Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au-dessus de vous.",
+      "manual.download": "Télécharger le manuel",
+      "manual.title": "Manuel de l’utilisateur",
+      "manual.videoAvailable": "Cette vidéo est disponible sur le site Web de Time Travel Sky.",
+      "manual.videoQuestion": "Voulez-vous ouvrir le site pour regarder cette vidéo ?",
+      "manual.openWebsite": "Ouvrir le site Web",
+      "manual.cancel": "Annuler",
+      "manual.onlineNote": "Les vidéos sont disponibles sur le site Web de Time Travel Sky. Une connexion Internet est nécessaire pour les regarder.",
+      "manual.downloadedNote": "Manuel téléchargé — Time Travel Sky Version 1.1",
       "sidereal.title": "Temps sidéral fixe et animation automatique",
       "sidereal.what.title": "À quoi sert le temps sidéral fixe",
       "sidereal.what.body1": "Activez le Temps sidéral fixe dans Date et heure locales lorsque vous voulez comparer le déplacement du Soleil, de la Lune et des planètes sur un fond d’étoiles stable.",
@@ -255,6 +271,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "Giới thiệu",
       "nav.contact": "Liên hệ",
       "hero.subtitle": "Ở lại trên Trái Đất, du hành xuyên thời gian và quan sát bầu trời thực sự biến đổi phía trên bạn.",
+      "manual.download": "Tải hướng dẫn sử dụng",
+      "manual.title": "Hướng dẫn sử dụng",
+      "manual.videoAvailable": "Video này có trên trang web Time Travel Sky.",
+      "manual.videoQuestion": "Bạn có muốn mở trang web để xem video này không?",
+      "manual.openWebsite": "Mở trang web",
+      "manual.cancel": "Hủy",
+      "manual.onlineNote": "Các video có trên trang web Time Travel Sky. Cần kết nối Internet để xem.",
+      "manual.downloadedNote": "Hướng dẫn đã tải xuống — Time Travel Sky Phiên bản 1.1",
       "sidereal.title": "Thời gian thiên văn cố định và hoạt ảnh tự động",
       "sidereal.what.title": "Thời gian thiên văn cố định làm gì",
       "sidereal.what.body1": "Bật Thời gian thiên văn cố định trong Ngày và giờ địa phương khi bạn muốn so sánh chuyển động của Mặt Trời, Mặt Trăng và các hành tinh trên một nền sao ổn định.",
@@ -365,6 +389,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "概要",
       "nav.contact": "お問い合わせ",
       "hero.subtitle": "地球にとどまったまま時を移動し、頭上の実際の空が変化していく様子を見てください。",
+      "manual.download": "マニュアルをダウンロード",
+      "manual.title": "ユーザーマニュアル",
+      "manual.videoAvailable": "この動画は Time Travel Sky のWebサイトで視聴できます。",
+      "manual.videoQuestion": "この動画を見るためにWebサイトを開きますか？",
+      "manual.openWebsite": "Webサイトを開く",
+      "manual.cancel": "キャンセル",
+      "manual.onlineNote": "動画は Time Travel Sky のWebサイトで視聴できます。視聴にはインターネット接続が必要です。",
+      "manual.downloadedNote": "ダウンロード版マニュアル — Time Travel Sky Version 1.1",
       "sidereal.title": "固定恒星時と自動アニメーション",
       "sidereal.what.title": "固定恒星時の役割",
       "sidereal.what.body1": "太陽・月・惑星の動きを安定した恒星背景と比較したいときは、「現地の日付と時刻」で固定恒星時をオンにします。",
@@ -480,6 +512,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "关于",
       "nav.contact": "联系",
       "hero.subtitle": "留在地球上，穿越时间，观看头顶真实的天空不断变化。",
+      "manual.download": "下载用户手册",
+      "manual.title": "用户手册",
+      "manual.videoAvailable": "此视频可在 Time Travel Sky 网站上观看。",
+      "manual.videoQuestion": "是否打开网站观看此视频？",
+      "manual.openWebsite": "打开网站",
+      "manual.cancel": "取消",
+      "manual.onlineNote": "视频可在 Time Travel Sky 网站上观看。观看视频需要互联网连接。",
+      "manual.downloadedNote": "下载版用户手册 — Time Travel Sky 版本 1.1",
       "sidereal.title": "固定恒星时与自动动画",
       "sidereal.what.title": "固定恒星时的作用",
       "sidereal.what.body1": "当你想在稳定的恒星背景下比较太阳、月球和行星的运动时，可在“当地日期和时间”中开启固定恒星时。",
@@ -595,6 +635,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "關於",
       "nav.contact": "聯絡",
       "hero.subtitle": "留在地球上，穿越時間，觀看頭頂真實的天空不斷變化。",
+      "manual.download": "下載使用者手冊",
+      "manual.title": "使用者手冊",
+      "manual.videoAvailable": "此影片可在 Time Travel Sky 網站上觀看。",
+      "manual.videoQuestion": "是否開啟網站觀看此影片？",
+      "manual.openWebsite": "開啟網站",
+      "manual.cancel": "取消",
+      "manual.onlineNote": "影片可在 Time Travel Sky 網站上觀看。觀看影片需要網際網路連線。",
+      "manual.downloadedNote": "下載版使用者手冊 — Time Travel Sky 版本 1.1",
       "sidereal.title": "固定恆星時與自動動畫",
       "sidereal.what.title": "固定恆星時的作用",
       "sidereal.what.body1": "當你想在穩定的恆星背景下比較太陽、月球和行星的運動時，可在「當地日期和時間」中開啟固定恆星時。",
@@ -710,6 +758,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "Acerca de",
       "nav.contact": "Contacto",
       "hero.subtitle": "Permanece en la Tierra, viaja por el tiempo y observa cómo se transforma el cielo real sobre ti.",
+      "manual.download": "Descargar manual",
+      "manual.title": "Manual del usuario",
+      "manual.videoAvailable": "Este video está disponible en el sitio web de Time Travel Sky.",
+      "manual.videoQuestion": "¿Quieres abrir el sitio web para ver este video?",
+      "manual.openWebsite": "Abrir sitio web",
+      "manual.cancel": "Cancelar",
+      "manual.onlineNote": "Los videos están disponibles en el sitio web de Time Travel Sky. Se necesita conexión a Internet para verlos.",
+      "manual.downloadedNote": "Manual descargado — Time Travel Sky Versión 1.1",
       "sidereal.title": "Tiempo sidéreo fijo y animación automática",
       "sidereal.what.title": "Qué hace el Tiempo sidéreo fijo",
       "sidereal.what.body1": "Activa Tiempo sidéreo fijo en Fecha y hora locales cuando quieras comparar el movimiento del Sol, la Luna y los planetas sobre un fondo estelar estable.",
@@ -825,6 +881,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "Über uns",
       "nav.contact": "Kontakt",
       "hero.subtitle": "Bleib auf der Erde, reise durch die Zeit und beobachte, wie sich der echte Himmel über dir verändert.",
+      "manual.download": "Handbuch herunterladen",
+      "manual.title": "Benutzerhandbuch",
+      "manual.videoAvailable": "Dieses Video ist auf der Time Travel Sky-Website verfügbar.",
+      "manual.videoQuestion": "Möchten Sie die Website öffnen, um dieses Video anzusehen?",
+      "manual.openWebsite": "Website öffnen",
+      "manual.cancel": "Abbrechen",
+      "manual.onlineNote": "Die Videos sind auf der Time Travel Sky-Website verfügbar. Zum Ansehen ist eine Internetverbindung erforderlich.",
+      "manual.downloadedNote": "Heruntergeladenes Handbuch — Time Travel Sky Version 1.1",
       "sidereal.title": "Feste Sternzeit und automatische Animation",
       "sidereal.what.title": "Was Feste Sternzeit bewirkt",
       "sidereal.what.body1": "Aktiviere die feste Sternzeit unter Lokales Datum und Uhrzeit, wenn du die Bewegung von Sonne, Mond und Planeten vor einem stabilen Sternhintergrund vergleichen möchtest.",
@@ -946,6 +1010,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "حول",
       "nav.contact": "اتصل بنا",
       "hero.subtitle": "ابقَ على الأرض، وانتقل عبر الزمن، وشاهد السماء الحقيقية تتغير فوقك.",
+      "manual.download": "تنزيل الدليل",
+      "manual.title": "دليل المستخدم",
+      "manual.videoAvailable": "هذا الفيديو متاح على موقع Time Travel Sky.",
+      "manual.videoQuestion": "هل تريد فتح الموقع لمشاهدة هذا الفيديو؟",
+      "manual.openWebsite": "فتح الموقع",
+      "manual.cancel": "إلغاء",
+      "manual.onlineNote": "تتوفر مقاطع الفيديو على موقع Time Travel Sky. يلزم اتصال بالإنترنت لمشاهدتها.",
+      "manual.downloadedNote": "الدليل المُنزّل — Time Travel Sky الإصدار 1.1",
       "sidereal.title": "الزمن النجمي الثابت والحركة التلقائية",
       "sidereal.what.title": "ما الذي يفعله الزمن النجمي الثابت",
       "sidereal.what.body1": "فعّل الزمن النجمي الثابت في التاريخ والوقت المحليين عندما تريد مقارنة حركة الشمس والقمر والكواكب أمام خلفية نجمية ثابتة.",
@@ -1062,6 +1134,14 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.about": "정보",
       "nav.contact": "연락처",
       "hero.subtitle": "지구에 머문 채 시간을 이동하며 머리 위의 실제 하늘이 변하는 모습을 살펴보세요.",
+      "manual.download": "설명서 다운로드",
+      "manual.title": "사용자 설명서",
+      "manual.videoAvailable": "이 동영상은 Time Travel Sky 웹사이트에서 볼 수 있습니다.",
+      "manual.videoQuestion": "이 동영상을 보기 위해 웹사이트를 여시겠습니까?",
+      "manual.openWebsite": "웹사이트 열기",
+      "manual.cancel": "취소",
+      "manual.onlineNote": "동영상은 Time Travel Sky 웹사이트에서 볼 수 있습니다. 시청하려면 인터넷 연결이 필요합니다.",
+      "manual.downloadedNote": "다운로드한 설명서 — Time Travel Sky 버전 1.1",
       "sidereal.title": "고정 항성시와 자동 애니메이션",
       "sidereal.what.title": "고정 항성시의 역할",
       "sidereal.what.body1": "태양, 달, 행성의 움직임을 안정된 별 배경과 비교하고 싶을 때 현지 날짜 및 시간에서 고정 항성시를 켭니다.",
@@ -1319,9 +1399,134 @@ function configureAppsMenu() {
   });
 }
 
+
+function escapeManualHTML(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function manualText(strings, key, fallback = "") {
+  return Object.prototype.hasOwnProperty.call(strings, key) ? strings[key] : fallback;
+}
+
+function buildDownloadedManual(languageCode) {
+  const pack = TIME_TRAVEL_LANGUAGES[languageCode] || TIME_TRAVEL_LANGUAGES[DEFAULT_LANGUAGE];
+  const s = pack.strings;
+  const e = (key, fallback = "") => escapeManualHTML(manualText(s, key, fallback));
+  const siteURL = "https://microcreatif.ca/time-travel.html";
+
+  const features = [
+    "features.location", "features.exactDate", "features.travelScales",
+    "features.skyLayers", "features.atmosphere", "features.magnitude",
+    "features.events", "features.keyboard"
+  ].map((key) => `<li>${e(key)}</li>`).join("");
+
+  const videoCards = [
+    ["eclipse", "video.eclipseCaption"],
+    ["sidereal", "video.siderealCaption"],
+    ["mars", "video.marsCaption"]
+  ].map(([id, caption]) => `
+    <article class="video-card">
+      <button class="play-button" type="button" data-video="${id}" aria-label="Play">▶</button>
+      <p>${e(caption)}</p>
+    </article>`).join("");
+
+  const keyboardDateRows = [
+    ["0–9", "keyboard.enterNumbers"],
+    ["Tab / Return / →", "keyboard.nextField"],
+    ["⇧ Tab / ←", "keyboard.previousField"],
+    ["⌫ / ⌦", "keyboard.erase"],
+    ["B / C", "keyboard.era"],
+    ["⌘ Return", "keyboard.apply"],
+    ["Esc / ⌘ . / ⌘ [", "keyboard.cancel"]
+  ];
+  const keyboardLocationRows = [
+    ["0–9", "keyboard.enterNumbers"],
+    ["Tab / Return / →", "keyboard.nextField"],
+    ["⇧ Tab / ←", "keyboard.previousField"],
+    ["⌫ / ⌦", "keyboard.erase"],
+    ["N / S / E / W", "keyboard.directions"],
+    ["⌘ Return", "keyboard.apply"],
+    ["Esc / ⌘ . / ⌘ [", "keyboard.cancel"]
+  ];
+  const keyRows = (rows) => rows.map(([keys, key]) =>
+    `<tr><td class="keys">${escapeManualHTML(keys)}</td><td>${e(key)}</td></tr>`
+  ).join("");
+
+  return `<!DOCTYPE html>
+<html lang="${escapeManualHTML(pack.htmlLang)}" dir="${escapeManualHTML(pack.dir || "ltr")}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Travel Sky — ${e("manual.title")}</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#07101f;color:#f4f7ff;line-height:1.5}
+main{max-width:980px;margin:0 auto;padding:34px 20px 54px}.cover{text-align:center;padding:48px 20px 34px;border-bottom:1px solid #29405f}
+h1{font-size:44px;margin:0 0 10px}.version{font-size:.5em;font-weight:400;opacity:.82;white-space:nowrap}.manual-title{font-size:23px;margin:8px 0 0;color:#cfdcf2}
+section{margin-top:28px;padding:22px;border:1px solid #29405f;border-radius:16px;background:#0d1a2d}h2{margin:0 0 15px;font-size:26px}h3{margin:0 0 8px;color:#dbe8ff}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{padding:16px;border-radius:12px;background:#14243a}ul{margin:0;padding-inline-start:24px}li{margin:8px 0}
+.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.video-card{padding:16px;text-align:center;border-radius:12px;background:#14243a}.play-button{width:62px;height:62px;border-radius:50%;border:0;font-size:28px;cursor:pointer;background:white;color:#173f82;margin:6px auto 12px}.video-note{opacity:.82}
+table{width:100%;border-collapse:collapse}td{padding:8px;border-bottom:1px solid #29405f}.keys{width:32%;font-family:Menlo,Consolas,monospace;font-weight:700}.privacy{font-size:14px;opacity:.82}.site{word-break:break-all}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;padding:20px;z-index:999}.modal.open{display:flex}.modal-box{max-width:520px;width:100%;background:#101f34;border:1px solid #56708f;border-radius:18px;padding:26px;text-align:center}.modal-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}.modal a,.modal button{padding:10px 18px;border-radius:22px;border:1px solid #6685a8;font-size:16px;cursor:pointer;text-decoration:none}.modal a{background:#eaf2ff;color:#10294a}.modal button{background:#1a2b43;color:white}
+footer{text-align:center;margin-top:28px;font-size:13px;opacity:.72}@media(max-width:700px){h1{font-size:34px}.grid,.video-grid{grid-template-columns:1fr}section{padding:16px}}
+</style>
+</head>
+<body>
+<div class="cover"><h1>Time Travel Sky <span class="version">Version 1.1</span></h1><div class="manual-title">${e("manual.title")}</div><p>${e("hero.subtitle")}</p></div>
+<main>
+<section><div class="grid"><div class="card"><h3>${e("mode.placeTime.title")}</h3><p>${e("mode.placeTime.body")}</p></div><div class="card"><h3>${e("mode.history.title")}</h3><p>${e("mode.history.body")}</p></div></div></section>
+<section><div class="grid"><div class="card"><h3>${e("cards.realSky.title")}</h3><p>${e("cards.realSky.body")}</p></div><div class="card"><h3>${e("cards.timeScales.title")}</h3><p>${e("cards.timeScales.body")}</p></div><div class="card"><h3>${e("cards.events.title")}</h3><p>${e("cards.events.body")}</p></div><div class="card"><h3>${e("cards.location.title")}</h3><p>${e("cards.location.body")}</p></div></div></section>
+<section><h2>${e("features.title")}</h2><ul>${features}</ul></section>
+<section><h2>${e("videos.title")}</h2><div class="video-grid">${videoCards}</div><p class="video-note">${e("videos.note")}</p><p class="video-note">${e("manual.onlineNote")}</p></section>
+<section><h2>${e("eclipses.title")}</h2><div class="card"><h3>${e("eclipses.missed.title")}</h3><p>${e("eclipses.missed.body")}</p></div><div class="card" style="margin-top:14px"><h3>${e("eclipses.battle.title")}</h3><p>${e("eclipses.battle.body1")}</p><p>${e("eclipses.battle.body2")}</p><p>${e("eclipses.battle.body3")}</p></div></section>
+<section><h2>${e("hardcore.title")}</h2><h3>${e("hardcore.catalogue.title")}</h3><p>${e("hardcore.catalogue.intro")}</p><ul><li>${e("hardcore.catalogue.stars")}</li><li>${e("hardcore.catalogue.earth")}</li><li>${e("hardcore.catalogue.solarSystem")}</li><li>${e("hardcore.catalogue.limitations")}</li></ul></section>
+<section><h2>${e("skyControls.title")}</h2><table><tr><td class="keys">← → ↑ ↓</td><td>${e("skyControls.move")}</td></tr><tr><td class="keys">+ / −</td><td>${e("skyControls.zoom")}</td></tr><tr><td class="keys">0</td><td>${e("skyControls.reset")}</td></tr><tr><td class="keys">⌘ + Click</td><td>${e("skyControls.catalogNames")}</td></tr></table><p>${e("skyControls.touch")}</p><p>${e("skyControls.catalogNamesNote")}</p></section>
+<section><h2>${e("keyboard.title")}</h2><p>${e("keyboard.intro")}</p><div class="grid"><div class="card"><h3>${e("keyboard.dateTime.title")}</h3><table>${keyRows(keyboardDateRows)}</table></div><div class="card"><h3>${e("keyboard.location.title")}</h3><table>${keyRows(keyboardLocationRows)}</table></div></div><p>${e("keyboard.note")}</p></section>
+<section><h2>${e("easterEgg.title")}</h2><p>${e("easterEgg.body")}</p></section>
+<section><h2>${e("status.title")}</h2><p>${e("status.body")}</p><p class="privacy">© Micro Créatif<br>${e("footer.locations")}<br><br>${e("footer.privacy")}</p></section>
+<footer>${e("manual.downloadedNote")}<br><span class="site">${siteURL}</span></footer>
+</main>
+<div class="modal" id="videoPrompt" role="dialog" aria-modal="true"><div class="modal-box"><div style="font-size:44px">▶</div><p>${e("manual.videoAvailable")}</p><p class="site">${siteURL}</p><p><strong>${e("manual.videoQuestion")}</strong></p><div class="modal-actions"><a href="${siteURL}" target="_blank" rel="noopener">${e("manual.openWebsite")}</a><button type="button" id="closeVideoPrompt">${e("manual.cancel")}</button></div></div></div>
+<script>
+const promptBox=document.getElementById('videoPrompt');
+document.querySelectorAll('.play-button').forEach((button)=>button.addEventListener('click',()=>promptBox.classList.add('open')));
+document.getElementById('closeVideoPrompt').addEventListener('click',()=>promptBox.classList.remove('open'));
+promptBox.addEventListener('click',(event)=>{if(event.target===promptBox)promptBox.classList.remove('open');});
+<\/script>
+</body></html>`;
+}
+
+function downloadCurrentLanguageManual() {
+  const selector = document.getElementById("languageSelect");
+  const code = selector && availableLanguage(selector.value)
+    ? selector.value
+    : preferredLanguage();
+  const manual = buildDownloadedManual(code);
+  const blob = new Blob([manual], { type: "text/html;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `Time-Travel-Sky-Manual-${code}-1.1.html`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function configureManualDownload() {
+  const button = document.getElementById("downloadManualButton");
+  if (!button) return;
+  button.addEventListener("click", downloadCurrentLanguageManual);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   createStars();
   configureAppsMenu();
   buildLanguageMenu();
+  configureManualDownload();
   applyLanguage(preferredLanguage());
 });
