@@ -659,6 +659,41 @@ direction:ltr;
 <p class="video-note" data-i18n="videos.note"></p>
 </section>
 
+<section class="advanced">
+<h2 data-i18n="sidereal.title"></h2>
+<div class="advanced-grid">
+<div class="advanced-block wide">
+<h3 class="centered-title" data-i18n="sidereal.what.title"></h3>
+<p data-i18n="sidereal.what.body1"></p>
+<p data-i18n="sidereal.what.body2"></p>
+</div>
+<div class="advanced-block wide">
+<h3 class="centered-title" data-i18n="sidereal.controls.title"></h3>
+<p data-i18n="sidereal.controls.checkbox"></p>
+<p data-i18n="sidereal.controls.scale"></p>
+<p data-i18n="sidereal.controls.slider"></p>
+<div class="key-row">
+<code>1–9</code>
+<span data-i18n="sidereal.controls.speed"></span>
+</div>
+<div class="key-row">
+<code>F / P</code>
+<span data-i18n="sidereal.controls.direction"></span>
+</div>
+<div class="key-row">
+<code>Space</code>
+<span data-i18n="sidereal.controls.play"></span>
+</div>
+<p data-i18n="sidereal.controls.end"></p>
+</div>
+<div class="advanced-block wide">
+<h3 class="centered-title" data-i18n="sidereal.steps.title"></h3>
+<p data-i18n="sidereal.steps.body"></p>
+<p data-i18n="sidereal.steps.note"></p>
+</div>
+</div>
+</section>
+
 <div class="mode-grid">
 <div class="mode-card">
 <h2 data-i18n="mode.placeTime.title"></h2>
@@ -699,6 +734,8 @@ direction:ltr;
 <li data-i18n="features.magnitude"></li>
 <li data-i18n="features.events"></li>
 <li data-i18n="features.keyboard"></li>
+<li data-i18n="features.fixedSidereal"></li>
+<li data-i18n="features.animation"></li>
 </ul>
 </section>
 </div>
@@ -728,6 +765,7 @@ direction:ltr;
 <li data-i18n="hardcore.catalogue.earth"></li>
 <li data-i18n="hardcore.catalogue.solarSystem"></li>
 <li data-i18n="hardcore.catalogue.limitations"></li>
+<li data-i18n="hardcore.catalogue.calendar"></li>
 </ul>
 </div>
 <div class="advanced-block centered-half">
@@ -745,10 +783,19 @@ direction:ltr;
 <span data-i18n="skyControls.reset"></span>
 </div>
 <div class="key-row">
+<code>Hours ×2</code>
+<span data-i18n="skyControls.minutes"></span>
+</div>
+<div class="key-row">
+<code>E</code>
+<span data-i18n="skyControls.ecliptic"></span>
+</div>
+<div class="key-row">
 <code>⌘ + Click</code>
 <span data-i18n="skyControls.catalogNames"></span>
 </div>
 <p data-i18n="skyControls.touch"></p>
+<p data-i18n="skyControls.zoomDetail"></p>
 <p data-i18n="skyControls.catalogNamesNote"></p>
 </div>
 <div class="advanced-block wide keyboard-panel">
@@ -835,7 +882,7 @@ direction:ltr;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.0</p>
+<p>Version 3.1</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -910,6 +957,6 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
-<script src="time-travel-languages.js?v=1.1-au-dessus-fix-20260820" defer></script>
+<script src="time-travel-languages.js?v=1.1-swift-audit-20260821" defer></script>
 </body>
 </html>
