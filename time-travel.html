@@ -452,6 +452,36 @@ object-fit:contain;
 background:#000;
 border-radius:12px;
 }
+
+
+.video-custom-controls{
+display:flex;
+align-items:center;
+gap:10px;
+padding:8px 6px 2px;
+}
+.video-custom-controls button{
+appearance:none;
+-webkit-appearance:none;
+border:1px solid rgba(255,255,255,0.30);
+background:rgba(255,255,255,0.10);
+color:white;
+border-radius:8px;
+min-width:40px;
+height:32px;
+font-size:17px;
+cursor:pointer;
+}
+.video-custom-controls input[type="range"]{
+flex:1;
+min-width:0;
+}
+.video-custom-time{
+font-size:13px;
+opacity:0.82;
+white-space:nowrap;
+}
+
 .video-frame figcaption{
 padding:12px 8px 5px;
 font-size:16px;
@@ -608,19 +638,19 @@ direction:ltr;
 <h2 data-i18n="videos.title"></h2>
 <div class="video-grid">
 <figure class="video-frame">
-<video controls playsinline preload="metadata" poster="images/Eclipse.png">
+<video playsinline preload="metadata" poster="images/Eclipse.png">
 <source src="videos/Eclipse.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="video.eclipseCaption"></figcaption>
 </figure>
 <figure class="video-frame">
-<video controls playsinline preload="metadata" poster="images/time-travel-sidereal-poster.jpg">
+<video playsinline preload="metadata" poster="images/time-travel-sidereal-poster.jpg">
 <source src="videos/beijing-alignment.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="video.siderealCaption"></figcaption>
 </figure>
 <figure class="video-frame centered-video">
-<video controls playsinline preload="metadata" poster="images/Mars-Retrograde.png">
+<video playsinline preload="metadata" poster="images/Mars-Retrograde.png">
 <source src="videos/Mars-Retrograde.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="video.marsCaption"></figcaption>
@@ -808,6 +838,77 @@ direction:ltr;
 <p>Version 3.0</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll(".video-frame video").forEach(function(video){
+    video.controls = false;
+
+    const controls = document.createElement("div");
+    controls.className = "video-custom-controls";
+
+    const play = document.createElement("button");
+    play.type = "button";
+    play.textContent = "▶";
+    play.setAttribute("aria-label", "Play / Pause");
+
+    const seek = document.createElement("input");
+    seek.type = "range";
+    seek.min = "0";
+    seek.max = "1000";
+    seek.value = "0";
+    seek.step = "1";
+    seek.setAttribute("aria-label", "Video position");
+
+    const time = document.createElement("span");
+    time.className = "video-custom-time";
+    time.textContent = "0:00 / 0:00";
+
+    controls.append(play, seek, time);
+    video.insertAdjacentElement("afterend", controls);
+
+    function fmt(seconds){
+      if(!Number.isFinite(seconds)) return "0:00";
+      const s = Math.max(0, Math.floor(seconds));
+      const m = Math.floor(s / 60);
+      const r = String(s % 60).padStart(2, "0");
+      return m + ":" + r;
+    }
+
+    function update(){
+      const duration = Number.isFinite(video.duration) ? video.duration : 0;
+      const current = Number.isFinite(video.currentTime) ? video.currentTime : 0;
+      seek.value = duration > 0 ? String(Math.round((current / duration) * 1000)) : "0";
+      time.textContent = fmt(current) + " / " + fmt(duration);
+      play.textContent = video.paused ? "▶" : "❚❚";
+    }
+
+    play.addEventListener("click", function(){
+      if(video.paused) video.play();
+      else video.pause();
+    });
+
+    video.addEventListener("click", function(){
+      if(video.paused) video.play();
+      else video.pause();
+    });
+
+    seek.addEventListener("input", function(){
+      if(Number.isFinite(video.duration) && video.duration > 0){
+        video.currentTime = (Number(seek.value) / 1000) * video.duration;
+      }
+    });
+
+    video.addEventListener("loadedmetadata", update);
+    video.addEventListener("timeupdate", update);
+    video.addEventListener("play", update);
+    video.addEventListener("pause", update);
+    video.addEventListener("ended", update);
+    update();
+  });
+});
+</script>
 
 <script src="time-travel-languages.js?v=1.1-au-dessus-fix-20260820" defer></script>
 </body>
