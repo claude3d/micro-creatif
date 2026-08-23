@@ -356,16 +356,8 @@ menu.style.display="none";
 
 const languageSelect=document.getElementById("languageSelect");
 languageSelect.addEventListener("change",function(){
-const value=this.value;
-const code=value==="/fr/"?"fr":value==="/ja/"?"ja":"en";
-localStorage.setItem("mc_site_language",code);
-localStorage.setItem("mc_language",(code==="fr")?"fr":"en");
-window.location.href=value;
+window.location.href=this.value;
 });
-
-localStorage.setItem("mc_site_language","{{ page.lang }}");
-localStorage.setItem("mc_language","{% if page.lang == 'fr' %}fr{% else %}en{% endif %}");
 </script>
 </body>
 </html>
-
