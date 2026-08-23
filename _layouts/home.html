@@ -361,6 +361,9 @@ menu.style.display="none";
 });
 });
 
+localStorage.setItem("mc_site_language","{{ page.lang }}");
+localStorage.setItem("mc_language","{% if page.lang == 'fr' %}fr{% else %}en{% endif %}");
+
 const languageSelect=document.getElementById("languageSelect");
 languageSelect.addEventListener("change",function(){
 const code=this.value;
