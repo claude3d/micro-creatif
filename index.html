@@ -7,13 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micro Créatif – Astronomy Apps for Serious Telescope Observers</title>
-<meta name="description" content="Micro Créatif offers astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt coordinates, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel Sky. Designed for observers with telescopes from 6 to 20 inches, including private observatories.">
-<meta name="keywords" content="astronomy app, telescope app, RA Dec AZ Alt, virtual telescope, Sol and Stars, solar system, star catalogue, Milky Way, alien sky, Time Travel Sky, time travel sky, time travel, amateur astronomy, semi-professional telescope, private observatory, iOS astronomy">
+<title>Micro Créatif – Astronomy Apps for Exploring and Understanding the Sky</title>
+<meta name="description" content="Micro Créatif develops astronomy apps for exploring, observing, and understanding the sky. RA/Dec/AZ/Alt, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel Sky provide tools for celestial coordinates, telescope simulation, stars, planets, and the sky across time and space.">
 <meta name="author" content="Micro Créatif">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Micro Créatif – Astronomy Apps for Serious Telescope Observers">
-<meta property="og:description" content="Astronomy apps for serious and semi-professional telescope observers. RA/Dec/AZ/Alt, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel Sky.">
+<meta property="og:title" content="Micro Créatif – Astronomy Apps for Exploring and Understanding the Sky">
+<meta property="og:description" content="Astronomy apps for exploring, observing, and understanding the sky, including tools for celestial coordinates, telescope simulation, stars, planets, and the sky across time and space.">
+<meta property="og:site_name" content="Micro Créatif">
 <meta property="og:url" content="https://microcreatif.ca/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_CA">
@@ -358,6 +358,23 @@ menu.style.display="none";
 });
 
 
+</script>
+<script>
+localStorage.setItem("mc_site_language","en");
+localStorage.setItem("mc_language","en");
+
+document.addEventListener("DOMContentLoaded",function(){
+const select=document.getElementById("languageSelect");
+if(!select) return;
+
+select.addEventListener("change",function(event){
+const target=(this.value==="fr")?"/fr/":(this.value==="ja")?"/ja/":null;
+if(target){
+event.stopImmediatePropagation();
+window.location.href=target;
+}
+},true);
+});
 </script>
 <script src="index-languages.js" defer></script>
 </body>
