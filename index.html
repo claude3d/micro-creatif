@@ -360,15 +360,26 @@ menu.style.display="none";
 
 </script>
 <script>
+const requestedLanguage=new URLSearchParams(window.location.search).get("lang");
+
+if(requestedLanguage){
+localStorage.setItem("mc_site_language",requestedLanguage);
+localStorage.setItem("mc_language",(requestedLanguage==="fr")?"fr":"en");
+}else{
 localStorage.setItem("mc_site_language","en");
 localStorage.setItem("mc_language","en");
+}
 
 document.addEventListener("DOMContentLoaded",function(){
 const select=document.getElementById("languageSelect");
 if(!select) return;
 
 select.addEventListener("change",function(event){
-const target=(this.value==="fr")?"/fr/":(this.value==="ja")?"/ja/":null;
+let target=null;
+if(this.value==="en") target="/";
+if(this.value==="fr") target="/fr/";
+if(this.value==="ja") target="/ja/";
+
 if(target){
 event.stopImmediatePropagation();
 window.location.href=target;
