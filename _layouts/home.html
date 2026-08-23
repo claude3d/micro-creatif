@@ -2,7 +2,7 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
-<!-- Version 7.9 -->
+<!-- Version 7.10 -->
 {% assign t = site.data.home[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
@@ -183,6 +183,7 @@ left:50%;
 transform:translate(-87%, -50%);
 width:clamp(220px, 20vw, 280px);
 z-index:1;
+cursor:pointer;
 pointer-events:none;
 }
 .apps{
@@ -325,7 +326,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.9</p>
+<p>Version 7.10</p>
 </footer>
 
 <script>
@@ -343,6 +344,14 @@ container.appendChild(star);
 }
 }
 createStars();
+
+const unicorn=document.querySelector(".uni");
+if(unicorn){
+unicorn.addEventListener("click",function(){
+unicorn.currentTime=0;
+unicorn.play();
+});
+}
 
 const appsButton=document.getElementById("navApps");
 const menu=document.getElementById("appsMenu");
