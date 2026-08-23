@@ -245,9 +245,16 @@ opacity:0.85;
 <a href="/about.html">{{ t.navAbout }}</a>
 <a href="/contact.html">{{ t.navContact }}</a>
 <select id="languageSelect" class="lang-select" aria-label="{{ t.languageSelector }}">
-<option value="/" {% if page.lang == "en" %}selected{% endif %}>English</option>
-<option value="/fr/" {% if page.lang == "fr" %}selected{% endif %}>Français</option>
-<option value="/ja/" {% if page.lang == "ja" %}selected{% endif %}>日本語</option>
+<option value="en" {% if page.lang == "en" %}selected{% endif %}>English</option>
+<option value="fr" {% if page.lang == "fr" %}selected{% endif %}>Français</option>
+<option value="vi">Tiếng Việt</option>
+<option value="ja" {% if page.lang == "ja" %}selected{% endif %}>日本語</option>
+<option value="zh-Hans">简体中文</option>
+<option value="zh-Hant">繁體中文</option>
+<option value="es">Español</option>
+<option value="de">Deutsch</option>
+<option value="ar">العربية</option>
+<option value="ko">한국어</option>
 </select>
 </nav>
 </header>
@@ -356,7 +363,16 @@ menu.style.display="none";
 
 const languageSelect=document.getElementById("languageSelect");
 languageSelect.addEventListener("change",function(){
-window.location.href=this.value;
+const code=this.value;
+if(code==="en"){
+window.location.href="/";
+}else if(code==="fr"){
+window.location.href="/fr/";
+}else if(code==="ja"){
+window.location.href="/ja/";
+}else{
+window.location.href="/?lang="+encodeURIComponent(code);
+}
 });
 </script>
 </body>
