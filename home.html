@@ -1,0 +1,370 @@
+---
+---
+{% assign t = site.data.home[page.lang] %}
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<meta name="author" content="Micro Créatif">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:site_name" content="Micro Créatif">
+<meta property="og:url" content="https://microcreatif.ca{{ page.url }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="{{ page.locale }}">
+<link rel="canonical" href="https://microcreatif.ca{{ page.url }}">
+<link rel="alternate" hreflang="en" href="https://microcreatif.ca/">
+<link rel="alternate" hreflang="fr" href="https://microcreatif.ca/fr/">
+<link rel="alternate" hreflang="ja" href="https://microcreatif.ca/ja/">
+<link rel="alternate" hreflang="x-default" href="https://microcreatif.ca/">
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+background:black;
+overflow-x:hidden;
+}
+.bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-5;
+}
+.star{
+position:fixed;
+background:white;
+border-radius:50%;
+z-index:-4;
+box-shadow:
+0 0 6px rgba(255,255,255,1),
+0 0 12px rgba(255,255,255,0.9),
+0 0 20px rgba(255,255,255,0.6);
+animation:twinkle infinite;
+}
+.star.big{
+width:3px;
+height:3px;
+}
+.star.small{
+width:2px;
+height:2px;
+}
+@keyframes twinkle{
+0%{opacity:0.2; transform:scale(0.8);}
+50%{opacity:1; transform:scale(1.8);}
+100%{opacity:0.2; transform:scale(0.8);}
+}
+header{
+position:absolute;
+top:10px;
+width:100%;
+text-align:center;
+z-index:100;
+}
+nav{
+display:inline-flex;
+gap:30px;
+position:relative;
+align-items:center;
+}
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+opacity:0.9;
+cursor:pointer;
+white-space:nowrap;
+}
+.dropdown{
+position:relative;
+display:inline-flex;
+align-items:center;
+}
+.submenu{
+display:none;
+position:absolute;
+top:28px;
+left:0;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.3);
+border-radius:10px;
+padding:8px 0;
+min-width:220px;
+text-align:left;
+}
+.submenu a{
+display:block;
+padding:8px 14px;
+font-size:16px;
+}
+.submenu a:hover{
+background:rgba(255,255,255,0.1);
+}
+.lang-select{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 12px;
+border-radius:16px;
+cursor:pointer;
+font-size:16px;
+white-space:nowrap;
+flex-shrink:0;
+}
+.lang-select option{
+color:black;
+background:white;
+}
+@media (max-width:430px){
+nav{
+gap:18px;
+}
+nav a{
+font-size:15px;
+}
+.lang-select{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+padding:6px 12px;
+border-radius:16px;
+cursor:pointer;
+font-size:16px;
+white-space:nowrap;
+flex-shrink:0;
+}
+.lang-select option{
+color:black;
+background:white;
+}
+}
+.hero{
+height:auto;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+align-items:center;
+position:relative;
+padding:clamp(105px, 10vw, 145px) 20px 0;
+}
+.hero h1{
+font-size:64px;
+margin-bottom:8px;
+position:relative;
+z-index:2;
+}
+.hero p{
+font-size:22px;
+margin-top:0;
+position:relative;
+z-index:2;
+}
+.uni-stage{
+position:relative;
+height:clamp(115px, 10vw, 150px);
+}
+.uni{
+position:absolute;
+top:44%;
+left:50%;
+transform:translate(-87%, -50%);
+width:clamp(220px, 20vw, 280px);
+z-index:1;
+pointer-events:none;
+}
+.apps{
+padding:0 20px 20px;
+}
+.app-grid{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
+.app{
+width:160px;
+}
+.app a{
+text-decoration:none;
+color:white;
+}
+.icon{
+width:100px;
+height:100px;
+margin:auto;
+border-radius:22px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,0.35);
+box-shadow:
+0 0 0 1px white inset,
+0 0 10px rgba(255,255,255,0.2);
+}
+.icon img{
+width:100%;
+display:block;
+border-radius:22px;
+}
+.app p{
+margin-top:10px;
+font-size:16px;
+}
+footer{
+padding:20px;
+font-size:14px;
+opacity:0.85;
+}
+</style>
+</head>
+<body>
+<img class="bg" src="/images/galaxy-background.jpg" alt="{{ t.backgroundAlt }}">
+<div id="stars"></div>
+
+<header>
+<nav aria-label="{{ t.mainNavigation }}">
+<a href="/">{{ t.navHome }}</a>
+<div class="dropdown">
+<a id="navApps">{{ t.navApps }}</a>
+<div class="submenu" id="appsMenu">
+<a href="/radec-calculator.html">{{ t.appRadec }}</a>
+<a href="/virtual-telescope.html">{{ t.appVirtualTelescope }}</a>
+<a href="/sol-and-stars.html">{{ t.appSolAndStars }}</a>
+<a href="/alien-sky.html">{{ t.appAlienSky }}</a>
+<a href="/time-travel.html">{{ t.appTimeTravelSky }}</a>
+</div>
+</div>
+<a href="/about.html">{{ t.navAbout }}</a>
+<a href="/contact.html">{{ t.navContact }}</a>
+<select id="languageSelect" class="lang-select" aria-label="{{ t.languageSelector }}">
+<option value="/" {% if page.lang == "en" %}selected{% endif %}>English</option>
+<option value="/fr/" {% if page.lang == "fr" %}selected{% endif %}>Français</option>
+<option value="/ja/" {% if page.lang == "ja" %}selected{% endif %}>日本語</option>
+</select>
+</nav>
+</header>
+
+<section class="hero">
+<h1>{{ t.brandName }}</h1>
+<p></p>
+</section>
+
+<div class="uni-stage">
+<video class="uni" src="/videos/UniClaude.mov" autoplay muted playsinline></video>
+</div>
+
+<section class="apps" aria-label="{{ t.ourApps }}">
+<div class="app-grid">
+
+<div class="app">
+<a href="/radec-calculator.html">
+<div class="icon">
+<img src="/images/RADEC.png" alt="{{ t.radecAlt }}">
+</div>
+<p>{{ t.appRadec }}</p>
+</a>
+</div>
+
+<div class="app">
+<a href="/virtual-telescope.html">
+<div class="icon">
+<img src="/images/VirtualTelescope.png" alt="{{ t.virtualTelescopeAlt }}">
+</div>
+<p>{{ t.appVirtualTelescope }}</p>
+</a>
+</div>
+
+<div class="app">
+<a href="/sol-and-stars.html">
+<div class="icon">
+<img src="/images/Sol&Stars.png" alt="{{ t.solAndStarsAlt }}">
+</div>
+<p>{{ t.appSolAndStars }}</p>
+</a>
+</div>
+
+<div class="app">
+<a href="/alien-sky.html">
+<div class="icon">
+<img src="/images/AlienSky.png" alt="{{ t.alienSkyAlt }}">
+</div>
+<p>{{ t.appAlienSky }}</p>
+</a>
+</div>
+
+<div class="app">
+<a href="/time-travel.html">
+<div class="icon">
+<img src="/images/TimeTravel.png" alt="{{ t.timeTravelSkyAlt }}">
+</div>
+<p>{{ t.appTimeTravelSky }}</p>
+</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© Micro Créatif</p>
+<p>{{ t.locations }}</p>
+<p>Version 7.8</p>
+</footer>
+
+<script>
+function createStars(){
+const container=document.getElementById("stars");
+for(let i=0;i<40;i++){
+let star=document.createElement("div");
+let type=(Math.random()>0.5)?"big":"small";
+star.className="star "+type;
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+star.style.animationDelay=(Math.random()*3)+"s";
+star.style.animationDuration=(1+Math.random()*2)+"s";
+container.appendChild(star);
+}
+}
+createStars();
+
+const appsButton=document.getElementById("navApps");
+const menu=document.getElementById("appsMenu");
+
+appsButton.addEventListener("click",function(e){
+e.stopPropagation();
+menu.style.display=(menu.style.display==="block")?"none":"block";
+});
+
+document.addEventListener("click",function(e){
+if(!menu.contains(e.target) && e.target!==appsButton){
+menu.style.display="none";
+}
+});
+
+document.querySelectorAll(".submenu a").forEach(function(link){
+link.addEventListener("click",function(){
+menu.style.display="none";
+});
+});
+
+const languageSelect=document.getElementById("languageSelect");
+languageSelect.addEventListener("change",function(){
+const value=this.value;
+const code=value==="/fr/"?"fr":value==="/ja/"?"ja":"en";
+localStorage.setItem("mc_site_language",code);
+localStorage.setItem("mc_language",(code==="fr")?"fr":"en");
+window.location.href=value;
+});
+
+localStorage.setItem("mc_site_language","{{ page.lang }}");
+localStorage.setItem("mc_language","{% if page.lang == 'fr' %}fr{% else %}en{% endif %}");
+</script>
+</body>
+</html>
