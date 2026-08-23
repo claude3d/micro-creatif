@@ -148,12 +148,13 @@ background:white;
 }
 }
 .hero{
-height:50vh;
+height:auto;
 display:flex;
 flex-direction:column;
-justify-content:center;
+justify-content:flex-start;
 align-items:center;
 position:relative;
+padding:clamp(105px, 10vw, 145px) 20px 0;
 }
 .hero h1{
 font-size:64px;
@@ -167,17 +168,21 @@ margin-top:0;
 position:relative;
 z-index:2;
 }
+.uni-stage{
+position:relative;
+height:clamp(115px, 10vw, 150px);
+}
 .uni{
 position:absolute;
-bottom:13px;
+top:44%;
 left:50%;
-transform:translateX(-50%);
-width:100px;
+transform:translate(-87%, -50%);
+width:clamp(220px, 20vw, 280px);
 z-index:1;
 pointer-events:none;
 }
 .apps{
-padding:20px;
+padding:0 20px 20px;
 }
 .app-grid{
 display:flex;
@@ -252,8 +257,11 @@ html[dir="rtl"] .submenu{
 <section class="hero" data-i18n-aria="welcome">
 <h1 data-i18n="brandName"></h1>
 <p data-i18n="heroSubtitle"></p>
-<img class="uni" src="images/uni.png" data-i18n-alt="mascotAlt" alt="">
 </section>
+
+<div class="uni-stage">
+<video class="uni" src="videos/UniClaude.mov" autoplay muted playsinline></video>
+</div>
 
 <section class="apps" data-i18n-aria="ourApps">
 <div class="app-grid">
