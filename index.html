@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 7.10 -->
+<!-- Version 7.11 -->
 
 <head>
 <meta charset="UTF-8">
@@ -20,6 +20,17 @@
 <meta property="og:locale:alternate" content="fr_CA">
 <meta property="og:locale:alternate" content="vi_VN">
 <link rel="canonical" href="https://microcreatif.ca/">
+<link rel="alternate" hreflang="en" href="https://microcreatif.ca/">
+<link rel="alternate" hreflang="fr" href="https://microcreatif.ca/fr/">
+<link rel="alternate" hreflang="vi" href="https://microcreatif.ca/vi/">
+<link rel="alternate" hreflang="ja" href="https://microcreatif.ca/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://microcreatif.ca/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://microcreatif.ca/zh-Hant/">
+<link rel="alternate" hreflang="es" href="https://microcreatif.ca/es/">
+<link rel="alternate" hreflang="de" href="https://microcreatif.ca/de/">
+<link rel="alternate" hreflang="ar" href="https://microcreatif.ca/ar/">
+<link rel="alternate" hreflang="ko" href="https://microcreatif.ca/ko/">
+<link rel="alternate" hreflang="x-default" href="https://microcreatif.ca/">
 <style>
 body{
 margin:0;
@@ -318,7 +329,7 @@ html[dir="rtl"] .submenu{
 <footer>
     <p>© Micro Créatif</p>
     <p data-i18n="locations"></p>
-    <p>Version 7.10</p>
+    <p>Version 7.11</p>
     
 </footer>
 
@@ -369,26 +380,28 @@ menu.style.display="none";
 
 </script>
 <script>
-const requestedLanguage=new URLSearchParams(window.location.search).get("lang");
-
-if(requestedLanguage){
-localStorage.setItem("mc_site_language",requestedLanguage);
-localStorage.setItem("mc_language",(requestedLanguage==="fr")?"fr":"en");
-}else{
 localStorage.setItem("mc_site_language","en");
 localStorage.setItem("mc_language","en");
-}
 
 document.addEventListener("DOMContentLoaded",function(){
 const select=document.getElementById("languageSelect");
 if(!select) return;
 
-select.addEventListener("change",function(event){
-let target=null;
-if(this.value==="en") target="/";
-if(this.value==="fr") target="/fr/";
-if(this.value==="ja") target="/ja/";
+const languagePaths={
+"en":"/",
+"fr":"/fr/",
+"vi":"/vi/",
+"ja":"/ja/",
+"zh-Hans":"/zh-Hans/",
+"zh-Hant":"/zh-Hant/",
+"es":"/es/",
+"de":"/de/",
+"ar":"/ar/",
+"ko":"/ko/"
+};
 
+select.addEventListener("change",function(event){
+const target=languagePaths[this.value];
 if(target){
 event.stopImmediatePropagation();
 window.location.href=target;
