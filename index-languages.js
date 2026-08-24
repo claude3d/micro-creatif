@@ -1,4 +1,4 @@
-/* Micro Créatif - index page languages\n   Version 3.1 — add Italian and Russian */
+/* Micro Créatif - index page languages\n   Version 3.2 — restore established language-menu order */
 const INDEX_LANGUAGES = {
   "en": {
     "label": "English",
@@ -423,7 +423,8 @@ const INDEX_LANGUAGES = {
     if (!select) return;
 
     select.innerHTML = "";
-    Object.entries(INDEX_LANGUAGES).forEach(([code, language]) => {
+    ["de", "en", "es", "fr", "it", "vi", "ru", "ar", "zh-Hans", "zh-Hant", "ja", "ko"].forEach((code) => {
+      const language = INDEX_LANGUAGES[code];
       const option = document.createElement("option");
       option.value = code;
       option.textContent = language.label;
