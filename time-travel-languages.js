@@ -1,6 +1,6 @@
 /* Micro Créatif
    Time Travel Sky website languages
-   Version 3.1
+   Version 3.2
 
    To add a language:
    1. Copy one language block inside TIME_TRAVEL_LANGUAGES.
@@ -1655,7 +1655,9 @@ function applyLanguage(languageCode) {
     "es": "/es/",
     "de": "/de/",
     "ar": "/ar/",
-    "ko": "/ko/"
+    "ko": "/ko/",
+    "it": "/it/",
+    "ru": "/ru/"
   })[code] || "/";
 
   const navHome = document.getElementById("navHome");

@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.4 -->
+<!-- Version 3.5 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -882,7 +882,7 @@ direction:ltr;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.4</p>
+<p>Version 3.5</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -971,7 +971,9 @@ function goToLanguageHome(event){
     "es": "/es/",
     "de": "/de/",
     "ar": "/ar/",
-    "ko": "/ko/"
+    "ko": "/ko/",
+    "it": "/it/",
+    "ru": "/ru/"
   };
   window.location.href = homePaths[code] || "/";
 }
@@ -980,6 +982,6 @@ document.getElementById("navHome")?.addEventListener("click", goToLanguageHome);
 document.querySelector('[data-i18n="status.back"]')?.addEventListener("click", goToLanguageHome);
 </script>
 
-<script src="time-travel-languages.js?v=1.1-all-home-languages-20260823" defer></script>
+<script src="time-travel-languages.js?v=1.1-12-home-languages-20260823" defer></script>
 </body>
 </html>

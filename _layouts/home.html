@@ -2,7 +2,7 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
-<!-- Version 7.11 -->
+<!-- Version 7.12 -->
 {% assign t = site.data.home[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}" dir="{{ page.dir | default: 'ltr' }}">
@@ -30,6 +30,8 @@
 <link rel="alternate" hreflang="de" href="https://microcreatif.ca/de/">
 <link rel="alternate" hreflang="ar" href="https://microcreatif.ca/ar/">
 <link rel="alternate" hreflang="ko" href="https://microcreatif.ca/ko/">
+<link rel="alternate" hreflang="it" href="https://microcreatif.ca/it/">
+<link rel="alternate" hreflang="ru" href="https://microcreatif.ca/ru/">
 <link rel="alternate" hreflang="x-default" href="https://microcreatif.ca/">
 <style>
 body{
@@ -266,6 +268,8 @@ opacity:0.85;
 <option value="/de/" {% if page.lang == "de" %}selected{% endif %}>Deutsch</option>
 <option value="/ar/" {% if page.lang == "ar" %}selected{% endif %}>العربية</option>
 <option value="/ko/" {% if page.lang == "ko" %}selected{% endif %}>한국어</option>
+<option value="/it/" {% if page.lang == "it" %}selected{% endif %}>Italiano</option>
+<option value="/ru/" {% if page.lang == "ru" %}selected{% endif %}>Русский</option>
 </select>
 </nav>
 </header>
@@ -333,7 +337,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.11</p>
+<p>Version 7.12</p>
 </footer>
 
 <script>
