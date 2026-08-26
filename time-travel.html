@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.8 -->
+<!-- Version 3.11 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -300,7 +300,7 @@ line-height:1.4;
 display:inline-block;
 text-align:center;
 font-family:Menlo, Monaco, Consolas, monospace;
-font-size:16px;
+font-size:14px;
 font-weight:bold;
 color:white;
 background:rgba(255,255,255,0.11);
@@ -309,6 +309,7 @@ border-radius:8px;
 padding:6px 8px;
 white-space:nowrap;
 }
+.key-row code.multiline-control{font-size:13px;line-height:1.25;white-space:normal;padding-left:6px;padding-right:6px;}
 
 .keyboard-panel{
 margin-top:4px;
@@ -612,7 +613,7 @@ direction:ltr;
 <div class="app-icon">
 <img data-i18n-alt="alt.appIcon" src="images/TimeTravel.png"/>
 </div>
-<h1>Time Travel Sky <span class="version-label">Version 1.1</span></h1>
+<h1>Time Travel Sky <span class="version-label">Version 1.2</span></h1>
 <p class="subtitle" data-i18n="hero.subtitle"></p>
 <button class="manual-download-btn" data-i18n="manual.download" id="downloadManualButton" type="button"></button>
 </section>
@@ -670,6 +671,18 @@ direction:ltr;
 <div class="advanced-block wide">
 <h3 class="centered-title" data-i18n="sidereal.controls.title"></h3>
 <p data-i18n="sidereal.controls.slider"></p>
+<div class="key-row">
+<code>Tap / Click</code>
+<span data-i18n="sidereal.controls.tap"></span>
+</div>
+<div class="key-row">
+<code>Double ×2</code>
+<span data-i18n="sidereal.controls.doubleTap"></span>
+</div>
+<div class="key-row">
+<code class="multiline-control">1–9 / Past<br/>Future / Go</code>
+<span data-i18n="sidereal.controls.panel"></span>
+</div>
 <div class="key-row">
 <code>1–9</code>
 <span data-i18n="sidereal.controls.speed"></span>
@@ -880,7 +893,7 @@ direction:ltr;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.8</p>
+<p>Version 3.11</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -980,6 +993,6 @@ document.getElementById("navHome")?.addEventListener("click", goToLanguageHome);
 document.querySelector('[data-i18n="status.back"]')?.addEventListener("click", goToLanguageHome);
 </script>
 
-<script src="time-travel-languages.js?v=3.4-touch-animation-note-20260824" defer></script>
+<script src="time-travel-languages.js?v=3.5-touch-animation-controls-20260826" defer></script>
 </body>
 </html>
