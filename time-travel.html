@@ -444,6 +444,10 @@ grid-column:1 / -1;
 width:calc((100% - 18px) / 2);
 justify-self:center;
 }
+.video-gallery > .video-frame.centered-video{
+margin-left:auto;
+margin-right:auto;
+}
 .video-frame video{
 display:block;
 width:100%;
@@ -622,6 +626,15 @@ direction:ltr;
 <button class="manual-download-btn" data-i18n="manual.download" id="downloadManualButton" type="button"></button>
 </section>
 <main class="content">
+<section class="video-gallery">
+<h2 data-i18n="video.guideTitle"></h2>
+<figure class="video-frame centered-video">
+<video class="catalyst-video" controls playsinline preload="metadata" poster="images/time-travel-sidereal-poster.jpg">
+<source src="videos/TimeTravelSky.mp4" type="video/mp4"/>
+</video>
+<figcaption data-i18n="video.guideCaption"></figcaption>
+</figure>
+</section>
 <section class="screenshot-gallery">
 <div class="screenshot-grid">
 <figure class="screenshot-frame">
