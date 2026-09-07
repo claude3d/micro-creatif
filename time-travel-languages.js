@@ -1,6 +1,6 @@
 /* Micro Créatif
    Time Travel Sky website languages
-   Version 3.8
+   Version 3.9
 
    To add a language:
    1. Copy one language block inside TIME_TRAVEL_LANGUAGES.
@@ -53,6 +53,8 @@ const TIME_TRAVEL_LANGUAGES = {
       "sidereal.steps.body": "Minutes = 1 minute; Hours = 1 hour; Day = 1 day; Month = 1 month; Year = 1 year; Century = 100 years; Millennium = 1,000 years.",
       "sidereal.steps.note": "Example: key 5 = 5 steps per second. With Day, that is 5 days per second; with Century, 500 years per second.",
       "video.siderealCaption": "Planetary alignment seen from Beijing. Fixed Sidereal Time keeps the stellar background aligned while the planets move.",
+      "video.guideTitle": "Time Travel Sky — narrated guide",
+      "video.guideCaption": "Discover Time Travel Sky’s features, controls, and examples.",
       "videos.title": "Videos made with Time Travel Sky",
       "video.guideTitle": "Time Travel Sky — narrated guide",
       "video.guideCaption": "Discover Time Travel Sky’s features, controls, and examples.",
@@ -1640,8 +1642,263 @@ const PAGE_STORAGE_KEY = "mc_time_travel_language";
 const LEGACY_STORAGE_KEY = "mc_language";
 const LEGACY_LANGUAGES = new Set(["en", "fr"]);
 
+
+const TIME_TRAVEL_GUIDE_SCENE_STARTS = [
+  0.0,
+  10.0,
+  18.0,
+  33.0,
+  48.0,
+  70.366667,
+  88.466667,
+  99.033334,
+  130.266667
+];
+
+const TIME_TRAVEL_GUIDE_CAPTIONS = {
+  "en": [
+    "Explore Earth’s sky across time.",
+    "Start with the real sky above your observing location.",
+    "Use your current position, enter coordinates manually, or choose a historic observing site.",
+    "Jump directly to programmed eclipses, comets, planetary alignments, and retrograde-motion events.",
+    "Total solar eclipse — Durango, Mexico. This sequence is shown at twice the previous speed.",
+    "Planetary alignment seen from Beijing. Fixed Sidereal Time keeps the stellar background aligned.",
+    "Mars retrograde motion seen from Machu Picchu.",
+    "Venus and Mercury — motion and phases seen from Ho Chi Minh City.",
+    "Discover Time Travel Sky’s features, controls, examples, and videos."
+  ],
+  "fr": [
+    "Explorez le ciel terrestre à travers le temps.",
+    "Commencez par le ciel réel au-dessus de votre lieu d’observation.",
+    "Utilisez votre position actuelle, entrez des coordonnées manuellement ou choisissez un site d’observation historique.",
+    "Accédez directement aux éclipses, comètes, alignements planétaires et mouvements rétrogrades programmés.",
+    "Éclipse solaire totale — Durango, Mexique. Cette séquence est présentée deux fois plus vite qu’auparavant.",
+    "Alignement planétaire vu de Pékin. Le temps sidéral fixe garde le fond stellaire aligné.",
+    "Mouvement rétrograde de Mars vu depuis le Machu Picchu.",
+    "Vénus et Mercure — mouvement et phases vus depuis Hô Chi Minh-Ville.",
+    "Découvrez les fonctions, les commandes, les exemples et les vidéos de Time Travel Sky."
+  ],
+  "vi": [
+    "Khám phá bầu trời Trái Đất qua thời gian.",
+    "Bắt đầu với bầu trời thật phía trên vị trí quan sát của bạn.",
+    "Dùng vị trí hiện tại, nhập tọa độ thủ công hoặc chọn một địa điểm quan sát lịch sử.",
+    "Chuyển thẳng đến các nhật thực, sao chổi, thẳng hàng hành tinh và chuyển động nghịch hành đã được lập trình.",
+    "Nhật thực toàn phần — Durango, Mexico. Đoạn này được phát nhanh gấp đôi so với trước.",
+    "Sự thẳng hàng hành tinh nhìn từ Bắc Kinh. Giờ sao cố định giữ nền sao thẳng hàng.",
+    "Chuyển động nghịch hành của Sao Hỏa nhìn từ Machu Picchu.",
+    "Sao Kim và Sao Thủy — chuyển động và pha nhìn từ Thành phố Hồ Chí Minh.",
+    "Khám phá các tính năng, điều khiển, ví dụ và video của Time Travel Sky."
+  ],
+  "ja": [
+    "地球の空を時間を越えて探索します。",
+    "まず、観測地点の上にある実際の空から始めます。",
+    "現在地を使うか、座標を手入力するか、歴史的な観測地点を選びます。",
+    "登録された日食・彗星・惑星直列・逆行イベントへ直接移動できます。",
+    "皆既日食 — メキシコ、ドゥランゴ。この区間は以前の2倍の速さで表示します。",
+    "北京から見た惑星直列。固定恒星時により恒星背景を揃えたまま比較できます。",
+    "マチュ・ピチュから見た火星の逆行です。",
+    "ホーチミン市から見た金星と水星 — 動きと満ち欠けです。",
+    "Time Travel Sky の機能、操作、例、動画をご覧ください。"
+  ],
+  "zh-Hans": [
+    "穿越时间探索地球的天空。",
+    "从观测地点上方的真实天空开始。",
+    "使用当前位置、手动输入坐标，或选择历史观测地点。",
+    "可直接跳转到预设的日食、彗星、行星排列和逆行事件。",
+    "日全食 — 墨西哥杜兰戈。本段以之前两倍的速度播放。",
+    "从北京看到的行星排列。固定恒星时使恒星背景保持对齐。",
+    "从马丘比丘看到的火星逆行。",
+    "从胡志明市看到的金星和水星 — 运动与相位变化。",
+    "了解 Time Travel Sky 的功能、控制、示例和视频。"
+  ],
+  "zh-Hant": [
+    "穿越時間探索地球的天空。",
+    "從觀測地點上方的真實天空開始。",
+    "使用目前位置、手動輸入座標，或選擇歷史觀測地點。",
+    "可直接跳到預設的日食、彗星、行星排列和逆行事件。",
+    "日全食 — 墨西哥杜蘭戈。本段以先前兩倍的速度播放。",
+    "從北京看到的行星排列。固定恆星時使恆星背景保持對齊。",
+    "從馬丘比丘看到的火星逆行。",
+    "從胡志明市看到的金星和水星 — 運動與相位變化。",
+    "了解 Time Travel Sky 的功能、控制、範例和影片。"
+  ],
+  "es": [
+    "Explora el cielo de la Tierra a través del tiempo.",
+    "Empieza con el cielo real sobre tu lugar de observación.",
+    "Usa tu posición actual, introduce coordenadas manualmente o elige un lugar histórico de observación.",
+    "Salta directamente a eclipses, cometas, alineaciones planetarias y eventos de movimiento retrógrado programados.",
+    "Eclipse solar total — Durango, México. Esta secuencia se muestra al doble de la velocidad anterior.",
+    "Alineación planetaria vista desde Pekín. El tiempo sideral fijo mantiene alineado el fondo estelar.",
+    "Movimiento retrógrado de Marte visto desde Machu Picchu.",
+    "Venus y Mercurio — movimiento y fases vistos desde Ciudad Ho Chi Minh.",
+    "Descubre las funciones, los controles, los ejemplos y los videos de Time Travel Sky."
+  ],
+  "de": [
+    "Erkunden Sie den Himmel der Erde durch die Zeit.",
+    "Beginnen Sie mit dem realen Himmel über Ihrem Beobachtungsort.",
+    "Verwenden Sie Ihren aktuellen Standort, geben Sie Koordinaten manuell ein oder wählen Sie einen historischen Beobachtungsort.",
+    "Springen Sie direkt zu programmierten Finsternissen, Kometen, Planetenkonstellationen und rückläufigen Bewegungen.",
+    "Totale Sonnenfinsternis — Durango, Mexiko. Diese Sequenz läuft doppelt so schnell wie zuvor.",
+    "Planetenkonstellation von Peking aus. Die feste Sternzeit hält den Sternhintergrund ausgerichtet.",
+    "Rückläufige Bewegung des Mars von Machu Picchu aus.",
+    "Venus und Merkur — Bewegung und Phasen von Ho-Chi-Minh-Stadt aus.",
+    "Entdecken Sie Funktionen, Steuerung, Beispiele und Videos von Time Travel Sky."
+  ],
+  "it": [
+    "Esplora il cielo della Terra attraverso il tempo.",
+    "Inizia dal cielo reale sopra il tuo luogo di osservazione.",
+    "Usa la posizione attuale, inserisci manualmente le coordinate oppure scegli un sito storico di osservazione.",
+    "Passa direttamente a eclissi, comete, allineamenti planetari ed eventi di moto retrogrado programmati.",
+    "Eclissi solare totale — Durango, Messico. Questa sequenza è mostrata al doppio della velocità precedente.",
+    "Allineamento planetario visto da Pechino. Il tempo siderale fisso mantiene allineato lo sfondo stellare.",
+    "Moto retrogrado di Marte visto da Machu Picchu.",
+    "Venere e Mercurio — movimento e fasi visti da Ho Chi Minh City.",
+    "Scopri le funzioni, i controlli, gli esempi e i video di Time Travel Sky."
+  ],
+  "ru": [
+    "Исследуйте земное небо во времени.",
+    "Начните с реального неба над выбранным местом наблюдения.",
+    "Используйте текущее местоположение, введите координаты вручную или выберите историческое место наблюдения.",
+    "Переходите прямо к запрограммированным затмениям, кометам, парадам планет и событиям ретроградного движения.",
+    "Полное солнечное затмение — Дуранго, Мексика. Этот фрагмент показан вдвое быстрее, чем раньше.",
+    "Парад планет из Пекина. Фиксированное звёздное время сохраняет выравнивание звёздного фона.",
+    "Ретроградное движение Марса из Мачу-Пикчу.",
+    "Венера и Меркурий — движение и фазы из Хошимина.",
+    "Познакомьтесь с функциями, управлением, примерами и видео Time Travel Sky."
+  ],
+  "ar": [
+    "استكشف سماء الأرض عبر الزمن.",
+    "ابدأ بالسماء الحقيقية فوق موقع الرصد الذي اخترته.",
+    "استخدم موقعك الحالي، أو أدخل الإحداثيات يدويًا، أو اختر موقع رصد تاريخيًا.",
+    "انتقل مباشرة إلى الكسوفات والمذنبات واصطفافات الكواكب وأحداث الحركة التراجعية المبرمجة.",
+    "كسوف شمسي كلي — دورانغو، المكسيك. يُعرض هذا المقطع بسرعة مضاعفة مقارنة بالسابق.",
+    "اصطفاف كواكب كما يُرى من بكين. يحافظ الزمن النجمي الثابت على محاذاة خلفية النجوم.",
+    "الحركة التراجعية للمريخ كما تُرى من ماتشو بيتشو.",
+    "الزهرة وعطارد — الحركة والأطوار كما تُرى من مدينة هو تشي منه.",
+    "اكتشف ميزات Time Travel Sky وعناصر التحكم والأمثلة ومقاطع الفيديو."
+  ],
+  "ko": [
+    "시간을 넘어 지구의 하늘을 탐험하세요.",
+    "관측 위치 위의 실제 하늘에서 시작합니다.",
+    "현재 위치를 사용하거나 좌표를 직접 입력하거나 역사적인 관측 장소를 선택할 수 있습니다.",
+    "미리 설정된 일식, 혜성, 행성 정렬, 역행 운동 사건으로 바로 이동할 수 있습니다.",
+    "개기일식 — 멕시코 두랑고. 이 구간은 이전보다 두 배 빠르게 재생됩니다.",
+    "베이징에서 본 행성 정렬입니다. 고정 항성시는 별 배경을 정렬된 상태로 유지합니다.",
+    "마추픽추에서 본 화성의 역행 운동입니다.",
+    "호찌민시에서 본 금성과 수성 — 움직임과 위상 변화입니다.",
+    "Time Travel Sky의 기능, 조작, 예시와 동영상을 살펴보세요."
+  ]
+};
+
+const TIME_TRAVEL_GUIDE_AUDIO = {
+  "en": "videos/TimeTravelSky-Guide-en.m4a"
+};
+
 function availableLanguage(code) {
   return Object.prototype.hasOwnProperty.call(TIME_TRAVEL_LANGUAGES, code);
+}
+
+
+function guideSceneIndex(seconds) {
+  const time = Number.isFinite(seconds) ? seconds : 0.0;
+  let index = 0;
+  for (let i = 1; i < TIME_TRAVEL_GUIDE_SCENE_STARTS.length; i += 1) {
+    if (time < TIME_TRAVEL_GUIDE_SCENE_STARTS[i]) break;
+    index = i;
+  }
+  return index;
+}
+
+function updateGuideCaption(languageCode) {
+  const video = document.getElementById("guideVideo");
+  const caption = document.getElementById("guideCaption");
+  if (!caption) return;
+
+  const code = availableLanguage(languageCode) ? languageCode : DEFAULT_LANGUAGE;
+  const captions = TIME_TRAVEL_GUIDE_CAPTIONS[code]
+    || TIME_TRAVEL_GUIDE_CAPTIONS[DEFAULT_LANGUAGE];
+  const index = guideSceneIndex(video ? video.currentTime : 0.0);
+  caption.textContent = captions[index] || captions[0];
+}
+
+function setGuideAudioLanguage(languageCode) {
+  const video = document.getElementById("guideVideo");
+  const audio = document.getElementById("guideNarration");
+  if (!audio) return;
+
+  const code = availableLanguage(languageCode) ? languageCode : DEFAULT_LANGUAGE;
+  const source = TIME_TRAVEL_GUIDE_AUDIO[code] || "";
+  if ((audio.getAttribute("src") || "") === source) return;
+
+  const resume = Boolean(video && !video.paused && !video.ended);
+  const currentTime = video && Number.isFinite(video.currentTime)
+    ? video.currentTime
+    : 0.0;
+
+  audio.pause();
+  if (!source) {
+    audio.removeAttribute("src");
+    audio.load();
+    return;
+  }
+
+  audio.setAttribute("src", source);
+  audio.load();
+
+  const restore = () => {
+    audio.currentTime = currentTime;
+    audio.playbackRate = video ? video.playbackRate : 1.0;
+    if (resume) audio.play().catch(() => {});
+  };
+
+  if (audio.readyState >= 1) restore();
+  else audio.addEventListener("loadedmetadata", restore, { once: true });
+}
+
+function applyGuideLanguage(languageCode) {
+  setGuideAudioLanguage(languageCode);
+  updateGuideCaption(languageCode);
+}
+
+function configureGuideNarration() {
+  const video = document.getElementById("guideVideo");
+  const audio = document.getElementById("guideNarration");
+  if (!video || !audio) return;
+
+  const activeLanguage = () => {
+    const selector = document.getElementById("languageSelect");
+    return selector && availableLanguage(selector.value)
+      ? selector.value
+      : DEFAULT_LANGUAGE;
+  };
+
+  const synchronize = () => {
+    if (audio.getAttribute("src")) {
+      audio.playbackRate = video.playbackRate;
+      if (Math.abs(audio.currentTime - video.currentTime) > 0.25) {
+        audio.currentTime = video.currentTime;
+      }
+    }
+    updateGuideCaption(activeLanguage());
+  };
+
+  video.addEventListener("timeupdate", synchronize);
+  video.addEventListener("seeking", synchronize);
+  video.addEventListener("seeked", synchronize);
+  video.addEventListener("ratechange", synchronize);
+  video.addEventListener("play", () => {
+    if (audio.getAttribute("src")) {
+      audio.currentTime = video.currentTime;
+      audio.playbackRate = video.playbackRate;
+      audio.play().catch(() => {});
+    }
+    updateGuideCaption(activeLanguage());
+  });
+  video.addEventListener("pause", () => audio.pause());
+  video.addEventListener("ended", () => {
+    audio.pause();
+    updateGuideCaption(activeLanguage());
+  });
 }
 
 function normalizeBrowserLanguage(value) {
@@ -1728,6 +1985,8 @@ function applyLanguage(languageCode) {
 
   const selector = document.getElementById("languageSelect");
   if (selector) selector.value = code;
+
+  applyGuideLanguage(code);
 
   const homeUrl = ({
     "en": "/",
@@ -1862,5 +2121,6 @@ document.addEventListener("DOMContentLoaded", () => {
   configureAppsMenu();
   buildLanguageMenu();
   configureManualDownload();
+  configureGuideNarration();
   applyLanguage(preferredLanguage());
 });
