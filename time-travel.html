@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.56 -->
+<!-- Version 3.63 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -73,6 +73,12 @@ cursor:pointer;
 white-space:nowrap;
 }
 .dropdown{position:relative;display:inline-flex;align-items:center;}
+.nav-caret-icon{
+font-size:10px;
+margin-inline-start:4px;
+opacity:0.7;
+pointer-events:none;
+}
 .submenu{
 display:none;
 position:absolute;
@@ -87,16 +93,51 @@ text-align:left;
 }
 .submenu a{display:block;padding:8px 14px;font-size:16px;}
 .submenu a:hover{background:rgba(255,255,255,0.1);}
+.lang-select-wrap{
+position:relative;
+display:inline-flex;
+align-items:center;
+flex-shrink:0;
+}
+.lang-select-wrap .lang-globe-icon{
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+font-size:15px;
+line-height:1;
+pointer-events:none;
+opacity:0.92;
+}
+.lang-select-wrap .lang-caret-icon{
+position:absolute;
+right:11px;
+top:50%;
+transform:translateY(-50%);
+font-size:10px;
+line-height:1;
+pointer-events:none;
+opacity:0.75;
+color:white;
+}
 .lang-btn{
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance:none;
 background:rgba(255,255,255,0.1);
 border:1px solid rgba(255,255,255,0.3);
-color:white;
-padding:6px 14px;
+color:transparent;
+padding:6px 0;
+width:52px;
 border-radius:16px;
 cursor:pointer;
 font-size:18px;
 white-space:nowrap;
+overflow:hidden;
 flex-shrink:0;
+}
+.lang-btn option{
+color:#111;
 }
 .hero{
 min-height:42vh;
@@ -313,10 +354,10 @@ white-space:nowrap;
 .keyboard-panel{
 margin-top:4px;
 }
-.keyboard-intro{
+.advanced-block .keyboard-intro{
 text-align:center;
 max-width:820px;
-margin:0 auto 18px !important;
+margin:0 auto 18px;
 }
 .keyboard-grid{
 display:grid;
@@ -382,11 +423,11 @@ font-size:15.5px;
 line-height:1.35;
 opacity:0.94;
 }
-.keyboard-note{
-margin:16px 0 0 !important;
-font-size:15px !important;
+.advanced-block .keyboard-note{
+margin:16px 0 0;
+font-size:15px;
 text-align:center;
-opacity:0.78 !important;
+opacity:0.78;
 }
 
 
@@ -542,7 +583,9 @@ opacity:0.9;
 @media (max-width:760px){
 nav{gap:18px;}
 nav a{font-size:15px;}
-.lang-btn{font-size:15px;padding:4px 10px;}
+.lang-btn{font-size:15px;padding:4px 0;width:44px;}
+.lang-select-wrap .lang-globe-icon{left:9px;font-size:13px;}
+.lang-select-wrap .lang-caret-icon{right:9px;font-size:9px;}
 h1{font-size:42px;}
 .subtitle{font-size:19px;}
 .manual-download-btn{font-size:15px;padding:9px 20px;}
@@ -597,6 +640,22 @@ html[dir="rtl"] .keycaps,
 html[dir="rtl"] .key-row code{
 direction:ltr;
 }
+html[dir="rtl"] .lang-select-wrap .lang-globe-icon{
+left:auto;
+right:12px;
+}
+html[dir="rtl"] .lang-select-wrap .lang-caret-icon{
+right:auto;
+left:11px;
+}
+@media (max-width:760px){
+html[dir="rtl"] .lang-select-wrap .lang-globe-icon{
+right:9px;
+}
+html[dir="rtl"] .lang-select-wrap .lang-caret-icon{
+left:9px;
+}
+}
 
 </style>
 </head>
@@ -607,7 +666,7 @@ direction:ltr;
 <nav data-i18n-aria-label="aria.mainNavigation">
 <a data-i18n="nav.home" href="index.html" id="navHome"></a>
 <div class="dropdown">
-<a data-i18n="nav.apps" id="navApps"></a>
+<a id="navApps"><span data-i18n="nav.apps"></span><span class="nav-caret-icon" aria-hidden="true">▾</span></a>
 <div class="submenu" id="appsMenu">
 <a data-i18n="nav.radec" href="radec-calculator.html"></a>
 <a data-i18n="nav.virtualTelescope" href="virtual-telescope.html"></a>
@@ -618,7 +677,11 @@ direction:ltr;
 </div>
 <a data-i18n="nav.about" href="about.html" id="navAbout"></a>
 <a data-i18n="nav.contact" href="contact.html" id="navContact"></a>
+<div class="lang-select-wrap">
+<span class="lang-globe-icon" aria-hidden="true">🌐</span>
 <select class="lang-btn" data-i18n-aria-label="aria.languageSelector" id="languageSelect"></select>
+<span class="lang-caret-icon" aria-hidden="true">▾</span>
+</div>
 </nav>
 </header>
 <section class="hero" data-i18n-aria-label="aria.hero">
@@ -894,7 +957,7 @@ direction:ltr;
 <span class="shortcut-action" data-i18n="keyboard.erase"></span>
 </div>
 <div class="shortcut-row">
-<div class="keycaps"><span class="keycap">N</span><span class="keycap">S</span><span class="keycap">E</span><span class="keycap">W</span></div>
+<div class="keycaps"><span class="keycap">N</span><span class="keycap">S</span><span class="keycap">W</span><span class="keycap">E</span></div>
 <span class="shortcut-action" data-i18n="keyboard.directions"></span>
 </div>
 <div class="shortcut-row">
@@ -924,7 +987,7 @@ direction:ltr;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.56</p>
+<p>Version 3.63</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
