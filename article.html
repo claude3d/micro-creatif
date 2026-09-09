@@ -23,13 +23,20 @@ footer{margin-top:30px;text-align:center;font-size:.8em;color:#888;}
 .site-nav a,.site-nav button{border:0;padding:6px 0;text-decoration:none;cursor:pointer;}
 .site-nav a:hover,.site-nav button:hover{color:#2980b9;}
 .site-dropdown{position:relative;}
-.site-submenu{display:none;position:absolute;top:34px;left:50%;transform:translateX(-50%);min-width:240px;padding:8px 0;background:#fff;border:1px solid #d4d8dc;border-radius:10px;box-shadow:0 8px 22px rgba(0,0,0,.16);text-align:left;z-index:1100;}
+.site-apps-button::after{content:"▾";font-size:10px;margin-inline-start:4px;opacity:0.7;}
+.site-submenu{display:none;position:absolute;top:34px;left:50%;transform:translateX(-50%);padding:8px 0;background:#fff;border:1px solid #d4d8dc;border-radius:10px;box-shadow:0 8px 22px rgba(0,0,0,.16);text-align:left;z-index:1100;}
 .site-submenu.open{display:block;}
 .site-submenu a{display:block;padding:9px 15px;font-size:15px;}
 .site-submenu a:hover{background:#f1f4f7;}
-.site-lang{border:1px solid #b8c0c8 !important;border-radius:16px !important;padding:4px 11px !important;}
+.site-lang-wrap{position:relative;display:inline-flex;align-items:center;flex-shrink:0;}
+.site-lang-wrap .site-lang-globe{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:14px;line-height:1;pointer-events:none;opacity:0.85;}
+.site-lang-wrap .site-lang-caret{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:9px;line-height:1;pointer-events:none;opacity:0.6;color:#2c3e50;}
+.site-lang{appearance:none;-webkit-appearance:none;-moz-appearance:none;border:1px solid #b8c0c8;border-radius:16px;padding:4px 0;width:46px;color:transparent;cursor:pointer;overflow:hidden;background:transparent;}
+.site-lang option{color:#111;background:#fff;}
 html[dir="rtl"] article h2{border-left:0;border-right:4px solid var(--accent-color);padding-left:0;padding-right:15px;}
 html[dir="rtl"] .site-submenu{text-align:right;}
+html[dir="rtl"] .site-lang-wrap .site-lang-globe{left:auto;right:11px;}
+html[dir="rtl"] .site-lang-wrap .site-lang-caret{right:auto;left:10px;}
 @media(max-width:600px){
 .container{padding:20px;}
 .nav-buttons{flex-direction:column;align-items:center;}
@@ -37,6 +44,7 @@ html[dir="rtl"] .site-submenu{text-align:right;}
 .site-nav{gap:15px;}
 .site-nav a,.site-nav button,.site-nav select{font-size:14px;}
 .site-submenu{position:fixed;top:70px;left:50%;width:min(280px,calc(100vw - 32px));}
+.site-lang{width:40px;}
 }
 </style>
 </head>
@@ -56,7 +64,11 @@ html[dir="rtl"] .site-submenu{text-align:right;}
 </div>
 <a id="navAbout" href="about.html"></a>
 <a id="navContact" href="contact.html"></a>
+<div class="site-lang-wrap">
+<span class="site-lang-globe" aria-hidden="true">🌐</span>
 <select id="languageSelect" class="site-lang"></select>
+<span class="site-lang-caret" aria-hidden="true">▾</span>
+</div>
 </nav>
 <header>
 <h1 id="articleTitle"></h1>

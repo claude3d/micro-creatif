@@ -39,23 +39,66 @@ header{position:absolute;top:10px;width:100%;text-align:center;z-index:100;}
 nav{display:inline-flex;gap:30px;position:relative;align-items:center;}
 nav a{color:white;text-decoration:none;font-size:18px;opacity:0.9;cursor:pointer;white-space:nowrap;}
 .dropdown{position:relative;display:inline-flex;align-items:center;}
+.nav-caret-icon{
+font-size:10px;
+margin-inline-start:4px;
+opacity:0.7;
+pointer-events:none;
+}
 .submenu{
 display:none;position:absolute;top:28px;left:0;background:rgba(0,0,0,0.7);
 backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);
-border-radius:10px;padding:8px 0;min-width:200px;text-align:left;
+border-radius:10px;padding:8px 0;text-align:left;
 }
 .submenu a{display:block;padding:8px 14px;font-size:16px;}
 .submenu a:hover{background:rgba(255,255,255,0.1);}
-.lang-btn{
-background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);
-color:white;padding:6px 14px;border-radius:16px;cursor:pointer;font-size:18px;
-white-space:nowrap;flex-shrink:0;
+.lang-select-wrap{
+position:relative;
+display:inline-flex;
+align-items:center;
+flex-shrink:0;
 }
+.lang-select-wrap .lang-globe-icon{
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+font-size:15px;
+line-height:1;
+pointer-events:none;
+opacity:0.92;
+}
+.lang-select-wrap .lang-caret-icon{
+position:absolute;
+right:11px;
+top:50%;
+transform:translateY(-50%);
+font-size:10px;
+line-height:1;
+pointer-events:none;
+opacity:0.75;
+color:white;
+}
+.lang-btn{
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance:none;
+background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);
+color:transparent;padding:6px 0;width:52px;border-radius:16px;cursor:pointer;font-size:18px;
+white-space:nowrap;overflow:hidden;flex-shrink:0;
+}
+.lang-btn option{color:#111;background:#fff;}
 html[dir="rtl"] .submenu{left:auto;right:0;text-align:right;}
+html[dir="rtl"] .lang-select-wrap .lang-globe-icon{left:auto;right:12px;}
+html[dir="rtl"] .lang-select-wrap .lang-caret-icon{right:auto;left:11px;}
 @media (max-width:430px){
 nav{gap:18px;}
 nav a{font-size:15px;}
-.lang-btn{font-size:15px;padding:4px 10px;}
+.lang-btn{font-size:14px;width:44px;}
+.lang-select-wrap .lang-globe-icon{left:9px;font-size:13px;}
+.lang-select-wrap .lang-caret-icon{right:9px;font-size:9px;}
+html[dir="rtl"] .lang-select-wrap .lang-globe-icon{right:9px;}
+html[dir="rtl"] .lang-select-wrap .lang-caret-icon{left:9px;}
 }
 .main-content{
 flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;
@@ -91,7 +134,7 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 <nav data-i18n-aria="mainNavigation">
 <a id="navHome" href="index.html" data-i18n="navHome">Home</a>
 <div class="dropdown">
-<a id="navApps" data-i18n="navApps">Apps</a>
+<a id="navApps"><span data-i18n="navApps">Apps</span><span class="nav-caret-icon" aria-hidden="true">▾</span></a>
 <div class="submenu" id="appsMenu">
 <a href="radec-calculator.html" data-i18n="appRadec">RA / Dec / AZ / Alt</a>
 <a href="virtual-telescope.html" data-i18n="appVirtualTelescope">Virtual Telescope</a>
@@ -102,6 +145,8 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 </div>
 <a id="navAbout" href="about.html" data-i18n="navAbout">About</a>
 <a id="navContact" href="contact.html" data-i18n="navContact">Contact</a>
+<div class="lang-select-wrap">
+<span class="lang-globe-icon" aria-hidden="true">🌐</span>
 <select id="languageSelect" class="lang-btn" data-i18n-aria="languageSelector" aria-label="Choose language">
 <option value="en">English</option>
 <option value="fr">Français</option>
@@ -114,6 +159,8 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 <option value="ar">العربية</option>
 <option value="ko">한국어</option>
 </select>
+<span class="lang-caret-icon" aria-hidden="true">▾</span>
+</div>
 </nav>
 </header>
 
@@ -148,7 +195,7 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 <footer>
 <p data-i18n="copyright">© 2026 Micro Créatif. All rights reserved.</p>
 <p data-i18n="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 4.0</p>
+<p class="version-display">Version 4.1</p>
 </footer>
 
 <script src="about-languages.js" defer></script>
