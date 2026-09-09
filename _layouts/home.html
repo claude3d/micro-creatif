@@ -2,7 +2,7 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
-<!-- Version 7.13 -->
+<!-- Version 7.14 -->
 {% assign t = site.data.home[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}" dir="{{ page.dir | default: 'ltr' }}">
@@ -101,6 +101,12 @@ position:relative;
 display:inline-flex;
 align-items:center;
 }
+.nav-caret-icon{
+font-size:10px;
+margin-inline-start:4px;
+opacity:0.7;
+pointer-events:none;
+}
 .submenu{
 display:none;
 position:absolute;
@@ -111,7 +117,6 @@ backdrop-filter:blur(8px);
 border:1px solid rgba(255,255,255,0.3);
 border-radius:10px;
 padding:8px 0;
-min-width:220px;
 text-align:left;
 }
 .submenu a{
@@ -122,15 +127,47 @@ font-size:16px;
 .submenu a:hover{
 background:rgba(255,255,255,0.1);
 }
+.lang-select-wrap{
+position:relative;
+display:inline-flex;
+align-items:center;
+flex-shrink:0;
+}
+.lang-select-wrap .lang-globe-icon{
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+font-size:15px;
+line-height:1;
+pointer-events:none;
+opacity:0.92;
+}
+.lang-select-wrap .lang-caret-icon{
+position:absolute;
+right:11px;
+top:50%;
+transform:translateY(-50%);
+font-size:10px;
+line-height:1;
+pointer-events:none;
+opacity:0.75;
+color:white;
+}
 .lang-select{
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance:none;
 background:rgba(255,255,255,0.1);
 border:1px solid rgba(255,255,255,0.3);
-color:white;
-padding:6px 12px;
+color:transparent;
+padding:6px 0;
+width:52px;
 border-radius:16px;
 cursor:pointer;
 font-size:16px;
 white-space:nowrap;
+overflow:hidden;
 flex-shrink:0;
 }
 .lang-select option{
@@ -144,21 +181,26 @@ gap:18px;
 nav a{
 font-size:15px;
 }
-.lang-select{
-background:rgba(255,255,255,0.1);
-border:1px solid rgba(255,255,255,0.3);
-color:white;
-padding:6px 12px;
-border-radius:16px;
-cursor:pointer;
-font-size:16px;
-white-space:nowrap;
-flex-shrink:0;
+.lang-select{font-size:14px;width:44px;}
+.lang-select-wrap .lang-globe-icon{left:9px;font-size:13px;}
+.lang-select-wrap .lang-caret-icon{right:9px;font-size:9px;}
 }
-.lang-select option{
-color:black;
-background:white;
+html[dir="rtl"] .submenu{
+left:auto;
+right:0;
+text-align:right;
 }
+html[dir="rtl"] .lang-select-wrap .lang-globe-icon{
+left:auto;
+right:12px;
+}
+html[dir="rtl"] .lang-select-wrap .lang-caret-icon{
+right:auto;
+left:11px;
+}
+@media (max-width:430px){
+html[dir="rtl"] .lang-select-wrap .lang-globe-icon{right:9px;}
+html[dir="rtl"] .lang-select-wrap .lang-caret-icon{left:9px;}
 }
 .hero{
 height:auto;
@@ -246,7 +288,7 @@ opacity:0.85;
 <nav aria-label="{{ t.mainNavigation }}">
 <a href="/">{{ t.navHome }}</a>
 <div class="dropdown">
-<a id="navApps">{{ t.navApps }}</a>
+<a id="navApps"><span>{{ t.navApps }}</span><span class="nav-caret-icon" aria-hidden="true">▾</span></a>
 <div class="submenu" id="appsMenu">
 <a href="/radec-calculator.html">{{ t.appRadec }}</a>
 <a href="/virtual-telescope.html">{{ t.appVirtualTelescope }}</a>
@@ -257,6 +299,8 @@ opacity:0.85;
 </div>
 <a href="/about.html">{{ t.navAbout }}</a>
 <a href="/contact.html">{{ t.navContact }}</a>
+<div class="lang-select-wrap">
+<span class="lang-globe-icon" aria-hidden="true">🌐</span>
 <select id="languageSelect" class="lang-select" aria-label="{{ t.languageSelector }}">
 <option value="/de/" {% if page.lang == "de" %}selected{% endif %}>Deutsch</option>
 <option value="/" {% if page.lang == "en" %}selected{% endif %}>English</option>
@@ -271,6 +315,8 @@ opacity:0.85;
 <option value="/ja/" {% if page.lang == "ja" %}selected{% endif %}>日本語</option>
 <option value="/ko/" {% if page.lang == "ko" %}selected{% endif %}>한국어</option>
 </select>
+<span class="lang-caret-icon" aria-hidden="true">▾</span>
+</div>
 </nav>
 </header>
 
@@ -337,7 +383,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.12</p>
+<p>Version 7.14</p>
 </footer>
 
 <script>
