@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.67 -->
+<!-- Version 3.69 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -328,7 +328,7 @@ margin:7px 0;
 }
 .key-row{
 display:grid;
-grid-template-columns:105px 1fr;
+grid-template-columns:105px minmax(0,1fr);
 gap:12px;
 align-items:center;
 margin:9px 0;
@@ -349,6 +349,7 @@ padding:6px 8px;
 white-space:nowrap;
 }
 .key-row code.multiline-control{font-size:13px;line-height:1.25;white-space:normal;padding-left:6px;padding-right:6px;}
+.key-row > span{overflow-wrap:break-word;}
 .key-row code .sep{
 font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 font-weight:normal;
@@ -425,6 +426,7 @@ padding:0 1px;
 font-size:15.5px;
 line-height:1.35;
 opacity:0.94;
+overflow-wrap:break-word;
 }
 .advanced-block .keyboard-note{
 margin:16px 0 0;
@@ -602,8 +604,8 @@ h1{font-size:42px;}
 .advanced-block.wide{grid-column:auto;}
 .advanced-block.centered-half{grid-column:auto;width:100%;}
 .keyboard-grid{grid-template-columns:1fr;}
-.shortcut-row{grid-template-columns:138px 1fr;}
-.key-row{grid-template-columns:92px 1fr;}
+.shortcut-row{grid-template-columns:138px minmax(0,1fr);}
+.key-row{grid-template-columns:92px minmax(0,1fr);}
 .app-icon{width:116px;height:116px;border-radius:18.5%;}
 .content{padding-left:16px;padding-right:16px;}
 .feature-list{padding:20px;}
@@ -990,7 +992,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.67</p>
+<p>Version 3.69</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1233,7 +1235,7 @@ document.getElementById("navHome")?.addEventListener("click", goToLanguageHome);
 document.querySelector('[data-i18n="status.back"]')?.addEventListener("click", goToLanguageHome);
 </script>
 
-<script src="time-travel-languages.js?v=3.8-content-20260829" defer></script>
+<script src="time-travel-languages.js?v=3.9-manual-20260909" defer></script>
 <script>
 window.addEventListener("load", function(){
   const guideScript = document.createElement("script");
