@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.69 -->
+<!-- Version 3.75 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -485,14 +485,9 @@ box-shadow:0 0 22px rgba(40,80,160,0.20);
 overflow:hidden;
 }
 .video-frame.centered-video{
-grid-column:1 / -1;
 width:80%;
 max-width:100%;
-justify-self:center;
-}
-.video-gallery > .video-frame.centered-video{
-margin-left:auto;
-margin-right:auto;
+margin:0 auto;
 }
 .video-frame video{
 display:block;
@@ -597,7 +592,7 @@ h1{font-size:42px;}
 .mode-grid{grid-template-columns:1fr;}
 .screenshot-grid{grid-template-columns:1fr;}
 .video-grid{grid-template-columns:1fr;}
-.video-frame.centered-video{grid-column:auto;width:100%;}
+.video-frame.centered-video{width:100%;}
 .card-grid{grid-template-columns:1fr;}
 .lower-row{grid-template-columns:1fr;}
 .advanced-grid{grid-template-columns:1fr;}
@@ -695,7 +690,7 @@ left:9px;
 </div>
 <h1>Time Travel Sky <span class="version-label">Version 1.3</span></h1>
 <p class="subtitle" data-i18n="hero.subtitle"></p>
-<button class="manual-download-btn" data-i18n="manual.download" id="downloadManualButton" type="button"></button>
+<button class="manual-download-btn" data-i18n="manual.download" id="downloadManualButtonDirect" type="button"></button>
 </section>
 <main class="content">
 <section class="video-gallery">
@@ -992,7 +987,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.69</p>
+<p>Version 3.75</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1003,7 +998,6 @@ document.addEventListener("DOMContentLoaded", function(){
     if(video.dataset.customControlsReady === "1") return;
     video.dataset.customControlsReady = "1";
     video.controls = false;
-    video.parentElement.querySelectorAll(":scope > .video-custom-controls").forEach(function(existing){ existing.remove(); });
 
     const controls = document.createElement("div");
     controls.className = "video-custom-controls";
@@ -1068,12 +1062,6 @@ document.addEventListener("DOMContentLoaded", function(){
         requestVideoSeek(t);
       }
     });
-    if(video.readyState >= 1 && pendingVideoSeekTime !== null){
-      const t = pendingVideoSeekTime;
-      pendingVideoSeekTime = null;
-      requestVideoSeek(t);
-    }
-
     controls.append(play, seek, time);
     video.insertAdjacentElement("afterend", controls);
 
@@ -1210,32 +1198,318 @@ if (guideVideo && guideNarration) {
 }
 </script>
 
-<script>
-function goToLanguageHome(event){
-  event.preventDefault();
-  const code = document.getElementById("languageSelect")?.value || "en";
-  const homePaths = {
-    "en": "/",
-    "fr": "/fr/",
-    "vi": "/vi/",
-    "ja": "/ja/",
-    "zh-Hans": "/zh-Hans/",
-    "zh-Hant": "/zh-Hant/",
-    "es": "/es/",
-    "de": "/de/",
-    "ar": "/ar/",
-    "ko": "/ko/",
-    "it": "/it/",
-    "ru": "/ru/"
-  };
-  window.location.href = homePaths[code] || "/";
-}
 
-document.getElementById("navHome")?.addEventListener("click", goToLanguageHome);
-document.querySelector('[data-i18n="status.back"]')?.addEventListener("click", goToLanguageHome);
+<script src="time-travel-languages.js?v=3.9-content-20260910" defer></script>
+<script>
+/* HTML-only manual exporter. The translation file is left unchanged.
+   It builds the PDF from the page's current, already-translated DOM.
+   Videos are represented by their poster pictures. */
+(function(){
+  const BUTTON_ID = "downloadManualButtonDirect";
+  const LOCAL_PDF_LIBRARY = "html2pdf.bundle.min.js";
+  let localPdfLibraryPromise = null;
+
+  function loadLocalPdfLibrary(){
+    if (window.html2pdf) return Promise.resolve(window.html2pdf);
+    if (localPdfLibraryPromise) return localPdfLibraryPromise;
+
+    localPdfLibraryPromise = new Promise(function(resolve, reject){
+      const script = document.createElement("script");
+      script.src = LOCAL_PDF_LIBRARY;
+      script.async = true;
+      script.addEventListener("load", function(){
+        if (window.html2pdf) resolve(window.html2pdf);
+        else reject(new Error("Local PDF library loaded without html2pdf."));
+      }, { once:true });
+      script.addEventListener("error", function(){
+        localPdfLibraryPromise = null;
+        reject(new Error("Unable to load local PDF library."));
+      }, { once:true });
+      document.head.appendChild(script);
+    });
+
+    return localPdfLibraryPromise;
+  }
+
+  function cleanManualText(value){
+    return (value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function currentManualLanguage(){
+    const selector = document.getElementById("languageSelect");
+    if (selector && typeof availableLanguage === "function" && availableLanguage(selector.value)) {
+      return selector.value;
+    }
+    if (typeof preferredLanguage === "function") return preferredLanguage();
+    return document.documentElement.lang || "en";
+  }
+
+  function collectManualItems(){
+    const items = [];
+    const root = document.querySelector("main.content");
+    if (!root) return items;
+
+    root.querySelectorAll("h2, h3, h4, p, li, .key-row, .shortcut-row, figure").forEach(function(element){
+      if (element.matches("h2, h3, h4, p, li") && element.closest(".key-row, .shortcut-row, figure")) return;
+
+      if (element.tagName === "FIGURE") {
+        const video = element.querySelector("video");
+        const pageImage = element.querySelector("img");
+        const src = video?.getAttribute("poster") || pageImage?.getAttribute("src") || "";
+        if (src) {
+          items.push({
+            type: "image",
+            src: new URL(src, document.baseURI).href,
+            caption: cleanManualText(element.querySelector("figcaption")?.textContent || "")
+          });
+        }
+        return;
+      }
+
+      const text = cleanManualText(element.textContent);
+      if (!text) return;
+      let kind = "body";
+      if (element.tagName === "H2") kind = "h2";
+      else if (element.tagName === "H3") kind = "h3";
+      else if (element.tagName === "H4") kind = "h4";
+      else if (element.tagName === "LI") kind = "bullet";
+      else if (element.classList.contains("key-row") || element.classList.contains("shortcut-row")) kind = "control";
+      items.push({ type: "text", kind, text });
+    });
+
+    document.querySelectorAll("footer p").forEach(function(element){
+      const text = cleanManualText(element.textContent);
+      if (text) items.push({ type: "text", kind: "footerText", text });
+    });
+    return items;
+  }
+
+  function wrapCanvasText(ctx, text, maxWidth){
+    const words = text.split(/\s+/).filter(Boolean);
+    if (!words.length) return [""];
+    const lines = [];
+    let line = "";
+
+    function splitLongWord(word){
+      const parts = [];
+      let part = "";
+      for (const character of Array.from(word)) {
+        const trial = part + character;
+        if (part && ctx.measureText(trial).width > maxWidth) {
+          parts.push(part);
+          part = character;
+        } else {
+          part = trial;
+        }
+      }
+      if (part) parts.push(part);
+      return parts;
+    }
+
+    words.forEach(function(word){
+      const trial = line ? line + " " + word : word;
+      if (ctx.measureText(trial).width <= maxWidth) {
+        line = trial;
+        return;
+      }
+      if (line) {
+        lines.push(line);
+        line = "";
+      }
+      if (ctx.measureText(word).width <= maxWidth) {
+        line = word;
+      } else {
+        const parts = splitLongWord(word);
+        parts.slice(0, -1).forEach(function(part){ lines.push(part); });
+        line = parts[parts.length - 1] || "";
+      }
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function makeTextPicture(text, kind, rtl){
+    const width = 1200;
+    const side = 36;
+    const styles = {
+      h2: { size:38, weight:700, line:50, before:22, after:18, align:"center" },
+      h3: { size:30, weight:700, line:41, before:14, after:12, align:rtl ? "right" : "left" },
+      h4: { size:26, weight:700, line:36, before:10, after:10, align:rtl ? "right" : "left" },
+      body: { size:24, weight:400, line:35, before:2, after:12, align:rtl ? "right" : "left" },
+      bullet: { size:23, weight:400, line:34, before:0, after:8, align:rtl ? "right" : "left" },
+      control: { size:22, weight:500, line:33, before:1, after:7, align:rtl ? "right" : "left" },
+      footerText: { size:21, weight:400, line:31, before:2, after:8, align:rtl ? "right" : "left" },
+      coverTitle: { size:55, weight:700, line:66, before:0, after:14, align:"center" },
+      coverManual: { size:36, weight:650, line:46, before:0, after:10, align:"center" },
+      coverBody: { size:25, weight:400, line:37, before:0, after:10, align:"center" }
+    };
+    const style = styles[kind] || styles.body;
+    const prefix = kind === "bullet" ? "• " : "";
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    const probe = canvas.getContext("2d");
+    probe.font = `${style.weight} ${style.size}px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif`;
+    probe.direction = rtl ? "rtl" : "ltr";
+    const lines = wrapCanvasText(probe, prefix + text, width - side * 2);
+    canvas.height = Math.max(1, style.before + lines.length * style.line + style.after);
+
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = kind === "h2" ? "#17366f" : kind === "h3" || kind === "h4" ? "#25477e" : "#182033";
+    ctx.font = `${style.weight} ${style.size}px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif`;
+    ctx.textBaseline = "top";
+    ctx.direction = rtl ? "rtl" : "ltr";
+    ctx.textAlign = style.align;
+    const x = style.align === "center" ? width / 2 : style.align === "right" ? width - side : side;
+    lines.forEach(function(line, index){
+      ctx.fillText(line, x, style.before + index * style.line);
+    });
+    return { data:canvas.toDataURL("image/png"), width:canvas.width, height:canvas.height };
+  }
+
+  async function pictureData(src){
+    return new Promise(function(resolve){
+      const image = new Image();
+      image.onload = function(){
+        try {
+          const maxDimension = 1800;
+          const factor = Math.min(1, maxDimension / Math.max(image.naturalWidth, image.naturalHeight));
+          const canvas = document.createElement("canvas");
+          canvas.width = Math.max(1, Math.round(image.naturalWidth * factor));
+          canvas.height = Math.max(1, Math.round(image.naturalHeight * factor));
+          const ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+          resolve({ data:canvas.toDataURL("image/jpeg", 0.88), width:canvas.width, height:canvas.height });
+        } catch (error) {
+          console.warn("Manual picture could not be embedded:", src, error);
+          resolve(null);
+        }
+      };
+      image.onerror = function(){ resolve(null); };
+      image.src = src;
+    });
+  }
+
+  async function createPdfShell(){
+    await loadLocalPdfLibrary();
+    if (window.jspdf?.jsPDF) {
+      return new window.jspdf.jsPDF({ unit:"pt", format:"a4", orientation:"portrait", compress:true });
+    }
+    const seed = document.createElement("div");
+    seed.textContent = " ";
+    const worker = window.html2pdf().set({
+      margin:0,
+      html2canvas:{ scale:1, logging:false },
+      jsPDF:{ unit:"pt", format:"a4", orientation:"portrait", compress:true }
+    }).from(seed).toPdf();
+    await worker;
+    return worker.get("pdf");
+  }
+
+  async function downloadManualDirect(){
+    const button = document.getElementById(BUTTON_ID);
+    if (!button) return;
+    const originalText = button.textContent;
+    button.disabled = true;
+    button.textContent = originalText + "…";
+
+    try {
+      const code = currentManualLanguage();
+      const pack = TIME_TRAVEL_LANGUAGES[code] || TIME_TRAVEL_LANGUAGES[DEFAULT_LANGUAGE];
+      const strings = pack.strings;
+      const rtl = (pack.dir || document.documentElement.dir) === "rtl";
+      const version = currentTimeTravelVersion();
+      const website = manualWebsiteUrl();
+      const pdf = await createPdfShell();
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const marginX = 42;
+      const top = 42;
+      const bottom = 42;
+      const maxWidth = pageWidth - marginX * 2;
+      let y = top;
+
+      function newPage(){
+        pdf.addPage();
+        y = top;
+      }
+
+      function addDataImage(data, widthPixels, heightPixels, maxHeight){
+        let width = maxWidth;
+        let height = width * heightPixels / widthPixels;
+        if (height > maxHeight) {
+          height = maxHeight;
+          width = height * widthPixels / heightPixels;
+        }
+        if (y + height > pageHeight - bottom) newPage();
+        const x = marginX + (maxWidth - width) / 2;
+        pdf.addImage(data, data.startsWith("data:image/png") ? "PNG" : "JPEG", x, y, width, height, undefined, "FAST");
+        y += height + 10;
+      }
+
+      function addText(text, kind){
+        const picture = makeTextPicture(text, kind, rtl);
+        addDataImage(picture.data, picture.width, picture.height, pageHeight - top - bottom);
+      }
+
+      const title = cleanManualText(document.querySelector("h1")?.textContent || "Time Travel Sky");
+      const manualTitle = strings["manual.title"] || "User Manual";
+      const subtitle = cleanManualText(document.querySelector(".subtitle")?.textContent || "");
+      addText(title, "coverTitle");
+      addText(manualTitle, "coverManual");
+      if (subtitle) addText(subtitle, "coverBody");
+      addText(website, "coverBody");
+
+      const iconSrc = document.querySelector(".app-icon img")?.src || "";
+      if (iconSrc) {
+        const icon = await pictureData(iconSrc);
+        if (icon) addDataImage(icon.data, icon.width, icon.height, 115);
+      }
+      newPage();
+
+      const items = collectManualItems();
+      for (const item of items) {
+        if (item.type === "text") {
+          addText(item.text, item.kind);
+          continue;
+        }
+        const picture = await pictureData(item.src);
+        if (picture) {
+          addDataImage(picture.data, picture.width, picture.height, 360);
+        }
+        if (item.caption) addText(item.caption, "body");
+      }
+
+      const pages = pdf.internal.getNumberOfPages();
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(8);
+      pdf.setTextColor(110, 118, 134);
+      for (let page = 1; page <= pages; page += 1) {
+        pdf.setPage(page);
+        pdf.text("Time Travel Sky", marginX, pageHeight - 18);
+        pdf.text(`${page} / ${pages}`, pageWidth - marginX, pageHeight - 18, { align:"right" });
+      }
+
+      pdf.save(currentManualFileName(strings, version.number));
+    } catch (error) {
+      console.error("Time Travel Sky direct manual generation failed:", error);
+      alert("The manual could not be created.");
+    } finally {
+      button.disabled = false;
+      button.textContent = originalText;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function(){
+    const button = document.getElementById(BUTTON_ID);
+    if (button) button.addEventListener("click", downloadManualDirect);
+  });
+})();
 </script>
 
-<script src="time-travel-languages.js?v=3.9-manual-20260909" defer></script>
 <script>
 window.addEventListener("load", function(){
   const guideScript = document.createElement("script");
