@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.79 -->
+<!-- Version 3.81 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -504,36 +504,6 @@ border-radius:12px;
 aspect-ratio:2046 / 1534;
 }
 
-.video-custom-controls{
-display:flex;
-align-items:center;
-gap:10px;
-padding:8px 6px 2px;
-}
-.guide-audio{
-display:none;
-}
-.video-custom-controls button{
-appearance:none;
--webkit-appearance:none;
-border:1px solid rgba(255,255,255,0.30);
-background:rgba(255,255,255,0.10);
-color:white;
-border-radius:8px;
-min-width:40px;
-height:32px;
-font-size:17px;
-cursor:pointer;
-}
-.video-custom-controls input[type="range"]{
-flex:1;
-min-width:0;
-}
-.video-custom-time{
-font-size:13px;
-opacity:0.82;
-white-space:nowrap;
-}
 
 .video-frame figcaption{
 padding:12px 8px 5px;
@@ -698,7 +668,7 @@ left:9px;
 <section class="video-gallery">
 <h2 data-i18n="video.guideTitle"></h2>
 <figure class="video-frame centered-video">
-<video class="catalyst-video" playsinline preload="auto" poster="videos/timetravelsky-poster.jpg" id="guideVideo">
+<video class="catalyst-video" controls playsinline preload="auto" poster="videos/timetravelsky-poster.jpg" id="guideVideo">
 <source src="videos/TimeTravelSky.mp4" type="video/mp4"/>
 </video>
 <audio class="guide-audio" preload="auto" aria-label="English narration" id="guideNarration">
@@ -728,25 +698,25 @@ left:9px;
 <h2 data-i18n="videos.title"></h2>
 <div class="video-grid">
 <figure class="video-frame">
-<video class="catalyst-video" playsinline preload="auto" poster="videos/eclipse-poster.jpg" data-playback-rate="2">
+<video class="catalyst-video" controls playsinline preload="auto" poster="videos/eclipse-poster.jpg" data-playback-rate="2">
 <source src="videos/Eclipse.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="video.eclipseCaption"></figcaption>
 </figure>
 <figure class="video-frame">
-<video class="catalyst-video" playsinline preload="auto" poster="videos/beijing-alignment-poster.jpg">
+<video class="catalyst-video" controls playsinline preload="auto" poster="videos/beijing-alignment-poster.jpg">
 <source src="videos/beijing-alignment.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="video.siderealCaption"></figcaption>
 </figure>
 <figure class="video-frame">
-<video class="catalyst-video" playsinline preload="auto" poster="videos/mars-retrograde-poster.jpg">
+<video class="catalyst-video" controls playsinline preload="auto" poster="videos/mars-retrograde-poster.jpg">
 <source src="videos/Mars-Retrograde.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="video.marsCaption"></figcaption>
 </figure>
 <figure class="video-frame">
-<video class="catalyst-video" playsinline preload="auto" poster="videos/venus-mercury-poster.jpg">
+<video class="catalyst-video" controls playsinline preload="auto" poster="videos/venus-mercury-poster.jpg">
 <source src="videos/Venus-Mercury.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="video.venusMercuryCaption"></figcaption>
@@ -989,7 +959,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.79</p>
+<p>Version 3.81</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -997,176 +967,39 @@ left:9px;
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   document.querySelectorAll(".video-frame video").forEach(function(video){
-    if(video.dataset.customControlsReady === "1") return;
-    video.dataset.customControlsReady = "1";
-    video.controls = false;
-
-    const controls = document.createElement("div");
-    controls.className = "video-custom-controls";
-
-    const play = document.createElement("button");
-    play.type = "button";
-    play.textContent = "▶";
-    play.setAttribute("aria-label", "Play / Pause");
-
-    const seek = document.createElement("input");
-    seek.type = "range";
-    seek.min = "0";
-    seek.max = "1000";
-    seek.value = "0";
-    seek.step = "1";
-    seek.setAttribute("aria-label", "Video position");
-
-    const time = document.createElement("span");
-    time.className = "video-custom-time";
-    time.textContent = "0:00 / 0:00";
-
-    const narration = video.id === "guideVideo" ? document.getElementById("guideNarration") : null;
     const requestedRate = Number(video.dataset.playbackRate) > 0 ? Number(video.dataset.playbackRate) : 1;
-    let playbackAction = 0;
-    let isScrubbing = false;
-    // Video seeks can take a moment to decode; firing a new one before the
-    // previous finishes makes the frame appear stuck while audio (which has
-    // no frame to decode) jumps instantly. These track an in-flight seek so
-    // we never fire a second one until the first has actually landed.
-    let videoSeekInFlight = false;
-    let pendingVideoSeekTime = null;
-    function setPlaybackRate(){
+    function applyPlaybackRate(){
       video.defaultPlaybackRate = requestedRate;
       video.playbackRate = requestedRate;
     }
-    function requestVideoSeek(target){
-      // Before metadata is loaded, setting currentTime silently does nothing
-      // in some browsers. Queue it and apply once the video is ready.
-      if(video.readyState < 1){
-        pendingVideoSeekTime = target;
-        return;
-      }
-      if(videoSeekInFlight){
-        pendingVideoSeekTime = target;
-        return;
-      }
-      videoSeekInFlight = true;
-      video.currentTime = target;
-    }
-    video.addEventListener("loadedmetadata", function(){
-      if(pendingVideoSeekTime !== null){
-        const t = pendingVideoSeekTime;
-        pendingVideoSeekTime = null;
-        requestVideoSeek(t);
-      }
-    });
-    video.addEventListener("seeked", function(){
-      videoSeekInFlight = false;
-      if(pendingVideoSeekTime !== null){
-        const t = pendingVideoSeekTime;
-        pendingVideoSeekTime = null;
-        requestVideoSeek(t);
-      }
-    });
-    controls.append(play, seek, time);
-    video.insertAdjacentElement("afterend", controls);
+    video.addEventListener("loadedmetadata", applyPlaybackRate);
+    applyPlaybackRate();
+  });
 
-    function fmt(seconds){
-      if(!Number.isFinite(seconds)) return "0:00";
-      const s = Math.max(0, Math.floor(seconds));
-      const m = Math.floor(s / 60);
-      const r = String(s % 60).padStart(2, "0");
-      return m + ":" + r;
-    }
+  const video = document.getElementById("guideVideo");
+  const narration = document.getElementById("guideNarration");
+  if(!video) return;
 
-    function update(){
-      const duration = Number.isFinite(video.duration) ? video.duration : 0;
-      const current = Number.isFinite(video.currentTime) ? video.currentTime : 0;
-      if(!isScrubbing) seek.value = duration > 0 ? String(Math.round((current / duration) * 1000)) : "0";
-      time.textContent = fmt(current) + " / " + fmt(duration);
-      play.textContent = video.paused ? "▶" : "❚❚";
-    }
+  document.addEventListener("keydown", function(event){
+    if(event.code !== "Space" && event.key !== " ") return;
+    const target = event.target;
+    if(target?.closest?.("a, button, input, textarea, select, [contenteditable='true']")) return;
+    event.preventDefault();
+    if(event.repeat) return;
 
-    function togglePlayback(event){
-      event.preventDefault();
-      event.stopPropagation();
-      if(video.paused){
-        const action = ++playbackAction;
-        if(narration){
-          try { narration.currentTime = video.currentTime; } catch (error) {}
-          narration.playbackRate = 1;
-          const audioStart = narration.play();
-          if(audioStart && typeof audioStart.catch === "function") audioStart.catch(function(){
-            if(action === playbackAction) update();
-          });
-        }
-        const videoStart = video.play();
-        if(videoStart && typeof videoStart.catch === "function") videoStart.catch(function(){
-          if(action === playbackAction) update();
-        });
-      } else {
-        playbackAction++;
-        video.pause();
-        if(narration) narration.pause();
-        update();
+    if(video.paused){
+      if(narration){
+        try { narration.currentTime = video.currentTime; } catch (error) {}
+        narration.playbackRate = 1;
+        const audioStart = narration.play();
+        if(audioStart && typeof audioStart.catch === "function") audioStart.catch(function(){});
       }
+      const videoStart = video.play();
+      if(videoStart && typeof videoStart.catch === "function") videoStart.catch(function(){});
+    } else {
+      video.pause();
+      if(narration) narration.pause();
     }
-    let pointerHandled = false;
-    play.addEventListener("pointerdown", function(event){
-      pointerHandled = true;
-      togglePlayback(event);
-    });
-    play.addEventListener("click", function(event){
-      if(pointerHandled){
-        pointerHandled = false;
-        event.preventDefault();
-        event.stopPropagation();
-        return;
-      }
-      togglePlayback(event);
-    });
-
-    if(video.id === "guideVideo"){
-      document.addEventListener("keydown", function(event){
-        if(event.code !== "Space" && event.key !== " ") return;
-        const target = event.target;
-        if(target !== play && target?.closest?.("a, button, input, textarea, select, [contenteditable='true']")) return;
-        event.preventDefault();
-        if(event.repeat) return;
-        togglePlayback(event);
-      });
-    }
-
-    function seekToValue(isFinal){
-      if(Number.isFinite(video.duration) && video.duration > 0){
-        isScrubbing = true;
-        const target = (Number(seek.value) / 1000) * video.duration;
-        if(isFinal){
-          // On release, always land on the exact value the user let go of,
-          // even if an in-flight throttled seek was targeting a stale spot.
-          pendingVideoSeekTime = target;
-          if(!videoSeekInFlight) requestVideoSeek(target);
-        } else {
-          requestVideoSeek(target);
-        }
-        if(narration && Number.isFinite(narration.duration) && narration.duration > 0){
-          narration.currentTime = Math.min(target, narration.duration);
-        }
-        time.textContent = fmt(target) + " / " + fmt(video.duration);
-      }
-    }
-    seek.addEventListener("input", function(){ seekToValue(false); });
-    seek.addEventListener("change", function(){
-      seekToValue(true);
-      isScrubbing = false;
-    });
-
-    video.addEventListener("loadedmetadata", function(){ setPlaybackRate(); update(); });
-    video.addEventListener("durationchange", update);
-    video.addEventListener("loadeddata", update);
-    video.addEventListener("timeupdate", update);
-    video.addEventListener("seeked", update);
-    video.addEventListener("play", update);
-    video.addEventListener("pause", update);
-    video.addEventListener("ended", update);
-    setPlaybackRate();
-    update();
   });
 });
 </script>
@@ -1185,6 +1018,11 @@ if (guideVideo && guideNarration) {
   }
   guideVideo.addEventListener("timeupdate", function(){
     if (!guideVideo.paused && !guideVideo.seeking) syncNarration(false);
+  });
+  guideVideo.addEventListener("play", function(){
+    syncNarration(true);
+    const audioStart = guideNarration.play();
+    if (audioStart && typeof audioStart.catch === "function") audioStart.catch(function(){});
   });
   guideVideo.addEventListener("playing", function(){ syncNarration(false); });
   guideVideo.addEventListener("pause", function(){
