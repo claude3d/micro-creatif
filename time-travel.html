@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.76 -->
+<!-- Version 3.77 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -987,7 +987,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.75</p>
+<p>Version 3.77</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1369,28 +1369,43 @@ if (guideVideo && guideNarration) {
   }
 
   async function pictureData(src){
-    return new Promise(function(resolve){
-      const image = new Image();
-      image.onload = function(){
-        try {
-          const maxDimension = 1800;
-          const factor = Math.min(1, maxDimension / Math.max(image.naturalWidth, image.naturalHeight));
-          const canvas = document.createElement("canvas");
-          canvas.width = Math.max(1, Math.round(image.naturalWidth * factor));
-          canvas.height = Math.max(1, Math.round(image.naturalHeight * factor));
-          const ctx = canvas.getContext("2d");
-          ctx.fillStyle = "#ffffff";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-          ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-          resolve({ data:canvas.toDataURL("image/jpeg", 0.88), width:canvas.width, height:canvas.height });
-        } catch (error) {
-          console.warn("Manual picture could not be embedded:", src, error);
-          resolve(null);
-        }
+    try {
+      const response = await fetch(src, { cache:"force-cache" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const blob = await response.blob();
+      const mime = (blob.type || "").toLowerCase();
+      const format = mime.includes("png") ? "PNG"
+        : mime.includes("jpeg") || mime.includes("jpg") ? "JPEG"
+        : "";
+      if (!format) throw new Error(`Unsupported image type: ${blob.type || "unknown"}`);
+
+      const dimensions = await new Promise(function(resolve, reject){
+        const image = new Image();
+        const objectUrl = URL.createObjectURL(blob);
+        image.onload = function(){
+          const width = image.naturalWidth;
+          const height = image.naturalHeight;
+          URL.revokeObjectURL(objectUrl);
+          resolve({ width, height });
+        };
+        image.onerror = function(){
+          URL.revokeObjectURL(objectUrl);
+          reject(new Error("Image dimensions could not be read."));
+        };
+        image.src = objectUrl;
+      });
+
+      return {
+        data:new Uint8Array(await blob.arrayBuffer()),
+        format,
+        width:dimensions.width,
+        height:dimensions.height
       };
-      image.onerror = function(){ resolve(null); };
-      image.src = src;
-    });
+    } catch (error) {
+      console.warn("Manual picture could not be embedded:", src, error);
+      return null;
+    }
   }
 
   async function createPdfShell(){
@@ -1437,7 +1452,7 @@ if (guideVideo && guideNarration) {
         y = top;
       }
 
-      function addDataImage(data, widthPixels, heightPixels, maxHeight){
+      function addDataImage(data, widthPixels, heightPixels, maxHeight, format){
         let width = maxWidth;
         let height = width * heightPixels / widthPixels;
         if (height > maxHeight) {
@@ -1446,7 +1461,8 @@ if (guideVideo && guideNarration) {
         }
         if (y + height > pageHeight - bottom) newPage();
         const x = marginX + (maxWidth - width) / 2;
-        pdf.addImage(data, data.startsWith("data:image/png") ? "PNG" : "JPEG", x, y, width, height, undefined, "FAST");
+        const imageFormat = format || (typeof data === "string" && data.startsWith("data:image/png") ? "PNG" : "JPEG");
+        pdf.addImage(data, imageFormat, x, y, width, height, undefined, "FAST");
         y += height + 10;
       }
 
@@ -1466,7 +1482,7 @@ if (guideVideo && guideNarration) {
       const iconSrc = document.querySelector(".app-icon img")?.src || "";
       if (iconSrc) {
         const icon = await pictureData(iconSrc);
-        if (icon) addDataImage(icon.data, icon.width, icon.height, 115);
+        if (icon) addDataImage(icon.data, icon.width, icon.height, 115, icon.format);
       }
       newPage();
 
@@ -1478,7 +1494,7 @@ if (guideVideo && guideNarration) {
         }
         const picture = await pictureData(item.src);
         if (picture) {
-          addDataImage(picture.data, picture.width, picture.height, 360);
+          addDataImage(picture.data, picture.width, picture.height, 360, picture.format);
         }
         if (item.caption) addText(item.caption, "body");
       }
