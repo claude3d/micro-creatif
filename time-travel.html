@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.75 -->
+<!-- Version 3.76 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -1493,7 +1493,8 @@ if (guideVideo && guideNarration) {
         pdf.text(`${page} / ${pages}`, pageWidth - marginX, pageHeight - 18, { align:"right" });
       }
 
-      pdf.save(currentManualFileName(strings, version.number));
+      const fileLanguage = code === "zh-Hans" ? "ZH-Hans" : code === "zh-Hant" ? "ZH-Hant" : code.toUpperCase();
+      pdf.save(currentManualFileName(strings, version.number).replace(/\.pdf$/i, `-${fileLanguage}.pdf`));
     } catch (error) {
       console.error("Time Travel Sky direct manual generation failed:", error);
       alert("The manual could not be created.");
