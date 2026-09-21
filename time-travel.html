@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.87 -->
+<!-- Version 3.89 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -1038,7 +1038,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.87</p>
+<p>Version 3.89</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1299,14 +1299,33 @@ if (guideVideo && guideNarration) {
         : "";
       if (!format) throw new Error(`Unsupported image type: ${blob.type || "unknown"}`);
 
-      const dimensions = await new Promise(function(resolve, reject){
+      const decoded = await new Promise(function(resolve, reject){
         const image = new Image();
         const objectUrl = URL.createObjectURL(blob);
         image.onload = function(){
           const width = image.naturalWidth;
           const height = image.naturalHeight;
+
+          if (format === "JPEG") {
+            /* Safari displays these poster JPEGs correctly, but jsPDF can misread
+               some of their JPEG internals. Let Safari decode the picture first,
+               then hand jsPDF a PNG raster. PNG is already used reliably elsewhere
+               in this manual and avoids jsPDF parsing the original JPEG stream. */
+            const canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext("2d", { alpha:false });
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(0, 0, width, height);
+            ctx.drawImage(image, 0, 0, width, height);
+            const data = canvas.toDataURL("image/png");
+            URL.revokeObjectURL(objectUrl);
+            resolve({ data, format:"PNG", width, height });
+            return;
+          }
+
           URL.revokeObjectURL(objectUrl);
-          resolve({ width, height });
+          resolve({ data:null, format, width, height });
         };
         image.onerror = function(){
           URL.revokeObjectURL(objectUrl);
@@ -1315,11 +1334,12 @@ if (guideVideo && guideNarration) {
         image.src = objectUrl;
       });
 
+      if (decoded.data) return decoded;
       return {
         data:new Uint8Array(await blob.arrayBuffer()),
-        format,
-        width:dimensions.width,
-        height:dimensions.height
+        format:decoded.format,
+        width:decoded.width,
+        height:decoded.height
       };
     } catch (error) {
       console.warn("Manual picture could not be embedded:", src, error);
