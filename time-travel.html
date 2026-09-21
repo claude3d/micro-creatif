@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.81 -->
+<!-- Version 3.87 -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -192,9 +192,10 @@ cursor:pointer;
 box-shadow:0 0 22px rgba(150,200,255,0.62);
 }
 .content{
-max-width:1040px;
+max-width:1500px;
+width:calc(100% - 64px);
 margin:0 auto;
-padding:10px 22px 40px;
+padding:10px 0 36px;
 }
 .mode-grid{
 display:grid;
@@ -246,7 +247,7 @@ opacity:0.92;
 }
 .lower-row{
 display:grid;
-grid-template-columns:1fr 1.65fr;
+grid-template-columns:1fr;
 gap:18px;
 margin-top:18px;
 align-items:stretch;
@@ -269,8 +270,8 @@ ul{margin:0;padding-left:24px;}
 li{font-size:18px;line-height:1.55;margin:6px 0;}
 
 .advanced{
-margin-top:24px;
-padding:28px;
+margin-top:20px;
+padding:20px;
 text-align:left;
 background:rgba(5,8,24,0.78);
 border:1px solid rgba(170,200,255,0.35);
@@ -286,7 +287,7 @@ color:#e2edff;
 .advanced-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:18px;
+gap:14px;
 }
 .advanced-block{
 background:rgba(255,255,255,0.055);
@@ -552,6 +553,88 @@ font-size:18px;
 line-height:1.7;
 opacity:0.9;
 }
+
+/* Compact lower-page layout: wide single-column reading, minimal empty space. */
+.hardcore-catalogue ul{
+  columns:1;
+  margin-top:10px;
+}
+.hardcore-catalogue li{
+  margin:4px 0;
+}
+.hardcore-summary-grid{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+.sky-controls-block .sky-control-rows{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+}
+.sky-controls-block .key-row{
+  grid-template-columns:145px minmax(0,1fr);
+  margin:4px 0;
+}
+.sky-controls-block .sky-control-notes{
+  margin-top:10px;
+  padding-top:8px;
+  border-top:1px solid rgba(255,255,255,0.10);
+}
+.sky-controls-block .sky-control-notes p{
+  font-size:16px;
+  line-height:1.4;
+  margin:0 0 6px;
+}
+.mount-compact p{
+  font-size:16px;
+  line-height:1.44;
+}
+.keyboard-panel{
+  padding:16px 18px;
+}
+.keyboard-panel .keyboard-intro{
+  margin-bottom:10px;
+}
+.keyboard-card{
+  padding:12px 14px;
+}
+.keyboard-card h4{
+  margin-bottom:7px;
+}
+.shortcut-row{
+  padding:4px 0;
+}
+.keyboard-note{
+  margin-top:8px !important;
+}
+.status{
+  max-width:1500px;
+  width:calc(100% - 64px);
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:16px;
+  align-items:center;
+  text-align:left;
+  padding:14px 18px;
+}
+.status h2{
+  margin:0;
+  font-size:22px;
+}
+.status p{
+  margin:0;
+  font-size:16px;
+  line-height:1.38;
+}
+.status .btn{
+  margin:0;
+  padding:9px 20px;
+  font-size:16px;
+  white-space:nowrap;
+}
+
 @media (max-width:760px){
 nav{gap:18px;}
 nav a{font-size:15px;}
@@ -574,9 +657,14 @@ h1{font-size:42px;}
 .shortcut-row{grid-template-columns:138px minmax(0,1fr);}
 .key-row{grid-template-columns:92px minmax(0,1fr);}
 .app-icon{width:116px;height:116px;border-radius:18.5%;}
-.content{padding-left:16px;padding-right:16px;}
+.content{width:100%;padding-left:16px;padding-right:16px;}
 .feature-list{padding:20px;}
 li{font-size:17px;}
+.hardcore-catalogue ul{columns:1;}
+.hardcore-summary-grid{grid-template-columns:1fr;}
+.sky-controls-block .sky-control-rows{grid-template-columns:1fr;}
+.status{grid-template-columns:1fr;text-align:center;gap:10px;}
+.status .btn{justify-self:center;}
 }
 
 
@@ -620,6 +708,7 @@ html[dir="rtl"] .lang-select-wrap .lang-caret-icon{
 right:auto;
 left:11px;
 }
+
 @media (max-width:760px){
 html[dir="rtl"] .lang-select-wrap .lang-globe-icon{
 right:9px;
@@ -660,7 +749,7 @@ left:9px;
 <div class="app-icon">
 <img data-i18n-alt="alt.appIcon" src="images/TimeTravel.png"/>
 </div>
-<h1>Time Travel Sky <span class="version-label">Version 1.3</span></h1>
+<h1>Time Travel Sky <span class="version-label">Version 1.3.1</span></h1>
 <p class="subtitle" data-i18n="hero.subtitle"></p>
 <button class="manual-download-btn" data-i18n="manual.download" id="downloadManualButtonDirect" type="button"></button>
 </section>
@@ -834,7 +923,7 @@ left:9px;
 <section class="advanced">
 <h2 data-i18n="hardcore.title"></h2>
 <div class="advanced-grid">
-<div class="advanced-block wide">
+<div class="advanced-block wide hardcore-catalogue">
 <h3 data-i18n="hardcore.catalogue.title"></h3>
 <p data-i18n="hardcore.catalogue.intro"></p>
 <ul>
@@ -845,35 +934,29 @@ left:9px;
 <li data-i18n="hardcore.catalogue.calendar"></li>
 </ul>
 </div>
-<div class="advanced-block centered-half">
+<div class="hardcore-summary-grid">
+<div class="advanced-block sky-controls-block">
 <h3 class="centered-title" data-i18n="skyControls.title"></h3>
-<div class="key-row">
-<code>← → ↑ ↓</code>
-<span data-i18n="skyControls.move"></span>
+<div class="sky-control-rows">
+<div class="key-row"><code>← → ↑ ↓</code><span data-i18n="skyControls.move"></span></div>
+<div class="key-row"><code>+ / −</code><span data-i18n="skyControls.zoom"></span></div>
+<div class="key-row"><code>0</code><span data-i18n="skyControls.reset"></span></div>
+<div class="key-row"><code>Hours ×2</code><span data-i18n="skyControls.minutes"></span></div>
+<div class="key-row"><code>E</code><span data-i18n="skyControls.ecliptic"></span></div>
+<div class="key-row"><code>V</code><span data-i18n="skyControls.presentation"></span></div>
+<div class="key-row"><code>H</code><span data-i18n="skyControls.uncertainBodies"></span></div>
+<div class="key-row"><code>⌘ + Click</code><span data-i18n="skyControls.catalogNames"></span></div>
 </div>
-<div class="key-row">
-<code>+ / −</code>
-<span data-i18n="skyControls.zoom"></span>
-</div>
-<div class="key-row">
-<code>0</code>
-<span data-i18n="skyControls.reset"></span>
-</div>
-<div class="key-row">
-<code>Hours ×2</code>
-<span data-i18n="skyControls.minutes"></span>
-</div>
-<div class="key-row">
-<code>E</code>
-<span data-i18n="skyControls.ecliptic"></span>
-</div>
-<div class="key-row">
-<code>⌘ + Click</code>
-<span data-i18n="skyControls.catalogNames"></span>
-</div>
+<div class="sky-control-notes">
 <p data-i18n="skyControls.touch"></p>
 <p data-i18n="skyControls.zoomDetail"></p>
 <p data-i18n="skyControls.catalogNamesNote"></p>
+</div>
+</div>
+<div class="advanced-block mount-compact">
+<h3 class="centered-title" data-i18n="mount.title"></h3>
+<p data-i18n="mount.body"></p>
+</div>
 </div>
 <div class="advanced-block wide keyboard-panel">
 <h3 class="centered-title" data-i18n="keyboard.title"></h3>
@@ -944,10 +1027,6 @@ left:9px;
 </div>
 <p class="keyboard-note" data-i18n="keyboard.note"></p>
 </div>
-<div class="advanced-block centered-half">
-<h3 class="centered-title" data-i18n="mount.title"></h3>
-<p data-i18n="mount.body"></p>
-</div>
 </div>
 </section>
 <section class="status">
@@ -959,7 +1038,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.81</p>
+<p>Version 3.87</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1039,7 +1118,7 @@ if (guideVideo && guideNarration) {
 </script>
 
 
-<script src="time-travel-languages.js?v=3.9-content-20260910" defer></script>
+<script src="time-travel-languages.js?v=3.11-content-20260921" defer></script>
 <script>
 /* HTML-only manual exporter. The translation file is left unchanged.
    It builds the PDF from the page's current, already-translated DOM.
