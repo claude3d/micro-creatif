@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 7.17 -->
+<!-- Version 7.18 — 2026-09-30 16:14 EDT — Claude -->
 
 <head>
 <meta charset="UTF-8">
@@ -376,7 +376,7 @@ left:9px;
 <footer>
     <p>© Micro Créatif</p>
     <p data-i18n="locations"></p>
-    <p>Version 7.17</p>
+    <p>Version 7.18</p>
     
 </footer>
 
@@ -398,6 +398,13 @@ createStars();
 
 const unicorn=document.querySelector(".uni");
 if(unicorn){
+// iPhone/iPad Safari may refuse autoplay: retry at load, then at the first touch
+unicorn.muted=true;
+function startUnicorn(){
+if(unicorn.paused && unicorn.currentTime===0){unicorn.play().catch(function(){});}
+}
+startUnicorn();
+document.addEventListener("touchstart",startUnicorn,{once:true,passive:true});
 unicorn.addEventListener("click",function(){
 unicorn.currentTime=0;
 unicorn.play();
