@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
-<!-- Version 7.21 — 2026-09-30 16:33 EDT — Claude -->
+<!-- Version 7.22 — 2026-09-30 18:20 EDT — Claude -->
 
 <head>
 <meta charset="UTF-8">
@@ -319,7 +319,7 @@ left:9px;
 </section>
 
 <div class="uni-stage">
-<video class="uni" src="videos/UniClaude.mov" poster="images/UniClaude-poster.png" autoplay muted playsinline></video>
+<video class="uni" src="videos/UniClaude.mov" autoplay muted playsinline></video>
 </div>
 
 <section class="apps" data-i18n-aria="ourApps">
@@ -376,7 +376,7 @@ left:9px;
 <footer>
     <p>© Micro Créatif</p>
     <p data-i18n="locations"></p>
-    <p>Version 7.21</p>
+    <p>Version 7.22</p>
     
 </footer>
 
@@ -398,6 +398,8 @@ createStars();
 
 const unicorn=document.querySelector(".uni");
 if(unicorn){
+// Show the still unicorn only when Safari refuses to autoplay (e.g. Auto-Play Video Previews off)
+unicorn.play().catch(function(){unicorn.poster="images/UniClaude-poster.png";});
 unicorn.addEventListener("click",function(){
 unicorn.currentTime=0;
 unicorn.play();
