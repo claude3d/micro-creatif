@@ -2,7 +2,7 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
-<!-- Version 7.14 -->
+<!-- Version 7.15 — 2026-09-30 16:52 EDT — Claude -->
 {% assign t = site.data.home[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}" dir="{{ page.dir | default: 'ltr' }}">
@@ -235,7 +235,7 @@ transform:translate(-87%, -50%);
 width:clamp(220px, 20vw, 280px);
 z-index:1;
 cursor:pointer;
-pointer-events:none;
+pointer-events:auto;
 }
 .apps{
 padding:0 20px 20px;
@@ -326,7 +326,7 @@ opacity:0.85;
 </section>
 
 <div class="uni-stage">
-<video class="uni" src="/videos/UniClaude.mov" autoplay muted playsinline></video>
+<video class="uni" src="/videos/UniClaude.mov" poster="/images/UniClaude-poster.png" autoplay muted playsinline></video>
 </div>
 
 <section class="apps" aria-label="{{ t.ourApps }}">
@@ -383,7 +383,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.14</p>
+<p>Version 7.15</p>
 </footer>
 
 <script>
