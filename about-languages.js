@@ -1,6 +1,6 @@
 /* Micro Créatif
    About page languages
-   Version 1.1
+   Version 1.2 — 2026-09-29 22:20 EDT — Claude
 */
 
 const ABOUT_LANGUAGES = {
@@ -343,6 +343,74 @@ const ABOUT_LANGUAGES = {
     "articleAlt": "Micro Créatif에 관한 Le Devoir 신문 기사, 1983",
     "superAlt": "Micro Créatif에 관한 L'Actualité Informatique 기사, 1984",
     "collageAlt": "Micro Créatif 자료 콜라주"
+  },
+  "it": {
+    "label": "Italiano",
+    "htmlLang": "it",
+    "ogLocale": "it_IT",
+    "dir": "ltr",
+    "metaTitle": "Micro Créatif – Le origini – Dal 1981",
+    "metaDescription": "Micro Créatif è nata l’11 giugno 1981 con l’acquisto di un Apple II Plus. Scopri i suoi primi passi nel software attraverso gli archivi originali dei giornali.",
+    "mainNavigation": "Navigazione principale",
+    "navHome": "Home",
+    "navApps": "App",
+    "navAbout": "Chi siamo",
+    "navContact": "Contatti",
+    "languageSelector": "Scegli la lingua",
+    "appRadec": "RA / Dec / AZ / Alt",
+    "appVirtualTelescope": "Virtual Telescope",
+    "appSolAndStars": "Sol and Stars",
+    "appAlienSky": "Alien Sky",
+    "appTimeTravelSky": "Time Travel Sky",
+    "pageTitle": "Le nostre origini",
+    "subtitle": "L’acquisto di questo computer Apple II Plus l’11 giugno 1981 per 2.100 $ segna l’inizio dell’avventura di Micro Créatif.",
+    "inflation": "Valore comparativo nel 2026: circa 7.350 CAD",
+    "articleTitle": "Du grand rêve à la réalité",
+    "articleSource": "(quotidiano Le Devoir   1983)",
+    "articleButton": "Leggi l’articolo",
+    "superTitle": "Métier: super-programmeur!",
+    "superSource": "(L'Actualité Informatique   1984)",
+    "superButton": "Leggi l’articolo",
+    "copyright": "© 2026 Micro Créatif. Tutti i diritti riservati.",
+    "cities": "Montréal | Città di Ho Chi Minh",
+    "receiptAlt": "Ricevuta d’acquisto dell’Apple II Plus – 11 giugno 1981 – origini di Micro Créatif",
+    "articleAlt": "Articolo del quotidiano Le Devoir su Micro Créatif, 1983",
+    "superAlt": "Articolo di L'Actualité Informatique su Micro Créatif, 1984",
+    "collageAlt": "Collage d’archivio di Micro Créatif"
+  },
+  "ru": {
+    "label": "Русский",
+    "htmlLang": "ru",
+    "ogLocale": "ru_RU",
+    "dir": "ltr",
+    "metaTitle": "Micro Créatif – Истоки – С 1981 года",
+    "metaDescription": "История Micro Créatif началась 11 июня 1981 года с покупки Apple II Plus. Узнайте о её первых шагах в программировании по оригинальным газетным архивам.",
+    "mainNavigation": "Основная навигация",
+    "navHome": "Главная",
+    "navApps": "Приложения",
+    "navAbout": "О нас",
+    "navContact": "Контакты",
+    "languageSelector": "Выберите язык",
+    "appRadec": "RA / Dec / AZ / Alt",
+    "appVirtualTelescope": "Virtual Telescope",
+    "appSolAndStars": "Sol and Stars",
+    "appAlienSky": "Alien Sky",
+    "appTimeTravelSky": "Time Travel Sky",
+    "pageTitle": "Наши истоки",
+    "subtitle": "Покупка этого компьютера Apple II Plus 11 июня 1981 года за 2 100 $ положила начало истории Micro Créatif.",
+    "inflation": "Сопоставимая стоимость в 2026 году: около 7 350 CAD",
+    "articleTitle": "Du grand rêve à la réalité",
+    "articleSource": "(газета Le Devoir   1983)",
+    "articleButton": "Читать статью",
+    "superTitle": "Métier: super-programmeur!",
+    "superSource": "(L'Actualité Informatique   1984)",
+    "superButton": "Читать статью",
+    "copyright": "© 2026 Micro Créatif. Все права защищены.",
+    "cities": "Монреаль | Хошимин",
+    "receiptAlt": "Чек о покупке Apple II Plus – 11 июня 1981 года – истоки Micro Créatif",
+    "articleAlt": "Статья в газете Le Devoir о Micro Créatif, 1983",
+    "superAlt": "Статья в L'Actualité Informatique о Micro Créatif, 1984",
+    "collageAlt": "Архивный коллаж Micro Créatif"
   }
 };
 
@@ -372,6 +440,8 @@ const ABOUT_LANGUAGES = {
     if (browser.startsWith("zh") || browser.includes("hans")) return "zh-Hans";
     if (browser.startsWith("es")) return "es";
     if (browser.startsWith("de")) return "de";
+    if (browser.startsWith("it")) return "it";
+    if (browser.startsWith("ru")) return "ru";
     return fallbackLanguage;
   }
 
@@ -380,10 +450,10 @@ const ABOUT_LANGUAGES = {
     if (!select) return;
 
     select.innerHTML = "";
-    Object.entries(ABOUT_LANGUAGES).forEach(([code, language]) => {
+    ["de", "en", "es", "fr", "it", "vi", "ru", "ar", "zh-Hans", "zh-Hant", "ja", "ko"].forEach((code) => {
       const option = document.createElement("option");
       option.value = code;
-      option.textContent = language.label;
+      option.textContent = ABOUT_LANGUAGES[code].label;
       option.selected = code === currentLanguage;
       select.appendChild(option);
     });

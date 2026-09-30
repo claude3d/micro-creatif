@@ -1,4 +1,4 @@
-/* Micro Créatif - newspaper article languages - Version 1.0 */
+/* Micro Créatif - newspaper article languages - Version 1.1 — 2026-09-29 22:40 EDT — Claude */
 const ARTICLE_LANGUAGES = {
   "en": {
     "label": "English",
@@ -1229,6 +1229,252 @@ const ARTICLE_LANGUAGES = {
       }
     ],
     "back": "뒤로"
+  },
+  "it": {
+    "label": "Italiano",
+    "dir": "ltr",
+    "mainNavigation": "Navigazione principale",
+    "navHome": "Home",
+    "navApps": "App",
+    "navAbout": "Chi siamo",
+    "navContact": "Contatti",
+    "languageSelector": "Scegli la lingua",
+    "appRadec": "RA / Dec / AZ / Alt",
+    "appVirtualTelescope": "Virtual Telescope",
+    "appSolAndStars": "Sol and Stars",
+    "appAlienSky": "Alien Sky",
+    "appTimeTravelSky": "Time Travel Sky",
+    "locations": "Montréal | Città di Ho Chi Minh",
+    "htmlLang": "it",
+    "metaTitle": "Dal grande sogno... alla realtà! - Micro Créatif",
+    "title": "Dal grande sogno... alla realtà!",
+    "author": [
+      "Claude Johnson",
+      "Presidente dell’Apple Club di Montréal",
+      "Socio di Formic Inc."
+    ],
+    "blocks": [
+      {
+        "tag": "p",
+        "html": "La rivoluzione informatica è finita: i computer sono già ovunque, hanno vinto! L’arma segreta che ha garantito loro la vittoria non si nasconde davvero nei loro microcircuiti elettronici né nella loro utilità intrinseca: è piuttosto la propaganda di cui sono stati accuratamente avvolti."
+      },
+      {
+        "tag": "p",
+        "html": "Ci dicono che il computer è destinato a entrare nel nostro modo di vivere non solo in banca o per calcolare le tasse, ma anche in casa, in tutte le forme immaginabili, persino per stirare. Quel giorno verrà di sicuro, perché i computer migliorano tanto più in fretta quanto più ciascuno investe denaro per addomesticare questo nuovo conquistatore. Prima o poi raggiungerà quindi il livello di «intelligenza» che ci è stato fatto balenare davanti, ma che sarebbe illusorio aspettarsi già adesso."
+      },
+      {
+        "tag": "h2",
+        "html": "Pochi esperti"
+      },
+      {
+        "tag": "p",
+        "html": "I microcomputer sono in commercio ormai da più di cinque anni e diverse migliaia di quebecchesi ne hanno acquistato uno. Che cosa volevano farne? Che cosa ne fanno davvero? E che cosa ne è di loro (computer e utenti) dopo un certo periodo?"
+      },
+      {
+        "tag": "p",
+        "html": "Niente di meglio che visitare un club di microcomputer per scoprirlo. In effetti, gli acquirenti si sono presto accorti che la loro costosa «meraviglia» non si lasciava addomesticare così facilmente e che bisognava unire le forze, se non altro per capire e completare la documentazione dei produttori. Oggi esistono una trentina di club importanti, oltre a tutti quelli nati nei CEGEP e nelle scuole secondarie della provincia."
+      },
+      {
+        "tag": "p",
+        "html": "Ora che questi club esistono da qualche anno, ci si potrebbe aspettare che brulichino di esperti che conoscono il proprio microcomputer a menadito. Ci si potrebbe anche aspettare di trovarvi un’abbondanza di software creati da tanti appassionati. Purtroppo la realtà è ben diversa. La proporzione di esperti non supera il 10%. E anche allora si tratta raramente di utenti «comuni»: sono quasi sempre ingegneri e informatici. Se non lo erano all’inizio, in genere lo sono diventati dopo."
+      },
+      {
+        "tag": "h2",
+        "html": "Se restate a casa..."
+      },
+      {
+        "tag": "p",
+        "html": "Quale livello di padronanza del proprio apparecchio può sperare realisticamente di raggiungere chi non fa nemmeno parte di un club e resta semplicemente a casa, a leggere i manuali in famiglia? Da questo punto di vista, la realtà è piuttosto triste. Chi entra in uno degli innumerevoli rivenditori di microcomputer rimarrà spesso abbagliato da tutta la grafica, i giochi, i programmi di contabilità e così via che gli vengono mostrati."
+      },
+      {
+        "tag": "p",
+        "html": "Ciò che non gli diranno mai è che a un programmatore esperto sono serviti diversi mesi (o anni) di lavoro per creare quel software, anche solo un semplice gioco. Fin dall’inizio, ciascuno deve rassegnarsi a essere un eterno consumatore di programmi ideati da altri, a meno di avere il coraggio di dedicare tutte le serate, i fine settimana e le vacanze a realizzare finalmente un software originale capace di fare qualcosa di più di una semplice addizione."
+      },
+      {
+        "tag": "p",
+        "html": "Se non amate l’aritmetica (o l’avete già dimenticata), se non siete lettori appassionati di testi impegnativi e se non avete intenzione di seguire corsi per capirci qualcosa, il vostro computer ha buone probabilità di non essere mai all’altezza delle vostre aspettative! Se invece fate parte di quella fortunata minoranza che ha tempo libero a volontà e in più un gran talento per il fai-da-te, il computer può fare moltissimo per voi. (Un’altra soluzione è essere abbastanza ricchi da assumere un consulente, oppure avere un amico che faccia tutto per voi, gratis.)"
+      },
+      {
+        "tag": "h2",
+        "html": "Meraviglie opzionali"
+      },
+      {
+        "tag": "p",
+        "html": "Potete farvi un’idea di tutte queste meraviglie presso i rivenditori. Potete anche comprare una rivista specializzata (preferibilmente stampata negli Stati Uniti, perché le pubblicazioni locali sono rare a causa del mercato ristretto del Québec). Distinguiamo innanzitutto due grandi categorie di «meraviglie» (che non fanno mai parte della dotazione di base che acquistate):"
+      },
+      {
+        "tag": "p",
+        "html": "Prima di tutto c’è il software, cioè i programmi. Se rispondono esattamente alle vostre esigenze, siete dei fortunati. In caso contrario, e se non siete esperti, meglio essere filosofi... e adattare le vostre esigenze."
+      },
+      {
+        "tag": "p",
+        "html": "Ci sono poi le periferiche. Sono tutte le «opzioni» aggiuntive che permetteranno al vostro microcomputer di vedere, di parlare, di comandare l’illuminazione o gli elettrodomestici, e così via. Lì le possibilità sono infinite, ben oltre i vostri desideri. Basta allora avere l’immaginazione e il tempo per scrivere il software che farà funzionare insieme tutti questi apparecchi. Purtroppo vi scontrerete spesso con ogni sorta di incompatibilità quando avrete l’audacia di collegare più apparecchi tra loro. Ciò significa che vi servirà spesso il kit del piccolo elettronico: oscilloscopio, e così via."
+      },
+      {
+        "tag": "h2",
+        "html": "Domani..."
+      },
+      {
+        "tag": "p",
+        "html": "Proprio in questo momento, in questo campo è in corso una vera rivoluzione. A dire il vero è già cominciata, ma i suoi effetti si faranno sentire solo poco a poco. Eppure i venditori la promettono da tempo. I produttori di microcomputer annunciano un apparecchio capace di comunicare, che chiunque potrà programmare in modo ingenuo."
+      },
+      {
+        "tag": "p",
+        "html": "Potrà eseguire in un lampo compiti sempre più complessi e tutte le periferiche saranno integrate, con una grande sorpresa: il culmine di questa evoluzione sarà il microcomputer a cui ci si potrà rivolgere a voce, come a una persona, e che risponderà come un servitore. Risolverà forse tutti i problemi? Non abbiamo sempre difficoltà di comunicazione, anche con le persone che ci circondano?"
+      },
+      {
+        "tag": "h2",
+        "html": "Bisogna aspettare?"
+      },
+      {
+        "tag": "p",
+        "html": "Non è affatto detto che la soluzione migliore sia aspettare sempre la macchina perfetta che risponda ai nostri sogni più segreti. Dieci anni fa ho comprato una calcolatrice tascabile per 600 $. Non era nemmeno programmabile! Oggi ho un microcomputer per lo stesso prezzo. Avrei dovuto aspettare? Sono fermamente convinto di <span class=\"highlight\">NO</span>."
+      },
+      {
+        "tag": "p",
+        "html": "Il settore informatico evolve molto rapidamente. Se un acquirente ha un’esigenza reale, non gli si può certo consigliare di rimandare la decisione. I criteri d’acquisto sono gli stessi di qualsiasi altro bene di consumo: bisogna valutare le esigenze immediate e future, verificare se il modello a cui si pensa è in grado di soddisfarle ed esaminare il prezzo d’acquisto comprese le periferiche. (Diversi produttori vendono microcomputer in perdita, ma attenzione al prezzo degli accessori.)"
+      },
+      {
+        "tag": "p",
+        "html": "Non vanno trascurati nemmeno i costi di manutenzione. Esistono copie a buon mercato dei microcomputer più diffusi. Sono spesso di qualità inferiore e l’assistenza è quasi inesistente. Questa opzione dovrebbe quindi tentare soltanto gli abili appassionati del fai-da-te. Infine, è della massima importanza valutare la quantità di software disponibile per la macchina dei vostri sogni. A meno di voler scrivere da soli tutti i vostri programmi, dipenderete dagli altri. Meglio allora avere scelta. Alcuni micro dispongono di una biblioteca di oltre 10.000 programmi; altri non ne hanno nessuno."
+      },
+      {
+        "tag": "h2",
+        "html": "Un consiglio da amico"
+      },
+      {
+        "tag": "p",
+        "html": "Attenzione a non scegliere in base al nome o alla pubblicità. Alcuni microcomputer si vendono bene non per le loro capacità, ma perché il nome che portano è prestigioso. Diffidate anche degli sconti favolosi: alcuni microcomputer hanno visto il loro prezzo scendere da 1.000 $ a meno di 100 $ in due anni. Eppure non si vendono meglio. Chiedetevi perché..."
+      },
+      {
+        "tag": "p",
+        "html": "Probabilmente possedete un’automobile, forse anche due. Eppure solo una minima parte degli automobilisti fa da sé le riparazioni. Altrettanto pochi vi apportano modifiche. La maggior parte preferisce affidarsi a uno specialista. Sostituite «automobile» con «computer»... e avrete un’idea precisa di ciò che vi aspetta. L’acquirente deve quindi informarsi in anticipo su ciò che compra, per sapere che cosa può aspettarsi in termini di comodità, prestazioni e così via. Meglio rifletterci prima dell’acquisto che ritrovarsi a chiamare il carro attrezzi a ogni pieno di benzina!"
+      }
+    ],
+    "back": "Indietro"
+  },
+  "ru": {
+    "label": "Русский",
+    "dir": "ltr",
+    "mainNavigation": "Основная навигация",
+    "navHome": "Главная",
+    "navApps": "Приложения",
+    "navAbout": "О нас",
+    "navContact": "Контакты",
+    "languageSelector": "Выберите язык",
+    "appRadec": "RA / Dec / AZ / Alt",
+    "appVirtualTelescope": "Virtual Telescope",
+    "appSolAndStars": "Sol and Stars",
+    "appAlienSky": "Alien Sky",
+    "appTimeTravelSky": "Time Travel Sky",
+    "locations": "Монреаль | Хошимин",
+    "htmlLang": "ru",
+    "metaTitle": "От великой мечты... к реальности! - Micro Créatif",
+    "title": "От великой мечты... к реальности!",
+    "author": [
+      "Claude Johnson",
+      "Президент Apple-клуба Монреаля",
+      "Партнёр компании Formic Inc."
+    ],
+    "blocks": [
+      {
+        "tag": "p",
+        "html": "Компьютерная революция закончилась: компьютеры уже повсюду — они победили! Секретное оружие, обеспечившее им победу, скрыто вовсе не в их электронных микросхемах и не в их собственной полезности; скорее, это пропаганда, в которую их тщательно упаковали."
+      },
+      {
+        "tag": "p",
+        "html": "Нам говорят, что компьютеру суждено войти в наш образ жизни не только в банке или при расчёте налогов, но и дома — во всех мыслимых формах, вплоть до глажки белья. Конечно, этот день настанет: компьютеры совершенствуются тем быстрее, чем больше денег каждый вкладывает в укрощение этого нового завоевателя. Рано или поздно они достигнут того уровня «интеллекта», которым нас манили, но ожидать его уже сейчас было бы иллюзией."
+      },
+      {
+        "tag": "h2",
+        "html": "Мало специалистов"
+      },
+      {
+        "tag": "p",
+        "html": "Микрокомпьютеры продаются уже более пяти лет, и несколько тысяч жителей Квебека купили себе такой. Что они хотели с ними делать? Что они делают с ними на самом деле? И что становится с ними (с компьютерами и пользователями) через некоторое время?"
+      },
+      {
+        "tag": "p",
+        "html": "Чтобы это узнать, нет ничего лучше, чем побывать в клубе любителей микрокомпьютеров. Покупатели быстро обнаружили, что их дорогое «чудо» не так-то легко приручить и что объединять усилия необходимо хотя бы для того, чтобы понять и дополнить документацию производителей. Сейчас существует около тридцати крупных клубов, не считая тех, что созданы в колледжах CEGEP и средних школах провинции."
+      },
+      {
+        "tag": "p",
+        "html": "Теперь, когда эти клубы существуют уже несколько лет, можно было бы ожидать, что в них полно специалистов, знающих свой микрокомпьютер вдоль и поперёк. Можно было бы также ожидать изобилия программ, созданных столькими энтузиастами. К сожалению, реальность совсем иная. Доля специалистов не превышает 10%. И даже они редко бывают «обычными» пользователями: почти всегда это инженеры и профессиональные программисты. Если они не были ими с самого начала, то, как правило, стали впоследствии."
+      },
+      {
+        "tag": "h2",
+        "html": "Если вы остаётесь дома..."
+      },
+      {
+        "tag": "p",
+        "html": "Какого уровня владения своим аппаратом может реально надеяться достичь тот, кто даже не состоит в клубе и просто сидит дома, читая инструкции всей семьёй? В этом отношении реальность довольно печальна. Тот, кто зайдёт в любой из бесчисленных магазинов микрокомпьютеров, часто будет ослеплён всей этой графикой, играми, бухгалтерскими программами и прочим, что ему продемонстрируют."
+      },
+      {
+        "tag": "p",
+        "html": "Чего ему никогда не скажут, так это того, что опытному программисту понадобилось несколько месяцев (или лет) работы, чтобы создать эту программу — даже простую игру. С самого начала каждому приходится смириться с ролью вечного потребителя программ, придуманных другими, если только у него не хватит мужества посвящать все вечера, выходные и отпуска тому, чтобы наконец создать оригинальную программу, способную на нечто большее, чем простое сложение."
+      },
+      {
+        "tag": "p",
+        "html": "Если вы не любите арифметику (или уже её забыли), если вы не увлекаетесь серьёзным чтением и не собираетесь ходить на курсы, чтобы во всём разобраться, ваш компьютер, скорее всего, никогда не оправдает ваших ожиданий! Если же вы принадлежите к тому счастливому меньшинству, у которого бесконечно много свободного времени, да ещё и большой талант к самоделкам, компьютер может сделать для вас очень многое. (Другое решение — быть достаточно богатым, чтобы нанять консультанта, или иметь друга, который всё сделает за вас бесплатно.)"
+      },
+      {
+        "tag": "h2",
+        "html": "Чудеса за дополнительную плату"
+      },
+      {
+        "tag": "p",
+        "html": "Получить представление обо всех этих чудесах можно у продавцов. Можно также купить специализированный журнал (лучше американский, поскольку местных изданий мало из-за ограниченности квебекского рынка). Сначала различим две большие категории «чудес» (которые никогда не входят в базовую комплектацию, которую вы покупаете):"
+      },
+      {
+        "tag": "p",
+        "html": "Во-первых, это программное обеспечение, то есть программы. Если они в точности отвечают вашим потребностям — вам повезло. Если нет и вы не специалист, лучше отнестись к этому философски... и изменить свои потребности."
+      },
+      {
+        "tag": "p",
+        "html": "Есть также периферийные устройства — все дополнительные «опции», которые позволят вашему микрокомпьютеру видеть, говорить, управлять освещением или бытовой техникой и так далее. Здесь возможности бесконечны и далеко превосходят ваши желания. Остаётся лишь найти воображение и время, чтобы написать программы, которые заставят все эти устройства работать вместе. К сожалению, осмелившись подключить несколько устройств друг к другу, вы часто будете сталкиваться со всевозможными несовместимостями. А значит, вам нередко понадобится набор юного электронщика: осциллограф и так далее."
+      },
+      {
+        "tag": "h2",
+        "html": "Завтра..."
+      },
+      {
+        "tag": "p",
+        "html": "Именно сейчас в этой области происходит настоящая революция. Честно говоря, она уже началась, но её последствия будут ощущаться лишь постепенно. Впрочем, продавцы обещают её уже давно. Производители микрокомпьютеров анонсируют устройство, способное к общению, которое любой сможет программировать без всякой подготовки."
+      },
+      {
+        "tag": "p",
+        "html": "Оно сможет мгновенно выполнять всё более сложные задачи, а все периферийные устройства будут встроены, что приведёт к большому сюрпризу: вершиной этой эволюции станет микрокомпьютер, к которому можно будет обращаться голосом, как к человеку, и который будет отвечать, как слуга. Решит ли это все проблемы? Разве у нас не бывает трудностей в общении даже с окружающими людьми?"
+      },
+      {
+        "tag": "h2",
+        "html": "Стоит ли ждать?"
+      },
+      {
+        "tag": "p",
+        "html": "Вовсе не очевидно, что лучшее решение — всегда ждать идеальную машину, которая исполнит наши самые сокровенные мечты. Десять лет назад я купил карманный калькулятор за 600 $. Он даже не был программируемым! Сегодня за ту же цену у меня есть микрокомпьютер. Стоило ли мне ждать? Я твёрдо уверен: <span class=\"highlight\">НЕТ</span>."
+      },
+      {
+        "tag": "p",
+        "html": "Компьютерная область развивается очень быстро. Если у покупателя есть реальная потребность, откладывать решение ему, конечно, не стоит. Критерии покупки те же, что и для любого другого потребительского товара: нужно оценить свои текущие и будущие потребности, проверить, способна ли выбранная модель их удовлетворить, и изучить цену покупки вместе с периферийными устройствами. (Некоторые производители продают микрокомпьютеры себе в убыток, но остерегайтесь цен на аксессуары.)"
+      },
+      {
+        "tag": "p",
+        "html": "Не следует упускать из виду и расходы на обслуживание. Существуют дешёвые копии самых популярных микрокомпьютеров. Часто они хуже по качеству, а сервис почти отсутствует. Поэтому такой вариант может соблазнить лишь опытных самодельщиков. Наконец, крайне важно оценить количество программ, доступных для машины вашей мечты. Если вы не хотите писать все программы сами, вы будете зависеть от других. Так что лучше иметь выбор. Для некоторых микрокомпьютеров существует библиотека из более чем 10 000 программ, для других — ни одной."
+      },
+      {
+        "tag": "h2",
+        "html": "Дружеский совет"
+      },
+      {
+        "tag": "p",
+        "html": "Будьте осторожны: не выбирайте по названию или рекламе. Некоторые микрокомпьютеры хорошо продаются не благодаря своим возможностям, а потому, что носят престижное имя. Остерегайтесь и сказочных скидок: у некоторых микрокомпьютеров цена за два года упала с 1 000 $ до менее чем 100 $. Однако продаются они от этого не лучше. Спросите себя почему..."
+      },
+      {
+        "tag": "p",
+        "html": "У вас, вероятно, есть автомобиль, а может быть, даже два. Однако лишь ничтожная часть водителей сама занимается ремонтом. Столь же немногие что-то в нём переделывают. Большинство предпочитает доверить это специалисту. Замените «автомобиль» на «компьютер»... и вы получите хорошее представление о том, что вас ждёт. Поэтому покупатель должен заранее разобраться в том, что покупает, чтобы знать, чего ожидать в плане удобства, производительности и так далее. Лучше всё обдумать до покупки, чем потом вызывать эвакуатор после каждой заправки!"
+      }
+    ],
+    "back": "Назад"
   }
 };
 
@@ -1253,6 +1499,8 @@ const ARTICLE_LANGUAGES = {
     if (code.startsWith("zh") || code.includes("hans")) return "zh-Hans";
     if (code.startsWith("es")) return "es";
     if (code.startsWith("de")) return "de";
+    if (code.startsWith("it")) return "it";
+    if (code.startsWith("ru")) return "ru";
     return FALLBACK;
   }
 
@@ -1267,10 +1515,10 @@ const ARTICLE_LANGUAGES = {
   function buildLanguageMenu(current) {
     const select = document.getElementById("languageSelect");
     select.innerHTML = "";
-    Object.entries(LANGUAGES).forEach(([code, pack]) => {
+    ["de", "en", "es", "fr", "it", "vi", "ru", "ar", "zh-Hans", "zh-Hant", "ja", "ko"].forEach((code) => {
       const option = document.createElement("option");
       option.value = code;
-      option.textContent = pack.label;
+      option.textContent = LANGUAGES[code].label;
       option.selected = code === current;
       select.appendChild(option);
     });

@@ -1,4 +1,4 @@
-/* Micro Créatif - super-programmer article languages - Version 1.0 */
+/* Micro Créatif - super-programmer article languages - Version 1.1 — 2026-09-29 23:00 EDT — Claude */
 const SUPER_LANGUAGES = {
   "en": {
     "label": "English",
@@ -1334,6 +1334,274 @@ const SUPER_LANGUAGES = {
     ],
     "back": "뒤로",
     "photoAlt": "Claude Johnson"
+  },
+  "it": {
+    "label": "Italiano",
+    "dir": "ltr",
+    "mainNavigation": "Navigazione principale",
+    "navHome": "Home",
+    "navApps": "App",
+    "navAbout": "Chi siamo",
+    "navContact": "Contatti",
+    "languageSelector": "Scegli la lingua",
+    "appRadec": "RA / Dec / AZ / Alt",
+    "appVirtualTelescope": "Virtual Telescope",
+    "appSolAndStars": "Sol and Stars",
+    "appAlienSky": "Alien Sky",
+    "appTimeTravelSky": "Time Travel Sky",
+    "locations": "Montréal | Città di Ho Chi Minh",
+    "htmlLang": "it",
+    "metaTitle": "Ritratto di un informatico - Claude Johnson: super-programmatore!",
+    "header": "Ritratto di un informatico",
+    "title": "Claude Johnson tra il videotex e il microcomputer:",
+    "subtitle": "Professione: super-programmatore!",
+    "byline": "di Marc Sévigny",
+    "caption": "Claude Johnson: un «ex marinaio» travolto dall’ondata del microcomputer e del videotex.",
+    "left": [
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Fisica, meteorologia, biologia, archeologia: Claude Johnson si è cimentato in tutti questi campi. È stato perfino... marinaio! E l’informatica, in tutto questo? Prima un elemento della sua formazione scientifica, è poi diventata un hobby e infine un mestiere. Nella programmazione ha realizzato ciò che molti ritenevano impossibile, come adattare la tecnologia Télidon al microcomputer."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "I suoi prodotti si sono rivelati così interessanti da dare vita a un’azienda: Formic, Inc., che conta attualmente otto dipendenti e il cui fatturato raggiungerà quest’anno il milione di dollari."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "La smania di imparare"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "L’ideale di Claude Johnson sarebbe stato poter affrontare un nuovo campo di studi ogni anno. Dopo una laurea in fisica, intraprende uno dopo l’altro due progetti di master: il primo in biofisica, che abbandona presto per l’archeologia. Ma poiché il suo eclettismo gli crea qualche problema nella gestione degli studi, decide di orientarsi diversamente seguendo corsi di meteorologia. I corsi lo entusiasmano, ma il lavoro che gli viene offerto in seguito molto meno."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Appassionato di viaggi, Claude Johnson riesce a farsi assumere sulle navi della marina mercantile. «Pagavano bene», racconta, «e mi permetteva di prendermi lunghe vacanze per viaggiare a mio piacimento». È stato in Europa, in Asia e in Perù, dove ha conosciuto la sua futura moglie."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Tra un viaggio e l’altro, Claude Johnson non resta con le mani in mano. Va a insegnare biologia a Sept-Îles per un anno, poi torna a Montréal dove, dopo aver ottenuto un certificato di abilitazione all’insegnamento, tiene corsi serali di informatica."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "Il club Apple e Vidéotron"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Ma è con l’arrivo dei microcomputer che sviluppa davvero la sua passione per l’informatica e ne fa la sua attività principale. La fondazione, cinque anni fa, di un club di appassionati di microcomputer Apple c’entra qualcosa. Il club riuniva alcune persone, tra cui diversi professionisti dell’informatica, che vedevano nel microcomputer un hobby e desideravano condividere le proprie esperienze e scoperte. Per Claude Johnson fu l’occasione di approfondire le sue conoscenze del nuovo strumento, cosa che lo portò presto a esplorare il campo dell’elettronica e dei circuiti logici. Se la cava così bene che l’Université du Québec non esita ad assumerlo perché prosegua le sue ricerche al dipartimento di fisica."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "«In quel periodo», ricorda, «i bravi programmatori di microcomputer erano rari, e quando mi sono ritrovato a Vidéotron per organizzare il reparto informatico, ero il capo di me stesso». A Vidéotron inventa giochi e traduce software americani nell’ambito di una sperimentazione di diffusione agli abbonati tramite linea telefonica."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Vi si sperimentava inoltre la trasmissione del videotex via cavo, secondo il protocollo grafico di creazione di pagine Télidon, allora in pieno sviluppo. Incaricato di usare il microcomputer per riprodurre sul cavo una «simulazione di Télidon» in attesa che venisse installata una tecnologia più costosa, Claude Johnson trova ancora una volta il modo di stupire tutti. Quando ci si rese conto della qualità della «simulazione di Télidon» che aveva creato su microcomputer, gli fu affidato il compito di spingere più avanti le sue ricerche verso un vero e proprio adattamento di Télidon sul microcomputer Apple. Ciò comportava la creazione di software specifici che sostituissero ciò che si poteva fare su sistemi molto più grandi, come Norpak, e la loro compatibilità con gli standard."
+      }
+    ],
+    "right": [
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "Microcréatif e Formic"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "È dopo più di tre anni a Vidéotron che Claude Johnson decide di fondare una propria azienda, Microcréatif, per svolgere vari incarichi come programmatore, traduttore di software ed esperto di Télidon. Ha così lavorato per il Ministero dell’Istruzione del Québec e per il Ministero federale delle Comunicazioni. «Ricevevo più contratti di quanti ne potessi gestire», racconta, «quindi potevo scegliere ciò che mi interessava di più»: cioè il lavoro che richiedeva una certa creatività o che coincideva con i suoi interessi di programmatore."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Parallelamente alle attività di Microcréatif, Claude Johnson ha ripreso alcuni programmi che aveva sviluppato in Basic a Vidéotron, riscrivendoli questa volta in linguaggio «assembler», che gli era più familiare. Ha così creato diversi prodotti originali che ha potuto commercializzare tramite Formic, un’azienda di cui è diventato socio a pieno titolo poco più tardi."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "Micro-videotex"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Tra le principali realizzazioni di Claude Johnson va citato un programma di creazione di pagine che integra una tavolozza di 220.000 colori, destinato a un microcomputer collegato a un decodificatore Télidon. Ha sviluppato anche un Basic Télidon (Basitel) per il Ministero dell’Istruzione, con funzioni interattive, e software per costituire banche dati autonome formate da pagine registrate su dischi. Si tratta, in pratica, di un’integrazione completa del videotex per il microcomputer. Un altro aspetto della ricerca condotta da Claude Johnson presso Formic è l’opzione multiutente, o rete, grazie alla quale più utenti possono accedere a un archivio comune di pagine."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "È Formic a occuparsi della distribuzione di tutta la gamma di software sviluppati principalmente da Claude Johnson. Vi si creano anche componenti e nuovi strumenti, che si tratti di adattamenti tecnici, di funzioni per un numero maggiore di utenti o di supporti destinati essenzialmente alla diffusione di pagine."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "All’avanguardia"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "«Nel software per microcomputer», spiega Claude Johnson, «Formic è all’avanguardia, con uno o due anni di vantaggio sui concorrenti». Questo successo è dovuto, naturalmente, alla formula flessibile ed economica del micro-videotex, ma anche a una costante attenzione all’innovazione. Sul piano tecnico, per esempio, Formic ha progettato una scheda ROM da 220K che costituisce un archivio software sicuro a un costo di circa 150 $, per l’equivalente di 10.000 $ di software memorizzato."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Tutto questo su un microcomputer? La gente non ci credeva, ma Claude Johnson si è fatto una specialità di realizzare l’impossibile. Dopo cinque anni nel settore, continua a cercare nuove sfide. A casa sua, in particolare, sta preparando per le proprie esigenze software applicativi molto tecnici, come programmi di simulazione di volo. Per ora attende con impazienza l’arrivo sul mercato di microcomputer più potenti per portare a termine alcuni dei suoi progetti."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "È comunque curioso che Claude Johnson si sia limitato in questi ultimi anni a un solo campo di interesse, lui che un tempo voleva cambiarlo ogni anno. Ma non bisogna parlare troppo presto: ho sentito dire che l’ingegneria genetica comincia a interessarlo..."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "☐"
+      }
+    ],
+    "back": "Indietro",
+    "photoAlt": "Claude Johnson"
+  },
+  "ru": {
+    "label": "Русский",
+    "dir": "ltr",
+    "mainNavigation": "Основная навигация",
+    "navHome": "Главная",
+    "navApps": "Приложения",
+    "navAbout": "О нас",
+    "navContact": "Контакты",
+    "languageSelector": "Выберите язык",
+    "appRadec": "RA / Dec / AZ / Alt",
+    "appVirtualTelescope": "Virtual Telescope",
+    "appSolAndStars": "Sol and Stars",
+    "appAlienSky": "Alien Sky",
+    "appTimeTravelSky": "Time Travel Sky",
+    "locations": "Монреаль | Хошимин",
+    "htmlLang": "ru",
+    "metaTitle": "Портрет специалиста по информатике - Claude Johnson: суперпрограммист!",
+    "header": "Портрет специалиста по информатике",
+    "title": "Claude Johnson между видеотексом и микрокомпьютером:",
+    "subtitle": "Профессия: суперпрограммист!",
+    "byline": "Автор: Marc Sévigny",
+    "caption": "Claude Johnson: «бывший моряк», подхваченный волной микрокомпьютеров и видеотекса.",
+    "left": [
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Физика, метеорология, биология, археология — Claude Johnson попробовал себя во всех этих областях. Он был даже... моряком! А где же во всём этом информатика? Сначала она была частью его научной подготовки, затем стала хобби и, наконец, профессией. В программировании он сделал то, что многие считали невозможным, например адаптировал технологию Télidon для микрокомпьютера."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Его продукты оказались настолько интересными, что на их основе возникла компания Formic, Inc., в которой сейчас работают восемь человек и чей оборот в этом году достигнет миллиона долларов."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "Жажда знаний"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Идеалом для Claude Johnson было бы каждый год осваивать новую область знаний. Получив степень бакалавра по физике, он один за другим берётся за два магистерских проекта: сначала по биофизике, которую вскоре оставляет ради археологии. Но поскольку его разносторонность создаёт ему некоторые трудности с организацией учёбы, он решает сменить направление и поступает на курсы метеорологии. Курсы его увлекают, а вот работа, которую ему затем предлагают, — гораздо меньше."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Страстный путешественник, Claude Johnson устраивается на суда торгового флота. «Платили хорошо, — говорит он, — и это позволяло мне брать длинные отпуска и путешествовать в своё удовольствие». Он побывал в Европе, Азии и Перу, где познакомился со своей будущей женой."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Между поездками Claude Johnson не сидит без дела. Он год преподаёт биологию в Сет-Иле, затем возвращается в Монреаль, где, получив педагогический сертификат, ведёт вечерние курсы информатики."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "Apple-клуб и Vidéotron"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Но по-настоящему увлечение информатикой пришло к нему с появлением микрокомпьютеров, и именно она стала его главным занятием. Немалую роль в этом сыграло основание пять лет назад клуба любителей микрокомпьютеров Apple. Клуб объединял несколько человек, в том числе профессионалов в области информатики, которые видели в микрокомпьютере хобби и хотели делиться опытом и открытиями. Для Claude Johnson это стало возможностью углубить знания о новом инструменте, что вскоре привело его к изучению электроники и логических схем. Он справлялся так хорошо, что Квебекский университет (Université du Québec) без колебаний пригласил его продолжить исследования на кафедре физики."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "«В то время, — вспоминает он, — хороших программистов для микрокомпьютеров было мало, и когда я оказался в Vidéotron, чтобы создать там отдел информатики, я сам себе был начальником». В Vidéotron он придумывает игры и переводит американские программы в рамках эксперимента по их распространению среди абонентов по телефонной линии."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Там же испытывали передачу видеотекса по кабелю с использованием графического протокола создания страниц Télidon, который тогда активно развивался. Получив задание с помощью микрокомпьютера воспроизвести по кабелю «подобие Télidon» в ожидании внедрения более дорогой технологии, Claude Johnson снова сумел всех удивить. Когда оценили качество «подобия Télidon», созданного им на микрокомпьютере, ему поручили продвинуть исследования дальше — к полноценной адаптации Télidon для микрокомпьютера Apple. Это требовало создания специальных программ, заменяющих то, что раньше делалось на гораздо более крупных системах, таких как Norpak, и обеспечения их совместимости со стандартами."
+      }
+    ],
+    "right": [
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "Microcréatif и Formic"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Проработав в Vidéotron более трёх лет, Claude Johnson решил основать собственную компанию Microcréatif, чтобы выполнять различные заказы в качестве программиста, переводчика программного обеспечения и эксперта по Télidon. Так он работал для Министерства образования Квебека и федерального Министерства связи. «Я получал больше контрактов, чем мог выполнить, — рассказывает он, — поэтому мог выбирать то, что интересовало меня больше всего», то есть работу, требовавшую определённого творчества или совпадавшую с его собственными интересами как программиста."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Параллельно с работой в Microcréatif Claude Johnson вернулся к некоторым программам, которые он написал на Бейсике в Vidéotron, и на этот раз переписал их на языке ассемблера, который был ему привычнее. Так он создал ряд оригинальных продуктов, которые смог вывести на рынок через Formic — компанию, полноправным партнёром которой он стал немного позже."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "Микро-видеотекс"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Среди главных достижений Claude Johnson стоит упомянуть программу создания страниц с палитрой из 220 000 цветов, предназначенную для микрокомпьютера, подключённого к декодеру Télidon. Он также разработал для Министерства образования Бейсик Télidon (Basitel) с интерактивными функциями, а также программы для создания автономных баз данных из страниц, записанных на дисках. По сути, это комплексная интеграция видеотекса в микрокомпьютер. Ещё одно направление исследований Claude Johnson в Formic — многопользовательский, или сетевой, режим, при котором несколько пользователей могут обращаться к общему хранилищу страниц."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Formic отвечает за распространение всей линейки программ, разработанных главным образом Claude Johnson. Здесь также создают компоненты и новые инструменты — будь то технические адаптации, функции для большего числа пользователей или носители, предназначенные в основном для распространения страниц."
+      },
+      {
+        "tag": "p",
+        "className": "section-title",
+        "html": "В авангарде"
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "«В области программ для микрокомпьютеров, — объясняет Claude Johnson, — Formic находится в авангарде и опережает конкурентов на год-два». Этот успех объясняется, конечно, гибкой и экономичной формулой микро-видеотекса, но также постоянным стремлением к инновациям. Например, в техническом плане Formic разработала плату ПЗУ на 220K, которая служит надёжным хранилищем программ стоимостью около 150 $ и вмещает эквивалент программ на 10 000 $."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "Всё это на микрокомпьютере? Люди не верили, но Claude Johnson сделал своей специальностью невозможное. После пяти лет работы в этой области он продолжает искать новые вызовы. Дома он, в частности, готовит для собственных нужд узкоспециальные прикладные программы, например программы симуляции полёта. Пока же он с нетерпением ждёт появления на рынке более мощных микрокомпьютеров, чтобы осуществить некоторые из своих проектов."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "И всё же любопытно, что в последние годы Claude Johnson ограничился одной областью интересов — он, который когда-то хотел менять её каждый год. Но не будем торопиться с выводами: я слышал, что его начинает интересовать генная инженерия..."
+      },
+      {
+        "tag": "p",
+        "className": "",
+        "html": "☐"
+      }
+    ],
+    "back": "Назад",
+    "photoAlt": "Claude Johnson"
   }
 };
 
@@ -1358,6 +1626,8 @@ const SUPER_LANGUAGES = {
     if (code.startsWith("zh") || code.includes("hans")) return "zh-Hans";
     if (code.startsWith("es")) return "es";
     if (code.startsWith("de")) return "de";
+    if (code.startsWith("it")) return "it";
+    if (code.startsWith("ru")) return "ru";
     return FALLBACK;
   }
 
@@ -1372,10 +1642,10 @@ const SUPER_LANGUAGES = {
   function buildLanguageMenu(current) {
     const select = document.getElementById("languageSelect");
     select.innerHTML = "";
-    Object.entries(LANGUAGES).forEach(([code, pack]) => {
+    ["de", "en", "es", "fr", "it", "vi", "ru", "ar", "zh-Hans", "zh-Hant", "ja", "ko"].forEach((code) => {
       const option = document.createElement("option");
       option.value = code;
-      option.textContent = pack.label;
+      option.textContent = LANGUAGES[code].label;
       option.selected = code === current;
       select.appendChild(option);
     });

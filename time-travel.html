@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
-<!-- Version 3.89 -->
+<!-- Version 3.90 — 2026-09-29 22:02 EDT — Claude -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -587,10 +587,6 @@ opacity:0.9;
   line-height:1.4;
   margin:0 0 6px;
 }
-.mount-compact p{
-  font-size:16px;
-  line-height:1.44;
-}
 .keyboard-panel{
   padding:16px 18px;
 }
@@ -749,7 +745,7 @@ left:9px;
 <div class="app-icon">
 <img data-i18n-alt="alt.appIcon" src="images/TimeTravel.png"/>
 </div>
-<h1>Time Travel Sky <span class="version-label">Version 1.3.1</span></h1>
+<h1>Time Travel Sky <span class="version-label">Version 1.4</span></h1>
 <p class="subtitle" data-i18n="hero.subtitle"></p>
 <button class="manual-download-btn" data-i18n="manual.download" id="downloadManualButtonDirect" type="button"></button>
 </section>
@@ -896,6 +892,7 @@ left:9px;
 <li data-i18n="features.travelScales"></li>
 <li data-i18n="features.skyLayers"></li>
 <li data-i18n="features.atmosphere"></li>
+<li data-i18n="features.refraction"></li>
 <li data-i18n="features.planets"></li>
 <li data-i18n="features.magnitude"></li>
 <li data-i18n="features.events"></li>
@@ -943,7 +940,6 @@ left:9px;
 <div class="key-row"><code>0</code><span data-i18n="skyControls.reset"></span></div>
 <div class="key-row"><code>Hours ×2</code><span data-i18n="skyControls.minutes"></span></div>
 <div class="key-row"><code>E</code><span data-i18n="skyControls.ecliptic"></span></div>
-<div class="key-row"><code>V</code><span data-i18n="skyControls.presentation"></span></div>
 <div class="key-row"><code>H</code><span data-i18n="skyControls.uncertainBodies"></span></div>
 <div class="key-row"><code>⌘ + Click</code><span data-i18n="skyControls.catalogNames"></span></div>
 </div>
@@ -952,10 +948,6 @@ left:9px;
 <p data-i18n="skyControls.zoomDetail"></p>
 <p data-i18n="skyControls.catalogNamesNote"></p>
 </div>
-</div>
-<div class="advanced-block mount-compact">
-<h3 class="centered-title" data-i18n="mount.title"></h3>
-<p data-i18n="mount.body"></p>
 </div>
 </div>
 <div class="advanced-block wide keyboard-panel">
@@ -1038,7 +1030,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 3.89</p>
+<p>Version 3.90</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1118,7 +1110,7 @@ if (guideVideo && guideNarration) {
 </script>
 
 
-<script src="time-travel-languages.js?v=3.11-content-20260921" defer></script>
+<script src="time-travel-languages.js?v=3.12-content-20260929" defer></script>
 <script>
 /* HTML-only manual exporter. The translation file is left unchanged.
    It builds the PDF from the page's current, already-translated DOM.
