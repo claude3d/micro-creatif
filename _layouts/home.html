@@ -2,7 +2,7 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
-<!-- Version 7.15 — 2026-09-30 16:52 EDT — Claude -->
+<!-- Version 7.16 — 2026-09-30 17:42 EDT — Claude -->
 {% assign t = site.data.home[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}" dir="{{ page.dir | default: 'ltr' }}">
@@ -286,7 +286,7 @@ opacity:0.85;
 
 <header>
 <nav aria-label="{{ t.mainNavigation }}">
-<a href="/">{{ t.navHome }}</a>
+<a href="{{ page.url }}">{{ t.navHome }}</a>
 <div class="dropdown">
 <a id="navApps"><span>{{ t.navApps }}</span><span class="nav-caret-icon" aria-hidden="true">▾</span></a>
 <div class="submenu" id="appsMenu">
@@ -322,7 +322,7 @@ opacity:0.85;
 
 <section class="hero">
 <h1>{{ t.brandName }}</h1>
-<p></p>
+<p>{{ page.description }}</p>
 </section>
 
 <div class="uni-stage">
@@ -383,7 +383,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.15</p>
+<p>Version 7.16</p>
 </footer>
 
 <script>
