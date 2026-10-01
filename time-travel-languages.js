@@ -1,6 +1,6 @@
 /* Micro Créatif
    Time Travel Sky website languages
-   Version 3.22 — 2026-09-30 17:26 EDT — Claude
+   Version 3.23 — 2026-09-30 20:22 EDT — Claude
 
    To add a language:
    1. Copy one language block inside TIME_TRAVEL_LANGUAGES.
@@ -129,7 +129,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "Cancel",
       "keyboard.location.title": "Earth Location",
       "keyboard.directions": "North, South, West, East",
-      "keyboard.note": "Cancel shortcuts vary slightly by platform. On iPad, ⌘. is convenient when the keyboard has no dedicated Escape key. On Mac Catalyst, ⌘[ is the reliable keyboard Cancel shortcut. Esc is also available where the keyboard and system deliver it.",
       "status.title": "Status",
       "status.body": "Time Travel Sky 1.4 has been submitted to Apple for App Store review for iPhone, iPad, and Mac. External TestFlight testing is now underway.",
       "status.back": "← Back to apps",
@@ -267,7 +266,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "Annuler",
       "keyboard.location.title": "Position terrestre",
       "keyboard.directions": "Nord, Sud, Ouest, Est",
-      "keyboard.note": "Les raccourcis Annuler varient légèrement selon la plateforme. Sur iPad, ⌘. est pratique lorsque le clavier n’a pas de touche Échap dédiée. Sur Mac Catalyst, ⌘[ est le raccourci clavier fiable pour Annuler. Échap reste aussi disponible lorsque le clavier et le système la transmettent.",
       "status.title": "Statut",
       "status.body": "Time Travel Sky 1.4 a été soumis à Apple pour l’examen de l’App Store sur iPhone, iPad et Mac. Les tests externes TestFlight sont maintenant en cours.",
       "status.back": "← Retour aux apps",
@@ -405,7 +403,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "Hủy",
       "keyboard.location.title": "Vị trí trên Trái Đất",
       "keyboard.directions": "Bắc, Nam, Tây, Đông",
-      "keyboard.note": "Các phím tắt Hủy hơi khác nhau tùy nền tảng. Trên iPad, ⌘. thuận tiện khi bàn phím không có phím Escape riêng. Trên Mac Catalyst, ⌘[ là phím tắt Hủy đáng tin cậy. Esc cũng dùng được khi bàn phím và hệ thống truyền phím này.",
       "status.title": "Trạng thái",
       "status.body": "Time Travel Sky 1.4 đã được gửi cho Apple để xét duyệt trên App Store dành cho iPhone, iPad và Mac. Việc thử nghiệm TestFlight bên ngoài hiện đang được tiến hành.",
       "status.back": "← Quay lại ứng dụng",
@@ -538,7 +535,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "キャンセル",
       "keyboard.location.title": "地球上の位置",
       "keyboard.directions": "北、南、西、東",
-      "keyboard.note": "キャンセル用ショートカットはプラットフォームによって少し異なります。iPad では、専用の Escape キーがないキーボードの場合 ⌘. が便利です。Mac Catalyst では ⌘[ が確実なキャンセルショートカットです。キーボードとシステムが送信する場合は Esc も使用できます。",
       "status.title": "開発状況",
       "status.body": "Time Travel Sky 1.4 は、iPhone、iPad、Mac 向けの App Store 審査のため Apple に提出済みです。外部 TestFlight テストも現在進行中です。",
       "status.back": "← アプリ一覧へ戻る",
@@ -676,7 +672,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "取消",
       "keyboard.location.title": "地球位置",
       "keyboard.directions": "北、南、西、东",
-      "keyboard.note": "取消快捷键会因平台略有不同。在 iPad 上，如果键盘没有独立 Escape 键，⌘. 很方便。在 Mac Catalyst 上，⌘[ 是可靠的键盘取消快捷键。如果键盘和系统能够传递 Esc，也可以使用 Esc。",
       "status.title": "状态",
       "status.body": "Time Travel Sky 1.4 已提交给 Apple，等待 iPhone、iPad 和 Mac 版本的 App Store 审核。外部 TestFlight 测试目前正在进行中。",
       "status.back": "← 返回应用列表",
@@ -814,7 +809,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "取消",
       "keyboard.location.title": "地球位置",
       "keyboard.directions": "北、南、西、東",
-      "keyboard.note": "取消快速鍵會因平台略有不同。在 iPad 上，如果鍵盤沒有獨立 Escape 鍵，⌘. 很方便。在 Mac Catalyst 上，⌘[ 是可靠的鍵盤取消快速鍵。如果鍵盤和系統能傳遞 Esc，也可以使用 Esc。",
       "status.title": "狀態",
       "status.body": "Time Travel Sky 1.4 已提交給 Apple，等待 iPhone、iPad 與 Mac 版本的 App Store 審查。外部 TestFlight 測試目前正在進行中。",
       "status.back": "← 返回應用程式列表",
@@ -952,7 +946,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "Cancelar",
       "keyboard.location.title": "Ubicación en la Tierra",
       "keyboard.directions": "norte, sur, oeste, este",
-      "keyboard.note": "Los atajos para Cancelar varían ligeramente según la plataforma. En iPad, ⌘. es práctico cuando el teclado no tiene una tecla Escape dedicada. En Mac Catalyst, ⌘[ es el atajo de teclado fiable para Cancelar. Esc también está disponible cuando el teclado y el sistema lo transmiten.",
       "status.title": "Estado",
       "status.body": "Time Travel Sky 1.4 se ha enviado a Apple para la revisión de la App Store en iPhone, iPad y Mac. Las pruebas externas de TestFlight ya están en marcha.",
       "status.back": "← Volver a las apps",
@@ -1090,7 +1083,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "Abbrechen",
       "keyboard.location.title": "Erdstandort",
       "keyboard.directions": "Nord, Süd, West, Ost",
-      "keyboard.note": "Die Tastenkürzel für Abbrechen unterscheiden sich je nach Plattform geringfügig. Auf dem iPad ist ⌘. praktisch, wenn die Tastatur keine eigene Escape-Taste besitzt. Unter Mac Catalyst ist ⌘[ das zuverlässige Tastenkürzel für Abbrechen. Esc steht ebenfalls zur Verfügung, wenn Tastatur und System die Taste weitergeben.",
       "status.title": "Status",
       "status.body": "Time Travel Sky 1.4 wurde für iPhone, iPad und Mac zur App-Store-Prüfung bei Apple eingereicht. Die externen TestFlight-Tests laufen bereits.",
       "status.back": "← Zurück zu den Apps",
@@ -1233,7 +1225,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "Annulla",
       "keyboard.location.title": "Posizione sulla Terra",
       "keyboard.directions": "Nord, Sud, Ovest, Est",
-      "keyboard.note": "Le scorciatoie per Annulla variano leggermente in base alla piattaforma. Su iPad, ⌘. è comodo quando la tastiera non dispone di un tasto Esc dedicato. Su Mac Catalyst, ⌘[ è la scorciatoia affidabile per Annulla. Esc è disponibile anche quando la tastiera e il sistema lo trasmettono.",
       "status.title": "Stato",
       "status.body": "Time Travel Sky 1.4 è stato inviato ad Apple per la revisione dell’App Store su iPhone, iPad e Mac. I test esterni TestFlight sono ora in corso.",
       "status.back": "← Torna alle app",
@@ -1371,7 +1362,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "Отмена",
       "keyboard.location.title": "Положение на Земле",
       "keyboard.directions": "север, юг, запад, восток",
-      "keyboard.note": "Сочетания для Отмены немного различаются по платформам. На iPad сочетание ⌘. удобно, если на клавиатуре нет отдельной клавиши Escape. В Mac Catalyst надёжное сочетание для Отмены — ⌘[. Esc также работает, если клавиатура и система передают эту клавишу.",
       "status.title": "Состояние",
       "status.body": "Time Travel Sky 1.4 отправлен в Apple на проверку App Store для iPhone, iPad и Mac. Внешнее тестирование через TestFlight уже идёт.",
       "status.back": "← Назад к приложениям",
@@ -1510,7 +1500,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "إلغاء",
       "keyboard.location.title": "موقع الأرض",
       "keyboard.directions": "الشمال، الجنوب، الغرب، الشرق",
-      "keyboard.note": "تختلف اختصارات الإلغاء قليلًا حسب المنصة. على iPad يكون ⌘. مناسبًا عندما لا تتوفر في لوحة المفاتيح مفتاح Escape مستقل. وعلى Mac Catalyst يُعد ⌘[ اختصار الإلغاء الموثوق. كما يتوفر Esc عندما ترسله لوحة المفاتيح والنظام.",
       "status.title": "الحالة",
       "status.body": "تم إرسال Time Travel Sky 1.4 إلى Apple لمراجعة App Store على iPhone وiPad وMac. ويجري الآن الاختبار الخارجي عبر TestFlight.",
       "status.back": "العودة إلى التطبيقات →",
@@ -1649,7 +1638,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "keyboard.cancel": "취소",
       "keyboard.location.title": "지구 위치",
       "keyboard.directions": "북쪽, 남쪽, 서쪽, 동쪽",
-      "keyboard.note": "취소 단축키는 플랫폼에 따라 약간 다릅니다. iPad에서는 키보드에 전용 Escape 키가 없을 때 ⌘.가 편리합니다. Mac Catalyst에서는 ⌘[가 안정적인 취소 단축키입니다. 키보드와 시스템에서 전달되는 경우 Esc도 사용할 수 있습니다.",
       "status.title": "상태",
       "status.body": "Time Travel Sky 1.4은 iPhone, iPad 및 Mac용 App Store 심사를 위해 Apple에 제출되었습니다. 외부 TestFlight 테스트도 현재 진행 중입니다.",
       "status.back": "← 앱으로 돌아가기",
