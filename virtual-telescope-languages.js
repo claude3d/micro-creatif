@@ -1,6 +1,6 @@
 /* Micro Créatif
    Virtual Telescope website languages
-   Version 1.1 — 2026-10-12 11:13 — by Claude AI
+   Version 1.2 — 2026-10-12 11:24 — by Claude AI
 
    To add a language:
    1. Copy one language block inside VIRTUAL_TELESCOPE_LANGUAGES.
@@ -92,7 +92,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "Permettre à l’observateur de choisir la magnitude limite.",
       "k28": "Garder une interface simple et utile au télescope.",
       "k29": "Statut",
-      "k30": "Télescope virtuel fait partie de la collection d’applications d’astronomie de Micro Créatif. Une version moderne est en préparation pour iPhone, iPad et Mac.",
+      "k30": "Virtual Telescope fait partie de la collection d’applications d’astronomie de Micro Créatif. Une version moderne est en préparation pour iPhone, iPad et Mac.",
       "k31": "← Retour aux apps",
       "k32": "Montréal | Hô Chi Minh-Ville",
       "k33": "Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."

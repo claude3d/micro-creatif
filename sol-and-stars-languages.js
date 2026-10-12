@@ -1,6 +1,6 @@
 /* Micro Créatif
    Sol and Stars website languages
-   Version 1.1 — 2026-10-12 11:13 — by Claude AI
+   Version 1.2 — 2026-10-12 11:24 — by Claude AI
 
    To add a language:
    1. Copy one language block inside SOL_AND_STARS_LANGUAGES.
@@ -90,9 +90,9 @@ const SOL_AND_STARS_LANGUAGES = {
       "k25": "Pour les observateurs",
       "k26": "Utile à la fois comme référence sur le Système solaire et comme base de données stellaire de type professionnel pour préparer des observations, comparer, rechercher et explorer.",
       "k27": "Idée principale",
-      "k28": "Sol et les étoiles accorde une importance égale à ses deux sections principales : une présentation détaillée et calculée en continu de notre Système solaire, et un puissant catalogue de la Voie lactée pour explorer et comparer les étoiles.",
+      "k28": "Sol and Stars accorde une importance égale à ses deux sections principales : une présentation détaillée et calculée en continu de notre Système solaire, et un puissant catalogue de la Voie lactée pour explorer et comparer les étoiles.",
       "k29": "Statut",
-      "k30": "Sol et les étoiles est en cours de refonte autour de deux choix principaux sur son écran d’accueil : le Système solaire et le catalogue d’étoiles de la Voie lactée. La version moderne est en préparation pour iPhone, iPad et Mac.",
+      "k30": "Sol and Stars est en cours de refonte autour de deux choix principaux sur son écran d’accueil : le Système solaire et le catalogue d’étoiles de la Voie lactée. La version moderne est en préparation pour iPhone, iPad et Mac.",
       "k31": "← Retour aux apps",
       "k32": "Montréal | Hô Chi Minh-Ville",
       "k33": "Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."
