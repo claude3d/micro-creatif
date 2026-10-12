@@ -1,5 +1,7 @@
 /* Micro Créatif
    Alien Sky website languages
+   Version 1.5 — 2026-10-12 ~15:10 (Quebec time), by Claude AI: new k54, the Galaxy view of the 3D map
+   (the Milky Way from outside, the Sun, the catalogue's region, zoom to the 3D map).
    Version 1.4 — 2026-10-11 ~18:00 (Quebec time), by Claude AI: k18/k19 describe what the app
    does (Earth Sky at Sol, before departing or after returning; a screenshot to compare).
    Version 1.3 — 2026-10-11 ~17:55 (Quebec time), by Claude AI: AT-HYG 3.2 / Gaia DR3 stars,
@@ -80,7 +82,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "Ekliptik ein- oder ausblenden.",
       "k51": "Drehung des Globus der 3D-Karte anhalten oder starten.",
       "k52": "Ein Fenster schließen.",
-      "k53": "Die Sterne oder die Exoplaneten-Wirtssterne rund um die Route auf einer sich drehenden 3D-Karte anzeigen und einen Stern antippen, um seine Informationen zu sehen."
+      "k53": "Die Sterne oder die Exoplaneten-Wirtssterne rund um die Route auf einer sich drehenden 3D-Karte anzeigen und einen Stern antippen, um seine Informationen zu sehen.",
+      "k54": "Die Milchstraße von außen sehen, mit der Sonne und dem Bereich, den der Sternkatalog abdeckt, und dann auf Ihren Stern zoomen, bis die Ansicht zur 3D-Karte wird."
     },
     "htmlLang": "de",
     "ogLocale": "de_DE"
@@ -145,7 +148,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "Show or hide the ecliptic.",
       "k51": "Stop or start the turn of the 3D map’s globe.",
       "k52": "Close a panel.",
-      "k53": "See the stars or the exoplanet hosts around the route on a turning 3D map, and tap a star for its information."
+      "k53": "See the stars or the exoplanet hosts around the route on a turning 3D map, and tap a star for its information.",
+      "k54": "See the Milky Way from outside, with the Sun and the region the star catalogue covers, then zoom in toward your star until the view becomes the 3D map."
     },
     "htmlLang": "en-CA",
     "ogLocale": "en_CA"
@@ -210,7 +214,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "Mostrar u ocultar la eclíptica.",
       "k51": "Detener o reanudar el giro del globo del mapa 3D.",
       "k52": "Cerrar un panel.",
-      "k53": "Ver las estrellas o las estrellas con exoplanetas alrededor de la ruta en un mapa 3D giratorio, y tocar una estrella para ver su información."
+      "k53": "Ver las estrellas o las estrellas con exoplanetas alrededor de la ruta en un mapa 3D giratorio, y tocar una estrella para ver su información.",
+      "k54": "Ver la Vía Láctea desde fuera, con el Sol y la región que cubre el catálogo de estrellas, y luego acercarse a tu estrella hasta que la vista se convierta en el mapa 3D."
     },
     "htmlLang": "es",
     "ogLocale": "es_ES"
@@ -275,7 +280,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "Afficher ou masquer l’écliptique.",
       "k51": "Arrêter ou relancer la rotation du globe de la carte 3D.",
       "k52": "Fermer un panneau.",
-      "k53": "Voir les étoiles ou les étoiles hôtes d’exoplanètes autour du trajet sur une carte 3D qui tourne, et toucher une étoile pour afficher ses renseignements."
+      "k53": "Voir les étoiles ou les étoiles hôtes d’exoplanètes autour du trajet sur une carte 3D qui tourne, et toucher une étoile pour afficher ses renseignements.",
+      "k54": "Voir la Voie lactée de l’extérieur, avec le Soleil et la région couverte par le catalogue d’étoiles, puis zoomer vers votre étoile jusqu’à ce que la vue devienne la carte 3D."
     },
     "htmlLang": "fr-CA",
     "ogLocale": "fr_CA"
@@ -340,7 +346,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "Mostra o nascondi l’eclittica.",
       "k51": "Ferma o avvia la rotazione del globo della mappa 3D.",
       "k52": "Chiudi un pannello.",
-      "k53": "Mostra le stelle o le stelle con esopianeti attorno al percorso su una mappa 3D che ruota, e tocca una stella per vederne le informazioni."
+      "k53": "Mostra le stelle o le stelle con esopianeti attorno al percorso su una mappa 3D che ruota, e tocca una stella per vederne le informazioni.",
+      "k54": "Guarda la Via Lattea dall’esterno, con il Sole e la regione coperta dal catalogo stellare, poi ingrandisci verso la tua stella finché la vista diventa la mappa 3D."
     },
     "htmlLang": "it-IT",
     "ogLocale": "it_IT"
@@ -405,7 +412,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "Hiện hoặc ẩn đường hoàng đạo.",
       "k51": "Dừng hoặc tiếp tục xoay quả cầu của bản đồ 3D.",
       "k52": "Đóng một bảng.",
-      "k53": "Xem các ngôi sao hoặc các sao chủ có ngoại hành tinh quanh lộ trình trên bản đồ 3D đang xoay, và chạm vào một ngôi sao để xem thông tin."
+      "k53": "Xem các ngôi sao hoặc các sao chủ có ngoại hành tinh quanh lộ trình trên bản đồ 3D đang xoay, và chạm vào một ngôi sao để xem thông tin.",
+      "k54": "Ngắm Dải Ngân Hà từ bên ngoài, cùng Mặt Trời và vùng mà danh mục sao bao phủ, rồi phóng to về phía ngôi sao của bạn cho đến khi khung nhìn trở thành bản đồ 3D."
     },
     "htmlLang": "vi-VN",
     "ogLocale": "vi_VN"
@@ -470,7 +478,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "Показать или скрыть эклиптику.",
       "k51": "Остановить или запустить вращение глобуса 3D-карты.",
       "k52": "Закрыть панель.",
-      "k53": "Просматривайте звёзды или звёзды с экзопланетами вокруг маршрута на вращающейся 3D-карте и нажимайте на звезду, чтобы увидеть сведения о ней."
+      "k53": "Просматривайте звёзды или звёзды с экзопланетами вокруг маршрута на вращающейся 3D-карте и нажимайте на звезду, чтобы увидеть сведения о ней.",
+      "k54": "Смотрите на Млечный Путь извне, с Солнцем и областью, которую охватывает звёздный каталог, а затем приближайтесь к своей звезде, пока вид не превратится в 3D-карту."
     },
     "htmlLang": "ru-RU",
     "ogLocale": "ru_RU"
@@ -535,7 +544,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "إظهار مسار الشمس الظاهري أو إخفاؤه.",
       "k51": "إيقاف دوران كرة الخريطة ثلاثية الأبعاد أو تشغيله.",
       "k52": "إغلاق لوحة.",
-      "k53": "عرض النجوم أو النجوم المضيفة لكواكب خارجية حول المسار على خريطة ثلاثية الأبعاد دوّارة، والضغط على نجم لعرض معلوماته."
+      "k53": "عرض النجوم أو النجوم المضيفة لكواكب خارجية حول المسار على خريطة ثلاثية الأبعاد دوّارة، والضغط على نجم لعرض معلوماته.",
+      "k54": "شاهد درب التبانة من الخارج، مع الشمس والمنطقة التي يغطيها فهرس النجوم، ثم قرّب نحو نجمك حتى يصبح المنظر الخريطة ثلاثية الأبعاد."
     },
     "htmlLang": "ar",
     "ogLocale": "ar_AR"
@@ -600,7 +610,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "显示或隐藏黄道。",
       "k51": "停止或开始 3D 地图球体的旋转。",
       "k52": "关闭面板。",
-      "k53": "在旋转的 3D 地图上查看航线周围的恒星或系外行星宿主恒星，并点按恒星查看其信息。"
+      "k53": "在旋转的 3D 地图上查看航线周围的恒星或系外行星宿主恒星，并点按恒星查看其信息。",
+      "k54": "从外部观看银河系，显示太阳和星表覆盖的区域，然后向你所在的恒星放大，直到视图变成 3D 地图。"
     },
     "htmlLang": "zh-CN",
     "ogLocale": "zh_CN"
@@ -665,7 +676,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "顯示或隱藏黃道。",
       "k51": "停止或開始 3D 地圖球體的旋轉。",
       "k52": "關閉面板。",
-      "k53": "在旋轉的 3D 地圖上查看航線周圍的恆星或系外行星宿主恆星，並點按恆星查看其資訊。"
+      "k53": "在旋轉的 3D 地圖上查看航線周圍的恆星或系外行星宿主恆星，並點按恆星查看其資訊。",
+      "k54": "從外部觀看銀河系，顯示太陽和星表涵蓋的區域，然後向你所在的恆星放大，直到視圖變成 3D 地圖。"
     },
     "htmlLang": "zh-TW",
     "ogLocale": "zh_TW"
@@ -730,7 +742,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "黄道の表示・非表示を切り替えます。",
       "k51": "3D マップの球の回転を停止・再開します。",
       "k52": "パネルを閉じます。",
-      "k53": "航路の周りの恒星や系外惑星の主星を回転する 3D マップで見て、恒星をタップして情報を表示する。"
+      "k53": "航路の周りの恒星や系外惑星の主星を回転する 3D マップで見て、恒星をタップして情報を表示する。",
+      "k54": "銀河系を外側から眺め、太陽と恒星カタログが収める範囲を表示し、自分のいる恒星へズームすると 3D マップに変わる。"
     },
     "htmlLang": "ja-JP",
     "ogLocale": "ja_JP"
@@ -795,7 +808,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k50": "황도를 표시하거나 숨깁니다.",
       "k51": "3D 지도 구체의 회전을 멈추거나 시작합니다.",
       "k52": "패널을 닫습니다.",
-      "k53": "회전하는 3D 지도에서 경로 주변의 별이나 외계행성 모항성을 보고, 별을 탭하여 정보를 표시."
+      "k53": "회전하는 3D 지도에서 경로 주변의 별이나 외계행성 모항성을 보고, 별을 탭하여 정보를 표시.",
+      "k54": "우리은하를 바깥에서 보고, 태양과 별 목록이 포함하는 영역을 표시하며, 내가 있는 별로 확대하면 3D 지도로 바뀜."
     },
     "htmlLang": "ko-KR",
     "ogLocale": "ko_KR"
