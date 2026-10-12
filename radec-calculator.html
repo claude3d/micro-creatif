@@ -2,8 +2,8 @@
 
 <html lang="en">
 <!-- Micro Créatif -->
-<!-- app1.html -->
-<!-- Version 2.2 — 2026-10-12 10:56 — by Claude AI -->
+<!-- radec-calculator.html -->
+<!-- Version 2.3 — 2026-10-12 11:18 — by Claude AI -->
 <head>
 <!-- 10-language selector and page translations: 2026-08-16 -->
 <meta charset="utf-8"/>
@@ -13,7 +13,7 @@
 <meta content="RA Dec AZ Alt, astronomy app, telescope coordinates, right ascension, declination, azimuth, altitude, hour angle, sidereal time, current RA Dec, JNow, iOS astronomy" name="keywords"/>
 <meta content="Micro Créatif" name="author"/>
 <meta content="index, follow" name="robots"/>
-<link href="https://microcreatif.ca/app1.html" rel="canonical"/>
+<link href="https://microcreatif.ca/radec-calculator.html" rel="canonical"/>
 <style>
 body{
 margin:0;
@@ -170,6 +170,12 @@ h1{
 font-size:54px;
 margin:0 0 12px;
 }
+.app-version{
+font-size:0.45em;
+font-weight:normal;
+margin-inline-start:1.2em;
+white-space:nowrap;
+}
 .tagline{
 font-size:22px;
 max-width:760px;
@@ -317,7 +323,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <div class="app-icon">
 <img alt="RA Dec AZ Alt app icon" src="images/RADEC.png"/>
 </div>
-<h1 data-i18n="k10"></h1>
+<h1><span data-i18n="k10"></span><span class="app-version">Version 2.0</span></h1>
 <p class="tagline" data-i18n="k11"></p>
 </section>
 <main>
@@ -358,7 +364,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k39"></p>
-<p>Version 2.2</p>
+<p>Version 2.3</p>
 <p data-i18n="k40"></p>
 </footer>
 <script>
@@ -379,18 +385,18 @@ menu.style.display="none";
 });
 });
 </script>
-<script defer="" src="radec-calculator-languages.js"></script>
+<script defer="" src="radec-calculator-languages.js?v=1.1"></script>
 <script>
 (function(){
 const box=document.getElementById("stars");
 if(!box) return;
-for(let i=0;i<120;i++){
+for(let i=0;i<40;i++){
 const s=document.createElement("div");
-s.className="star "+(Math.random()<0.3?"big":"small");
+s.className="star "+(Math.random()>0.5?"big":"small");
 s.style.left=(Math.random()*100)+"%";
 s.style.top=(Math.random()*100)+"%";
-s.style.animationDuration=(2+Math.random()*4)+"s";
-s.style.animationDelay=(-Math.random()*6)+"s";
+s.style.animationDuration=(1+Math.random()*2)+"s";
+s.style.animationDelay=(Math.random()*3)+"s";
 box.appendChild(s);
 }
 })();

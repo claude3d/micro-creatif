@@ -2,8 +2,8 @@
 
 <html lang="en">
 <!-- Micro Créatif -->
-<!-- app2.html -->
-<!-- Version 1.6 — 2026-10-12 10:56 — by Claude AI -->
+<!-- virtual-telescope.html -->
+<!-- Version 1.7 — 2026-10-12 11:18 — by Claude AI -->
 <head>
 <!-- 10-language selector and page translations: 2026-08-16 -->
 <meta charset="utf-8"/>
@@ -15,11 +15,11 @@
 <meta content="index, follow" name="robots"/>
 <meta content="Virtual Telescope – Micro Créatif" property="og:title"/>
 <meta content="Visualize a telescope field of view from telescope, eyepiece, RA/Dec, and magnitude settings, with catalogue star positions corrected for the selected date." property="og:description"/>
-<meta content="https://microcreatif.ca/app2.html" property="og:url"/>
+<meta content="https://microcreatif.ca/virtual-telescope.html" property="og:url"/>
 <meta content="website" property="og:type"/>
 <meta content="en_CA" property="og:locale"/>
 <meta content="fr_CA" property="og:locale:alternate"/>
-<link href="https://microcreatif.ca/app2.html" rel="canonical"/>
+<link href="https://microcreatif.ca/virtual-telescope.html" rel="canonical"/>
 <style>
 *{box-sizing:border-box;}
 body{
@@ -172,6 +172,12 @@ font-size:56px;
 margin:0 0 10px;
 color:#00ff28;
 text-shadow:0 0 18px rgba(0,255,60,0.65);
+}
+.app-version{
+font-size:0.45em;
+font-weight:normal;
+margin-inline-start:1.2em;
+white-space:nowrap;
 }
 .subtitle{
 font-size:22px;
@@ -332,7 +338,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 </header>
 <section class="hero">
 <div class="app-icon"><img alt="Virtual Telescope app icon" src="images/VirtualTelescope.png"/></div>
-<h1 data-i18n="k10"></h1>
+<h1><span data-i18n="k10"></span><span class="app-version">Version 2.0</span></h1>
 <p class="subtitle" data-i18n="k11"></p>
 </section>
 <section aria-label="Virtual Telescope screenshots" class="screenshots">
@@ -378,7 +384,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k32"></p>
-<p>Version 1.6</p>
+<p>Version 1.7</p>
 <p data-i18n="k33"></p>
 </footer>
 <script>
@@ -395,18 +401,18 @@ document.querySelectorAll(".submenu a").forEach(function(link){
 link.addEventListener("click",function(){menu.style.display="none";});
 });
 </script>
-<script defer="" src="virtual-telescope-languages.js"></script>
+<script defer="" src="virtual-telescope-languages.js?v=1.1"></script>
 <script>
 (function(){
 const box=document.getElementById("stars");
 if(!box) return;
-for(let i=0;i<120;i++){
+for(let i=0;i<40;i++){
 const s=document.createElement("div");
-s.className="star "+(Math.random()<0.3?"big":"small");
+s.className="star "+(Math.random()>0.5?"big":"small");
 s.style.left=(Math.random()*100)+"%";
 s.style.top=(Math.random()*100)+"%";
-s.style.animationDuration=(2+Math.random()*4)+"s";
-s.style.animationDelay=(-Math.random()*6)+"s";
+s.style.animationDuration=(1+Math.random()*2)+"s";
+s.style.animationDelay=(Math.random()*3)+"s";
 box.appendChild(s);
 }
 })();

@@ -3,7 +3,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- sol-and-stars.html -->
-<!-- Version 1.4 — 2026-10-12 10:56 — by Claude AI -->
+<!-- Version 1.5 — 2026-10-12 11:18 — by Claude AI -->
 <head>
 <!-- 10-language selector and page translations: 2026-08-16 -->
 <meta charset="utf-8"/>
@@ -173,6 +173,12 @@ margin:0 0 10px;
 color:#ffd700;
 text-shadow:0 0 18px rgba(255,215,0,0.65);
 }
+.app-version{
+font-size:0.45em;
+font-weight:normal;
+margin-inline-start:1.2em;
+white-space:nowrap;
+}
 .subtitle{
 font-size:22px;
 line-height:1.45;
@@ -334,7 +340,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 </header>
 <section class="hero">
 <div class="app-icon"><img alt="Sol and Stars app icon" src="images/Sol&amp;Stars.png"/></div>
-<h1 data-i18n="k10"></h1>
+<h1><span data-i18n="k10"></span><span class="app-version">Version 2.0</span></h1>
 <p class="subtitle" data-i18n="k11"></p>
 </section>
 <section aria-label="Sol and Stars screenshots" class="screenshots">
@@ -382,7 +388,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k32"></p>
-<p>Version 1.4</p>
+<p>Version 1.5</p>
 <p data-i18n="k33"></p>
 </footer>
 <script>
@@ -402,18 +408,18 @@ document.querySelectorAll(".submenu a").forEach(function(link){
 link.addEventListener("click",function(){menu.style.display="none";});
 });
 </script>
-<script defer="" src="sol-and-stars-languages.js"></script>
+<script defer="" src="sol-and-stars-languages.js?v=1.1"></script>
 <script>
 (function(){
 const box=document.getElementById("stars");
 if(!box) return;
-for(let i=0;i<120;i++){
+for(let i=0;i<40;i++){
 const s=document.createElement("div");
-s.className="star "+(Math.random()<0.3?"big":"small");
+s.className="star "+(Math.random()>0.5?"big":"small");
 s.style.left=(Math.random()*100)+"%";
 s.style.top=(Math.random()*100)+"%";
-s.style.animationDuration=(2+Math.random()*4)+"s";
-s.style.animationDelay=(-Math.random()*6)+"s";
+s.style.animationDuration=(1+Math.random()*2)+"s";
+s.style.animationDelay=(Math.random()*3)+"s";
 box.appendChild(s);
 }
 })();
