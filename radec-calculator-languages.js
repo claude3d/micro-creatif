@@ -1,6 +1,6 @@
 /* Micro Créatif
    RA / Dec / AZ / Alt website languages
-   Version 1.0
+   Version 1.1 — 2026-10-12 11:13 — by Claude AI
 
    To add a language:
    1. Copy one language block inside RADEC_LANGUAGES.
@@ -54,7 +54,7 @@ const RADEC_LANGUAGES = {
       "k34": "Older catalog coordinates, such as J2000, can still be entered, but the calculated position may differ from the current sky position by several arcminutes.",
       "k35": "Atmospheric refraction depends on real observing conditions. Near the horizon, local temperature, pressure, humidity, and terrain can affect the apparent altitude.",
       "k36": "Status",
-      "k37": "Version 2.0 is being prepared for iPhone and iPad.",
+      "k37": "Version 2.0 is being prepared for iPhone, iPad and Mac.",
       "k38": "← Back to apps",
       "k39": "Montreal | Ho Chi Minh City",
       "k40": "Privacy: This application does not collect, store, transmit, or share any personal information."
@@ -106,7 +106,7 @@ const RADEC_LANGUAGES = {
       "k34": "Des coordonnées de catalogue plus anciennes, comme J2000, peuvent quand même être entrées, mais la position calculée peut différer de la position actuelle dans le ciel de plusieurs minutes d’arc.",
       "k35": "La réfraction atmosphérique dépend des conditions réelles d’observation. Près de l’horizon, la température locale, la pression, l’humidité et le terrain peuvent influencer l’altitude apparente.",
       "k36": "État",
-      "k37": "La version 2.0 est en préparation pour iPhone et iPad.",
+      "k37": "La version 2.0 est en préparation pour iPhone, iPad et Mac.",
       "k38": "← Retour aux apps",
       "k39": "Montréal | Hô Chi Minh-Ville",
       "k40": "Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."
@@ -158,7 +158,7 @@ const RADEC_LANGUAGES = {
       "k34": "Vẫn có thể nhập các tọa độ danh mục cũ hơn, chẳng hạn J2000, nhưng vị trí tính được có thể khác vị trí hiện tại trên bầu trời vài phút cung.",
       "k35": "Khúc xạ khí quyển phụ thuộc vào điều kiện quan sát thực tế. Gần đường chân trời, nhiệt độ, áp suất, độ ẩm và địa hình địa phương có thể ảnh hưởng đến độ cao biểu kiến.",
       "k36": "Trạng thái",
-      "k37": "Phiên bản 2.0 đang được chuẩn bị cho iPhone và iPad.",
+      "k37": "Phiên bản 2.0 đang được chuẩn bị cho iPhone, iPad và Mac.",
       "k38": "← Quay lại ứng dụng",
       "k39": "Montréal | Thành phố Hồ Chí Minh",
       "k40": "Quyền riêng tư: Ứng dụng này không thu thập, lưu trữ, truyền hoặc chia sẻ bất kỳ thông tin cá nhân nào."
@@ -210,7 +210,7 @@ const RADEC_LANGUAGES = {
       "k34": "J2000 のような古いカタログ座標も入力できますが、計算された位置は現在の空での位置と数分角ずれる場合があります。",
       "k35": "大気差は実際の観測条件に依存します。地平線付近では、現地の気温、気圧、湿度、地形が見かけの高度に影響することがあります。",
       "k36": "状況",
-      "k37": "バージョン 2.0 を iPhone と iPad 向けに準備中です。",
+      "k37": "バージョン 2.0 を iPhone、iPad、Mac 向けに準備中です。",
       "k38": "← アプリ一覧に戻る",
       "k39": "モントリオール | ホーチミン市",
       "k40": "プライバシー：このアプリは個人情報を収集、保存、送信、共有しません。"
@@ -262,7 +262,7 @@ const RADEC_LANGUAGES = {
       "k34": "仍可输入较旧的星表坐标，例如 J2000，但计算位置可能与当前天空位置相差几角分。",
       "k35": "大气折射取决于实际观测条件。在地平线附近，当地温度、气压、湿度和地形都可能影响表观高度。",
       "k36": "状态",
-      "k37": "正在为 iPhone 和 iPad 准备 2.0 版本。",
+      "k37": "正在为 iPhone、iPad 和 Mac 准备 2.0 版本。",
       "k38": "← 返回应用",
       "k39": "蒙特利尔 | 胡志明市",
       "k40": "隐私：本应用不会收集、存储、传输或共享任何个人信息。"
@@ -314,7 +314,7 @@ const RADEC_LANGUAGES = {
       "k34": "仍可輸入較舊的星表座標，例如 J2000，但計算位置可能與目前天空位置相差數角分。",
       "k35": "大氣折射取決於實際觀測條件。在地平線附近，當地溫度、氣壓、濕度和地形都可能影響表觀高度。",
       "k36": "狀態",
-      "k37": "正在為 iPhone 和 iPad 準備 2.0 版本。",
+      "k37": "正在為 iPhone、iPad 和 Mac 準備 2.0 版本。",
       "k38": "← 返回應用程式",
       "k39": "蒙特婁 | 胡志明市",
       "k40": "隱私：本應用程式不會收集、儲存、傳輸或分享任何個人資訊。"
@@ -366,7 +366,7 @@ const RADEC_LANGUAGES = {
       "k34": "También se pueden introducir coordenadas de catálogo más antiguas, como J2000, pero la posición calculada puede diferir de la posición actual en el cielo en varios minutos de arco.",
       "k35": "La refracción atmosférica depende de las condiciones reales de observación. Cerca del horizonte, la temperatura, la presión, la humedad y el terreno locales pueden afectar la altitud aparente.",
       "k36": "Estado",
-      "k37": "La versión 2.0 se está preparando para iPhone y iPad.",
+      "k37": "La versión 2.0 se está preparando para iPhone, iPad y Mac.",
       "k38": "← Volver a las apps",
       "k39": "Montreal | Ciudad Ho Chi Minh",
       "k40": "Privacidad: Esta aplicación no recopila, almacena, transmite ni comparte información personal."
@@ -418,7 +418,7 @@ const RADEC_LANGUAGES = {
       "k34": "Ältere Katalogkoordinaten wie J2000 können ebenfalls eingegeben werden, die berechnete Position kann jedoch um mehrere Bogenminuten von der aktuellen Himmelsposition abweichen.",
       "k35": "Die atmosphärische Refraktion hängt von den tatsächlichen Beobachtungsbedingungen ab. In Horizontnähe können lokale Temperatur, Luftdruck, Luftfeuchtigkeit und Gelände die scheinbare Höhe beeinflussen.",
       "k36": "Status",
-      "k37": "Version 2.0 wird für iPhone und iPad vorbereitet.",
+      "k37": "Version 2.0 wird für iPhone, iPad und Mac vorbereitet.",
       "k38": "← Zurück zu den Apps",
       "k39": "Montreal | Ho-Chi-Minh-Stadt",
       "k40": "Datenschutz: Diese Anwendung erfasst, speichert, überträgt oder teilt keine personenbezogenen Daten."
@@ -470,7 +470,7 @@ const RADEC_LANGUAGES = {
       "k34": "يمكن إدخال إحداثيات فهرسية أقدم مثل J2000، لكن الموضع المحسوب قد يختلف عن الموضع الحالي في السماء بعدة دقائق قوسية.",
       "k35": "يعتمد الانكسار الجوي على ظروف الرصد الفعلية. قرب الأفق، يمكن لدرجة الحرارة والضغط والرطوبة والتضاريس المحلية أن تؤثر في الارتفاع الظاهري.",
       "k36": "الحالة",
-      "k37": "يجري إعداد الإصدار 2.0 لأجهزة iPhone وiPad.",
+      "k37": "يجري إعداد الإصدار 2.0 لأجهزة iPhone وiPad وMac.",
       "k38": "← العودة إلى التطبيقات",
       "k39": "مونتريال | مدينة هو تشي منه",
       "k40": "الخصوصية: لا يجمع هذا التطبيق أي معلومات شخصية ولا يخزنها أو يرسلها أو يشاركها."
@@ -522,7 +522,7 @@ const RADEC_LANGUAGES = {
       "k34": "J2000과 같은 오래된 목록 좌표도 입력할 수 있지만 계산된 위치는 현재 하늘 위치와 수 분각 차이가 날 수 있습니다.",
       "k35": "대기 굴절은 실제 관측 조건에 따라 달라집니다. 지평선 근처에서는 현지 온도, 기압, 습도, 지형이 겉보기 고도에 영향을 줄 수 있습니다.",
       "k36": "상태",
-      "k37": "버전 2.0을 iPhone과 iPad용으로 준비 중입니다.",
+      "k37": "버전 2.0을 iPhone, iPad, Mac용으로 준비 중입니다.",
       "k38": "← 앱으로 돌아가기",
       "k39": "몬트리올 | 호찌민시",
       "k40": "개인정보 보호: 이 앱은 어떠한 개인정보도 수집, 저장, 전송 또는 공유하지 않습니다."

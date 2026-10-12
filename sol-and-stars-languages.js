@@ -1,6 +1,6 @@
 /* Micro Créatif
    Sol and Stars website languages
-   Version 1.0
+   Version 1.1 — 2026-10-12 11:13 — by Claude AI
 
    To add a language:
    1. Copy one language block inside SOL_AND_STARS_LANGUAGES.
@@ -47,7 +47,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "Main idea",
       "k28": "Sol and Stars gives equal importance to its two main sections: a detailed, continuously calculated view of our Solar System and a powerful Milky Way catalogue for exploring and comparing stars.",
       "k29": "Status",
-      "k30": "Sol and Stars is being redesigned around two main choices on its opening screen: the Solar System and the Milky Way star catalogue. The modern version is being prepared for iPhone and iPad.",
+      "k30": "Sol and Stars is being redesigned around two main choices on its opening screen: the Solar System and the Milky Way star catalogue. The modern version is being prepared for iPhone, iPad and Mac.",
       "k31": "← Back to apps",
       "k32": "Montreal | Ho Chi Minh City",
       "k33": "Privacy: This application does not collect, store, transmit, or share any personal information."
@@ -92,7 +92,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "Idée principale",
       "k28": "Sol et les étoiles accorde une importance égale à ses deux sections principales : une présentation détaillée et calculée en continu de notre Système solaire, et un puissant catalogue de la Voie lactée pour explorer et comparer les étoiles.",
       "k29": "Statut",
-      "k30": "Sol et les étoiles est en cours de refonte autour de deux choix principaux sur son écran d’accueil : le Système solaire et le catalogue d’étoiles de la Voie lactée. La version moderne est en préparation pour iPhone et iPad.",
+      "k30": "Sol et les étoiles est en cours de refonte autour de deux choix principaux sur son écran d’accueil : le Système solaire et le catalogue d’étoiles de la Voie lactée. La version moderne est en préparation pour iPhone, iPad et Mac.",
       "k31": "← Retour aux apps",
       "k32": "Montréal | Hô Chi Minh-Ville",
       "k33": "Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."
@@ -137,7 +137,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "Ý tưởng chính",
       "k28": "Sol and Stars dành tầm quan trọng ngang nhau cho hai phần chính: một cái nhìn chi tiết, được tính liên tục về Hệ Mặt Trời của chúng ta và một danh mục Dải Ngân Hà mạnh mẽ để khám phá và so sánh các sao.",
       "k29": "Trạng thái",
-      "k30": "Sol and Stars đang được thiết kế lại quanh hai lựa chọn chính trên màn hình mở đầu: Hệ Mặt Trời và danh mục sao Dải Ngân Hà. Phiên bản hiện đại đang được chuẩn bị cho iPhone và iPad.",
+      "k30": "Sol and Stars đang được thiết kế lại quanh hai lựa chọn chính trên màn hình mở đầu: Hệ Mặt Trời và danh mục sao Dải Ngân Hà. Phiên bản hiện đại đang được chuẩn bị cho iPhone, iPad và Mac.",
       "k31": "← Quay lại ứng dụng",
       "k32": "Montréal | Thành phố Hồ Chí Minh",
       "k33": "Quyền riêng tư: Ứng dụng này không thu thập, lưu trữ, truyền hoặc chia sẻ bất kỳ thông tin cá nhân nào."
@@ -182,7 +182,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "主な考え方",
       "k28": "Sol and Stars は2つの主要セクションを同じように重視します。継続的に計算される詳細な太陽系ビューと、恒星を探索・比較するための強力な天の川銀河カタログです。",
       "k29": "状況",
-      "k30": "Sol and Stars は、起動画面の2つの主要な選択肢である太陽系と天の川銀河の恒星カタログを中心に再設計中です。iPhone と iPad 向けの現代版を準備中です。",
+      "k30": "Sol and Stars は、起動画面の2つの主要な選択肢である太陽系と天の川銀河の恒星カタログを中心に再設計中です。iPhone、iPad、Mac 向けの現代版を準備中です。",
       "k31": "← アプリ一覧に戻る",
       "k32": "モントリオール | ホーチミン市",
       "k33": "プライバシー：このアプリは個人情報を収集、保存、送信、共有しません。"
@@ -227,7 +227,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "核心理念",
       "k28": "Sol and Stars 对两个主要部分给予同等重视：持续计算的详细太阳系视图，以及用于探索和比较恒星的强大银河系目录。",
       "k29": "状态",
-      "k30": "Sol and Stars 正围绕启动屏幕上的两个主要选择重新设计：太阳系和银河系恒星目录。正在为 iPhone 和 iPad 准备现代版本。",
+      "k30": "Sol and Stars 正围绕启动屏幕上的两个主要选择重新设计：太阳系和银河系恒星目录。正在为 iPhone、iPad 和 Mac 准备现代版本。",
       "k31": "← 返回应用",
       "k32": "蒙特利尔 | 胡志明市",
       "k33": "隐私：本应用不会收集、存储、传输或共享任何个人信息。"
@@ -272,7 +272,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "核心理念",
       "k28": "Sol and Stars 對兩個主要部分給予同等重視：持續計算的詳細太陽系視圖，以及用於探索和比較恆星的強大銀河系目錄。",
       "k29": "狀態",
-      "k30": "Sol and Stars 正圍繞啟動畫面上的兩個主要選擇重新設計：太陽系和銀河系恆星目錄。正在為 iPhone 和 iPad 準備現代版本。",
+      "k30": "Sol and Stars 正圍繞啟動畫面上的兩個主要選擇重新設計：太陽系和銀河系恆星目錄。正在為 iPhone、iPad 和 Mac 準備現代版本。",
       "k31": "← 返回應用程式",
       "k32": "蒙特婁 | 胡志明市",
       "k33": "隱私：本應用程式不會收集、儲存、傳輸或分享任何個人資訊。"
@@ -317,7 +317,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "Idea principal",
       "k28": "Sol and Stars da la misma importancia a sus dos secciones principales: una vista detallada y calculada continuamente de nuestro Sistema Solar y un potente catálogo de la Vía Láctea para explorar y comparar estrellas.",
       "k29": "Estado",
-      "k30": "Sol and Stars está siendo rediseñada alrededor de dos opciones principales en su pantalla inicial: el Sistema Solar y el catálogo de estrellas de la Vía Láctea. Se está preparando una versión moderna para iPhone y iPad.",
+      "k30": "Sol and Stars está siendo rediseñada alrededor de dos opciones principales en su pantalla inicial: el Sistema Solar y el catálogo de estrellas de la Vía Láctea. Se está preparando una versión moderna para iPhone, iPad y Mac.",
       "k31": "← Volver a las apps",
       "k32": "Montreal | Ciudad Ho Chi Minh",
       "k33": "Privacidad: Esta aplicación no recopila, almacena, transmite ni comparte información personal."
@@ -362,7 +362,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "Grundidee",
       "k28": "Sol and Stars gewichtet seine beiden Hauptbereiche gleich: eine detaillierte, fortlaufend berechnete Ansicht unseres Sonnensystems und einen leistungsfähigen Milchstraßen-Katalog zum Erkunden und Vergleichen von Sternen.",
       "k29": "Status",
-      "k30": "Sol and Stars wird rund um zwei Hauptauswahlen auf dem Startbildschirm neu gestaltet: das Sonnensystem und den Sternkatalog der Milchstraße. Eine moderne Version für iPhone und iPad wird vorbereitet.",
+      "k30": "Sol and Stars wird rund um zwei Hauptauswahlen auf dem Startbildschirm neu gestaltet: das Sonnensystem und den Sternkatalog der Milchstraße. Eine moderne Version für iPhone, iPad und Mac wird vorbereitet.",
       "k31": "← Zurück zu den Apps",
       "k32": "Montreal | Ho-Chi-Minh-Stadt",
       "k33": "Datenschutz: Diese Anwendung erfasst, speichert, überträgt oder teilt keine personenbezogenen Daten."
@@ -407,7 +407,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "الفكرة الرئيسية",
       "k28": "يمنح Sol and Stars أهمية متساوية لقسميه الرئيسيين: عرض مفصل ومحسوب باستمرار لنظامنا الشمسي، وفهرس قوي لدرب التبانة لاستكشاف النجوم ومقارنتها.",
       "k29": "الحالة",
-      "k30": "تجري إعادة تصميم Sol and Stars حول خيارين رئيسيين في شاشة البداية: النظام الشمسي وفهرس نجوم درب التبانة. يجري إعداد نسخة حديثة لأجهزة iPhone وiPad.",
+      "k30": "تجري إعادة تصميم Sol and Stars حول خيارين رئيسيين في شاشة البداية: النظام الشمسي وفهرس نجوم درب التبانة. يجري إعداد نسخة حديثة لأجهزة iPhone وiPad وMac.",
       "k31": "← العودة إلى التطبيقات",
       "k32": "مونتريال | مدينة هو تشي منه",
       "k33": "الخصوصية: لا يجمع هذا التطبيق أي معلومات شخصية ولا يخزنها أو يرسلها أو يشاركها."
@@ -452,7 +452,7 @@ const SOL_AND_STARS_LANGUAGES = {
       "k27": "핵심 아이디어",
       "k28": "Sol and Stars는 두 주요 섹션에 같은 비중을 둡니다. 지속적으로 계산되는 상세한 태양계 보기와 별을 탐색하고 비교하기 위한 강력한 은하수 목록입니다.",
       "k29": "상태",
-      "k30": "Sol and Stars는 시작 화면의 두 가지 주요 선택, 즉 태양계와 은하수 별 목록을 중심으로 재설계되고 있습니다. iPhone과 iPad용 현대적인 버전을 준비 중입니다.",
+      "k30": "Sol and Stars는 시작 화면의 두 가지 주요 선택, 즉 태양계와 은하수 별 목록을 중심으로 재설계되고 있습니다. iPhone, iPad, Mac용 현대적인 버전을 준비 중입니다.",
       "k31": "← 앱으로 돌아가기",
       "k32": "몬트리올 | 호찌민시",
       "k33": "개인정보 보호: 이 앱은 어떠한 개인정보도 수집, 저장, 전송 또는 공유하지 않습니다."

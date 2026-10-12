@@ -1,6 +1,6 @@
 /* Micro Créatif
    Virtual Telescope website languages
-   Version 1.0
+   Version 1.1 — 2026-10-12 11:13 — by Claude AI
 
    To add a language:
    1. Copy one language block inside VIRTUAL_TELESCOPE_LANGUAGES.
@@ -47,7 +47,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "Let the observer choose the limiting magnitude.",
       "k28": "Keep the interface simple and useful at the telescope.",
       "k29": "Status",
-      "k30": "Virtual Telescope is part of the Micro Créatif astronomy app collection. A modern version is being prepared for iPhone and iPad.",
+      "k30": "Virtual Telescope is part of the Micro Créatif astronomy app collection. A modern version is being prepared for iPhone, iPad and Mac.",
       "k31": "← Back to apps",
       "k32": "Montreal | Ho Chi Minh City",
       "k33": "Privacy: This application does not collect, store, transmit, or share any personal information."
@@ -92,7 +92,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "Permettre à l’observateur de choisir la magnitude limite.",
       "k28": "Garder une interface simple et utile au télescope.",
       "k29": "Statut",
-      "k30": "Télescope virtuel fait partie de la collection d’applications d’astronomie de Micro Créatif. Une version moderne est en préparation pour iPhone et iPad.",
+      "k30": "Télescope virtuel fait partie de la collection d’applications d’astronomie de Micro Créatif. Une version moderne est en préparation pour iPhone, iPad et Mac.",
       "k31": "← Retour aux apps",
       "k32": "Montréal | Hô Chi Minh-Ville",
       "k33": "Confidentialité : cette application ne collecte, ne stocke, ne transmet ni ne partage aucun renseignement personnel."
@@ -137,7 +137,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "Cho phép người quan sát chọn độ sáng giới hạn.",
       "k28": "Giữ giao diện đơn giản và hữu ích khi quan sát bằng kính thiên văn.",
       "k29": "Trạng thái",
-      "k30": "Virtual Telescope là một phần của bộ ứng dụng thiên văn Micro Créatif. Một phiên bản hiện đại đang được chuẩn bị cho iPhone và iPad.",
+      "k30": "Virtual Telescope là một phần của bộ ứng dụng thiên văn Micro Créatif. Một phiên bản hiện đại đang được chuẩn bị cho iPhone, iPad và Mac.",
       "k31": "← Quay lại ứng dụng",
       "k32": "Montréal | Thành phố Hồ Chí Minh",
       "k33": "Quyền riêng tư: Ứng dụng này không thu thập, lưu trữ, truyền hoặc chia sẻ bất kỳ thông tin cá nhân nào."
@@ -182,7 +182,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "観測者が限界等級を選べるようにする。",
       "k28": "望遠鏡のそばで使いやすいシンプルなインターフェースを保つ。",
       "k29": "状況",
-      "k30": "Virtual Telescope は Micro Créatif の天文アプリコレクションの一部です。iPhone と iPad 向けの現代版を準備中です。",
+      "k30": "Virtual Telescope は Micro Créatif の天文アプリコレクションの一部です。iPhone、iPad、Mac 向けの現代版を準備中です。",
       "k31": "← アプリ一覧に戻る",
       "k32": "モントリオール | ホーチミン市",
       "k33": "プライバシー：このアプリは個人情報を収集、保存、送信、共有しません。"
@@ -227,7 +227,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "允许观测者选择极限星等。",
       "k28": "保持界面简洁，便于在望远镜旁使用。",
       "k29": "状态",
-      "k30": "Virtual Telescope 是 Micro Créatif 天文应用系列的一部分。正在为 iPhone 和 iPad 准备现代版本。",
+      "k30": "Virtual Telescope 是 Micro Créatif 天文应用系列的一部分。正在为 iPhone、iPad 和 Mac 准备现代版本。",
       "k31": "← 返回应用",
       "k32": "蒙特利尔 | 胡志明市",
       "k33": "隐私：本应用不会收集、存储、传输或共享任何个人信息。"
@@ -272,7 +272,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "允許觀測者選擇極限星等。",
       "k28": "保持介面簡潔，便於在望遠鏡旁使用。",
       "k29": "狀態",
-      "k30": "Virtual Telescope 是 Micro Créatif 天文應用程式系列的一部分。正在為 iPhone 和 iPad 準備現代版本。",
+      "k30": "Virtual Telescope 是 Micro Créatif 天文應用程式系列的一部分。正在為 iPhone、iPad 和 Mac 準備現代版本。",
       "k31": "← 返回應用程式",
       "k32": "蒙特婁 | 胡志明市",
       "k33": "隱私：本應用程式不會收集、儲存、傳輸或分享任何個人資訊。"
@@ -317,7 +317,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "Permitir que el observador elija la magnitud límite.",
       "k28": "Mantener una interfaz sencilla y útil junto al telescopio.",
       "k29": "Estado",
-      "k30": "Virtual Telescope forma parte de la colección de apps de astronomía de Micro Créatif. Se está preparando una versión moderna para iPhone y iPad.",
+      "k30": "Virtual Telescope forma parte de la colección de apps de astronomía de Micro Créatif. Se está preparando una versión moderna para iPhone, iPad y Mac.",
       "k31": "← Volver a las apps",
       "k32": "Montreal | Ciudad Ho Chi Minh",
       "k33": "Privacidad: Esta aplicación no recopila, almacena, transmite ni comparte información personal."
@@ -362,7 +362,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "Dem Beobachter die Wahl der Grenzgröße ermöglichen.",
       "k28": "Die Benutzeroberfläche am Teleskop einfach und praktisch halten.",
       "k29": "Status",
-      "k30": "Virtual Telescope ist Teil der Astronomie-App-Sammlung von Micro Créatif. Eine moderne Version für iPhone und iPad wird vorbereitet.",
+      "k30": "Virtual Telescope ist Teil der Astronomie-App-Sammlung von Micro Créatif. Eine moderne Version für iPhone, iPad und Mac wird vorbereitet.",
       "k31": "← Zurück zu den Apps",
       "k32": "Montreal | Ho-Chi-Minh-Stadt",
       "k33": "Datenschutz: Diese Anwendung erfasst, speichert, überträgt oder teilt keine personenbezogenen Daten."
@@ -407,7 +407,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "السماح للمراقب باختيار القدر الحدي.",
       "k28": "الحفاظ على واجهة بسيطة ومفيدة عند التلسكوب.",
       "k29": "الحالة",
-      "k30": "Virtual Telescope جزء من مجموعة تطبيقات Micro Créatif الفلكية. يجري إعداد نسخة حديثة لأجهزة iPhone وiPad.",
+      "k30": "Virtual Telescope جزء من مجموعة تطبيقات Micro Créatif الفلكية. يجري إعداد نسخة حديثة لأجهزة iPhone وiPad وMac.",
       "k31": "← العودة إلى التطبيقات",
       "k32": "مونتريال | مدينة هو تشي منه",
       "k33": "الخصوصية: لا يجمع هذا التطبيق أي معلومات شخصية ولا يخزنها أو يرسلها أو يشاركها."
@@ -452,7 +452,7 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k27": "관측자가 한계등급을 선택할 수 있게 함.",
       "k28": "망원경 현장에서 간단하고 유용한 인터페이스 유지.",
       "k29": "상태",
-      "k30": "Virtual Telescope는 Micro Créatif 천문학 앱 모음의 일부입니다. iPhone과 iPad용 현대적인 버전을 준비 중입니다.",
+      "k30": "Virtual Telescope는 Micro Créatif 천문학 앱 모음의 일부입니다. iPhone, iPad, Mac용 현대적인 버전을 준비 중입니다.",
       "k31": "← 앱으로 돌아가기",
       "k32": "몬트리올 | 호찌민시",
       "k33": "개인정보 보호: 이 앱은 어떠한 개인정보도 수집, 저장, 전송 또는 공유하지 않습니다."
