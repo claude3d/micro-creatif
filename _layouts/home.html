@@ -2,7 +2,7 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
-<!-- Version 7.18 — 2026-09-30 18:20 EDT — Claude -->
+<!-- Version 7.19 — 2026-10-12 11:52 EDT — by Claude AI -->
 {% assign t = site.data.home[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}" dir="{{ page.dir | default: 'ltr' }}">
@@ -238,6 +238,8 @@ cursor:pointer;
 pointer-events:auto;
 }
 .apps{
+position:relative;
+z-index:2;
 padding:0 20px 20px;
 }
 .app-grid{
@@ -383,7 +385,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.18</p>
+<p>Version 7.19</p>
 </footer>
 
 <script>
@@ -409,6 +411,10 @@ unicorn.play().catch(function(){unicorn.poster="/images/UniClaude-poster.png";})
 unicorn.addEventListener("click",function(){
 unicorn.currentTime=0;
 unicorn.play();
+});
+// Back/Forward restores the page from the browser cache with the video frozen: restart it
+window.addEventListener("pageshow",function(e){
+if(e.persisted){unicorn.currentTime=0;unicorn.play().catch(function(){});}
 });
 }
 
