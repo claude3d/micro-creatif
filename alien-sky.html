@@ -3,6 +3,10 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- alien-sky.html -->
+<!-- Version 3.2 — 2026-10-11 ~18:10 (Quebec time), by Claude AI: "Version 1.0" beside the title, smaller and not bold, like Time Travel Sky's page -->
+<!-- Version 3.1 — 2026-10-11 ~18:05 (Quebec time), by Claude AI: the title shows the app version, 1.0, written once in the page (not in the translations) -->
+<!-- Version 3.0 — 2026-10-11 ~18:00 (Quebec time), by Claude AI: languages file loaded as ?v=1.4 (Earth Sky and Travel card) -->
+<!-- Version 2.9 — 2026-10-11 ~17:55 (Quebec time), by Claude AI: Space and Esc key rows (k51, k52), 3D map feature line (k53); languages file loaded as ?v=1.3; Gaia DR3 and AT-HYG in the keywords -->
 <!-- Version 2.8 — 2026-10-06 ~21:45 (Quebec time), by Claude: languages file loaded as ?v=1.2 so browsers fetch the 12-language version -->
 <!-- Version 2.7 — 2026-10-06 ~21:35 (Quebec time), by Claude: E key row (k50); texts in alien-sky-languages.js 1.1 -->
 <head>
@@ -11,7 +15,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Alien Sky – See the Sky from Another Star | Micro Créatif</title>
 <meta content="Alien Sky by Micro Créatif lets you leave Earth, travel to another star, and see how the real sky changes from a different place in the galaxy. Compare Earth Sky, look forward or back during the journey, and explore a science-based stellar view." name="description"/>
-<meta content="Alien Sky, astronomy app, HYG 4.2 catalogue, Hipparcos, sky from another star, interstellar travel simulation, stellar parallax, proper motion, precession, nutation, annual aberration, Milky Way, planetarium, Micro Créatif" name="keywords"/>
+<meta content="Alien Sky, astronomy app, HYG 4.2 catalogue, Hipparcos, AT-HYG 3.2, Gaia DR3, sky from another star, interstellar travel simulation, stellar parallax, proper motion, precession, nutation, annual aberration, Milky Way, planetarium, Micro Créatif" name="keywords"/>
 <meta content="Micro Créatif" name="author"/>
 <meta content="index, follow" name="robots"/>
 <meta content="Alien Sky – See the Sky from Another Star | Micro Créatif" property="og:title"/>
@@ -161,6 +165,12 @@ font-size:56px;
 line-height:1.0;
 margin:8px 0 10px;
 text-shadow:0 0 16px rgba(140,190,255,0.55);
+}
+.app-version{
+font-size:0.45em;
+font-weight:normal;
+margin-inline-start:1.2em;
+white-space:nowrap;
 }
 .subtitle{
 font-size:22px;
@@ -419,7 +429,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <div class="app-icon">
 <img alt="Alien Sky app icon" src="images/AlienSky.png"/>
 </div>
-<h1 data-i18n="k10"></h1>
+<h1><span data-i18n="k10"></span><span class="app-version">Version 1.0</span></h1>
 <p class="subtitle" data-i18n="k11"></p>
 </section>
 <main class="content">
@@ -461,6 +471,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <li data-i18n="k28"></li>
 <li data-i18n="k29"></li>
 <li data-i18n="k30"></li>
+<li data-i18n="k53"></li>
 </ul>
 </section>
 </div>
@@ -495,6 +506,14 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <code>E</code>
 <span data-i18n="k50"></span>
 </div>
+<div class="key-row">
+<code>Space</code>
+<span data-i18n="k51"></span>
+</div>
+<div class="key-row">
+<code>Esc</code>
+<span data-i18n="k52"></span>
+</div>
 <p data-i18n="k42"></p>
 </div>
 <div class="advanced-block">
@@ -512,7 +531,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k48"></p>
-<p>Version 2.8</p>
+<p>Version 3.2</p>
 <p data-i18n="k49"></p>
 </footer>
 <script>
@@ -551,6 +570,6 @@ menu.style.display="none";
 });
 });
 </script>
-<script defer="" src="alien-sky-languages.js?v=1.2"></script>
+<script defer="" src="alien-sky-languages.js?v=1.4"></script>
 </body>
 </html>
