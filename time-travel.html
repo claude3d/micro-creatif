@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
+<!-- Version 4.16 — 2026-10-12 22:30 (Quebec time), by Claude AI: Credits section (heading credits.title; the sources, the same in every language, written once here); languages file loaded as ?v=3.37 (Status: on the App Store) -->
 <!-- Version 4.15 — 2026-10-12 12:45 — by Claude AI -->
 <head>
 <meta charset="utf-8"/>
@@ -640,6 +641,20 @@ opacity:0.9;
   white-space:nowrap;
 }
 
+.credits{
+  margin:30px auto 0;
+  max-width:1500px;
+  width:calc(100% - 64px);
+  padding:14px 18px;
+  background:rgba(90,60,120,0.28);
+  border:1px solid rgba(255,255,255,0.22);
+  border-radius:18px;
+}
+.credits h2{font-size:22px;margin:0 0 8px;}
+.credits ul{list-style:none;margin:0;padding:0;}
+.credits li{font-size:16px;line-height:1.5;margin:2px 0;}
+html[dir="rtl"] .credits ul{padding-right:0;}
+
 @media (max-width:760px){
 nav{gap:18px;}
 nav a{font-size:15px;}
@@ -1044,6 +1059,14 @@ left:9px;
 </div>
 </div>
 </section>
+<section class="credits">
+<h2 data-i18n="credits.title"></h2>
+<ul>
+<li>HYG — astronexus.com (CC BY-SA 4.0)</li>
+<li>Gaia’s sky in colour — ESA/Gaia/DPAC (CC BY-SA 3.0 IGO)</li>
+<li>Stellarium — constellation lines (CC BY-SA)</li>
+</ul>
+</section>
 <section class="status">
 <h2 data-i18n="status.title"></h2>
 <p data-i18n="status.body"></p>
@@ -1053,7 +1076,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 4.15</p>
+<p>Version 4.16</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1133,7 +1156,7 @@ if (guideVideo && guideNarration) {
 </script>
 
 
-<script src="time-travel-languages.js?v=3.36" defer></script>
+<script src="time-travel-languages.js?v=3.37" defer></script>
 <script>
 /* HTML-only manual exporter. The translation file is left unchanged.
    It builds the PDF from the page's current, already-translated DOM.
