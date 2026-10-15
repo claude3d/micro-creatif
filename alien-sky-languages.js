@@ -1,5 +1,8 @@
 /* Micro Créatif
    Alien Sky website languages
+   Version 2.5 — 2026-10-15 ~19:30 (Quebec time), by Claude AI: k46 (Status) says Alien Sky is now being tested
+   and will be available soon on the App Store; new k98, the caption under the Stars with Exoplanets picture
+   (the page asked for it, but it was missing).
    Version 2.3 — 2026-10-15 ~12:35 (Quebec time), by Claude AI: k26 (the ⓘ beside each star in the lists),
    k30 (each planet's orbit, size, mass, temperature and discovery), k84 is now E alone, new k95 (caption
    under the Copernicus / 55 Cancri planets picture), k96–k97 (Show / hide star names and the ecliptic:
@@ -86,7 +89,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "Sonne, Mond und Planeten werden für Datum und Standort des Beobachters berechnet. Der Mond verwendet eine topozentrische Position und seine sichtbare Phase.",
       "k37": "Während interstellarer Reisen werden die nur für Beobachtungen von der Erde nötigen scheinbaren Korrekturen bewusst entfernt. Die App arbeitet in einem physikalischen, festen dreidimensionalen J2000-Bezugssystem, sodass Parallaxe und veränderte Formen der Sternbilder auf natürliche Weise aus der neuen Position des Beobachters im Raum entstehen.",
       "k45": "Status",
-      "k46": "Alien Sky wird für iPhone, iPad und Mac aktiv entwickelt. Der Erdhimmel und die interstellare Reise verwenden beide dieselbe Astronomie-Engine wie Time Travel Sky. Die Zielsuche, die 3D-Karte und die Informationen zu Sternsystemen sind zurück.",
+      "k46": "Alien Sky wird derzeit für iPhone, iPad und Mac getestet und ist bald im App Store erhältlich. Der Erdhimmel und die interstellare Reise verwenden dieselbe Astronomie-Engine wie Time Travel Sky.",
       "k47": "← Zurück zu den Apps",
       "k48": "Montreal | Ho-Chi-Minh-Stadt",
       "k49": "Datenschutz: Alien Sky erfasst oder überträgt keine personenbezogenen Daten. Die App verwendet Ihren Standort nur zur Berechnung des Himmels. Ihr Standort wird lokal in der App auf diesem Gerät gespeichert und weder übertragen noch geteilt.",
@@ -134,7 +137,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-Benutzerhandbuch.pdf",
       "k95": "Copernicus (55 Cancri) und seine Planeten: Umlaufbahn, Größe, Masse, Dichte, empfangenes Licht, Temperatur und Entdeckung jedes Planeten, aus dem NASA Exoplanet Archive.",
       "k96": "Sternnamen und Ekliptik ein- / ausblenden",
-      "k97": "Star Names antippen"
+      "k97": "Star Names antippen",
+      "k98": "Die Liste der Sterne mit Exoplaneten: Wähle als Ziel einen Stern, von dem Planeten bekannt sind."
     },
     "htmlLang": "de",
     "ogLocale": "de_DE"
@@ -185,7 +189,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "The Sun, Moon and planets are calculated for the observer’s date and location. The Moon uses a topocentric position and its visible phase.",
       "k37": "During interstellar travel, Earth-only apparent corrections are deliberately removed. The app works in a physical fixed-J2000 three-dimensional frame, so parallax and the changing shapes of constellations arise naturally from the observer’s new position in space.",
       "k45": "Status",
-      "k46": "Alien Sky is under active development for iPhone, iPad, and Mac. Earth Sky and the interstellar journey both use the same astronomy engine as Time Travel Sky. The destination search, the 3D map and the stellar-system information are back.",
+      "k46": "Alien Sky is now being tested for iPhone, iPad and Mac, and will be available soon on the App Store. Earth Sky and the interstellar journey use the same astronomy engine as Time Travel Sky.",
       "k47": "← Back to apps",
       "k48": "Montreal | Ho Chi Minh City",
       "k49": "Privacy: Alien Sky does not collect or transmit personal information. The app uses your location only to calculate the sky. Your location is stored locally in the app on this device and is not transmitted or shared.",
@@ -233,7 +237,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-Manual.pdf",
       "k95": "Copernicus (55 Cancri) and its planets: the orbit, size, mass, density, light received, temperature and discovery of each one, from the NASA Exoplanet Archive.",
       "k96": "Show / hide star names and the ecliptic",
-      "k97": "Tap Star Names"
+      "k97": "Tap Star Names",
+      "k98": "The Stars with Exoplanets list: choose as your destination a star known to have planets."
     },
     "htmlLang": "en-CA",
     "ogLocale": "en_CA"
@@ -284,7 +289,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "El Sol, la Luna y los planetas se calculan para la fecha y ubicación del observador. La Luna utiliza una posición topocéntrica y su fase visible.",
       "k37": "Durante el viaje interestelar se eliminan deliberadamente las correcciones aparentes propias de la observación desde la Tierra. La app trabaja en un marco físico tridimensional fijo J2000, por lo que la paralaje y los cambios en las formas de las constelaciones surgen de manera natural de la nueva posición del observador en el espacio.",
       "k45": "Estado",
-      "k46": "Alien Sky está en desarrollo activo para iPhone, iPad y Mac. El cielo terrestre y el viaje interestelar usan ambos el mismo motor astronómico que Time Travel Sky. La búsqueda de destinos, el mapa 3D y la información de los sistemas estelares están de vuelta.",
+      "k46": "Alien Sky se está probando ahora para iPhone, iPad y Mac, y pronto estará disponible en el App Store. El cielo terrestre y el viaje interestelar usan el mismo motor astronómico que Time Travel Sky.",
       "k47": "← Volver a las apps",
       "k48": "Montreal | Ciudad Ho Chi Minh",
       "k49": "Privacidad: Alien Sky no recopila ni transmite información personal. La app utiliza tu ubicación únicamente para calcular el cielo. Tu ubicación se guarda localmente en la app de este dispositivo y no se transmite ni se comparte.",
@@ -332,7 +337,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-Manual-del-usuario.pdf",
       "k95": "Copernicus (55 Cancri) y sus planetas: la órbita, el tamaño, la masa, la densidad, la luz recibida, la temperatura y el descubrimiento de cada uno, del NASA Exoplanet Archive.",
       "k96": "Mostrar / ocultar los nombres de estrellas y la eclíptica",
-      "k97": "Tocar Star Names"
+      "k97": "Tocar Star Names",
+      "k98": "La lista de estrellas con exoplanetas: elige como destino una estrella con planetas conocidos."
     },
     "htmlLang": "es",
     "ogLocale": "es_ES"
@@ -383,7 +389,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "Le Soleil, la Lune et les planètes sont calculés pour la date et la position de l’observateur. La Lune utilise une position topocentrique et sa phase visible.",
       "k37": "Pendant le voyage interstellaire, les corrections apparentes propres à l’observation depuis la Terre sont volontairement retirées. L’app travaille dans un repère physique tridimensionnel fixe J2000, de sorte que la parallaxe et la transformation des constellations résultent naturellement de la nouvelle position de l’observateur dans l’espace.",
       "k45": "Statut",
-      "k46": "Alien Sky est en développement actif pour iPhone, iPad et Mac. Le ciel terrestre et le voyage interstellaire utilisent tous deux le même moteur astronomique que Time Travel Sky. La recherche de destinations, la carte 3D et les renseignements sur les systèmes stellaires sont de retour.",
+      "k46": "Alien Sky est maintenant en test pour iPhone, iPad et Mac, et sera bientôt offert sur l’App Store. Le ciel terrestre et le voyage interstellaire utilisent le même moteur astronomique que Time Travel Sky.",
       "k47": "← Retour aux apps",
       "k48": "Montréal | Hô Chi Minh-Ville",
       "k49": "Confidentialité : Alien Sky ne collecte ni ne transmet de renseignements personnels. L’application utilise votre position uniquement pour calculer le ciel. Votre position est enregistrée localement dans l’application sur cet appareil; elle n’est ni transmise ni partagée.",
@@ -431,7 +437,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-Manuel.pdf",
       "k95": "Copernicus (55 Cancri) et ses planètes : l’orbite, la taille, la masse, la densité, la lumière reçue, la température et la découverte de chacune, d’après le NASA Exoplanet Archive.",
       "k96": "Afficher / masquer les noms d’étoiles et l’écliptique",
-      "k97": "Toucher Star Names"
+      "k97": "Toucher Star Names",
+      "k98": "La liste des étoiles avec exoplanètes : choisissez comme destination une étoile qui a des planètes connues."
     },
     "htmlLang": "fr-CA",
     "ogLocale": "fr_CA"
@@ -482,7 +489,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "Il Sole, la Luna e i pianeti sono calcolati per la data e la posizione dell’osservatore. La Luna usa una posizione topocentrica e la sua fase visibile.",
       "k37": "Durante il viaggio interstellare, le correzioni apparenti valide solo per la Terra vengono deliberatamente rimosse. L’app lavora in un sistema fisico tridimensionale fisso J2000, così la parallasse e il cambiamento di forma delle costellazioni nascono naturalmente dalla nuova posizione dell’osservatore nello spazio.",
       "k45": "Stato",
-      "k46": "Alien Sky è in sviluppo attivo per iPhone, iPad e Mac. Earth Sky e il viaggio interstellare usano entrambi lo stesso motore astronomico di Time Travel Sky. La ricerca della destinazione, la mappa 3D e le informazioni sul sistema stellare sono tornate.",
+      "k46": "Alien Sky è ora in fase di test per iPhone, iPad e Mac e sarà presto disponibile sull’App Store. Il cielo terrestre e il viaggio interstellare usano lo stesso motore astronomico di Time Travel Sky.",
       "k47": "← Torna alle app",
       "k48": "Montréal | Città di Ho Chi Minh",
       "k49": "Privacy: Alien Sky non raccoglie né trasmette informazioni personali. L’app usa la tua posizione solo per calcolare il cielo. La posizione è salvata localmente nell’app su questo dispositivo e non viene trasmessa né condivisa.",
@@ -530,7 +537,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-Manuale.pdf",
       "k95": "Copernicus (55 Cancri) e i suoi pianeti: l’orbita, le dimensioni, la massa, la densità, la luce ricevuta, la temperatura e la scoperta di ciascuno, dal NASA Exoplanet Archive.",
       "k96": "Mostrare / nascondere i nomi delle stelle e l’eclittica",
-      "k97": "Tocca Star Names"
+      "k97": "Tocca Star Names",
+      "k98": "L’elenco delle stelle con esopianeti: scegli come destinazione una stella con pianeti noti."
     },
     "htmlLang": "it-IT",
     "ogLocale": "it_IT"
@@ -581,7 +589,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "Mặt Trời, Mặt Trăng và các hành tinh được tính cho ngày và vị trí của người quan sát. Mặt Trăng sử dụng vị trí địa tâm hiệu chỉnh theo người quan sát (topocentric) và pha nhìn thấy của nó.",
       "k37": "Trong hành trình liên sao, các hiệu chỉnh biểu kiến chỉ dành cho quan sát từ Trái Đất được chủ ý loại bỏ. Ứng dụng làm việc trong một hệ quy chiếu vật lý ba chiều J2000 cố định, vì vậy thị sai và sự thay đổi hình dạng các chòm sao xuất hiện tự nhiên do vị trí mới của người quan sát trong không gian.",
       "k45": "Trạng thái",
-      "k46": "Alien Sky đang được tích cực phát triển cho iPhone, iPad và Mac. Bầu trời Trái Đất và chuyến du hành giữa các vì sao đều dùng cùng bộ máy thiên văn với Time Travel Sky. Tính năng tìm điểm đến, bản đồ 3D và thông tin hệ sao đã trở lại.",
+      "k46": "Alien Sky hiện đang được thử nghiệm cho iPhone, iPad và Mac, và sẽ sớm có mặt trên App Store. Bầu trời Trái Đất và chuyến du hành giữa các vì sao dùng cùng bộ máy thiên văn với Time Travel Sky.",
       "k47": "← Quay lại ứng dụng",
       "k48": "Montréal | Thành phố Hồ Chí Minh",
       "k49": "Quyền riêng tư: Alien Sky không thu thập hoặc truyền thông tin cá nhân. Ứng dụng chỉ sử dụng vị trí của bạn để tính bầu trời. Vị trí được lưu cục bộ trong ứng dụng trên thiết bị này và không được truyền hoặc chia sẻ.",
@@ -629,7 +637,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-Huong-dan-su-dung.pdf",
       "k95": "Copernicus (55 Cancri) và các hành tinh của nó: quỹ đạo, kích thước, khối lượng, mật độ, ánh sáng nhận được, nhiệt độ và việc phát hiện của từng hành tinh, theo NASA Exoplanet Archive.",
       "k96": "Hiện / ẩn tên sao và đường hoàng đạo",
-      "k97": "Chạm vào Star Names"
+      "k97": "Chạm vào Star Names",
+      "k98": "Danh sách các ngôi sao có ngoại hành tinh: chọn làm điểm đến một ngôi sao đã biết có hành tinh."
     },
     "htmlLang": "vi-VN",
     "ogLocale": "vi_VN"
@@ -680,7 +689,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "Солнце, Луна и планеты рассчитываются для даты и места наблюдателя. Для Луны используется топоцентрическое положение и её видимая фаза.",
       "k37": "Во время межзвёздного путешествия поправки, действующие только для Земли, намеренно отключаются. Приложение работает в физической трёхмерной системе, фиксированной на J2000, поэтому параллакс и изменение формы созвездий возникают естественно из нового положения наблюдателя в пространстве.",
       "k45": "Статус",
-      "k46": "Alien Sky активно разрабатывается для iPhone, iPad и Mac. Earth Sky и межзвёздное путешествие используют тот же астрономический движок, что и Time Travel Sky. Поиск цели, 3D-карта и сведения о звёздных системах снова доступны.",
+      "k46": "Alien Sky сейчас проходит тестирование на iPhone, iPad и Mac и скоро появится в App Store. Небо Земли и межзвёздное путешествие используют тот же астрономический движок, что и Time Travel Sky.",
       "k47": "← Назад к приложениям",
       "k48": "Монреаль | Хошимин",
       "k49": "Конфиденциальность: Alien Sky не собирает и не передаёт личную информацию. Приложение использует ваше местоположение только для расчёта неба. Местоположение хранится локально в приложении на этом устройстве и никуда не передаётся.",
@@ -728,7 +737,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-Руководство-пользователя.pdf",
       "k95": "Copernicus (55 Рака) и его планеты: орбита, размер, масса, плотность, получаемый свет, температура и открытие каждой из них по данным NASA Exoplanet Archive.",
       "k96": "Показать / скрыть названия звёзд и эклиптику",
-      "k97": "Касание Star Names"
+      "k97": "Касание Star Names",
+      "k98": "Список звёзд с экзопланетами: выберите пунктом назначения звезду, у которой известны планеты."
     },
     "htmlLang": "ru-RU",
     "ogLocale": "ru_RU"
@@ -779,7 +789,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "تُحسب الشمس والقمر والكواكب وفق تاريخ المراقب وموقعه. يستخدم القمر موضعًا طبو مركزيًا وطورَه المرئي.",
       "k37": "أثناء السفر بين النجوم، تُزال عمدًا التصحيحات الظاهرية الخاصة بالمراقبة من الأرض. يعمل التطبيق في إطار فيزيائي ثلاثي الأبعاد ثابت J2000، ولذلك ينشأ اختلاف المنظر وتغير أشكال الكوكبات طبيعيًا من الموضع الجديد للمراقب في الفضاء.",
       "k45": "الحالة",
-      "k46": "يجري تطوير Alien Sky بنشاط لأجهزة iPhone وiPad وMac. تستخدم سماء الأرض والرحلة بين النجوم كلتاهما محرك الفلك نفسه المستخدم في Time Travel Sky. وقد عاد البحث عن الوجهة والخريطة ثلاثية الأبعاد ومعلومات الأنظمة النجمية.",
+      "k46": "يجري الآن اختبار Alien Sky على iPhone وiPad وMac، وسيتوفر قريبًا على App Store. تستخدم سماء الأرض والرحلة بين النجوم محرك الفلك نفسه المستخدم في Time Travel Sky.",
       "k47": "← العودة إلى التطبيقات",
       "k48": "مونتريال | مدينة هو تشي منه",
       "k49": "الخصوصية: لا يجمع Alien Sky المعلومات الشخصية ولا يرسلها. يستخدم التطبيق موقعك فقط لحساب السماء. يُخزن موقعك محليًا داخل التطبيق على هذا الجهاز ولا يُرسل ولا يُشارك.",
@@ -827,7 +837,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-دليل-المستخدم.pdf",
       "k95": "Copernicus ‏(55 Cancri) وكواكبه: مدار كل كوكب وحجمه وكتلته وكثافته والضوء الذي يتلقاه ودرجة حرارته واكتشافه، من NASA Exoplanet Archive.",
       "k96": "إظهار / إخفاء أسماء النجوم ومسار الشمس الظاهري",
-      "k97": "اضغط على Star Names"
+      "k97": "اضغط على Star Names",
+      "k98": "قائمة النجوم ذات الكواكب الخارجية: اختر وجهةً نجمًا معروفًا أن له كواكب."
     },
     "htmlLang": "ar",
     "ogLocale": "ar_AR"
@@ -878,7 +889,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "太阳、月亮和行星根据观测者的日期和位置计算。月亮使用站心位置以及可见月相。",
       "k37": "在星际旅行期间，会有意移除仅适用于地球观测的视位置修正。应用在固定 J2000 的物理三维参考系中工作，因此视差和星座形状的变化会由观测者在空间中的新位置自然产生。",
       "k45": "状态",
-      "k46": "Alien Sky 正在为 iPhone、iPad 和 Mac 积极开发中。地球天空和星际旅行都使用与 Time Travel Sky 相同的天文引擎。目的地搜索、3D 地图和恒星系统信息均已恢复。",
+      "k46": "Alien Sky 目前正在 iPhone、iPad 和 Mac 上进行测试，即将在 App Store 上架。地球天空和星际旅行使用与 Time Travel Sky 相同的天文引擎。",
       "k47": "← 返回应用",
       "k48": "蒙特利尔 | 胡志明市",
       "k49": "隐私：Alien Sky 不会收集或传输个人信息。应用仅使用您的位置来计算天空。您的位置只保存在本设备的应用中，不会被传输或共享。",
@@ -926,7 +937,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-用户手册.pdf",
       "k95": "Copernicus（巨蟹座 55）及其行星：每颗行星的轨道、大小、质量、密度、接收的光、温度和发现信息，数据来自 NASA Exoplanet Archive。",
       "k96": "显示 / 隐藏恒星名称和黄道",
-      "k97": "轻点 Star Names"
+      "k97": "轻点 Star Names",
+      "k98": "系外行星恒星列表：选择一颗已知拥有行星的恒星作为目的地。"
     },
     "htmlLang": "zh-CN",
     "ogLocale": "zh_CN"
@@ -977,7 +989,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "太陽、月亮和行星根據觀測者的日期和位置計算。月亮使用站心位置以及可見月相。",
       "k37": "在星際旅行期間，會有意移除僅適用於地球觀測的視位置修正。應用程式在固定 J2000 的物理三維參考系中工作，因此視差和星座形狀的變化會由觀測者在空間中的新位置自然產生。",
       "k45": "狀態",
-      "k46": "Alien Sky 正在為 iPhone、iPad 和 Mac 積極開發中。地球天空和星際旅行都使用與 Time Travel Sky 相同的天文引擎。目的地搜尋、3D 地圖和恆星系統資訊皆已恢復。",
+      "k46": "Alien Sky 目前正在 iPhone、iPad 和 Mac 上進行測試，即將在 App Store 上架。地球天空和星際旅行使用與 Time Travel Sky 相同的天文引擎。",
       "k47": "← 返回應用程式",
       "k48": "蒙特婁 | 胡志明市",
       "k49": "隱私：Alien Sky 不會收集或傳輸個人資訊。應用程式僅使用您的位置來計算天空。您的位置只儲存在本裝置的應用程式中，不會被傳輸或分享。",
@@ -1025,7 +1037,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-使用者手冊.pdf",
       "k95": "Copernicus（巨蟹座 55）及其行星：每顆行星的軌道、大小、質量、密度、接收的光、溫度和發現資訊，資料來自 NASA Exoplanet Archive。",
       "k96": "顯示 / 隱藏恆星名稱和黃道",
-      "k97": "輕點 Star Names"
+      "k97": "輕點 Star Names",
+      "k98": "系外行星恆星列表：選擇一顆已知擁有行星的恆星作為目的地。"
     },
     "htmlLang": "zh-TW",
     "ogLocale": "zh_TW"
@@ -1076,7 +1089,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "太陽、月、惑星は観測者の日付と場所に対して計算されます。月には地心視差を考慮した観測地点基準の位置と、見える位相を使用します。",
       "k37": "恒星間旅行中は、地球からの観測にだけ必要な見かけの補正を意図的に取り除きます。アプリは固定 J2000 の物理的な3次元座標系で動作するため、視差や星座の形の変化は、宇宙空間での観測者の新しい位置から自然に生じます。",
       "k45": "状況",
-      "k46": "Alien Sky は iPhone、iPad、Mac 向けに開発を進めています。地球の空と恒星間の旅は、どちらも Time Travel Sky と同じ天文エンジンを使っています。目的地の検索、3D マップ、恒星系の情報が戻りました。",
+      "k46": "Alien Sky は現在、iPhone、iPad、Mac 向けにテスト中で、まもなく App Store で公開されます。地球の空と恒星間の旅は、Time Travel Sky と同じ天文エンジンを使っています。",
       "k47": "← アプリ一覧に戻る",
       "k48": "モントリオール | ホーチミン市",
       "k49": "プライバシー：Alien Sky は個人情報を収集または送信しません。位置情報は空を計算するためだけに使用します。位置情報はこの端末のアプリ内にローカル保存され、送信も共有もされません。",
@@ -1124,7 +1137,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-ユーザーマニュアル.pdf",
       "k95": "Copernicus（かに座55番星）とその惑星：各惑星の軌道、大きさ、質量、密度、受ける光、温度、発見の情報（NASA Exoplanet Archive より）。",
       "k96": "恒星名と黄道の表示 / 非表示",
-      "k97": "Star Names をタップ"
+      "k97": "Star Names をタップ",
+      "k98": "系外惑星のある恒星のリスト：惑星が知られている恒星を目的地に選べます。"
     },
     "htmlLang": "ja-JP",
     "ogLocale": "ja_JP"
@@ -1175,7 +1189,7 @@ const ALIEN_SKY_LANGUAGES = {
       "k36": "태양, 달, 행성은 관측자의 날짜와 위치에 맞춰 계산됩니다. 달은 지심 시차를 반영한 관측지 기준 위치와 보이는 위상을 사용합니다.",
       "k37": "성간 여행 중에는 지구 관측에만 필요한 겉보기 보정을 의도적으로 제거합니다. 앱은 고정 J2000 물리 3차원 좌표계에서 작동하므로 시차와 별자리 모양의 변화가 우주에서 관측자의 새로운 위치로부터 자연스럽게 생깁니다.",
       "k45": "상태",
-      "k46": "Alien Sky는 iPhone, iPad, Mac용으로 활발히 개발 중입니다. 지구 하늘과 성간 여행 모두 Time Travel Sky와 같은 천문 엔진을 사용합니다. 목적지 검색, 3D 지도, 항성계 정보가 다시 제공됩니다.",
+      "k46": "Alien Sky는 현재 iPhone, iPad, Mac용으로 테스트 중이며 곧 App Store에 출시됩니다. 지구의 하늘과 성간 여행은 Time Travel Sky와 같은 천문 엔진을 사용합니다.",
       "k47": "← 앱으로 돌아가기",
       "k48": "몬트리올 | 호찌민시",
       "k49": "개인정보 보호: Alien Sky는 개인정보를 수집하거나 전송하지 않습니다. 앱은 하늘을 계산하기 위해서만 사용자의 위치를 사용합니다. 위치 정보는 이 기기의 앱에 로컬로 저장되며 전송되거나 공유되지 않습니다.",
@@ -1223,7 +1237,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k94": "Alien-Sky-사용자-설명서.pdf",
       "k95": "Copernicus(게자리 55)와 그 행성들: 각 행성의 궤도, 크기, 질량, 밀도, 받는 빛, 온도, 발견 정보(NASA Exoplanet Archive 자료).",
       "k96": "별 이름과 황도 표시 / 숨기기",
-      "k97": "Star Names 탭"
+      "k97": "Star Names 탭",
+      "k98": "외계 행성이 있는 별 목록: 행성이 알려진 별을 목적지로 선택하세요."
     },
     "htmlLang": "ko-KR",
     "ogLocale": "ko_KR"
