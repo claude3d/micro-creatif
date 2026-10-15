@@ -3,6 +3,13 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- alien-sky.html -->
+<!-- Version 4.4 — 2026-10-14 ~22:35 (Quebec time), by Claude AI: Download Manual button under the subtitle (k90), building the PDF in the browser from the page, as on Time Travel Sky's page (html2pdf.bundle.min.js); languages file loaded as ?v=2.2 -->
+<!-- Version 4.3 — 2026-10-14 ~22:20 (Quebec time), by Claude AI: Shortcuts & Gestures section, the same as the app's panel (k59–k89), replaces the keyboard and star-names blocks; key-row styles removed; languages file loaded as ?v=2.1 -->
+<!-- Version 4.2 — 2026-10-14 ~22:05 (Quebec time), by Claude AI: languages file loaded as ?v=2.0 (corrected Look Back caption) -->
+<!-- Version 4.1 — 2026-10-14 ~21:55 (Quebec time), by Claude AI: pictures use the real file names AS-BackHome and AS-Landing -->
+<!-- Version 4.0 — 2026-10-14 ~21:55 (Quebec time), by Claude AI: two more pictures, AS-LookBack and AS-EarthZoom, with captions (k57, k58); languages file loaded as ?v=1.9 -->
+<!-- Version 3.9 — 2026-10-14 ~21:40 (Quebec time), by Claude AI: caption under the video (k56); languages file loaded as ?v=1.8 -->
+<!-- Version 3.8 — 2026-10-14 ~21:25 (Quebec time), by Claude AI: video (videos/alien-sky.mp4, poster = its first frame) under the title, then the four pictures AS-EarthSky, AS-Destination, AS-3DView, AS-AStarInfo in a 2×2 grid, as on Time Travel Sky's page -->
 <!-- Version 3.7 — 2026-10-12 ~22:25 (Quebec time), by Claude AI: languages file loaded as ?v=1.7 (catalogue numbers, star-to-star travel, tap on the sky) -->
 <!-- Version 3.6 — 2026-10-12 ~22:15 (Quebec time), by Claude AI: the Stellarium credit says it is for the constellation lines, with its licence -->
 <!-- Version 3.5 — 2026-10-12 ~22:05 (Quebec time), by Claude AI: Credits section (heading k55; the sources, the same in every language, written once here); languages file loaded as ?v=1.6 -->
@@ -185,6 +192,33 @@ margin:0 auto;
 line-height:1.35;
 opacity:0.95;
 }
+.manual-download-btn{
+margin-top:18px;
+padding:10px 24px;
+font-size:17px;
+font-weight:600;
+color:white;
+border:1px solid rgba(180,200,255,0.65);
+border-radius:24px;
+background:rgba(255,255,255,0.10);
+box-shadow:0 0 14px rgba(120,170,255,0.30);
+cursor:pointer;
+}
+.manual-download-btn:hover{box-shadow:0 0 22px rgba(150,200,255,0.62);}
+.manual-download-btn.is-busy{cursor:progress;}
+.manual-download-btn.is-busy::before{
+content:"";
+display:inline-block;
+width:0.9em;
+height:0.9em;
+margin-inline-end:0.5em;
+vertical-align:-0.12em;
+border:2px solid rgba(255,255,255,0.35);
+border-top-color:#fff;
+border-radius:50%;
+animation:manual-spin 0.8s linear infinite;
+}
+@keyframes manual-spin{to{transform:rotate(360deg);}}
 .content{
 max-width:1040px;
 margin:0 auto;
@@ -312,28 +346,10 @@ font-size:17px;
 line-height:1.5;
 margin:7px 0;
 }
-.key-row{
-display:grid;
-grid-template-columns:105px 1fr;
-gap:12px;
-align-items:center;
-margin:9px 0;
-font-size:17px;
-line-height:1.4;
-}
-.key-row code{
-display:inline-block;
-text-align:center;
-font-family:Menlo, Monaco, Consolas, monospace;
-font-size:16px;
-font-weight:bold;
-color:white;
-background:rgba(255,255,255,0.11);
-border:1px solid rgba(255,255,255,0.28);
-border-radius:8px;
-padding:6px 8px;
-white-space:nowrap;
-}
+.advanced-block h4{font-size:19px;margin:18px 0 4px;color:#c9d8f5;}
+.shortcut-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:17px;line-height:1.4;}
+.shortcut-row code{justify-self:end;text-align:end;font-family:Menlo, Monaco, Consolas, monospace;font-size:15px;font-weight:bold;color:#8fb8ff;}
+.advanced-block p.shortcut-note{margin:6px 0 0;}
 .status{
 margin:30px auto 0;
 max-width:800px;
@@ -346,6 +362,21 @@ border-radius:18px;
 .status p{font-size:18px;line-height:1.45;margin:0;}
 .credits{margin-bottom:24px;}
 .credits ul{font-size:16px;line-height:1.6;margin:0;padding:0;list-style:none;}
+.video-gallery,.screenshot-gallery{margin:0 auto 30px;}
+.video-frame,.screenshot-frame{
+margin:0;
+background:rgba(5,8,24,0.70);
+border:1px solid rgba(190,215,255,0.28);
+border-radius:18px;
+padding:8px;
+box-shadow:0 0 22px rgba(40,80,160,0.20);
+overflow:hidden;
+}
+.video-frame{width:80%;margin:0 auto;}
+.video-frame video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;object-fit:contain;background:#000;border-radius:12px;}
+.screenshot-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:18px;}
+.video-frame figcaption,.screenshot-frame figcaption{padding:12px 8px 5px;font-size:16px;line-height:1.4;opacity:0.92;}
+.screenshot-frame img{display:block;width:100%;height:auto;border-radius:12px;}
 .btn{
 display:inline-block;
 margin-top:28px;
@@ -374,12 +405,16 @@ nav a{font-size:15px;}
 .lang-select-wrap .lang-caret-icon{right:9px;font-size:9px;}
 h1{font-size:42px;}
 .subtitle{font-size:19px;}
+.manual-download-btn{font-size:15px;padding:9px 20px;}
+.video-frame{width:100%;}
+.screenshot-grid{grid-template-columns:1fr;}
 .mode-grid{grid-template-columns:1fr;}
 .card-grid{grid-template-columns:1fr;}
 .lower-row{grid-template-columns:1fr;}
 .advanced-grid{grid-template-columns:1fr;}
 .advanced-block.wide{grid-column:auto;}
-.key-row{grid-template-columns:92px 1fr;}
+.shortcut-row{grid-template-columns:1fr;gap:2px;}
+.shortcut-row code{justify-self:start;text-align:start;}
 .app-icon{width:116px;height:116px;border-radius:25px;}
 .content{padding-left:16px;padding-right:16px;}
 .feature-list{padding:20px;}
@@ -402,9 +437,6 @@ html[dir="rtl"] .advanced-block,
 html[dir="rtl"] .card ul{text-align:right;}
 html[dir="rtl"] ul{padding-left:0;padding-right:24px;}
 html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
-html[dir="rtl"] .key-row{direction:ltr;}
-html[dir="rtl"] .key-row > span{direction:rtl;text-align:right;}
-html[dir="rtl"] .key-row code{direction:ltr;}
 @media (max-width:760px){nav{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
@@ -439,8 +471,27 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 </div>
 <h1><span data-i18n="k10"></span><span class="app-version">Version 1.0</span></h1>
 <p class="subtitle" data-i18n="k11"></p>
+<button class="manual-download-btn" data-i18n="k90" id="downloadManualButtonDirect" type="button"></button>
 </section>
 <main class="content">
+<section class="video-gallery">
+<figure class="video-frame">
+<video controls playsinline preload="metadata" poster="videos/alien-sky-poster.jpg">
+<source src="videos/alien-sky.mp4" type="video/mp4"/>
+</video>
+<figcaption data-i18n="k56"></figcaption>
+</figure>
+</section>
+<section class="screenshot-gallery">
+<div class="screenshot-grid">
+<figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-EarthSky.png"/></figure>
+<figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-Destination.png"/></figure>
+<figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-3DView.png"/></figure>
+<figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-AStarInfo.png"/></figure>
+<figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-BackHome.png"/><figcaption data-i18n="k57"></figcaption></figure>
+<figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-Landing.png"/><figcaption data-i18n="k58"></figcaption></figure>
+</div>
+</section>
 <div class="mode-grid">
 <div class="mode-card">
 <h2 data-i18n="k12"></h2>
@@ -497,37 +548,30 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <li data-i18n="k37"></li>
 </ul>
 </div>
-<div class="advanced-block">
-<h3 data-i18n="k38"></h3>
-<div class="key-row">
-<code>← → ↑ ↓</code>
-<span data-i18n="k39"></span>
-</div>
-<div class="key-row">
-<code>+ / −</code>
-<span data-i18n="k40"></span>
-</div>
-<div class="key-row">
-<code>0</code>
-<span data-i18n="k41"></span>
-</div>
-<div class="key-row">
-<code>E</code>
-<span data-i18n="k50"></span>
-</div>
-<div class="key-row">
-<code>Space</code>
-<span data-i18n="k51"></span>
-</div>
-<div class="key-row">
-<code>Esc</code>
-<span data-i18n="k52"></span>
-</div>
-<p data-i18n="k42"></p>
-</div>
-<div class="advanced-block">
-<h3 data-i18n="k43"></h3>
-<p data-i18n="k44"></p>
+<div class="advanced-block wide">
+<h3 data-i18n="k59"></h3>
+<p data-i18n="k60"></p>
+<h4 data-i18n="k61"></h4>
+<div class="shortcut-row"><span data-i18n="k66"></span><code data-i18n="k81"></code></div>
+<div class="shortcut-row"><span data-i18n="k67"></span><code data-i18n="k82"></code></div>
+<div class="shortcut-row"><span data-i18n="k68"></span><code data-i18n="k83"></code></div>
+<div class="shortcut-row"><span data-i18n="k69"></span><code data-i18n="k84"></code></div>
+<div class="shortcut-row"><span data-i18n="k70"></span><code data-i18n="k85"></code></div>
+<h4 data-i18n="k62"></h4>
+<div class="shortcut-row"><span data-i18n="k71"></span><code data-i18n="k86"></code></div>
+<h4 data-i18n="k63"></h4>
+<div class="shortcut-row"><span data-i18n="k72"></span><code data-i18n="k81"></code></div>
+<div class="shortcut-row"><span data-i18n="k67"></span><code data-i18n="k82"></code></div>
+<div class="shortcut-row"><span data-i18n="k73"></span><code data-i18n="k83"></code></div>
+<div class="shortcut-row"><span data-i18n="k74"></span><code data-i18n="k87"></code></div>
+<div class="shortcut-row"><span data-i18n="k75"></span><code data-i18n="k88"></code></div>
+<h4 data-i18n="k64"></h4>
+<div class="shortcut-row"><span data-i18n="k76"></span><code data-i18n="k82"></code></div>
+<div class="shortcut-row"><span data-i18n="k77"></span><code data-i18n="k83"></code></div>
+<p class="shortcut-note" data-i18n="k78"></p>
+<h4 data-i18n="k65"></h4>
+<div class="shortcut-row"><span data-i18n="k79"></span><code data-i18n="k89"></code></div>
+<div class="shortcut-row"><span data-i18n="k80"></span><code>Esc</code></div>
 </div>
 </div>
 </section>
@@ -552,7 +596,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k48"></p>
-<p>Version 3.7</p>
+<p>Version 4.4</p>
 <p data-i18n="k49"></p>
 </footer>
 <script>
@@ -591,6 +635,345 @@ menu.style.display="none";
 });
 });
 </script>
-<script defer="" src="alien-sky-languages.js?v=1.7"></script>
+<script>
+/* Manual exporter: builds the PDF in the browser from the page's current,
+   already-translated text. The video is shown by its poster picture. */
+(function(){
+  const BUTTON_ID = "downloadManualButtonDirect";
+  const LOCAL_PDF_LIBRARY = "html2pdf.bundle.min.js";
+  let localPdfLibraryPromise = null;
+
+  function loadLocalPdfLibrary(){
+    if (window.html2pdf) return Promise.resolve(window.html2pdf);
+    if (localPdfLibraryPromise) return localPdfLibraryPromise;
+    localPdfLibraryPromise = new Promise(function(resolve, reject){
+      const script = document.createElement("script");
+      script.src = LOCAL_PDF_LIBRARY;
+      script.async = true;
+      script.addEventListener("load", function(){
+        if (window.html2pdf) resolve(window.html2pdf);
+        else reject(new Error("Local PDF library loaded without html2pdf."));
+      }, { once:true });
+      script.addEventListener("error", function(){
+        localPdfLibraryPromise = null;
+        reject(new Error("Unable to load local PDF library."));
+      }, { once:true });
+      document.head.appendChild(script);
+    });
+    return localPdfLibraryPromise;
+  }
+
+  function cleanManualText(value){
+    return (value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function currentLanguage(){
+    const code = document.getElementById("languageSelect")?.value || "en";
+    return Object.prototype.hasOwnProperty.call(ALIEN_SKY_LANGUAGES, code) ? code : "en";
+  }
+
+  function collectManualItems(){
+    const items = [];
+    const root = document.querySelector("main.content");
+    if (!root) return items;
+
+    root.querySelectorAll("h2, h3, h4, p, li, .shortcut-row, figure").forEach(function(element){
+      if (element.matches("h2, h3, h4, p, li") && element.closest(".shortcut-row, figure")) return;
+
+      if (element.tagName === "FIGURE") {
+        const video = element.querySelector("video");
+        const pageImage = element.querySelector("img");
+        const src = video?.getAttribute("poster") || pageImage?.getAttribute("src") || "";
+        if (src) {
+          items.push({
+            type: "image",
+            src: new URL(src, document.baseURI).href,
+            caption: cleanManualText(element.querySelector("figcaption")?.textContent || "")
+          });
+        }
+        return;
+      }
+
+      if (element.classList.contains("shortcut-row")) {
+        const text = Array.from(element.children).map(function(child){ return cleanManualText(child.textContent); }).join("  —  ");
+        if (text) items.push({ type: "text", kind: "control", text });
+        return;
+      }
+
+      const text = cleanManualText(element.textContent);
+      if (!text) return;
+      let kind = "body";
+      if (element.tagName === "H2") kind = "h2";
+      else if (element.tagName === "H3") kind = "h3";
+      else if (element.tagName === "H4") kind = "h4";
+      else if (element.tagName === "LI") kind = "bullet";
+      items.push({ type: "text", kind, text });
+    });
+
+    document.querySelectorAll("footer p").forEach(function(element){
+      const text = cleanManualText(element.textContent);
+      if (text) items.push({ type: "text", kind: "footerText", text });
+    });
+    return items;
+  }
+
+  function wrapCanvasText(ctx, text, maxWidth){
+    const words = text.split(/\s+/).filter(Boolean);
+    if (!words.length) return [""];
+    const lines = [];
+    let line = "";
+
+    function splitLongWord(word){
+      const parts = [];
+      let part = "";
+      for (const character of Array.from(word)) {
+        const trial = part + character;
+        if (part && ctx.measureText(trial).width > maxWidth) {
+          parts.push(part);
+          part = character;
+        } else {
+          part = trial;
+        }
+      }
+      if (part) parts.push(part);
+      return parts;
+    }
+
+    words.forEach(function(word){
+      const trial = line ? line + " " + word : word;
+      if (ctx.measureText(trial).width <= maxWidth) {
+        line = trial;
+        return;
+      }
+      if (line) {
+        lines.push(line);
+        line = "";
+      }
+      if (ctx.measureText(word).width <= maxWidth) {
+        line = word;
+      } else {
+        const parts = splitLongWord(word);
+        parts.slice(0, -1).forEach(function(part){ lines.push(part); });
+        line = parts[parts.length - 1] || "";
+      }
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function makeTextPicture(text, kind, rtl){
+    const width = 1200;
+    const side = 36;
+    const styles = {
+      h2: { size:38, weight:700, line:50, before:22, after:18, align:"center" },
+      h3: { size:30, weight:700, line:41, before:14, after:12, align:rtl ? "right" : "left" },
+      h4: { size:26, weight:700, line:36, before:10, after:10, align:rtl ? "right" : "left" },
+      body: { size:24, weight:400, line:35, before:2, after:12, align:rtl ? "right" : "left" },
+      bullet: { size:23, weight:400, line:34, before:0, after:8, align:rtl ? "right" : "left" },
+      control: { size:22, weight:500, line:33, before:1, after:7, align:rtl ? "right" : "left" },
+      footerText: { size:21, weight:400, line:31, before:2, after:8, align:rtl ? "right" : "left" },
+      coverTitle: { size:55, weight:700, line:66, before:0, after:14, align:"center" },
+      coverManual: { size:36, weight:650, line:46, before:0, after:10, align:"center" },
+      coverBody: { size:25, weight:400, line:37, before:0, after:10, align:"center" }
+    };
+    const style = styles[kind] || styles.body;
+    const prefix = kind === "bullet" ? "• " : "";
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    const probe = canvas.getContext("2d");
+    probe.font = `${style.weight} ${style.size}px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif`;
+    probe.direction = rtl ? "rtl" : "ltr";
+    const lines = wrapCanvasText(probe, prefix + text, width - side * 2);
+    canvas.height = Math.max(1, style.before + lines.length * style.line + style.after);
+
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = kind === "h2" ? "#17366f" : kind === "h3" || kind === "h4" ? "#25477e" : "#182033";
+    ctx.font = `${style.weight} ${style.size}px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif`;
+    ctx.textBaseline = "top";
+    ctx.direction = rtl ? "rtl" : "ltr";
+    ctx.textAlign = style.align;
+    const x = style.align === "center" ? width / 2 : style.align === "right" ? width - side : side;
+    lines.forEach(function(line, index){
+      ctx.fillText(line, x, style.before + index * style.line);
+    });
+    return { data:canvas.toDataURL("image/png"), width:canvas.width, height:canvas.height };
+  }
+
+  async function pictureData(src){
+    try {
+      const response = await fetch(src, { cache:"force-cache" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const blob = await response.blob();
+      const mime = (blob.type || "").toLowerCase();
+      const format = mime.includes("png") ? "PNG"
+        : mime.includes("jpeg") || mime.includes("jpg") ? "JPEG"
+        : "";
+      if (!format) throw new Error(`Unsupported image type: ${blob.type || "unknown"}`);
+
+      const decoded = await new Promise(function(resolve, reject){
+        const image = new Image();
+        const objectUrl = URL.createObjectURL(blob);
+        image.onload = function(){
+          const width = image.naturalWidth;
+          const height = image.naturalHeight;
+
+          if (format === "JPEG") {
+            /* jsPDF can misread some JPEG internals: let the browser decode
+               the picture first, then hand jsPDF a PNG raster. */
+            const canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext("2d", { alpha:false });
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(0, 0, width, height);
+            ctx.drawImage(image, 0, 0, width, height);
+            const data = canvas.toDataURL("image/png");
+            URL.revokeObjectURL(objectUrl);
+            resolve({ data, format:"PNG", width, height });
+            return;
+          }
+
+          URL.revokeObjectURL(objectUrl);
+          resolve({ data:null, format, width, height });
+        };
+        image.onerror = function(){
+          URL.revokeObjectURL(objectUrl);
+          reject(new Error("Image dimensions could not be read."));
+        };
+        image.src = objectUrl;
+      });
+
+      if (decoded.data) return decoded;
+      return {
+        data:new Uint8Array(await blob.arrayBuffer()),
+        format:decoded.format,
+        width:decoded.width,
+        height:decoded.height
+      };
+    } catch (error) {
+      console.warn("Manual picture could not be embedded:", src, error);
+      return null;
+    }
+  }
+
+  async function createPdfShell(){
+    await loadLocalPdfLibrary();
+    if (window.jspdf?.jsPDF) {
+      return new window.jspdf.jsPDF({ unit:"pt", format:"a4", orientation:"portrait", compress:true });
+    }
+    const seed = document.createElement("div");
+    seed.textContent = " ";
+    const worker = window.html2pdf().set({
+      margin:0,
+      html2canvas:{ scale:1, logging:false },
+      jsPDF:{ unit:"pt", format:"a4", orientation:"portrait", compress:true }
+    }).from(seed).toPdf();
+    await worker;
+    return worker.get("pdf");
+  }
+
+  async function downloadManual(){
+    const button = document.getElementById(BUTTON_ID);
+    if (!button) return;
+    const code = currentLanguage();
+    const pack = ALIEN_SKY_LANGUAGES[code];
+    const strings = pack.strings;
+    const originalText = button.textContent;
+    button.disabled = true;
+    button.classList.add("is-busy");
+    button.textContent = strings.k91 || originalText + "…";
+
+    try {
+      const rtl = pack.dir === "rtl";
+      const versionNumber = (document.querySelector(".app-version")?.textContent || "").match(/\d+(?:\.\d+)*/)?.[0] || "";
+      const website = document.querySelector('link[rel="canonical"]')?.href || "https://microcreatif.ca/alien-sky.html";
+      const pdf = await createPdfShell();
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const marginX = 42;
+      const top = 42;
+      const bottom = 42;
+      const maxWidth = pageWidth - marginX * 2;
+      let y = top;
+
+      function newPage(){
+        pdf.addPage();
+        y = top;
+      }
+
+      function addDataImage(data, widthPixels, heightPixels, maxHeight, format){
+        let width = maxWidth;
+        let height = width * heightPixels / widthPixels;
+        if (height > maxHeight) {
+          height = maxHeight;
+          width = height * widthPixels / heightPixels;
+        }
+        if (y + height > pageHeight - bottom) newPage();
+        const x = marginX + (maxWidth - width) / 2;
+        const imageFormat = format || (typeof data === "string" && data.startsWith("data:image/png") ? "PNG" : "JPEG");
+        pdf.addImage(data, imageFormat, x, y, width, height, undefined, "FAST");
+        y += height + 10;
+      }
+
+      function addText(text, kind){
+        const picture = makeTextPicture(text, kind, rtl);
+        addDataImage(picture.data, picture.width, picture.height, pageHeight - top - bottom);
+      }
+
+      const heading = document.querySelector("h1");
+      const title = heading ? Array.from(heading.children).map(function(child){ return cleanManualText(child.textContent); }).join("  ") : "Alien Sky";
+      const subtitle = cleanManualText(document.querySelector(".subtitle")?.textContent || "");
+      addText(title, "coverTitle");
+      addText(strings.k93 || "User Manual", "coverManual");
+      if (subtitle) addText(subtitle, "coverBody");
+      addText(website, "coverBody");
+
+      const iconSrc = document.querySelector(".app-icon img")?.src || "";
+      if (iconSrc) {
+        const icon = await pictureData(iconSrc);
+        if (icon) addDataImage(icon.data, icon.width, icon.height, 115, icon.format);
+      }
+      newPage();
+
+      for (const item of collectManualItems()) {
+        if (item.type === "text") {
+          addText(item.text, item.kind);
+          continue;
+        }
+        const picture = await pictureData(item.src);
+        if (picture) addDataImage(picture.data, picture.width, picture.height, 360, picture.format);
+        if (item.caption) addText(item.caption, "body");
+      }
+
+      const pages = pdf.internal.getNumberOfPages();
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(8);
+      pdf.setTextColor(110, 118, 134);
+      for (let page = 1; page <= pages; page += 1) {
+        pdf.setPage(page);
+        pdf.text("Alien Sky", marginX, pageHeight - 18);
+        pdf.text(`${page} / ${pages}`, pageWidth - marginX, pageHeight - 18, { align:"right" });
+      }
+
+      const base = (strings.k94 || "Alien-Sky-Manual.pdf").replace(/\.pdf$/i, "");
+      const fileLanguage = code === "zh-Hans" ? "ZH-Hans" : code === "zh-Hant" ? "ZH-Hant" : code.toUpperCase();
+      pdf.save(`${base}${versionNumber ? "-" + versionNumber : ""}-${fileLanguage}.pdf`);
+    } catch (error) {
+      console.error("Alien Sky manual generation failed:", error);
+      alert(strings.k92 || "The manual could not be created.");
+    } finally {
+      button.disabled = false;
+      button.classList.remove("is-busy");
+      button.textContent = originalText;
+    }
+  }
+
+  document.getElementById(BUTTON_ID)?.addEventListener("click", downloadManual);
+})();
+</script>
+<script defer="" src="alien-sky-languages.js?v=2.2"></script>
 </body>
 </html>
