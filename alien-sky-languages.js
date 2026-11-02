@@ -1,5 +1,12 @@
 /* Micro Créatif
    Alien Sky website languages
+   Version 2.9 — 2026-11-02 ~16:30 (Vietnam time), by Claude AI: k101 (Star List caption) also lists the columns on
+   the right (absolute magnitude, luminosity, B−V, radius, motion, planets) and says to swipe sideways on a
+   smaller screen, the Name column staying in place.
+   Version 2.8 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): k05 removed.
+   Version 2.7 — 2026-11-02 ~15:15 (Vietnam time), by Claude AI: new k101, the caption under the Star List
+   picture (the button next to ⓘ, magnitude − / +, sorting by Name, RA, Distance or Mag, light-years /
+   parsecs, RA jump such as 5h30, search by name, Bayer letter, Gliese, HIP or Gaia number).
    Version 2.6 — 2026-10-15 ~19:40 (Quebec time), by Claude AI: new k99–k100, the Exoplanets card (803 host
    stars, 1,167 planets, from ExoplanetPlanets.csv).
    Version 2.5 — 2026-10-15 ~19:30 (Quebec time), by Claude AI: k46 (Status) says Alien Sky is now being tested
@@ -57,7 +64,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "Über uns",
@@ -142,7 +148,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Star Names antippen",
       "k98": "Die Liste der Sterne mit Exoplaneten: Wähle als Ziel einen Stern, von dem Planeten bekannt sind.",
       "k99": "Exoplaneten",
-      "k100": "Reise zu Sternen mit bekannten Planeten: 803 Wirtssterne und 1.167 Planeten aus dem NASA Exoplanet Archive. Wähle ein Ziel aus der Liste der Sterne mit Exoplaneten oder zeige auf der 3D-Karte nur die Exoplaneten-Wirtssterne. Tippe auf einen Wirtsstern, um für jeden Planeten Umlaufbahn, Größe, Masse, Dichte, empfangenes Licht, Temperatur und Entdeckung zu sehen."
+      "k100": "Reise zu Sternen mit bekannten Planeten: 803 Wirtssterne und 1.167 Planeten aus dem NASA Exoplanet Archive. Wähle ein Ziel aus der Liste der Sterne mit Exoplaneten oder zeige auf der 3D-Karte nur die Exoplaneten-Wirtssterne. Tippe auf einen Wirtsstern, um für jeden Planeten Umlaufbahn, Größe, Masse, Dichte, empfangenes Licht, Temperatur und Entdeckung zu sehen.",
+      "k101": "Die Sternliste (die Taste neben ⓘ): alle Sterne des Katalogs bis zu der Helligkeit, die du mit − und + wählst. Tippe auf eine Spaltenüberschrift, um zu sortieren: Name (A–Z), RA (nach Position am Himmel; gib eine Rektaszension wie 5h30 ein, um dorthin zu springen), Distance (die nächsten zuerst; erneut tippen wechselt zwischen Lichtjahren und Parsec) oder Mag (die hellsten zuerst). Suche nach Name, Bayer-Bezeichnung (z. B. alpha centauri), Gliese-, HIP- oder Gaia-Nummer; tippe auf einen Stern, um seine Informationen zu sehen. Rechts folgen weitere Spalten: absolute Helligkeit, Leuchtkraft, Farbe B−V, Radius, Eigenbewegung, Radial- und Raumgeschwindigkeit sowie Planeten. Auf einem kleineren Bildschirm wische die Tabelle nach links und rechts, um sie zu sehen (die Namensspalte bleibt stehen)."
     },
     "htmlLang": "de",
     "ogLocale": "de_DE"
@@ -159,7 +166,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "About",
@@ -244,7 +250,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Tap Star Names",
       "k98": "The Stars with Exoplanets list: choose as your destination a star known to have planets.",
       "k99": "Exoplanets",
-      "k100": "Travel to stars with known planets: 803 host stars and 1,167 planets from the NASA Exoplanet Archive. Choose a destination from the Stars with Exoplanets list, or show only the exoplanet hosts on the 3D map. Tap a host star to see each planet’s orbit, size, mass, density, the light it receives, its temperature and its discovery."
+      "k100": "Travel to stars with known planets: 803 host stars and 1,167 planets from the NASA Exoplanet Archive. Choose a destination from the Stars with Exoplanets list, or show only the exoplanet hosts on the 3D map. Tap a host star to see each planet’s orbit, size, mass, density, the light it receives, its temperature and its discovery.",
+      "k101": "The Star List (the button next to ⓘ): every star in the catalogue down to the magnitude you choose with − and +. Tap a column heading to sort: Name (A–Z), RA (by position in the sky; type an RA such as 5h30 to jump there), Distance (nearest first; tap it again to switch between light-years and parsecs) or Mag (brightest first). Search by name, Bayer letter (e.g. alpha centauri), Gliese, HIP or Gaia number; tap a star to see its information. More columns follow on the right: absolute magnitude, luminosity, colour B−V, radius, proper motion, radial and space velocity, and planets. On a smaller screen, swipe the table left and right to see them (the Name column stays in place)."
     },
     "htmlLang": "en-CA",
     "ogLocale": "en_CA"
@@ -261,7 +268,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "Acerca de",
@@ -346,7 +352,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Tocar Star Names",
       "k98": "La lista de estrellas con exoplanetas: elige como destino una estrella con planetas conocidos.",
       "k99": "Exoplanetas",
-      "k100": "Viaja a estrellas con planetas conocidos: 803 estrellas anfitrionas y 1167 planetas del NASA Exoplanet Archive. Elige un destino en la lista de estrellas con exoplanetas o muestra solo las estrellas anfitrionas en el mapa 3D. Toca una estrella anfitriona para ver la órbita, el tamaño, la masa, la densidad, la luz recibida, la temperatura y el descubrimiento de cada planeta."
+      "k100": "Viaja a estrellas con planetas conocidos: 803 estrellas anfitrionas y 1167 planetas del NASA Exoplanet Archive. Elige un destino en la lista de estrellas con exoplanetas o muestra solo las estrellas anfitrionas en el mapa 3D. Toca una estrella anfitriona para ver la órbita, el tamaño, la masa, la densidad, la luz recibida, la temperatura y el descubrimiento de cada planeta.",
+      "k101": "La lista de estrellas (el botón junto a ⓘ): todas las estrellas del catálogo hasta la magnitud que elijas con − y +. Toca el encabezado de una columna para ordenar: Name (A–Z), RA (por posición en el cielo; escribe una ascensión recta como 5h30 para ir allí), Distance (las más cercanas primero; tócalo otra vez para cambiar entre años luz y pársecs) o Mag (las más brillantes primero). Busca por nombre, letra de Bayer (p. ej. alpha centauri), número Gliese, HIP o Gaia; toca una estrella para ver su información. A la derecha hay más columnas: magnitud absoluta, luminosidad, color B−V, radio, movimiento propio, velocidad radial y espacial, y planetas. En una pantalla más pequeña, desliza la tabla a izquierda y derecha para verlas (la columna Name permanece en su sitio)."
     },
     "htmlLang": "es",
     "ogLocale": "es_ES"
@@ -363,7 +370,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "À propos",
@@ -448,7 +454,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Toucher Star Names",
       "k98": "La liste des étoiles avec exoplanètes : choisissez comme destination une étoile qui a des planètes connues.",
       "k99": "Exoplanètes",
-      "k100": "Voyagez vers des étoiles qui ont des planètes connues : 803 étoiles hôtes et 1 167 planètes du NASA Exoplanet Archive. Choisissez une destination dans la liste des étoiles avec exoplanètes, ou n’affichez que les étoiles hôtes sur la carte 3D. Touchez une étoile hôte pour voir l’orbite, la taille, la masse, la densité, la lumière reçue, la température et la découverte de chaque planète."
+      "k100": "Voyagez vers des étoiles qui ont des planètes connues : 803 étoiles hôtes et 1 167 planètes du NASA Exoplanet Archive. Choisissez une destination dans la liste des étoiles avec exoplanètes, ou n’affichez que les étoiles hôtes sur la carte 3D. Touchez une étoile hôte pour voir l’orbite, la taille, la masse, la densité, la lumière reçue, la température et la découverte de chaque planète.",
+      "k101": "La liste des étoiles (le bouton à côté de ⓘ) : toutes les étoiles du catalogue jusqu’à la magnitude choisie avec − et +. Touchez un en-tête de colonne pour trier : Name (A–Z), RA (par position dans le ciel ; tapez une ascension droite comme 5h30 pour y aller), Distance (les plus proches d’abord ; touchez-le de nouveau pour passer des années-lumière aux parsecs) ou Mag (les plus brillantes d’abord). Cherchez par nom, lettre de Bayer (p. ex. alpha centauri), numéro Gliese, HIP ou Gaia ; touchez une étoile pour voir ses informations. D’autres colonnes suivent à droite : magnitude absolue, luminosité, couleur B−V, rayon, mouvement propre, vitesse radiale et spatiale, et planètes. Sur un écran plus petit, faites glisser le tableau vers la gauche et la droite pour les voir (la colonne Name reste en place)."
     },
     "htmlLang": "fr-CA",
     "ogLocale": "fr_CA"
@@ -465,7 +472,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "App",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "Informazioni",
@@ -550,7 +556,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Tocca Star Names",
       "k98": "L’elenco delle stelle con esopianeti: scegli come destinazione una stella con pianeti noti.",
       "k99": "Esopianeti",
-      "k100": "Viaggia verso stelle con pianeti noti: 803 stelle ospiti e 1.167 pianeti dal NASA Exoplanet Archive. Scegli una destinazione dall’elenco delle stelle con esopianeti o mostra solo le stelle ospiti sulla mappa 3D. Tocca una stella ospite per vedere orbita, dimensioni, massa, densità, luce ricevuta, temperatura e scoperta di ogni pianeta."
+      "k100": "Viaggia verso stelle con pianeti noti: 803 stelle ospiti e 1.167 pianeti dal NASA Exoplanet Archive. Scegli una destinazione dall’elenco delle stelle con esopianeti o mostra solo le stelle ospiti sulla mappa 3D. Tocca una stella ospite per vedere orbita, dimensioni, massa, densità, luce ricevuta, temperatura e scoperta di ogni pianeta.",
+      "k101": "L’elenco delle stelle (il pulsante accanto a ⓘ): tutte le stelle del catalogo fino alla magnitudine scelta con − e +. Tocca l’intestazione di una colonna per ordinare: Name (A–Z), RA (per posizione nel cielo; scrivi un’ascensione retta come 5h30 per andarci), Distance (prima le più vicine; toccalo di nuovo per passare da anni luce a parsec) o Mag (prima le più luminose). Cerca per nome, lettera di Bayer (es. alpha centauri), numero Gliese, HIP o Gaia; tocca una stella per vederne le informazioni. A destra seguono altre colonne: magnitudine assoluta, luminosità, colore B−V, raggio, moto proprio, velocità radiale e spaziale, e pianeti. Su uno schermo più piccolo, scorri la tabella a sinistra e a destra per vederle (la colonna Name resta ferma)."
     },
     "htmlLang": "it-IT",
     "ogLocale": "it_IT"
@@ -567,7 +574,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "Ứng dụng",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "Giới thiệu",
@@ -652,7 +658,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Chạm vào Star Names",
       "k98": "Danh sách các ngôi sao có ngoại hành tinh: chọn làm điểm đến một ngôi sao đã biết có hành tinh.",
       "k99": "Ngoại hành tinh",
-      "k100": "Du hành đến các ngôi sao đã biết có hành tinh: 803 sao chủ và 1.167 hành tinh từ NASA Exoplanet Archive. Chọn điểm đến trong danh sách các ngôi sao có ngoại hành tinh, hoặc chỉ hiển thị các sao chủ trên bản đồ 3D. Chạm vào một sao chủ để xem quỹ đạo, kích thước, khối lượng, mật độ, lượng ánh sáng nhận được, nhiệt độ và việc phát hiện của từng hành tinh."
+      "k100": "Du hành đến các ngôi sao đã biết có hành tinh: 803 sao chủ và 1.167 hành tinh từ NASA Exoplanet Archive. Chọn điểm đến trong danh sách các ngôi sao có ngoại hành tinh, hoặc chỉ hiển thị các sao chủ trên bản đồ 3D. Chạm vào một sao chủ để xem quỹ đạo, kích thước, khối lượng, mật độ, lượng ánh sáng nhận được, nhiệt độ và việc phát hiện của từng hành tinh.",
+      "k101": "Danh sách sao (nút bên cạnh ⓘ): mọi ngôi sao trong danh mục đến cấp sao bạn chọn bằng − và +. Chạm vào tiêu đề cột để sắp xếp: Name (A–Z), RA (theo vị trí trên bầu trời; gõ một xích kinh như 5h30 để nhảy đến đó), Distance (gần nhất trước; chạm lần nữa để đổi giữa năm ánh sáng và parsec) hoặc Mag (sáng nhất trước). Tìm theo tên, ký hiệu Bayer (ví dụ alpha centauri), số Gliese, HIP hoặc Gaia; chạm vào một ngôi sao để xem thông tin của nó. Bên phải còn có thêm các cột: cấp sao tuyệt đối, độ trưng, màu B−V, bán kính, chuyển động riêng, vận tốc xuyên tâm và vận tốc không gian, và số hành tinh. Trên màn hình nhỏ hơn, vuốt bảng sang trái và phải để xem chúng (cột Name vẫn giữ nguyên)."
     },
     "htmlLang": "vi-VN",
     "ogLocale": "vi_VN"
@@ -669,7 +676,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "Приложения",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "О нас",
@@ -754,7 +760,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Касание Star Names",
       "k98": "Список звёзд с экзопланетами: выберите пунктом назначения звезду, у которой известны планеты.",
       "k99": "Экзопланеты",
-      "k100": "Путешествуйте к звёздам с известными планетами: 803 родительские звезды и 1167 планет из NASA Exoplanet Archive. Выберите цель в списке звёзд с экзопланетами или покажите на 3D-карте только звёзды с экзопланетами. Коснитесь такой звезды, чтобы увидеть орбиту, размер, массу, плотность, получаемый свет, температуру и открытие каждой планеты."
+      "k100": "Путешествуйте к звёздам с известными планетами: 803 родительские звезды и 1167 планет из NASA Exoplanet Archive. Выберите цель в списке звёзд с экзопланетами или покажите на 3D-карте только звёзды с экзопланетами. Коснитесь такой звезды, чтобы увидеть орбиту, размер, массу, плотность, получаемый свет, температуру и открытие каждой планеты.",
+      "k101": "Список звёзд (кнопка рядом с ⓘ): все звёзды каталога до звёздной величины, выбранной кнопками − и +. Коснитесь заголовка столбца, чтобы отсортировать: Name (A–Z), RA (по положению на небе; введите прямое восхождение, например 5h30, чтобы перейти туда), Distance (сначала ближайшие; коснитесь ещё раз, чтобы переключить световые годы и парсеки) или Mag (сначала самые яркие). Ищите по имени, обозначению Байера (например, alpha centauri), номеру Gliese, HIP или Gaia; коснитесь звезды, чтобы увидеть сведения о ней. Справа идут ещё столбцы: абсолютная звёздная величина, светимость, цвет B−V, радиус, собственное движение, лучевая и пространственная скорость, а также планеты. На небольшом экране прокрутите таблицу влево и вправо, чтобы их увидеть (столбец Name остаётся на месте)."
     },
     "htmlLang": "ru-RU",
     "ogLocale": "ru_RU"
@@ -771,7 +778,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "التطبيقات",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "حول",
@@ -856,7 +862,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "اضغط على Star Names",
       "k98": "قائمة النجوم ذات الكواكب الخارجية: اختر وجهةً نجمًا معروفًا أن له كواكب.",
       "k99": "الكواكب الخارجية",
-      "k100": "سافر إلى نجوم معروف أن لها كواكب: 803 نجوم مضيفة و1167 كوكبًا من NASA Exoplanet Archive. اختر وجهة من قائمة النجوم ذات الكواكب الخارجية، أو اعرض النجوم المضيفة فقط على الخريطة ثلاثية الأبعاد. المس نجمًا مضيفًا لترى مدار كل كوكب وحجمه وكتلته وكثافته والضوء الذي يتلقاه ودرجة حرارته واكتشافه."
+      "k100": "سافر إلى نجوم معروف أن لها كواكب: 803 نجوم مضيفة و1167 كوكبًا من NASA Exoplanet Archive. اختر وجهة من قائمة النجوم ذات الكواكب الخارجية، أو اعرض النجوم المضيفة فقط على الخريطة ثلاثية الأبعاد. المس نجمًا مضيفًا لترى مدار كل كوكب وحجمه وكتلته وكثافته والضوء الذي يتلقاه ودرجة حرارته واكتشافه.",
+      "k101": "قائمة النجوم (الزر بجانب ⓘ): كل نجوم الفهرس حتى القدر الذي تختاره بالزرين − و+. المس عنوان عمود للترتيب: Name (أبجديًا)، RA (حسب الموقع في السماء؛ اكتب مطلعًا مستقيمًا مثل 5h30 للانتقال إليه)، Distance (الأقرب أولًا؛ المسه مرة أخرى للتبديل بين السنوات الضوئية والفراسخ الفلكية) أو Mag (الألمع أولًا). ابحث بالاسم أو بحرف باير (مثل alpha centauri) أو برقم Gliese أو HIP أو Gaia؛ المس نجمًا لترى معلوماته. تتبعها أعمدة أخرى على اليمين: القدر المطلق، والسطوع، واللون B−V، ونصف القطر، والحركة الذاتية، والسرعة الشعاعية والفضائية، والكواكب. على شاشة أصغر، اسحب الجدول يسارًا ويمينًا لرؤيتها (يبقى عمود Name في مكانه)."
     },
     "htmlLang": "ar",
     "ogLocale": "ar_AR"
@@ -873,7 +880,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "应用",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "关于",
@@ -958,7 +964,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "轻点 Star Names",
       "k98": "系外行星恒星列表：选择一颗已知拥有行星的恒星作为目的地。",
       "k99": "系外行星",
-      "k100": "前往已知拥有行星的恒星：来自 NASA Exoplanet Archive 的 803 颗宿主恒星和 1,167 颗行星。从系外行星恒星列表中选择目的地，或在 3D 地图上只显示系外行星宿主恒星。轻点宿主恒星，即可查看每颗行星的轨道、大小、质量、密度、接收的光照、温度和发现信息。"
+      "k100": "前往已知拥有行星的恒星：来自 NASA Exoplanet Archive 的 803 颗宿主恒星和 1,167 颗行星。从系外行星恒星列表中选择目的地，或在 3D 地图上只显示系外行星宿主恒星。轻点宿主恒星，即可查看每颗行星的轨道、大小、质量、密度、接收的光照、温度和发现信息。",
+      "k101": "恒星列表（ⓘ 旁边的按钮）：目录中星等不超过你用 − 和 + 选择之值的所有恒星。轻点列标题即可排序：Name（按字母）、RA（按天空中的位置；输入如 5h30 的赤经即可跳到那里）、Distance（最近的在前；再点一次可在光年和秒差距之间切换）或 Mag（最亮的在前）。可按名称、拜耳名（例如 alpha centauri）、Gliese、HIP 或 Gaia 编号搜索；轻点恒星即可查看其信息。右侧还有更多列：绝对星等、光度、颜色 B−V、半径、自行、视向速度和空间速度，以及行星数量。在较小的屏幕上，左右滑动表格即可查看（Name 列保持不动）。"
     },
     "htmlLang": "zh-CN",
     "ogLocale": "zh_CN"
@@ -975,7 +982,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "應用程式",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "關於",
@@ -1060,7 +1066,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "輕點 Star Names",
       "k98": "系外行星恆星列表：選擇一顆已知擁有行星的恆星作為目的地。",
       "k99": "系外行星",
-      "k100": "前往已知擁有行星的恆星：來自 NASA Exoplanet Archive 的 803 顆宿主恆星和 1,167 顆行星。從系外行星恆星列表中選擇目的地，或在 3D 地圖上只顯示系外行星宿主恆星。輕點宿主恆星，即可查看每顆行星的軌道、大小、質量、密度、接收的光照、溫度和發現資訊。"
+      "k100": "前往已知擁有行星的恆星：來自 NASA Exoplanet Archive 的 803 顆宿主恆星和 1,167 顆行星。從系外行星恆星列表中選擇目的地，或在 3D 地圖上只顯示系外行星宿主恆星。輕點宿主恆星，即可查看每顆行星的軌道、大小、質量、密度、接收的光照、溫度和發現資訊。",
+      "k101": "恆星列表（ⓘ 旁邊的按鈕）：目錄中星等不超過你用 − 和 + 選擇之值的所有恆星。輕點欄位標題即可排序：Name（按字母）、RA（按天空中的位置；輸入如 5h30 的赤經即可跳到那裡）、Distance（最近的在前；再點一次可在光年和秒差距之間切換）或 Mag（最亮的在前）。可按名稱、拜耳名（例如 alpha centauri）、Gliese、HIP 或 Gaia 編號搜尋；輕點恆星即可查看其資訊。右側還有更多欄位：絕對星等、光度、顏色 B−V、半徑、自行、視向速度和空間速度，以及行星數量。在較小的螢幕上，左右滑動表格即可查看（Name 欄保持不動）。"
     },
     "htmlLang": "zh-TW",
     "ogLocale": "zh_TW"
@@ -1077,7 +1084,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "アプリ",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "概要",
@@ -1162,7 +1168,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Star Names をタップ",
       "k98": "系外惑星のある恒星のリスト：惑星が知られている恒星を目的地に選べます。",
       "k99": "系外惑星",
-      "k100": "惑星が知られている恒星へ旅しましょう：NASA Exoplanet Archive の主星 803 個と惑星 1,167 個。系外惑星のある恒星のリストから目的地を選ぶか、3D マップに主星だけを表示できます。主星をタップすると、各惑星の軌道、大きさ、質量、密度、受ける光、温度、発見の情報が見られます。"
+      "k100": "惑星が知られている恒星へ旅しましょう：NASA Exoplanet Archive の主星 803 個と惑星 1,167 個。系外惑星のある恒星のリストから目的地を選ぶか、3D マップに主星だけを表示できます。主星をタップすると、各惑星の軌道、大きさ、質量、密度、受ける光、温度、発見の情報が見られます。",
+      "k101": "恒星リスト（ⓘ の隣のボタン）：− と + で選んだ等級までの、カタログ内のすべての恒星。列の見出しをタップして並べ替えます：Name（アルファベット順）、RA（空の位置順。5h30 のように赤経を入力するとその位置へ移動）、Distance（近い順。もう一度タップすると光年とパーセクを切り替え）、Mag（明るい順）。名前、バイエル符号（例：alpha centauri）、Gliese・HIP・Gaia 番号で検索でき、恒星をタップするとその情報が表示されます。右側にはさらに列があります：絶対等級、光度、色 B−V、半径、固有運動、視線速度と空間速度、惑星の数。小さい画面では表を左右にスワイプして表示できます（Name 列は固定されたままです）。"
     },
     "htmlLang": "ja-JP",
     "ogLocale": "ja_JP"
@@ -1179,7 +1186,6 @@ const ALIEN_SKY_LANGUAGES = {
       "k02": "앱",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "정보",
@@ -1264,7 +1270,8 @@ const ALIEN_SKY_LANGUAGES = {
       "k97": "Star Names 탭",
       "k98": "외계 행성이 있는 별 목록: 행성이 알려진 별을 목적지로 선택하세요.",
       "k99": "외계 행성",
-      "k100": "행성이 알려진 별로 여행하세요: NASA Exoplanet Archive의 모항성 803개와 행성 1,167개. 외계 행성이 있는 별 목록에서 목적지를 고르거나 3D 지도에 모항성만 표시할 수 있습니다. 모항성을 탭하면 각 행성의 궤도, 크기, 질량, 밀도, 받는 빛, 온도, 발견 정보를 볼 수 있습니다."
+      "k100": "행성이 알려진 별로 여행하세요: NASA Exoplanet Archive의 모항성 803개와 행성 1,167개. 외계 행성이 있는 별 목록에서 목적지를 고르거나 3D 지도에 모항성만 표시할 수 있습니다. 모항성을 탭하면 각 행성의 궤도, 크기, 질량, 밀도, 받는 빛, 온도, 발견 정보를 볼 수 있습니다.",
+      "k101": "별 목록(ⓘ 옆 버튼): − 와 + 로 고른 등급까지 카탈로그의 모든 별. 열 제목을 탭해 정렬하세요: Name(알파벳순), RA(하늘의 위치순; 5h30 같은 적경을 입력하면 그 위치로 이동), Distance(가까운 순; 다시 탭하면 광년과 파섹 전환) 또는 Mag(밝은 순). 이름, 바이어 부호(예: alpha centauri), Gliese·HIP·Gaia 번호로 검색하고, 별을 탭하면 정보를 볼 수 있습니다. 오른쪽에 더 많은 열이 있습니다: 절대등급, 광도, 색 B−V, 반지름, 고유운동, 시선속도와 공간속도, 행성 수. 작은 화면에서는 표를 좌우로 밀어 볼 수 있습니다(Name 열은 그대로 고정됩니다)."
     },
     "htmlLang": "ko-KR",
     "ogLocale": "ko_KR"

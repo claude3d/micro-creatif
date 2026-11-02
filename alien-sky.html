@@ -3,6 +3,12 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- alien-sky.html -->
+<!-- Version 5.6 — 2026-11-02 ~16:30 (Vietnam time), by Claude AI: languages file loaded as ?v=2.9 (Star List caption: more columns on the right, swipe sideways) -->
+<!-- Version 5.5 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
+<!-- Version 5.4 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
+<!-- Version 5.3 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link removed; languages file loaded as alien-sky-languages.js?v=2.8 -->
+<!-- Version 5.2 — 2026-11-02 ~15:20 (Vietnam time), by Claude AI: the Star List picture spans the grid at the video's width (80%, full width on phones) -->
+<!-- Version 5.1 — 2026-11-02 ~15:15 (Vietnam time), by Claude AI: Star List picture (AS-StarList) with caption k101 under the two exoplanet pictures; languages file loaded as ?v=2.7 -->
 <!-- Version 5.0 — 2026-10-15 ~19:40 (Quebec time), by Claude AI: Exoplanets card (k99–k100) under the three feature cards; languages file loaded as ?v=2.6 -->
 <!-- Version 4.9 — 2026-10-15 ~19:30 (Quebec time), by Claude AI: languages file loaded as ?v=2.5 (Status: now being tested; k98 caption) -->
 <!-- Version 4.8 — 2026-10-15 ~19:20 (Quebec time), by Claude AI: credits say the HYG and AT-HYG data are adapted, as their CC BY-SA 4.0 licence asks -->
@@ -100,9 +106,9 @@ white-space:nowrap;
 }
 .dropdown{position:relative;display:inline-flex;align-items:center;}
 .nav-caret-icon{
-font-size:10px;
+font-size:1.0em;
 margin-inline-start:4px;
-opacity:0.7;
+opacity:0.9;
 pointer-events:none;
 }
 .submenu{
@@ -384,6 +390,7 @@ overflow:hidden;
 .screenshot-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:18px;}
 .video-frame figcaption,.screenshot-frame figcaption{padding:12px 8px 5px;font-size:16px;line-height:1.4;opacity:0.92;}
 .screenshot-frame img{display:block;width:100%;height:auto;border-radius:12px;}
+.screenshot-frame.video-width{grid-column:1 / -1;width:80%;justify-self:center;}
 .btn{
 display:inline-block;
 margin-top:28px;
@@ -414,6 +421,7 @@ h1{font-size:42px;}
 .subtitle{font-size:19px;}
 .manual-download-btn{font-size:15px;padding:9px 20px;}
 .video-frame{width:100%;}
+.screenshot-frame.video-width{width:100%;}
 .screenshot-grid{grid-template-columns:1fr;}
 .mode-grid{grid-template-columns:1fr;}
 .card-grid{grid-template-columns:1fr;}
@@ -458,7 +466,6 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <div class="submenu" id="appsMenu">
 <a data-i18n="k03" href="radec-calculator.html"></a>
 <a data-i18n="k04" href="virtual-telescope.html"></a>
-<a data-i18n="k05" href="sol-and-stars.html"></a>
 <a data-i18n="k06" href="alien-sky.html"></a>
 <a data-i18n="k07" href="time-travel.html"></a>
 </div>
@@ -499,6 +506,7 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-Landing.png"/><figcaption data-i18n="k58"></figcaption></figure>
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-Exo.png"/><figcaption data-i18n="k98"></figcaption></figure>
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-ExoInfo.png"/><figcaption data-i18n="k95"></figcaption></figure>
+<figure class="screenshot-frame video-width"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-StarList.png"/><figcaption data-i18n="k101"></figcaption></figure>
 </div>
 </section>
 <div class="mode-grid">
@@ -610,7 +618,7 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k48"></p>
-<p>Version 5.0</p>
+<p>Version 5.6</p>
 <p data-i18n="k49"></p>
 </footer>
 <script>
@@ -988,6 +996,6 @@ menu.style.display="none";
   document.getElementById(BUTTON_ID)?.addEventListener("click", downloadManual);
 })();
 </script>
-<script defer="" src="alien-sky-languages.js?v=2.6"></script>
+<script defer="" src="alien-sky-languages.js?v=2.9"></script>
 </body>
 </html>

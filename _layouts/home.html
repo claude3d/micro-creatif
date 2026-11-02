@@ -2,6 +2,9 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
+<!-- Version 7.23 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
+<!-- Version 7.22 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
+<!-- Version 7.21 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link and app icon removed -->
 <!-- Version 7.20 — 2026-10-12 12:30 EDT — by Claude AI -->
 {% assign t = site.data.home[page.lang] %}
 <!DOCTYPE html>
@@ -103,9 +106,9 @@ display:inline-flex;
 align-items:center;
 }
 .nav-caret-icon{
-font-size:10px;
+font-size:1.0em;
 margin-inline-start:4px;
-opacity:0.7;
+opacity:0.9;
 pointer-events:none;
 }
 .submenu{
@@ -295,7 +298,6 @@ opacity:0.85;
 <div class="submenu" id="appsMenu">
 <a href="/radec-calculator.html">{{ t.appRadec }}</a>
 <a href="/virtual-telescope.html">{{ t.appVirtualTelescope }}</a>
-<a href="/sol-and-stars.html">{{ t.appSolAndStars }}</a>
 <a href="/alien-sky.html">{{ t.appAlienSky }}</a>
 <a href="/time-travel.html">{{ t.appTimeTravelSky }}</a>
 </div>
@@ -354,15 +356,6 @@ opacity:0.85;
 </div>
 
 <div class="app">
-<a href="/sol-and-stars.html">
-<div class="icon">
-<img src="/images/Sol&Stars.png" alt="{{ t.solAndStarsAlt }}">
-</div>
-<p>{{ t.appSolAndStars }}</p>
-</a>
-</div>
-
-<div class="app">
 <a href="/alien-sky.html">
 <div class="icon">
 <img src="/images/AlienSky.png" alt="{{ t.alienSkyAlt }}">
@@ -386,7 +379,7 @@ opacity:0.85;
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.20</p>
+<p>Version 7.23</p>
 </footer>
 
 <script>

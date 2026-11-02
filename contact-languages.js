@@ -1,5 +1,6 @@
 /* Micro Créatif
    Contact page languages
+   Version 1.1 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): appSolAndStars removed.
    Version 1.0
 */
 
@@ -17,7 +18,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "Choose language",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "Contact",
@@ -37,7 +37,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "Choisir la langue",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "Contact",
@@ -57,7 +56,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "Chọn ngôn ngữ",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "Liên hệ",
@@ -77,7 +75,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "言語を選択",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "お問い合わせ",
@@ -97,7 +94,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "选择语言",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "联系我们",
@@ -117,7 +113,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "選擇語言",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "聯絡我們",
@@ -137,7 +132,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "Elegir idioma",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "Contacto",
@@ -157,7 +151,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "Sprache auswählen",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "Kontakt",
@@ -177,7 +170,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "اختر اللغة",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "اتصل بنا",
@@ -197,7 +189,6 @@ const CONTACT_LANGUAGES = {
     "languageSelector": "언어 선택",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "contactTitle": "연락처",

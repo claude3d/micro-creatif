@@ -1,5 +1,7 @@
 /* Micro Créatif
    Time Travel Sky website languages
+   Version 3.39 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI
+   Sol and Stars removed (the app is dropped): nav.solAndStars removed.
    Version 3.38 — 2026-10-13 11:40 (Quebec time), by Claude AI
    sidereal.controls.clock in all languages (app 1.4.4): C stops and restarts the clock; it
    returns to the present time if it was showing it, otherwise carries on from the time shown;
@@ -50,7 +52,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.apps": "Apps",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "About",
@@ -187,7 +188,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.apps": "Apps",
       "nav.radec": "AD / Déc / AZ / Alt",
       "nav.virtualTelescope": "Télescope virtuel",
-      "nav.solAndStars": "Sol et les étoiles",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "À propos",
@@ -324,7 +324,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.apps": "Ứng dụng",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "Giới thiệu",
@@ -578,7 +577,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "alt.appIcon": "Time Travel Sky のアプリアイコン",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky"
     },
@@ -715,7 +713,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "alt.appIcon": "Time Travel Sky 应用图标",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky"
     },
@@ -852,7 +849,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "alt.appIcon": "Time Travel Sky 應用程式圖示",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky"
     },
@@ -989,7 +985,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "alt.appIcon": "Icono de la app Time Travel Sky",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky"
     },
@@ -1126,7 +1121,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "alt.appIcon": "App-Symbol von Time Travel Sky",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky"
     },
@@ -1146,7 +1140,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.apps": "App",
       "nav.radec": "AR / Dec / AZ / Alt",
       "nav.virtualTelescope": "Telescopio virtuale",
-      "nav.solAndStars": "Sol e stelle",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "Informazioni",
@@ -1283,7 +1276,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.apps": "Приложения",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "О нас",
@@ -1421,7 +1413,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.apps": "التطبيقات",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "حول",
@@ -1559,7 +1550,6 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.apps": "앱",
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
-      "nav.solAndStars": "Sol and Stars",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
       "nav.about": "정보",

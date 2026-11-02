@@ -2,13 +2,16 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
+<!-- Version 7.28 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
+<!-- Version 7.27 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
+<!-- Version 7.26 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link, app icon and the mention in the description removed; languages file loaded as ?v=3.3 -->
 <!-- Version 7.25 — 2026-10-12 12:30 EDT — by Claude AI -->
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Micro Créatif – Astronomy Apps for Exploring and Understanding the Sky</title>
-<meta name="description" content="Micro Créatif develops astronomy apps for exploring, observing, and understanding the sky. RA/Dec/AZ/Alt, Virtual Telescope, Sol and Stars, Alien Sky, and Time Travel Sky provide tools for celestial coordinates, telescope simulation, stars, planets, and the sky across time and space.">
+<meta name="description" content="Micro Créatif develops astronomy apps for exploring, observing, and understanding the sky. RA/Dec/AZ/Alt, Virtual Telescope, Alien Sky, and Time Travel Sky provide tools for celestial coordinates, telescope simulation, stars, planets, and the sky across time and space.">
 <meta name="author" content="Micro Créatif">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Micro Créatif – Astronomy Apps for Exploring and Understanding the Sky">
@@ -103,9 +106,9 @@ display:inline-flex;
 align-items:center;
 }
 .nav-caret-icon{
-font-size:10px;
+font-size:1.0em;
 margin-inline-start:4px;
-opacity:0.7;
+opacity:0.9;
 pointer-events:none;
 }
 .submenu{
@@ -301,7 +304,6 @@ left:9px;
 <div class="submenu" id="appsMenu">
 <a href="radec-calculator.html" data-i18n="appRadec"></a>
 <a href="virtual-telescope.html" data-i18n="appVirtualTelescope"></a>
-<a href="sol-and-stars.html" data-i18n="appSolAndStars"></a>
 <a href="alien-sky.html" data-i18n="appAlienSky"></a>
 <a href="time-travel.html" data-i18n="appTimeTravelSky"></a>
 </div>
@@ -347,15 +349,6 @@ left:9px;
 </div>
 
 <div class="app">
-<a href="sol-and-stars.html">
-<div class="icon">
-<img src="images/Sol&Stars.png" data-i18n-alt="solAndStarsAlt" alt="">
-</div>
-<p data-i18n="appSolAndStars"></p>
-</a>
-</div>
-
-<div class="app">
 <a href="alien-sky.html">
 <div class="icon">
 <img src="images/AlienSky.png" data-i18n-alt="alienSkyAlt" alt="">
@@ -379,7 +372,7 @@ left:9px;
 <footer>
     <p>© Micro Créatif</p>
     <p data-i18n="locations"></p>
-    <p>Version 7.25</p>
+    <p>Version 7.28</p>
     
 </footer>
 
@@ -468,6 +461,6 @@ window.location.href=target;
 },true);
 });
 </script>
-<script src="index-languages.js" defer></script>
+<script src="index-languages.js?v=3.3" defer></script>
 </body>
 </html>

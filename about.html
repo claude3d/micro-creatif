@@ -2,6 +2,9 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- about.html -->
+<!-- Version 4.4 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
+<!-- Version 4.3 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
+<!-- Version 4.2 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link removed; languages file loaded as ?v=1.3 -->
 <!-- Version 4.0 -->
 <head>
 <meta charset="UTF-8">
@@ -40,9 +43,9 @@ nav{display:inline-flex;gap:30px;position:relative;align-items:center;}
 nav a{color:white;text-decoration:none;font-size:18px;opacity:0.9;cursor:pointer;white-space:nowrap;}
 .dropdown{position:relative;display:inline-flex;align-items:center;}
 .nav-caret-icon{
-font-size:10px;
+font-size:1.0em;
 margin-inline-start:4px;
-opacity:0.7;
+opacity:0.9;
 pointer-events:none;
 }
 .submenu{
@@ -138,7 +141,6 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 <div class="submenu" id="appsMenu">
 <a href="radec-calculator.html" data-i18n="appRadec">RA / Dec / AZ / Alt</a>
 <a href="virtual-telescope.html" data-i18n="appVirtualTelescope">Virtual Telescope</a>
-<a href="sol-and-stars.html" data-i18n="appSolAndStars">Sol and Stars</a>
 <a href="alien-sky.html" data-i18n="appAlienSky">Alien Sky</a>
 <a href="time-travel.html" data-i18n="appTimeTravelSky">Time Travel Sky</a>
 </div>
@@ -195,9 +197,9 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 <footer>
 <p data-i18n="copyright">© 2026 Micro Créatif. All rights reserved.</p>
 <p data-i18n="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 4.1</p>
+<p class="version-display">Version 4.4</p>
 </footer>
 
-<script src="about-languages.js" defer></script>
+<script src="about-languages.js?v=1.3" defer></script>
 </body>
 </html>

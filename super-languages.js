@@ -1,4 +1,4 @@
-/* Micro Créatif - super-programmer article languages - Version 1.1 — 2026-09-29 23:00 EDT — Claude */
+/* Micro Créatif - super-programmer article languages - Version 1.2 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped) (appSolAndStars removed) | Version 1.1 — 2026-09-29 23:00 EDT — Claude */
 const SUPER_LANGUAGES = {
   "en": {
     "label": "English",
@@ -11,7 +11,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "Choose language",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "Montreal | Ho Chi Minh City",
@@ -145,7 +144,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "Choisir la langue",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "Montréal | Hô Chi Minh-Ville",
@@ -274,7 +272,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "Chọn ngôn ngữ",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "Montréal | Thành phố Hồ Chí Minh",
@@ -408,7 +405,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "言語を選択",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "モントリオール | ホーチミン市",
@@ -542,7 +538,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "选择语言",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "蒙特利尔 | 胡志明市",
@@ -676,7 +671,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "選擇語言",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "蒙特婁 | 胡志明市",
@@ -810,7 +804,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "Elegir idioma",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "Montreal | Ciudad Ho Chi Minh",
@@ -944,7 +937,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "Sprache auswählen",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "Montreal | Ho-Chi-Minh-Stadt",
@@ -1078,7 +1070,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "اختر اللغة",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "مونتريال | مدينة هو تشي منه",
@@ -1212,7 +1203,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "언어 선택",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "몬트리올 | 호찌민시",
@@ -1346,7 +1336,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "Scegli la lingua",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "Montréal | Città di Ho Chi Minh",
@@ -1480,7 +1469,6 @@ const SUPER_LANGUAGES = {
     "languageSelector": "Выберите язык",
     "appRadec": "RA / Dec / AZ / Alt",
     "appVirtualTelescope": "Virtual Telescope",
-    "appSolAndStars": "Sol and Stars",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
     "locations": "Монреаль | Хошимин",
@@ -1660,7 +1648,7 @@ const SUPER_LANGUAGES = {
     const map = {
       navHome:"navHome", navApps:"navApps", navAbout:"navAbout", navContact:"navContact",
       appRadec:"appRadec", appVirtualTelescope:"appVirtualTelescope",
-      appSolAndStars:"appSolAndStars", appAlienSky:"appAlienSky",
+      appAlienSky:"appAlienSky",
       appTimeTravelSky:"appTimeTravelSky", locations:"locations"
     };
     Object.entries(map).forEach(([key,id]) => {

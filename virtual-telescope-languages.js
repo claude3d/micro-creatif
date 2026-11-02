@@ -1,5 +1,6 @@
 /* Micro Créatif
    Virtual Telescope website languages
+   Version 1.3 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): k05 removed.
    Version 1.2 — 2026-10-12 11:24 — by Claude AI
 
    To add a language:
@@ -22,7 +23,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "About",
@@ -67,7 +67,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "À propos",
@@ -112,7 +111,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "Ứng dụng",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "Giới thiệu",
@@ -157,7 +155,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "アプリ",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "概要",
@@ -202,7 +199,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "应用",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "关于",
@@ -247,7 +243,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "應用程式",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "關於",
@@ -292,7 +287,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "Acerca de",
@@ -337,7 +331,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "Apps",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "Über uns",
@@ -382,7 +375,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "التطبيقات",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "حول",
@@ -427,7 +419,6 @@ const VIRTUAL_TELESCOPE_LANGUAGES = {
       "k02": "앱",
       "k03": "RA / Dec / AZ / Alt",
       "k04": "Virtual Telescope",
-      "k05": "Sol and Stars",
       "k06": "Alien Sky",
       "k07": "Time Travel Sky",
       "k08": "정보",

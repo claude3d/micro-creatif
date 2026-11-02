@@ -3,6 +3,9 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- virtual-telescope.html -->
+<!-- Version 2.2 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
+<!-- Version 2.1 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
+<!-- Version 2.0 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link removed; languages file loaded as virtual-telescope-languages.js?v=1.3 -->
 <!-- Version 1.9 — 2026-10-12 12:45 — by Claude AI -->
 <head>
 <!-- 10-language selector and page translations: 2026-08-16 -->
@@ -82,9 +85,9 @@ display:inline-flex;
 align-items:center;
 }
 .nav-caret-icon{
-font-size:10px;
+font-size:1.0em;
 margin-inline-start:4px;
-opacity:0.7;
+opacity:0.9;
 pointer-events:none;
 }
 .submenu{
@@ -323,7 +326,6 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <div class="submenu" id="appsMenu">
 <a data-i18n="k03" href="radec-calculator.html"></a>
 <a data-i18n="k04" href="virtual-telescope.html"></a>
-<a data-i18n="k05" href="sol-and-stars.html"></a>
 <a data-i18n="k06" href="alien-sky.html"></a>
 <a data-i18n="k07" href="time-travel.html"></a>
 </div>
@@ -385,7 +387,7 @@ html[dir="rtl"] .key-row code{direction:ltr;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k32"></p>
-<p>Version 1.9</p>
+<p>Version 2.2</p>
 <p data-i18n="k33"></p>
 </footer>
 <script>
@@ -402,7 +404,7 @@ document.querySelectorAll(".submenu a").forEach(function(link){
 link.addEventListener("click",function(){menu.style.display="none";});
 });
 </script>
-<script defer="" src="virtual-telescope-languages.js?v=1.2"></script>
+<script defer="" src="virtual-telescope-languages.js?v=1.3"></script>
 <script>
 (function(){
 const box=document.getElementById("stars");
