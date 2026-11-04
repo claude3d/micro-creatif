@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
+<!-- Version 4.21 — 2026-11-04 ~13:20 (Vietnam time), by Claude AI: title shows Version 1.5; new Languages section (how to choose the app’s language); languages file loaded as ?v=3.40 -->
 <!-- Version 4.20 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
 <!-- Version 4.19 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
 <!-- Version 4.18 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link removed; languages file loaded as time-travel-languages.js?v=3.39 -->
@@ -645,7 +646,8 @@ opacity:0.9;
   white-space:nowrap;
 }
 
-.credits{
+.credits,
+.app-language{
   margin:30px auto 0;
   max-width:1500px;
   width:calc(100% - 64px);
@@ -654,10 +656,14 @@ opacity:0.9;
   border:1px solid rgba(255,255,255,0.22);
   border-radius:18px;
 }
-.credits h2{font-size:22px;margin:0 0 8px;}
+.credits h2,.app-language h2{font-size:22px;margin:0 0 8px;}
+.app-language p{font-size:16px;line-height:1.5;margin:0 0 4px;}
+.app-language ul{list-style:none;margin:0;padding:0;}
+.app-language li{font-size:16px;line-height:1.5;margin:2px 0;}
 .credits ul{list-style:none;margin:0;padding:0;}
 .credits li{font-size:16px;line-height:1.5;margin:2px 0;}
-html[dir="rtl"] .credits ul{padding-right:0;}
+html[dir="rtl"] .credits ul,
+html[dir="rtl"] .app-language ul{padding-right:0;}
 
 @media (max-width:760px){
 nav{gap:18px;}
@@ -772,7 +778,7 @@ left:9px;
 <div class="app-icon">
 <img data-i18n-alt="alt.appIcon" src="images/TimeTravel.png"/>
 </div>
-<h1>Time Travel Sky <span class="version-label">Version 1.4.4</span></h1>
+<h1>Time Travel Sky <span class="version-label">Version 1.5</span></h1>
 <p class="subtitle" data-i18n="hero.subtitle"></p>
 <button class="manual-download-btn" data-i18n="manual.download" id="downloadManualButtonDirect" type="button"></button>
 </section>
@@ -1062,6 +1068,14 @@ left:9px;
 </div>
 </div>
 </section>
+<section class="app-language">
+<h2 data-i18n="language.title"></h2>
+<p data-i18n="language.body"></p>
+<ul>
+<li data-i18n="language.ios"></li>
+<li data-i18n="language.mac"></li>
+</ul>
+</section>
 <section class="credits">
 <h2 data-i18n="credits.title"></h2>
 <ul>
@@ -1079,7 +1093,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 4.20</p>
+<p>Version 4.21</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1159,7 +1173,7 @@ if (guideVideo && guideNarration) {
 </script>
 
 
-<script src="time-travel-languages.js?v=3.39" defer></script>
+<script src="time-travel-languages.js?v=3.40" defer></script>
 <script>
 /* HTML-only manual exporter. The translation file is left unchanged.
    It builds the PDF from the page's current, already-translated DOM.
