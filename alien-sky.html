@@ -3,6 +3,8 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- alien-sky.html -->
+<!-- Version 6.2 — 2026-11-22 ~12:30 (Vietnam time), by Claude AI: pictures and videos from the Mac App Store set (app 1.1): the video is now videos/AS-AlienSky.mp4 (poster AS-AlienSky-poster.jpg), and a second video, AS-GalaxyTrip.mp4 (poster AS-GalaxyTrip-poster.jpg, caption k105), follows it; new picture AS-OutGalaxy (the Milky Way seen from outside, caption k104), at the video's width after the star information picture; languages file loaded as ?v=3.5 (k57, k95, k104, k105) -->
+<!-- Version 6.1 — 2026-11-21 22:14 (Vietnam time), by Claude AI: the app version is 1.1; Stellarium’s constellation lines are credited CC BY-SA 4.0; languages file loaded as ?v=3.4 (Shortcuts & Gestures rows as in app 1.1, wheel zoom, new exoplanet counts) -->
 <!-- Version 6.0 — 2026-11-13 ~13:25 (Vietnam time), by Claude AI: languages file loaded as ?v=3.3 (the Galaxy view as a trip from outside the galaxy: k54, k76–k78) -->
 <!-- Version 5.9 — 2026-11-12 ~08:00 (Vietnam time), by Claude AI: languages file loaded as ?v=3.2 (k33: AT-HYG stars come from Tycho-2, with Gaia DR3 distances and motions) -->
 <!-- Version 5.8 — 2026-11-03 ~17:15 (Vietnam time), by Claude AI: languages file loaded as ?v=3.1 (Shortcuts & Gestures rows as in the app) -->
@@ -390,6 +392,7 @@ box-shadow:0 0 22px rgba(40,80,160,0.20);
 overflow:hidden;
 }
 .video-frame{width:80%;margin:0 auto;}
+.video-frame + .video-frame{margin-top:18px;}
 .video-frame video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;object-fit:contain;background:#000;border-radius:12px;}
 .screenshot-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:18px;}
 .video-frame figcaption,.screenshot-frame figcaption{padding:12px 8px 5px;font-size:16px;line-height:1.4;opacity:0.92;}
@@ -487,17 +490,23 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <div class="app-icon">
 <img alt="Alien Sky app icon" src="images/AlienSky.png"/>
 </div>
-<h1><span data-i18n="k10"></span><span class="app-version">Version 1.0</span></h1>
+<h1><span data-i18n="k10"></span><span class="app-version">Version 1.1</span></h1>
 <p class="subtitle" data-i18n="k11"></p>
 <button class="manual-download-btn" data-i18n="k90" id="downloadManualButtonDirect" type="button"></button>
 </section>
 <main class="content">
 <section class="video-gallery">
 <figure class="video-frame">
-<video controls playsinline preload="metadata" poster="videos/alien-sky-poster.jpg">
-<source src="videos/alien-sky.mp4" type="video/mp4"/>
+<video controls playsinline preload="metadata" poster="videos/AS-AlienSky-poster.jpg">
+<source src="videos/AS-AlienSky.mp4" type="video/mp4"/>
 </video>
 <figcaption data-i18n="k56"></figcaption>
+</figure>
+<figure class="video-frame">
+<video controls playsinline preload="metadata" poster="videos/AS-GalaxyTrip-poster.jpg">
+<source src="videos/AS-GalaxyTrip.mp4" type="video/mp4"/>
+</video>
+<figcaption data-i18n="k105"></figcaption>
 </figure>
 </section>
 <section class="screenshot-gallery">
@@ -506,6 +515,7 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-Destination.png"/></figure>
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-3DView.png"/></figure>
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-AStarInfo.png"/></figure>
+<figure class="screenshot-frame video-width"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-OutGalaxy.png"/><figcaption data-i18n="k104"></figcaption></figure>
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-BackHome.png"/><figcaption data-i18n="k57"></figcaption></figure>
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-Landing.png"/><figcaption data-i18n="k58"></figcaption></figure>
 <figure class="screenshot-frame"><img alt="" aria-hidden="true" loading="lazy" src="images/AS-Exo.png"/><figcaption data-i18n="k98"></figcaption></figure>
@@ -612,7 +622,7 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <li>eso1339e — NASA/JPL-Caltech/ESO/R. Hurt</li>
 <li>NASA Exoplanet Archive</li>
 <li>NASA Blue Marble — NASA Earth Observatory</li>
-<li>Stellarium — constellation lines (CC BY-SA)</li>
+<li>Stellarium — constellation lines (CC BY-SA 4.0)</li>
 </ul>
 </section>
 <section class="status">
@@ -624,7 +634,7 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k48"></p>
-<p>Version 6.0</p>
+<p>Version 6.2</p>
 <p data-i18n="k49"></p>
 </footer>
 <script>
@@ -1002,6 +1012,6 @@ menu.style.display="none";
   document.getElementById(BUTTON_ID)?.addEventListener("click", downloadManual);
 })();
 </script>
-<script defer="" src="alien-sky-languages.js?v=3.3"></script>
+<script defer="" src="alien-sky-languages.js?v=3.5"></script>
 </body>
 </html>
