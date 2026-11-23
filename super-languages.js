@@ -1,4 +1,4 @@
-/* Micro Créatif - super-programmer article languages - Version 1.2 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped) (appSolAndStars removed) | Version 1.1 — 2026-09-29 23:00 EDT — Claude */
+/* Micro Créatif - super-programmer article languages - Version 1.3 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: appWriteAbc = Write abc (Apps menu), in every language | Version 1.2 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped) (appSolAndStars removed) | Version 1.1 — 2026-09-29 23:00 EDT — Claude */
 const SUPER_LANGUAGES = {
   "en": {
     "label": "English",
@@ -13,6 +13,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montreal | Ho Chi Minh City",
     "htmlLang": "en-CA",
     "metaTitle": "Portrait of a Computer Scientist - Claude Johnson: super-programmer!",
@@ -146,6 +147,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montréal | Hô Chi Minh-Ville",
     "htmlLang": "fr-CA",
     "metaTitle": "Portrait d'informaticien - Claude Johnson : super-programmeur !",
@@ -274,6 +276,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montréal | Thành phố Hồ Chí Minh",
     "htmlLang": "vi",
     "metaTitle": "Nghề nghiệp: siêu lập trình viên! - Micro Créatif",
@@ -407,6 +410,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "モントリオール | ホーチミン市",
     "htmlLang": "ja",
     "metaTitle": "職業：スーパー・プログラマー！ - Micro Créatif",
@@ -540,6 +544,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "蒙特利尔 | 胡志明市",
     "htmlLang": "zh-Hans",
     "metaTitle": "职业：超级程序员！ - Micro Créatif",
@@ -673,6 +678,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "蒙特婁 | 胡志明市",
     "htmlLang": "zh-Hant",
     "metaTitle": "職業：超級程式設計師！ - Micro Créatif",
@@ -806,6 +812,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montreal | Ciudad Ho Chi Minh",
     "htmlLang": "es",
     "metaTitle": "Profesión: ¡superprogramador! - Micro Créatif",
@@ -939,6 +946,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montreal | Ho-Chi-Minh-Stadt",
     "htmlLang": "de",
     "metaTitle": "Beruf: Superprogrammierer! - Micro Créatif",
@@ -1072,6 +1080,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "مونتريال | مدينة هو تشي منه",
     "htmlLang": "ar",
     "metaTitle": "المهنة: مبرمج خارق! - Micro Créatif",
@@ -1205,6 +1214,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "몬트리올 | 호찌민시",
     "htmlLang": "ko-KR",
     "metaTitle": "직업: 슈퍼 프로그래머! - Micro Créatif",
@@ -1338,6 +1348,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montréal | Città di Ho Chi Minh",
     "htmlLang": "it",
     "metaTitle": "Ritratto di un informatico - Claude Johnson: super-programmatore!",
@@ -1471,6 +1482,7 @@ const SUPER_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Монреаль | Хошимин",
     "htmlLang": "ru",
     "metaTitle": "Портрет специалиста по информатике - Claude Johnson: суперпрограммист!",
@@ -1649,7 +1661,7 @@ const SUPER_LANGUAGES = {
       navHome:"navHome", navApps:"navApps", navAbout:"navAbout", navContact:"navContact",
       appRadec:"appRadec", appVirtualTelescope:"appVirtualTelescope",
       appAlienSky:"appAlienSky",
-      appTimeTravelSky:"appTimeTravelSky", locations:"locations"
+      appTimeTravelSky:"appTimeTravelSky", appWriteAbc:"appWriteAbc", locations:"locations"
     };
     Object.entries(map).forEach(([key,id]) => {
       const el = document.getElementById(id);

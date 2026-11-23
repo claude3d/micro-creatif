@@ -3,6 +3,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- alien-sky.html -->
+<!-- Version 6.4 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: Write abc added to the Apps menu, after a thin line under the astronomy apps (k05); languages file loaded as ?v=3.6 -->
 <!-- Version 6.3 — 2026-11-22 ~12:50 (Vietnam time), by Claude AI: the two pictures use the names of the uploaded files, AS-AStarinfo.png and AS-Exoinfo.png (small i) -->
 <!-- Version 6.2 — 2026-11-22 ~12:30 (Vietnam time), by Claude AI: pictures and videos from the Mac App Store set (app 1.1): the video is now videos/AS-AlienSky.mp4 (poster AS-AlienSky-poster.jpg), and a second video, AS-GalaxyTrip.mp4 (poster AS-GalaxyTrip-poster.jpg, caption k105), follows it; new picture AS-OutGalaxy (the Milky Way seen from outside, caption k104), at the video's width after the star information picture; languages file loaded as ?v=3.5 (k57, k95, k104, k105) -->
 <!-- Version 6.1 — 2026-11-21 22:14 (Vietnam time), by Claude AI: the app version is 1.1; Stellarium’s constellation lines are credited CC BY-SA 4.0; languages file loaded as ?v=3.4 (Shortcuts & Gestures rows as in app 1.1, wheel zoom, new exoplanet counts) -->
@@ -131,6 +132,7 @@ text-align:left;
 }
 .submenu a{display:block;padding:8px 14px;font-size:16px;}
 .submenu a:hover{background:rgba(255,255,255,0.1);}
+.submenu-line{height:0;margin:6px 14px;border-top:1px solid rgba(255,255,255,0.3);}
 .lang-select-wrap{
 position:relative;
 display:inline-flex;
@@ -476,6 +478,8 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <a data-i18n="k04" href="virtual-telescope.html"></a>
 <a data-i18n="k06" href="alien-sky.html"></a>
 <a data-i18n="k07" href="time-travel.html"></a>
+<div class="submenu-line" aria-hidden="true"></div>
+<a data-i18n="k05" href="write-abc.html"></a>
 </div>
 </div>
 <a data-i18n="k08" href="about.html" id="navAbout"></a>
@@ -635,7 +639,7 @@ html[dir="rtl"] .advanced-block ul{padding-left:0;padding-right:23px;}
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="k48"></p>
-<p>Version 6.3</p>
+<p>Version 6.4</p>
 <p data-i18n="k49"></p>
 </footer>
 <script>
@@ -1013,6 +1017,6 @@ menu.style.display="none";
   document.getElementById(BUTTON_ID)?.addEventListener("click", downloadManual);
 })();
 </script>
-<script defer="" src="alien-sky-languages.js?v=3.5"></script>
+<script defer="" src="alien-sky-languages.js?v=3.6"></script>
 </body>
 </html>

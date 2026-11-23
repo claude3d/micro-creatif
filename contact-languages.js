@@ -1,5 +1,6 @@
 /* Micro Créatif
    Contact page languages
+   Version 1.2 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: appWriteAbc = Write abc (Apps menu), in every language.
    Version 1.1 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): appSolAndStars removed.
    Version 1.0
 */
@@ -20,6 +21,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "Contact",
     "contactBody": "If you have questions, want to report a bug, or need information about an application, please send an email.",
     "locations": "Montreal | Ho Chi Minh City"
@@ -39,6 +41,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "Contact",
     "contactBody": "Si vous avez des questions, souhaitez signaler un bug ou obtenir des informations sur une application, veuillez envoyer un courriel.",
     "locations": "Montréal | Hô Chi Minh-Ville"
@@ -58,6 +61,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "Liên hệ",
     "contactBody": "Nếu bạn có câu hỏi, muốn báo cáo lỗi hoặc cần thông tin về một ứng dụng, vui lòng gửi email.",
     "locations": "Montréal | Thành phố Hồ Chí Minh"
@@ -77,6 +81,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "お問い合わせ",
     "contactBody": "ご質問、バグの報告、またはアプリに関する情報が必要な場合は、メールでお問い合わせください。",
     "locations": "モントリオール | ホーチミン市"
@@ -96,6 +101,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "联系我们",
     "contactBody": "如果您有问题、想报告错误，或需要了解某个应用的信息，请发送电子邮件。",
     "locations": "蒙特利尔 | 胡志明市"
@@ -115,6 +121,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "聯絡我們",
     "contactBody": "如果您有問題、想回報錯誤，或需要了解某個應用程式的資訊，請傳送電子郵件。",
     "locations": "蒙特婁 | 胡志明市"
@@ -134,6 +141,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "Contacto",
     "contactBody": "Si tiene alguna pregunta, desea informar de un error o necesita información sobre una aplicación, envíenos un correo electrónico.",
     "locations": "Montreal | Ciudad Ho Chi Minh"
@@ -153,6 +161,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "Kontakt",
     "contactBody": "Wenn Sie Fragen haben, einen Fehler melden möchten oder Informationen zu einer App benötigen, senden Sie uns bitte eine E-Mail.",
     "locations": "Montreal | Ho-Chi-Minh-Stadt"
@@ -172,6 +181,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "اتصل بنا",
     "contactBody": "إذا كانت لديك أسئلة، أو أردت الإبلاغ عن خلل، أو احتجت إلى معلومات عن أحد التطبيقات، فيُرجى إرسال بريد إلكتروني.",
     "locations": "مونتريال | مدينة هو تشي منه"
@@ -191,6 +201,7 @@ const CONTACT_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "contactTitle": "연락처",
     "contactBody": "질문이 있거나, 버그를 신고하거나, 앱에 대한 정보가 필요하면 이메일을 보내 주세요.",
     "locations": "몬트리올 | 호찌민시"

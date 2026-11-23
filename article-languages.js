@@ -1,4 +1,4 @@
-/* Micro Créatif - newspaper article languages - Version 1.2 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped) (appSolAndStars removed) | Version 1.1 — 2026-09-29 22:40 EDT — Claude */
+/* Micro Créatif - newspaper article languages - Version 1.3 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: appWriteAbc = Write abc (Apps menu), in every language | Version 1.2 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped) (appSolAndStars removed) | Version 1.1 — 2026-09-29 22:40 EDT — Claude */
 const ARTICLE_LANGUAGES = {
   "en": {
     "label": "English",
@@ -13,6 +13,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montreal | Ho Chi Minh City",
     "htmlLang": "en-CA",
     "metaTitle": "From the Great Dream... to Reality! - Micro Créatif",
@@ -135,6 +136,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montréal | Hô Chi Minh-Ville",
     "htmlLang": "fr-CA",
     "metaTitle": "Du grand rêve ... à la réalité ! - Micro Créatif",
@@ -257,6 +259,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montréal | Thành phố Hồ Chí Minh",
     "htmlLang": "vi",
     "metaTitle": "Từ giấc mơ lớn... đến hiện thực! - Micro Créatif",
@@ -379,6 +382,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "モントリオール | ホーチミン市",
     "htmlLang": "ja",
     "metaTitle": "大きな夢から…現実へ！ - Micro Créatif",
@@ -501,6 +505,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "蒙特利尔 | 胡志明市",
     "htmlLang": "zh-Hans",
     "metaTitle": "从宏大梦想……到现实！ - Micro Créatif",
@@ -623,6 +628,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "蒙特婁 | 胡志明市",
     "htmlLang": "zh-Hant",
     "metaTitle": "從宏大夢想……到現實！ - Micro Créatif",
@@ -745,6 +751,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montreal | Ciudad Ho Chi Minh",
     "htmlLang": "es",
     "metaTitle": "¡Del gran sueño... a la realidad! - Micro Créatif",
@@ -867,6 +874,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montreal | Ho-Chi-Minh-Stadt",
     "htmlLang": "de",
     "metaTitle": "Vom großen Traum ... zur Wirklichkeit! - Micro Créatif",
@@ -989,6 +997,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "مونتريال | مدينة هو تشي منه",
     "htmlLang": "ar",
     "metaTitle": "من الحلم الكبير... إلى الواقع! - Micro Créatif",
@@ -1111,6 +1120,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "몬트리올 | 호찌민시",
     "htmlLang": "ko-KR",
     "metaTitle": "큰 꿈에서... 현실로! - Micro Créatif",
@@ -1233,6 +1243,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Montréal | Città di Ho Chi Minh",
     "htmlLang": "it",
     "metaTitle": "Dal grande sogno... alla realtà! - Micro Créatif",
@@ -1355,6 +1366,7 @@ const ARTICLE_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "locations": "Монреаль | Хошимин",
     "htmlLang": "ru",
     "metaTitle": "От великой мечты... к реальности! - Micro Créatif",
@@ -1522,7 +1534,7 @@ const ARTICLE_LANGUAGES = {
       navHome:"navHome", navApps:"navApps", navAbout:"navAbout", navContact:"navContact",
       appRadec:"appRadec", appVirtualTelescope:"appVirtualTelescope",
       appAlienSky:"appAlienSky",
-      appTimeTravelSky:"appTimeTravelSky", locations:"locations"
+      appTimeTravelSky:"appTimeTravelSky", appWriteAbc:"appWriteAbc", locations:"locations"
     };
     Object.entries(map).forEach(([key,id]) => {
       const el = document.getElementById(id);

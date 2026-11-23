@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- about.html -->
+<!-- Version 4.5 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: Write abc added to the Apps menu, after a thin line under the astronomy apps (appWriteAbc); languages file loaded as ?v=1.4 -->
 <!-- Version 4.4 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
 <!-- Version 4.3 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
 <!-- Version 4.2 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link removed; languages file loaded as ?v=1.3 -->
@@ -55,6 +56,7 @@ border-radius:10px;padding:8px 0;text-align:left;
 }
 .submenu a{display:block;padding:8px 14px;font-size:16px;}
 .submenu a:hover{background:rgba(255,255,255,0.1);}
+.submenu-line{height:0;margin:6px 14px;border-top:1px solid rgba(255,255,255,0.3);}
 .lang-select-wrap{
 position:relative;
 display:inline-flex;
@@ -143,6 +145,8 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 <a href="virtual-telescope.html" data-i18n="appVirtualTelescope">Virtual Telescope</a>
 <a href="alien-sky.html" data-i18n="appAlienSky">Alien Sky</a>
 <a href="time-travel.html" data-i18n="appTimeTravelSky">Time Travel Sky</a>
+<div class="submenu-line" aria-hidden="true"></div>
+<a href="write-abc.html" data-i18n="appWriteAbc">Write abc</a>
 </div>
 </div>
 <a id="navAbout" href="about.html" data-i18n="navAbout">About</a>
@@ -197,9 +201,9 @@ footer{text-align:center;padding:40px 20px;opacity:0.85;font-size:0.95rem;}
 <footer>
 <p data-i18n="copyright">© 2026 Micro Créatif. All rights reserved.</p>
 <p data-i18n="cities">Montreal | Ho Chi Minh City</p>
-<p class="version-display">Version 4.4</p>
+<p class="version-display">Version 4.5</p>
 </footer>
 
-<script src="about-languages.js?v=1.3" defer></script>
+<script src="about-languages.js?v=1.4" defer></script>
 </body>
 </html>

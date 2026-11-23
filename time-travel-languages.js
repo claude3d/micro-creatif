@@ -1,5 +1,6 @@
 /* Micro Créatif
    Time Travel Sky website languages
+   Version 3.43 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: nav.writeAbc = Write abc (Apps menu), in every language.
    Version 3.42 — 2026-11-11 10:50 (Vietnam time), by Claude AI
    App 1.5 (7), in all languages: new sidereal.what.body3 — Fixed Sidereal Time is off by default
    (only the two solar eclipse events turn it on); after Apply the yellow lock blinks for two
@@ -68,6 +69,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc",
       "nav.about": "About",
       "nav.contact": "Contact",
       "hero.subtitle": "Stay on Earth, move through time, and watch the real sky transform above you.",
@@ -209,6 +211,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Télescope virtuel",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc",
       "nav.about": "À propos",
       "nav.contact": "Contact",
       "hero.subtitle": "Restez sur Terre, voyagez dans le temps et observez le vrai ciel se transformer au‑dessus de vous.",
@@ -350,6 +353,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc",
       "nav.about": "Giới thiệu",
       "nav.contact": "Liên hệ",
       "hero.subtitle": "Ở lại trên Trái Đất, du hành xuyên thời gian và quan sát bầu trời thực sự biến đổi phía trên bạn.",
@@ -612,7 +616,8 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc"
     },
     "meta": {
       "title": "Time Travel Sky – 時を越えて地球の空を探索 | Micro Créatif",
@@ -753,7 +758,8 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc"
     },
     "meta": {
       "title": "Time Travel Sky – 穿越时间探索地球天空 | Micro Créatif",
@@ -894,7 +900,8 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc"
     },
     "meta": {
       "title": "Time Travel Sky – 穿越時間探索地球天空 | Micro Créatif",
@@ -1035,7 +1042,8 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc"
     },
     "meta": {
       "title": "Time Travel Sky – Explora el cielo de la Tierra a través del tiempo | Micro Créatif",
@@ -1176,7 +1184,8 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.radec": "RA / Dec / AZ / Alt",
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
-      "nav.timeTravel": "Time Travel Sky"
+      "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc"
     },
     "meta": {
       "title": "Time Travel Sky – Den Himmel der Erde durch die Zeit erkunden | Micro Créatif",
@@ -1196,6 +1205,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Telescopio virtuale",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc",
       "nav.about": "Informazioni",
       "nav.contact": "Contatti",
       "hero.subtitle": "Rimani sulla Terra, viaggia nel tempo e osserva il vero cielo trasformarsi sopra di te.",
@@ -1337,6 +1347,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc",
       "nav.about": "О нас",
       "nav.contact": "Контакты",
       "hero.subtitle": "Оставайтесь на Земле, перемещайтесь во времени и наблюдайте, как меняется настоящее небо над вами.",
@@ -1479,6 +1490,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc",
       "nav.about": "حول",
       "nav.contact": "اتصل بنا",
       "hero.subtitle": "ابقَ على الأرض، وانتقل عبر الزمن، وشاهد السماء الحقيقية تتغير فوقك.",
@@ -1621,6 +1633,7 @@ const TIME_TRAVEL_LANGUAGES = {
       "nav.virtualTelescope": "Virtual Telescope",
       "nav.alienSky": "Alien Sky",
       "nav.timeTravel": "Time Travel Sky",
+      "nav.writeAbc": "Write abc",
       "nav.about": "정보",
       "nav.contact": "연락처",
       "hero.subtitle": "지구에 머문 채 시간을 이동하며 머리 위의 실제 하늘이 변하는 모습을 살펴보세요.",

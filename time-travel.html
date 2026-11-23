@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- time-travel.html -->
+<!-- Version 4.24 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: Write abc added to the Apps menu, after a thin line under the astronomy apps (nav.writeAbc); languages file loaded as ?v=3.43 -->
 <!-- Version 4.23 — 2026-11-11 10:50 (Vietnam time), by Claude AI: new paragraph sidereal.what.body3 (Fixed Sidereal Time off by default, the blinking yellow lock); languages file loaded as ?v=3.42 -->
 <!-- Version 4.22 — 2026-11-10 13:15 (Vietnam time), by Claude AI: languages file loaded as ?v=3.41 (blue clock during animation and drag; steps-per-second readout and frame rate) -->
 <!-- Version 4.21 — 2026-11-04 ~13:20 (Vietnam time), by Claude AI: title shows Version 1.5; new Languages section (how to choose the app’s language); languages file loaded as ?v=3.40 -->
@@ -102,6 +103,7 @@ text-align:left;
 }
 .submenu a{display:block;padding:8px 14px;font-size:16px;}
 .submenu a:hover{background:rgba(255,255,255,0.1);}
+.submenu-line{height:0;margin:6px 14px;border-top:1px solid rgba(255,255,255,0.3);}
 .lang-select-wrap{
 position:relative;
 display:inline-flex;
@@ -765,6 +767,8 @@ left:9px;
 <a data-i18n="nav.virtualTelescope" href="virtual-telescope.html"></a>
 <a data-i18n="nav.alienSky" href="alien-sky.html"></a>
 <a data-i18n="nav.timeTravel" href="time-travel.html"></a>
+<div class="submenu-line" aria-hidden="true"></div>
+<a data-i18n="nav.writeAbc" href="write-abc.html"></a>
 </div>
 </div>
 <a data-i18n="nav.about" href="about.html" id="navAbout"></a>
@@ -1096,7 +1100,7 @@ left:9px;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="footer.locations"></p>
-<p>Version 4.23</p>
+<p>Version 4.24</p>
 <p data-i18n="footer.privacy"></p>
 </footer>
 
@@ -1176,7 +1180,7 @@ if (guideVideo && guideNarration) {
 </script>
 
 
-<script src="time-travel-languages.js?v=3.42" defer></script>
+<script src="time-travel-languages.js?v=3.43" defer></script>
 <script>
 /* HTML-only manual exporter. The translation file is left unchanged.
    It builds the PDF from the page's current, already-translated DOM.

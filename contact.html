@@ -1,5 +1,6 @@
 <!-- Micro Créatif Website
 contact.html
+Version 2.7 — 2026-11-23 ~15:30 (Vietnam time), by Claude AI: Write abc added to the Apps menu, after a thin line under the astronomy apps (appWriteAbc); languages file loaded as ?v=1.2
 Version 2.6 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em)
 Version 2.5 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7)
 Version 2.4 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link removed, "solar system app" keyword replaced by the current apps; languages file loaded as ?v=1.1
@@ -81,6 +82,12 @@ text-align:left;
 display:block;
 padding:6px 12px;
 white-space:nowrap;
+}
+
+.submenu-line{
+height:0;
+margin:6px 12px;
+border-top:1px solid rgba(255,255,255,0.3);
 }
 
 /* LANGUAGE SELECTOR */
@@ -212,6 +219,8 @@ opacity:0.9;
 <a href="virtual-telescope.html" data-i18n="appVirtualTelescope"></a>
 <a href="alien-sky.html" data-i18n="appAlienSky"></a>
 <a href="time-travel.html" data-i18n="appTimeTravelSky"></a>
+<div class="submenu-line" aria-hidden="true"></div>
+<a href="write-abc.html" data-i18n="appWriteAbc"></a>
 </div>
 </div>
 
@@ -233,9 +242,9 @@ opacity:0.9;
 <footer>
 <p>© Micro Créatif</p>
 <p data-i18n="locations"></p>
-<p>Version 2.6</p>
+<p>Version 2.7</p>
 </footer>
 
-<script src="contact-languages.js?v=1.1" defer></script>
+<script src="contact-languages.js?v=1.2" defer></script>
 </body>
 </html>
