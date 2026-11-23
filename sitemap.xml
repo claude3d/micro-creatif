@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- sitemap.xml — Version 1.2 — 2026-11-23 ~15:35 (Vietnam time), by Claude AI: write-abc.html added -->
 <!-- sitemap.xml — Version 1.1 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped) -->
 <!-- sitemap.xml — Version 1.0 — 2026-09-30 17:57 EDT — Claude -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -205,6 +206,9 @@
   </url>
   <url>
     <loc>https://microcreatif.ca/alien-sky.html</loc>
+  </url>
+  <url>
+    <loc>https://microcreatif.ca/write-abc.html</loc>
   </url>
   <url>
     <loc>https://microcreatif.ca/about.html</loc>

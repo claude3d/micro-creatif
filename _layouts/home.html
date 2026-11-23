@@ -2,6 +2,7 @@
 ---
 <!-- Micro Créatif -->
 <!-- _layouts/home.html -->
+<!-- Version 7.24 — 2026-11-23 ~15:35 (Vietnam time), by Claude AI: Write abc added, as on index.html 7.30: in the Apps menu after a thin line under the astronomy apps, and its icon (images/WriteABC-framed.png) on its own row under a thin line below the astronomy icons -->
 <!-- Version 7.23 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
 <!-- Version 7.22 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
 <!-- Version 7.21 — 2026-11-02 ~15:40 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link and app icon removed -->
@@ -131,6 +132,11 @@ font-size:16px;
 .submenu a:hover{
 background:rgba(255,255,255,0.1);
 }
+.submenu-line{
+height:0;
+margin:6px 14px;
+border-top:1px solid rgba(255,255,255,0.3);
+}
 .lang-select-wrap{
 position:relative;
 display:inline-flex;
@@ -255,6 +261,11 @@ flex-wrap:wrap;
 .app{
 width:160px;
 }
+.app-line{
+flex-basis:100%;
+height:1px;
+background:linear-gradient(to right, transparent 20%, rgba(255,255,255,0.45) 50%, transparent 80%);
+}
 .app a{
 text-decoration:none;
 color:white;
@@ -300,6 +311,8 @@ opacity:0.85;
 <a href="/virtual-telescope.html">{{ t.appVirtualTelescope }}</a>
 <a href="/alien-sky.html">{{ t.appAlienSky }}</a>
 <a href="/time-travel.html">{{ t.appTimeTravelSky }}</a>
+<div class="submenu-line" aria-hidden="true"></div>
+<a href="/write-abc.html">{{ t.appWriteAbc }}</a>
 </div>
 </div>
 <a href="/about.html">{{ t.navAbout }}</a>
@@ -373,13 +386,24 @@ opacity:0.85;
 </a>
 </div>
 
+<div class="app-line" aria-hidden="true"></div>
+
+<div class="app">
+<a href="/write-abc.html">
+<div class="icon">
+<img src="/images/WriteABC-framed.png" alt="{{ t.writeAbcAlt }}">
+</div>
+<p>{{ t.appWriteAbc }}</p>
+</a>
+</div>
+
 </div>
 </section>
 
 <footer>
 <p>© Micro Créatif</p>
 <p>{{ t.locations }}</p>
-<p>Version 7.23</p>
+<p>Version 7.24</p>
 </footer>
 
 <script>
