@@ -1,4 +1,5 @@
 /* Micro Créatif - index page languages
+   Version 3.4 — 2026-11-23 ~15:20 (Vietnam time), by Claude AI: Write abc added: appWriteAbc (menu and icon name) and writeAbcAlt (icon description), in the 12 languages.
    Version 3.3 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): appSolAndStars and solAndStarsAlt removed, and the app left out of every description.
    Version 3.2 — restore established language-menu order */
 const INDEX_LANGUAGES = {
@@ -24,12 +25,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "Galaxy background – Micro Créatif astronomy apps",
     "mascotAlt": "Micro Créatif mascot",
     "radecAlt": "RA / Dec / AZ / Alt – telescope coordinate converter app",
     "virtualTelescopeAlt": "Virtual Telescope – astronomy simulation app",
     "alienSkyAlt": "Alien Sky – see the night sky from other stars",
     "timeTravelSkyAlt": "Time Travel Sky – explore the sky across past and future dates",
+    "writeAbcAlt": "Write abc – learn to write the lowercase letters",
     "locations": "Montreal | Ho Chi Minh City"
   },
   "fr": {
@@ -54,12 +57,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "Arrière-plan galactique – applications d’astronomie Micro Créatif",
     "mascotAlt": "Mascotte de Micro Créatif",
     "radecAlt": "RA / Dec / AZ / Alt – application de conversion de coordonnées pour télescope",
     "virtualTelescopeAlt": "Virtual Telescope – application de simulation astronomique",
     "alienSkyAlt": "Alien Sky – voir le ciel nocturne depuis d’autres étoiles",
     "timeTravelSkyAlt": "Time Travel Sky – explorer le ciel à différentes dates du passé et du futur",
+    "writeAbcAlt": "Write abc – apprendre à écrire les lettres minuscules",
     "locations": "Montréal | Hô Chi Minh-Ville"
   },
   "vi": {
@@ -84,12 +89,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "Nền thiên hà – các ứng dụng thiên văn của Micro Créatif",
     "mascotAlt": "Linh vật Micro Créatif",
     "radecAlt": "RA / Dec / AZ / Alt – ứng dụng chuyển đổi tọa độ cho kính thiên văn",
     "virtualTelescopeAlt": "Virtual Telescope – ứng dụng mô phỏng thiên văn",
     "alienSkyAlt": "Alien Sky – xem bầu trời đêm từ những ngôi sao khác",
     "timeTravelSkyAlt": "Time Travel Sky – khám phá bầu trời ở các thời điểm trong quá khứ và tương lai",
+    "writeAbcAlt": "Write abc – học viết các chữ cái thường",
     "locations": "Montréal | Thành phố Hồ Chí Minh"
   },
   "ja": {
@@ -114,12 +121,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "銀河の背景 – Micro Créatif の天文アプリ",
     "mascotAlt": "Micro Créatif のマスコット",
     "radecAlt": "RA / Dec / AZ / Alt – 望遠鏡用座標変換アプリ",
     "virtualTelescopeAlt": "Virtual Telescope – 天文シミュレーションアプリ",
     "alienSkyAlt": "Alien Sky – ほかの恒星から見た夜空",
     "timeTravelSkyAlt": "Time Travel Sky – 過去と未来の日付の空を探索",
+    "writeAbcAlt": "Write abc – 小文字の書き方を学ぶ",
     "locations": "モントリオール | ホーチミン市"
   },
   "zh-Hans": {
@@ -144,12 +153,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "银河背景 – Micro Créatif 天文应用",
     "mascotAlt": "Micro Créatif 吉祥物",
     "radecAlt": "RA / Dec / AZ / Alt – 望远镜坐标转换应用",
     "virtualTelescopeAlt": "Virtual Telescope – 天文模拟应用",
     "alienSkyAlt": "Alien Sky – 从其他恒星附近观看夜空",
     "timeTravelSkyAlt": "Time Travel Sky – 探索过去和未来日期的天空",
+    "writeAbcAlt": "Write abc – 学习书写小写字母",
     "locations": "蒙特利尔 | 胡志明市"
   },
   "zh-Hant": {
@@ -174,12 +185,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "銀河背景 – Micro Créatif 天文應用程式",
     "mascotAlt": "Micro Créatif 吉祥物",
     "radecAlt": "RA / Dec / AZ / Alt – 望遠鏡座標轉換應用程式",
     "virtualTelescopeAlt": "Virtual Telescope – 天文模擬應用程式",
     "alienSkyAlt": "Alien Sky – 從其他恆星附近觀看夜空",
     "timeTravelSkyAlt": "Time Travel Sky – 探索過去與未來日期的天空",
+    "writeAbcAlt": "Write abc – 學習書寫小寫字母",
     "locations": "蒙特婁 | 胡志明市"
   },
   "es": {
@@ -204,12 +217,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "Fondo de galaxia – apps de astronomía de Micro Créatif",
     "mascotAlt": "Mascota de Micro Créatif",
     "radecAlt": "RA / Dec / AZ / Alt – app de conversión de coordenadas para telescopio",
     "virtualTelescopeAlt": "Virtual Telescope – app de simulación astronómica",
     "alienSkyAlt": "Alien Sky – observa el cielo nocturno desde otras estrellas",
     "timeTravelSkyAlt": "Time Travel Sky – explora el cielo en fechas del pasado y del futuro",
+    "writeAbcAlt": "Write abc – aprende a escribir las letras minúsculas",
     "locations": "Montreal | Ciudad Ho Chi Minh"
   },
   "de": {
@@ -234,12 +249,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "Galaxienhintergrund – Astronomie-Apps von Micro Créatif",
     "mascotAlt": "Maskottchen von Micro Créatif",
     "radecAlt": "RA / Dec / AZ / Alt – Koordinatenumrechnungs-App für Teleskope",
     "virtualTelescopeAlt": "Virtual Telescope – Astronomie-Simulations-App",
     "alienSkyAlt": "Alien Sky – den Nachthimmel von anderen Sternen aus betrachten",
     "timeTravelSkyAlt": "Time Travel Sky – den Himmel zu vergangenen und zukünftigen Daten erkunden",
+    "writeAbcAlt": "Write abc – die Kleinbuchstaben schreiben lernen",
     "locations": "Montreal | Ho-Chi-Minh-Stadt"
   },
   "ar": {
@@ -265,12 +282,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "خلفية مجرية – تطبيقات Micro Créatif الفلكية",
     "mascotAlt": "تميمة Micro Créatif",
     "radecAlt": "RA / Dec / AZ / Alt – تطبيق لتحويل إحداثيات التلسكوب",
     "virtualTelescopeAlt": "Virtual Telescope – تطبيق لمحاكاة الرصد الفلكي",
     "alienSkyAlt": "Alien Sky – شاهد سماء الليل من نجوم أخرى",
     "timeTravelSkyAlt": "Time Travel Sky – استكشف السماء في تواريخ من الماضي والمستقبل",
+    "writeAbcAlt": "Write abc – تعلّم كتابة الحروف الصغيرة",
     "locations": "مونتريال | مدينة هو تشي منه"
   },
   "ko": {
@@ -295,12 +314,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "은하 배경 – Micro Créatif 천문학 앱",
     "mascotAlt": "Micro Créatif 마스코트",
     "radecAlt": "RA / Dec / AZ / Alt – 망원경 좌표 변환 앱",
     "virtualTelescopeAlt": "Virtual Telescope – 천문 관측 시뮬레이션 앱",
     "alienSkyAlt": "Alien Sky – 다른 별에서 바라본 밤하늘",
     "timeTravelSkyAlt": "Time Travel Sky – 과거와 미래의 날짜에서 하늘 탐색",
+    "writeAbcAlt": "Write abc – 소문자 쓰기 배우기",
     "locations": "몬트리올 | 호찌민시"
   },
   "it": {
@@ -325,12 +346,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "Sfondo galattico – app di astronomia Micro Créatif",
     "mascotAlt": "Mascotte di Micro Créatif",
     "radecAlt": "RA / Dec / AZ / Alt – app per convertire le coordinate del telescopio",
     "virtualTelescopeAlt": "Virtual Telescope – app di simulazione astronomica",
     "alienSkyAlt": "Alien Sky – osserva il cielo notturno da altre stelle",
     "timeTravelSkyAlt": "Time Travel Sky – esplora il cielo in date passate e future",
+    "writeAbcAlt": "Write abc – impara a scrivere le lettere minuscole",
     "locations": "Montréal | Città di Ho Chi Minh"
   },
   "ru": {
@@ -355,12 +378,14 @@ const INDEX_LANGUAGES = {
     "appVirtualTelescope": "Virtual Telescope",
     "appAlienSky": "Alien Sky",
     "appTimeTravelSky": "Time Travel Sky",
+    "appWriteAbc": "Write abc",
     "backgroundAlt": "Галактический фон – астрономические приложения Micro Créatif",
     "mascotAlt": "Талисман Micro Créatif",
     "radecAlt": "RA / Dec / AZ / Alt – приложение для преобразования координат телескопа",
     "virtualTelescopeAlt": "Virtual Telescope – приложение для астрономического моделирования",
     "alienSkyAlt": "Alien Sky – ночное небо с других звёзд",
     "timeTravelSkyAlt": "Time Travel Sky – исследование неба в прошлом и будущем",
+    "writeAbcAlt": "Write abc – учимся писать строчные буквы",
     "locations": "Монреаль | Хошимин"
   }
 };

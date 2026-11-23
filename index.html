@@ -2,6 +2,8 @@
 <html lang="en">
 <!-- Micro Créatif -->
 <!-- index.html -->
+<!-- Version 7.30 — 2026-11-23 ~15:25 (Vietnam time), by Claude AI: the Write abc icon is images/WriteABC-framed.png: the app icon inside the same thin blue rounded frame on black as the astronomy icons, so it no longer looks bigger than them -->
+<!-- Version 7.29 — 2026-11-23 ~15:20 (Vietnam time), by Claude AI: Write abc added: in the Apps menu after a thin line under the astronomy apps, and its icon on a row of its own under a thin line below the astronomy icons; languages file loaded as ?v=3.4 -->
 <!-- Version 7.28 — 2026-11-02 ~15:35 (Vietnam time), by Claude AI: the ▾ beside Apps is as tall as the menu text (1.0em, was 0.8em) -->
 <!-- Version 7.27 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: the ▾ beside Apps is larger and brighter: 0.8 of the menu text (was 10px) at 0.9 opacity (was 0.7) -->
 <!-- Version 7.26 — 2026-11-02 ~15:30 (Vietnam time), by Claude AI: Sol and Stars removed (the app is dropped): menu link, app icon and the mention in the description removed; languages file loaded as ?v=3.3 -->
@@ -131,6 +133,11 @@ font-size:16px;
 .submenu a:hover{
 background:rgba(255,255,255,0.1);
 }
+.submenu-line{
+height:0;
+margin:6px 14px;
+border-top:1px solid rgba(255,255,255,0.3);
+}
 .lang-select-wrap{
 position:relative;
 display:inline-flex;
@@ -238,6 +245,11 @@ flex-wrap:wrap;
 .app{
 width:160px;
 }
+.app-line{
+flex-basis:100%;
+height:1px;
+background:linear-gradient(to right, transparent 20%, rgba(255,255,255,0.45) 50%, transparent 80%);
+}
 .app a{
 text-decoration:none;
 color:white;
@@ -306,6 +318,8 @@ left:9px;
 <a href="virtual-telescope.html" data-i18n="appVirtualTelescope"></a>
 <a href="alien-sky.html" data-i18n="appAlienSky"></a>
 <a href="time-travel.html" data-i18n="appTimeTravelSky"></a>
+<div class="submenu-line" aria-hidden="true"></div>
+<a href="write-abc.html" data-i18n="appWriteAbc"></a>
 </div>
 </div>
 <a id="navAbout" data-i18n="navAbout" href="about.html"></a>
@@ -366,13 +380,24 @@ left:9px;
 </a>
 </div>
 
+<div class="app-line" aria-hidden="true"></div>
+
+<div class="app">
+<a href="write-abc.html">
+<div class="icon">
+<img src="images/WriteABC-framed.png" data-i18n-alt="writeAbcAlt" alt="">
+</div>
+<p data-i18n="appWriteAbc"></p>
+</a>
+</div>
+
 </div>
 </section>
 
 <footer>
     <p>© Micro Créatif</p>
     <p data-i18n="locations"></p>
-    <p>Version 7.28</p>
+    <p>Version 7.30</p>
     
 </footer>
 
@@ -461,6 +486,6 @@ window.location.href=target;
 },true);
 });
 </script>
-<script src="index-languages.js?v=3.3" defer></script>
+<script src="index-languages.js?v=3.4" defer></script>
 </body>
 </html>
